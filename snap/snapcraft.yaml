@@ -1,0 +1,37 @@
+name: hanoi-towers
+version: '1.0' 
+summary: Hanoi Towers Game
+description: |
+  The Hanoi Tower is one of the most popular puzzles of the 19th century. Three bars are given, on one of which eight rings are strung, the rings differ in size and lie smaller on larger ones. The problem is to transfer the pyramid from eight rings for the least number of moves to another rod. At a time, only one ring is allowed to carry, and you can not put a larger ring on less.
+
+grade: stable # must be 'stable' to release into candidate/stable channels
+confinement: strict # use 'strict' once you have the right plugs and slots
+
+icon: icon.png
+
+apps:
+  hanoi-towers:
+    command: desktop-launch $SNAP/opt/myapp/hanoi_towers
+#    desktop: usr/share/applications/desc.desktop
+    plugs: [home, unity7, x11]
+
+
+parts:
+  hanoi-towers:
+    plugin: qmake
+    qt-version: qt5
+    project-files: [hanoi_towers.pro]
+    source: source
+    install: |
+     install -d $SNAPCRAFT_PART_INSTALL/opt/myapp
+     install hanoi_towers $SNAPCRAFT_PART_INSTALL/opt/myapp/hanoi_towers 
+    build-packages:
+      - qtdeclarative5-dev
+    stage-packages:
+      - libqt5qml5
+      - libqt5quick5
+      - qml-module-qtquick2
+      - qml-module-qtquick-dialogs
+      - qml-module-qtquick-controls
+    after: [desktop-qt5]
+        
