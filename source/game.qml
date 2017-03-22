@@ -1,5 +1,6 @@
 import QtQuick 2.5
 import QtQuick.Controls 1.4
+import QtQuick.Controls.Styles 1.4
 import QtQuick.Dialogs 1.2
 
 Rectangle{
@@ -63,7 +64,15 @@ Rectangle{
             maximumValue: 99;
             minimumValue: 1;
             value: 4;
-            font.pointSize: height/2;
+            style: SpinBoxStyle{
+                background: Rectangle {
+                    //implicitWidth: 100
+                    //implicitHeight: 20
+                    border.color: "gray"
+                    radius: 2
+                }
+            }
+            font.pointSize: height/4;
             anchors.right: parent.right
             width:parent.width/2;
             height:parent.height;
@@ -91,7 +100,7 @@ Rectangle{
     Item{
         id:mouseContener;
         property var mouseObj:null;
-        width:parent.width*0.1;
+        width:parent.width*0.14;
         height:parent.height*0.1
         x:mouse.mouseX;
         y:mouse.mouseY;
