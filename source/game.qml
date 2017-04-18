@@ -2,7 +2,7 @@ import QtQuick 2.5
 import QtQuick.Controls 1.4
 import QtQuick.Controls.Styles 1.4
 import QtQuick.Dialogs 1.2
-
+import Saver 1.0
 Rectangle{
     visible: true
     id: gameWindow;
@@ -120,7 +120,12 @@ Rectangle{
         }
     }
     function start(value){
-        all=value;
+        spin.maximumValue=saver.reed;
+        if(saver.reed<=value||value<0)
+            spin.value=all=value=saver.reed;
+        else{
+            spin.value=all=value;
+        }
         step.ste=0;
         tower1.clear();
         tower2.clear();
@@ -152,8 +157,18 @@ Rectangle{
                 obj.pop();
         }
         if(tower2.items.length===all||tower3.items.length===all){
-            messageDialog.show("Number of steps: "+step.ste);
+            if(all==spin.maximumValue){
+                saver.save(spin.value=spin.maximumValue=all+1);
+                messageDialog.show("You have passed the level in "+step.ste+" steps\n and unlocked level "+all+".");
+                start(spin.value);
+            }else{
+                messageDialog.show("You have passed the level in "+step.ste+" steps\n.");
+                start(++spin.value);
+            }
         }
+    }
+    Saver{
+        id: saver;
     }
     MessageDialog {
         id: messageDialog
@@ -194,4 +209,5 @@ Rectangle{
             trigered(obj);
         }
     }
+
 }

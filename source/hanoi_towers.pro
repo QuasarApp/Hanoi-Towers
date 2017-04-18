@@ -4,7 +4,8 @@ QT += qml quick widgets
 
 CONFIG += c++11
 
-SOURCES += main.cpp
+SOURCES += main.cpp \
+    saver.cpp
 
 RESOURCES += qml.qrc
 TARGET=hanoi_towers
@@ -41,3 +42,6 @@ DISTFILES += \
     android/gradlew.bat
 
 ANDROID_PACKAGE_SOURCE_DIR = $$PWD/android
+
+HEADERS += \
+    saver.h
