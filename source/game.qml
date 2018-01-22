@@ -60,43 +60,17 @@ Rectangle {
             height: parent.height
         }
 
-        Frame {
+        Button {
             id: frame
-            padding: 0
-            Tumbler {
-                id: spin
-                model: 99
-                property int value: 4
-                property int maximumValue: 99
 
-                function format(){
-
-                }
-
-                delegate: Text {
-                    color: "#959595"
-                    text: "" + (modelData + 1)
-                    verticalAlignment: Text.AlignVCenter
-                    horizontalAlignment: Text.AlignHCenter
-                    font.pointSize: 16 / (Math.abs(spin.currentIndex - modelData) + 1 )
-
-                }
-
-                onValueChanged: {
-                    currentIndex = value - 1
-                }
-
-                onCurrentIndexChanged: {
-                    value = currentIndex + 1;
-                }
-
-                onMaximumValueChanged: {
-                    model = maximumValue
-                }
-                anchors.fill: parent
-            }
+            text: "" + (spin.currentIndex + 1)
             width: parent.width / 2
             height: parent.height
+
+            onClicked: {
+                tumbler.visible = true;
+            }
+
             anchors.right: parent.right
 
         }
@@ -238,5 +212,83 @@ Rectangle {
         onClick: {
             trigered(obj)
         }
+    }
+
+    Rectangle {
+        id: tumbler
+        color: "#ffffff"
+        border.color: "#d5d4d4"
+        visible: false
+
+
+
+        Tumbler {
+
+            visibleItemCount : 5;
+            id: spin
+            model: 99
+            property int value: 4
+            property int maximumValue: 99
+
+            function format(){
+
+            }
+
+            delegate: Text {
+
+                color: Qt.rgba(0.5,0.5,0.5,1 / (Math.abs(spin.currentIndex - modelData)))
+                text: "" + (modelData + 1)
+
+                verticalAlignment: Text.AlignVCenter
+                horizontalAlignment: Text.AlignHCenter
+                font.pointSize: (spin.height / 4) / (Math.abs(spin.currentIndex - modelData) + 1 )
+
+            }
+
+            onValueChanged: {
+                currentIndex = value - 1
+            }
+
+            onCurrentIndexChanged: {
+                value = currentIndex + 1;
+            }
+
+            onMaximumValueChanged: {
+                model = maximumValue
+            }
+            anchors.fill: parent
+
+            anchors.left: parent.left
+            anchors.right: parent.right
+            anchors.top: parent.top
+
+            anchors.bottom: parent.bottom
+            anchors.bottomMargin: closeTumbler.height + 5
+
+
+        }
+
+        Button{
+            id: closeTumbler
+            text: qsTr("Ok")
+            onClicked: {
+                tumbler.visible = false;
+            }
+            anchors.right: parent.right
+            anchors.left: parent.left
+            anchors.bottom: parent.bottom
+        }
+
+
+        width: (height / 4)
+
+        anchors.top: parent.top
+        anchors.bottom: parent.bottom
+
+        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.topMargin: 20
+        anchors.bottomMargin: 20
+
+
     }
 }
