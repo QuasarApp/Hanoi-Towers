@@ -10,5 +10,6 @@
     </qresource>
     <qresource prefix="/textures">
         <file>res/wood.png</file>
+        <file>res/Plate.png</file>
     </qresource>
 </RCC>
