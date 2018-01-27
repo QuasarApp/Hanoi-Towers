@@ -10,8 +10,19 @@ supported platform:
 2. Android 
 3. Windows 
 
-## Build
-Build instructions will appear later for each of the platforms.
+## Build for Linux (snap)
+
+  -  sodo apt install git snapcraft 
+  -  git clone https://github.com/EndrII/Hanoi-Towers.git
+  -  cd Hanoi-Towers
+  -  snapcraft
+
+
+## Build Windows 
+Build instructions will appear later.
+
+## Build Android 
+Build instructions will appear later.
 
 
 ## Donate
