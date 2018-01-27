@@ -12,7 +12,7 @@ supported platform:
 
 ## Build for Linux (snap)
 
-  -  sodo apt install git snapcraft 
+  -  sudo apt install git snapcraft 
   -  git clone https://github.com/EndrII/Hanoi-Towers.git
   -  cd Hanoi-Towers
   -  snapcraft
