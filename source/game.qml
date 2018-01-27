@@ -20,6 +20,7 @@ Rectangle {
             gameWindow.start(spin.value)
         }
         anchors.right: about.left
+        anchors.rightMargin: 5;
         width: mouseContener.width
         height: mouseContener.height
     }
@@ -27,6 +28,7 @@ Rectangle {
         id: b_exit
         text: "Exit"
         anchors.right: gameWindow.right
+        anchors.rightMargin: 5;
         width: mouseContener.width
         height: mouseContener.height
         onClicked: {
@@ -37,6 +39,8 @@ Rectangle {
         id: about
         text: "About"
         anchors.right: b_exit.left
+        anchors.rightMargin: 5;
+
         width: mouseContener.width
         height: mouseContener.height
         onClicked: {
@@ -72,6 +76,8 @@ Rectangle {
             }
 
             anchors.right: parent.right
+            anchors.rightMargin: 5;
+
 
         }
 
@@ -241,7 +247,7 @@ Rectangle {
 
                 verticalAlignment: Text.AlignVCenter
                 horizontalAlignment: Text.AlignHCenter
-                font.pointSize: (spin.height / 4) / (Math.abs(spin.currentIndex - modelData) + 1 )
+                font.pixelSize: (spin.height / 4) / (Math.abs(spin.currentIndex - modelData) + 1 )
 
             }
 

@@ -12,6 +12,8 @@
 
 # Qt-es
 
+/source/android/*
+!/source/android/AndroidManifest.xml
 /.qmake.cache
 /.qmake.stash
 *.pro.user
