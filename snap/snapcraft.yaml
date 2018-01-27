@@ -7,7 +7,7 @@ description: |
 grade: stable # must be 'stable' to release into candidate/stable channels
 confinement: strict # use 'strict' once you have the right plugs and slots
 
-icon: icon.png
+icon: source/res/icon.png
 
 apps:
   hanoi-towers:
@@ -34,4 +34,15 @@ parts:
       - qml-module-qtquick-dialogs
       - qml-module-qtquick-controls
     after: [desktop-qt5]
+  desktop-qt5:
+    stage-packages:
+      - libxkbcommon0
+      - ttf-ubuntu-font-family
+      - dmz-cursor-theme
+      - light-themes
+      - shared-mime-info
+      - libqt5gui5
+      - libgdk-pixbuf2.0-0
+      - libqt5svg5 # for loading icon themes which are svg
+      - locales-all
         

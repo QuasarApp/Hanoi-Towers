@@ -12,6 +12,11 @@
 
 # Qt-es
 
+/parts/*
+/prime/*
+/snap/.snapcraft/*
+/stage/*
+
 /source/android/*
 !/source/android/AndroidManifest.xml
 /.qmake.cache
