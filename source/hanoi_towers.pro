@@ -45,3 +45,5 @@ ANDROID_PACKAGE_SOURCE_DIR = $$PWD/android
 
 HEADERS += \
     saver.h
+
+RC_ICONS = res/icon.ico
