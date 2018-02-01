@@ -33,6 +33,7 @@ parts:
       - qml-module-qtquick2
       - qml-module-qtquick-dialogs
       - qml-module-qtquick-controls
+      - qml-module-qtgraphicaleffects
     after: [desktop-qt5]
   desktop-qt5:
     stage-packages:
