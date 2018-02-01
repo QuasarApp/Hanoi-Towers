@@ -17,13 +17,6 @@ supported platform:
   -  cd Hanoi-Towers
   -  snapcraft
 
-## Install 
-You can download the latest version of the game [here](https://github.com/EndrII/Hanoi-Towers/releases).
-
-Or download from official services
-  * [Android](https://play.google.com/store/apps/details?id=df.mobily.hanoi_towers) 
-  * [Ubuntu](https://uappexplorer.com/snap/ubuntu/hanoi-towers)
-  * Windows - this application has not supported windows store
 
 ## Build Windows 
 Build instructions will appear later.
@@ -31,6 +24,13 @@ Build instructions will appear later.
 ## Build Android 
 Build instructions will appear later.
 
+## Install 
+You can download the latest version of the game [here](https://github.com/EndrII/Hanoi-Towers/releases).
+
+Or download from official services
+  * [Android](https://play.google.com/store/apps/details?id=df.mobily.hanoi_towers) 
+  * [Ubuntu](https://uappexplorer.com/snap/ubuntu/hanoi-towers)
+  * Windows - this application has not supported windows store
 
 ## Donate
 If you want to help the project, then you can donate a small amount to our bitcoin wallet.
