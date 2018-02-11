@@ -19,10 +19,16 @@ supported platform:
 
 
 ## Build Windows 
-Build instructions will appear later.
+* donwload [qt creator](https://www.qt.io/download-thank-you?os=windows)
+* install qt 5.9.x or later
+* build release version
+* use [qt win deploy](http://doc.qt.io/qt-5/windows-deployment.html)
 
 ## Build Android 
-Build instructions will appear later.
+* donwload [qt creator](https://www.qt.io/download-thank-you?os=windows)
+* install qt 5.9.x or later
+* install android sdk and ndk
+* install jdk
 
 ## Install 
 You can download the latest version of the game [here](https://github.com/EndrII/Hanoi-Towers/releases).
