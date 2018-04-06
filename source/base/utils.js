@@ -20,11 +20,11 @@ function textAltColor() {
 }
 
 function backgroundColor() {
-    return "#444444"
+    return "#eeeeee"
 }
 
 function backgroundAltColor() {
-    return "#333333"
+    return "#aaaaaa"
 }
 
 function baseFontSize(pixelDensity){

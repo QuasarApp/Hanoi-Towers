@@ -1,13 +1,19 @@
 import QtQuick 2.9
 import QtQuick.Controls 2.2
+import "./base" as Base
+
 
 Item {
+
+    Base.Theme{
+        id: theme;
+    }
 
     id: ab
     signal exit
     property string type: "about"
     Rectangle {
-        color: Qt.rgba(0.25, 0.25, 0.25, 1)
+        color: theme.backgroundColor
         anchors.fill: parent
     }
     Image {
@@ -16,16 +22,16 @@ Item {
         width: parent.width
         height: parent.height * 0.2
         fillMode: Image.PreserveAspectFit
-        source: "/icon.png"
+        source: "/res/icon.ico"
     }
     Label {
         id: txt
-        x: 0
-        y: parent.height * 0.2
-        width: parent.width
-        height: parent.height * 0.7
-        color: "white"
-        font.pixelSize: (ab.width < ab.height) ? ab.width / 15 : ab.height / 15
+        x: parent.width * 0.1
+        y: parent.height * 0.3
+        width: parent.width * 0.8
+        height: parent.height * 0.6
+        color: theme.buttonsTextColor
+        font.pixelSize: (ab.width < ab.height) ? ab.width / 16 : ab.height / 16
         font.italic: true
         wrapMode: Text.Wrap
         text: "Product of DigitalFace
@@ -33,7 +39,7 @@ Item {
 * Programmer: Yankovich N. Andrei.
 * This game is distributed under the LGPLv3 license.
 * Contact: https://github.com/EndrII
-* Copyright (C) 2017 Yankovich N. Andrei."
+* Copyright (C) 2018 Yankovich N. Andrei."
     }
     MouseArea {
         anchors.fill: parent
