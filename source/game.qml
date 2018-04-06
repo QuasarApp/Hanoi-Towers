@@ -2,6 +2,8 @@ import QtQuick 2.9
 import QtQuick.Controls 2.2
 import QtQuick.Dialogs 1.2
 import Saver 1.0
+import "./base" as Base
+
 
 Rectangle {
     visible: true
@@ -13,7 +15,7 @@ Rectangle {
     MouseArea {
         id: mouse
     }
-    Button {
+    Base.BaseButton {
         id: b_start
         text: "Start"
         onClicked: {
@@ -24,7 +26,7 @@ Rectangle {
         width: mouseContener.width
         height: mouseContener.height
     }
-    Button {
+    Base.BaseButton {
         id: b_exit
         text: "Exit"
         anchors.right: gameWindow.right
@@ -35,7 +37,7 @@ Rectangle {
             Qt.quit()
         }
     }
-    Button {
+    Base.BaseButton {
         id: about
         text: "About"
         anchors.right: b_exit.left
@@ -50,7 +52,7 @@ Rectangle {
     Rectangle {
         id: s_start
         Rectangle {
-            Text {
+            Base.BaseText {
                 font.bold: true
                 font.pointSize: height / text.length * 2
                 horizontalAlignment: Text.AlignHCenter
@@ -64,7 +66,7 @@ Rectangle {
             height: parent.height
         }
 
-        Button {
+        Base.BaseButton {
             id: frame
 
             text: "" + (spin.currentIndex + 1)
@@ -167,12 +169,13 @@ Rectangle {
         if (tower2.items.length === all || tower3.items.length === all) {
             if (all == spin.maximumValue) {
                 saver.save(spin.value = spin.maximumValue = all + 1)
-                messageDialog.show("You have passed the level in " + step.ste
-                                   + " steps\n and unlocked level " + all + ".")
+                popUp.text = "You have passed the level in " + step.ste
+                        + " steps\n and unlocked level " + all + ".";
+                popUp.open()
                 start(spin.value)
             } else {
-                messageDialog.show(
-                            "You have passed the level in " + step.ste + " steps\n.")
+                popUp.text ="You have passed the level in " + step.ste + " steps.";
+                popUp.open()
                 start(++spin.value)
             }
         }
@@ -180,15 +183,12 @@ Rectangle {
     Saver {
         id: saver
     }
-    MessageDialog {
-        id: messageDialog
-        title: qsTr("You win!!")
+    
 
-        function show(caption) {
-            messageDialog.text = caption
-            messageDialog.open()
-        }
+    PopUp {
+        id:popUp;
     }
+    
     Tower {
         id: tower1
         width: gameWindow.width * 0.33
@@ -274,7 +274,7 @@ Rectangle {
 
         }
 
-        Button{
+        Base.BaseButton{
             id: closeTumbler
             text: qsTr("Ok")
             onClicked: {

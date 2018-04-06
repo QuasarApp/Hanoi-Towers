@@ -5,9 +5,13 @@
         <file>game.qml</file>
         <file>Tower.qml</file>
         <file>about.qml</file>
-        <file>icon.png</file>
         <file>qtquickcontrols2.conf</file>
         <file>res/icon.ico</file>
+        <file>base/BaseButton.qml</file>
+        <file>base/BaseText.qml</file>
+        <file>base/Theme.qml</file>
+        <file>base/utils.js</file>
+        <file>PopUp.qml</file>
     </qresource>
     <qresource prefix="/textures">
         <file>res/wood.png</file>
