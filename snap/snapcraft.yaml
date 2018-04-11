@@ -11,9 +11,9 @@ icon: source/res/icon.png
 
 apps:
   hanoi-towers:
-    command: desktop-launch $SNAP/opt/myapp/hanoi_towers
+    command: qt5-launch $SNAP/opt/myapp/hanoi-towers
 #    desktop: usr/share/applications/desc.desktop
-    plugs: [home, unity7, x11]
+    plugs: [home, opengl, x11]
 
 
 parts:
@@ -24,26 +24,21 @@ parts:
     source: source
     install: |
      install -d $SNAPCRAFT_PART_INSTALL/opt/myapp
-     install hanoi_towers $SNAPCRAFT_PART_INSTALL/opt/myapp/hanoi_towers 
+     install hanoi-towers $SNAPCRAFT_PART_INSTALL/opt/myapp/hanoi-towers 
     build-packages:
       - qtdeclarative5-dev
     stage-packages:
-      - libqt5qml5
-      - libqt5quick5
-      - qml-module-qtquick2
-      - qml-module-qtquick-dialogs
-      - qml-module-qtquick-controls
-      - qml-module-qtgraphicaleffects
-    after: [desktop-qt5]
-  desktop-qt5:
-    stage-packages:
-      - libxkbcommon0
-      - ttf-ubuntu-font-family
-      - dmz-cursor-theme
-      - light-themes
-      - shared-mime-info
+      # Here for the plugins-- they're not linked in automatically.
       - libqt5gui5
-      - libgdk-pixbuf2.0-0
-      - libqt5svg5 # for loading icon themes which are svg
-      - locales-all
+      - libqt5qml5 
+      - libqt5quick5
+      - qml-module-qtquick2 
+      - qml-module-qtquick-dialogs 
+      - qml-module-qtquick-controls 
+      - qml-module-qtgraphicaleffects
+      - libpng16-16
+      - zlib1g
+      - libgl1
+      - libgl1-mesa-dri
+    after: [qt5conf] # A wiki part
         

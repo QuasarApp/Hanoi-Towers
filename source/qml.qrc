@@ -12,9 +12,17 @@
         <file>base/Theme.qml</file>
         <file>base/utils.js</file>
         <file>PopUp.qml</file>
+        <file>Help.qml</file>
     </qresource>
     <qresource prefix="/textures">
         <file>res/wood.png</file>
         <file>res/Plate.png</file>
+    </qresource>
+    <qresource prefix="/img">
+        <file alias="Help">res/help.jpg</file>
+    </qresource>
+    <qresource prefix="/languages">
+        <file alias="ru">languages/ru.qm</file>
+        <file alias="en">languages/en.qm</file>
     </qresource>
 </RCC>

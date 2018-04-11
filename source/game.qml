@@ -1,7 +1,7 @@
 import QtQuick 2.9
 import QtQuick.Controls 2.2
 import QtQuick.Dialogs 1.2
-import Saver 1.0
+import BackEnd 1.0
 import "./base" as Base
 
 
@@ -12,12 +12,18 @@ Rectangle {
     height: 480
     color: "#ffffff"
     property int all: 1
+    property var oldTower
+
+    BackEnd {
+        id: backEnd
+    }
+
     MouseArea {
         id: mouse
     }
     Base.BaseButton {
         id: b_start
-        text: "Start"
+        text: qsTr("Start")
         onClicked: {
             gameWindow.start(spin.value)
         }
@@ -28,7 +34,7 @@ Rectangle {
     }
     Base.BaseButton {
         id: b_exit
-        text: "Exit"
+        text: qsTr("Exit")
         anchors.right: gameWindow.right
         anchors.rightMargin: 5;
         width: mouseContener.width
@@ -39,7 +45,7 @@ Rectangle {
     }
     Base.BaseButton {
         id: about
-        text: "About"
+        text: qsTr("About")
         anchors.right: b_exit.left
         anchors.rightMargin: 5;
 
@@ -58,7 +64,7 @@ Rectangle {
                 horizontalAlignment: Text.AlignHCenter
                 styleColor: "#973c3c"
                 verticalAlignment: Text.AlignVCenter
-                text: "Tower height:"
+                text: qsTr("Tower height:")
                 anchors.fill: parent
             }
             anchors.left: parent.left
@@ -129,10 +135,21 @@ Rectangle {
             mouseObj = null
         }
     }
+
+    function launch(){
+        if (backEnd.isFirst) {
+            help.open();
+        }
+        start(-1);
+    }
+
     function start(value) {
-        spin.maximumValue = saver.reed
-        if (saver.reed <= value || value < 0)
-            spin.value = all = value = saver.reed
+
+
+
+        spin.maximumValue = backEnd.reed
+        if (backEnd.reed <= value || value < 0)
+            spin.value = all = value = backEnd.reed
         else {
             spin.value = all = value
         }
@@ -159,29 +176,33 @@ Rectangle {
     function trigered(obj) {
         if (mouseContener.mouseObj) {
             if (obj.push(mouseContener.top())) {
-                step.ste++
+                if(oldTower !== obj) step.ste++
                 mouseContener.pop()
             }
         } else {
-            if (mouseContener.push((obj.top())))
+            if (mouseContener.push((obj.top()))){
+                oldTower = obj;
                 obj.pop()
+            }
         }
         if (tower2.items.length === all || tower3.items.length === all) {
             if (all == spin.maximumValue) {
-                saver.save(spin.value = spin.maximumValue = all + 1)
-                popUp.text = "You have passed the level in " + step.ste
-                        + " steps\n and unlocked level " + all + ".";
+                backEnd.save(spin.value = spin.maximumValue = all + 1)
+                popUp.text = qsTr("You have passed the level in %0 steps and unlocked level %1" +
+                                   "\n Minimum steps for this lvl: %2").
+                arg(step.ste).arg(all).arg(backEnd.getMinSteps(all));
+
                 popUp.open()
                 start(spin.value)
             } else {
-                popUp.text ="You have passed the level in " + step.ste + " steps.";
+                popUp.text = qsTr("You have passed the level in %0 steps.\n" +
+                                     "Minimum steps for this lvl: %1").
+                arg(step.ste).arg(backEnd.getMinSteps(all));
+
                 popUp.open()
                 start(++spin.value)
             }
         }
-    }
-    Saver {
-        id: saver
     }
     
 
@@ -297,4 +318,9 @@ Rectangle {
 
 
     }
+
+    Help{
+        id: help
+    }
+
 }

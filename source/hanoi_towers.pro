@@ -5,10 +5,10 @@ QT += qml quick widgets
 CONFIG += c++11
 
 SOURCES += main.cpp \
-    saver.cpp
+    backEnd.cpp
 
 RESOURCES += qml.qrc
-TARGET=hanoi_towers
+TARGET=hanoi-towers
 
 # Additional import path used to resolve QML modules in Qt Creator's code model
 QML_IMPORT_PATH =
@@ -44,6 +44,11 @@ DISTFILES += \
 ANDROID_PACKAGE_SOURCE_DIR = $$PWD/android
 
 HEADERS += \
-    saver.h
+    backEnd.h
+
+TRANSLATIONS += \
+    languages/ru.ts \
+    languages/en.ts
+
 
 RC_ICONS = res/icon.ico
