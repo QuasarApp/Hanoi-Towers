@@ -13,6 +13,11 @@ Rectangle {
     color: "#ffffff"
     property int all: 1
     property var oldTower
+
+    BackEnd {
+        id: backEnd
+    }
+
     MouseArea {
         id: mouse
     }
@@ -131,6 +136,11 @@ Rectangle {
         }
     }
     function start(value) {
+
+        if (backEnd.isFirst) {
+            help.open();
+        }
+
         spin.maximumValue = backEnd.reed
         if (backEnd.reed <= value || value < 0)
             spin.value = all = value = backEnd.reed
@@ -184,9 +194,6 @@ Rectangle {
                 start(++spin.value)
             }
         }
-    }
-    BackEnd {
-        id: backEnd
     }
     
 
@@ -302,4 +309,9 @@ Rectangle {
 
 
     }
+
+    Help{
+        id: help
+    }
+
 }
