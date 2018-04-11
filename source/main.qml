@@ -13,7 +13,7 @@ ApplicationWindow {
         source: "game.qml"
         anchors.fill: parent
         onLoaded: {
-            item.start(-1)
+            item.launch(-1);
         }
     }
 }

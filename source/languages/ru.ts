@@ -74,20 +74,37 @@
     </message>
     <message>
         <location filename="../game.qml" line="185"/>
-        <location filename="../game.qml" line="191"/>
-        <source>You have passed the level in </source>
-        <translation>Вы прошли этот уровень за </translation>
+        <source>You have passed the level in %0 steps and unlocked level %1
+ Minimum steps for this lvl: %2</source>
+        <translation>Вы прошли этот уровень за %0 шагов и разблокировали уровень %1
+ Минимум шагов на этом уровне: %2</translation>
     </message>
     <message>
-        <location filename="../game.qml" line="186"/>
-        <source> steps and unlocked level </source>
-        <translation> шагов и разблокировали уровень </translation>
-    </message>
-    <message>
-        <location filename="../game.qml" line="187"/>
         <location filename="../game.qml" line="192"/>
+        <source>You have passed the level in %0 steps.
+Minimum steps for this lvl: %1</source>
+        <translation>Вы прошли этот уровень за %0 шагов
+ Минимум шагов на этом уровне: %1</translation>
+    </message>
+    <message>
+        <source>You have passed the level in %0 steps and unlocked level %1/n Minimum steps for this lvl: %2</source>
+        <translation type="vanished">Вы прошли этот уровень за %0 шагов и разблокировали уровень %1/n Минимум шагов на этом уровне: %2</translation>
+    </message>
+    <message>
+        <source>You have passed the level in %0 steps./nMinimum steps for this lvl: %1</source>
+        <translation type="vanished">Вы прошли этот уровень за %0 шагов/n Минимум шагов на этом уровне: %1</translation>
+    </message>
+    <message>
+        <source>You have passed the level in </source>
+        <translation type="vanished">Вы прошли этот уровень за </translation>
+    </message>
+    <message>
+        <source> steps and unlocked level </source>
+        <translation type="vanished"> шагов и разблокировали уровень </translation>
+    </message>
+    <message>
         <source>/n Minimum steps for this lvl: </source>
-        <translation>/n Минимум шагов на этом уровне: </translation>
+        <translation type="vanished">/n Минимум шагов на этом уровне: </translation>
     </message>
     <message>
         <source> minimum steps for this lvl: </source>
@@ -99,12 +116,11 @@
         <translation type="vanished"> шагов и раблокировали уровень </translation>
     </message>
     <message>
-        <location filename="../game.qml" line="191"/>
         <source> steps.</source>
-        <translation> шагов.</translation>
+        <translation type="vanished"> шагов.</translation>
     </message>
     <message>
-        <location filename="../game.qml" line="291"/>
+        <location filename="../game.qml" line="294"/>
         <source>Ok</source>
         <translation>Ok</translation>
     </message>

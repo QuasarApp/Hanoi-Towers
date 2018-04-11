@@ -135,11 +135,17 @@ Rectangle {
             mouseObj = null
         }
     }
-    function start(value) {
 
+    function launch(){
         if (backEnd.isFirst) {
             help.open();
         }
+        start(-1);
+    }
+
+    function start(value) {
+
+
 
         spin.maximumValue = backEnd.reed
         if (backEnd.reed <= value || value < 0)
@@ -182,14 +188,17 @@ Rectangle {
         if (tower2.items.length === all || tower3.items.length === all) {
             if (all == spin.maximumValue) {
                 backEnd.save(spin.value = spin.maximumValue = all + 1)
-                popUp.text = qsTr("You have passed the level in ") + step.ste
-                        + qsTr(" steps and unlocked level ") + all + "." +
-                        + qsTr("/n Minimum steps for this lvl: ") + backEnd.getMinSteps(all);
+                popUp.text = qsTr("You have passed the level in %0 steps and unlocked level %1" +
+                                   "\n Minimum steps for this lvl: %2").
+                arg(step.ste).arg(all).arg(backEnd.getMinSteps(all));
+
                 popUp.open()
                 start(spin.value)
             } else {
-                popUp.text = qsTr("You have passed the level in ") + step.ste + qsTr(" steps.") +
-                           + qsTr("/n Minimum steps for this lvl: ") + backEnd.getMinSteps(all);
+                popUp.text = qsTr("You have passed the level in %0 steps.\n" +
+                                     "Minimum steps for this lvl: %1").
+                arg(step.ste).arg(backEnd.getMinSteps(all));
+
                 popUp.open()
                 start(++spin.value)
             }
