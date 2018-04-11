@@ -1,18 +1,25 @@
-#include "saver.h"
+#include "backEnd.h"
+#include <cmath>
 
-Saver::Saver():
+BackEnd::BackEnd():
     QObject()
 {
 
 }
-void Saver::save(const short &lvl) const{
+
+unsigned short BackEnd::getMinSteps(const unsigned short lvl) const{
+    return pow(2, lvl) - 1;
+}
+
+void BackEnd::save(const short &lvl) const{
     QFile f(SAVE);
     if(f.open(QIODevice::WriteOnly|QIODevice::Truncate)){
         f.write((char*)(&lvl),sizeof(lvl));
         f.close();
     }
 }
-short Saver::read()const{
+
+short BackEnd::read()const{
     short temp=1;
     QFile f(SAVE);
     if(f.open(QIODevice::ReadOnly)){

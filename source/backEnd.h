@@ -3,14 +3,17 @@
 #include <QObject>
 #include <QFile>
 #define SAVE "save"
-class Saver: public QObject
+class BackEnd: public QObject
 {
     Q_OBJECT
     Q_PROPERTY(short reed READ read WRITE save)
+private:
+
 public:
-    Saver();
+    BackEnd();
 public slots:
     void save(const short &lvl)const;
+    unsigned short getMinSteps(const unsigned short lvl)const;
     short read()const;
 };
 

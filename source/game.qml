@@ -1,7 +1,7 @@
 import QtQuick 2.9
 import QtQuick.Controls 2.2
 import QtQuick.Dialogs 1.2
-import Saver 1.0
+import BackEnd 1.0
 import "./base" as Base
 
 
@@ -12,6 +12,7 @@ Rectangle {
     height: 480
     color: "#ffffff"
     property int all: 1
+    property var oldTower
     MouseArea {
         id: mouse
     }
@@ -130,9 +131,9 @@ Rectangle {
         }
     }
     function start(value) {
-        spin.maximumValue = saver.reed
-        if (saver.reed <= value || value < 0)
-            spin.value = all = value = saver.reed
+        spin.maximumValue = backEnd.reed
+        if (backEnd.reed <= value || value < 0)
+            spin.value = all = value = backEnd.reed
         else {
             spin.value = all = value
         }
@@ -159,29 +160,33 @@ Rectangle {
     function trigered(obj) {
         if (mouseContener.mouseObj) {
             if (obj.push(mouseContener.top())) {
-                step.ste++
+                if(oldTower !== obj) step.ste++
                 mouseContener.pop()
             }
         } else {
-            if (mouseContener.push((obj.top())))
+            if (mouseContener.push((obj.top()))){
+                oldTower = obj;
                 obj.pop()
+            }
         }
         if (tower2.items.length === all || tower3.items.length === all) {
             if (all == spin.maximumValue) {
-                saver.save(spin.value = spin.maximumValue = all + 1)
+                backEnd.save(spin.value = spin.maximumValue = all + 1)
                 popUp.text = "You have passed the level in " + step.ste
+                        + " minimum steps for this lvl: " + backEnd.getMinSteps(all)
                         + " steps\n and unlocked level " + all + ".";
                 popUp.open()
                 start(spin.value)
             } else {
-                popUp.text ="You have passed the level in " + step.ste + " steps.";
+                popUp.text = "You have passed the level in " + step.ste + " steps." +
+                           + " minimum steps for this lvl: " + backEnd.getMinSteps(all);
                 popUp.open()
                 start(++spin.value)
             }
         }
     }
-    Saver {
-        id: saver
+    BackEnd {
+        id: backEnd
     }
     
 
