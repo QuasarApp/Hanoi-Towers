@@ -11,7 +11,7 @@ Item {
 
     id: ab
     signal exit
-    property string type: "about"
+    property string type: qsTr("about")
     Rectangle {
         color: theme.backgroundColor
         anchors.fill: parent
@@ -34,12 +34,12 @@ Item {
         font.pixelSize: (ab.width < ab.height) ? ab.width / 16 : ab.height / 16
         font.italic: true
         wrapMode: Text.Wrap
-        text: "Product of DigitalFace
+        text: qsTr("Product of QuasarApp
 * Developers:
 * Programmer: Yankovich N. Andrei.
 * This game is distributed under the LGPLv3 license.
 * Contact: https://github.com/EndrII
-* Copyright (C) 2018 Yankovich N. Andrei."
+* Copyright (C) 2018 Yankovich N. Andrei.")
     }
     MouseArea {
         anchors.fill: parent

@@ -46,4 +46,9 @@ ANDROID_PACKAGE_SOURCE_DIR = $$PWD/android
 HEADERS += \
     backEnd.h
 
+TRANSLATIONS += \
+    languages/ru.ts \
+    languages/en.ts
+
+
 RC_ICONS = res/icon.ico

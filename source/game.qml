@@ -23,7 +23,7 @@ Rectangle {
     }
     Base.BaseButton {
         id: b_start
-        text: "Start"
+        text: qsTr("Start")
         onClicked: {
             gameWindow.start(spin.value)
         }
@@ -34,7 +34,7 @@ Rectangle {
     }
     Base.BaseButton {
         id: b_exit
-        text: "Exit"
+        text: qsTr("Exit")
         anchors.right: gameWindow.right
         anchors.rightMargin: 5;
         width: mouseContener.width
@@ -45,7 +45,7 @@ Rectangle {
     }
     Base.BaseButton {
         id: about
-        text: "About"
+        text: qsTr("About")
         anchors.right: b_exit.left
         anchors.rightMargin: 5;
 
@@ -64,7 +64,7 @@ Rectangle {
                 horizontalAlignment: Text.AlignHCenter
                 styleColor: "#973c3c"
                 verticalAlignment: Text.AlignVCenter
-                text: "Tower height:"
+                text: qsTr("Tower height:")
                 anchors.fill: parent
             }
             anchors.left: parent.left
@@ -182,14 +182,14 @@ Rectangle {
         if (tower2.items.length === all || tower3.items.length === all) {
             if (all == spin.maximumValue) {
                 backEnd.save(spin.value = spin.maximumValue = all + 1)
-                popUp.text = "You have passed the level in " + step.ste
-                        + " minimum steps for this lvl: " + backEnd.getMinSteps(all)
-                        + " steps\n and unlocked level " + all + ".";
+                popUp.text = qsTr("You have passed the level in ") + step.ste
+                        + qsTr(" steps and unlocked level ") + all + "." +
+                        + qsTr("/n Minimum steps for this lvl: ") + backEnd.getMinSteps(all);
                 popUp.open()
                 start(spin.value)
             } else {
-                popUp.text = "You have passed the level in " + step.ste + " steps." +
-                           + " minimum steps for this lvl: " + backEnd.getMinSteps(all);
+                popUp.text = qsTr("You have passed the level in ") + step.ste + qsTr(" steps.") +
+                           + qsTr("/n Minimum steps for this lvl: ") + backEnd.getMinSteps(all);
                 popUp.open()
                 start(++spin.value)
             }

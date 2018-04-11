@@ -21,4 +21,8 @@
     <qresource prefix="/img">
         <file alias="Help">res/help.jpg</file>
     </qresource>
+    <qresource prefix="/languages">
+        <file alias="ru">languages/ru.qm</file>
+        <file alias="en">languages/en.qm</file>
+    </qresource>
 </RCC>
