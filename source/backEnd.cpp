@@ -12,8 +12,8 @@ BackEnd::BackEnd():
 void BackEnd::writeConfig() const{
     QFile f(SAVE);
     if(f.open(QIODevice::WriteOnly|QIODevice::Truncate)){
-        f.write((char*)(&isFirstStart), sizeof(isFirstStart));
         f.write((char*)(&lvl), sizeof(lvl));
+        f.write((char*)(&isFirstStart), sizeof(isFirstStart));
         f.close();
     }
 }
@@ -21,9 +21,14 @@ void BackEnd::writeConfig() const{
 void BackEnd::readCnfig() {
     QFile f(SAVE);
     if(f.open(QIODevice::ReadOnly)){
-        f.read((char*)&isFirstStart,sizeof(isFirstStart));
         f.read((char*)&lvl,sizeof(lvl));
+        f.read((char*)&isFirstStart,sizeof(isFirstStart));
         f.close();
+
+        if(lvl < 1 || lvl > 99) {
+            lvl = 1;
+        }
+
         emit isFirstChanged();
     }
 }
