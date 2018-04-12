@@ -1,5 +1,5 @@
 name: hanoi-towers
-version: '1.3' 
+version: '1.4' 
 summary: Hanoi Towers Game
 description: |
   The Hanoi Tower is one of the most popular puzzles of the 19th century. Three bars are given, on one of which eight rings are strung, the rings differ in size and lie smaller on larger ones. The problem is to transfer the pyramid from eight rings for the least number of moves to another rod. At a time, only one ring is allowed to carry, and you can not put a larger ring on less.
@@ -11,9 +11,9 @@ icon: source/res/icon.png
 
 apps:
   hanoi-towers:
-    command: qt5-launch $SNAP/opt/myapp/hanoi-towers
+    command: qt5-launch $SNAP/opt/QuasarApp/hanoi-towers
 #    desktop: usr/share/applications/desc.desktop
-    plugs: [home, opengl, x11]
+    plugs: [unity7, home, opengl, x11]
 
 
 parts:
@@ -23,8 +23,8 @@ parts:
     project-files: [hanoi_towers.pro]
     source: source
     install: |
-     install -d $SNAPCRAFT_PART_INSTALL/opt/myapp
-     install hanoi-towers $SNAPCRAFT_PART_INSTALL/opt/myapp/hanoi-towers 
+     install -d $SNAPCRAFT_PART_INSTALL/opt/QuasarApp
+     install hanoi-towers $SNAPCRAFT_PART_INSTALL/opt/QuasarApp/hanoi-towers 
     build-packages:
       - qtdeclarative5-dev
     stage-packages:
@@ -38,7 +38,5 @@ parts:
       - qml-module-qtgraphicaleffects
       - libpng16-16
       - zlib1g
-      - libgl1
-      - libgl1-mesa-dri
     after: [qt5conf] # A wiki part
         
