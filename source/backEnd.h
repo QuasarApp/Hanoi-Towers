@@ -2,7 +2,7 @@
 #define SAVER_H
 #include <QObject>
 #include <QFile>
-#define SAVE "save"
+#define SAVE "data"
 class BackEnd: public QObject
 {
     Q_OBJECT

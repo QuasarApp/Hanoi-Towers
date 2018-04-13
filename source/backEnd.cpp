@@ -1,28 +1,32 @@
 #include "backEnd.h"
 #include <cmath>
+#include <QDataStream>
 
 BackEnd::BackEnd():
     QObject()
 {
     isFirstStart = true;
     lvl = 1;
+
     readCnfig();
 }
 
 void BackEnd::writeConfig() const{
     QFile f(SAVE);
     if(f.open(QIODevice::WriteOnly|QIODevice::Truncate)){
-        f.write((char*)(&lvl), sizeof(lvl));
-        f.write((char*)(&isFirstStart), sizeof(isFirstStart));
+        QDataStream stream(&f);
+        stream << lvl;
+        stream << isFirstStart;
         f.close();
     }
 }
 
 void BackEnd::readCnfig() {
     QFile f(SAVE);
-    if(f.open(QIODevice::ReadOnly)){
-        f.read((char*)&lvl,sizeof(lvl));
-        f.read((char*)&isFirstStart,sizeof(isFirstStart));
+    if(f.exists() && f.open(QIODevice::ReadOnly)){
+        QDataStream stream(&f);
+        stream >> lvl;
+        stream >> isFirstStart;
         f.close();
 
         if(lvl < 1 || lvl > 99) {

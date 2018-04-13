@@ -68,15 +68,16 @@ Rectangle {
                 anchors.fill: parent
             }
             anchors.left: parent.left
-            width: parent.width / 2
+            width: parent.width / 2.2
             height: parent.height
+
         }
 
         Base.BaseButton {
             id: frame
 
             text: "" + (spin.currentIndex + 1)
-            width: parent.width / 2
+            width: parent.width / 2.2
             height: parent.height
 
             onClicked: {
@@ -91,14 +92,14 @@ Rectangle {
 
 
         anchors.right: b_start.left
-        width: mouseContener.width * 2
+        width: mouseContener.width * 2.5
         height: mouseContener.height
     }
 
     Rectangle {
         id: step
         property int ste: 0
-        width: mouseContener.width
+        width: parent.width *0.05
         height: mouseContener.height
         Text {
             font.bold: true
@@ -114,7 +115,7 @@ Rectangle {
     Item {
         id: mouseContener
         property var mouseObj: null
-        width: parent.width * 0.14
+        width: parent.width * 0.13
         height: parent.height * 0.1
         x: mouse.mouseX
         y: mouse.mouseY
@@ -190,7 +191,7 @@ Rectangle {
                 backEnd.save(spin.value = spin.maximumValue = all + 1)
                 popUp.text = qsTr("You have passed the level in %0 steps and unlocked level %1" +
                                    "\n Minimum steps for this lvl: %2").
-                arg(step.ste).arg(all).arg(backEnd.getMinSteps(all));
+                arg(step.ste).arg(all + 1).arg(backEnd.getMinSteps(all));
 
                 popUp.open()
                 start(spin.value)
