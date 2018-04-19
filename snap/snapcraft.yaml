@@ -22,8 +22,6 @@ parts:
     source: source/
     organize:
         opt/hanoi-towers/bin: bin
-    prime:
-      - bin/hanoi-towers
     stage-packages:
       - libc6
     after:
@@ -82,7 +80,7 @@ parts:
       - tests
     after:
       - gcc7
-    prime: [-./*]
+
 
   gcc7:
     plugin: nil
