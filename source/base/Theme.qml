@@ -1,5 +1,5 @@
-import QtQuick 2.0
-import QtQuick.Window 2.0
+import QtQuick 2.9
+import QtQuick.Window 2.1
 import "utils.js" as Utils
 
 Item {
