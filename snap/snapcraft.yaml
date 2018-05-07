@@ -1,4 +1,4 @@
-name: hanoi-towers
+name: hanoi-towers-new
 version: '1.4' 
 summary: Hanoi Towers Game
 description: |
@@ -11,7 +11,7 @@ icon: source/res/icon.png
 
 apps:
   hanoi-towers:
-    command: bin/hanoi-towers
+    command: qt5-launch hanoi-towers
 #    desktop: usr/share/applications/desc.desktop
     plugs: [desktop, unity7, home, opengl, x11, wayland]
 
@@ -20,83 +20,18 @@ parts:
   hanoi-towers:
     plugin: qmake
     source: source/
-    organize:
-        opt/hanoi-towers/bin: bin
+    build-packages:
+      - qtbase5-dev
+      - qtdeclarative5-dev
     stage-packages:
-      - libc6
-    after:
-      - qt
+      # Here for the plugins-- they're not linked in automatically.
+      - libqt5gui5
+      - libqt5qml5
+      - libqt5quick5
+      - qml-module-qtquick2
+      - qml-module-qtquick-dialogs
+      - qml-module-qtquick-controls
+      - qml-module-qtgraphicaleffects
+    after: [qt5conf] # A wiki part
 
-  qt:
-    plugin: qtbuilder
-    qt-version: 5.10.1
-    qt-source-git: https://code.qt.io/qt/qt5.git
-    qt-submodules: ['qtbase', 'qtimageformats', 'qtsvg', 'qtquickcontrols', 'qtquickcontrols2', 'qtdeclarative']
-    environment:
-      - CC: gcc-7
-      - CXX: g++-7
-      - QMAKE_CC: gcc-7
-      - QMAKE_CXX: g++-7
-    build-packages:
-      - libasound2-dev
-      - libdbusmenu-glib-dev
-      - libffi-dev
-      - liblzma-dev
-      - libpulse-dev
-      - libssl-dev
-      - libx11-xcb-dev
-      - libxcb-icccm4-dev
-      - libxcb-image0-dev
-      - libxcb-keysyms1-dev
-      - libxcb-randr0-dev
-      - libxcb-render-util0-dev
-      - libxcb-sync-dev
-      - libxcb-util0-dev
-      - libxcb-xfixes0-dev
-      - libxcb1-dev
-      - libxrender-dev
-    configflags:
-      - -prefix
-      - $SNAPCRAFT_STAGE
-      - -release
-      - -force-debug-info
-      - -opensource
-      - -confirm-license
-      - -qt-zlib
-      - -qt-libpng
-      - -qt-libjpeg
-      - -qt-freetype
-      - -qt-harfbuzz
-      - -qt-pcre
-      - -qt-xcb
-      - -qt-xkbcommon-x11
-      - -no-opengl
-      - -static
-      - -dbus-runtime
-      - -openssl-linked
-      - -nomake
-      - examples
-      - -nomake
-      - tests
-    after:
-      - gcc7
-
-
-  gcc7:
-    plugin: nil
-    build-packages:
-      - libmpc-dev
-      - libcloog-ppl-dev
-    prepare: |
-      echo "deb http://ppa.launchpad.net/ubuntu-toolchain-r/test/ubuntu xenial main" | \
-            sudo tee /etc/apt/sources.list.d/ubuntu-toolchain-r.list
-      sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 60C317803A41BA51845E371A1E9377A2BA9EF27F
-      sudo apt-get update \
-        -o Dir::Etc::sourcelist="sources.list.d/ubuntu-toolchain-r.list" \
-        -o Dir::Etc::sourceparts="-" -o APT::Get::List-Cleanup="0"
-    install: |
-      sudo apt install gcc-7 g++-7 -o Debug::pkgProblemResolver=yes --no-install-recommends -y
-      sudo apt-mark auto gcc-7 g++-7
-      sudo rm -f /etc/apt/sources.list.d/ubuntu-toolchain-r.list
-    prime: [-./*]
 
