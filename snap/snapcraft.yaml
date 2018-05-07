@@ -1,4 +1,4 @@
-name: hanoi-towers
+name: hanoi-towers-new
 version: '1.4' 
 summary: Hanoi Towers Game
 description: |
@@ -11,32 +11,27 @@ icon: source/res/icon.png
 
 apps:
   hanoi-towers:
-    command: qt5-launch $SNAP/opt/QuasarApp/hanoi-towers
+    command: qt5-launch hanoi-towers
 #    desktop: usr/share/applications/desc.desktop
-    plugs: [unity7, home, opengl, x11]
+    plugs: [desktop, unity7, home, opengl, x11, wayland]
 
 
 parts:
   hanoi-towers:
     plugin: qmake
-    qt-version: qt5
-    project-files: [hanoi_towers.pro]
-    source: source
-    install: |
-     install -d $SNAPCRAFT_PART_INSTALL/opt/QuasarApp
-     install hanoi-towers $SNAPCRAFT_PART_INSTALL/opt/QuasarApp/hanoi-towers 
+    source: source/
     build-packages:
+      - qtbase5-dev
       - qtdeclarative5-dev
     stage-packages:
       # Here for the plugins-- they're not linked in automatically.
       - libqt5gui5
-      - libqt5qml5 
+      - libqt5qml5
       - libqt5quick5
-      - qml-module-qtquick2 
-      - qml-module-qtquick-dialogs 
-      - qml-module-qtquick-controls 
+      - qml-module-qtquick2
+      - qml-module-qtquick-dialogs
+      - qml-module-qtquick-controls
       - qml-module-qtgraphicaleffects
-      - libpng16-16
-      - zlib1g
     after: [qt5conf] # A wiki part
-        
+
+

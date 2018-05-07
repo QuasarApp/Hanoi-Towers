@@ -44,3 +44,9 @@ Makefile*
 # QtCtreator CMake
 CMakeLists.txt.user*
 
+
+snap/plugins/__pycache__/
+
+*.snap
+
+\.buildconfig
