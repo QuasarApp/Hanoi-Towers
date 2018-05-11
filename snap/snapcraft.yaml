@@ -1,5 +1,5 @@
 name: hanoi-tower
-version: '1.4.testBuild6' 
+version: '1.4.testBuild7' 
 summary: Hanoi Towers Game
 description: |
   The Hanoi Tower is one of the most popular puzzles of the 19th century. Three bars are given, on one of which eight rings are strung, the rings differ in size and lie smaller on larger ones. The problem is to transfer the pyramid from eight rings for the least number of moves to another rod. At a time, only one ring is allowed to carry, and you can not put a larger ring on less.
@@ -22,7 +22,6 @@ parts:
     plugin: qmake
     source: source/
     build-packages:
-      - qtbase5-dev
       - qtdeclarative5-dev
     stage-packages:
       # Here for the plugins-- they're not linked in automatically.
@@ -33,6 +32,7 @@ parts:
       - qml-module-qtquick-dialogs
       - qml-module-qtquick-controls2
       - qml-module-qtgraphicaleffects
+      - qml-module-qtquick-extras
 
     after: [qt5conf] # A wiki part
 
