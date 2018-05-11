@@ -22,8 +22,6 @@ parts:
     source: source/
     organize:
         opt/hanoi-towers/bin: bin
-    stage-packages:
-      - libc6
     after:
       - qt
 

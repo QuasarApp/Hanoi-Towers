@@ -202,4 +202,3 @@ class QtBuilderPlugin(make.MakePlugin):
 
         self.run(['./configure'] + self.options.configflags, env=env)
         super().build()
-
