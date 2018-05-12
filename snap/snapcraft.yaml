@@ -29,7 +29,7 @@ parts:
       - libxdmcp-dev
       - libxext-dev
       - libxi-dev
-      - libxcb-dev
+      - libxcb1-dev
     organize:
         opt/hanoi-towers/bin: bin
     after:
