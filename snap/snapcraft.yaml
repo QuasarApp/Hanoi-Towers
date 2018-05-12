@@ -22,13 +22,13 @@ parts:
     source: source/
     stage-packages:
       - libx11-xcb-dev
-      - libICE-dev
-      - libSM-dev
-      - libX11-dev
-      - libXau-dev
-      - libXdmcp-dev
-      - libXext-dev
-      - libXi-dev
+      - libice-dev
+      - libsm-dev
+      - libx11-dev
+      - libxau-dev
+      - libxdmcp-dev
+      - libxext-dev
+      - libxi-dev
       - libxcb-dev
     organize:
         opt/hanoi-towers/bin: bin
