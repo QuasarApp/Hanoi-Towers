@@ -24,5 +24,7 @@
     <qresource prefix="/languages">
         <file alias="ru">languages/ru.qm</file>
         <file alias="en">languages/en.qm</file>
+        <file alias="ja">languages/ja.qm</file>
+        <file alias="tr">languages/tr.qm</file>
     </qresource>
 </RCC>

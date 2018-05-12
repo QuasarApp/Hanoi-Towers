@@ -68,19 +68,19 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../game.qml" line="191"/>
+        <location filename="../game.qml" line="192"/>
         <source>You have passed the level in %0 steps and unlocked level %1
  Minimum steps for this lvl: %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../game.qml" line="198"/>
+        <location filename="../game.qml" line="199"/>
         <source>You have passed the level in %0 steps.
 Minimum steps for this lvl: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../game.qml" line="300"/>
+        <location filename="../game.qml" line="301"/>
         <source>Ok</source>
         <translation type="unfinished"></translation>
     </message>
