@@ -37,9 +37,9 @@ parts:
 
   qt:
     plugin: qtbuilder
-    qt-version: 5.9.5
+    qt-version: 5.9.4
     qt-source-git: https://code.qt.io/qt/qt5.git
-    qt-submodules: ['qtbase', 'qtimageformats', 'qtsvg', 'qtquickcontrols', 'qtquickcontrols2', 'qtdeclarative']
+    qt-submodules: ['qtbase', 'qtimageformats', 'qtsvg', 'qtdeclarative', 'qtquickcontrols', 'qtquickcontrols2', 'qtgraphicaleffects', 'qttranslations']
 
     build-packages:
       - libasound2-dev
