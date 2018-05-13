@@ -49,6 +49,8 @@ HEADERS += \
 
 TRANSLATIONS += \
     languages/ru.ts \
+    languages/ja.ts \
+    languages/tr.ts \
     languages/en.ts
 
 

@@ -31,7 +31,7 @@ Item {
         width: parent.width * 0.8
         height: parent.height * 0.6
         color: theme.buttonsTextColor
-        font.pixelSize: (ab.width < ab.height) ? ab.width / 16 : ab.height / 16
+        font.pixelSize: (ab.width < ab.height) ? ab.width / 25 : ab.height / 25
         font.italic: true
         wrapMode: Text.Wrap
         text: qsTr("Product of QuasarApp
