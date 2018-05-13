@@ -13,6 +13,7 @@
         <file>base/utils.js</file>
         <file>PopUp.qml</file>
         <file>Help.qml</file>
+        <file alias="ubuntu">res/ubuntu.ttf</file>
     </qresource>
     <qresource prefix="/textures">
         <file>res/wood.png</file>
