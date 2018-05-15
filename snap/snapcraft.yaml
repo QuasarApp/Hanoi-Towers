@@ -1,5 +1,5 @@
 name: hanoi-tower
-version: '1.4.testBuildStatic2' 
+version: '1.4.testBuildStatic3' 
 summary: Hanoi Towers Game
 description: |
   The Hanoi Tower is one of the most popular puzzles of the 19th century. Three bars are given, on one of which eight rings are strung, the rings differ in size and lie smaller on larger ones. The problem is to transfer the pyramid from eight rings for the least number of moves to another rod. At a time, only one ring is allowed to carry, and you can not put a larger ring on less.
@@ -10,14 +10,14 @@ confinement: strict # use 'strict' once you have the right plugs and slots
 icon: source/res/icon.png
 
 apps:
-  hanoi-towers:
+  hanoi-tower:
     command: bin/hanoi-towers
 #    desktop: usr/share/applications/desc.desktop
     plugs: [desktop, unity7, home, opengl, x11, wayland]
 
 
 parts:
-  hanoi-towers:
+  hanoi-tower:
     plugin: qmake
     source: source/
     stage-packages:
@@ -31,7 +31,7 @@ parts:
       - libxi-dev
       - libxcb1-dev
     organize:
-        opt/hanoi-towers/bin: bin
+        opt/hanoi-tower/bin: bin
     after:
       - qt
 
@@ -39,7 +39,7 @@ parts:
     plugin: qtbuilder
     qt-version: 5.9.5
     qt-source-git: https://code.qt.io/qt/qt5.git
-    qt-submodules: ['qtbase', 'qtimageformats', 'qtsvg', 'qtquickcontrols', 'qtquickcontrols2', 'qtdeclarative']
+    qt-submodules: ['qtbase', 'qtimageformats', 'qtgraphicaleffects', 'qtsvg', 'qtquickcontrols', 'qtquickcontrols2', 'qtdeclarative', 'qttranslations']
 
     build-packages:
       - libasound2-dev
@@ -61,7 +61,7 @@ parts:
       - libxrender-dev
     configflags:
       - -prefix
-      - $SNAPCRAFT_STAGE
+      - /usr
       - -release
       - -force-debug-info
       - -opensource
