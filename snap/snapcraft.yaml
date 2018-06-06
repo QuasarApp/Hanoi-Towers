@@ -6,7 +6,6 @@ description: |
   Three bars are given, on one of which eight rings are strung, the rings differ in size and lie smaller on larger ones.|
   The problem is to transfer the pyramid from eight rings for the least number of moves to another rod.|
   At a time, only one ring is allowed to carry, and you can not put a larger ring on less.|
-  All you need is to select a folder with a compiled libraries of qt and a folder with your project.
 
 grade: stable # must be 'stable' to release into candidate/stable channels
 confinement: strict # use 'strict' once you have the right plugs and slots
