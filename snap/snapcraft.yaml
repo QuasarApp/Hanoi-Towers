@@ -20,16 +20,6 @@ parts:
   hanoi-tower:
     plugin: qmake
     source: source/
-    stage-packages:
-      - libx11-xcb-dev
-      - libice-dev
-      - libsm-dev
-      - libx11-dev
-      - libxau-dev
-      - libxdmcp-dev
-      - libxext-dev
-      - libxi-dev
-      - libxcb1-dev
     organize:
         opt/hanoi-tower/bin: bin
     after:
@@ -39,7 +29,7 @@ parts:
     plugin: qtbuilder
     qt-version: 5.9.5
     qt-source-git: https://code.qt.io/qt/qt5.git
-    qt-submodules: ['qtbase', 'qtdeclarative', 'qtsvg', 'qtimageformats', 'qtgraphicaleffects', 'qtquickcontrols', 'qtquickcontrols2', 'qttranslations']
+    qt-submodules: ['qtbase']
 
     build-packages:
       - libasound2-dev
@@ -60,8 +50,6 @@ parts:
       - libxcb1-dev
       - libxrender-dev
     configflags:
-      - -prefix
-      - $SNAPCRAFT_STAGE
       - -release
       - -force-debug-info
       - -opensource
@@ -75,7 +63,6 @@ parts:
       - -qt-xcb
       - -qt-xkbcommon-x11
       - -no-opengl
-      - -static
       - -dbus-runtime
       - -openssl-linked
       - -nomake

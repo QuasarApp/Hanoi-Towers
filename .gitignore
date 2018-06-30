@@ -11,7 +11,9 @@
 *.dylib
 
 # Qt-es
-
+/Build*
+*.stash
+/Release*
 /parts/*
 /prime/*
 /snap/.snapcraft/*
