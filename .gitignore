@@ -16,7 +16,9 @@
 /prime/*
 /snap/.snapcraft/*
 /stage/*
-
+/Build-*
+/Release-*
+*.stash
 /source/android/*
 !/source/android/AndroidManifest.xml
 /.qmake.cache
