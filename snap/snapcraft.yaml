@@ -14,7 +14,7 @@ apps:
   hanoi-tower:
     command: qt5-launch opt/hanoi-towers/bin/hanoi-towers
 #    desktop: usr/share/applications/desc.desktop
-    plugs: [desktop, home, opengl, x11, wayland, dbus]
+    plugs: [desktop, home, opengl, x11, wayland, unity7]
 
 
 parts:
