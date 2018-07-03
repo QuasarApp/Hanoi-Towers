@@ -10,7 +10,7 @@ ApplicationWindow {
 
     Loader {
         id: core
-        source: "game.qml"
+        source: "menu/MainMenu.qml"
         anchors.fill: parent
         onLoaded: {
             item.launch(-1);

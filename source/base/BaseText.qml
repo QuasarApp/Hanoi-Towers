@@ -7,5 +7,5 @@ Text{
     }
     verticalAlignment: Text.AlignVCenter
 
-    font.pixelSize: 0
+    font.pixelSize: theme.fontSize
 }

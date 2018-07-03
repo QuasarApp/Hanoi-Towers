@@ -1,10 +1,23 @@
 #include <QApplication>
+#include <QFont>
+#include <QFontDatabase>
 #include <iostream>
 //#include <QScreen>
 #include <QQmlApplicationEngine>
 #include <QQmlComponent>
 #include "backEnd.h"
 #include <QTranslator>
+
+void setFont(const QApplication& app){
+
+    QString fontPath = "://ubuntu";
+    int fontId = QFontDatabase::addApplicationFont(fontPath);
+    if (fontId != -1)
+    {
+        QFont font(QFontDatabase::applicationFontFamilies(fontId).at(0));
+        app.setFont(font);
+    }
+}
 
 bool initLocale(const QString &locale, QApplication& app, QTranslator &translator){
 
@@ -25,6 +38,8 @@ bool initLocale(const QString &locale, QApplication& app, QTranslator &translato
 int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
+    setFont(app);
+
     QTranslator translator;
 
     QString locale = "";

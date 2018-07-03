@@ -5,10 +5,15 @@
 BackEnd::BackEnd():
     QObject()
 {
+    reset();
+    readCnfig();
+}
+
+void BackEnd::reset(){
     isFirstStart = true;
     lvl = 1;
-
-    readCnfig();
+    _animation = true;
+    _randomColor = false;
 }
 
 void BackEnd::writeConfig() const{
@@ -17,8 +22,30 @@ void BackEnd::writeConfig() const{
         QDataStream stream(&f);
         stream << lvl;
         stream << isFirstStart;
+        stream << _animation;
+        stream << _randomColor;
         f.close();
     }
+}
+
+bool BackEnd::randomColor() const {
+    return _randomColor;
+}
+
+void BackEnd::setRandomColor(bool random) {
+    _randomColor = random;
+    writeConfig();
+    emit randomColorChanged();
+}
+
+bool BackEnd::animation() const{
+    return _animation;
+}
+
+void BackEnd::setAnimation(bool name) {
+    _animation = name;
+    writeConfig();
+    emit animationChanged();
 }
 
 void BackEnd::readCnfig() {
@@ -27,13 +54,19 @@ void BackEnd::readCnfig() {
         QDataStream stream(&f);
         stream >> lvl;
         stream >> isFirstStart;
+        stream >> _animation;
+        stream >> _randomColor;
+
+        if (f.size() <= 3) {
+            reset();
+        }
         f.close();
 
         if(lvl < 1 || lvl > 99) {
             lvl = 1;
         }
 
-        emit isFirstChanged();
+        emit firstChanged();
     }
 }
 
@@ -52,7 +85,7 @@ bool BackEnd::isFirst()const{
 
 void BackEnd::setShowHelp(bool state){
     isFirstStart = state;
-    emit isFirstChanged();
+    emit firstChanged();
     writeConfig();
 }
 

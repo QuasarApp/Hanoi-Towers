@@ -13,6 +13,10 @@
         <file>base/utils.js</file>
         <file>PopUp.qml</file>
         <file>Help.qml</file>
+        <file alias="ubuntu">res/ubuntu.ttf</file>
+        <file>menu/MainMenu.qml</file>
+        <file>menu/Header.qml</file>
+        <file>menu/Config.qml</file>
     </qresource>
     <qresource prefix="/textures">
         <file>res/wood.png</file>
@@ -20,6 +24,8 @@
     </qresource>
     <qresource prefix="/img">
         <file alias="Help">res/help.jpg</file>
+        <file alias="random">res/randomColor.png</file>
+        <file alias="standart">res/standartColor.png</file>
     </qresource>
     <qresource prefix="/languages">
         <file alias="ru">languages/ru.qm</file>
