@@ -4,6 +4,7 @@ import "utils.js" as Utils
 
 Item {
     readonly property int fontSize: Utils.baseFontSize(Screen.pixelDensity)
+    readonly property int headerSize: Utils.headerFontSize(Screen.pixelDensity);
     readonly property int buttonsWidth: Utils.dp(Screen.pixelDensity, 80)
     readonly property int buttonsHeight: Utils.dp(Screen.pixelDensity, 40)
     readonly property int popUpWidth: Utils.dp(Screen.pixelDensity, 150)

@@ -1,5 +1,6 @@
 import QtQuick 2.9
 import QtGraphicalEffects 1.0
+import BackEnd 1.0
 
 Rectangle{
     property int mass: 0;
@@ -13,6 +14,10 @@ Rectangle{
     y:parent.height - (pushofnumber*height * 1.01) - 10.5;
     radius: 10;
 
+    BackEnd {
+        id: backEnd
+    }
+
     Image {
         id: texture;
         source: "/textures/res/Plate.png"
@@ -20,10 +25,19 @@ Rectangle{
     }
 
     BrightnessContrast {
-        anchors.fill: texture
-        source: texture
+        anchors.fill: (backEnd.randomColor)? "": texture
+        source: (backEnd.randomColor)? "": texture
         brightness: (value - mass) / value
         contrast: (value - mass) / value
+    }
+
+    Colorize {
+        anchors.fill: (!backEnd.randomColor)? "": texture
+        source: (!backEnd.randomColor)? "": texture
+        hue: (value - mass) / value
+
+        saturation: 0.8
+        lightness: 0.5
     }
 
     Behavior on x{
