@@ -43,14 +43,14 @@ Rectangle{
     Behavior on x{
         NumberAnimation
         {
-            easing.type: Easing.OutElastic
+            easing.type: (backEnd.animation)? Easing.OutElastic : Easing.OutExpo
             duration: 1000
         }
     }
     Behavior on y{
         NumberAnimation
         {
-            easing.type: Easing.OutElastic
+            easing.type: (backEnd.animation)? Easing.OutElastic : Easing.OutExpo
             duration: 1000
         }
     }

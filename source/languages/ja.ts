@@ -10,6 +10,47 @@
     </message>
 </context>
 <context>
+    <name>Config</name>
+    <message>
+        <location filename="../menu/Config.qml" line="27"/>
+        <source>Settings</source>
+        <translation>設定</translation>
+    </message>
+    <message>
+        <location filename="../menu/Config.qml" line="34"/>
+        <source>Return to main menu</source>
+        <translation>メインメニューに戻る</translation>
+    </message>
+    <message>
+        <location filename="../menu/Config.qml" line="68"/>
+        <source>Standart color</source>
+        <translation>クラシックバックライト</translation>
+    </message>
+    <message>
+        <location filename="../menu/Config.qml" line="78"/>
+        <source>Random color</source>
+        <translation>多色バックライト</translation>
+    </message>
+    <message>
+        <location filename="../menu/Config.qml" line="87"/>
+        <source>Animation</source>
+        <translation>アニメーション</translation>
+    </message>
+</context>
+<context>
+    <name>Header</name>
+    <message>
+        <location filename="../menu/Header.qml" line="6"/>
+        <source></source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../menu/Header.qml" line="15"/>
+        <source>Main menu</source>
+        <translation>メインメニュー</translation>
+    </message>
+</context>
+<context>
     <name>Help</name>
     <message>
         <location filename="../Help.qml" line="49"/>
@@ -29,6 +70,42 @@
         <location filename="../Help.qml" line="90"/>
         <source>Ok</source>
         <translation></translation>
+    </message>
+</context>
+<context>
+    <name>MainMenu</name>
+    <message>
+        <location filename="../menu/MainMenu.qml" line="21"/>
+        <source>Hanoi Towers</source>
+        <translation>ハノイタワーズ</translation>
+    </message>
+    <message>
+        <location filename="../menu/MainMenu.qml" line="42"/>
+        <source>start</source>
+        <translation>スタート</translation>
+    </message>
+    <message>
+        <location filename="../menu/MainMenu.qml" line="55"/>
+        <source>About</source>
+        <translation>約</translation>
+    </message>
+    <message>
+        <location filename="../menu/MainMenu.qml" line="68"/>
+        <source>Config</source>
+        <translation>設定</translation>
+    </message>
+    <message>
+        <location filename="../menu/MainMenu.qml" line="81"/>
+        <source>exit</source>
+        <translation>出口</translation>
+    </message>
+</context>
+<context>
+    <name>SwitchLvl</name>
+    <message>
+        <location filename="../SwitchLvl.qml" line="62"/>
+        <source>Start</source>
+        <translation>スタート</translation>
     </message>
 </context>
 <context>
@@ -57,43 +134,50 @@
 <context>
     <name>game</name>
     <message>
-        <location filename="../game.qml" line="26"/>
         <source>Start</source>
-        <translation>スタート</translation>
+        <translation type="vanished">スタート</translation>
     </message>
     <message>
-        <location filename="../game.qml" line="37"/>
         <source>Exit</source>
-        <translation>出口</translation>
+        <translation type="vanished">出口</translation>
     </message>
     <message>
-        <location filename="../game.qml" line="48"/>
         <source>About</source>
-        <translation>約</translation>
+        <translation type="vanished">約</translation>
     </message>
     <message>
-        <location filename="../game.qml" line="67"/>
+        <location filename="../game.qml" line="61"/>
+        <source>lvl </source>
+        <translation>レベル </translation>
+    </message>
+    <message>
+        <location filename="../game.qml" line="82"/>
+        <source>step </source>
+        <translation>ステップ </translation>
+    </message>
+    <message>
+        <location filename="../game.qml" line="93"/>
         <source>Tower height:</source>
         <translation>タワーの高さ：</translation>
     </message>
     <message>
-        <location filename="../game.qml" line="192"/>
+        <location filename="../game.qml" line="98"/>
+        <source>Return to main menu</source>
+        <translation>メインメニューに戻る</translation>
+    </message>
+    <message>
+        <location filename="../game.qml" line="162"/>
         <source>You have passed the level in %0 steps and unlocked level %1
  Minimum steps for this lvl: %2</source>
         <translation>あなたは %0 ステップでレベルを通過し、レベル %1 をロック解除しました
   このlvlの最小手順：%2</translation>
     </message>
     <message>
-        <location filename="../game.qml" line="199"/>
+        <location filename="../game.qml" line="169"/>
         <source>You have passed the level in %0 steps.
 Minimum steps for this lvl: %1</source>
         <translation>%0ステップでレベルを通過しました。
 このlvlの最小手順：%1</translation>
-    </message>
-    <message>
-        <location filename="../game.qml" line="301"/>
-        <source>Ok</source>
-        <translation></translation>
     </message>
 </context>
 <context>
