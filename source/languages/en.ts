@@ -10,6 +10,47 @@
     </message>
 </context>
 <context>
+    <name>Config</name>
+    <message>
+        <location filename="../menu/Config.qml" line="27"/>
+        <source>Settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../menu/Config.qml" line="34"/>
+        <source>Return to main menu</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../menu/Config.qml" line="68"/>
+        <source>Standart color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../menu/Config.qml" line="78"/>
+        <source>Random color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../menu/Config.qml" line="87"/>
+        <source>Animation</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Header</name>
+    <message>
+        <location filename="../menu/Header.qml" line="6"/>
+        <source></source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../menu/Header.qml" line="15"/>
+        <source>Main menu</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>Help</name>
     <message>
         <location filename="../Help.qml" line="49"/>
@@ -24,6 +65,42 @@
     <message>
         <location filename="../Help.qml" line="90"/>
         <source>Ok</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>MainMenu</name>
+    <message>
+        <location filename="../menu/MainMenu.qml" line="21"/>
+        <source>Hanoi Towers</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../menu/MainMenu.qml" line="42"/>
+        <source>start</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../menu/MainMenu.qml" line="55"/>
+        <source>About</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../menu/MainMenu.qml" line="68"/>
+        <source>Config</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../menu/MainMenu.qml" line="81"/>
+        <source>exit</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>SwitchLvl</name>
+    <message>
+        <location filename="../SwitchLvl.qml" line="62"/>
+        <source>Start</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -48,40 +125,35 @@
 <context>
     <name>game</name>
     <message>
-        <location filename="../game.qml" line="26"/>
-        <source>Start</source>
+        <location filename="../game.qml" line="61"/>
+        <source>lvl </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../game.qml" line="37"/>
-        <source>Exit</source>
+        <location filename="../game.qml" line="82"/>
+        <source>step </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../game.qml" line="48"/>
-        <source>About</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../game.qml" line="67"/>
+        <location filename="../game.qml" line="93"/>
         <source>Tower height:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../game.qml" line="192"/>
+        <location filename="../game.qml" line="98"/>
+        <source>Return to main menu</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../game.qml" line="162"/>
         <source>You have passed the level in %0 steps and unlocked level %1
  Minimum steps for this lvl: %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../game.qml" line="199"/>
+        <location filename="../game.qml" line="169"/>
         <source>You have passed the level in %0 steps.
 Minimum steps for this lvl: %1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../game.qml" line="301"/>
-        <source>Ok</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

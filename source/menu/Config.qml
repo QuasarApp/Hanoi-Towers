@@ -29,6 +29,17 @@ Page {
                 verticalAlignment: Text.AlignVCenter
                 font.pixelSize: theme.headerSize;
             }
+
+            Base.BaseButton {
+                text: qsTr("Return to main menu");
+                Layout.alignment: Qt.AlignRight
+                Layout.rightMargin: theme.pading
+
+                onClicked: {
+                    menuPage.parent.source = "MainMenu.qml"
+                }
+            }
+
             anchors.fill: parent
         }
 
@@ -49,6 +60,7 @@ Page {
             ColumnLayout {
 
                 id: colors
+                width: parent.width * 0.5
 
                 RadioButton {
                     id: r1
@@ -70,26 +82,15 @@ Page {
                     }
                 }
 
-                RowLayout{
+                CheckBox{
 
-                    Base.BaseText{
-                        text: qsTr("Move animation:");
+                    text: qsTr("Animation")
+                    checked: backEnd.animation
+                    onCheckedChanged: {
+                        backEnd.animation = checked;
                     }
-
-                    StatusIndicator {
-                        anchors.centerIn: parent
-                        active: backEnd.animation;
-                        color: "#800af587"
-
-                        MouseArea {
-                            anchors.fill:  parent
-                            onClicked:{
-                                backEnd.animation = !parent.active;
-                            }
-                        }
-                    }
-                    Layout.alignment: Qt.AlignCenter
                 }
+
                 Layout.alignment: Qt.AlignLeft
             }
             anchors.fill: parent

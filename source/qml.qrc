@@ -17,6 +17,7 @@
         <file>menu/MainMenu.qml</file>
         <file>menu/Header.qml</file>
         <file>menu/Config.qml</file>
+        <file>SwitchLvl.qml</file>
     </qresource>
     <qresource prefix="/textures">
         <file>res/wood.png</file>
