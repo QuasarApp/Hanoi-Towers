@@ -63,6 +63,8 @@ Rectangle {
             tumbler.visible = false;
             start(spin.value);
         }
+        height: width * 0.6
+
         anchors.right: parent.right
         anchors.left: parent.left
         anchors.bottom: parent.bottom

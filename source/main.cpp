@@ -37,6 +37,8 @@ bool initLocale(const QString &locale, QApplication& app, QTranslator &translato
 
 int main(int argc, char *argv[])
 {
+    QGuiApplication::setAttribute(Qt::AA_EnableHighDpiScaling); // <--
+
     QApplication app(argc, argv);
     setFont(app);
 

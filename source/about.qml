@@ -44,7 +44,7 @@ Item {
     MouseArea {
         anchors.fill: parent
         onClicked: {
-            ab.parent.source = "game.qml"
+            ab.parent.source = "menu/MainMenu.qml"
         }
     }
 }

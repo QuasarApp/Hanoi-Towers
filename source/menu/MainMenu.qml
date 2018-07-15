@@ -30,6 +30,33 @@ Page {
 
     contentItem: Item {
         id: content;
+
+//        Image {
+//            id: backleft
+//            source: "/img/standart"
+//            width: parent.width * 0.5
+//            height: width
+//            fillMode: Image.PreserveAspectFit
+//            anchors.left: parent.left
+//            anchors.bottom: parent.bottom
+//            anchors.bottomMargin: width * -0.1
+//            anchors.leftMargin: height * -0.5
+
+//        }
+
+//        Image {
+//            id: backright
+//            source: "/img/standart"
+//            width: parent.width * 0.5
+//            height: width
+//            fillMode: Image.PreserveAspectFit
+//            anchors.right: parent.right
+//            anchors.bottom: parent.bottom
+//            anchors.bottomMargin: width * -0.1
+//            anchors.rightMargin: height * -0.5
+
+//        }
+
         ColumnLayout {
 
 

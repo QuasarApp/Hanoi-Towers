@@ -18,6 +18,8 @@
         <file>menu/Header.qml</file>
         <file>menu/Config.qml</file>
         <file>SwitchLvl.qml</file>
+        <file>base/BaseRadioButton.qml</file>
+        <file>base/BoseCheckBox.qml</file>
     </qresource>
     <qresource prefix="/textures">
         <file>res/wood.png</file>
