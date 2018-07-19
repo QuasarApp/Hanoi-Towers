@@ -37,7 +37,7 @@ You can download the latest version of the game [here](https://github.com/EndrII
 
 Or download from official services
   * [Android](https://play.google.com/store/apps/details?id=df.mobily.hanoi_towers) 
-  * [Ubuntu](https://uappexplorer.com/snap/ubuntu/hanoi-tower)
+  * [Ubuntu](https://snapcraft.io/hanoi-tower)
   * Windows - this application has not supported windows store
 
 ## Donate
