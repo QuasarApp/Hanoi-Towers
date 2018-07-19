@@ -12,12 +12,12 @@ supported platform:
 2. Android 
 3. Windows 
 
-## Build for Linux (snap)
+## Build for Linux
 
-  -  sudo apt install git snapcraft 
-  -  git clone https://github.com/EndrII/Hanoi-Towers.git
-  -  cd Hanoi-Towers
-  -  snapcraft
+* donwload [qt creator](https://www.qt.io/download-thank-you?os=windows)
+* install qt 5.9.x or later
+* build release version
+* use [qt deploy](https://quasarapp.github.io/QtDeployer)
 
 
 ## Build Windows 
@@ -37,7 +37,7 @@ You can download the latest version of the game [here](https://github.com/EndrII
 
 Or download from official services
   * [Android](https://play.google.com/store/apps/details?id=df.mobily.hanoi_towers) 
-  * [Ubuntu](https://uappexplorer.com/snap/ubuntu/hanoi-towers)
+  * [Ubuntu](https://uappexplorer.com/snap/ubuntu/hanoi-tower)
   * Windows - this application has not supported windows store
 
 ## Donate
