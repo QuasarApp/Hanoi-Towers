@@ -1,0 +1,59 @@
+name: hanoi-tower
+version: '1.5.1snap'
+summary: Deploy Qt Project
+description: |
+  The Hanoi Tower is one of the most popular puzzles of the 19th century. |
+  Three bars are given, on one of which eight rings are strung, the rings differ in size and lie smaller on larger ones.|
+  The problem is to transfer the pyramid from eight rings for the least number of moves to another rod.|
+  At a time, only one ring is allowed to carry, and you can not put a larger ring on less.|
+
+grade: stable # must be 'stable' to release into candidate/stable channels
+confinement: strict # use 'strict' once you have the right plugs and slots
+base: core18
+icon: data/icons/icon.png
+
+apps:
+  hanoi-tower:
+    command: desktop-launch $SNAP/AppRun.sh
+
+    plugs: [desktop, unity7, home, opengl, x11, wayland, gsettings]
+
+
+parts:
+  hanoi-tower:
+    plugin: nil
+    stage-packages:
+      - libasn1-8-heimdal
+      - libgssapi3-heimdal
+      - libldap-2.4-2
+    after: [libsgl, desktop-glib-only, qtlib]
+    
+    
+  qtlib:
+    plugin: dump
+    source: data/
+      
+  libsgl:
+    plugin: nil
+    stage-packages:
+      # Here for the plugins-- they're not linked in automatically.
+      - libx11-xcb1
+      - libglu1-mesa
+      - libxrender1
+      - libxi6
+      - libegl1-mesa
+      - fontconfig
+      - libgl1-mesa-dri
+      - libxkbcommon0
+      - ttf-ubuntu-font-family
+      - dmz-cursor-theme
+      - adwaita-icon-theme
+      - gnome-themes-standard
+      - shared-mime-info
+      - libgdk-pixbuf2.0-0
+      - libgtk2.0-0
+      - xdg-user-dirs
+      - libxrandr2
+      - libwayland-cursor0
+      - libwayland-egl1
+      - libpq5

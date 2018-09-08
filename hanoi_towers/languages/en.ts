@@ -1,40 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="tr_TR">
+<TS version="2.1">
 <context>
     <name>BaseButton</name>
     <message>
         <location filename="../base/BaseButton.qml" line="8"/>
         <source>ok</source>
-        <translation>ok</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>Config</name>
     <message>
-        <location filename="../menu/Config.qml" line="27"/>
+        <location filename="../menu/Config.qml" line="28"/>
         <source>Settings</source>
-        <translation>ayarlar</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../menu/Config.qml" line="34"/>
+        <location filename="../menu/Config.qml" line="35"/>
         <source>Return to main menu</source>
-        <translation>Ana menüye dön</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../menu/Config.qml" line="68"/>
+        <location filename="../menu/Config.qml" line="76"/>
         <source>Standart color</source>
-        <translation>Klasik arka ışık</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../menu/Config.qml" line="78"/>
+        <location filename="../menu/Config.qml" line="88"/>
         <source>Random color</source>
-        <translation>Çok renkli arka ışık</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../menu/Config.qml" line="87"/>
+        <location filename="../menu/Config.qml" line="99"/>
         <source>Animation</source>
-        <translation>animasyon</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -47,7 +47,7 @@
     <message>
         <location filename="../menu/Header.qml" line="15"/>
         <source>Main menu</source>
-        <translation>Ana menü</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -55,17 +55,17 @@
     <message>
         <location filename="../Help.qml" line="49"/>
         <source>Your task is to transfer discs of different sizesfrom the left tower to any other free space.You can only transfer the top drive of the tower.You can not transfer several disks at once and put larger disks on small disks.</source>
-        <translation>Göreviniz, sol kuleden farklı boyuttaki diskleri başka bir boş alana aktarmaktır. Kulenin sadece üst sürücüsünü aktarabilirsiniz. Birkaç diski aynı anda transfer edemez ve daha küçük disklere daha büyük diskler yerleştiremezsiniz.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../Help.qml" line="62"/>
         <source>Do not show again:</source>
-        <translation>Tekrar gösterme:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../Help.qml" line="90"/>
         <source>Ok</source>
-        <translation>ok</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -73,35 +73,35 @@
     <message>
         <location filename="../menu/MainMenu.qml" line="21"/>
         <source>Hanoi Towers</source>
-        <translation>Hanoi Kuleleri</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../menu/MainMenu.qml" line="42"/>
+        <location filename="../menu/MainMenu.qml" line="69"/>
         <source>start</source>
-        <translation>başlamak</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../menu/MainMenu.qml" line="55"/>
+        <location filename="../menu/MainMenu.qml" line="82"/>
         <source>About</source>
-        <translation>hakkında</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../menu/MainMenu.qml" line="68"/>
+        <location filename="../menu/MainMenu.qml" line="95"/>
         <source>Config</source>
-        <translation>ayarlar</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../menu/MainMenu.qml" line="81"/>
+        <location filename="../menu/MainMenu.qml" line="108"/>
         <source>exit</source>
-        <translation>çıkış</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>SwitchLvl</name>
     <message>
-        <location filename="../SwitchLvl.qml" line="62"/>
+        <location filename="../SwitchLvl.qml" line="61"/>
         <source>Start</source>
-        <translation>başla</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -109,7 +109,7 @@
     <message>
         <location filename="../about.qml" line="14"/>
         <source>about</source>
-        <translation>hakkında</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../about.qml" line="37"/>
@@ -119,65 +119,42 @@
 * This game is distributed under the LGPLv3 license.
 * Contact: https://github.com/EndrII
 * Copyright (C) 2018 Yankovich N. Andrei.</source>
-        <translation>QuasarApp ürünü
-* Geliştiriciler:
-* Programcı: Yankovich N. Andrei.
-* Bu oyun LGPLv3 lisansı altında dağıtılmaktadır.
-* İletişim: https://github.com/EndrII
-* Telif Hakkı (C) 2018 Yankovich N. Andrei.</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>game</name>
     <message>
-        <source>Start</source>
-        <translation type="vanished">başla</translation>
-    </message>
-    <message>
-        <source>Exit</source>
-        <translation type="vanished">çıkış</translation>
-    </message>
-    <message>
-        <source>About</source>
-        <translation type="vanished">hakkında</translation>
-    </message>
-    <message>
-        <location filename="../game.qml" line="61"/>
+        <location filename="../game.qml" line="80"/>
         <source>lvl </source>
-        <translation>seviye </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../game.qml" line="82"/>
+        <location filename="../game.qml" line="104"/>
         <source>step </source>
-        <translation>adım </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../game.qml" line="93"/>
+        <location filename="../game.qml" line="69"/>
         <source>Tower height:</source>
-        <translation>Kule yüksekliği:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../game.qml" line="98"/>
+        <location filename="../game.qml" line="115"/>
         <source>Return to main menu</source>
-        <translation>Ana menüye dön</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../game.qml" line="162"/>
+        <location filename="../game.qml" line="180"/>
         <source>You have passed the level in %0 steps and unlocked level %1
  Minimum steps for this lvl: %2</source>
-        <translation>Seviyeyi %0 adımından geçirdiniz ve %1 kilidini açtınız
-  Bu lvl için minimum adımlar: %2</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../game.qml" line="169"/>
+        <location filename="../game.qml" line="187"/>
         <source>You have passed the level in %0 steps.
 Minimum steps for this lvl: %1</source>
-        <translation>Seviyeyi %0 adımından geçtiniz.
-Bu lvl için minimum adımlar:%1</translation>
-    </message>
-    <message>
-        <source>Ok</source>
-        <translation type="vanished">ok</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -185,7 +162,7 @@ Bu lvl için minimum adımlar:%1</translation>
     <message>
         <location filename="../main.qml" line="9"/>
         <source>Hanoi Towers</source>
-        <translation>Hanoi Kuleleri</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

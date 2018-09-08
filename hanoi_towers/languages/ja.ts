@@ -12,27 +12,27 @@
 <context>
     <name>Config</name>
     <message>
-        <location filename="../menu/Config.qml" line="27"/>
+        <location filename="../menu/Config.qml" line="28"/>
         <source>Settings</source>
         <translation>設定</translation>
     </message>
     <message>
-        <location filename="../menu/Config.qml" line="34"/>
+        <location filename="../menu/Config.qml" line="35"/>
         <source>Return to main menu</source>
         <translation>メインメニューに戻る</translation>
     </message>
     <message>
-        <location filename="../menu/Config.qml" line="68"/>
+        <location filename="../menu/Config.qml" line="76"/>
         <source>Standart color</source>
         <translation>クラシックバックライト</translation>
     </message>
     <message>
-        <location filename="../menu/Config.qml" line="78"/>
+        <location filename="../menu/Config.qml" line="88"/>
         <source>Random color</source>
         <translation>多色バックライト</translation>
     </message>
     <message>
-        <location filename="../menu/Config.qml" line="87"/>
+        <location filename="../menu/Config.qml" line="99"/>
         <source>Animation</source>
         <translation>アニメーション</translation>
     </message>
@@ -80,22 +80,22 @@
         <translation>ハノイタワーズ</translation>
     </message>
     <message>
-        <location filename="../menu/MainMenu.qml" line="42"/>
+        <location filename="../menu/MainMenu.qml" line="69"/>
         <source>start</source>
         <translation>スタート</translation>
     </message>
     <message>
-        <location filename="../menu/MainMenu.qml" line="55"/>
+        <location filename="../menu/MainMenu.qml" line="82"/>
         <source>About</source>
         <translation>約</translation>
     </message>
     <message>
-        <location filename="../menu/MainMenu.qml" line="68"/>
+        <location filename="../menu/MainMenu.qml" line="95"/>
         <source>Config</source>
         <translation>設定</translation>
     </message>
     <message>
-        <location filename="../menu/MainMenu.qml" line="81"/>
+        <location filename="../menu/MainMenu.qml" line="108"/>
         <source>exit</source>
         <translation>出口</translation>
     </message>
@@ -103,7 +103,7 @@
 <context>
     <name>SwitchLvl</name>
     <message>
-        <location filename="../SwitchLvl.qml" line="62"/>
+        <location filename="../SwitchLvl.qml" line="61"/>
         <source>Start</source>
         <translation>スタート</translation>
     </message>
@@ -146,34 +146,34 @@
         <translation type="vanished">約</translation>
     </message>
     <message>
-        <location filename="../game.qml" line="61"/>
+        <location filename="../game.qml" line="80"/>
         <source>lvl </source>
         <translation>レベル </translation>
     </message>
     <message>
-        <location filename="../game.qml" line="82"/>
+        <location filename="../game.qml" line="104"/>
         <source>step </source>
         <translation>ステップ </translation>
     </message>
     <message>
-        <location filename="../game.qml" line="93"/>
+        <location filename="../game.qml" line="69"/>
         <source>Tower height:</source>
         <translation>タワーの高さ：</translation>
     </message>
     <message>
-        <location filename="../game.qml" line="98"/>
+        <location filename="../game.qml" line="115"/>
         <source>Return to main menu</source>
         <translation>メインメニューに戻る</translation>
     </message>
     <message>
-        <location filename="../game.qml" line="162"/>
+        <location filename="../game.qml" line="180"/>
         <source>You have passed the level in %0 steps and unlocked level %1
  Minimum steps for this lvl: %2</source>
         <translation>あなたは %0 ステップでレベルを通過し、レベル %1 をロック解除しました
   このlvlの最小手順：%2</translation>
     </message>
     <message>
-        <location filename="../game.qml" line="169"/>
+        <location filename="../game.qml" line="187"/>
         <source>You have passed the level in %0 steps.
 Minimum steps for this lvl: %1</source>
         <translation>%0ステップでレベルを通過しました。

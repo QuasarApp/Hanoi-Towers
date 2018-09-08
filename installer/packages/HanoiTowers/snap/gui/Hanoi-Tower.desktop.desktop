@@ -12,3 +12,4 @@ X-GNOME-Bugzilla-Product=hanoi-towers
 X-GNOME-Bugzilla-Component=General
 X-GNOME-Bugzilla-Version=1.5
 StartupNotify=true
+Name[ru_RU]=Hanoi-Tower.desktop

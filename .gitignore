@@ -37,8 +37,14 @@ ui_*.h
 Makefile*
 *build-*
 
-# QtCreator
+*.snap
+installer/packages/HanoiTowers/parts
+installer/packages/HanoiTowers/prime
+installer/packages/HanoiTowers/stage
+installer/packages/HanoiTowers/data/*
 
+# QtCreator
+installer/HanoiTowersInstaller
 *.autosave
 
 # QtCtreator Qml
@@ -50,7 +56,6 @@ CMakeLists.txt.user*
 
 
 snap/plugins/__pycache__/
-
 *.snap
 
 \.buildconfig

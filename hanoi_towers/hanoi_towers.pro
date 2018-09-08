@@ -8,7 +8,10 @@ SOURCES += main.cpp \
     backEnd.cpp
 
 RESOURCES += qml.qrc
-TARGET=hanoi-towers
+TARGET = hanoi-towers
+
+include($$PWD/../installer/deploy/targetList.pri)
+include($$PWD/../installer/deploy/deployFiles.pri)
 
 # Additional import path used to resolve QML modules in Qt Creator's code model
 QML_IMPORT_PATH =
@@ -26,6 +29,12 @@ DEFINES += QT_DEPRECATED_WARNINGS
 # In order to do so, uncomment the following line.
 # You can also select to disable deprecated APIs only up to a certain version of Qt.
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
+
+TARGET=HanoiTowers
+
+QT_DIR = $$dirname(QMAKE_QMAKE)
+LUPDATE = $$QT_DIR/lupdate
+LRELEASE = $$QT_DIR/lrelease
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -47,8 +56,12 @@ DISTFILES += \
     android/res/values/libs.xml \
     android/build.gradle \
     android/gradle/wrapper/gradle-wrapper.properties \
-    android/gradlew.bat
-
+    android/gradlew.bat \
+    languages/ru.ts \
+    languages/ja.ts \
+    languages/tr.ts \
+    languages/en.ts \
+    languages/ua.ts
 ANDROID_PACKAGE_SOURCE_DIR = $$PWD/android
 
 HEADERS += \
@@ -58,7 +71,14 @@ TRANSLATIONS += \
     languages/ru.ts \
     languages/ja.ts \
     languages/tr.ts \
-    languages/en.ts
+    languages/en.ts \
+    languages/ua.ts
 
+commands += "$$LUPDATE $$PWD/hanoi_towers.pro"
+commands += "$$LRELEASE $$PWD/hanoi_towers.pro"
+
+for(command, commands) {
+    system($$command)|error("Failed to run: $$command")
+}
 
 RC_ICONS = res/icon.ico
