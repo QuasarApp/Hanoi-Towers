@@ -8,7 +8,7 @@ function Controller()
 
 function runProgramControl() {
     if (systemInfo.kernelType === "winnt") {
-        Controller.setValue("RunProgram", qsTr("HanoiTowers.exe"));
+        installer.setValue("RunProgram", "@TargetDir@/HanoiTowers.exe");
     }
 }
 
