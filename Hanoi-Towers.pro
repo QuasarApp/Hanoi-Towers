@@ -4,8 +4,8 @@ CONFIG += ordered
 include($$PWD/installer/deploy/deployFiles.pri)
 message( DEPLOY_FILES_MASTER = $$DEPLOY_FILES)
 
-ENABLE_SNAP = 0 #only linux
-ENABLE_INSTALLER = 1 #only desctop
+ENABLE_SNAP = 1 #only linux
+ENABLE_INSTALLER = 0 #only desctop
 
 SUBDIRS += hanoi_towers \
         CQtDeployer
