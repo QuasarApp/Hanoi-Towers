@@ -2,7 +2,7 @@
 Version=1.5
 Name=Hanoi Towers
 Comment=Hanoi Towers Game.
-Exec=hanoi-towers
+Exec=hanoi-tower
 Icon=/snap/hanoi-tower/current/meta/gui/icon.png
 Terminal=false
 Type=Application
