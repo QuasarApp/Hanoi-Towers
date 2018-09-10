@@ -15,14 +15,14 @@ supported platform:
 ## Build for Linux
 
 * donwload [qt creator](https://www.qt.io/download-thank-you?os=windows)
-* install qt 5.9.x or later
+* install qt 5.10.x or later
 * build release version
 * use [qt deploy](https://quasarapp.github.io/QtDeployer)
 
 
 ## Build Windows 
 * donwload [qt creator](https://www.qt.io/download-thank-you?os=windows)
-* install qt 5.9.x or later
+* install qt 5.10.x or later
 * build release version
 * use [qt win deploy](http://doc.qt.io/qt-5/windows-deployment.html)
 
