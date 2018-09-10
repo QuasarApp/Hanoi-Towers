@@ -1,5 +1,5 @@
 # Welcome to the Hanoi Towers!
-# ![Hanoi Towers Logo](/hanoi_tower/res/icon.png)
+# ![Hanoi Towers Logo](/hanoi_towers/res/icon.png)
 
 ***************************
 [![Snap Status](https://build.snapcraft.io/badge/QuasarApp/Hanoi-Towers.svg)](https://build.snapcraft.io/user/QuasarApp/Hanoi-Towers)
