@@ -40,7 +40,7 @@ Or download from official services
   * [Ubuntu](https://snapcraft.io/hanoi-tower)
   * Windows - this application has not supported windows store
 
-[![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-black.svg)](https://snapcraft.io/hanoi-tower)
+[![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-black.svg)](https://snapcraft.io/hanoi-tower) [![Get it from the play Market](http://vgtk.ru/uploads/posts/2016-02/1455814965_1.png)](https://play.google.com/store/apps/details?id=df.mobily.hanoi_towers)
 
 ## Donate
 If you want to help the project, then you can donate a small amount to our bitcoin wallet.
