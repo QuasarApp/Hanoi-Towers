@@ -40,6 +40,8 @@ Or download from official services
   * [Ubuntu](https://snapcraft.io/hanoi-tower)
   * Windows - this application has not supported windows store
 
+[![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-black.svg)](https://snapcraft.io/hanoi-tower)
+
 ## Donate
 If you want to help the project, then you can donate a small amount to our bitcoin wallet.
 
