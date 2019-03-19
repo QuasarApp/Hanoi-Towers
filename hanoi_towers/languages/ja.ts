@@ -53,12 +53,20 @@
 <context>
     <name>Help</name>
     <message>
-        <location filename="../Help.qml" line="49"/>
         <source>Your task is to transfer discs of different sizesfrom the left tower to any other free space.You can only transfer the top drive of the tower.You can not transfer several disks at once and put larger disks on small disks.</source>
+        <translation type="vanished" variants="yes">
+            <lengthvariant>あなたの仕事は、左のタワーから別の空きスペースに異なるサイズのディスクを転送することです。あなたはタワーの一番上のドライブを移すことができます。一度に複数のディスクを移したり、大きなディスクを小さなディスクに入れることはできません。</lengthvariant>
+            <lengthvariant>あなたの仕事は、左のタワーから別の空きスペースに異なるサイズのディスクを転送することです。あなたはタワーの一番上のドライブを移すことができます。一度に複数のディスクを移したり、大きなディスクを小さなディスクに入れることはできません。</lengthvariant>
+            <lengthvariant>あなたの仕事は、左のタワーから別の空きスペースに異なるサイズのディスクを転送することです。あなたはタワーの一番上のドライブを移すことができます。一度に複数のディスクを移したり、大きなディスクを小さなディスクに入れることはできません。</lengthvariant>
+        </translation>
+    </message>
+    <message>
+        <location filename="../Help.qml" line="49"/>
+        <source>Your task is to transfer discs of different sizesfrom the left tower to third tower.You can only transfer the top drive of the tower.You can not transfer several disks at once and put larger disks on small disks.</source>
         <translation variants="yes">
-            <lengthvariant>あなたの仕事は、左のタワーから別の空きスペースに異なるサイズのディスクを転送することです。あなたはタワーの一番上のドライブを移すことができます。一度に複数のディスクを移したり、大きなディスクを小さなディスクに入れることはできません。</lengthvariant>
-            <lengthvariant>あなたの仕事は、左のタワーから別の空きスペースに異なるサイズのディスクを転送することです。あなたはタワーの一番上のドライブを移すことができます。一度に複数のディスクを移したり、大きなディスクを小さなディスクに入れることはできません。</lengthvariant>
-            <lengthvariant>あなたの仕事は、左のタワーから別の空きスペースに異なるサイズのディスクを転送することです。あなたはタワーの一番上のドライブを移すことができます。一度に複数のディスクを移したり、大きなディスクを小さなディスクに入れることはできません。</lengthvariant>
+            <lengthvariant>あなたの仕事は左の塔から三番目の塔へ異なるサイズのディスクを移すことです。あなたは塔の一番上のドライブだけを移すことができます。あなたは一度に数枚のディスクを移すことはできません。</lengthvariant>
+            <lengthvariant>あなたの仕事は左の塔から三番目の塔へ異なるサイズのディスクを移すことです。あなたは塔の一番上のドライブだけを移すことができます。あなたは一度に数枚のディスクを移すことはできません。</lengthvariant>
+            <lengthvariant>あなたの仕事は左の塔から三番目の塔へ異なるサイズのディスクを移すことです。あなたは塔の一番上のドライブだけを移すことができます。あなたは一度に数枚のディスクを移すことはできません。</lengthvariant>
         </translation>
     </message>
     <message>

@@ -174,7 +174,7 @@ Rectangle {
                 obj.pop()
             }
         }
-        if (tower2.items.length === all || tower3.items.length === all) {
+        if ( tower3.items.length === all) {
             if (all == tumbler.spin.maximumValue) {
                 backEnd.save(tumbler.spin.value = tumbler.spin.maximumValue = all + 1)
                 popUp.text = qsTr("You have passed the level in %0 steps and unlocked level %1" +

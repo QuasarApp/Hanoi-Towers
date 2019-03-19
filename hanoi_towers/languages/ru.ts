@@ -53,9 +53,13 @@
 <context>
     <name>Help</name>
     <message>
-        <location filename="../Help.qml" line="49"/>
         <source>Your task is to transfer discs of different sizesfrom the left tower to any other free space.You can only transfer the top drive of the tower.You can not transfer several disks at once and put larger disks on small disks.</source>
-        <translation>Ваше задание состоит в том, чтобы, перенести диски разных размеров с левой башни в любу другую свободную. Вы можете переносить только верхней диск  башни. Нельзя переносить сразу несколько дисков и ставить большее диски на маленькие.</translation>
+        <translation type="vanished">Ваше задание состоит в том, чтобы, перенести диски разных размеров с левой башни в любу другую свободную. Вы можете переносить только верхней диск  башни. Нельзя переносить сразу несколько дисков и ставить большее диски на маленькие.</translation>
+    </message>
+    <message>
+        <location filename="../Help.qml" line="49"/>
+        <source>Your task is to transfer discs of different sizesfrom the left tower to third tower.You can only transfer the top drive of the tower.You can not transfer several disks at once and put larger disks on small disks.</source>
+        <translation>Ваше задание состоит в том, чтобы, перенести диски разных размеров с левой башни в третью башню. Вы можете переносить только верхней диск  башни. Нельзя переносить сразу несколько дисков и ставить большее диски на маленькие.</translation>
     </message>
     <message>
         <location filename="../Help.qml" line="62"/>
