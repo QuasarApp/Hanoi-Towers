@@ -37,11 +37,15 @@ ui_*.h
 Makefile*
 *build-*
 
+hanoi_towers/build/
+installer/installer
+
 *.snap
 installer/packages/HanoiTowers/parts
 installer/packages/HanoiTowers/prime
 installer/packages/HanoiTowers/stage
 installer/packages/HanoiTowers/data/*
+.snapcraft
 
 # QtCreator
 installer/HanoiTowersInstaller
