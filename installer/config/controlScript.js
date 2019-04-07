@@ -9,6 +9,8 @@ function Controller()
 function runProgramControl() {
     if (systemInfo.kernelType === "winnt") {
         installer.setValue("RunProgram", "@TargetDir@/HanoiTowers.exe");
+    } else {
+        installer.setValue("RunProgram", "@TargetDir@/HanoiTowers.sh");
     }
 }
 

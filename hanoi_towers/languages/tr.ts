@@ -53,9 +53,13 @@
 <context>
     <name>Help</name>
     <message>
-        <location filename="../Help.qml" line="49"/>
         <source>Your task is to transfer discs of different sizesfrom the left tower to any other free space.You can only transfer the top drive of the tower.You can not transfer several disks at once and put larger disks on small disks.</source>
-        <translation>Göreviniz, sol kuleden farklı boyuttaki diskleri başka bir boş alana aktarmaktır. Kulenin sadece üst sürücüsünü aktarabilirsiniz. Birkaç diski aynı anda transfer edemez ve daha küçük disklere daha büyük diskler yerleştiremezsiniz.</translation>
+        <translation type="vanished">Göreviniz, sol kuleden farklı boyuttaki diskleri başka bir boş alana aktarmaktır. Kulenin sadece üst sürücüsünü aktarabilirsiniz. Birkaç diski aynı anda transfer edemez ve daha küçük disklere daha büyük diskler yerleştiremezsiniz.</translation>
+    </message>
+    <message>
+        <location filename="../Help.qml" line="49"/>
+        <source>Your task is to transfer discs of different sizesfrom the left tower to third tower.You can only transfer the top drive of the tower.You can not transfer several disks at once and put larger disks on small disks.</source>
+        <translation>Göreviniz, sol kuleden farklı büyüklükteki diskleri üçüncü kuleye aktarmaktır. Yalnızca kulenin üst sürücüsünü aktarabilirsiniz. Aynı anda birkaç diski aktaramaz ve daha küçük disklere daha büyük diskler yerleştiremezsiniz.</translation>
     </message>
     <message>
         <location filename="../Help.qml" line="62"/>
@@ -118,8 +122,22 @@
 * Programmer: Yankovich N. Andrei.
 * This game is distributed under the LGPLv3 license.
 * Contact: https://github.com/EndrII
+* Copyright (C) 2018-2019 Yankovich N. Andrei.</source>
+        <translation type="unfinished">QuasarApp ürünü
+* Geliştiriciler:
+* Programcı: Yankovich N. Andrei.
+* Bu oyun LGPLv3 lisansı altında dağıtılmaktadır.
+* İletişim: https://github.com/EndrII
+* Telif Hakkı (C) 2018 Yankovich N. Andrei. {3 ?} {2018-2019 ?}</translation>
+    </message>
+    <message>
+        <source>Product of QuasarApp
+* Developers:
+* Programmer: Yankovich N. Andrei.
+* This game is distributed under the LGPLv3 license.
+* Contact: https://github.com/EndrII
 * Copyright (C) 2018 Yankovich N. Andrei.</source>
-        <translation>QuasarApp ürünü
+        <translation type="vanished">QuasarApp ürünü
 * Geliştiriciler:
 * Programcı: Yankovich N. Andrei.
 * Bu oyun LGPLv3 lisansı altında dağıtılmaktadır.

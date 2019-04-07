@@ -47,7 +47,7 @@ Dialog {
             wrapMode:Text.Wrap ;
 
             text: qsTr("Your task is to transfer discs of different sizes" +
- "from the left tower to any other free space." +
+ "from the left tower to third tower." +
  "You can only transfer the top drive of the tower." +
  "You can not transfer several disks at once and put larger disks on small disks.");
 

@@ -53,9 +53,13 @@
 <context>
     <name>Help</name>
     <message>
-        <location filename="../Help.qml" line="49"/>
         <source>Your task is to transfer discs of different sizesfrom the left tower to any other free space.You can only transfer the top drive of the tower.You can not transfer several disks at once and put larger disks on small disks.</source>
-        <translation>Ваше задание состоит в том, чтобы, перенести диски разных размеров с левой башни в любу другую свободную. Вы можете переносить только верхней диск  башни. Нельзя переносить сразу несколько дисков и ставить большее диски на маленькие.</translation>
+        <translation type="vanished">Ваше задание состоит в том, чтобы, перенести диски разных размеров с левой башни в любу другую свободную. Вы можете переносить только верхней диск  башни. Нельзя переносить сразу несколько дисков и ставить большее диски на маленькие.</translation>
+    </message>
+    <message>
+        <location filename="../Help.qml" line="49"/>
+        <source>Your task is to transfer discs of different sizesfrom the left tower to third tower.You can only transfer the top drive of the tower.You can not transfer several disks at once and put larger disks on small disks.</source>
+        <translation>Ваше задание состоит в том, чтобы, перенести диски разных размеров с левой башни в третью башню. Вы можете переносить только верхней диск  башни. Нельзя переносить сразу несколько дисков и ставить большее диски на маленькие.</translation>
     </message>
     <message>
         <location filename="../Help.qml" line="62"/>
@@ -118,8 +122,22 @@
 * Programmer: Yankovich N. Andrei.
 * This game is distributed under the LGPLv3 license.
 * Contact: https://github.com/EndrII
+* Copyright (C) 2018-2019 Yankovich N. Andrei.</source>
+        <translation type="unfinished">Продукт QuasarApp
+* Разработчики:
+* Программист: Янкович А. Н. 
+* Эта игра распостроняеться в соотвецтвии с лицензией LGPLv3.
+* Сайт игры: https://quasarapp.github.io/Hanoi-Towers/
+* Copyright (C) 2018 Янкович А. Н. {3 ?} {2018-2019 ?}</translation>
+    </message>
+    <message>
+        <source>Product of QuasarApp
+* Developers:
+* Programmer: Yankovich N. Andrei.
+* This game is distributed under the LGPLv3 license.
+* Contact: https://github.com/EndrII
 * Copyright (C) 2018 Yankovich N. Andrei.</source>
-        <translation>Продукт QuasarApp
+        <translation type="vanished">Продукт QuasarApp
 * Разработчики:
 * Программист: Янкович А. Н. 
 * Эта игра распостроняеться в соотвецтвии с лицензией LGPLv3.

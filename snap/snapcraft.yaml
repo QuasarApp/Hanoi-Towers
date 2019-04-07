@@ -1,5 +1,5 @@
 name: hanoi-tower
-version: '1.5.1snap1'
+version: '1.5.2'
 summary: The Hanoi Tower is one of the most popular puzzles of the 19th century
 description: |
   The Hanoi Tower is one of the most popular puzzles of the 19th century. |
@@ -10,11 +10,11 @@ description: |
 grade: stable # must be 'stable' to release into candidate/stable channels
 confinement: strict # use 'strict' once you have the right plugs and slots
 base: core18
-icon: data/icons/icon.png
+icon: installer/packages/installer/data/icons/icon.png
 
 apps:
   hanoi-tower:
-    command: desktop-launch $SNAP/AppRun.sh
+    command: desktop-launch $SNAP/HanoiTowers.sh
 
     plugs: [desktop, unity7, home, opengl, x11, wayland, gsettings]
 
@@ -26,12 +26,16 @@ parts:
       - libasn1-8-heimdal
       - libgssapi3-heimdal
       - libldap-2.4-2
-    after: [libsgl, desktop-glib-only, qtlib]
+    after: [libsgl, cqtdeployer-wrapper, qtlib]
     
     
+  cqtdeployer-wrapper:
+    plugin: dump
+    source: QuasarAppLib/Etalons/snap/wrapper
+  
   qtlib:
     plugin: dump
-    source: data/
+    source: installer/packages/HanoiTowers/data
       
   libsgl:
     plugin: nil
