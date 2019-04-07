@@ -58,7 +58,7 @@ defineReplace(findFiles) {
 }
 
 XML_FILES = $$files(*.xml, true)
-
+message(XML_FILES $$XML_FILES)
 for(LANG, SUPPORT_LANGS) {
     for(XML, XML_FILES) {
         FILE_PATH = $$dirname(XML)

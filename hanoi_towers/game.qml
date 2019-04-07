@@ -61,11 +61,11 @@ Rectangle {
         id: towerheight
         font.bold: true
         font.pointSize: height / text.length * 2
-        horizontalAlignment: Text.AlignCenter
+        horizontalAlignment: Text.AlignHCenter
         height: mouseContener.height
 
         styleColor: "#973c3c"
-        verticalAlignment: Text.AlignCenter
+        verticalAlignment: Text.AlignVCenter
         text: qsTr("Tower height:")
 
         anchors.left: mouseContener.right

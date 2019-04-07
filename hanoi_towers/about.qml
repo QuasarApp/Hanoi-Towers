@@ -39,7 +39,7 @@ Item {
 * Programmer: Yankovich N. Andrei.
 * This game is distributed under the LGPLv3 license.
 * Contact: https://github.com/EndrII
-* Copyright (C) 2018 Yankovich N. Andrei.")
+* Copyright (C) 2018-2019 Yankovich N. Andrei.")
     }
     MouseArea {
         anchors.fill: parent
