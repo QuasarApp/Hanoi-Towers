@@ -1,0 +1,3 @@
+[submodule "CQtDeployerBinaries"]
+	path = CQtDeployerBinaries
+	url = https://github.com/QuasarApp/CQtDeployerBinaries.git
