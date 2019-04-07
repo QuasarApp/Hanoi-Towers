@@ -122,8 +122,22 @@
 * Programmer: Yankovich N. Andrei.
 * This game is distributed under the LGPLv3 license.
 * Contact: https://github.com/EndrII
+* Copyright (C) 2018-2019 Yankovich N. Andrei.</source>
+        <translation type="unfinished">QuasarApp ürünü
+* Geliştiriciler:
+* Programcı: Yankovich N. Andrei.
+* Bu oyun LGPLv3 lisansı altında dağıtılmaktadır.
+* İletişim: https://github.com/EndrII
+* Telif Hakkı (C) 2018 Yankovich N. Andrei. {3 ?} {2018-2019 ?}</translation>
+    </message>
+    <message>
+        <source>Product of QuasarApp
+* Developers:
+* Programmer: Yankovich N. Andrei.
+* This game is distributed under the LGPLv3 license.
+* Contact: https://github.com/EndrII
 * Copyright (C) 2018 Yankovich N. Andrei.</source>
-        <translation>QuasarApp ürünü
+        <translation type="vanished">QuasarApp ürünü
 * Geliştiriciler:
 * Programcı: Yankovich N. Andrei.
 * Bu oyun LGPLv3 lisansı altında dağıtılmaktadır.

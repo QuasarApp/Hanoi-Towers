@@ -27,7 +27,7 @@ Rectangle {
 
             color: Qt.rgba(0.5,0.5,0.5,1 / (Math.abs(spin.currentIndex - modelData)))
             text: "" + (modelData + 1)
-
+            width: tumbler.width
             verticalAlignment: Text.AlignVCenter
             horizontalAlignment: Text.AlignHCenter
             font.pixelSize: (spin.height / 4) / (Math.abs(spin.currentIndex - modelData) + 1 )

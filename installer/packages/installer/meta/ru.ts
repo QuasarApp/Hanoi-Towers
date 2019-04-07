@@ -35,15 +35,19 @@
         <translation type="vanished">Основные компоненнты</translation>
     </message>
     <message>
-        <location filename="installscript.js" line="66"/>
-        <source>HanoiTowers</source>
-        <translation>Ханойские башни</translation>
-    </message>
-    <message>
-        <location filename="installscript.js" line="67"/>
         <source>Install HanoiTowers</source>
         <oldsource>Install SoundBand</oldsource>
-        <translation>установка основного компонента</translation>
+        <translation type="obsolete">установка основного компонента</translation>
+    </message>
+    <message>
+        <location filename="installscript.js" line="9"/>
+        <source>Installer</source>
+        <translation>Устанвщик</translation>
+    </message>
+    <message>
+        <location filename="installscript.js" line="10"/>
+        <source>Install components</source>
+        <translation>Установочный компонент</translation>
     </message>
 </context>
 </TS>

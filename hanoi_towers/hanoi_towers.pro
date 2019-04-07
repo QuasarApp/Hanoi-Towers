@@ -10,9 +10,6 @@ SOURCES += main.cpp \
 RESOURCES += qml.qrc
 TARGET = hanoi-towers
 
-include($$PWD/../installer/deploy/targetList.pri)
-include($$PWD/../installer/deploy/deployFiles.pri)
-
 # Additional import path used to resolve QML modules in Qt Creator's code model
 QML_IMPORT_PATH =
 
@@ -36,10 +33,13 @@ QT_DIR = $$dirname(QMAKE_QMAKE)
 LUPDATE = $$QT_DIR/lupdate
 LRELEASE = $$QT_DIR/lrelease
 
-# Default rules for deployment.
-qnx: target.path = /tmp/$${TARGET}/bin
-else: unix:!android: target.path = /opt/$${TARGET}/bin
-!isEmpty(target.path): INSTALLS += target
+CONFIG(release, debug|release): {
+    DESTDIR = $$PWD/build/release
+
+} else {
+    DESTDIR = $$PWD/build/debug
+}
+
 
 DISTFILES += \
     android/AndroidManifest.xml \
