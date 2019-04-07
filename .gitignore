@@ -61,5 +61,5 @@ CMakeLists.txt.user*
 
 snap/plugins/__pycache__/
 *.snap
-
+data/
 \.buildconfig

@@ -26,9 +26,13 @@ parts:
       - libasn1-8-heimdal
       - libgssapi3-heimdal
       - libldap-2.4-2
-    after: [libsgl, desktop-glib-only, qtlib]
+    after: [libsgl, cqtdeployer-wrapper, qtlib]
     
     
+  cqtdeployer-wrapper:
+    plugin: dump
+    source: QuasarAppLib/Etalons/snap/wrapper
+  
   qtlib:
     plugin: dump
     source: installer/packages/HanoiTowers/data
