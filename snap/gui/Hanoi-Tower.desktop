@@ -1,5 +1,5 @@
 [Desktop Entry]
-Version=1.5
+Version=1.5.2
 Name=Hanoi Towers
 Comment=Hanoi Towers Game.
 Exec=hanoi-tower
@@ -10,6 +10,6 @@ Categories=Games;Application;
 X-GNOME-Bugzilla-Bugzilla=GNOME
 X-GNOME-Bugzilla-Product=hanoi-tower
 X-GNOME-Bugzilla-Component=General
-X-GNOME-Bugzilla-Version=1.5
+X-GNOME-Bugzilla-Version=1.5.2
 StartupNotify=true
-Name[ru_RU]=Hanoi-Tower.desktop
+Name[ru_RU]=Hanoi-Tower

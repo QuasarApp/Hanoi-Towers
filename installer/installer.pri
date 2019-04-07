@@ -6,7 +6,7 @@ LUPDATE = $$QT_DIR/lupdate
 LRELEASE = $$QT_DIR/lrelease
 
 win32:DEPLOYER = $$PWD/../CQtDeployerBinaries/Windows/cqtdeployer.exe
-unix:DEPLOYER = cqtdeployer
+unix:DEPLOYER = $$PWD/../CQtDeployerBinaries/Linux/cqtdeployer.sh
 
 OUT_FILE = installer
 
