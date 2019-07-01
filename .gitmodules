@@ -1,6 +1,6 @@
-[submodule "CQtDeployerBinaries"]
-	path = CQtDeployerBinaries
-	url = https://github.com/QuasarApp/CQtDeployerBinaries.git
 [submodule "QuasarAppLib"]
 	path = QuasarAppLib
 	url = https://github.com/QuasarApp/QuasarAppLib.git
+[submodule "installer"]
+	path = installer
+	url = git@github.com:QuasarApp/DesktopInstaller.git
