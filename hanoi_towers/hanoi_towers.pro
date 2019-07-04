@@ -61,7 +61,9 @@ DISTFILES += \
     languages/ja.ts \
     languages/tr.ts \
     languages/en.ts \
-    languages/ua.ts
+    languages/ua.ts \
+    ../snap/snapcraft.yaml
+
 ANDROID_PACKAGE_SOURCE_DIR = $$PWD/android
 
 HEADERS += \

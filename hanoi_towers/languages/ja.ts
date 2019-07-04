@@ -131,12 +131,12 @@
 * This game is distributed under the LGPLv3 license.
 * Contact: https://github.com/EndrII
 * Copyright (C) 2018-2019 Yankovich N. Andrei.</source>
-        <translation type="unfinished">QuasarAppの製品
+        <translation>QuasarAppの製品
 *開発者：
 *プログラマー：Yankovich N. Andrei。
 *このゲームはLGPLv3ライセンスの下で配布されています。
 *お問い合わせ先：https://github.com/EndrII
-* Copyright（C）2018 Yankovich N. Andrei。 {3 ?} {2018-2019 ?}</translation>
+* Copyright（C）2018-2019 Yankovich N. Andrei。 {3 ?} {2018-2019 ?}</translation>
     </message>
     <message>
         <source>Product of QuasarApp

@@ -13,18 +13,8 @@ Item {
         width: parent.width / 20
         x: parent.width / 2 - width / 2
         y: 0
-//        color: "#ff0000"
         radius: 20
-//        gradient: Gradient {
-//            GradientStop {
-//                position: 0.00;
-//                color: "#f0cb98";
-//            }
-//            GradientStop {
-//                position: 1.00;
-//                color: "#d9b077";
-//            }
-//        }
+
 
         LinearGradient {
             source: parent
@@ -42,11 +32,6 @@ Item {
                 }
             }
         }
-
-//        anchors.top: tover.top
-//        anchors.topMargin: 60
-//        anchors.bottomMargin: 0
-//        anchors.bottom: tover.bottom
 
     }
 

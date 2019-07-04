@@ -123,12 +123,12 @@
 * This game is distributed under the LGPLv3 license.
 * Contact: https://github.com/EndrII
 * Copyright (C) 2018-2019 Yankovich N. Andrei.</source>
-        <translation type="unfinished">Продукт компанії QuasarApp
+        <translation>Продукт компанії QuasarApp
 * Розробники:
 * Програміст: Янкович Н. Андрій.
 * Ця гра поширюється під ліцензією LGPLv3.
 * Контакт: https://github.com/EndrII
-* Авторське право (C) 2018 Янкович Н. Андрій. {3 ?} {2018-2019 ?}</translation>
+* Авторське право (C) 2018-2019 Янкович Н. Андрій.</translation>
     </message>
     <message>
         <source>Product of QuasarApp

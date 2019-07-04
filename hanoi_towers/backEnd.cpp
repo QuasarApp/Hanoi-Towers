@@ -1,6 +1,7 @@
 #include "backEnd.h"
 #include <cmath>
 #include <QDataStream>
+#include <QDir>
 
 BackEnd::BackEnd():
     QObject()
@@ -16,8 +17,15 @@ void BackEnd::reset(){
     _randomColor = false;
 }
 
-void BackEnd::writeConfig() const{
-    QFile f(SAVE);
+void BackEnd::writeConfig() const {
+    QDir dir(QDir::rootPath());
+
+    if (!QFileInfo::exists(MAIN_FOLDER) &&
+        !dir.mkpath(MAIN_FOLDER)) {
+        return;
+    }
+
+    QFile f(MAIN_SETINGS_FILE);
     if(f.open(QIODevice::WriteOnly|QIODevice::Truncate)){
         QDataStream stream(&f);
         stream << lvl;
@@ -55,7 +63,7 @@ void BackEnd::setAnimation(bool name) {
 }
 
 void BackEnd::readCnfig() {
-    QFile f(SAVE);
+    QFile f(MAIN_SETINGS_FILE);
     if(f.exists() && f.open(QIODevice::ReadOnly)){
         QDataStream stream(&f);
         stream >> lvl;

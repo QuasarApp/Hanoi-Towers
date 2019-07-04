@@ -3,6 +3,11 @@
 #include <QObject>
 #include <QFile>
 #define SAVE "data"
+
+#define MAIN_FOLDER                 QDir::homePath() + "/.HanoiTowers"
+#define MAIN_FOLDER_KEY             "HanoiTowersFolder"
+#define MAIN_SETINGS_FILE             MAIN_FOLDER + "/" + SAVE
+
 class BackEnd: public QObject
 {
     Q_OBJECT

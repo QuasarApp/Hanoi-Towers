@@ -123,12 +123,12 @@
 * This game is distributed under the LGPLv3 license.
 * Contact: https://github.com/EndrII
 * Copyright (C) 2018-2019 Yankovich N. Andrei.</source>
-        <translation type="unfinished">Продукт QuasarApp
+        <translation>Продукт QuasarApp
 * Разработчики:
 * Программист: Янкович А. Н. 
 * Эта игра распостроняеться в соотвецтвии с лицензией LGPLv3.
 * Сайт игры: https://quasarapp.github.io/Hanoi-Towers/
-* Copyright (C) 2018 Янкович А. Н. {3 ?} {2018-2019 ?}</translation>
+* Copyright (C) 2018-2019 Янкович А. Н.</translation>
     </message>
     <message>
         <source>Product of QuasarApp
