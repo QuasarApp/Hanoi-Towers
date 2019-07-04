@@ -27,12 +27,12 @@
         <translation>Классическая подсветка</translation>
     </message>
     <message>
-        <location filename="../menu/Config.qml" line="88"/>
+        <location filename="../menu/Config.qml" line="87"/>
         <source>Random color</source>
         <translation>Разноцветная подсветка</translation>
     </message>
     <message>
-        <location filename="../menu/Config.qml" line="99"/>
+        <location filename="../menu/Config.qml" line="97"/>
         <source>Animation</source>
         <translation>Анимация</translation>
     </message>

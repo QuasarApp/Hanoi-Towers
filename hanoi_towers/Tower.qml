@@ -1,24 +1,36 @@
-import QtQuick 2.9
+import QtQuick 2.12
 import QtGraphicalEffects 1.0
 
-Rectangle {
+Item {
     id: tover
     property var items: []
     signal click(var obj)
-    color: "transparent"
 
     Rectangle {
 
         id: centerLine
+        height: parent.height
         width: parent.width / 20
         x: parent.width / 2 - width / 2
+        y: 0
+//        color: "#ff0000"
         radius: 20
+//        gradient: Gradient {
+//            GradientStop {
+//                position: 0.00;
+//                color: "#f0cb98";
+//            }
+//            GradientStop {
+//                position: 1.00;
+//                color: "#d9b077";
+//            }
+//        }
 
         LinearGradient {
             source: parent
             anchors.fill: parent
-            start: Qt.point(0, parent.height / 2)
-            end: Qt.point(parent.width, parent.height / 2)
+            start: Qt.point(0, centerLine.height / 2)
+            end: Qt.point(centerLine.width, parent.height / 2)
             gradient: Gradient {
                 GradientStop {
                     position: 0.0
@@ -31,10 +43,11 @@ Rectangle {
             }
         }
 
-        anchors.top: parent.top
-        anchors.topMargin: 10
-        anchors.bottomMargin: 0
-        anchors.bottom: parent.bottom
+//        anchors.top: tover.top
+//        anchors.topMargin: 60
+//        anchors.bottomMargin: 0
+//        anchors.bottom: tover.bottom
+
     }
 
     Image {
@@ -50,7 +63,6 @@ Rectangle {
         anchors.bottom: parent.bottom
     }
 
-    radius: 20
     function push(obj) {
         if (items.length > 0 && (!obj
                                  || obj.mass > items[items.length - 1].mass))

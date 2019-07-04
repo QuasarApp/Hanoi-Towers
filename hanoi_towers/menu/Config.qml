@@ -75,7 +75,6 @@ Item {
                 checked: !backEnd.randomColor
                 text: qsTr("Standart color")
 
-                height: colorsView.height * 0.3;
                 width: colorsView.width;
                 onCheckedChanged: {
                     backEnd.randomColor = false;
@@ -86,16 +85,15 @@ Item {
                 id:r2
                 checked: backEnd.randomColor
                 text: qsTr("Random color")
-                height: theme.buttonsHeight;
-                width: theme.buttonsHeight;
+                width: colorsView.width;
                 onCheckedChanged: {
                     backEnd.randomColor = true;
                 }
             }
 
             CheckBox {
-                height: theme.buttonsHeight;
-                width: theme.buttonsHeight;
+                height: colorsView.height * 0.3;
+                width: colorsView.width;
                 text: qsTr("Animation")
                 checked: backEnd.animation
                 onCheckedChanged: {

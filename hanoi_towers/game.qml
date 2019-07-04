@@ -202,7 +202,7 @@ Rectangle {
     Tower {
         id: tower1
         width: gameWindow.width * 0.33
-        height: gameWindow.height * 0.9
+        height: gameWindow.height * 0.75
         anchors.left: gameWindow.left
         anchors.bottom: gameWindow.bottom
         onClick: {

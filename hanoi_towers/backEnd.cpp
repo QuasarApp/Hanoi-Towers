@@ -33,9 +33,12 @@ bool BackEnd::randomColor() const {
 }
 
 void BackEnd::setRandomColor(bool random) {
-    _randomColor = random;
-    writeConfig();
-    emit randomColorChanged();
+    if (_randomColor != random) {
+        _randomColor = random;
+        writeConfig();
+        emit randomColorChanged();
+    }
+
 }
 
 bool BackEnd::animation() const{
@@ -43,9 +46,12 @@ bool BackEnd::animation() const{
 }
 
 void BackEnd::setAnimation(bool name) {
-    _animation = name;
-    writeConfig();
-    emit animationChanged();
+    if (_animation != name) {
+        _animation = name;
+        writeConfig();
+        emit animationChanged();
+    }
+
 }
 
 void BackEnd::readCnfig() {
