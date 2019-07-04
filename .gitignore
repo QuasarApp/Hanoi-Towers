@@ -46,7 +46,7 @@ installer/packages/HanoiTowers/prime
 installer/packages/HanoiTowers/stage
 installer/packages/HanoiTowers/data/*
 .snapcraft
-
+Distro 
 # QtCreator
 installer/HanoiTowersInstaller
 *.autosave

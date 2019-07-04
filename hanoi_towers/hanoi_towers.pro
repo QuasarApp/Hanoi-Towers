@@ -29,7 +29,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 TARGET=HanoiTowers
 
-QT_DIR = $$dirname(QMAKE_QMAKE)
+QT_DIR = $$[QT_HOST_BINS]
 LUPDATE = $$QT_DIR/lupdate
 LRELEASE = $$QT_DIR/lrelease
 
