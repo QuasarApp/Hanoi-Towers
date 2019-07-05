@@ -81,6 +81,26 @@ void BackEnd::readCnfig() {
         }
 
         emit firstChanged();
+    } else {
+        QFile f(SAVE);
+        if(f.exists() && f.open(QIODevice::ReadOnly)){
+            QDataStream stream(&f);
+            stream >> lvl;
+            stream >> isFirstStart;
+            stream >> _animation;
+            stream >> _randomColor;
+
+            if (f.size() <= 3) {
+                reset();
+            }
+            f.close();
+
+            if(lvl < 1 || lvl > 99) {
+                lvl = 1;
+            }
+
+            emit firstChanged();
+        }
     }
 }
 
