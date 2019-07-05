@@ -33,7 +33,7 @@ public slots:
      * @brief save new lvl
      * @param lvl
      */
-    void save(const short &lvl);
+    void save(short lvl);
 
     /**
      * @brief getMinSteps

@@ -10,9 +10,15 @@ Rectangle{
     property int curentHeight: parent.height / value * 0.94
     height: (curentHeight < maxHeight )? curentHeight: maxHeight
     width:parent.width * (mass / value) * 0.90
-    x:(parent.width - width) / 2 ;
-    y:parent.height - (pushofnumber*height * 1.01) - 10.5;
+
+    property int durationAnimation: 1000;
+
     radius: 10;
+
+    function updateCoordinates() {
+        x = (parent.width - width) / 2 ;
+        y = parent.height - (pushofnumber*height * 1.01) - 10.5;
+    }
 
     BackEnd {
         id: backEnd
@@ -44,14 +50,14 @@ Rectangle{
         NumberAnimation
         {
             easing.type: (backEnd.animation)? Easing.OutBounce : Easing.OutExpo
-            duration: 1000
+            duration: durationAnimation
         }
     }
     Behavior on y{
         NumberAnimation
         {
             easing.type: (backEnd.animation)? Easing.OutBounce : Easing.OutExpo
-            duration: 1000
+            duration: durationAnimation
         }
     }
 }

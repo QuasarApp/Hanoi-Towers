@@ -15,6 +15,7 @@ Rectangle {
     color: "#ffffff"
     property int all: 1
     property var oldTower
+    property var upPlate : null
 
     BackEnd {
         id: backEnd
@@ -28,49 +29,50 @@ Rectangle {
         id: mouse
     }
 
-    Item {
-        id: mouseContener
-        property var mouseObj: null
-        width: parent.width * 0.13
-        height: parent.height * 0.08
+//    Item {
+//        id: mouseContener
+//        property var mouseObj: null
+//        width: parent.width * 0.13
 
-        function clear() {
-            if (mouseObj) {
-                mouseObj.destroy()
-            }
-        }
-        function push(obj) {
-            mouseObj = obj
-            obj.parent = this
-            return true
-        }
-        function top() {
-            return mouseObj
-        }
-        function pop() {
-            mouseObj = null
-        }
+//        function clear() {
+//            if (mouseObj) {
+//                mouseObj.destroy()
+//            }
+//        }
+//        function push(obj) {
+//            mouseObj = obj
 
-        anchors.left: parent.left
-        anchors.top:  parent.top
-        anchors.leftMargin: mouseContener.width * 0.2
+//            obj.parent = this
 
-    }
+//            return true
+//        }
+//        function top() {
+//            return mouseObj
+//        }
+//        function pop() {
+//            mouseObj = null
+//        }
+
+//        anchors.left: parent.left
+//        anchors.top:  parent.top
+//        anchors.leftMargin: mouseContener.width * 0.2
+
+//    }
 
     Base.BaseText {
         id: towerheight
         font.bold: true
         font.pointSize: height / text.length * 2
         horizontalAlignment: Text.AlignHCenter
-        height: mouseContener.height
+        height: parent.height * 0.08
 
         styleColor: "#973c3c"
         verticalAlignment: Text.AlignVCenter
         text: qsTr("Tower height:")
 
-        anchors.left: mouseContener.right
-        anchors.top: parent.top
-        anchors.leftMargin: mouseContener.width * 0.2
+        anchors.left: parent.left
+        anchors.top:  parent.top
+        anchors.leftMargin: width * 0.2
 
     }
 
@@ -78,23 +80,23 @@ Rectangle {
         id: frame
 
         text: qsTr("lvl ") + (tumbler.spin.currentIndex + 1)
-        width: mouseContener.width * 1
-        height: mouseContener.height
+        width: parent.width * 0.13
+        height: parent.height * 0.08
 
         onClicked: {
             tumbler.visible = true;
         }
         anchors.left: towerheight.right
         anchors.top: parent.top
-        anchors.leftMargin: mouseContener.width * 0.2
+        anchors.leftMargin: frame.width * 0.2
 
     }
 
     Rectangle {
         id: step
         property int ste: 0
-        width: mouseContener.width * 0.8
-        height: mouseContener.height
+        width: frame.width * 0.8
+        height: frame.height
         Text {
             font.bold: true
             font.pointSize: 14
@@ -106,15 +108,15 @@ Rectangle {
         }
 
         anchors.left: frame.right
-        anchors.leftMargin: mouseContener.width * 0.2
+        anchors.leftMargin: frame.width * 0.2
         anchors.top: parent.top
     }
 
     Base.BaseButton {
         id: b_exit
         text: qsTr("Return to main menu")
-        height: mouseContener.height
-        width: mouseContener.width * 2
+        height: frame.height
+        width: frame.width * 2
 
         onClicked: {
             gameWindow.parent.source = "menu/MainMenu.qml"
@@ -145,14 +147,15 @@ Rectangle {
         tower1.clear()
         tower2.clear()
         tower3.clear()
-        mouseContener.clear()
         while (value--) {
             var temp = Qt.createComponent("plate.qml")
             if (temp.status === Component.Ready) {
-                var obj = temp.createObject(parent)
+                let obj = temp.createObject(parent)
                 obj.mass = value + 1
                 obj.value = all
                 tower1.push(obj)
+                obj.updateCoordinates();
+
             }
         }
     }
@@ -163,16 +166,16 @@ Rectangle {
     }
     function trigered(obj) {
         tumbler.visible = false;
-        if (mouseContener.mouseObj) {
-            if (obj.push(mouseContener.top())) {
+        let objectPlate = null;
+        if (upPlate) {
+            if (obj.push(upPlate)) {
                 if(oldTower !== obj) step.ste++
-                mouseContener.pop()
+                objectPlate = upPlate;
+                upPlate = null
             }
         } else {
-            if (mouseContener.push((obj.top()))){
-                oldTower = obj;
-                obj.pop()
-            }
+            upPlate = obj.up();
+
         }
         if ( tower3.items.length === all) {
             if (all == tumbler.spin.maximumValue) {
@@ -192,6 +195,11 @@ Rectangle {
                 start(++tumbler.spin.value)
             }
         }
+
+        oldTower = obj;
+
+        if (objectPlate)
+            objectPlate.updateCoordinates();
     }
     
 

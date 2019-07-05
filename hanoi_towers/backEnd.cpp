@@ -105,11 +105,11 @@ void BackEnd::readCnfig() {
 }
 
 unsigned short BackEnd::getMinSteps(const unsigned short lvl) const{
-    return pow(2, lvl) - 1;
+    return static_cast<unsigned short>(pow(2, lvl)) - 1;
 }
 
-void BackEnd::save(const short &lvl){
-    this->lvl = lvl;
+void BackEnd::save(short lvl){
+    this->lvl = static_cast<unsigned short>(lvl);
     writeConfig();
 }
 
@@ -124,7 +124,7 @@ void BackEnd::setShowHelp(bool state){
 }
 
 short BackEnd::read()const{
-    return lvl;
+    return static_cast<short>(lvl);
 }
 
 BackEnd::~BackEnd(){

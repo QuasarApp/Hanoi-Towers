@@ -4,6 +4,7 @@ import QtGraphicalEffects 1.0
 Item {
     id: tover
     property var items: []
+    property var upPlate: null
     signal click(var obj)
 
     Rectangle {
@@ -48,13 +49,39 @@ Item {
         anchors.bottom: parent.bottom
     }
 
+    function up() {
+        if (items.length <= 0 )
+            return null
+
+        const obj = top();
+        pop();
+
+        obj.x = (tover.width / 2) - (obj.width / 2)
+        obj.y = 0 - obj.height;
+
+        upPlate = obj;
+        return upPlate
+
+    }
+
     function push(obj) {
         if (items.length > 0 && (!obj
                                  || obj.mass > items[items.length - 1].mass))
             return false
+
         items.push(obj)
         obj.pushofnumber = items.length
+
         obj.parent = this
+
+        const temp = obj.durationAnimation;
+        obj.durationAnimation = 0;
+
+        obj.x = (tover.width / 2) - (obj.width / 2)
+        obj.y = 0 - obj.height;
+        obj.durationAnimation = temp;
+
+
         return true
     }
 
