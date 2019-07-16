@@ -13,30 +13,11 @@ The Hanoi Tower is one of the most popular puzzles of the 19th century. Three ba
 ![scrin4](Screenshots/S80715-112645.jpg)
 ![scrin5](Screenshots/S80715-112656.jpg)
 
-supported platform: 
+## supported platform: 
 1. Linux
 2. Android 
 3. Windows 
 
-## Build for Linux
-
-* donwload [qt creator](https://www.qt.io/download-thank-you?os=windows)
-* install qt 5.10.x or later
-* build release version
-* use [qt deploy](https://quasarapp.github.io/QtDeployer)
-
-
-## Build Windows 
-* donwload [qt creator](https://www.qt.io/download-thank-you?os=windows)
-* install qt 5.10.x or later
-* build release version
-* use [qt win deploy](http://doc.qt.io/qt-5/windows-deployment.html)
-
-## Build Android 
-* donwload [qt creator](https://www.qt.io/download-thank-you?os=windows)
-* install qt 5.9.x or later
-* install android sdk and ndk
-* install jdk
 
 ## Install 
 You can download the latest version of the game [here](https://github.com/EndrII/Hanoi-Towers/releases).
