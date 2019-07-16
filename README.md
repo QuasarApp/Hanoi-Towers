@@ -6,6 +6,13 @@
 ## What is Hanoi Towers
 The Hanoi Tower is one of the most popular puzzles of the 19th century. Three bars are given, on one of which eight rings are strung, the rings differ in size and smaller. The problem is to transfer the pyramid from the eight rings for the least number of moves to another rod. At a time, only one ring is allowed to carry, and you can not put a larger ring on less
 
+## Screenshots
+![scrin1](Screenshots/S80715-112600.jpg)
+![scrin2](Screenshots/S80715-112606.jpg)
+![scrin3](Screenshots/S80715-112622.jpg)
+![scrin4](Screenshots/S80715-112645.jpg)
+![scrin5](Screenshots/S80715-112656.jpg)
+
 supported platform: 
 1. Linux
 2. Android 
