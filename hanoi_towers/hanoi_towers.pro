@@ -5,7 +5,8 @@ QT += qml quick widgets
 CONFIG += c++11
 
 SOURCES += main.cpp \
-    backEnd.cpp
+    backEnd.cpp \
+    gamestate.cpp
 
 RESOURCES += qml.qrc
 TARGET = hanoi-towers
@@ -67,7 +68,8 @@ DISTFILES += \
 ANDROID_PACKAGE_SOURCE_DIR = $$PWD/android
 
 HEADERS += \
-    backEnd.h
+    backEnd.h \
+    gamestate.h
 
 TRANSLATIONS += \
     languages/ru.ts \

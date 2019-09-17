@@ -8,6 +8,7 @@ BackEnd::BackEnd():
 {
     reset();
     readCnfig();
+
 }
 
 void BackEnd::reset(){
@@ -15,6 +16,12 @@ void BackEnd::reset(){
     lvl = 1;
     _animation = true;
     _randomColor = false;
+
+    if (_gameState) {
+        delete _gameState;
+    }
+
+    _gameState = new GameState("");
 }
 
 void BackEnd::writeConfig() const {
@@ -32,6 +39,7 @@ void BackEnd::writeConfig() const {
         stream << isFirstStart;
         stream << _animation;
         stream << _randomColor;
+        stream << *_gameState;
         f.close();
     }
 }
@@ -71,7 +79,9 @@ void BackEnd::readCnfig() {
         stream >> _animation;
         stream >> _randomColor;
 
-        if (f.size() <= 3) {
+        stream >> *_gameState;
+
+        if (f.size() <= 4) {
             reset();
         }
         f.close();
@@ -89,8 +99,9 @@ void BackEnd::readCnfig() {
             stream >> isFirstStart;
             stream >> _animation;
             stream >> _randomColor;
+            stream >> *_gameState;
 
-            if (f.size() <= 3) {
+            if (f.size() <= 4) {
                 reset();
             }
             f.close();
@@ -127,6 +138,14 @@ short BackEnd::read()const{
     return static_cast<short>(lvl);
 }
 
+void BackEnd::setGameState(GameState gameState) {
+    *_gameState = gameState;
+}
+
 BackEnd::~BackEnd(){
     writeConfig();
+}
+
+GameState BackEnd::gameState() const {
+    return *_gameState;
 }

@@ -1,5 +1,7 @@
 #ifndef SAVER_H
 #define SAVER_H
+#include "gamestate.h"
+
 #include <QObject>
 #include <QFile>
 #define SAVE "data"
@@ -15,6 +17,7 @@ class BackEnd: public QObject
     Q_PROPERTY(bool isFirst READ isFirst WRITE setShowHelp NOTIFY firstChanged)
     Q_PROPERTY(bool randomColor READ randomColor WRITE setRandomColor NOTIFY randomColorChanged)
     Q_PROPERTY(bool animation READ animation WRITE setAnimation NOTIFY animationChanged)
+    Q_PROPERTY(GameState gameState READ gameState WRITE setGameState)
 
 private:
 
@@ -25,10 +28,15 @@ private:
     bool _animation;
     bool _randomColor;
 
+    GameState *_gameState = nullptr;
+
 public:
     BackEnd();
     ~BackEnd();
+    GameState gameState() const;
+
 public slots:
+
     /**
      * @brief save new lvl
      * @param lvl
@@ -88,6 +96,8 @@ public slots:
      * @return curent lvl
      */
     short read()const;
+
+    void setGameState(GameState gameState);
 
 signals:
     void firstChanged();

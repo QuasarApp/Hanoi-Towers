@@ -31,39 +31,27 @@ Page {
     contentItem: Item {
         id: content;
 
-//        Image {
-//            id: backleft
-//            source: "/img/standart"
-//            width: parent.width * 0.5
-//            height: width
-//            fillMode: Image.PreserveAspectFit
-//            anchors.left: parent.left
-//            anchors.bottom: parent.bottom
-//            anchors.bottomMargin: width * -0.1
-//            anchors.leftMargin: height * -0.5
-
-//        }
-
-//        Image {
-//            id: backright
-//            source: "/img/standart"
-//            width: parent.width * 0.5
-//            height: width
-//            fillMode: Image.PreserveAspectFit
-//            anchors.right: parent.right
-//            anchors.bottom: parent.bottom
-//            anchors.bottomMargin: width * -0.1
-//            anchors.rightMargin: height * -0.5
-
-//        }
 
         ColumnLayout {
 
+            Base.BaseButton {
+                id: load;
+                Layout.preferredWidth: parent.width * 0.5;
+                Layout.preferredHeight: parent.height * 0.18
+                Layout.alignment: Qt.AlignCenter
+
+                text: qsTr("continue");
+                width:  about.width * 0.8;
+                onClicked: {
+//                    menuPage.parent.source = "../game.qml"
+
+                }
+            }
 
             Base.BaseButton {
                 id: start;
                 Layout.preferredWidth: parent.width * 0.5;
-                Layout.preferredHeight: parent.height * 0.2
+                Layout.preferredHeight: parent.height * 0.18
                 Layout.alignment: Qt.AlignCenter
 
                 text: qsTr("start");
@@ -77,7 +65,7 @@ Page {
             Base.BaseButton {
                 id: about;
                 Layout.preferredWidth: parent.width * 0.5;
-                Layout.preferredHeight: parent.height * 0.2
+                Layout.preferredHeight: parent.height * 0.18
                 Layout.alignment: Qt.AlignCenter
                 text: qsTr("About");
                 width:  config.width * 0.8;
@@ -90,7 +78,7 @@ Page {
             Base.BaseButton {
                 id: config;
                 Layout.preferredWidth: parent.width * 0.5;
-                Layout.preferredHeight: parent.height * 0.2
+                Layout.preferredHeight: parent.height * 0.18
                 Layout.alignment: Qt.AlignCenter
                 text: qsTr("Config");
                 width:  exit.width * 0.8;
@@ -102,7 +90,7 @@ Page {
             Base.BaseButton {
                 id: exit;
                 Layout.preferredWidth: parent.width * 0.5;
-                Layout.preferredHeight: parent.height * 0.2
+                Layout.preferredHeight: parent.height * 0.18
                 Layout.alignment: Qt.AlignCenter
                 width: content.width * 0.5;
                 text: qsTr("exit");

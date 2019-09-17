@@ -29,36 +29,6 @@ Rectangle {
         id: mouse
     }
 
-//    Item {
-//        id: mouseContener
-//        property var mouseObj: null
-//        width: parent.width * 0.13
-
-//        function clear() {
-//            if (mouseObj) {
-//                mouseObj.destroy()
-//            }
-//        }
-//        function push(obj) {
-//            mouseObj = obj
-
-//            obj.parent = this
-
-//            return true
-//        }
-//        function top() {
-//            return mouseObj
-//        }
-//        function pop() {
-//            mouseObj = null
-//        }
-
-//        anchors.left: parent.left
-//        anchors.top:  parent.top
-//        anchors.leftMargin: mouseContener.width * 0.2
-
-//    }
-
     Base.BaseText {
         id: towerheight
         font.bold: true

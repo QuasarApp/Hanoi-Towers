@@ -80,22 +80,22 @@
         <translation>Ханої вежі</translation>
     </message>
     <message>
-        <location filename="../menu/MainMenu.qml" line="69"/>
+        <location filename="../menu/MainMenu.qml" line="44"/>
         <source>start</source>
         <translation>Почати</translation>
     </message>
     <message>
-        <location filename="../menu/MainMenu.qml" line="82"/>
+        <location filename="../menu/MainMenu.qml" line="57"/>
         <source>About</source>
         <translation>Про автора</translation>
     </message>
     <message>
-        <location filename="../menu/MainMenu.qml" line="95"/>
+        <location filename="../menu/MainMenu.qml" line="70"/>
         <source>Config</source>
         <translation>Конфігурація</translation>
     </message>
     <message>
-        <location filename="../menu/MainMenu.qml" line="108"/>
+        <location filename="../menu/MainMenu.qml" line="83"/>
         <source>exit</source>
         <translation>Вихід</translation>
     </message>
@@ -148,34 +148,34 @@
 <context>
     <name>game</name>
     <message>
-        <location filename="../game.qml" line="80"/>
+        <location filename="../game.qml" line="52"/>
         <source>lvl </source>
         <translation>рівень </translation>
     </message>
     <message>
-        <location filename="../game.qml" line="104"/>
+        <location filename="../game.qml" line="76"/>
         <source>step </source>
         <translation>крок </translation>
     </message>
     <message>
-        <location filename="../game.qml" line="69"/>
+        <location filename="../game.qml" line="41"/>
         <source>Tower height:</source>
         <translation>Висота башти:</translation>
     </message>
     <message>
-        <location filename="../game.qml" line="115"/>
+        <location filename="../game.qml" line="87"/>
         <source>Return to main menu</source>
         <translation>Головне меню</translation>
     </message>
     <message>
-        <location filename="../game.qml" line="180"/>
+        <location filename="../game.qml" line="153"/>
         <source>You have passed the level in %0 steps and unlocked level %1
  Minimum steps for this lvl: %2</source>
         <translation>Ви пройшли рівень в кроках %0 і розблокували рівень %1
   Мінімальні кроки для цього рівня: %2</translation>
     </message>
     <message>
-        <location filename="../game.qml" line="187"/>
+        <location filename="../game.qml" line="160"/>
         <source>You have passed the level in %0 steps.
 Minimum steps for this lvl: %1</source>
         <translation>Ви пройшли рівень у %0 кроках.
