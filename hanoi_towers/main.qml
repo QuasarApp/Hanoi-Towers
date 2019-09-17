@@ -12,6 +12,13 @@ ApplicationWindow {
         id: core
         source: "menu/MainMenu.qml"
         anchors.fill: parent
+
+        function start() {
+        }
+
+        function load() {
+        }
+
         onLoaded: {
             item.launch(-1);
         }
