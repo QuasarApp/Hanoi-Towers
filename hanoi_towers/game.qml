@@ -17,6 +17,10 @@ Rectangle {
     property var oldTower
     property var upPlate : null
 
+    function continue_game() {
+
+    }
+
     BackEnd {
         id: backEnd
     }

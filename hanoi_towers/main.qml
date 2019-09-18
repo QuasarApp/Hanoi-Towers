@@ -14,9 +14,13 @@ ApplicationWindow {
         anchors.fill: parent
 
         function start() {
+            source = "../game.qml"
         }
 
         function load() {
+            source = "../game.qml"
+            source.continue_game();
+
         }
 
         onLoaded: {

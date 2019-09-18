@@ -43,7 +43,7 @@ Page {
                 text: qsTr("continue");
                 width:  about.width * 0.8;
                 onClicked: {
-                    menuPage.parent.source = "../game.qml"
+                    menuPage.parent.start()
 
                 }
             }
@@ -57,7 +57,7 @@ Page {
                 text: qsTr("start");
                 width:  about.width * 0.8;
                 onClicked: {
-                    menuPage.parent.source = "../game.qml"
+                    menuPage.parent.load()
 
                 }
             }
