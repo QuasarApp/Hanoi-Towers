@@ -19,7 +19,7 @@ ApplicationWindow {
 
         function load() {
             source = "../game.qml"
-            source.continue_game();
+            item.continue_game();
 
         }
 

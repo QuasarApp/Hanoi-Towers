@@ -18,7 +18,7 @@ Rectangle {
     property var upPlate : null
 
     function continue_game() {
-
+        console.log("continue");
     }
 
     BackEnd {
