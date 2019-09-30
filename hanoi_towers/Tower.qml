@@ -4,6 +4,9 @@ import QtGraphicalEffects 1.0
 Item {
     id: tover
     property var items: []
+    property var itemsMassArray: []
+    property int number: 0
+
     property var upPlate: null
     signal click(var obj)
 
@@ -70,6 +73,8 @@ Item {
             return false
 
         items.push(obj)
+        itemsMassArray.push(obj.mass)
+
         obj.pushofnumber = items.length
 
         obj.parent = this
@@ -93,6 +98,8 @@ Item {
         while (items.length) {
             items[items.length - 1].destroy()
             items.pop()
+            itemsMassArray.pop()
+
         }
     }
     function pop() {

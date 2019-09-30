@@ -14,7 +14,7 @@ private:
     QString save;
 
 public:
-    GameState(const QString& savename);
+    GameState(const QString& savename = "player");
     Q_INVOKABLE QList<int> getTower(int i);
     Q_INVOKABLE void setTower(int towerIndex, const QList<int> &tower);
     Q_INVOKABLE bool load(const QString& str);

@@ -56,6 +56,7 @@ int main(int argc, char *argv[])
 
     QQmlApplicationEngine engine;
     qmlRegisterType<BackEnd>("BackEnd",1,0,"BackEnd");
+
     engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
 
     return app.exec();

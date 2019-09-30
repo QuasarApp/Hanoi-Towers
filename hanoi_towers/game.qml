@@ -4,6 +4,7 @@ import QtQuick.Dialogs 1.2
 import QtQuick.Layouts 1.3
 
 import BackEnd 1.0
+
 import "./base" as Base
 
 
@@ -152,7 +153,7 @@ Rectangle {
 
         }
         if ( tower3.items.length === all) {
-            if (all == tumbler.spin.maximumValue) {
+            if (all === tumbler.spin.maximumValue) {
                 backEnd.save(tumbler.spin.value = tumbler.spin.maximumValue = all + 1)
                 popUp.text = qsTr("You have passed the level in %0 steps and unlocked level %1" +
                                    "\n Minimum steps for this lvl: %2").
@@ -174,6 +175,9 @@ Rectangle {
 
         if (objectPlate)
             objectPlate.updateCoordinates();
+
+        backEnd.gameState.setTower(obj.number, obj.itemsMassArray);
+
     }
     
 
@@ -183,6 +187,7 @@ Rectangle {
     
     Tower {
         id: tower1
+        number: 0
         width: gameWindow.width * 0.33
         height: gameWindow.height * 0.75
         anchors.left: gameWindow.left
@@ -193,6 +198,7 @@ Rectangle {
     }
     Tower {
         id: tower2
+        number: 1
         width: tower1.width
         height: tower1.height
         anchors.horizontalCenter: parent.horizontalCenter
@@ -203,6 +209,7 @@ Rectangle {
     }
     Tower {
         id: tower3
+        number: 2
         width: tower2.width
         height: tower2.height
         anchors.right: gameWindow.right
