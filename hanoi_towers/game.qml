@@ -3,8 +3,6 @@ import QtQuick.Controls 2.2
 import QtQuick.Dialogs 1.2
 import QtQuick.Layouts 1.3
 
-import BackEnd 1.0
-
 import "./base" as Base
 
 
@@ -22,10 +20,6 @@ Rectangle {
         console.log("continue");
 
         load("Player");
-    }
-
-    BackEnd {
-        id: backEnd
     }
 
     Base.Theme {
@@ -121,6 +115,12 @@ Rectangle {
         tower1.clear()
         tower2.clear()
         tower3.clear()
+
+        if (upPlate) {
+            upPlate.destroy();
+            upPlate = null;
+        }
+
         step.ste = backEnd.gameState.getStep();
         tumbler.spin.value = all = backEnd.gameState.getMaxValueOfLoadedSaves();
 
@@ -165,7 +165,18 @@ Rectangle {
 
             }
         }
+
+        saveState(tower1);
+        saveState(tower2);
+        saveState(tower3);
+
     }
+
+    function saveState(obj) {
+        backEnd.gameState.setStep(step.ste);
+        backEnd.gameState.setTower(obj.number, obj.itemsMassArray);
+    }
+
     function move(from, into) {
         if (from[from.lenght - 1] < into[into.lenght - 1]) {
             tower1.push()
@@ -208,8 +219,11 @@ Rectangle {
         if (objectPlate)
             objectPlate.updateCoordinates();
 
-        backEnd.gameState.setStep(step.ste + 1);
-        backEnd.gameState.setTower(obj.number, obj.itemsMassArray);
+        if (!upPlate) {
+            saveState(tower1);
+            saveState(tower2);
+            saveState(tower3);
+        }
     }
     
 

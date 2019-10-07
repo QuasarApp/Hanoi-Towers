@@ -1,6 +1,5 @@
 import QtQuick 2.9
 import QtGraphicalEffects 1.0
-import BackEnd 1.0
 
 Rectangle{
     property int mass: 0;
@@ -18,10 +17,6 @@ Rectangle{
     function updateCoordinates() {
         x = (parent.width - width) / 2 ;
         y = parent.height - (pushofnumber*height * 1.01) - 10.5;
-    }
-
-    BackEnd {
-        id: backEnd
     }
 
     Image {

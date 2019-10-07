@@ -3,17 +3,12 @@ import QtQuick.Controls 2.2
 import QtQuick.Layouts 1.3
 import QtQuick.Extras 1.4
 import "./../base" as Base
-import BackEnd 1.0
 
 Item {
     id:menuPage
 
     Base.Theme{
         id: theme;
-    }
-
-    BackEnd {
-        id: backEnd
     }
 
     Rectangle {

@@ -91,6 +91,7 @@ Item {
     }
 
     function top() {
+        itemsMassArray.pop()
         return items[items.length - 1]
     }
 

@@ -5,6 +5,7 @@
 //#include <QScreen>
 #include <QQmlApplicationEngine>
 #include <QQmlComponent>
+#include <QQmlContext>
 #include "backEnd.h"
 #include <QTranslator>
 
@@ -55,7 +56,10 @@ int main(int argc, char *argv[])
     }
 
     QQmlApplicationEngine engine;
-    qmlRegisterType<BackEnd>("BackEnd",1,0,"BackEnd");
+//    qmlRegisterType<BackEnd>("BackEnd",1,0,"BackEnd");
+    BackEnd back;
+    auto root = engine.rootContext();
+    root->setContextProperty("backEnd", &back);
 
     engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
 
