@@ -33,9 +33,9 @@ void GameState::setTower(int towerIndex ,const QList<int> &tower) {
 }
 
 bool GameState::load(const QString &str) {
-    if (saves.contains(str)) {
-        save = str;
+    save = str;
 
+    if (saves.contains(str)) {
         maxValueOfLoadedSave = 0;
         for ( auto &tower:  saves[str]) {
             for (int i : tower) {
@@ -46,6 +46,8 @@ bool GameState::load(const QString &str) {
         }
 
         return true;
+    } else {
+        saves[str] = {QList<int>{},QList<int>{},QList<int>{}};
     }
 
     return false;

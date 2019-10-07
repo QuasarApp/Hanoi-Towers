@@ -193,14 +193,14 @@
         <translation>メインメニューに戻る</translation>
     </message>
     <message>
-        <location filename="../game.qml" line="189"/>
+        <location filename="../game.qml" line="190"/>
         <source>You have passed the level in %0 steps and unlocked level %1
  Minimum steps for this lvl: %2</source>
         <translation>あなたは %0 ステップでレベルを通過し、レベル %1 をロック解除しました
   このlvlの最小手順：%2</translation>
     </message>
     <message>
-        <location filename="../game.qml" line="196"/>
+        <location filename="../game.qml" line="197"/>
         <source>You have passed the level in %0 steps.
 Minimum steps for this lvl: %1</source>
         <translation>%0ステップでレベルを通過しました。

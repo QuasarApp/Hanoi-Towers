@@ -16,6 +16,12 @@ void BackEnd::reset(){
     _animation = true;
     _randomColor = false;
 
+    if (_gameState) {
+        _gameState->deleteLater();
+    }
+
+    _gameState = new GameState();
+
 }
 
 void BackEnd::writeConfig() const {
@@ -33,7 +39,7 @@ void BackEnd::writeConfig() const {
         stream << isFirstStart;
         stream << _animation;
         stream << _randomColor;
-        stream << _gameState;
+        stream << *_gameState;
         f.close();
     }
 }
@@ -73,7 +79,7 @@ void BackEnd::readCnfig() {
         stream >> _animation;
         stream >> _randomColor;
 
-        stream >> _gameState;
+        stream >> *_gameState;
 
         if (f.size() <= 4) {
             reset();
@@ -93,7 +99,7 @@ void BackEnd::readCnfig() {
             stream >> isFirstStart;
             stream >> _animation;
             stream >> _randomColor;
-            stream >> _gameState;
+            stream >> *_gameState;
 
             if (f.size() <= 4) {
                 reset();
@@ -134,8 +140,12 @@ short BackEnd::read()const{
 
 BackEnd::~BackEnd(){
     writeConfig();
+
+    if (_gameState) {
+        delete _gameState;
+    }
 }
 
-GameState& BackEnd::gameState() {
+QObject* BackEnd::gameState() {
     return _gameState;
 }

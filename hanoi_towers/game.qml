@@ -127,7 +127,7 @@ Rectangle {
         const towers = [tower1, tower2, tower3]
 
         for (let i = 0; i < 3; ++i) {
-            const toewer = backEnd.gameState.getTower()
+            const toewer = backEnd.gameState.getTower(i)
             toewer.forEach((mass)=>{
                                var temp = Qt.createComponent("plate.qml")
                                if (temp.status === Component.Ready) {
@@ -208,7 +208,7 @@ Rectangle {
         if (objectPlate)
             objectPlate.updateCoordinates();
 
-        backEnd.gameState.setStep(step.ste++);
+        backEnd.gameState.setStep(step.ste + 1);
         backEnd.gameState.setTower(obj.number, obj.itemsMassArray);
     }
     

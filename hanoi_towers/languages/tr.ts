@@ -185,14 +185,14 @@
         <translation>Ana menüye dön</translation>
     </message>
     <message>
-        <location filename="../game.qml" line="189"/>
+        <location filename="../game.qml" line="190"/>
         <source>You have passed the level in %0 steps and unlocked level %1
  Minimum steps for this lvl: %2</source>
         <translation>Seviyeyi %0 adımından geçirdiniz ve %1 kilidini açtınız
   Bu lvl için minimum adımlar: %2</translation>
     </message>
     <message>
-        <location filename="../game.qml" line="196"/>
+        <location filename="../game.qml" line="197"/>
         <source>You have passed the level in %0 steps.
 Minimum steps for this lvl: %1</source>
         <translation>Seviyeyi %0 adımından geçtiniz.

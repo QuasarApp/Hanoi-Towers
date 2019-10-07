@@ -6,9 +6,9 @@
 #include <QHash>
 #include <QDataStream>
 
-class GameState
+class GameState : public QObject
 {
-   Q_GADGET
+   Q_OBJECT
 private:
     QHash<QString, QList<QList<int>>> saves;
     QString save;
@@ -18,7 +18,7 @@ private:
 public:
     explicit GameState(const QString& savename = "player");
     Q_INVOKABLE QList<int> getTower(int i);
-    void setTower(int towerIndex, const QList<int> &tower);
+    Q_INVOKABLE void setTower(int towerIndex, const QList<int> &tower);
     Q_INVOKABLE bool load(const QString& str);
     Q_INVOKABLE int getMaxValueOfLoadedSaves();
 
@@ -26,10 +26,8 @@ public:
     friend QDataStream& operator>> (QDataStream& stream, GameState& file);
 
     Q_INVOKABLE int getStep() const;
-    void setStep(int value);
+    Q_INVOKABLE void setStep(int value);
 };
-
-Q_DECLARE_METATYPE(GameState)
 
 
 #endif // GAMESTATE_H

@@ -185,14 +185,14 @@
         <translation>Вернутся в главное меню</translation>
     </message>
     <message>
-        <location filename="../game.qml" line="189"/>
+        <location filename="../game.qml" line="190"/>
         <source>You have passed the level in %0 steps and unlocked level %1
  Minimum steps for this lvl: %2</source>
         <translation>Вы прошли этот уровень за %0 шагов и разблокировали уровень %1
  Минимум шагов на этом уровне: %2</translation>
     </message>
     <message>
-        <location filename="../game.qml" line="196"/>
+        <location filename="../game.qml" line="197"/>
         <source>You have passed the level in %0 steps.
 Minimum steps for this lvl: %1</source>
         <translation>Вы прошли этот уровень за %0 шагов
