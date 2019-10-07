@@ -173,34 +173,34 @@
         <translation type="vanished">約</translation>
     </message>
     <message>
-        <location filename="../game.qml" line="58"/>
+        <location filename="../game.qml" line="59"/>
         <source>lvl </source>
         <translation>レベル </translation>
     </message>
     <message>
-        <location filename="../game.qml" line="82"/>
+        <location filename="../game.qml" line="83"/>
         <source>step </source>
         <translation>ステップ </translation>
     </message>
     <message>
-        <location filename="../game.qml" line="47"/>
+        <location filename="../game.qml" line="48"/>
         <source>Tower height:</source>
         <translation>タワーの高さ：</translation>
     </message>
     <message>
-        <location filename="../game.qml" line="93"/>
+        <location filename="../game.qml" line="94"/>
         <source>Return to main menu</source>
         <translation>メインメニューに戻る</translation>
     </message>
     <message>
-        <location filename="../game.qml" line="159"/>
+        <location filename="../game.qml" line="189"/>
         <source>You have passed the level in %0 steps and unlocked level %1
  Minimum steps for this lvl: %2</source>
         <translation>あなたは %0 ステップでレベルを通過し、レベル %1 をロック解除しました
   このlvlの最小手順：%2</translation>
     </message>
     <message>
-        <location filename="../game.qml" line="166"/>
+        <location filename="../game.qml" line="196"/>
         <source>You have passed the level in %0 steps.
 Minimum steps for this lvl: %1</source>
         <translation>%0ステップでレベルを通過しました。

@@ -1,5 +1,17 @@
 #include "gamestate.h"
 
+int GameState::getMaxValueOfLoadedSaves() {
+    return maxValueOfLoadedSave;
+}
+
+int GameState::getStep() const {
+    return step;
+}
+
+void GameState::setStep(int value) {
+    step = value;
+}
+
 GameState::GameState(const QString &savename) {
 
     save = savename;
@@ -23,6 +35,16 @@ void GameState::setTower(int towerIndex ,const QList<int> &tower) {
 bool GameState::load(const QString &str) {
     if (saves.contains(str)) {
         save = str;
+
+        maxValueOfLoadedSave = 0;
+        for ( auto &tower:  saves[str]) {
+            for (int i : tower) {
+                if (i > maxValueOfLoadedSave) {
+                    maxValueOfLoadedSave = i;
+                }
+            }
+        }
+
         return true;
     }
 
@@ -31,12 +53,14 @@ bool GameState::load(const QString &str) {
 }
 
 QDataStream& operator<< (QDataStream& stream, const GameState& file) {
+    stream << file.step;
     stream << file.saves;
 
     return stream;
 }
 
 QDataStream& operator>> (QDataStream& stream, GameState& file) {
+    stream >> file.step;
     stream >> file.saves;
 
     return stream;

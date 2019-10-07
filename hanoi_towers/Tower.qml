@@ -102,8 +102,13 @@ Item {
 
         }
     }
+
     function pop() {
         items.pop()
+    }
+
+    function init(array) {
+
     }
 
     MouseArea {

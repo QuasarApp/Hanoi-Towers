@@ -165,34 +165,34 @@
         <translation type="vanished">hakkında</translation>
     </message>
     <message>
-        <location filename="../game.qml" line="58"/>
+        <location filename="../game.qml" line="59"/>
         <source>lvl </source>
         <translation>seviye </translation>
     </message>
     <message>
-        <location filename="../game.qml" line="82"/>
+        <location filename="../game.qml" line="83"/>
         <source>step </source>
         <translation>adım </translation>
     </message>
     <message>
-        <location filename="../game.qml" line="47"/>
+        <location filename="../game.qml" line="48"/>
         <source>Tower height:</source>
         <translation>Kule yüksekliği:</translation>
     </message>
     <message>
-        <location filename="../game.qml" line="93"/>
+        <location filename="../game.qml" line="94"/>
         <source>Return to main menu</source>
         <translation>Ana menüye dön</translation>
     </message>
     <message>
-        <location filename="../game.qml" line="159"/>
+        <location filename="../game.qml" line="189"/>
         <source>You have passed the level in %0 steps and unlocked level %1
  Minimum steps for this lvl: %2</source>
         <translation>Seviyeyi %0 adımından geçirdiniz ve %1 kilidini açtınız
   Bu lvl için minimum adımlar: %2</translation>
     </message>
     <message>
-        <location filename="../game.qml" line="166"/>
+        <location filename="../game.qml" line="196"/>
         <source>You have passed the level in %0 steps.
 Minimum steps for this lvl: %1</source>
         <translation>Seviyeyi %0 adımından geçtiniz.

@@ -26,9 +26,10 @@ ApplicationWindow {
         }
 
         onLoaded: {
-            item.launch(-1);
             if (isLoad) {
                 item.continue_game();
+            } else {
+                item.launch(-1);
             }
         }
     }

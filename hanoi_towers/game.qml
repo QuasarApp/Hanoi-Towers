@@ -20,6 +20,8 @@ Rectangle {
 
     function continue_game() {
         console.log("continue");
+
+        load("Player");
     }
 
     BackEnd {
@@ -107,7 +109,37 @@ Rectangle {
         if (backEnd.isFirst) {
             help.open();
         }
+
+        const val = backEnd;
+        backEnd.gameState.load("Player");
+
         start(-1);
+    }
+    function load (player) {
+
+        backEnd.gameState.load(player);
+        tower1.clear()
+        tower2.clear()
+        tower3.clear()
+        step.ste = backEnd.gameState.getStep();
+        tumbler.spin.value = all = backEnd.gameState.getMaxValueOfLoadedSaves();
+
+        const towers = [tower1, tower2, tower3]
+
+        for (let i = 0; i < 3; ++i) {
+            const toewer = backEnd.gameState.getTower()
+            toewer.forEach((mass)=>{
+                               var temp = Qt.createComponent("plate.qml")
+                               if (temp.status === Component.Ready) {
+                                   let obj = temp.createObject(parent)
+                                   obj.mass = mass
+                                   obj.value = all
+                                   towers[i].push(obj)
+                                   obj.updateCoordinates();
+
+                               }
+                           });
+        }
     }
 
     function start(value) {
@@ -176,8 +208,8 @@ Rectangle {
         if (objectPlate)
             objectPlate.updateCoordinates();
 
+        backEnd.gameState.setStep(step.ste++);
         backEnd.gameState.setTower(obj.number, obj.itemsMassArray);
-
     }
     
 

@@ -153,34 +153,34 @@
 <context>
     <name>game</name>
     <message>
-        <location filename="../game.qml" line="58"/>
+        <location filename="../game.qml" line="59"/>
         <source>lvl </source>
         <translation>рівень </translation>
     </message>
     <message>
-        <location filename="../game.qml" line="82"/>
+        <location filename="../game.qml" line="83"/>
         <source>step </source>
         <translation>крок </translation>
     </message>
     <message>
-        <location filename="../game.qml" line="47"/>
+        <location filename="../game.qml" line="48"/>
         <source>Tower height:</source>
         <translation>Висота башти:</translation>
     </message>
     <message>
-        <location filename="../game.qml" line="93"/>
+        <location filename="../game.qml" line="94"/>
         <source>Return to main menu</source>
         <translation>Головне меню</translation>
     </message>
     <message>
-        <location filename="../game.qml" line="159"/>
+        <location filename="../game.qml" line="189"/>
         <source>You have passed the level in %0 steps and unlocked level %1
  Minimum steps for this lvl: %2</source>
         <translation>Ви пройшли рівень в кроках %0 і розблокували рівень %1
   Мінімальні кроки для цього рівня: %2</translation>
     </message>
     <message>
-        <location filename="../game.qml" line="166"/>
+        <location filename="../game.qml" line="196"/>
         <source>You have passed the level in %0 steps.
 Minimum steps for this lvl: %1</source>
         <translation>Ви пройшли рівень у %0 кроках.

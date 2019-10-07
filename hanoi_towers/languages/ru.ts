@@ -165,34 +165,34 @@
         <translation type="vanished">об Авторах</translation>
     </message>
     <message>
-        <location filename="../game.qml" line="58"/>
+        <location filename="../game.qml" line="59"/>
         <source>lvl </source>
         <translation>Уровень </translation>
     </message>
     <message>
-        <location filename="../game.qml" line="82"/>
+        <location filename="../game.qml" line="83"/>
         <source>step </source>
         <translation>шаг </translation>
     </message>
     <message>
-        <location filename="../game.qml" line="47"/>
+        <location filename="../game.qml" line="48"/>
         <source>Tower height:</source>
         <translation>Высота башни:</translation>
     </message>
     <message>
-        <location filename="../game.qml" line="93"/>
+        <location filename="../game.qml" line="94"/>
         <source>Return to main menu</source>
         <translation>Вернутся в главное меню</translation>
     </message>
     <message>
-        <location filename="../game.qml" line="159"/>
+        <location filename="../game.qml" line="189"/>
         <source>You have passed the level in %0 steps and unlocked level %1
  Minimum steps for this lvl: %2</source>
         <translation>Вы прошли этот уровень за %0 шагов и разблокировали уровень %1
  Минимум шагов на этом уровне: %2</translation>
     </message>
     <message>
-        <location filename="../game.qml" line="166"/>
+        <location filename="../game.qml" line="196"/>
         <source>You have passed the level in %0 steps.
 Minimum steps for this lvl: %1</source>
         <translation>Вы прошли этот уровень за %0 шагов

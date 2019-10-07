@@ -8,9 +8,6 @@ BackEnd::BackEnd():
 {
     reset();
     readCnfig();
-
-    qRegisterMetaType<GameState>();
-
 }
 
 void BackEnd::reset(){
@@ -139,6 +136,6 @@ BackEnd::~BackEnd(){
     writeConfig();
 }
 
-GameState *BackEnd::gameState() {
-    return &_gameState;
+GameState& BackEnd::gameState() {
+    return _gameState;
 }

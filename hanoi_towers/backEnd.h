@@ -17,7 +17,7 @@ class BackEnd: public QObject
     Q_PROPERTY(bool isFirst READ isFirst WRITE setShowHelp NOTIFY firstChanged)
     Q_PROPERTY(bool randomColor READ randomColor WRITE setRandomColor NOTIFY randomColorChanged)
     Q_PROPERTY(bool animation READ animation WRITE setAnimation NOTIFY animationChanged)
-    Q_PROPERTY(GameState* gameState READ gameState)
+    Q_PROPERTY(GameState gameState READ gameState)
 
 private:
 
@@ -33,7 +33,6 @@ private:
 public:
     BackEnd();
     ~BackEnd();
-    GameState* gameState();
 
 public slots:
 
@@ -96,6 +95,8 @@ public slots:
      * @return curent lvl
      */
     short read()const;
+
+    GameState &gameState();
 
 signals:
     void firstChanged();
