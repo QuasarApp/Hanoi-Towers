@@ -12,27 +12,27 @@
 <context>
     <name>Config</name>
     <message>
-        <location filename="../menu/Config.qml" line="28"/>
+        <location filename="../menu/Config.qml" line="23"/>
         <source>Settings</source>
         <translation>Настройки</translation>
     </message>
     <message>
-        <location filename="../menu/Config.qml" line="35"/>
+        <location filename="../menu/Config.qml" line="30"/>
         <source>Return to main menu</source>
         <translation>Вернутся в главное меню</translation>
     </message>
     <message>
-        <location filename="../menu/Config.qml" line="76"/>
+        <location filename="../menu/Config.qml" line="71"/>
         <source>Standart color</source>
         <translation>Классическая подсветка</translation>
     </message>
     <message>
-        <location filename="../menu/Config.qml" line="87"/>
+        <location filename="../menu/Config.qml" line="82"/>
         <source>Random color</source>
         <translation>Разноцветная подсветка</translation>
     </message>
     <message>
-        <location filename="../menu/Config.qml" line="97"/>
+        <location filename="../menu/Config.qml" line="92"/>
         <source>Animation</source>
         <translation>Анимация</translation>
     </message>
@@ -165,34 +165,34 @@
         <translation type="vanished">об Авторах</translation>
     </message>
     <message>
-        <location filename="../game.qml" line="59"/>
+        <location filename="../game.qml" line="53"/>
         <source>lvl </source>
         <translation>Уровень </translation>
     </message>
     <message>
-        <location filename="../game.qml" line="83"/>
+        <location filename="../game.qml" line="77"/>
         <source>step </source>
         <translation>шаг </translation>
     </message>
     <message>
-        <location filename="../game.qml" line="48"/>
+        <location filename="../game.qml" line="42"/>
         <source>Tower height:</source>
         <translation>Высота башни:</translation>
     </message>
     <message>
-        <location filename="../game.qml" line="94"/>
+        <location filename="../game.qml" line="88"/>
         <source>Return to main menu</source>
         <translation>Вернутся в главное меню</translation>
     </message>
     <message>
-        <location filename="../game.qml" line="190"/>
+        <location filename="../game.qml" line="201"/>
         <source>You have passed the level in %0 steps and unlocked level %1
  Minimum steps for this lvl: %2</source>
         <translation>Вы прошли этот уровень за %0 шагов и разблокировали уровень %1
  Минимум шагов на этом уровне: %2</translation>
     </message>
     <message>
-        <location filename="../game.qml" line="197"/>
+        <location filename="../game.qml" line="208"/>
         <source>You have passed the level in %0 steps.
 Minimum steps for this lvl: %1</source>
         <translation>Вы прошли этот уровень за %0 шагов

@@ -12,27 +12,27 @@
 <context>
     <name>Config</name>
     <message>
-        <location filename="../menu/Config.qml" line="28"/>
+        <location filename="../menu/Config.qml" line="23"/>
         <source>Settings</source>
         <translation>ayarlar</translation>
     </message>
     <message>
-        <location filename="../menu/Config.qml" line="35"/>
+        <location filename="../menu/Config.qml" line="30"/>
         <source>Return to main menu</source>
         <translation>Ana menüye dön</translation>
     </message>
     <message>
-        <location filename="../menu/Config.qml" line="76"/>
+        <location filename="../menu/Config.qml" line="71"/>
         <source>Standart color</source>
         <translation>Klasik arka ışık</translation>
     </message>
     <message>
-        <location filename="../menu/Config.qml" line="87"/>
+        <location filename="../menu/Config.qml" line="82"/>
         <source>Random color</source>
         <translation>Çok renkli arka ışık</translation>
     </message>
     <message>
-        <location filename="../menu/Config.qml" line="97"/>
+        <location filename="../menu/Config.qml" line="92"/>
         <source>Animation</source>
         <translation>animasyon</translation>
     </message>
@@ -165,34 +165,34 @@
         <translation type="vanished">hakkında</translation>
     </message>
     <message>
-        <location filename="../game.qml" line="59"/>
+        <location filename="../game.qml" line="53"/>
         <source>lvl </source>
         <translation>seviye </translation>
     </message>
     <message>
-        <location filename="../game.qml" line="83"/>
+        <location filename="../game.qml" line="77"/>
         <source>step </source>
         <translation>adım </translation>
     </message>
     <message>
-        <location filename="../game.qml" line="48"/>
+        <location filename="../game.qml" line="42"/>
         <source>Tower height:</source>
         <translation>Kule yüksekliği:</translation>
     </message>
     <message>
-        <location filename="../game.qml" line="94"/>
+        <location filename="../game.qml" line="88"/>
         <source>Return to main menu</source>
         <translation>Ana menüye dön</translation>
     </message>
     <message>
-        <location filename="../game.qml" line="190"/>
+        <location filename="../game.qml" line="201"/>
         <source>You have passed the level in %0 steps and unlocked level %1
  Minimum steps for this lvl: %2</source>
         <translation>Seviyeyi %0 adımından geçirdiniz ve %1 kilidini açtınız
   Bu lvl için minimum adımlar: %2</translation>
     </message>
     <message>
-        <location filename="../game.qml" line="197"/>
+        <location filename="../game.qml" line="208"/>
         <source>You have passed the level in %0 steps.
 Minimum steps for this lvl: %1</source>
         <translation>Seviyeyi %0 adımından geçtiniz.
