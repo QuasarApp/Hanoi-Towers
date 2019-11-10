@@ -1,6 +1,8 @@
 #ifndef SAVER_H
 #define SAVER_H
 #include "gamestate.h"
+#include "hanoiclient.h"
+#include "profiledata.h"
 #include <quasarapp.h>
 #include <QObject>
 #include <QFile>
@@ -18,39 +20,28 @@ class BackEnd: public QObject
     Q_PROPERTY(bool animation READ animation WRITE setAnimation NOTIFY animationChanged)
     Q_PROPERTY(QObject* gameState READ gameState)
 
-    Q_PROPERTY(QStringList profileList READ profileList WRITE setProfileList NOTIFY profileListChanged)
-    Q_PROPERTY(int profileIndex READ profileIndex NOTIFY profileIndexChanged)
-    Q_PROPERTY(QString profile READ profile NOTIFY profileIndexChanged)
+    Q_PROPERTY(QStringList profileList READ profileList  NOTIFY profileListChanged)
+    Q_PROPERTY(QString profile READ profile NOTIFY profileChanged)
 
 
 private:
-
-    void readCnfig();
-    void writeConfig()const;
+    bool init();
+    void saveLocalData() const;
 
     QuasarAppUtils::Settings *_settings = nullptr;
-    GameState *_gameState = nullptr;
 
-    QStringList _localProfilesList;
-    int _profileIndex;
+    QHash<QString, ProfileData> _profileList;
+    QString _profile;
+    HanoiClient _client;
 
 public:
     BackEnd();
     ~BackEnd();
 
     QString profile() const;
-
     QStringList profileList() const;
 
-    int profileIndex() const;
-
 public slots:
-
-    /**
-     * @brief save new lvl
-     * @param lvl
-     */
-    void save(short lvl);
 
     /**
      * @brief getMinSteps
@@ -100,21 +91,13 @@ public slots:
      */
     void setRandomColor(bool );
 
-    /**
-     * @brief read
-     * @return curent lvl
-     */
-    short read()const;
-
     QObject *gameState();
-    void setProfileList(QStringList profileList);
-
 signals:
     void firstChanged();
     void animationChanged();
     void randomColorChanged();
-    void profileListChanged(QStringList profileList);
-    void profileIndexChanged(int profileIndex);
+    void profileListChanged();
+    void profileChanged(QString profile);
 };
 
 #endif // SAVER_H

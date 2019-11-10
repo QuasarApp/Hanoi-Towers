@@ -2,6 +2,9 @@
 #include <cmath>
 #include <QDataStream>
 #include <QDir>
+#include "gamestate.h"
+
+constexpr unsigned char currentVersion = 6;
 
 BackEnd::BackEnd():
     QObject()
@@ -16,16 +19,70 @@ void BackEnd::reset(){
     _settings->setValue("animation", true);
     _settings->setValue("randomColor", false);
 
-    if (_gameState) {
-        _gameState->deleteLater();
-    }
-
-    _gameState = new GameState();
+//    for (auto& item : _profileList) {
+//        item->deleteLater();
+//    }
+    _profileList.clear();
+    emit profileListChanged();
 
 }
 
-void BackEnd::writeConfig() const {
-    _settings->sync();
+bool BackEnd::init() {
+    QFile f(MAIN_SETINGS_FILE);
+    if(f.exists() && f.open(QIODevice::ReadOnly)){
+        QDataStream stream(&f);
+
+        unsigned char dataVersion;
+        stream >> dataVersion;
+        if (dataVersion != currentVersion) {
+            stream >> _profileList;
+            stream >> _profile;
+
+            f.close();
+        } else {
+            unsigned short lvl;
+            bool isFirstStart, _animation, _randomColor;
+            stream >> lvl;
+            stream >> isFirstStart;
+            stream >> _animation;
+            stream >> _randomColor;
+
+            if(lvl < 1 || lvl > 99) {
+                lvl = 1;
+            }
+
+            setAnimation(_animation);
+            setRandomColor(_randomColor);
+            setRandomColor(isFirstStart);
+
+            static_cast<GameState*>((_profileList["User"].
+                                    gameState()))->saveLvl(
+                        static_cast<short>(lvl));
+
+            emit firstChanged();
+        }
+
+        return true;
+    }
+
+    return false;
+}
+
+void BackEnd::saveLocalData() const {
+    QFile f(MAIN_SETINGS_FILE);
+
+    if(f.open(QIODevice::ReadWrite | QIODevice::Truncate)) {
+        QDataStream stream(&f);
+        stream << currentVersion;
+        stream << _profileList;
+        stream << _profile;
+
+        f.close();
+        return;
+    }
+
+    QuasarAppUtils::Params::verboseLog("local file data not opened on not created1 " + f.fileName(),
+                                       QuasarAppUtils::Error);
 }
 
 bool BackEnd::randomColor() const {
@@ -46,39 +103,8 @@ void BackEnd::setAnimation(bool name) {
     emit animationChanged();
 }
 
-void BackEnd::readCnfig() {
-    QFile f(MAIN_SETINGS_FILE);
-    if(f.exists() && f.open(QIODevice::ReadOnly)){
-        QDataStream stream(&f);
-        unsigned short lvl;
-        bool isFirstStart, _animation, _randomColor;
-        stream >> lvl;
-        stream >> isFirstStart;
-        stream >> _animation;
-        stream >> _randomColor;
-
-        stream >> _gameState;
-
-        f.close();
-
-        if(lvl < 1 || lvl > 99) {
-            lvl = 1;
-        }
-
-        setAnimation(_animation);
-        setRandomColor(_randomColor);
-        setRandomColor(isFirstStart);
-
-        emit firstChanged();
-    }
-}
-
 unsigned short BackEnd::getMinSteps(const unsigned short lvl) const{
     return static_cast<unsigned short>(pow(2, lvl)) - 1;
-}
-
-void BackEnd::save(short lvl){
-    _settings->setValue("lvl", static_cast<unsigned short>(lvl));
 }
 
 bool BackEnd::isFirst()const{
@@ -91,38 +117,22 @@ void BackEnd::setShowHelp(bool state) {
 
 }
 
-short BackEnd::read()const{
-    return static_cast<short>(_settings->getValue("lvl", 1).toInt());
-}
-
 BackEnd::~BackEnd(){
-    writeConfig();
-
-    if (_gameState) {
-        delete _gameState;
-    }
+    saveLocalData();
 }
 
 QString BackEnd::profile() const {
-    return _localProfilesList.value(_profileIndex);
+    return _profile;
 }
 
 QStringList BackEnd::profileList() const {
-    return _localProfilesList;
-}
-
-int BackEnd::profileIndex() const {
-    return _profileIndex;
+    return _profileList.keys();
 }
 
 QObject* BackEnd::gameState() {
-    return _gameState;
-}
+    if (!_profileList.contains(_profile)) {
+        return nullptr;
+    }
 
-void BackEnd::setProfileList(QStringList profileList) {
-    if (_localProfilesList == profileList)
-        return;
-
-    _localProfilesList = profileList;
-    emit profileListChanged(_localProfilesList);
+    return _profileList[_profile].gameState();
 }
