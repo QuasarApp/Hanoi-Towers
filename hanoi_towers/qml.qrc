@@ -20,6 +20,7 @@
         <file>SwitchLvl.qml</file>
         <file>base/BaseRadioButton.qml</file>
         <file>base/BoseCheckBox.qml</file>
+        <file>menu/UsersTable.qml</file>
     </qresource>
     <qresource prefix="/textures">
         <file>res/wood.png</file>

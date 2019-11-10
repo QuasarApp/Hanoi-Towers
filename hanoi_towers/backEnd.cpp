@@ -19,9 +19,9 @@ void BackEnd::reset(){
     _settings->setValue("animation", true);
     _settings->setValue("randomColor", false);
 
-//    for (auto& item : _profileList) {
-//        item->deleteLater();
-//    }
+    for (auto& item : _profileList) {
+        item->deleteLater();
+    }
     _profileList.clear();
     emit profileListChanged();
 
@@ -55,7 +55,13 @@ bool BackEnd::init() {
             setRandomColor(_randomColor);
             setRandomColor(isFirstStart);
 
-            static_cast<GameState*>((_profileList["User"].
+            auto profile = _profileList.value("User", nullptr);
+            if (!profile) {
+                profile = new ProfileData();
+                _profileList["User"] = profile;
+            }
+
+            static_cast<GameState*>((profile->
                                     gameState()))->saveLvl(
                         static_cast<short>(lvl));
 
@@ -134,5 +140,5 @@ QObject* BackEnd::gameState() {
         return nullptr;
     }
 
-    return _profileList[_profile].gameState();
+    return _profileList[_profile]->gameState();
 }

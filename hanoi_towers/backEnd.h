@@ -30,7 +30,7 @@ private:
 
     QuasarAppUtils::Settings *_settings = nullptr;
 
-    QHash<QString, ProfileData> _profileList;
+    QHash<QString, ProfileData*> _profileList;
     QString _profile;
     HanoiClient _client;
 

@@ -37,7 +37,7 @@ Page {
             Base.BaseButton {
                 id: load;
                 Layout.preferredWidth: parent.width * 0.5;
-                Layout.preferredHeight: parent.height * 0.18
+                Layout.preferredHeight: parent.height * 0.15
                 Layout.alignment: Qt.AlignCenter
 
                 text: qsTr("continue");
@@ -51,7 +51,7 @@ Page {
             Base.BaseButton {
                 id: start;
                 Layout.preferredWidth: parent.width * 0.5;
-                Layout.preferredHeight: parent.height * 0.18
+                Layout.preferredHeight: parent.height * 0.15
                 Layout.alignment: Qt.AlignCenter
 
                 text: qsTr("start");
@@ -65,7 +65,7 @@ Page {
             Base.BaseButton {
                 id: about;
                 Layout.preferredWidth: parent.width * 0.5;
-                Layout.preferredHeight: parent.height * 0.18
+                Layout.preferredHeight: parent.height * 0.15
                 Layout.alignment: Qt.AlignCenter
                 text: qsTr("About");
                 width:  config.width * 0.8;
@@ -78,7 +78,7 @@ Page {
             Base.BaseButton {
                 id: config;
                 Layout.preferredWidth: parent.width * 0.5;
-                Layout.preferredHeight: parent.height * 0.18
+                Layout.preferredHeight: parent.height * 0.15
                 Layout.alignment: Qt.AlignCenter
                 text: qsTr("Config");
                 width:  exit.width * 0.8;
@@ -88,9 +88,21 @@ Page {
             }
 
             Base.BaseButton {
+                id: users;
+                Layout.preferredWidth: parent.width * 0.5;
+                Layout.preferredHeight: parent.height * 0.15
+                Layout.alignment: Qt.AlignCenter
+                text: qsTr("Users");
+                width:  exit.width * 0.8;
+                onClicked: {
+                    menuPage.parent.source = "UsersTable.qml"
+                }
+            }
+
+            Base.BaseButton {
                 id: exit;
                 Layout.preferredWidth: parent.width * 0.5;
-                Layout.preferredHeight: parent.height * 0.18
+                Layout.preferredHeight: parent.height * 0.15
                 Layout.alignment: Qt.AlignCenter
                 width: content.width * 0.5;
                 text: qsTr("exit");

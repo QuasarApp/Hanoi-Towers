@@ -100,7 +100,12 @@
         <translation>ayarlar</translation>
     </message>
     <message>
-        <location filename="../menu/MainMenu.qml" line="96"/>
+        <location filename="../menu/MainMenu.qml" line="95"/>
+        <source>Users</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../menu/MainMenu.qml" line="108"/>
         <source>exit</source>
         <translation>çıkış</translation>
     </message>
@@ -111,6 +116,24 @@
         <location filename="../SwitchLvl.qml" line="61"/>
         <source>Start</source>
         <translation>başla</translation>
+    </message>
+</context>
+<context>
+    <name>UsersTable</name>
+    <message>
+        <location filename="../menu/UsersTable.qml" line="16"/>
+        <source>Online user</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../menu/UsersTable.qml" line="24"/>
+        <source>Enter the name of new user</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../menu/UsersTable.qml" line="29"/>
+        <source>Create new user</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

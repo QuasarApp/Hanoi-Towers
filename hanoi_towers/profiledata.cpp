@@ -8,7 +8,8 @@ void ProfileData::setOnlineProfile(bool onlineProfile) {
     _onlineProfile = onlineProfile;
 }
 
-ProfileData::ProfileData(bool isOnline) {
+ProfileData::ProfileData(bool isOnline):
+    QObject(nullptr) {
     _onlineProfile = isOnline;
 }
 
