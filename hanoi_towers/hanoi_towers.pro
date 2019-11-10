@@ -6,7 +6,9 @@ CONFIG += c++11
 
 SOURCES += main.cpp \
     backEnd.cpp \
-    gamestate.cpp
+    gamestate.cpp \
+    hanoiclient.cpp \
+    profiledata.cpp
 
 RESOURCES += qml.qrc
 TARGET = hanoi-towers
@@ -69,7 +71,9 @@ ANDROID_PACKAGE_SOURCE_DIR = $$PWD/android
 
 HEADERS += \
     backEnd.h \
-    gamestate.h
+    gamestate.h \
+    hanoiclient.h \
+    profiledata.h
 
 TRANSLATIONS += \
     languages/ru.ts \
@@ -86,3 +90,5 @@ for(command, commands) {
 }
 
 RC_ICONS = res/icon.ico
+
+include($$PWD/../QtNetworkProtocol/NetworkProtocol.pri)

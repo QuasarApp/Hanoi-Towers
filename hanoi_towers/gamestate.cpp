@@ -4,6 +4,10 @@ int GameState::getMaxValueOfLoadedSaves() {
     return maxValueOfLoadedSave;
 }
 
+int GameState::lvl() const {
+    return _lvl;
+}
+
 int GameState::getStep() const {
     return step;
 }
@@ -12,58 +16,52 @@ void GameState::setStep(int value) {
     step = value;
 }
 
-GameState::GameState(const QString &savename) {
+void GameState::saveLvl(short lvl) {
+    _lvl = lvl;
+}
 
-    save = savename;
+QDataStream &GameState::fromStream(QDataStream &stream) {
+    stream >> step;
+    stream >> save;
+    stream >> _lvl;
 
-    QList<QList<int>> towers;
+    return stream;
+}
+
+QDataStream &GameState::toStream(QDataStream &stream) const {
+    stream << step;
+    stream << save;
+    stream << _lvl;
+
+    return stream;
+}
+
+GameState::GameState() {
+
+    save.clear();
     for (int i = 0 ; i < 3 ; i++)
-        towers.push_back({});
-
-    saves[save] = towers;
+        save.push_back({});
 }
 
 QList<int> GameState::getTower(int i) {
-    return saves[save].value(i);
+    return save.value(i);
 }
 
 void GameState::setTower(int towerIndex ,const QList<int> &tower) {
-    if (saves[save].size() > towerIndex)
-        saves[save][towerIndex] = tower;
+    if (save.size() > towerIndex)
+        save[towerIndex] = tower;
 }
 
-bool GameState::load(const QString &str) {
-    save = str;
-
-    if (saves.contains(str)) {
-        maxValueOfLoadedSave = 0;
-        for ( auto &tower:  saves[str]) {
-            for (int i : tower) {
-                if (i > maxValueOfLoadedSave) {
-                    maxValueOfLoadedSave = i;
-                }
+bool GameState::load() {
+    maxValueOfLoadedSave = 0;
+    for ( auto &tower:  save) {
+        for (int i : tower) {
+            if (i > maxValueOfLoadedSave) {
+                maxValueOfLoadedSave = i;
             }
         }
-
-        return true;
-    } else {
-        saves[str] = {QList<int>{},QList<int>{},QList<int>{}};
     }
 
-    return false;
+    return true;
 
-}
-
-QDataStream& operator<< (QDataStream& stream, const GameState& file) {
-    stream << file.step;
-    stream << file.saves;
-
-    return stream;
-}
-
-QDataStream& operator>> (QDataStream& stream, GameState& file) {
-    stream >> file.step;
-    stream >> file.saves;
-
-    return stream;
 }

@@ -6,15 +6,15 @@
 BackEnd::BackEnd():
     QObject()
 {
-    reset();
-    readCnfig();
+    _settings = QuasarAppUtils::Settings::get();
 }
 
 void BackEnd::reset(){
-    isFirstStart = true;
-    lvl = 1;
-    _animation = true;
-    _randomColor = false;
+
+    _settings->setValue("isFirstStart", true);
+    _settings->setValue("lvl", 1);
+    _settings->setValue("animation", true);
+    _settings->setValue("randomColor", false);
 
     if (_gameState) {
         _gameState->deleteLater();
@@ -25,93 +25,51 @@ void BackEnd::reset(){
 }
 
 void BackEnd::writeConfig() const {
-    QDir dir(QDir::rootPath());
-
-    if (!QFileInfo::exists(MAIN_FOLDER) &&
-        !dir.mkpath(MAIN_FOLDER)) {
-        return;
-    }
-
-    QFile f(MAIN_SETINGS_FILE);
-    if(f.open(QIODevice::WriteOnly|QIODevice::Truncate)){
-        QDataStream stream(&f);
-        stream << lvl;
-        stream << isFirstStart;
-        stream << _animation;
-        stream << _randomColor;
-        stream << *_gameState;
-        f.close();
-    }
+    _settings->sync();
 }
 
 bool BackEnd::randomColor() const {
-    return _randomColor;
+    return _settings->getValue("randomColor", false).toBool();
 }
 
 void BackEnd::setRandomColor(bool random) {
-    if (_randomColor != random) {
-        _randomColor = random;
-        writeConfig();
-        emit randomColorChanged();
-    }
-
+    _settings->setValue("randomColor", random);
+    emit randomColorChanged();
 }
 
 bool BackEnd::animation() const{
-    return _animation;
+    return _settings->getValue("animation", true).toBool();
 }
 
 void BackEnd::setAnimation(bool name) {
-    if (_animation != name) {
-        _animation = name;
-        writeConfig();
-        emit animationChanged();
-    }
-
+    _settings->setValue("animation", name);
+    emit animationChanged();
 }
 
 void BackEnd::readCnfig() {
     QFile f(MAIN_SETINGS_FILE);
     if(f.exists() && f.open(QIODevice::ReadOnly)){
         QDataStream stream(&f);
+        unsigned short lvl;
+        bool isFirstStart, _animation, _randomColor;
         stream >> lvl;
         stream >> isFirstStart;
         stream >> _animation;
         stream >> _randomColor;
 
-        stream >> *_gameState;
+        stream >> _gameState;
 
-        if (f.size() <= 4) {
-            reset();
-        }
         f.close();
 
         if(lvl < 1 || lvl > 99) {
             lvl = 1;
         }
 
+        setAnimation(_animation);
+        setRandomColor(_randomColor);
+        setRandomColor(isFirstStart);
+
         emit firstChanged();
-    } else {
-        QFile f(SAVE);
-        if(f.exists() && f.open(QIODevice::ReadOnly)){
-            QDataStream stream(&f);
-            stream >> lvl;
-            stream >> isFirstStart;
-            stream >> _animation;
-            stream >> _randomColor;
-            stream >> *_gameState;
-
-            if (f.size() <= 4) {
-                reset();
-            }
-            f.close();
-
-            if(lvl < 1 || lvl > 99) {
-                lvl = 1;
-            }
-
-            emit firstChanged();
-        }
     }
 }
 
@@ -120,22 +78,21 @@ unsigned short BackEnd::getMinSteps(const unsigned short lvl) const{
 }
 
 void BackEnd::save(short lvl){
-    this->lvl = static_cast<unsigned short>(lvl);
-    writeConfig();
+    _settings->setValue("lvl", static_cast<unsigned short>(lvl));
 }
 
 bool BackEnd::isFirst()const{
-    return isFirstStart;
+    return _settings->getValue("isFirstStart", true).toBool();
 }
 
-void BackEnd::setShowHelp(bool state){
-    isFirstStart = state;
+void BackEnd::setShowHelp(bool state) {
+    _settings->setValue("isFirstStart", state);
     emit firstChanged();
-    writeConfig();
+
 }
 
 short BackEnd::read()const{
-    return static_cast<short>(lvl);
+    return static_cast<short>(_settings->getValue("lvl", 1).toInt());
 }
 
 BackEnd::~BackEnd(){
@@ -146,6 +103,26 @@ BackEnd::~BackEnd(){
     }
 }
 
+QString BackEnd::profile() const {
+    return _localProfilesList.value(_profileIndex);
+}
+
+QStringList BackEnd::profileList() const {
+    return _localProfilesList;
+}
+
+int BackEnd::profileIndex() const {
+    return _profileIndex;
+}
+
 QObject* BackEnd::gameState() {
     return _gameState;
+}
+
+void BackEnd::setProfileList(QStringList profileList) {
+    if (_localProfilesList == profileList)
+        return;
+
+    _localProfilesList = profileList;
+    emit profileListChanged(_localProfilesList);
 }

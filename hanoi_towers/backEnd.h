@@ -1,7 +1,7 @@
 #ifndef SAVER_H
 #define SAVER_H
 #include "gamestate.h"
-
+#include <quasarapp.h>
 #include <QObject>
 #include <QFile>
 #define SAVE "data"
@@ -13,26 +13,36 @@
 class BackEnd: public QObject
 {
     Q_OBJECT
-    Q_PROPERTY(short reed READ read WRITE save)
     Q_PROPERTY(bool isFirst READ isFirst WRITE setShowHelp NOTIFY firstChanged)
     Q_PROPERTY(bool randomColor READ randomColor WRITE setRandomColor NOTIFY randomColorChanged)
     Q_PROPERTY(bool animation READ animation WRITE setAnimation NOTIFY animationChanged)
     Q_PROPERTY(QObject* gameState READ gameState)
 
+    Q_PROPERTY(QStringList profileList READ profileList WRITE setProfileList NOTIFY profileListChanged)
+    Q_PROPERTY(int profileIndex READ profileIndex NOTIFY profileIndexChanged)
+    Q_PROPERTY(QString profile READ profile NOTIFY profileIndexChanged)
+
+
 private:
 
     void readCnfig();
     void writeConfig()const;
-    bool isFirstStart;
-    unsigned short lvl;
-    bool _animation;
-    bool _randomColor;
 
+    QuasarAppUtils::Settings *_settings = nullptr;
     GameState *_gameState = nullptr;
+
+    QStringList _localProfilesList;
+    int _profileIndex;
 
 public:
     BackEnd();
     ~BackEnd();
+
+    QString profile() const;
+
+    QStringList profileList() const;
+
+    int profileIndex() const;
 
 public slots:
 
@@ -97,12 +107,14 @@ public slots:
     short read()const;
 
     QObject *gameState();
+    void setProfileList(QStringList profileList);
 
 signals:
     void firstChanged();
     void animationChanged();
     void randomColorChanged();
-
+    void profileListChanged(QStringList profileList);
+    void profileIndexChanged(int profileIndex);
 };
 
 #endif // SAVER_H

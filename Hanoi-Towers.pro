@@ -1,7 +1,10 @@
 TEMPLATE = subdirs
 CONFIG += ordered
 
-SUBDIRS += hanoi_towers
+SUBDIRS += NetworkProtocol \
+           hanoi_towers
+
+NetworkProtocol.file = $$PWD/QtNetworkProtocol/NetworkProtocol.pro
 
 include($$PWD/installer/installerHanoiTower.pri)
 

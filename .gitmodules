@@ -1,6 +1,6 @@
-[submodule "QuasarAppLib"]
-	path = QuasarAppLib
-	url = https://github.com/QuasarApp/QuasarAppLib.git
 [submodule "installer"]
 	path = installer
 	url = git@github.com:QuasarApp/DesktopInstaller.git
+[submodule "QtNetworkProtocol"]
+	path = QtNetworkProtocol
+	url = https://github.com/QuasarApp/QtNetworkProtocol.git
