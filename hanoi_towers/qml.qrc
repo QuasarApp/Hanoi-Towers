@@ -21,6 +21,7 @@
         <file>base/BaseRadioButton.qml</file>
         <file>base/BoseCheckBox.qml</file>
         <file>menu/UsersTable.qml</file>
+        <file>menu/UserTableRow.qml</file>
     </qresource>
     <qresource prefix="/textures">
         <file>res/wood.png</file>

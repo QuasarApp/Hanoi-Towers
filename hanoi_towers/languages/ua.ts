@@ -119,19 +119,47 @@
     </message>
 </context>
 <context>
-    <name>UsersTable</name>
+    <name>UserTableRow</name>
     <message>
-        <location filename="../menu/UsersTable.qml" line="16"/>
+        <location filename="../menu/UserTableRow.qml" line="9"/>
         <source>Online user</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../menu/UsersTable.qml" line="24"/>
+        <location filename="../menu/UserTableRow.qml" line="16"/>
         <source>Enter the name of new user</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../menu/UsersTable.qml" line="29"/>
+        <location filename="../menu/UserTableRow.qml" line="21"/>
+        <source>text</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>UsersTable</name>
+    <message>
+        <location filename="../menu/UsersTable.qml" line="23"/>
+        <source>Profiles</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../menu/UsersTable.qml" line="30"/>
+        <source>Return to main menu</source>
+        <translation type="unfinished">Головне меню</translation>
+    </message>
+    <message>
+        <location filename="../menu/UsersTable.qml" line="60"/>
+        <source>Online user</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../menu/UsersTable.qml" line="67"/>
+        <source>Enter the name of new user</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../menu/UsersTable.qml" line="72"/>
         <source>Create new user</source>
         <translation type="unfinished"></translation>
     </message>

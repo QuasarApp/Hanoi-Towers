@@ -13,7 +13,7 @@ Item {
 
     Rectangle {
         id: head
-        color: "#800af587"
+        color: theme.headerColor
         height: parent.height * 0.15;
         RowLayout {
 

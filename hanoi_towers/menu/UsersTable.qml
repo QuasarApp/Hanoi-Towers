@@ -2,13 +2,57 @@ import QtQuick 2.13
 import QtQuick.Layouts 1.3
 import QtQuick.Controls 2.13
 import QtQuick.Controls.Material 2.13
+import "./../base" as Base
 
 Item {
+    id:menuPage
+
+    Base.Theme{
+        id: theme;
+    }
+
+    Rectangle {
+        id: head
+        color: theme.headerColor
+        height: parent.height * 0.15;
+        RowLayout {
+
+            Base.BaseText {
+                Layout.alignment: Qt.AlignCenter
+
+                text: qsTr("Profiles");
+                horizontalAlignment: Text.AlignHCenter
+                verticalAlignment: Text.AlignVCenter
+                font.pixelSize: theme.headerSize;
+            }
+
+            Base.BaseButton {
+                text: qsTr("Return to main menu");
+                Layout.alignment: Qt.AlignRight
+                Layout.rightMargin: theme.pading
+
+                onClicked: {
+                    menuPage.parent.source = "MainMenu.qml"
+                }
+            }
+
+            anchors.fill: parent
+        }
+        anchors.top: parent.top
+        anchors.left: parent.left
+        anchors.right: parent.right
+
+    }
+
     GridLayout {
         id: gridLayout
-        rows: 2
+        rows: 3
         columns: 3
-        anchors.fill: parent
+
+        anchors.left: parent.left
+        anchors.right: parent.right
+        anchors.bottom: parent.bottom
+        anchors.top: head.bottom
 
 
         Switch {
@@ -16,17 +60,23 @@ Item {
             text: qsTr("Online user")
         }
 
-
         TextField {
             Layout.fillWidth: true
 
             id: textField
-            text: qsTr("Enter the name of new user")
+            text: ""
+            placeholderText: qsTr("Enter the name of new user");
         }
 
-        Button {
+        Base.BaseButton {
             id: button
             text: qsTr("Create new user")
+
+            onClicked: {
+                if (backEnd) {
+                    backEnd.createProfile(textField.text, element.position)
+                }
+            }
         }
 
         ListView {
@@ -35,47 +85,15 @@ Item {
             Layout.fillWidth: true
             Layout.fillHeight: true
             Layout.columnSpan: 3
+            clip: true
 
-            model: ListModel {
-                ListElement {
-                    name: "Grey"
-                    colorCode: "grey"
-                }
-
-                ListElement {
-                    name: "Red"
-                    colorCode: "red"
-                }
-
-                ListElement {
-                    name: "Blue"
-                    colorCode: "blue"
-                }
-
-                ListElement {
-                    name: "Green"
-                    colorCode: "green"
-                }
-            }
-            delegate: Item {
-                x: 5
-                width: 80
-                height: 40
-                Row {
-                    id: row1
-                    spacing: 10
-                    Rectangle {
-                        width: 40
-                        height: 40
-                        color: colorCode
-                    }
-
-                    Text {
-                        text: name
-                        font.bold: true
-                        anchors.verticalCenter: parent.verticalCenter
-                    }
-                }
+            model: backEnd.profileList
+            delegate: UserTableRow {
+                name: modelData
+                online: backEnd.isOnline(modelData)
+                record: backEnd.record(modelData)
+                width: listView.width
+                recordLength: button.width
             }
         }
 

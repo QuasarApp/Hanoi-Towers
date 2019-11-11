@@ -6,18 +6,27 @@
 
 constexpr unsigned char currentVersion = 6;
 
+#define DEFAULT_USER "User"
+#define CURRENT_PROFILE_KEY "currentProfile"
+#define FIRST_RUN_KEY "isFirstStart"
+#define LVL_KEY "lvl"
+#define ANIMATION_KEY "animation"
+#define RANDOM_COLOR_KEY "randomColor"
+#define CURRENT_PROFILE_KEY "currentProfile"
+
 BackEnd::BackEnd():
     QObject()
 {
     _settings = QuasarAppUtils::Settings::get();
+    _profile = _settings->getStrValue(CURRENT_PROFILE_KEY, DEFAULT_USER);
 }
 
 void BackEnd::reset(){
 
-    _settings->setValue("isFirstStart", true);
-    _settings->setValue("lvl", 1);
-    _settings->setValue("animation", true);
-    _settings->setValue("randomColor", false);
+    _settings->setValue(FIRST_RUN_KEY, true);
+    _settings->setValue(LVL_KEY, 1);
+    _settings->setValue(ANIMATION_KEY, true);
+    _settings->setValue(RANDOM_COLOR_KEY, false);
 
     for (auto& item : _profileList) {
         item->deleteLater();
@@ -35,6 +44,7 @@ bool BackEnd::init() {
         unsigned char dataVersion;
         stream >> dataVersion;
         if (dataVersion != currentVersion) {
+            // TO-DO - find solution of input data from pointers list
             stream >> _profileList;
             stream >> _profile;
 
@@ -55,12 +65,7 @@ bool BackEnd::init() {
             setRandomColor(_randomColor);
             setRandomColor(isFirstStart);
 
-            auto profile = _profileList.value("User", nullptr);
-            if (!profile) {
-                profile = new ProfileData();
-                _profileList["User"] = profile;
-            }
-
+            auto profile = addProfile(DEFAULT_USER, false);
             static_cast<GameState*>((profile->
                                     gameState()))->saveLvl(
                         static_cast<short>(lvl));
@@ -72,6 +77,26 @@ bool BackEnd::init() {
     }
 
     return false;
+}
+
+ProfileData* BackEnd::addProfile(const QString &userName, bool isOnlineuser) {
+    auto profile = _profileList.value(userName, nullptr);
+    if (profile) {
+        return profile;
+    }
+
+    profile = new ProfileData();
+
+    connect(profile, &ProfileData::onlineRequest,
+            this, &BackEnd::handleOnlineRequest);
+
+    profile->setOnline(isOnlineuser);
+
+    _profileList[userName] = profile;
+
+    emit profileListChanged();
+
+    return profile;
 }
 
 void BackEnd::saveLocalData() const {
@@ -91,21 +116,26 @@ void BackEnd::saveLocalData() const {
                                        QuasarAppUtils::Error);
 }
 
+void BackEnd::handleOnlineRequest() {
+    // not supported
+    assert(false);
+}
+
 bool BackEnd::randomColor() const {
-    return _settings->getValue("randomColor", false).toBool();
+    return _settings->getValue(RANDOM_COLOR_KEY, false).toBool();
 }
 
 void BackEnd::setRandomColor(bool random) {
-    _settings->setValue("randomColor", random);
+    _settings->setValue(RANDOM_COLOR_KEY, random);
     emit randomColorChanged();
 }
 
 bool BackEnd::animation() const{
-    return _settings->getValue("animation", true).toBool();
+    return _settings->getValue(ANIMATION_KEY, true).toBool();
 }
 
 void BackEnd::setAnimation(bool name) {
-    _settings->setValue("animation", name);
+    _settings->setValue(ANIMATION_KEY, name);
     emit animationChanged();
 }
 
@@ -114,11 +144,11 @@ unsigned short BackEnd::getMinSteps(const unsigned short lvl) const{
 }
 
 bool BackEnd::isFirst()const{
-    return _settings->getValue("isFirstStart", true).toBool();
+    return _settings->getValue(FIRST_RUN_KEY, true).toBool();
 }
 
 void BackEnd::setShowHelp(bool state) {
-    _settings->setValue("isFirstStart", state);
+    _settings->setValue(FIRST_RUN_KEY, state);
     emit firstChanged();
 
 }
@@ -131,8 +161,12 @@ QString BackEnd::profile() const {
     return _profile;
 }
 
-QStringList BackEnd::profileList() const {
+QStringList BackEnd::profileList() {
     return _profileList.keys();
+}
+
+void BackEnd::createProfile(const QString &userName, bool isOnlineuser) {
+    addProfile(userName, isOnlineuser);
 }
 
 QObject* BackEnd::gameState() {
@@ -141,4 +175,22 @@ QObject* BackEnd::gameState() {
     }
 
     return _profileList[_profile]->gameState();
+}
+
+bool BackEnd::isOnline(const QString &name) {
+    auto profile = _profileList.value(name, nullptr);
+    if (!profile) {
+        return false;
+    }
+
+    return profile->isOnline();
+}
+
+int BackEnd::record(const QString &name) {
+    auto profile = _profileList.value(name, nullptr);
+    if (!profile) {
+        return 0;
+    }
+
+    return profile->record();
 }

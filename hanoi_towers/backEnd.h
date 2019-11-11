@@ -10,7 +10,7 @@
 
 #define MAIN_FOLDER                 QDir::homePath() + "/.HanoiTowers"
 #define MAIN_FOLDER_KEY             "HanoiTowersFolder"
-#define MAIN_SETINGS_FILE             MAIN_FOLDER + "/" + SAVE
+#define MAIN_SETINGS_FILE           MAIN_FOLDER + "/" + SAVE
 
 class BackEnd: public QObject
 {
@@ -26,6 +26,7 @@ class BackEnd: public QObject
 
 private:
     bool init();
+    ProfileData *addProfile(const QString& userName, bool isOnlineuser);
     void saveLocalData() const;
 
     QuasarAppUtils::Settings *_settings = nullptr;
@@ -34,12 +35,17 @@ private:
     QString _profile;
     HanoiClient _client;
 
+private slots:
+    void handleOnlineRequest();
+
 public:
     BackEnd();
     ~BackEnd();
 
-    QString profile() const;
-    QStringList profileList() const;
+    Q_INVOKABLE QString profile() const;
+    Q_INVOKABLE QStringList profileList();
+
+    Q_INVOKABLE void createProfile(const QString& userName, bool isOnlineuser);
 
 public slots:
 
@@ -92,6 +98,10 @@ public slots:
     void setRandomColor(bool );
 
     QObject *gameState();
+
+    bool isOnline(const QString& name);
+    int record(const QString& name);
+
 signals:
     void firstChanged();
     void animationChanged();

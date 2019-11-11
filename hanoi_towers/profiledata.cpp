@@ -1,16 +1,24 @@
 #include "profiledata.h"
 
-bool ProfileData::onlineProfile() const {
-    return _onlineProfile;
+void ProfileData::setOnline(bool onlineProfile) {
+    if (onlineProfile != isOnline()) {
+        if (onlineProfile) {
+            emit onlineRequest();
+        } else {
+            emit onlineChanged(onlineProfile);
+        }
+    }
 }
 
-void ProfileData::setOnlineProfile(bool onlineProfile) {
-    _onlineProfile = onlineProfile;
+void ProfileData::handleServerResponce(const NetworkProtocol::UserData& data) {
+    if (_userData.token() != data.token()) {
+        _userData = data;
+        emit onlineChanged(isOnline());
+    }
 }
 
-ProfileData::ProfileData(bool isOnline):
+ProfileData::ProfileData():
     QObject(nullptr) {
-    _onlineProfile = isOnline;
 }
 
 ProfileData::~ProfileData() = default;
@@ -25,6 +33,10 @@ QString ProfileData::name() const {
 
 int ProfileData::record() const {
     return _userData.extraData()["points"].toInt();
+}
+
+bool ProfileData::isOnline() const {
+    return _userData.token().isValid();
 }
 
 QDataStream &ProfileData::fromStream(QDataStream &stream) {
