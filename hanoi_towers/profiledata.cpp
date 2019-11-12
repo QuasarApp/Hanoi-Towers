@@ -17,8 +17,9 @@ void ProfileData::handleServerResponce(const NetworkProtocol::UserData& data) {
     }
 }
 
-ProfileData::ProfileData():
+ProfileData::ProfileData(const QString &name):
     QObject(nullptr) {
+    _userData.setName(name);
 }
 
 ProfileData::~ProfileData() = default;

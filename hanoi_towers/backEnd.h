@@ -25,7 +25,7 @@ class BackEnd: public QObject
 
 
 private:
-    bool init();
+    void init();
     ProfileData *addProfile(const QString& userName, bool isOnlineuser);
     void saveLocalData() const;
 

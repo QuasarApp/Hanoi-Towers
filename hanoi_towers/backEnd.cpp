@@ -19,6 +19,7 @@ BackEnd::BackEnd():
 {
     _settings = QuasarAppUtils::Settings::get();
     _profile = _settings->getStrValue(CURRENT_PROFILE_KEY, DEFAULT_USER);
+    init();
 }
 
 void BackEnd::reset(){
@@ -32,13 +33,15 @@ void BackEnd::reset(){
         item->deleteLater();
     }
     _profileList.clear();
+    _profile = addProfile(DEFAULT_USER, false)->name();
+
     emit profileListChanged();
 
 }
 
-bool BackEnd::init() {
+void BackEnd::init() {
     QFile f(MAIN_SETINGS_FILE);
-    if(f.exists() && f.open(QIODevice::ReadOnly)){
+    if(f.open(QIODevice::ReadOnly)){
         QDataStream stream(&f);
 
         unsigned char dataVersion;
@@ -48,7 +51,10 @@ bool BackEnd::init() {
             stream >> _profileList;
             stream >> _profile;
 
-            f.close();
+            if (_profileList.isEmpty()) {
+                _profile = addProfile(DEFAULT_USER, false)->name();
+            }
+
         } else {
             unsigned short lvl;
             bool isFirstStart, _animation, _randomColor;
@@ -63,20 +69,20 @@ bool BackEnd::init() {
 
             setAnimation(_animation);
             setRandomColor(_randomColor);
-            setRandomColor(isFirstStart);
+            setShowHelp(isFirstStart);
 
             auto profile = addProfile(DEFAULT_USER, false);
             static_cast<GameState*>((profile->
                                     gameState()))->saveLvl(
                         static_cast<short>(lvl));
 
-            emit firstChanged();
         }
+        f.close();
 
-        return true;
+    } else {
+        reset();
     }
 
-    return false;
 }
 
 ProfileData* BackEnd::addProfile(const QString &userName, bool isOnlineuser) {
@@ -85,7 +91,7 @@ ProfileData* BackEnd::addProfile(const QString &userName, bool isOnlineuser) {
         return profile;
     }
 
-    profile = new ProfileData();
+    profile = new ProfileData(userName);
 
     connect(profile, &ProfileData::onlineRequest,
             this, &BackEnd::handleOnlineRequest);

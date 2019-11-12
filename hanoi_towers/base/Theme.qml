@@ -7,6 +7,9 @@ Item {
     readonly property int headerSize: Utils.headerFontSize(Screen.pixelDensity);
     readonly property int buttonsWidth: Utils.dp(Screen.pixelDensity, 80)
     readonly property int buttonsHeight: Utils.dp(Screen.pixelDensity, 40)
+
+    readonly property int smallbuttonsSize: Utils.dp(Screen.pixelDensity, 40)
+
     readonly property int popUpWidth: Utils.dp(Screen.pixelDensity, 150)
     readonly property int popUpHeight: Utils.dp(Screen.pixelDensity, 80)
     readonly property string buttonsTextColor: Utils.textColor()

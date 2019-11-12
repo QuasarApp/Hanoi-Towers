@@ -21,7 +21,7 @@ private slots:
     void handleServerResponce(const NetworkProtocol::UserData &data);
 
 public:
-    ProfileData();
+    ProfileData(const QString& name);
     ~ProfileData() override;
 
     Q_INVOKABLE QObject* gameState();

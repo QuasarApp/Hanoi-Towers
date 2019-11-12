@@ -20,7 +20,7 @@ Item {
             Base.BaseText {
                 Layout.alignment: Qt.AlignCenter
 
-                text: qsTr("Profiles");
+                text: qsTr("Profiles") + " (" + backEnd.profile + ")";
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
                 font.pixelSize: theme.headerSize;
@@ -93,7 +93,7 @@ Item {
                 online: backEnd.isOnline(modelData)
                 record: backEnd.record(modelData)
                 width: listView.width
-                recordLength: button.width
+                recordLength: button.width - gridLayout.rowSpacing
             }
         }
 
