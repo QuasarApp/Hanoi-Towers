@@ -46,13 +46,32 @@ void BackEnd::init() {
 
         unsigned char dataVersion;
         stream >> dataVersion;
-        if (dataVersion != currentVersion) {
+        if (dataVersion == currentVersion) {
             // TO-DO - find solution of input data from pointers list
-            stream >> _profileList;
+
+            int size;
+            stream >> size;
+
+            if (size * 10 > f.size()) {
+                reset();
+                return;
+            }
+
+            for (int i = 0; i < size; ++i ) {
+                QString key;
+                stream >> key;
+                auto obj = new ProfileData(key);
+
+                stream >> *obj;
+                _profileList[key] = obj;
+
+            }
             stream >> _profile;
 
             if (_profileList.isEmpty()) {
                 _profile = addProfile(DEFAULT_USER, false)->name();
+            } else if (_profile.isEmpty()) {
+                _profile = _profileList.begin().key();
             }
 
         } else {
@@ -111,7 +130,13 @@ void BackEnd::saveLocalData() const {
     if(f.open(QIODevice::ReadWrite | QIODevice::Truncate)) {
         QDataStream stream(&f);
         stream << currentVersion;
-        stream << _profileList;
+
+        stream << static_cast<int>(_profileList.size());
+        for (auto it = _profileList.begin(); it != _profileList.end(); ++it ) {
+            stream << it.key();
+            stream << *it.value();
+        }
+
         stream << _profile;
 
         f.close();

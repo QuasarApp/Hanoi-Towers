@@ -104,14 +104,13 @@ Rectangle {
             help.open();
         }
 
-        const val = backEnd;
-        backEnd.gameState.load("Player");
+        backEnd.gameState.load();
 
         start(-1);
     }
-    function load (player) {
+    function load () {
 
-        backEnd.gameState.load(player);
+        backEnd.gameState.load();
         tower1.clear()
         tower2.clear()
         tower3.clear()
@@ -144,9 +143,9 @@ Rectangle {
 
     function start(value) {
 
-        tumbler.spin.maximumValue = backEnd.reed
-        if (backEnd.reed <= value || value < 0)
-            tumbler.spin.value = all = value = backEnd.reed
+        tumbler.spin.maximumValue = backEnd.gameState.getMaxValueOfLoadedSaves();
+        if (tumbler.spin.maximumValue <= value || value < 0)
+            tumbler.spin.value = all = value = tumbler.spin.maximumValue
         else {
             tumbler.spin.value = all = value
         }
@@ -197,13 +196,13 @@ Rectangle {
         }
         if ( tower3.items.length === all) {
             if (all === tumbler.spin.maximumValue) {
-                backEnd.save(tumbler.spin.value = tumbler.spin.maximumValue = all + 1)
+                backEnd.gameState.unlockNextLvl();
                 popUp.text = qsTr("You have passed the level in %0 steps and unlocked level %1" +
                                    "\n Minimum steps for this lvl: %2").
                 arg(step.ste).arg(all + 1).arg(backEnd.getMinSteps(all));
 
                 popUp.open()
-                start(tumbler.spin.value)
+                start(backEnd.gameState.getMaxValueOfLoadedSaves())
             } else {
                 popUp.text = qsTr("You have passed the level in %0 steps.\n" +
                                      "Minimum steps for this lvl: %1").

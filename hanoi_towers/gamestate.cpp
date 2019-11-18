@@ -16,6 +16,11 @@ void GameState::setStep(int value) {
     step = value;
 }
 
+void GameState::unlockNextLvl() {
+    maxValueOfLoadedSave++;
+    _lvl = static_cast<short>(maxValueOfLoadedSave);
+}
+
 void GameState::saveLvl(short lvl) {
     _lvl = lvl;
 }
@@ -53,7 +58,7 @@ void GameState::setTower(int towerIndex ,const QList<int> &tower) {
 }
 
 bool GameState::load() {
-    maxValueOfLoadedSave = 0;
+    maxValueOfLoadedSave = 1;
     for ( auto &tower:  save) {
         for (int i : tower) {
             if (i > maxValueOfLoadedSave) {

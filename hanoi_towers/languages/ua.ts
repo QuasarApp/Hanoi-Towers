@@ -121,18 +121,8 @@
 <context>
     <name>UserTableRow</name>
     <message>
-        <location filename="../menu/UserTableRow.qml" line="9"/>
-        <source>Online user</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../menu/UserTableRow.qml" line="16"/>
-        <source>Enter the name of new user</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../menu/UserTableRow.qml" line="21"/>
-        <source>text</source>
+        <source>Online user</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -154,12 +144,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../menu/UsersTable.qml" line="67"/>
+        <location filename="../menu/UsersTable.qml" line="68"/>
         <source>Enter the name of new user</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../menu/UsersTable.qml" line="72"/>
+        <location filename="../menu/UsersTable.qml" line="73"/>
         <source>Create new user</source>
         <translation type="unfinished"></translation>
     </message>

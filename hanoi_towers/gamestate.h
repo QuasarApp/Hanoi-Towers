@@ -35,6 +35,8 @@ public:
     Q_INVOKABLE int getStep() const;
     Q_INVOKABLE void setStep(int value);
 
+    Q_INVOKABLE void unlockNextLvl();
+
 public slots:
     void saveLvl(short lvl);
 };
