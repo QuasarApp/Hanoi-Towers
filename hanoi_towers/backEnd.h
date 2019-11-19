@@ -102,6 +102,9 @@ public slots:
     bool isOnline(const QString& name);
     int record(const QString& name);
 
+    void removeUser(const QString& name);
+    void setOnline(const QString& name, bool online);
+
 signals:
     void firstChanged();
     void animationChanged();

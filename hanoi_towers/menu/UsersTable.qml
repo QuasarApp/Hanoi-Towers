@@ -1,3 +1,11 @@
+//#
+//# Copyright (C) 2018 - 2019 QuasarApp.
+//# Distributed under the lgplv3 software license, see the accompanying
+//# Everyone is permitted to copy and distribute verbatim copies
+//# of this license document, but changing it is not allowed.
+//#
+
+
 import QtQuick 2.13
 import QtQuick.Layouts 1.3
 import QtQuick.Controls 2.13
@@ -94,6 +102,14 @@ Item {
                 record: backEnd.record(modelData)
                 width: listView.width
                 recordLength: button.width - gridLayout.rowSpacing
+
+                onRemovedRow: {
+                    backEnd.removeUser(modelData)
+                }
+
+                onOnlineRowChanged: {
+                    backEnd.removeUser(modelData)
+                }
             }
         }
 

@@ -8,6 +8,7 @@
 #include <QQmlContext>
 #include "backEnd.h"
 #include <QTranslator>
+#include <qmlnotifyservice.h>
 
 void setFont(const QApplication& app){
 
@@ -59,6 +60,11 @@ int main(int argc, char *argv[])
 //    qmlRegisterType<BackEnd>("BackEnd",1,0,"BackEnd");
     BackEnd back;
     auto root = engine.rootContext();
+
+    if (!QmlNotificationService::init(&engine)) {
+        return 1;
+    }
+
     root->setContextProperty("backEnd", &back);
 
     engine.load(QUrl(QStringLiteral("qrc:/main.qml")));

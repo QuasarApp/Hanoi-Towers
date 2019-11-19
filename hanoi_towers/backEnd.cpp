@@ -225,3 +225,11 @@ int BackEnd::record(const QString &name) {
 
     return profile->record();
 }
+
+void BackEnd::removeUser(const QString &name) {
+
+}
+
+void BackEnd::setOnline(const QString &name, bool online) {
+
+}
