@@ -109,6 +109,8 @@ public slots:
 
     void setProfile(QString profile);
 
+    void setReward(int);
+
 signals:
     void firstChanged();
     void animationChanged();

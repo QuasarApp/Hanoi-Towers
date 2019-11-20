@@ -207,8 +207,9 @@ Rectangle {
         if ( tower3.items.length === all) {
             if (all === tumbler.spin.maximumValue) {
                 backEnd.gameState.unlockNextLvl();
-                popUp.text = qsTr("You have passed the level in %0 steps and unlocked level %1" +
-                                   "\n Minimum steps for this lvl: %2").
+                popUp.text = qsTr("You have passed the level in %0 steps and unlocked level %1") +
+                                   qsTr("\n Minimum steps for this lvl: %2") +
+                                   qsTr("\n you reward = %3").
                 arg(step.ste).arg(all + 1).arg(backEnd.getMinSteps(all));
 
                 popUp.open()

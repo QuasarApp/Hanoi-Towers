@@ -10,6 +10,14 @@ void ProfileData::setOnline(bool onlineProfile) {
     }
 }
 
+void ProfileData::setRecord(int rec) {
+    if (record() == rec)
+        return;
+
+    _userData.extraData()["points"] = rec;
+    emit recordChanged(rec);
+}
+
 void ProfileData::handleServerResponce(const NetworkProtocol::UserData& data) {
     if (_userData.token() != data.token()) {
         _userData = data;

@@ -283,3 +283,14 @@ void BackEnd::setProfile(QString profile) {
     _profile = profile;
     emit profileChanged(_profile);
 }
+
+void BackEnd::setReward(int revard) {
+    auto profile = _profileList.value(_profile, nullptr);
+    if (!profile) {
+        return;
+    }
+
+    if (profile->record() < revard) {
+        profile->setRecord(revard);
+    }
+}

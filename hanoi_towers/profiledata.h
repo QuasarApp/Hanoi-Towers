@@ -10,7 +10,7 @@ class ProfileData : public QObject, public NetworkProtocol::StreamBase
 
     Q_PROPERTY(QObject* gameState READ gameState NOTIFY gameStateChanged)
     Q_PROPERTY(QString name READ name)
-    Q_PROPERTY(int record READ record)
+    Q_PROPERTY(int record READ record WRITE setRecord NOTIFY recordChanged)
     Q_PROPERTY(bool onlineUser READ isOnline WRITE setOnline NOTIFY onlineChanged)
 
 private:
@@ -36,10 +36,13 @@ public:
 
 public slots:
     void setOnline(bool onlineUser);
+    void setRecord(int record);
+
 signals:
     void gameStateChanged(QObject* gameState);
     void onlineChanged(bool onlineUser);
     void onlineRequest();
+    void recordChanged(int record);
 };
 
 #endif // PROFILEDATA_H
