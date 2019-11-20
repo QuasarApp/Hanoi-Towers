@@ -119,6 +119,8 @@ Rectangle {
     function load () {
 
         backEnd.gameState.load();
+        tumbler.spin.maximumValue = backEnd.gameState.getMaxValueOfLoadedSaves();
+
         tower1.clear()
         tower2.clear()
         tower3.clear()

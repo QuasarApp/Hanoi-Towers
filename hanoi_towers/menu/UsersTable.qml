@@ -78,7 +78,7 @@ Item {
 
         Base.BaseButton {
             id: button
-            text: qsTr("Create new user")
+            text: qsTr("Create the new user")
 
             onClicked: {
                 if (backEnd) {
@@ -102,13 +102,17 @@ Item {
                 record: backEnd.record(modelData)
                 width: listView.width
                 recordLength: button.width - gridLayout.rowSpacing
-
+                selected: modelData == backEnd.profile;
                 onRemovedRow: {
                     backEnd.removeUser(modelData)
                 }
 
                 onOnlineRowChanged: {
-                    backEnd.removeUser(modelData)
+                    backEnd.setOnline(modelData, online);
+                }
+
+                onClicked: {
+                    backEnd.setProfile(modelData);
                 }
             }
         }

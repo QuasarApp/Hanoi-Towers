@@ -2,6 +2,7 @@
 #include <cmath>
 #include <QDataStream>
 #include <QDir>
+#include <qmlnotifyservice.h>
 #include "gamestate.h"
 
 constexpr unsigned char currentVersion = 6;
@@ -18,8 +19,14 @@ BackEnd::BackEnd():
     QObject()
 {
     _settings = QuasarAppUtils::Settings::get();
-    _profile = _settings->getStrValue(CURRENT_PROFILE_KEY, DEFAULT_USER);
+
+    connect(this, &BackEnd::profileChanged, [this](){
+        _settings->setValue(CURRENT_PROFILE_KEY, profile());
+    });
+
     init();
+    setProfile(_settings->getStrValue(CURRENT_PROFILE_KEY, DEFAULT_USER));
+
 }
 
 void BackEnd::reset(){
@@ -33,9 +40,7 @@ void BackEnd::reset(){
         item->deleteLater();
     }
     _profileList.clear();
-    _profile = addProfile(DEFAULT_USER, false)->name();
-
-    emit profileListChanged();
+    setProfile(addProfile(DEFAULT_USER, false)->name());
 
 }
 
@@ -60,18 +65,18 @@ void BackEnd::init() {
             for (int i = 0; i < size; ++i ) {
                 QString key;
                 stream >> key;
-                auto obj = new ProfileData(key);
+                auto obj = addProfile(key, false);
 
                 stream >> *obj;
                 _profileList[key] = obj;
 
             }
-            stream >> _profile;
 
             if (_profileList.isEmpty()) {
-                _profile = addProfile(DEFAULT_USER, false)->name();
+                setProfile(addProfile(DEFAULT_USER, false)->name());
             } else if (_profile.isEmpty()) {
-                _profile = _profileList.begin().key();
+                setProfile(_profileList.begin().key());
+
             }
 
         } else {
@@ -137,8 +142,6 @@ void BackEnd::saveLocalData() const {
             stream << *it.value();
         }
 
-        stream << _profile;
-
         f.close();
         return;
     }
@@ -147,9 +150,33 @@ void BackEnd::saveLocalData() const {
                                        QuasarAppUtils::Error);
 }
 
+void BackEnd::removeLocalUserData(const QString& name) {
+    _profileList.remove(name);
+
+    if (name == _profile && _profileList.size()) {
+        setProfile(_profileList.begin().key());
+    } else if (_profileList.isEmpty()) {
+        reset();
+    }
+
+    emit profileListChanged();
+
+}
+
 void BackEnd::handleOnlineRequest() {
     // not supported
-    assert(false);
+    QmlNotificationService::NotificationService::getService()->setNotify(
+                tr("Register online error"), tr("not Supported"), "",
+                QmlNotificationService::NotificationData::Warning);
+//    assert(false);
+}
+
+void BackEnd::handleRemoveRequest() {
+    // not supported
+    QmlNotificationService::NotificationService::getService()->setNotify(
+                tr("Remove online error"), tr("not Supported"), "",
+                QmlNotificationService::NotificationData::Warning);
+//    assert(false);
 }
 
 bool BackEnd::randomColor() const {
@@ -227,9 +254,32 @@ int BackEnd::record(const QString &name) {
 }
 
 void BackEnd::removeUser(const QString &name) {
+    auto profile = _profileList.value(name, nullptr);
+    if (!profile) {
+        return;
+    }
+
+    if (profile->isOnline()) {
+        handleRemoveRequest();
+    } else {
+        removeLocalUserData(name);
+    }
 
 }
 
 void BackEnd::setOnline(const QString &name, bool online) {
+    auto profile = _profileList.value(name, nullptr);
+    if (!profile) {
+        return;
+    }
 
+    profile->setOnline(online);
+}
+
+void BackEnd::setProfile(QString profile) {
+    if (!_profileList.contains(profile) || _profile == profile)
+        return;
+
+    _profile = profile;
+    emit profileChanged(_profile);
 }

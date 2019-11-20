@@ -21,13 +21,14 @@ class BackEnd: public QObject
     Q_PROPERTY(QObject* gameState READ gameState)
 
     Q_PROPERTY(QStringList profileList READ profileList  NOTIFY profileListChanged)
-    Q_PROPERTY(QString profile READ profile NOTIFY profileChanged)
+    Q_PROPERTY(QString profile READ profile WRITE setProfile NOTIFY profileChanged)
 
 
 private:
     void init();
     ProfileData *addProfile(const QString& userName, bool isOnlineuser);
     void saveLocalData() const;
+    void removeLocalUserData(const QString &name);
 
     QuasarAppUtils::Settings *_settings = nullptr;
 
@@ -37,6 +38,7 @@ private:
 
 private slots:
     void handleOnlineRequest();
+    void handleRemoveRequest();
 
 public:
     BackEnd();
@@ -104,6 +106,8 @@ public slots:
 
     void removeUser(const QString& name);
     void setOnline(const QString& name, bool online);
+
+    void setProfile(QString profile);
 
 signals:
     void firstChanged();

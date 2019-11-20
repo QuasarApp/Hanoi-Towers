@@ -26,7 +26,7 @@ Page {
             Base.BaseText {
                 Layout.alignment: Qt.AlignCenter
 
-                text: qsTr("Hanoi Towers");
+                text: qsTr("Welcom to Hanoi Towers ") +  backEnd.profile;
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
                 font.pixelSize: theme.headerSize;

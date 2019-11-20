@@ -13,14 +13,29 @@ import QtQuick.Controls.Material 2.13
 import "./../base" as Base
 
 Item {
+    id: row
     property string name: ""
     property bool online: false
     property string record: "0"
     property int recordLength: 0
+    property bool selected: false
+
     height: source.height
 
     signal removedRow();
     signal onlineRowChanged(var online);
+    signal clicked();
+
+    Rectangle {
+        color: (selected)? "#3700f991" : "#0000f991"
+        anchors.fill: parent;
+
+        Behavior on color {
+            ColorAnimation {
+                duration: 500
+            }
+        }
+    }
 
     RowLayout {
         id : source
@@ -50,6 +65,11 @@ Item {
             Layout.fillWidth: true
             readOnly: true;
             text: name
+
+            onFocusChanged: {
+                if (focus)
+                    row.clicked();
+            }
         }
 
         Text {
