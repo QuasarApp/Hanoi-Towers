@@ -2,6 +2,25 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="tr_TR">
 <context>
+    <name>BackEnd</name>
+    <message>
+        <location filename="../backEnd.cpp" line="169"/>
+        <source>Register online error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../backEnd.cpp" line="169"/>
+        <location filename="../backEnd.cpp" line="177"/>
+        <source>not Supported</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../backEnd.cpp" line="177"/>
+        <source>Remove online error</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>BaseButton</name>
     <message>
         <location filename="../base/BaseButton.qml" line="15"/>
@@ -75,9 +94,13 @@
 <context>
     <name>MainMenu</name>
     <message>
-        <location filename="../menu/MainMenu.qml" line="29"/>
         <source>Hanoi Towers</source>
-        <translation>Hanoi Kuleleri</translation>
+        <translation type="vanished">Hanoi Kuleleri</translation>
+    </message>
+    <message>
+        <location filename="../menu/MainMenu.qml" line="29"/>
+        <source>Welcom to Hanoi Towers </source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../menu/MainMenu.qml" line="51"/>
@@ -121,12 +144,12 @@
 <context>
     <name>UserTableRow</name>
     <message>
-        <location filename="../menu/UserTableRow.qml" line="36"/>
+        <location filename="../menu/UserTableRow.qml" line="51"/>
         <source>Online user</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../menu/UserTableRow.qml" line="45"/>
+        <location filename="../menu/UserTableRow.qml" line="60"/>
         <source>If this option is enabled, your saves and the record will be saved on the network.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -155,7 +178,7 @@
     </message>
     <message>
         <location filename="../menu/UsersTable.qml" line="81"/>
-        <source>Create new user</source>
+        <source>Create the new user</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -221,6 +244,35 @@
         <translation>adım </translation>
     </message>
     <message>
+        <location filename="../game.qml" line="219"/>
+        <source>You have passed the level in %0 steps and unlocked level %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../game.qml" line="220"/>
+        <source>
+ Minimum steps for this lvl: %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../game.qml" line="221"/>
+        <location filename="../game.qml" line="230"/>
+        <source>
+ you reward = %3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../game.qml" line="228"/>
+        <source>You have passed the level in %0 steps.
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../game.qml" line="229"/>
+        <source>Minimum steps for this lvl: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../game.qml" line="50"/>
         <source>Tower height:</source>
         <translation>Kule yüksekliği:</translation>
@@ -231,17 +283,15 @@
         <translation>Ana menüye dön</translation>
     </message>
     <message>
-        <location filename="../game.qml" line="208"/>
         <source>You have passed the level in %0 steps and unlocked level %1
  Minimum steps for this lvl: %2</source>
-        <translation>Seviyeyi %0 adımından geçirdiniz ve %1 kilidini açtınız
+        <translation type="vanished">Seviyeyi %0 adımından geçirdiniz ve %1 kilidini açtınız
   Bu lvl için minimum adımlar: %2</translation>
     </message>
     <message>
-        <location filename="../game.qml" line="215"/>
         <source>You have passed the level in %0 steps.
 Minimum steps for this lvl: %1</source>
-        <translation>Seviyeyi %0 adımından geçtiniz.
+        <translation type="vanished">Seviyeyi %0 adımından geçtiniz.
 Bu lvl için minimum adımlar:%1</translation>
     </message>
     <message>

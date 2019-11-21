@@ -2,6 +2,25 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="ja_JP" sourcelanguage="en_US">
 <context>
+    <name>BackEnd</name>
+    <message>
+        <location filename="../backEnd.cpp" line="169"/>
+        <source>Register online error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../backEnd.cpp" line="169"/>
+        <location filename="../backEnd.cpp" line="177"/>
+        <source>not Supported</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../backEnd.cpp" line="177"/>
+        <source>Remove online error</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>BaseButton</name>
     <message>
         <location filename="../base/BaseButton.qml" line="15"/>
@@ -83,9 +102,13 @@
 <context>
     <name>MainMenu</name>
     <message>
-        <location filename="../menu/MainMenu.qml" line="29"/>
         <source>Hanoi Towers</source>
-        <translation>ハノイタワーズ</translation>
+        <translation type="vanished">ハノイタワーズ</translation>
+    </message>
+    <message>
+        <location filename="../menu/MainMenu.qml" line="29"/>
+        <source>Welcom to Hanoi Towers </source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../menu/MainMenu.qml" line="51"/>
@@ -129,12 +152,12 @@
 <context>
     <name>UserTableRow</name>
     <message>
-        <location filename="../menu/UserTableRow.qml" line="36"/>
+        <location filename="../menu/UserTableRow.qml" line="51"/>
         <source>Online user</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../menu/UserTableRow.qml" line="45"/>
+        <location filename="../menu/UserTableRow.qml" line="60"/>
         <source>If this option is enabled, your saves and the record will be saved on the network.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -163,7 +186,7 @@
     </message>
     <message>
         <location filename="../menu/UsersTable.qml" line="81"/>
-        <source>Create new user</source>
+        <source>Create the new user</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -229,6 +252,35 @@
         <translation>ステップ </translation>
     </message>
     <message>
+        <location filename="../game.qml" line="219"/>
+        <source>You have passed the level in %0 steps and unlocked level %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../game.qml" line="220"/>
+        <source>
+ Minimum steps for this lvl: %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../game.qml" line="221"/>
+        <location filename="../game.qml" line="230"/>
+        <source>
+ you reward = %3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../game.qml" line="228"/>
+        <source>You have passed the level in %0 steps.
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../game.qml" line="229"/>
+        <source>Minimum steps for this lvl: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../game.qml" line="50"/>
         <source>Tower height:</source>
         <translation>タワーの高さ：</translation>
@@ -239,17 +291,15 @@
         <translation>メインメニューに戻る</translation>
     </message>
     <message>
-        <location filename="../game.qml" line="208"/>
         <source>You have passed the level in %0 steps and unlocked level %1
  Minimum steps for this lvl: %2</source>
-        <translation>あなたは %0 ステップでレベルを通過し、レベル %1 をロック解除しました
+        <translation type="vanished">あなたは %0 ステップでレベルを通過し、レベル %1 をロック解除しました
   このlvlの最小手順：%2</translation>
     </message>
     <message>
-        <location filename="../game.qml" line="215"/>
         <source>You have passed the level in %0 steps.
 Minimum steps for this lvl: %1</source>
-        <translation>%0ステップでレベルを通過しました。
+        <translation type="vanished">%0ステップでレベルを通過しました。
 このlvlの最小手順：%1</translation>
     </message>
 </context>

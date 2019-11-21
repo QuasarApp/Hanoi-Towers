@@ -9,12 +9,12 @@ TEMPLATE = subdirs
 CONFIG += ordered
 
 SUBDIRS += NetworkProtocol \
+           HanoiTowersServer \
            SimpleQmlNotify \
            hanoi_towers
 
 NetworkProtocol.file = $$PWD/QtNetworkProtocol/NetworkProtocol.pro
 SimpleQmlNotify.file = $$PWD/SimpleQmlNotify/QmlNotify.pro
-
 include($$PWD/installer/installerHanoiTower.pri)
 
 QMAKE_EXTRA_TARGETS += \
