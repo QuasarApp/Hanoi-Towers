@@ -204,25 +204,38 @@ Rectangle {
             upPlate = obj.up();
 
         }
+
+
+
         if ( tower3.items.length === all) {
+            let reward = backEnd.getMinSteps(all) - step.ste + backEnd.getMinSteps(all);
+
+            if (reward < 1) {
+                reward = 1;
+            }
             if (all === tumbler.spin.maximumValue) {
                 backEnd.gameState.unlockNextLvl();
-                popUp.text = qsTr("You have passed the level in %0 steps and unlocked level %1") +
+
+                popUp.text = (qsTr("You have passed the level in %0 steps and unlocked level %1") +
                                    qsTr("\n Minimum steps for this lvl: %2") +
-                                   qsTr("\n you reward = %3").
-                arg(step.ste).arg(all + 1).arg(backEnd.getMinSteps(all));
+                                   qsTr("\n you reward = %3")).
+                arg(step.ste).arg(all + 1).arg(backEnd.getMinSteps(all)).
+                arg(reward);
 
                 popUp.open()
                 start(backEnd.gameState.getMaxValueOfLoadedSaves())
             } else {
-                popUp.text = qsTr("You have passed the level in %0 steps.\n" +
-                                     "Minimum steps for this lvl: %1").
-                arg(step.ste).arg(backEnd.getMinSteps(all));
+                popUp.text = (qsTr("You have passed the level in %0 steps.\n") +
+                             qsTr("Minimum steps for this lvl: %1") +
+                             qsTr("\n you reward = %3")).
+                arg(step.ste).arg(backEnd.getMinSteps(all)).arg(reward);
 
                 popUp.open()
                 start(++tumbler.spin.value)
             }
+            backEnd.setReward(reward);
         }
+
 
         oldTower = obj;
 
