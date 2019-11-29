@@ -6,10 +6,10 @@
 
 #define DEFAULT_DB QDir::homePath() + "/HanoiTowersDB/" + DEFAULT_DB_NAME
 
-#include <basenode.h>
 #include <quasarapp.h>
+#include <ratingusernode.h>
 
-class SnakeServer: public NetworkProtocol::BaseNode
+class SnakeServer: public NetworkProtocol::RatingUserNode
 {
     Q_OBJECT
 public:
