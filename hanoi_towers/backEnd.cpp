@@ -164,10 +164,20 @@ void BackEnd::removeLocalUserData(const QString& name) {
 }
 
 void BackEnd::handleOnlineRequest() {
+
+    auto _profile = dynamic_cast<ProfileData*>(sender());
+
+    if (!_profile)
+        return;
+
+    if (!_client.login(_profile->name(), "")) {
+        QmlNotificationService::NotificationService::getService()->setNotify(
+                    tr("Register online error"), tr("Failed to register this account, if this account was created by you, try to restore it."), "",
+                    QmlNotificationService::NotificationData::Error);
+    }
+
     // not supported
-    QmlNotificationService::NotificationService::getService()->setNotify(
-                tr("Register online error"), tr("not Supported"), "",
-                QmlNotificationService::NotificationData::Warning);
+
 //    assert(false);
 }
 
