@@ -4,18 +4,22 @@
 <context>
     <name>BackEnd</name>
     <message>
-        <location filename="../backEnd.cpp" line="169"/>
+        <location filename="../backEnd.cpp" line="175"/>
         <source>Register online error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="169"/>
-        <location filename="../backEnd.cpp" line="177"/>
+        <location filename="../backEnd.cpp" line="175"/>
+        <source>Failed to register this account, if this account was created by you, try to restore it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../backEnd.cpp" line="187"/>
         <source>not Supported</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="177"/>
+        <location filename="../backEnd.cpp" line="187"/>
         <source>Remove online error</source>
         <translation type="unfinished"></translation>
     </message>

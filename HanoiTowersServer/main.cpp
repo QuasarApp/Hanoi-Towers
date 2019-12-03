@@ -1,4 +1,4 @@
-#include "snakeserver.h"
+#include "hanoiserver.h"
 #include <QCoreApplication>
 #include <quasarapp.h>
 int main(int argc, char *argv[])
@@ -7,6 +7,6 @@ int main(int argc, char *argv[])
 
     QuasarAppUtils::Params::parseParams(argc, argv);
 
-    SnakeServer server;
+    HanoiServer server;
     return a.exec();
 }

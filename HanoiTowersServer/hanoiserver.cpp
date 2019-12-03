@@ -1,7 +1,7 @@
-#include "snakeserver.h"
+#include "hanoiserver.h"
 #include <QDir>
 
-SnakeServer::SnakeServer() {
+HanoiServer::HanoiServer() {
 
     QString address = DEFAULT_ADDRESS;
     unsigned short port = DEFAULT_HANOI_PORT;
@@ -27,7 +27,7 @@ SnakeServer::SnakeServer() {
 
 }
 
-QVariantMap SnakeServer::defaultDbParams() const {
+QVariantMap HanoiServer::defaultDbParams() const {
     return {
         {"DBDriver", "QSQLITE"},
         {"DBFilePath", DEFAULT_DB},

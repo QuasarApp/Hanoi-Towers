@@ -9,11 +9,11 @@
 #include <quasarapp.h>
 #include <ratingusernode.h>
 
-class SnakeServer: public NetworkProtocol::RatingUserNode
+class HanoiServer: public NetworkProtocol::RatingUserNode
 {
     Q_OBJECT
 public:
-    SnakeServer();
+    HanoiServer();
 
     QVariantMap defaultDbParams() const override;
 };
