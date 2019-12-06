@@ -7,7 +7,7 @@
 #include <QDataStream>
 #include <streambase.h>
 
-class GameState : public QObject, public NetworkProtocol::StreamBase
+class GameState : public QObject, public NP::StreamBase
 {
    Q_OBJECT
    Q_PROPERTY(short lvl READ lvl WRITE saveLvl)

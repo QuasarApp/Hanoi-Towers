@@ -4,7 +4,7 @@
 
 #include <userdata.h>
 
-class ProfileData : public QObject, public NetworkProtocol::StreamBase
+class ProfileData : public QObject, public NP::StreamBase
 {
     Q_OBJECT
 
@@ -14,11 +14,11 @@ class ProfileData : public QObject, public NetworkProtocol::StreamBase
     Q_PROPERTY(bool onlineUser READ isOnline WRITE setOnline NOTIFY onlineChanged)
 
 private:
-    NetworkProtocol::UserData _userData;
+    NP::UserData _userData;
     GameState _state;
 
 private slots:
-    void handleServerResponce(const NetworkProtocol::UserData &data);
+    void handleServerResponce(const NP::UserData &data);
 
 public:
     ProfileData(const QString& name);

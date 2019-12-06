@@ -18,7 +18,7 @@ void ProfileData::setRecord(int rec) {
     emit recordChanged(rec);
 }
 
-void ProfileData::handleServerResponce(const NetworkProtocol::UserData& data) {
+void ProfileData::handleServerResponce(const NP::UserData& data) {
     if (_userData.token() != data.token()) {
         _userData = data;
         emit onlineChanged(isOnline());

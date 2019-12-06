@@ -1,6 +1,6 @@
 #include "hanoiclient.h"
 
 HanoiClient::HanoiClient():
-    NetworkProtocol::Client(REMOTE_HOST, REMOTE_PORT) {
+    NP::Client(REMOTE_HOST, REMOTE_PORT) {
 
 }

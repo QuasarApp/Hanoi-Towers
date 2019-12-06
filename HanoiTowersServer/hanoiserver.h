@@ -9,7 +9,7 @@
 #include <quasarapp.h>
 #include <ratingusernode.h>
 
-class HanoiServer: public NetworkProtocol::RatingUserNode
+class HanoiServer: public NP::RatingUserNode
 {
     Q_OBJECT
 public:
