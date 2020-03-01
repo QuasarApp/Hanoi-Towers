@@ -5,7 +5,7 @@
 #define REMOTE_PORT 7788
 
 #include <client.h>
-class HanoiClient: public NetworkProtocol::Client
+class HanoiClient: public NP::Client
 {
 public:
     HanoiClient();
