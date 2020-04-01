@@ -1,4 +1,4 @@
-#include <QApplication>
+#include <QGuiApplication>
 #include <QFont>
 #include <QFontDatabase>
 #include <iostream>
@@ -10,7 +10,7 @@
 #include <QTranslator>
 #include <qmlnotifyservice.h>
 
-void setFont(const QApplication& app){
+void setFont(const QGuiApplication& app){
 
     QString fontPath = "://ubuntu";
     int fontId = QFontDatabase::addApplicationFont(fontPath);
@@ -21,7 +21,7 @@ void setFont(const QApplication& app){
     }
 }
 
-bool initLocale(const QString &locale, QApplication& app, QTranslator &translator){
+bool initLocale(const QString &locale, QGuiApplication& app, QTranslator &translator){
 
     QString defaultLocale = QLocale::system().name();
     defaultLocale.truncate(defaultLocale.lastIndexOf('_'));
@@ -41,7 +41,7 @@ int main(int argc, char *argv[])
 {
     QGuiApplication::setAttribute(Qt::AA_EnableHighDpiScaling); // <--
 
-    QApplication app(argc, argv);
+    QGuiApplication app(argc, argv);
     setFont(app);
 
     QTranslator translator;

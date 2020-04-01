@@ -9,7 +9,6 @@ cmake_minimum_required(VERSION 3.1)
 project(MainHanoiTowers)
 
 # Add sub directories
-add_subdirectory(QuasarAppLib)
 add_subdirectory(SimpleQmlNotify)
 add_subdirectory(QtNetworkProtocol)
 add_subdirectory(HanoiTowersServer)
