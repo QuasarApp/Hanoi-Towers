@@ -31,3 +31,12 @@ target_link_libraries(${PROJECT_NAME} PRIVATE QmlNotyfyService NetworkProtocol)
 target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 
 setVersion(1 6 0)
+
+include(../QtNetworkProtocol/QuasarAppLib/CMake/QuasarAppCITargets.cmake)
+
+if (WIN32)
+    initDeployQML(${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/${PROJECT_NAME}.exe ${CMAKE_CURRENT_SOURCE_DIR})
+else (WIN32)
+    initDeployQML(${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/${PROJECT_NAME} ${CMAKE_CURRENT_SOURCE_DIR})
+
+endif(WIN32)

@@ -38,6 +38,8 @@ Makefile*
 *build-*
 
 hanoi_towers/build/
+HanoiTowersServer/build/
+
 installer/installer
 
 *.snap
