@@ -146,7 +146,7 @@ void BackEnd::saveLocalData() const {
         return;
     }
 
-    QuasarAppUtils::Params::verboseLog("local file data not opened on not created1 " + f.fileName(),
+    QuasarAppUtils::Params::log("local file data not opened on not created1 " + f.fileName(),
                                        QuasarAppUtils::Error);
 }
 

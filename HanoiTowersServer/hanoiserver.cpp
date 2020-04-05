@@ -10,7 +10,7 @@ HanoiServer::HanoiServer() {
         auto addressList = QuasarAppUtils::Params::getStrArg("address").split(":");
         if (address.size() != 2) {
 
-            QuasarAppUtils::Params::verboseLog("invalid address params",
+            QuasarAppUtils::Params::log("invalid address params",
                                                QuasarAppUtils::Error);
             abort();
         }
@@ -20,7 +20,7 @@ HanoiServer::HanoiServer() {
     }
 
     if (!run(address, port)) {
-        QuasarAppUtils::Params::verboseLog("fail to run server",
+        QuasarAppUtils::Params::log("fail to run server",
                                            QuasarAppUtils::Error);
         abort();
     }
