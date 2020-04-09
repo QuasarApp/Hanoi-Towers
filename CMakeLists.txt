@@ -14,3 +14,23 @@ add_subdirectory(QtNetworkProtocol)
 add_subdirectory(HanoiTowersServer)
 add_subdirectory(hanoi_towers)
 
+include(QtNetworkProtocol/QuasarAppLib/CMake/QuasarAppCITargets.cmake)
+
+SET(DATA_DIR "${CMAKE_CURRENT_SOURCE_DIR}/hanoi_towers/installer/packages/HanoiTowers/data")
+SET(BIB_APP "${HanoiTowers_BIN_DIR}/HanoiTowers")
+
+initRelease()
+if (WIN32)
+    initDeployQML(${BIB_APP}.exe ${DATA_DIR} ${CMAKE_CURRENT_SOURCE_DIR})
+    initDeployQIF(${DATA_DIR} "${CMAKE_CURRENT_SOURCE_DIR}/installer" "${CMAKE_CURRENT_SOURCE_DIR}/installer/configWin.xml")
+
+else (WIN32)
+    initDeployQML(${BIB_APP} ${DATA_DIR} ${CMAKE_CURRENT_SOURCE_DIR})
+    initDeployQIF(${DATA_DIR} "${CMAKE_CURRENT_SOURCE_DIR}/installer" "${CMAKE_CURRENT_SOURCE_DIR}/installer/configLinux.xml")
+
+    initDeploySnap(${DATA_DIR})
+    initReleaseSnap()
+
+endif(WIN32)
+
+initReleaseQif(${DATA_DIR})

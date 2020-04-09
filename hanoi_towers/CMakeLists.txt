@@ -32,14 +32,3 @@ target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 
 setVersion(1 6 0)
 
-include(../QtNetworkProtocol/QuasarAppLib/CMake/QuasarAppCITargets.cmake)
-
-SET(DATA_DIR "${CMAKE_CURRENT_SOURCE_DIR}/installer/packages/HanoiTowers/data")
-
-if (WIN32)
-    initDeployQML(${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/${PROJECT_NAME}.exe ${DATA_DIR} ${CMAKE_CURRENT_SOURCE_DIR})
-else (WIN32)
-    initDeployQML(${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/${PROJECT_NAME} ${DATA_DIR} ${CMAKE_CURRENT_SOURCE_DIR})
-    initDeploySnap(${DATA_DIR})
-
-endif(WIN32)
