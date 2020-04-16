@@ -10,7 +10,6 @@ cmake_minimum_required(VERSION 3.1)
 project(ServerHanoiTowers LANGUAGES CXX)
 
 include(../QtNetworkProtocol/QuasarAppLib/CMake/ProjectOut.cmake)
-include(../QtNetworkProtocol/QuasarAppLib/CMake/ccache.cmake)
 include(../QtNetworkProtocol/QuasarAppLib/CMake/Version.cmake)
 
 
@@ -26,8 +25,8 @@ file(GLOB SOURCE_CPP
     "*.cpp"
 )
 
-add_library(${PROJECT_NAME} SHARED ${SOURCE_CPP})
-target_link_libraries(${PROJECT_NAME} PRIVATE NetworkProtocol)
+add_executable(${PROJECT_NAME} ${SOURCE_CPP})
+target_link_libraries(${PROJECT_NAME} PRIVATE NetworkProtocol Qt-Service)
 target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 
 setVersion(1 6 0)

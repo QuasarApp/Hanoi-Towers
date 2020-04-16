@@ -11,10 +11,13 @@ project(MainHanoiTowers)
 # Add sub directories
 add_subdirectory(SimpleQmlNotify)
 add_subdirectory(QtNetworkProtocol)
-add_subdirectory(HanoiTowersServer)
 add_subdirectory(hanoi_towers)
+add_subdirectory(HanoiTowersServer)
+
+add_subdirectory(qt-solutions/qtservice)
 
 include(QtNetworkProtocol/QuasarAppLib/CMake/QuasarAppCITargets.cmake)
+include(QtNetworkProtocol/QuasarAppLib/CMake/ccache.cmake)
 
 SET(DATA_DIR "${CMAKE_CURRENT_SOURCE_DIR}/hanoi_towers/installer/packages/HanoiTowers/data")
 SET(BIB_APP "${HanoiTowers_BIN_DIR}/HanoiTowers")
