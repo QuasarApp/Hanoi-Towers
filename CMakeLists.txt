@@ -12,9 +12,9 @@ project(MainHanoiTowers)
 add_subdirectory(SimpleQmlNotify)
 add_subdirectory(QtNetworkProtocol)
 add_subdirectory(hanoi_towers)
+add_subdirectory(Patronum)
 add_subdirectory(HanoiTowersServer)
 
-add_subdirectory(Patronum)
 
 include(QtNetworkProtocol/QuasarAppLib/CMake/QuasarAppCITargets.cmake)
 include(QtNetworkProtocol/QuasarAppLib/CMake/ccache.cmake)
