@@ -2,11 +2,11 @@
 #define HANOISERVICE_H
 
 #include <QCoreApplication>
-#include <qtservice.h>
+#include <patronum.h>
 
 class HanoiServer;
 
-class HanoiService : public QtService<QCoreApplication>
+class HanoiService : public Patronum::Service
 {
 public:
     HanoiService(int argc, char *argv[]);
