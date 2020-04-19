@@ -4,6 +4,3 @@
 [submodule "SimpleQmlNotify"]
 	path = SimpleQmlNotify
 	url = https://github.com/QuasarApp/SimpleQmlNotify.git
-[submodule "qt-solutions"]
-	path = qt-solutions
-	url = https://github.com/QuasarApp/qt-solutions.git
