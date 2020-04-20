@@ -14,6 +14,7 @@ add_subdirectory(QtNetworkProtocol)
 add_subdirectory(hanoi_towers)
 add_subdirectory(Patronum)
 add_subdirectory(HanoiTowersServer)
+add_subdirectory(HanoiTowersTerminal)
 
 
 include(QtNetworkProtocol/QuasarAppLib/CMake/QuasarAppCITargets.cmake)
