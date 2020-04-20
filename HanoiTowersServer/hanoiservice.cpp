@@ -3,7 +3,7 @@
 #include <quasarapp.h>
 
 HanoiService::HanoiService(int argc, char *argv[]):
-    QtService<QCoreApplication>(argc, argv, "HanoiService") {
+    Patronum::Service<QCoreApplication>(argc, argv, "HanoiService") {
 
 }
 
@@ -27,8 +27,10 @@ void HanoiService::resume() {
 
 }
 
-void HanoiService::createApplication(int &argc, char **argv) {
-    QuasarAppUtils::Params::parseParams(argc, argv);
-    QtService<QCoreApplication>::createApplication(argc, argv);
+void HanoiService::handleReceive(const QList<Patronum::Feature> &data) {
+
 }
 
+QList<Patronum::Feature> HanoiService::supportedFeatures() {
+
+}

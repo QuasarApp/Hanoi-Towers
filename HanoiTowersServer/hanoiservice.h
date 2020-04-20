@@ -6,7 +6,7 @@
 
 class HanoiServer;
 
-class HanoiService : public Patronum::Service
+class HanoiService : public Patronum::Service<QCoreApplication>
 {
 public:
     HanoiService(int argc, char *argv[]);
@@ -17,10 +17,14 @@ protected:
     void stop();
     void pause();
     void resume();
-    void createApplication(int &argc, char **argv);
+
+    void handleReceive(const QList<Patronum::Feature> &data);
+    QList<Patronum::Feature> supportedFeatures();
 
 private:
+
     HanoiServer *_server = nullptr;
+
 };
 
 #endif // HANOISERVICE_H
