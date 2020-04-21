@@ -30,5 +30,4 @@ add_executable(${PROJECT_NAME} ${SOURCE_CPP})
 target_link_libraries(${PROJECT_NAME} PRIVATE QmlNotyfyService NetworkProtocol)
 target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 
-setVersion(1 6 0)
 

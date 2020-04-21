@@ -8,20 +8,11 @@
 cmake_minimum_required(VERSION 3.1)
 project(MainHanoiTowers)
 
-# Add sub directories
-add_subdirectory(SimpleQmlNotify)
-add_subdirectory(QtNetworkProtocol)
-add_subdirectory(hanoi_towers)
-add_subdirectory(Patronum)
-add_subdirectory(HanoiTowersServer)
-add_subdirectory(HanoiTowersTerminal)
-
-
-include(QtNetworkProtocol/QuasarAppLib/CMake/QuasarAppCITargets.cmake)
 include(QtNetworkProtocol/QuasarAppLib/CMake/ccache.cmake)
+include(QtNetworkProtocol/QuasarAppLib/CMake/QuasarAppCITargets.cmake)
 
 SET(DATA_DIR "${CMAKE_CURRENT_SOURCE_DIR}/hanoi_towers/installer/packages/HanoiTowers/data")
-SET(BIB_APP "${HanoiTowers_BIN_DIR}/HanoiTowers")
+SET(BIB_APP "${CMAKE_CURRENT_SOURCE_DIR}/hanoi_towers/build/Release/HanoiTowers")
 SET(TARGET_DIR "${CMAKE_CURRENT_SOURCE_DIR}/Distro")
 
 initRelease()
@@ -41,3 +32,14 @@ endif(WIN32)
 initReleaseQif(${DATA_DIR} ${TARGET_DIR})
 
 initDeployAPK("${CMAKE_CURRENT_SOURCE_DIR}/hanoi_towers/android-libHanoiTowers.so-deployment-settings.json" "digitalface" "${SIGN_PATH}/DigitalFaceMobily.keystore" "${SIGN_STORE_PASSWORD}" "${TARGET_DIR}")
+
+
+# Add sub directories
+add_subdirectory(SimpleQmlNotify)
+add_subdirectory(QtNetworkProtocol)
+add_subdirectory(hanoi_towers)
+add_subdirectory(Patronum)
+add_subdirectory(HanoiTowersServer)
+add_subdirectory(HanoiTowersTerminal)
+
+
