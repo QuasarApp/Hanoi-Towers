@@ -15,24 +15,25 @@ SET(DATA_DIR "${CMAKE_CURRENT_SOURCE_DIR}/hanoi_towers/installer/packages/HanoiT
 SET(BIB_APP "${CMAKE_CURRENT_SOURCE_DIR}/hanoi_towers/build/Release/HanoiTowers")
 SET(TARGET_DIR "${CMAKE_CURRENT_SOURCE_DIR}/Distro")
 
-initRelease()
+addDeployFromCustomFile("Client" "${CMAKE_CURRENT_SOURCE_DIR}/Deploy/Client.json")
+addDeployFromCustomFile("Server" "${CMAKE_CURRENT_SOURCE_DIR}/Deploy/Server.json")
+
 if (WIN32)
-    initDeployQML(${BIB_APP}.exe ${DATA_DIR} ${CMAKE_CURRENT_SOURCE_DIR})
-    initDeployQIF(${DATA_DIR} "${CMAKE_CURRENT_SOURCE_DIR}/installer" "${CMAKE_CURRENT_SOURCE_DIR}/installer/configWin.xml")
+    addDeployQIF("installer" ${DATA_DIR} "${CMAKE_CURRENT_SOURCE_DIR}/installer" "${CMAKE_CURRENT_SOURCE_DIR}/installer/configWin.xml")
 
 else (WIN32)
-    initDeployQML(${BIB_APP} ${DATA_DIR} ${CMAKE_CURRENT_SOURCE_DIR})
-    initDeployQIF(${DATA_DIR} "${TARGET_DIR}" "${CMAKE_CURRENT_SOURCE_DIR}/installer/configLinux.xml")
+    addDeployQIF("installer" ${DATA_DIR} "${TARGET_DIR}" "${CMAKE_CURRENT_SOURCE_DIR}/installer/configLinux.xml")
 
-    initDeploySnap(${TARGET_DIR})
-    initReleaseSnap()
+    addDeploySnap("store" ${TARGET_DIR})
+    addReleaseSnap("store")
 
 endif(WIN32)
 
-initReleaseQif(${DATA_DIR} ${TARGET_DIR})
+addReleaseQif("installer" ${DATA_DIR} ${TARGET_DIR})
 
-initDeployAPK("${CMAKE_CURRENT_SOURCE_DIR}/hanoi_towers/android-libHanoiTowers.so-deployment-settings.json" "digitalface" "${SIGN_PATH}/DigitalFaceMobily.keystore" "${SIGN_STORE_PASSWORD}" "${TARGET_DIR}")
+addDeployAPK("Android" "${CMAKE_CURRENT_SOURCE_DIR}/hanoi_towers/android-libHanoiTowers.so-deployment-settings.json" "digitalface" "${SIGN_PATH}/DigitalFaceMobily.keystore" "${SIGN_STORE_PASSWORD}" "${TARGET_DIR}")
 
+initAll()
 
 # Add sub directories
 add_subdirectory(SimpleQmlNotify)
