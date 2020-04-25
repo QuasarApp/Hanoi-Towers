@@ -1,14 +1,18 @@
 {
-    "binDir": [
+    "bin": [
         "./../HanoiTowersServer/build/Release",
         "./../HanoiTowersTerminal/build/Release"
         ],
     "clear": true,
     "libDir": "./../",
     "recursiveDepth": "5",
+    "ignoreEnv": [
+        "./../installer",
+        "./../Distro"
+        ],
     "ignore": [
-        "./../installer/packages/HanoiTowers/data",
-        "./../Distro/Server"
+        "./../installer",
+        "./../Distro"
         ],
     "targetDir": "./../Distro/Server",
     "qif": true

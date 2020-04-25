@@ -8,7 +8,6 @@
     <ReleaseDate>2018-08-25</ReleaseDate>
     <SortingPriority>200</SortingPriority>
     <ForcedInstallation>true</ForcedInstallation>
-
     <Translations>
         <Translation>ru.qm</Translation>
     </Translations>

@@ -3,9 +3,14 @@
     "clear": true,
     "libDir": "./../",
     "recursiveDepth": "5",
+    "qmlDir": "../",
+    "ignoreEnv": [
+        "./../installer",
+        "./../Distro"
+        ],
     "ignore": [
-            "./../installer/packages/HanoiTowers/data",
-            "./../Distro/Server"
-            ],
+        "./../installer",
+        "./../Distro"
+        ],
     "targetDir": "./../installer/packages/HanoiTowers/data"
 }
