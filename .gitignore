@@ -13,6 +13,7 @@
 # Qt-es
 /Build*
 HanoiTowersTerminal/build/Release/
+HanoiTowersTerminal/build
 *.stash
 /Release*
 /parts/*
