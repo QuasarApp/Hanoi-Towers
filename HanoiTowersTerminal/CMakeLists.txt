@@ -9,7 +9,7 @@ cmake_minimum_required(VERSION 3.1)
 
 include(../QtNetworkProtocol/QuasarAppLib/CMake/ProjectOut.cmake)
 
-set(CURRENT_PROJECT Termonal)
+set(CURRENT_PROJECT Terminal)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)

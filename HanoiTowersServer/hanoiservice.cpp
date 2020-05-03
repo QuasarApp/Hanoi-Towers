@@ -28,9 +28,13 @@ void HanoiService::resume() {
 }
 
 void HanoiService::handleReceive(const QList<Patronum::Feature> &data) {
-
+     Patronum::Service<QCoreApplication>::handleReceive(data);
 }
 
 QList<Patronum::Feature> HanoiService::supportedFeatures() {
+    QList<Patronum::Feature> data;
 
+    data << Patronum::Feature("ping");
+
+    return data;
 }
