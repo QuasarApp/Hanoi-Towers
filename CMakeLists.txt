@@ -35,7 +35,6 @@ addReleaseQif("Client" ${DATA_DIR} ${TARGET_DIR})
 
 addDeployAPK("Android" "${CMAKE_CURRENT_SOURCE_DIR}/hanoi_towers/android-libHanoiTowers.so-deployment-settings.json" "digitalface" "${SIGN_PATH}/DigitalFaceMobily.keystore" "${SIGN_STORE_PASSWORD}" "${TARGET_DIR}")
 
-initAll()
 
 # Add sub directories
 add_subdirectory(SimpleQmlNotify)
@@ -45,4 +44,5 @@ add_subdirectory(Patronum)
 add_subdirectory(HanoiTowersServer)
 add_subdirectory(HanoiTowersTerminal)
 
+initAll()
 
