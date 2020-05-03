@@ -7,11 +7,9 @@
 
 cmake_minimum_required(VERSION 3.1)
 
-project(Terminal LANGUAGES CXX)
-
 include(../QtNetworkProtocol/QuasarAppLib/CMake/ProjectOut.cmake)
 
-
+set(CURRENT_PROJECT Termonal)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
@@ -24,7 +22,7 @@ file(GLOB SOURCE_CPP
     "*.cpp"
 )
 
-add_executable(${PROJECT_NAME} ${SOURCE_CPP})
-target_link_libraries(${PROJECT_NAME} PRIVATE Patronum)
-target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
+add_executable(${CURRENT_PROJECT} ${SOURCE_CPP})
+target_link_libraries(${CURRENT_PROJECT} PRIVATE Patronum)
+target_include_directories(${CURRENT_PROJECT} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
 

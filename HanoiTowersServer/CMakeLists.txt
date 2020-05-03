@@ -7,7 +7,7 @@
 
 cmake_minimum_required(VERSION 3.1)
 
-project(ServerHanoiTowers LANGUAGES CXX)
+set(CURRENT_PROJECT ServerHanoiTowers)
 
 include(../QtNetworkProtocol/QuasarAppLib/CMake/ProjectOut.cmake)
 include(../QtNetworkProtocol/QuasarAppLib/CMake/Version.cmake)
@@ -25,6 +25,6 @@ file(GLOB SOURCE_CPP
     "*.cpp"
 )
 
-add_executable(${PROJECT_NAME} ${SOURCE_CPP})
-target_link_libraries(${PROJECT_NAME} PRIVATE NetworkProtocol Patronum)
-target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+add_executable(${CURRENT_PROJECT} ${SOURCE_CPP})
+target_link_libraries(${CURRENT_PROJECT} PRIVATE NetworkProtocol Patronum)
+target_include_directories(${CURRENT_PROJECT} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})

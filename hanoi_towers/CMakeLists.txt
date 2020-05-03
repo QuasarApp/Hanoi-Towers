@@ -7,7 +7,7 @@
 
 cmake_minimum_required(VERSION 3.1)
 
-project(HanoiTowers LANGUAGES CXX)
+set(CURRENT_PROJECT ${PROJECT_NAME})
 
 include(../QtNetworkProtocol/QuasarAppLib/CMake/ProjectOut.cmake)
 include(../QtNetworkProtocol/QuasarAppLib/CMake/ccache.cmake)
@@ -26,8 +26,8 @@ file(GLOB SOURCE_CPP
     "*.cpp" "*.qrc"
 )
 
-add_executable(${PROJECT_NAME} ${SOURCE_CPP})
-target_link_libraries(${PROJECT_NAME} PRIVATE QmlNotyfyService NetworkProtocol)
-target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+add_executable(${CURRENT_PROJECT} ${SOURCE_CPP})
+target_link_libraries(${CURRENT_PROJECT} PRIVATE QmlNotyfyService NetworkProtocol)
+target_include_directories(${CURRENT_PROJECT} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 
 

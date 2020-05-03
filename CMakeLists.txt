@@ -6,7 +6,7 @@
 #
 
 cmake_minimum_required(VERSION 3.1)
-project(MainHanoiTowers)
+project(HanoiTowers)
 
 include(QtNetworkProtocol/QuasarAppLib/CMake/ccache.cmake)
 include(QtNetworkProtocol/QuasarAppLib/CMake/QuasarAppCITargets.cmake)
