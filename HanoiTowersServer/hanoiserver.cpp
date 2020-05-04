@@ -1,5 +1,6 @@
 #include "hanoiserver.h"
 #include <QDir>
+#include <QNetworkInterface>
 
 HanoiServer::HanoiServer() {
 
