@@ -28,8 +28,8 @@ if (WIN32)
 else (WIN32)
     addDeployQIF("Client" ${INSTALLER_DIR} ${TARGET_DIR} "${INSTALLER_DIR}/config/configLinux.xml")
 
-    addDeploySnap("store" ${TARGET_DIR})
-    addReleaseSnap("store")
+    addDeploySnap("Client" ${TARGET_DIR})
+    addReleaseSnap("Client")
 
 endif(WIN32)
 
