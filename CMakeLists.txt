@@ -35,6 +35,7 @@ addReleaseQif("Client" ${DATA_DIR} ${TARGET_DIR})
 
 addDeployAPK("Android" "${CMAKE_CURRENT_SOURCE_DIR}/hanoi_towers/android-libHanoiTowers.so-deployment-settings.json" "digitalface" "${SIGN_PATH}/DigitalFaceMobily.keystore" "${SIGN_STORE_PASSWORD}" "${TARGET_DIR}")
 
+file(MAKE_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/"Distro")
 
 # Add sub directories
 add_subdirectory(SimpleQmlNotify)
