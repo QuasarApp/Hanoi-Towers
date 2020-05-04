@@ -17,6 +17,8 @@ SET(DATA_DIR "${INSTALLER_DIR}/packages/HanoiTowers/data")
 SET(BIB_APP "${CMAKE_CURRENT_SOURCE_DIR}/hanoi_towers/build/Release/HanoiTowers")
 SET(TARGET_DIR "${CMAKE_CURRENT_SOURCE_DIR}/Distro")
 
+file(MAKE_DIRECTORY ${TARGET_DIR})
+
 addDeployFromCustomFile("Client" "${CMAKE_CURRENT_SOURCE_DIR}/Deploy/Client.json")
 addDeployFromCustomFile("Server" "${CMAKE_CURRENT_SOURCE_DIR}/Deploy/Server.json")
 
@@ -35,7 +37,6 @@ addReleaseQif("Client" ${DATA_DIR} ${TARGET_DIR})
 
 addDeployAPK("Android" "${CMAKE_CURRENT_SOURCE_DIR}/hanoi_towers/android-libHanoiTowers.so-deployment-settings.json" "digitalface" "${SIGN_PATH}/DigitalFaceMobily.keystore" "${SIGN_STORE_PASSWORD}" "${TARGET_DIR}")
 
-file(MAKE_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/"Distro")
 
 # Add sub directories
 add_subdirectory(SimpleQmlNotify)
