@@ -4,8 +4,6 @@
 #define DEFAULT_ADDRESS ""
 #define DEFAULT_HANOI_PORT 7770
 
-#define DEFAULT_DB QDir::homePath() + "/HanoiTowersDB/" + DEFAULT_DB_NAME
-
 #include <quasarapp.h>
 #include <ratingusernode.h>
 

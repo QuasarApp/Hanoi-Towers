@@ -31,7 +31,7 @@ HanoiServer::HanoiServer() {
 QVariantMap HanoiServer::defaultDbParams() const {
     return {
         {"DBDriver", "QSQLITE"},
-        {"DBFilePath", DEFAULT_DB},
+        {"DBFilePath", DEFAULT_DB_PATH},
         {"DBInitFile", DEFAULT_DB_INIT_FILE_PATH}
     };
 }
