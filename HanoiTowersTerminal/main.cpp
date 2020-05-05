@@ -8,6 +8,8 @@ int main(int argc, char *argv[])
 
 
     Terminal terminal;
-    terminal.send(argc, argv);
+    if (!terminal.send(argc, argv)) {
+        QuasarAppUtils::Params::log("command not sendet!", QuasarAppUtils::Error);
+    }
     return terminal.waitForResponce();
 }
