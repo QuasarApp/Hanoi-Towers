@@ -40,6 +40,9 @@ bool initLocale(const QString &locale, QGuiApplication& app, QTranslator &transl
 int main(int argc, char *argv[])
 {
     QGuiApplication::setAttribute(Qt::AA_EnableHighDpiScaling); // <--
+    QGuiApplication::setApplicationName("HanoiTowers"); // <--
+    QGuiApplication::setOrganizationName("QuasarApp"); // <--
+    QGuiApplication::setOrganizationDomain("https://github.com/QuasarApp"); // <--
 
     QGuiApplication app(argc, argv);
     setFont(app);
