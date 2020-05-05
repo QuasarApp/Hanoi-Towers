@@ -5,15 +5,15 @@
         ],
     "clear": true,
     "libDir": "./../",
-    "recursiveDepth": "5",
+    "recursiveDepth": "10",
     "ignoreEnv": [
         "./../installer",
-        "./../Distro"
+        "./../Distro",
+        "./../parts",
+        "./../snap"
         ],
-    "ignore": [
-        "./../installer",
-        "./../Distro"
-        ],
+    "extraLib": "crypto",
+
     "targetDir": "./../Distro/Server",
     "qif": true
 }
