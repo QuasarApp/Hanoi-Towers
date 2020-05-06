@@ -1,6 +1,7 @@
 #include "hanoiserver.h"
 #include <QDir>
 #include <QNetworkInterface>
+#include <QCoreApplication>
 
 HanoiServer::HanoiServer() {
 
@@ -13,7 +14,8 @@ HanoiServer::HanoiServer() {
 
             QuasarAppUtils::Params::log("invalid address params",
                                                QuasarAppUtils::Error);
-            abort();
+            QCoreApplication ::exit(2);
+
         }
 
         address = addressList.first();
@@ -23,7 +25,9 @@ HanoiServer::HanoiServer() {
     if (!run(address, port)) {
         QuasarAppUtils::Params::log("fail to run server",
                                            QuasarAppUtils::Error);
-        abort();
+
+        QCoreApplication ::exit(3);
+
     }
 
 }
