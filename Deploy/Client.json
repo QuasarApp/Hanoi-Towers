@@ -8,7 +8,9 @@
         "./../installer",
         "./../Distro",
         "./../parts",
-        "./../snap"
+        "./../snap",
+        "./../prime",
+        "./../stage"
         ],
     "extraLib": "crypto",
     "targetDir": "./../installer/packages/HanoiTowers/data"
