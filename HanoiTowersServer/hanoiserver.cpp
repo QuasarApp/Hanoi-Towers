@@ -25,7 +25,6 @@ HanoiServer::HanoiServer() {
     if (!run(address, port)) {
         QuasarAppUtils::Params::log("fail to run server",
                                            QuasarAppUtils::Error);
-
         QCoreApplication ::exit(3);
 
     }
