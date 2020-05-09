@@ -20,6 +20,7 @@ void HanoiService::start() {
 void HanoiService::stop() {
     if (_server) {
         delete _server;
+        _server = nullptr;
     }
 }
 
@@ -32,7 +33,17 @@ void HanoiService::resume() {
 }
 
 void HanoiService::handleReceive(const QList<Patronum::Feature> &data) {
-     Patronum::Service<QCoreApplication>::handleReceive(data);
+
+    QList<Patronum::Feature> notSupported;
+    for (const auto& i: data) {
+        if (i.cmd() == "ping") {
+            sendResuylt("Pong");
+        } else {
+            notSupported += i;
+        }
+    }
+
+    Patronum::Service<QCoreApplication>::handleReceive(notSupported);
 }
 
 QList<Patronum::Feature> HanoiService::supportedFeatures() {
