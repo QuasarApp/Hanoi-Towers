@@ -10,6 +10,7 @@ class HanoiService : public Patronum::Service<QCoreApplication>
 {
 public:
     HanoiService(int argc, char *argv[]);
+    ~HanoiService();
 
     // QtServiceBase interface
 protected:

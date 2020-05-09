@@ -7,6 +7,10 @@ HanoiService::HanoiService(int argc, char *argv[]):
 
 }
 
+HanoiService::~HanoiService() {
+    stop();
+}
+
 void HanoiService::start() {
     if (!_server) {
         _server = new HanoiServer();
