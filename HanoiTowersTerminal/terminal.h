@@ -11,6 +11,8 @@ public:
     // Controller interface
 protected:
     QString defaultInstallLocation();
+
+    void handleError(Patronum::ControllerError);
 };
 
 #endif // TERMINAL_H
