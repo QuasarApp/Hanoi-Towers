@@ -1,4 +1,5 @@
 #include "terminal.h"
+#include <QCoreApplication>
 
 #include <QTimer>
 

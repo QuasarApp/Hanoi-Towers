@@ -1,11 +1,9 @@
 #include "terminal.h"
+#include <QCoreApplication>
 
-Terminal::Terminal():Patronum::Controller("HanoiService") {
+Terminal::Terminal():Patronum::Controller("HanoiService",
+                                          QCoreApplication::applicationDirPath() + "/../ServerHanoiTowers.sh") {
 
-}
-
-QString Terminal::defaultInstallLocation() {
-    return QCoreApplication::applicationDirPath() + "/../ServerHanoiTowers.sh";
 }
 
 void Terminal::handleError(Patronum::ControllerError err) {

@@ -8,27 +8,27 @@ HanoiService::HanoiService(int argc, char *argv[]):
 }
 
 HanoiService::~HanoiService() {
-    stop();
+    onStop();
 }
 
-void HanoiService::start() {
+void HanoiService::onStart() {
     if (!_server) {
         _server = new HanoiServer();
     }
 }
 
-void HanoiService::stop() {
+void HanoiService::onStop() {
     if (_server) {
         delete _server;
         _server = nullptr;
     }
 }
 
-void HanoiService::pause() {
+void HanoiService::onPause() {
 
 }
 
-void HanoiService::resume() {
+void HanoiService::onResume() {
 
 }
 
@@ -38,6 +38,8 @@ void HanoiService::handleReceive(const QList<Patronum::Feature> &data) {
     for (const auto& i: data) {
         if (i.cmd() == "ping") {
             sendResuylt("Pong");
+        } else if (i.cmd() == "Players") {
+            //_server->
         } else {
             notSupported += i;
         }
@@ -50,6 +52,7 @@ QList<Patronum::Feature> HanoiService::supportedFeatures() {
     QList<Patronum::Feature> data;
 
     data << Patronum::Feature("ping");
+    data << Patronum::Feature("Players");
 
     return data;
 }

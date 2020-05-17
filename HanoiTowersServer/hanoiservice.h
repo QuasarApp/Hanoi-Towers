@@ -14,10 +14,10 @@ public:
 
     // QtServiceBase interface
 protected:
-    void start();
-    void stop();
-    void pause();
-    void resume();
+    void onStart() override;
+    void onStop() override;
+    void onPause() override;
+    void onResume() override;
 
     void handleReceive(const QList<Patronum::Feature> &data);
     QList<Patronum::Feature> supportedFeatures();

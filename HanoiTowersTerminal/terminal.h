@@ -10,7 +10,6 @@ public:
 
     // Controller interface
 protected:
-    QString defaultInstallLocation();
 
     void handleError(Patronum::ControllerError);
 };
