@@ -6,6 +6,7 @@
     "clear": true,
     "libDir": "./../",
     "recursiveDepth": "10",
+    "deploySystem": true,
     "ignoreEnv": [
         "./../installer",
         "./../Distro",
