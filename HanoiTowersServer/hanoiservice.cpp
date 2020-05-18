@@ -23,15 +23,7 @@ void HanoiService::onStop() {
         _server = nullptr;
     }
 
-    QCoreApplication::quit();
-}
-
-void HanoiService::onPause() {
-
-}
-
-void HanoiService::onResume() {
-
+    Service::onStop();
 }
 
 void HanoiService::handleReceive(const QList<Patronum::Feature> &data) {

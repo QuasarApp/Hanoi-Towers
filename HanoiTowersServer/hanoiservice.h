@@ -16,11 +16,9 @@ public:
 protected:
     void onStart() override;
     void onStop() override;
-    void onPause() override;
-    void onResume() override;
 
-    void handleReceive(const QList<Patronum::Feature> &data);
-    QList<Patronum::Feature> supportedFeatures();
+    void handleReceive(const QList<Patronum::Feature> &data) override;
+    QList<Patronum::Feature> supportedFeatures() override;
 
 private:
 
