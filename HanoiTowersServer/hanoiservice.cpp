@@ -22,6 +22,8 @@ void HanoiService::onStop() {
         delete _server;
         _server = nullptr;
     }
+
+    QCoreApplication::quit();
 }
 
 void HanoiService::onPause() {
