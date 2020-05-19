@@ -16,7 +16,7 @@
         "./../stage"
         ],
     "extraLib": "crypto",
-    "name": "HanoiTowers Server edition",
+    "name": "HanoiCore",
     "targetDir": "./../Distro/Server",
     "qif": true
 }
