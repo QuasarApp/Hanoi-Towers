@@ -8,6 +8,7 @@
 cmake_minimum_required(VERSION 3.1)
 
 include(../QtNetworkProtocol/QuasarAppLib/CMake/ProjectOut.cmake)
+include(../QtNetworkProtocol/QuasarAppLib/CMake/Version.cmake)
 
 set(CURRENT_PROJECT Terminal)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
@@ -26,3 +27,5 @@ add_executable(${CURRENT_PROJECT} ${SOURCE_CPP})
 target_link_libraries(${CURRENT_PROJECT} PRIVATE Patronum)
 target_include_directories(${CURRENT_PROJECT} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
 
+
+setVersion(${PRODUCT_VER_Mj} ${PRODUCT_VER_Mn} ${PRODUCT_VER_Re})

@@ -5,6 +5,8 @@
 HanoiService::HanoiService(int argc, char *argv[]):
     Patronum::Service<QCoreApplication>(argc, argv, "HanoiService") {
 
+    if (!QuasarAppUtils::Params::isEndable("fileLog"))
+        QuasarAppUtils::Params::setArg("fileLog", "/var/log/HanoiService.log");
 }
 
 HanoiService::~HanoiService() {

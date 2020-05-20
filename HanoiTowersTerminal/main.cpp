@@ -12,10 +12,12 @@ int main(int argc, char *argv[])
     QCoreApplication app(argc, argv);
 
     Terminal terminal;
-    if (!terminal.send(argc, argv)) {
-        QuasarAppUtils::Params::log("command not sendet!", QuasarAppUtils::Error);
-        return 10;
-    }
+    QTimer::singleShot(0, [&terminal, argc, argv]() {
+        if (!terminal.send(argc, argv)) {
+            QuasarAppUtils::Params::log("command not sendet!", QuasarAppUtils::Error);
+            QCoreApplication::exit(10);
+        }
+    });
 
     QTimer::singleShot(1000, []() {
         QuasarAppUtils::Params::log("response timed out!", QuasarAppUtils::Error);
