@@ -8,7 +8,6 @@ int main(int argc, char *argv[])
     QCoreApplication::setApplicationName("HanoiTowers Terminal"); // <--
     QCoreApplication::setOrganizationName("QuasarApp"); // <--
     QCoreApplication::setOrganizationDomain("https://github.com/QuasarApp"); // <--
-
     QCoreApplication app(argc, argv);
 
     Terminal terminal;
