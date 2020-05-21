@@ -3,7 +3,7 @@
     "clear": true,
     "libDir": "./../",
     "recursiveDepth": "10",
-    "deploySystem": true,
+    "deploySystem": false,
     "qmlDir": "../",
     "ignoreEnv": [
         "./../installer",

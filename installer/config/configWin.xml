@@ -2,16 +2,16 @@
 <Installer>
     <WizardDefaultWidth>640px</WizardDefaultWidth>
     <WizardDefaultHeight>400px</WizardDefaultHeight>
-    <Name>App</Name>
+    <Name>HanoiTowers</Name>
     <Version>1.2.3.1</Version>
-    <Title>App</Title>
-    <Publisher>App</Publisher>
-    <StartMenuDir>App</StartMenuDir>
-    <TargetDir>@HomeDir@/App</TargetDir>
+    <Title>HanoiTowers</Title>
+    <Publisher>QuasarApp</Publisher>
+    <StartMenuDir>QuasarApp</StartMenuDir>
+    <TargetDir>@HomeDir@/HanoiTowers</TargetDir>
     <InstallActionColumnVisible>true</InstallActionColumnVisible>
     <RemoveTargetDir>true</RemoveTargetDir>
     <ControlScript>controlScript.js</ControlScript>
-    <MaintenanceToolName>CQtDeployerTool</MaintenanceToolName>
+    <MaintenanceToolName>HanoiTowersTool</MaintenanceToolName>
     <WizardStyle>Classic</WizardStyle>
     <StyleSheet>style.css</StyleSheet>
     <Banner>banner.png</Banner>
