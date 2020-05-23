@@ -9,6 +9,10 @@
 import QtQuick 2.9
 import QtQuick.Controls 2.2
 import NotifyModule 1.0
+import "./base" as Base
+import "./menu" as Menu
+
+import QtQuick.Layouts 1.3
 
 ApplicationWindow {
     visible: true
@@ -17,7 +21,15 @@ ApplicationWindow {
     height: 480
     title: qsTr("Hanoi Towers")
 
-    Loader {
+    Base.Theme{
+        id: theme;
+    }
+
+    header: Menu.ToolBar {
+        state: "MainMenu"
+    }
+
+    contentData: Loader {
         id: core
         source: "menu/MainMenu.qml"
         anchors.fill: parent

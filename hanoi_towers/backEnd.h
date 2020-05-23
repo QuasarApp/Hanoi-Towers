@@ -13,11 +13,18 @@
 #include <quasarapp.h>
 #include <QObject>
 #include <QFile>
+//#include <listviewmodel.h>
+
 #define SAVE "data"
 
 #define MAIN_FOLDER                 QDir::homePath() + "/.HanoiTowers"
 #define MAIN_FOLDER_KEY             "HanoiTowersFolder"
 #define MAIN_SETINGS_FILE           MAIN_FOLDER + "/" + SAVE
+
+namespace LoginView {
+class LVMainModel;
+}
+class QQmlApplicationEngine;
 
 class BackEnd: public QObject
 {
@@ -26,6 +33,9 @@ class BackEnd: public QObject
     Q_PROPERTY(bool randomColor READ randomColor WRITE setRandomColor NOTIFY randomColorChanged)
     Q_PROPERTY(bool animation READ animation WRITE setAnimation NOTIFY animationChanged)
     Q_PROPERTY(QObject* gameState READ gameState)
+    Q_PROPERTY(QObject* onlineStatus READ onlineStatus)
+    Q_PROPERTY(QObject* profileObject READ profileObject NOTIFY profileChanged)
+//    Q_PROPERTY(QObject* usersListModel READ usersListModel NOTIFY usersListModelChanged)
 
     Q_PROPERTY(QStringList profileList READ profileList  NOTIFY profileListChanged)
     Q_PROPERTY(QString profile READ profile WRITE setProfile NOTIFY profileChanged)
@@ -38,23 +48,26 @@ private:
     void removeLocalUserData(const QString &name);
 
     QuasarAppUtils::Settings *_settings = nullptr;
-
+    LoginView::LVMainModel *_loginModel = nullptr;
     QHash<QString, ProfileData*> _profileList;
+//    ViewSolutions::ListViewModel *_usersList = nullptr;
     QString _profile;
     HanoiClient _client;
 
 private slots:
     void handleOnlineRequest();
     void handleRemoveRequest();
+    void handleLogined(int);
 
 public:
-    BackEnd();
+    BackEnd(QQmlApplicationEngine *engine);
     ~BackEnd();
 
     Q_INVOKABLE QString profile() const;
     Q_INVOKABLE QStringList profileList();
 
     Q_INVOKABLE void createProfile(const QString& userName, bool isOnlineuser);
+
 
 public slots:
 
@@ -106,7 +119,29 @@ public slots:
      */
     void setRandomColor(bool );
 
+    /**
+     * @brief gameState
+     * @return
+     */
     QObject *gameState();
+
+    /**
+     * @brief onlineStatus
+     * @return
+     */
+    QObject *onlineStatus();
+
+    /**
+     * @brief profileObject
+     * @return
+     */
+    QObject* profileObject() const;
+
+//    /**
+//     * @brief usersListModel
+//     * @return
+//     */
+//    QObject *usersListModel() const;
 
     bool isOnline(const QString& name);
     int record(const QString& name);
@@ -124,6 +159,8 @@ signals:
     void randomColorChanged();
     void profileListChanged();
     void profileChanged(QString profile);
+
+    void usersListModelChanged(QObject* usersListModel);
 };
 
 #endif // SAVER_H

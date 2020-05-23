@@ -18,24 +18,6 @@ Page {
         id: theme;
     }
 
-    header: Rectangle {
-        color: theme.headerColor
-        height: parent.height * 0.15;
-        RowLayout {
-
-            Base.BaseText {
-                Layout.alignment: Qt.AlignCenter
-
-                text: qsTr("Welcom to Hanoi Towers ") +  backEnd.profile;
-                horizontalAlignment: Text.AlignHCenter
-                verticalAlignment: Text.AlignVCenter
-                font.pixelSize: theme.headerSize;
-            }
-            anchors.fill: parent
-        }
-
-    }
-
     contentItem: Item {
         id: content;
 

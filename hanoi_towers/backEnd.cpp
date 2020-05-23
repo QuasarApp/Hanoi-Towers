@@ -11,6 +11,8 @@
 #include <QDir>
 #include <qmlnotifyservice.h>
 #include "gamestate.h"
+#include <QQmlApplicationEngine>
+#include <lvmainmodel.h>
 
 constexpr unsigned char currentVersion = 6;
 
@@ -22,7 +24,7 @@ constexpr unsigned char currentVersion = 6;
 #define RANDOM_COLOR_KEY "randomColor"
 #define CURRENT_PROFILE_KEY "currentProfile"
 
-BackEnd::BackEnd():
+BackEnd::BackEnd(QQmlApplicationEngine *engine):
     QObject()
 {
     _settings = QuasarAppUtils::Settings::get();
@@ -33,6 +35,12 @@ BackEnd::BackEnd():
 
     init();
     setProfile(_settings->getStrValue(CURRENT_PROFILE_KEY, DEFAULT_USER));
+
+    connect(&_client, &HanoiClient::statusChanged,
+            this, &BackEnd::handleLogined);
+
+    _loginModel = new LoginView::LVMainModel("UserLogin");
+    _loginModel->init(engine);
 
 }
 
@@ -139,6 +147,8 @@ ProfileData* BackEnd::addProfile(const QString &userName, bool isOnlineuser) {
 void BackEnd::saveLocalData() const {
     QFile f(MAIN_SETINGS_FILE);
 
+    QDir().mkpath(MAIN_FOLDER);
+
     if(f.open(QIODevice::ReadWrite | QIODevice::Truncate)) {
         QDataStream stream(&f);
         stream << currentVersion;
@@ -183,9 +193,6 @@ void BackEnd::handleOnlineRequest() {
                     QmlNotificationService::NotificationData::Error);
     }
 
-    // not supported
-
-//    assert(false);
 }
 
 void BackEnd::handleRemoveRequest() {
@@ -193,7 +200,14 @@ void BackEnd::handleRemoveRequest() {
     QmlNotificationService::NotificationService::getService()->setNotify(
                 tr("Remove online error"), tr("not Supported"), "",
                 QmlNotificationService::NotificationData::Warning);
-//    assert(false);
+}
+
+void BackEnd::handleLogined(int state) {
+
+    if (state == 2) {
+        auto logineduser = _client.user();
+        _profileList[logineduser->mail()]->update(*logineduser.data());
+    }
 }
 
 bool BackEnd::randomColor() const {
@@ -244,12 +258,28 @@ void BackEnd::createProfile(const QString &userName, bool isOnlineuser) {
     addProfile(userName, isOnlineuser);
 }
 
-QObject* BackEnd::gameState() {
+//QObject *BackEnd::usersListModel() const {
+//    return _usersList;
+//}
+
+QObject *BackEnd::profileObject() const {
     if (!_profileList.contains(_profile)) {
         return nullptr;
     }
 
-    return _profileList[_profile]->gameState();
+    return _profileList[_profile];
+}
+
+QObject* BackEnd::gameState() {
+    if (auto obj = dynamic_cast<ProfileData*>(profileObject())) {
+        return obj->gameState();
+    }
+
+    return nullptr;
+}
+
+QObject *BackEnd::onlineStatus() {
+    return &_client;
 }
 
 bool BackEnd::isOnline(const QString &name) {

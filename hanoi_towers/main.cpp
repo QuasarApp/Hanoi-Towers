@@ -67,8 +67,7 @@ int main(int argc, char *argv[])
     }
 
     QQmlApplicationEngine engine;
-//    qmlRegisterType<BackEnd>("BackEnd",1,0,"BackEnd");
-    BackEnd back;
+    BackEnd back(&engine);
     auto root = engine.rootContext();
 
     if (!QmlNotificationService::init(&engine)) {

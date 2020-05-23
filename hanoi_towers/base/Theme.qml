@@ -26,7 +26,9 @@ Item {
     readonly property string backgroundColor: Utils.backgroundColor()
     readonly property string backgroundAltColor: Utils.backgroundAltColor()
     readonly property int pading: Utils.dp(Screen.pixelDensity, 10);
-    readonly property string headerColor: "#800af587"
+    readonly property string headerColorLogined: "#800af587"
+    readonly property string headerColorOnline: "#80f36026"
+    readonly property string headerColorOffline: "#80404142"
 
 
 }

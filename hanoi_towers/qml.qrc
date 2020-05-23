@@ -15,13 +15,13 @@
         <file>Help.qml</file>
         <file alias="ubuntu">res/ubuntu.ttf</file>
         <file>menu/MainMenu.qml</file>
-        <file>menu/Header.qml</file>
         <file>menu/Config.qml</file>
         <file>SwitchLvl.qml</file>
         <file>base/BaseRadioButton.qml</file>
         <file>base/BoseCheckBox.qml</file>
         <file>menu/UsersTable.qml</file>
         <file>menu/UserTableRow.qml</file>
+        <file>menu/ToolBar.qml</file>
     </qresource>
     <qresource prefix="/textures">
         <file>res/wood.png</file>

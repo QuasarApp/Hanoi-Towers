@@ -15,53 +15,12 @@ import "./../base" as Base
 Item {
     id:menuPage
 
-    Base.Theme{
-        id: theme;
-    }
-
-    Rectangle {
-        id: head
-        color: theme.headerColor
-        height: parent.height * 0.15;
-        RowLayout {
-
-            Base.BaseText {
-                Layout.alignment: Qt.AlignCenter
-
-                text: qsTr("Profiles") + " (" + backEnd.profile + ")";
-                horizontalAlignment: Text.AlignHCenter
-                verticalAlignment: Text.AlignVCenter
-                font.pixelSize: theme.headerSize;
-            }
-
-            Base.BaseButton {
-                text: qsTr("Return to main menu");
-                Layout.alignment: Qt.AlignRight
-                Layout.rightMargin: theme.pading
-
-                onClicked: {
-                    menuPage.parent.source = "MainMenu.qml"
-                }
-            }
-
-            anchors.fill: parent
-        }
-        anchors.top: parent.top
-        anchors.left: parent.left
-        anchors.right: parent.right
-
-    }
-
     GridLayout {
         id: gridLayout
         rows: 3
         columns: 3
 
-        anchors.left: parent.left
-        anchors.right: parent.right
-        anchors.bottom: parent.bottom
-        anchors.top: head.bottom
-
+        anchors.fill: parent
 
         Switch {
             id: element

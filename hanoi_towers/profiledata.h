@@ -37,6 +37,8 @@ public:
     Q_INVOKABLE int record() const;
     Q_INVOKABLE bool isOnline() const;
 
+    void update(const NP::UserData& newData);
+
     // StreamBase interface
     QDataStream &fromStream(QDataStream &stream) override;
     QDataStream &toStream(QDataStream &stream) const override;

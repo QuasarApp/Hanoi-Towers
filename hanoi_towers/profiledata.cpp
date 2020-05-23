@@ -55,6 +55,10 @@ bool ProfileData::isOnline() const {
     return _userData.token().isValid();
 }
 
+void ProfileData::update(const NP::UserData &newData) {
+    _userData.copyFrom(&newData);
+}
+
 QDataStream &ProfileData::fromStream(QDataStream &stream) {
     return stream >> _userData >> _state;
 }
