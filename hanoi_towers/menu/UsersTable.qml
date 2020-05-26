@@ -11,6 +11,7 @@ import QtQuick.Layouts 1.3
 import QtQuick.Controls 2.13
 import QtQuick.Controls.Material 2.13
 import "./../base" as Base
+import LoginViewModule 1.0
 
 Item {
     id:menuPage
@@ -77,5 +78,20 @@ Item {
         }
 
     }
+
+    LoginViewDialog {
+
+        id: loginPopUp
+        lognViewModel: userLogin // exampleLogin - this is inited model in main.cpp
+
+        Connections {
+            target: backEnd;
+            onShowOnlinePage :{
+                loginPopUp.open();
+            }
+        }
+    }
+
+
 
 }

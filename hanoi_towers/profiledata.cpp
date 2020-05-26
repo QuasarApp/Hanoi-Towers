@@ -8,12 +8,10 @@
 #include "profiledata.h"
 
 void ProfileData::setOnline(bool onlineProfile) {
-    if (onlineProfile != isOnline()) {
-        if (onlineProfile) {
-            emit onlineRequest();
-        } else {
-            emit onlineChanged(onlineProfile);
-        }
+    if (onlineProfile) {
+        emit onlineRequest(name());
+    } else {
+        emit onlineChanged(onlineProfile);
     }
 }
 
@@ -25,11 +23,13 @@ void ProfileData::setRecord(int rec) {
     emit recordChanged(rec);
 }
 
-void ProfileData::handleServerResponce(const NP::UserData& data) {
-    if (_userData.token() != data.token()) {
-        _userData = data;
-        emit onlineChanged(isOnline());
-    }
+const NP::UserData *ProfileData::userData() const {
+    return &_userData;
+}
+
+void ProfileData::handleServerResponce(const NP::UserData &data) {
+    _userData = data;
+    emit onlineChanged(isOnline());
 }
 
 ProfileData::ProfileData(const QString &name):
@@ -52,11 +52,11 @@ int ProfileData::record() const {
 }
 
 bool ProfileData::isOnline() const {
-    return _userData.token().isValid();
+    return _userData.token().toBytes().size();
 }
 
-void ProfileData::update(const NP::UserData &newData) {
-    _userData.copyFrom(&newData);
+void ProfileData::update(const NP::UserData *newData) {
+    _userData.copyFrom(newData);
 }
 
 QDataStream &ProfileData::fromStream(QDataStream &stream) {

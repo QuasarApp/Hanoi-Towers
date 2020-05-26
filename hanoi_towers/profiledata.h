@@ -8,8 +8,7 @@
 #ifndef PROFILEDATA_H
 #define PROFILEDATA_H
 #include "gamestate.h"
-
-#include <userdata.h>
+#include "userdata.h"
 
 class ProfileData : public QObject, public NP::StreamBase
 {
@@ -37,11 +36,13 @@ public:
     Q_INVOKABLE int record() const;
     Q_INVOKABLE bool isOnline() const;
 
-    void update(const NP::UserData& newData);
+    void update(const NP::UserData *newData);
 
     // StreamBase interface
     QDataStream &fromStream(QDataStream &stream) override;
     QDataStream &toStream(QDataStream &stream) const override;
+
+    const NP::UserData *userData() const;
 
 public slots:
     void setOnline(bool onlineUser);
@@ -50,7 +51,7 @@ public slots:
 signals:
     void gameStateChanged(QObject* gameState);
     void onlineChanged(bool onlineUser);
-    void onlineRequest();
+    void onlineRequest(const QString& name);
     void recordChanged(int record);
 };
 

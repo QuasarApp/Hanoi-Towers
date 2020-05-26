@@ -23,6 +23,7 @@
 
 namespace LoginView {
 class LVMainModel;
+class UserData;
 }
 class QQmlApplicationEngine;
 
@@ -55,8 +56,10 @@ private:
     HanoiClient _client;
 
 private slots:
-    void handleOnlineRequest();
-    void handleRemoveRequest();
+    void handleOnlineRequestfromProfile(const QString&);
+    void handleOnlineRequest(const LoginView::UserData&);
+    void handleOnlineRequestError(const QString&Errr);
+
     void handleLogined(int);
 
 public:
@@ -153,6 +156,8 @@ public slots:
 
     void setReward(int);
 
+    void removeOnlineProfile(QString profile);
+
 signals:
     void firstChanged();
     void animationChanged();
@@ -161,6 +166,8 @@ signals:
     void profileChanged(QString profile);
 
     void usersListModelChanged(QObject* usersListModel);
+    void showOnlinePage();
+
 };
 
 #endif // SAVER_H

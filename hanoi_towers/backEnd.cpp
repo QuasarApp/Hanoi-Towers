@@ -17,7 +17,6 @@
 constexpr unsigned char currentVersion = 6;
 
 #define DEFAULT_USER "User"
-#define CURRENT_PROFILE_KEY "currentProfile"
 #define FIRST_RUN_KEY "isFirstStart"
 #define LVL_KEY "lvl"
 #define ANIMATION_KEY "animation"
@@ -39,8 +38,18 @@ BackEnd::BackEnd(QQmlApplicationEngine *engine):
     connect(&_client, &HanoiClient::statusChanged,
             this, &BackEnd::handleLogined);
 
-    _loginModel = new LoginView::LVMainModel("UserLogin");
+    _loginModel = new LoginView::LVMainModel("userLogin");
+    _loginModel->setComponents(LoginView::Nickname);
     _loginModel->init(engine);
+
+    connect(_loginModel , &LoginView::LVMainModel::sigLoginRequest,
+            this, &BackEnd::handleOnlineRequest);
+
+    connect(_loginModel , &LoginView::LVMainModel::sigRegisterRequest,
+            this, &BackEnd::handleOnlineRequest);
+
+    connect(&_client , &HanoiClient::requestError,
+            this, &BackEnd::handleOnlineRequestError);
 
 }
 
@@ -133,7 +142,8 @@ ProfileData* BackEnd::addProfile(const QString &userName, bool isOnlineuser) {
     profile = new ProfileData(userName);
 
     connect(profile, &ProfileData::onlineRequest,
-            this, &BackEnd::handleOnlineRequest);
+            this, &BackEnd::handleOnlineRequestfromProfile);
+
 
     profile->setOnline(isOnlineuser);
 
@@ -180,14 +190,21 @@ void BackEnd::removeLocalUserData(const QString& name) {
 
 }
 
-void BackEnd::handleOnlineRequest() {
-
-    auto _profile = dynamic_cast<ProfileData*>(sender());
-
-    if (!_profile)
+void BackEnd::handleOnlineRequestfromProfile(const QString &name) {
+    if (name != _profile) {
         return;
+    }
 
-    if (!_client.login(_profile->name(), "")) {
+    LoginView::UserData data;
+    data.setNickname(name);
+    _loginModel->setData(data);
+
+    emit showOnlinePage();
+}
+
+void BackEnd::handleOnlineRequest(const LoginView::UserData & user) {
+
+    if (!_client.login(user.nickname(), user.rawPassword().toLatin1())) {
         QmlNotificationService::NotificationService::getService()->setNotify(
                     tr("Register online error"), tr("Failed to register this account, if this account was created by you, try to restore it."), "",
                     QmlNotificationService::NotificationData::Error);
@@ -195,18 +212,15 @@ void BackEnd::handleOnlineRequest() {
 
 }
 
-void BackEnd::handleRemoveRequest() {
-    // not supported
-    QmlNotificationService::NotificationService::getService()->setNotify(
-                tr("Remove online error"), tr("not Supported"), "",
-                QmlNotificationService::NotificationData::Warning);
+void BackEnd::handleOnlineRequestError(const QString &) {
+    emit handleOnlineRequestfromProfile(_profile);
 }
 
 void BackEnd::handleLogined(int state) {
 
     if (state == 2) {
         auto logineduser = _client.user();
-        _profileList[logineduser->mail()]->update(*logineduser.data());
+        _profileList[logineduser->mail()]->update(logineduser.data());
     }
 }
 
@@ -305,12 +319,7 @@ void BackEnd::removeUser(const QString &name) {
     if (!profile) {
         return;
     }
-
-    if (profile->isOnline()) {
-        handleRemoveRequest();
-    } else {
-        removeLocalUserData(name);
-    }
+    removeLocalUserData(name);
 
 }
 
@@ -328,6 +337,20 @@ void BackEnd::setProfile(QString profile) {
         return;
 
     _profile = profile;
+
+    auto profileData = dynamic_cast<ProfileData*>(profileObject());
+
+    if (profileData->isOnline()) {
+        _client.setUser(profileData->userData());
+        if (!_client.login()) {
+            QmlNotificationService::NotificationService::getService()->setNotify(
+                        tr("Login failed"),
+                        tr("Failed to login %0, if this account was created by you, try to restore it.").arg(_profile),
+                        "",
+                        QmlNotificationService::NotificationData::Warning);
+        }
+    }
+
     emit profileChanged(_profile);
 }
 
@@ -340,4 +363,16 @@ void BackEnd::setReward(int revard) {
     if (profile->record() < revard) {
         profile->setRecord(revard);
     }
+}
+
+void BackEnd::removeOnlineProfile(QString) {
+    // not supported
+
+    if (!_client.removeProfile()) {
+
+        QmlNotificationService::NotificationService::getService()->setNotify(
+                    tr("Remove online error"), tr("current profile not online!"), "",
+                    QmlNotificationService::NotificationData::Warning);
+    }
+
 }
