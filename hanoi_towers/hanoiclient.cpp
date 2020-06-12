@@ -7,7 +7,7 @@
 
 #include "hanoiclient.h"
 #include <qmlnotifyservice.h>
-#include <userdatarequest.h>
+#include <userrequest.h>
 
 HanoiClient::HanoiClient():
     NP::Client(REMOTE_HOST, REMOTE_PORT) {

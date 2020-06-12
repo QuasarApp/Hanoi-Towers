@@ -9,6 +9,7 @@
 #include <QDir>
 #include <QNetworkInterface>
 #include <QCoreApplication>
+#include "config.h"
 
 HanoiServer::HanoiServer() {
 
