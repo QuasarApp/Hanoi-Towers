@@ -4,22 +4,32 @@
 <context>
     <name>BackEnd</name>
     <message>
-        <location filename="../backEnd.cpp" line="175"/>
+        <location filename="../backEnd.cpp" line="209"/>
         <source>Register online error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="175"/>
+        <location filename="../backEnd.cpp" line="209"/>
         <source>Failed to register this account, if this account was created by you, try to restore it.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="187"/>
-        <source>not Supported</source>
+        <location filename="../backEnd.cpp" line="347"/>
+        <source>Login failed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="187"/>
+        <location filename="../backEnd.cpp" line="348"/>
+        <source>Failed to login %0, if this account was created by you, try to restore it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../backEnd.cpp" line="374"/>
+        <source>current profile not online!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../backEnd.cpp" line="374"/>
         <source>Remove online error</source>
         <translation type="unfinished"></translation>
     </message>
@@ -61,6 +71,14 @@
     </message>
 </context>
 <context>
+    <name>HanoiClient</name>
+    <message>
+        <location filename="../hanoiclient.cpp" line="22"/>
+        <source>Jnline error</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>Header</name>
     <message>
         <location filename="../menu/Header.qml" line="6"/>
@@ -68,9 +86,8 @@
         <translation></translation>
     </message>
     <message>
-        <location filename="../menu/Header.qml" line="23"/>
         <source>Main menu</source>
-        <translation>Ana menü</translation>
+        <translation type="vanished">Ana menü</translation>
     </message>
 </context>
 <context>
@@ -102,37 +119,32 @@
         <translation type="vanished">Hanoi Kuleleri</translation>
     </message>
     <message>
-        <location filename="../menu/MainMenu.qml" line="29"/>
-        <source>Welcom to Hanoi Towers </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../menu/MainMenu.qml" line="51"/>
+        <location filename="../menu/MainMenu.qml" line="33"/>
         <source>continue</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../menu/MainMenu.qml" line="65"/>
+        <location filename="../menu/MainMenu.qml" line="47"/>
         <source>start</source>
         <translation>başlamak</translation>
     </message>
     <message>
-        <location filename="../menu/MainMenu.qml" line="78"/>
+        <location filename="../menu/MainMenu.qml" line="60"/>
         <source>About</source>
         <translation>hakkında</translation>
     </message>
     <message>
-        <location filename="../menu/MainMenu.qml" line="91"/>
+        <location filename="../menu/MainMenu.qml" line="73"/>
         <source>Config</source>
         <translation>ayarlar</translation>
     </message>
     <message>
-        <location filename="../menu/MainMenu.qml" line="103"/>
+        <location filename="../menu/MainMenu.qml" line="85"/>
         <source>Users</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../menu/MainMenu.qml" line="116"/>
+        <location filename="../menu/MainMenu.qml" line="98"/>
         <source>exit</source>
         <translation>çıkış</translation>
     </message>
@@ -143,6 +155,24 @@
         <location filename="../SwitchLvl.qml" line="69"/>
         <source>Start</source>
         <translation>başla</translation>
+    </message>
+</context>
+<context>
+    <name>ToolBar</name>
+    <message>
+        <location filename="../menu/ToolBar.qml" line="32"/>
+        <source>Welcom to Hanoi Towers </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../menu/ToolBar.qml" line="43"/>
+        <source>Profiles</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../menu/ToolBar.qml" line="52"/>
+        <source>Return to main menu</source>
+        <translation type="unfinished">Ana menüye dön</translation>
     </message>
 </context>
 <context>
@@ -161,27 +191,21 @@
 <context>
     <name>UsersTable</name>
     <message>
-        <location filename="../menu/UsersTable.qml" line="31"/>
-        <source>Profiles</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../menu/UsersTable.qml" line="38"/>
         <source>Return to main menu</source>
-        <translation type="unfinished">Ana menüye dön</translation>
+        <translation type="obsolete">Ana menüye dön</translation>
     </message>
     <message>
-        <location filename="../menu/UsersTable.qml" line="68"/>
+        <location filename="../menu/UsersTable.qml" line="28"/>
         <source>Online user</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../menu/UsersTable.qml" line="76"/>
+        <location filename="../menu/UsersTable.qml" line="36"/>
         <source>Enter the name of new user</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../menu/UsersTable.qml" line="81"/>
+        <location filename="../menu/UsersTable.qml" line="41"/>
         <source>Create the new user</source>
         <translation type="unfinished"></translation>
     </message>
@@ -306,7 +330,7 @@ Bu lvl için minimum adımlar:%1</translation>
 <context>
     <name>main</name>
     <message>
-        <location filename="../main.qml" line="18"/>
+        <location filename="../main.qml" line="22"/>
         <source>Hanoi Towers</source>
         <translation>Hanoi Kuleleri</translation>
     </message>
