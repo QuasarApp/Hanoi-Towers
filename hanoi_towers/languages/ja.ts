@@ -111,9 +111,13 @@
 <context>
     <name>SupportPage</name>
     <message>
-        <location filename="../base/SupportPage.qml" line="13"/>
         <source>If you like it or our another products then you can support us. For supported just click on this banner(button) and subscribe to any patreon plans of you choose.</source>
-        <translation>それまたは私たちの他の製品が好きなら、あなたは私たちをサポートすることができます。 サポートされている場合は、このバナー（ボタン）をクリックして、選択した任意のパトレオンプランを購読してください。</translation>
+        <translation type="vanished">それまたは私たちの他の製品が好きなら、あなたは私たちをサポートすることができます。 サポートされている場合は、このバナー（ボタン）をクリックして、選択した任意のパトレオンプランを購読してください。</translation>
+    </message>
+    <message>
+        <location filename="../base/SupportPage.qml" line="13"/>
+        <source>If you like it or our another products then you can support us. For supported just click on this banner and subscribe to any patreon plans of you choose.</source>
+        <translation>それまたは私たちの他の製品が好きなら、あなたは私たちをサポートすることができます。 サポートされている場合は、このバナー  をクリックして、選択した任意のパトレオンプランを購読してください。</translation>
     </message>
 </context>
 <context>

@@ -100,7 +100,7 @@
     <name>SupportPage</name>
     <message>
         <location filename="../base/SupportPage.qml" line="13"/>
-        <source>If you like it or our another products then you can support us. For supported just click on this banner(button) and subscribe to any patreon plans of you choose.</source>
+        <source>If you like it or our another products then you can support us. For supported just click on this banner and subscribe to any patreon plans of you choose.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

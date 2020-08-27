@@ -1,6 +1,6 @@
 # Hanoi Towers [![hanoi-tower](https://snapcraft.io/hanoi-tower/badge.svg)](https://snapcraft.io/hanoi-tower)
 
-# ![Hanoi Towers Logo](https://i.ibb.co/23T2nF8/Hanoi-5.png)
+# ![Hanoi Towers Logo](hanoi_towers/res/HanoiTowers_Banner_Web.png)
 
 ***************************
 ## What is Hanoi Towers

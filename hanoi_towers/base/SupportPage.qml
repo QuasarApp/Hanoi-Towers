@@ -11,7 +11,7 @@ Button {
     text: ""
 
     property string txt: qsTr("If you like it or our another products then you can support us." +
-                              " For supported just click on this banner(button) and subscribe to any patreon plans of you choose.")
+                              " For supported just click on this banner and subscribe to any patreon plans of you choose.")
 
     RowLayout {
 
@@ -24,6 +24,7 @@ Button {
 
 
             Layout.fillWidth: true
+            Layout.fillHeight: true
 
 
             font.pixelSize: theme.fontSize
@@ -36,24 +37,27 @@ Button {
 
         }
 
-        Image {
-            id: logo
+        Item {
             Layout.fillHeight: true
             Layout.preferredWidth: height
 
-            fillMode: Image.PreserveAspectFit
-            source: "qrc:/logo"
+            Image {
+                id: logo
+                fillMode: Image.PreserveAspectFit
+                source: "qrc:/logo"
+                anchors.fill: parent
+
+            }
 
             Colorize {
                 anchors.fill: logo
                 source: logo
                 hue: 0.0
                 saturation: 0.0
-                lightness: 0.9
+                lightness: 0.85
             }
         }
-
-
     }
+
 
 }

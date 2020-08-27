@@ -4,8 +4,8 @@ import QtQuick.Controls 2.2
 ApplicationWindow {
     visible: true
     id: gameWindow
-    width: 640
-    height: 480
+    width: 1240
+    height: 720
     title: qsTr("Hanoi Towers")
 
     Loader {

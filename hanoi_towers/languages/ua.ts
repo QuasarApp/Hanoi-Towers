@@ -103,9 +103,13 @@
 <context>
     <name>SupportPage</name>
     <message>
-        <location filename="../base/SupportPage.qml" line="13"/>
         <source>If you like it or our another products then you can support us. For supported just click on this banner(button) and subscribe to any patreon plans of you choose.</source>
-        <translation>Якщо вам подобається це або наші інші продукти, тоді ви можете підтримати нас. Для підтримуваних просто натисніть на цей банер (кнопку) і підпишіться на будь-які обрані вами плани.</translation>
+        <translation type="vanished">Якщо вам подобається це або наші інші продукти, тоді ви можете підтримати нас. Для підтримуваних просто натисніть на цей банер (кнопку) і підпишіться на будь-які обрані вами плани.</translation>
+    </message>
+    <message>
+        <location filename="../base/SupportPage.qml" line="13"/>
+        <source>If you like it or our another products then you can support us. For supported just click on this banner and subscribe to any patreon plans of you choose.</source>
+        <translation>Якщо вам подобається це або наші інші продукти, тоді ви можете підтримати нас. Для підтримуваних просто натисніть на цей банер і підпишіться на будь-які обрані вами плани.</translation>
     </message>
 </context>
 <context>
