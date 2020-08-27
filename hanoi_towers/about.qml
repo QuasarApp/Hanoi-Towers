@@ -38,8 +38,8 @@ Item {
 * Developers:
 * Programmer: Yankovich N. Andrei.
 * This game is distributed under the LGPLv3 license.
-* Contact: https://github.com/EndrII
-* Copyright (C) 2018-2019 Yankovich N. Andrei.")
+* Contact: https://github.com/QuasarApp
+* Copyright (C) 2018-2020 QuasarApp.")
     }
     MouseArea {
         anchors.fill: parent

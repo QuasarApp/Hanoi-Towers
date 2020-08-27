@@ -137,9 +137,23 @@
 * Developers:
 * Programmer: Yankovich N. Andrei.
 * This game is distributed under the LGPLv3 license.
+* Contact: https://github.com/QuasarApp
+* Copyright (C) 2018-2020 QuasarApp.</source>
+        <translation>QuasarAppの製品
+*開発者：
+*プログラマー：Yankovich N. Andrei。
+*このゲームはLGPLv3ライセンスの下で配布されます。
+*連絡先：https://github.com/QuasarApp
+* Copyright（C）2018-2020 QuasarApp。</translation>
+    </message>
+    <message>
+        <source>Product of QuasarApp
+* Developers:
+* Programmer: Yankovich N. Andrei.
+* This game is distributed under the LGPLv3 license.
 * Contact: https://github.com/EndrII
 * Copyright (C) 2018-2019 Yankovich N. Andrei.</source>
-        <translation>QuasarAppの製品
+        <translation type="vanished">QuasarAppの製品
 *開発者：
 *プログラマー：Yankovich N. Andrei。
 *このゲームはLGPLv3ライセンスの下で配布されています。

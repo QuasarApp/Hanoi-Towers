@@ -129,9 +129,23 @@
 * Developers:
 * Programmer: Yankovich N. Andrei.
 * This game is distributed under the LGPLv3 license.
+* Contact: https://github.com/QuasarApp
+* Copyright (C) 2018-2020 QuasarApp.</source>
+        <translation>Продукт QuasarApp
+* Розробники:
+* Програміст: Янкович Н. Андрій.
+* Ця гра поширюється за ліцензією LGPLv3.
+* Контакт: https://github.com/QuasarApp
+* Авторське право (C) 2018-2020 QuasarApp.</translation>
+    </message>
+    <message>
+        <source>Product of QuasarApp
+* Developers:
+* Programmer: Yankovich N. Andrei.
+* This game is distributed under the LGPLv3 license.
 * Contact: https://github.com/EndrII
 * Copyright (C) 2018-2019 Yankovich N. Andrei.</source>
-        <translation>Продукт компанії QuasarApp
+        <translation type="vanished">Продукт компанії QuasarApp
 * Розробники:
 * Програміст: Янкович Н. Андрій.
 * Ця гра поширюється під ліцензією LGPLv3.
