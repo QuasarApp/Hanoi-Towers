@@ -20,6 +20,8 @@
         <file>SwitchLvl.qml</file>
         <file>base/BaseRadioButton.qml</file>
         <file>base/BoseCheckBox.qml</file>
+        <file>base/SupportPage.qml</file>
+        <file alias="logo">res/QuasarApp_Logo_web.png</file>
     </qresource>
     <qresource prefix="/textures">
         <file>res/wood.png</file>

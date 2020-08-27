@@ -101,6 +101,14 @@
     </message>
 </context>
 <context>
+    <name>SupportPage</name>
+    <message>
+        <location filename="../base/SupportPage.qml" line="13"/>
+        <source>If you like it or our another products then you can support us. For supported just click on this banner(button) and subscribe to any patreon plans of you choose.</source>
+        <translation>Если вам нравится этот или другие наши продукты, вы можете поддержать нас. Для поддержки просто нажмите на этот баннер (кнопку) и подпишитесь на любые планы patreon по вашему выбору.</translation>
+    </message>
+</context>
+<context>
     <name>SwitchLvl</name>
     <message>
         <location filename="../SwitchLvl.qml" line="61"/>
@@ -160,34 +168,34 @@
         <translation type="vanished">об Авторах</translation>
     </message>
     <message>
-        <location filename="../game.qml" line="80"/>
+        <location filename="../game.qml" line="82"/>
         <source>lvl </source>
         <translation>Уровень </translation>
     </message>
     <message>
-        <location filename="../game.qml" line="104"/>
+        <location filename="../game.qml" line="106"/>
         <source>step </source>
         <translation>шаг </translation>
     </message>
     <message>
-        <location filename="../game.qml" line="69"/>
+        <location filename="../game.qml" line="71"/>
         <source>Tower height:</source>
         <translation>Высота башни:</translation>
     </message>
     <message>
-        <location filename="../game.qml" line="115"/>
+        <location filename="../game.qml" line="117"/>
         <source>Return to main menu</source>
         <translation>Вернутся в главное меню</translation>
     </message>
     <message>
-        <location filename="../game.qml" line="180"/>
+        <location filename="../game.qml" line="183"/>
         <source>You have passed the level in %0 steps and unlocked level %1
  Minimum steps for this lvl: %2</source>
         <translation>Вы прошли этот уровень за %0 шагов и разблокировали уровень %1
  Минимум шагов на этом уровне: %2</translation>
     </message>
     <message>
-        <location filename="../game.qml" line="187"/>
+        <location filename="../game.qml" line="190"/>
         <source>You have passed the level in %0 steps.
 Minimum steps for this lvl: %1</source>
         <translation>Вы прошли этот уровень за %0 шагов

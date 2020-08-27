@@ -63,7 +63,7 @@ Page {
             Base.BaseButton {
                 id: start;
                 Layout.preferredWidth: parent.width * 0.5;
-                Layout.preferredHeight: parent.height * 0.2
+                Layout.preferredHeight: parent.height * 0.16
                 Layout.alignment: Qt.AlignCenter
 
                 text: qsTr("start");
@@ -77,7 +77,7 @@ Page {
             Base.BaseButton {
                 id: about;
                 Layout.preferredWidth: parent.width * 0.5;
-                Layout.preferredHeight: parent.height * 0.2
+                Layout.preferredHeight: parent.height * 0.16
                 Layout.alignment: Qt.AlignCenter
                 text: qsTr("About");
                 width:  config.width * 0.8;
@@ -90,7 +90,7 @@ Page {
             Base.BaseButton {
                 id: config;
                 Layout.preferredWidth: parent.width * 0.5;
-                Layout.preferredHeight: parent.height * 0.2
+                Layout.preferredHeight: parent.height * 0.16
                 Layout.alignment: Qt.AlignCenter
                 text: qsTr("Config");
                 width:  exit.width * 0.8;
@@ -102,12 +102,23 @@ Page {
             Base.BaseButton {
                 id: exit;
                 Layout.preferredWidth: parent.width * 0.5;
-                Layout.preferredHeight: parent.height * 0.2
+                Layout.preferredHeight: parent.height * 0.16
                 Layout.alignment: Qt.AlignCenter
                 width: content.width * 0.5;
                 text: qsTr("exit");
                 onClicked: {
                     Qt.quit();
+                }
+            }
+
+            Base.SupportPage {
+                id: support;
+                Layout.preferredWidth: parent.width ;
+                Layout.preferredHeight: parent.height * 0.32
+                Layout.alignment: Qt.AlignCenter
+                width: content.width * 0.5;
+                onClicked: {
+                    Qt.openUrlExternally("https://www.patreon.com/QuasarApp");
                 }
             }
             anchors.fill: parent

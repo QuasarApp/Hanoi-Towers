@@ -28,7 +28,7 @@ function backgroundAltColor() {
 }
 
 function baseFontSize(pixelDensity){
-    return Number(dp(pixelDensity, 14));
+    return Number(dp(pixelDensity, 16));
 }
 
 function headerFontSize(pixelDensity){

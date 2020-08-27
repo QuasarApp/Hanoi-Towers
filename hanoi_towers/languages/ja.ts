@@ -109,6 +109,14 @@
     </message>
 </context>
 <context>
+    <name>SupportPage</name>
+    <message>
+        <location filename="../base/SupportPage.qml" line="13"/>
+        <source>If you like it or our another products then you can support us. For supported just click on this banner(button) and subscribe to any patreon plans of you choose.</source>
+        <translation>それまたは私たちの他の製品が好きなら、あなたは私たちをサポートすることができます。 サポートされている場合は、このバナー（ボタン）をクリックして、選択した任意のパトレオンプランを購読してください。</translation>
+    </message>
+</context>
+<context>
     <name>SwitchLvl</name>
     <message>
         <location filename="../SwitchLvl.qml" line="61"/>
@@ -168,34 +176,34 @@
         <translation type="vanished">約</translation>
     </message>
     <message>
-        <location filename="../game.qml" line="80"/>
+        <location filename="../game.qml" line="82"/>
         <source>lvl </source>
         <translation>レベル </translation>
     </message>
     <message>
-        <location filename="../game.qml" line="104"/>
+        <location filename="../game.qml" line="106"/>
         <source>step </source>
         <translation>ステップ </translation>
     </message>
     <message>
-        <location filename="../game.qml" line="69"/>
+        <location filename="../game.qml" line="71"/>
         <source>Tower height:</source>
         <translation>タワーの高さ：</translation>
     </message>
     <message>
-        <location filename="../game.qml" line="115"/>
+        <location filename="../game.qml" line="117"/>
         <source>Return to main menu</source>
         <translation>メインメニューに戻る</translation>
     </message>
     <message>
-        <location filename="../game.qml" line="180"/>
+        <location filename="../game.qml" line="183"/>
         <source>You have passed the level in %0 steps and unlocked level %1
  Minimum steps for this lvl: %2</source>
         <translation>あなたは %0 ステップでレベルを通過し、レベル %1 をロック解除しました
   このlvlの最小手順：%2</translation>
     </message>
     <message>
-        <location filename="../game.qml" line="187"/>
+        <location filename="../game.qml" line="190"/>
         <source>You have passed the level in %0 steps.
 Minimum steps for this lvl: %1</source>
         <translation>%0ステップでレベルを通過しました。
