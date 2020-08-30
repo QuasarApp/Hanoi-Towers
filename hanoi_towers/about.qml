@@ -20,14 +20,14 @@ Item {
         x: 0
         y: 0
         width: parent.width
-        height: parent.height * 0.2
+        height: parent.height * 0.4
         fillMode: Image.PreserveAspectFit
         source: "/res/icon.ico"
     }
     Label {
         id: txt
         x: parent.width * 0.1
-        y: parent.height * 0.3
+        y: parent.height * 0.4
         width: parent.width * 0.8
         height: parent.height * 0.6
         color: theme.buttonsTextColor
