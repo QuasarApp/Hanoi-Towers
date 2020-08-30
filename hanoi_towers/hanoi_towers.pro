@@ -85,4 +85,4 @@ for(command, commands) {
 
 RC_ICONS = res/icon.ico
 
-ANDROID_ABIS = armeabi-v7a arm64-v8a
+ANDROID_ABIS = arm64-v8a
