@@ -16,7 +16,7 @@ apps:
   hanoi-tower:
     command: desktop-launch $SNAP/HanoiTowers.sh
 
-    plugs: [desktop, unity7, home, opengl, x11, wayland]
+    plugs: [desktop, unity7, home, opengl, x11, wayland, gsettings]
 
 
 parts:
@@ -27,16 +27,16 @@ parts:
       - libgssapi3-heimdal
       - libldap-2.4-2
     after: [libsgl, cqtdeployer-wrapper, qtlib]
-    
-    
+
+
   cqtdeployer-wrapper:
     plugin: dump
     source: QuasarAppLib/Etalons/snap/wrapper
-  
+
   qtlib:
     plugin: dump
     source: installer/packages/HanoiTowers/data
-      
+
   libsgl:
     plugin: nil
     stage-packages:
