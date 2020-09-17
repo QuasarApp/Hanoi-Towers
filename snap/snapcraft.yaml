@@ -16,7 +16,7 @@ apps:
   hanoi-tower:
     command: desktop-launch $SNAP/HanoiTowers.sh
 
-    plugs: [desktop, unity7, home, opengl, x11, wayland, gsettings]
+    plugs: [desktop, unity7, home, opengl, x11, wayland]
 
 
 parts:
@@ -60,3 +60,4 @@ parts:
       - libxrandr2
       - libwayland-cursor0
       - libwayland-egl1
+      - libpq5
