@@ -22,6 +22,8 @@
         <file>base/BoseCheckBox.qml</file>
         <file>base/SupportPage.qml</file>
         <file alias="logo">res/QuasarApp_Logo_web.png</file>
+        <file>res/icon.png</file>
+        <file>res/forAndroid.png</file>
     </qresource>
     <qresource prefix="/textures">
         <file>res/wood.png</file>

@@ -1,6 +1,7 @@
 #include <QApplication>
 #include <QFont>
 #include <QFontDatabase>
+#include <QIcon>
 #include <iostream>
 //#include <QScreen>
 #include <QQmlApplicationEngine>
@@ -41,6 +42,8 @@ int main(int argc, char *argv[])
 
     QApplication app(argc, argv);
     setFont(app);
+    app.setWindowIcon(QIcon(":/res/forAndroid.png"));
+
 
     QTranslator translator;
 

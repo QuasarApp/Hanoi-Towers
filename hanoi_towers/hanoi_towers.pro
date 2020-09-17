@@ -83,6 +83,6 @@ for(command, commands) {
     system($$command)|error("Failed to run: $$command")
 }
 
-RC_ICONS = res/icon.ico
+win32::RC_ICONS = res/icon.ico
 
 ANDROID_ABIS = arm64-v8a

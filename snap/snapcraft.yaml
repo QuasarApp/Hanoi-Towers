@@ -1,5 +1,5 @@
 name: hanoi-tower
-version: '1.5.3.3'
+version: '1.5.3.4'
 summary: The Hanoi Tower is one of the most popular puzzles of the 19th century
 description: |
   The Hanoi Tower is one of the most popular puzzles of the 19th century. |
@@ -16,7 +16,7 @@ apps:
   hanoi-tower:
     command: desktop-launch $SNAP/HanoiTowers.sh
 
-    plugs: [desktop, unity7, home, opengl, x11, wayland, gsettings]
+    plugs: [desktop, unity7, home, opengl, x11, wayland]
 
 
 parts:
@@ -60,4 +60,3 @@ parts:
       - libxrandr2
       - libwayland-cursor0
       - libwayland-egl1
-      - libpq5
