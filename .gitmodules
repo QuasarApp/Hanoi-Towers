@@ -1,15 +1,6 @@
-[submodule "SimpleQmlNotify"]
-	path = SimpleQmlNotify
-	url = https://github.com/QuasarApp/SimpleQmlNotify.git
 [submodule "Patronum"]
 	path = Patronum
 	url = https://github.com/QuasarApp/Patronum.git
-[submodule "hanoi_towers/ViewSolutions"]
-	path = hanoi_towers/ViewSolutions
-	url = https://github.com/QuasarApp/ViewSolutions.git
-[submodule "hanoi_towers/QMLLoginView"]
-	path = hanoi_towers/QMLLoginView
-	url = https://github.com/QuasarApp/QMLLoginView.git
 [submodule "Heart"]
 	path = Heart
 	url = https://github.com/QuasarApp/Heart.git

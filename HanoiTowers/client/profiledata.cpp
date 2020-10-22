@@ -16,25 +16,16 @@ void ProfileData::setOnline(bool onlineProfile) {
 }
 
 void ProfileData::setRecord(int rec) {
-    if (record() == rec)
+    if (_record == rec)
         return;
 
-    _userData.extraData()["points"] = rec;
+    _record = rec;
     emit recordChanged(rec);
-}
-
-const NP::UserData *ProfileData::userData() const {
-    return &_userData;
-}
-
-void ProfileData::handleServerResponce(const NP::UserData &data) {
-    _userData = data;
-    emit onlineChanged(isOnline());
 }
 
 ProfileData::ProfileData(const QString &name):
     QObject(nullptr) {
-    _userData.setName(name);
+    _name = name;
 }
 
 ProfileData::~ProfileData() = default;
@@ -44,25 +35,26 @@ QObject *ProfileData::gameState() {
 }
 
 QString ProfileData::name() const {
-    return _userData.name();
+    return _name;
 }
 
 int ProfileData::record() const {
-    return _userData.extraData()["points"].toInt();
+    return _record;
 }
 
 bool ProfileData::isOnline() const {
-    return _userData.token().toBytes().size();
-}
-
-void ProfileData::update(const NP::UserData *newData) {
-    _userData.copyFrom(newData);
+    return _online;
 }
 
 QDataStream &ProfileData::fromStream(QDataStream &stream) {
-    return stream >> _userData >> _state;
+    return stream >> _name >> _record >> _online >> _state;
 }
 
 QDataStream &ProfileData::toStream(QDataStream &stream) const {
-    return stream << _userData << _state;
+    return stream << _name << _record << _online << _state;
+}
+
+ProfileData &ProfileData::operator =(const ProfileData &right) {
+    this->fromBytes(right.toBytes());
+    return *this;
 }

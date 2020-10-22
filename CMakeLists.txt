@@ -46,7 +46,7 @@ addDeployAPK("Android" "${CMAKE_CURRENT_SOURCE_DIR}/hanoi_towers/android-libHano
 # Add sub directories
 add_subdirectory(SimpleQmlNotify)
 add_subdirectory(Heart)
-add_subdirectory(hanoi_towers)
+add_subdirectory(HanoiTowers)
 #add_subdirectory(hanoi_towers/ViewSolutions)
 
 add_subdirectory(Patronum)

@@ -14,22 +14,10 @@
 #include <QDataStream>
 #include <streambase.h>
 
-class GameState : public QObject, public NP::StreamBase
+class GameState : public QObject, public QH::StreamBase
 {
    Q_OBJECT
    Q_PROPERTY(short lvl READ lvl WRITE saveLvl)
-
-private:
-    QList<QList<int>> save;
-    int maxValueOfLoadedSave = 0;
-    int step = 0;
-
-    short _lvl;
-
-    // StreamBase interface
-protected:
-    QDataStream &fromStream(QDataStream &stream);
-    QDataStream &toStream(QDataStream &stream) const;
 
 public:
     explicit GameState();
@@ -44,8 +32,22 @@ public:
 
     Q_INVOKABLE void unlockNextLvl();
 
+
 public slots:
     void saveLvl(short lvl);
+
+    // StreamBase interface
+protected:
+    QDataStream &fromStream(QDataStream &stream);
+    QDataStream &toStream(QDataStream &stream) const;
+
+private:
+    QList<QList<int>> save;
+    int maxValueOfLoadedSave = 0;
+    int step = 0;
+
+    short _lvl;
+
 };
 
 

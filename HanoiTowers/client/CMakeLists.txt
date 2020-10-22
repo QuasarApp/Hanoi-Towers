@@ -29,7 +29,7 @@ file(GLOB SOURCE_CPP
 )
 
 add_executable(${CURRENT_PROJECT} ${SOURCE_CPP})
-target_link_libraries(${CURRENT_PROJECT} PRIVATE QmlNotyfyService NetworkProtocol LoginView)
+target_link_libraries(${CURRENT_PROJECT} PRIVATE QmlNotyfyService Heart LoginView)
 target_include_directories(${CURRENT_PROJECT} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 
 setVersion(${PRODUCT_VER_Mj} ${PRODUCT_VER_Mn} ${PRODUCT_VER_Re})
