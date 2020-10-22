@@ -10,3 +10,6 @@
 [submodule "hanoi_towers/QMLLoginView"]
 	path = hanoi_towers/QMLLoginView
 	url = https://github.com/QuasarApp/QMLLoginView.git
+[submodule "Heart"]
+	path = Heart
+	url = https://github.com/QuasarApp/Heart.git
