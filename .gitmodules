@@ -1,6 +1,3 @@
-[submodule "QtNetworkProtocol"]
-	path = QtNetworkProtocol
-	url = https://github.com/QuasarApp/QtNetworkProtocol.git
 [submodule "SimpleQmlNotify"]
 	path = SimpleQmlNotify
 	url = https://github.com/QuasarApp/SimpleQmlNotify.git
