@@ -7,8 +7,8 @@
 
 cmake_minimum_required(VERSION 3.1)
 
-include(../QtNetworkProtocol/QuasarAppLib/CMake/ProjectOut.cmake)
-include(../QtNetworkProtocol/QuasarAppLib/CMake/Version.cmake)
+include(../Heart/QuasarAppLib/CMake/ProjectOut.cmake)
+include(../Heart/QuasarAppLib/CMake/Version.cmake)
 
 set(CURRENT_PROJECT Terminal)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)

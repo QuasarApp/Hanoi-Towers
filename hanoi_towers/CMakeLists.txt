@@ -10,9 +10,9 @@ cmake_minimum_required(VERSION 3.1)
 
 set(CURRENT_PROJECT ${PROJECT_NAME})
 
-include(../QtNetworkProtocol/QuasarAppLib/CMake/ProjectOut.cmake)
-include(../QtNetworkProtocol/QuasarAppLib/CMake/ccache.cmake)
-include(../QtNetworkProtocol/QuasarAppLib/CMake/Version.cmake)
+include(../Heart/QuasarAppLib/CMake/ProjectOut.cmake)
+include(../Heart/QuasarAppLib/CMake/ccache.cmake)
+include(../Heart/QuasarAppLib/CMake/Version.cmake)
 
 add_subdirectory(QMLLoginView)
 

@@ -8,8 +8,8 @@
 cmake_minimum_required(VERSION 3.1)
 project(HanoiTowers)
 
-include(QtNetworkProtocol/QuasarAppLib/CMake/ccache.cmake)
-include(QtNetworkProtocol/QuasarAppLib/CMake/QuasarAppCITargets.cmake)
+include(Heart/QuasarAppLib/CMake/ccache.cmake)
+include(Heart/QuasarAppLib/CMake/QuasarAppCITargets.cmake)
 
 SET(INSTALLER_DIR "${CMAKE_CURRENT_SOURCE_DIR}/installer/")
 SET(DATA_DIR "${INSTALLER_DIR}/packages/HanoiTowers/data")
@@ -45,7 +45,7 @@ addDeployAPK("Android" "${CMAKE_CURRENT_SOURCE_DIR}/hanoi_towers/android-libHano
 
 # Add sub directories
 add_subdirectory(SimpleQmlNotify)
-add_subdirectory(QtNetworkProtocol)
+add_subdirectory(Heart)
 add_subdirectory(hanoi_towers)
 #add_subdirectory(hanoi_towers/ViewSolutions)
 
