@@ -4,3 +4,12 @@
 [submodule "Heart"]
 	path = Heart
 	url = https://github.com/QuasarApp/Heart.git
+[submodule "HanoiTowers/client/ViewSolutions"]
+	path = HanoiTowers/client/ViewSolutions
+	url = https://github.com/QuasarApp/ViewSolutions.git
+[submodule "HanoiTowers/client/SimpleQmlNotify"]
+	path = HanoiTowers/client/SimpleQmlNotify
+	url = https://github.com/QuasarApp/SimpleQmlNotify.git
+[submodule "HanoiTowers/client/QMLLoginView"]
+	path = HanoiTowers/client/QMLLoginView
+	url = https://github.com/QuasarApp/QMLLoginView.git
