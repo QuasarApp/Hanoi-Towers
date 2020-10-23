@@ -7,10 +7,7 @@
 
 cmake_minimum_required(VERSION 3.1)
 
-include(../Heart/QuasarAppLib/CMake/ProjectOut.cmake)
-include(../Heart/QuasarAppLib/CMake/Version.cmake)
-
-set(CURRENT_PROJECT Terminal)
+set(CURRENT_PROJECT "${PROJECT_NAME}Terminal")
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
@@ -28,4 +25,4 @@ target_link_libraries(${CURRENT_PROJECT} PRIVATE Patronum)
 target_include_directories(${CURRENT_PROJECT} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
 
 
-setVersion(${PRODUCT_VER_Mj} ${PRODUCT_VER_Mn} ${PRODUCT_VER_Re})
+setVersionForTarget(${CURRENT_PROJECT} ${PRODUCT_VER_Mj} ${PRODUCT_VER_Mn} ${PRODUCT_VER_Re})

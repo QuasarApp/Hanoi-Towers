@@ -8,6 +8,8 @@
 cmake_minimum_required(VERSION 3.1)
 project(HanoiTowers)
 
+set(BUILD_SHARED_LIBS ON)
+
 include(Heart/QuasarAppLib/CMake/ccache.cmake)
 include(Heart/QuasarAppLib/CMake/QuasarAppCITargets.cmake)
 
@@ -44,13 +46,11 @@ addDeployAPK("Android" "${CMAKE_CURRENT_SOURCE_DIR}/hanoi_towers/android-libHano
 
 
 # Add sub directories
-add_subdirectory(SimpleQmlNotify)
 add_subdirectory(Heart)
+add_subdirectory(Patronum)
 add_subdirectory(HanoiTowers)
 #add_subdirectory(hanoi_towers/ViewSolutions)
 
-add_subdirectory(Patronum)
-add_subdirectory(HanoiTowersServer)
-add_subdirectory(HanoiTowersTerminal)
+
 
 

@@ -7,6 +7,12 @@
 
 cmake_minimum_required(VERSION 3.1)
 
+include(../Heart/QuasarAppLib/CMake/ProjectOut.cmake)
+include(../Heart/QuasarAppLib/CMake/ccache.cmake)
+include(../Heart/QuasarAppLib/CMake/Version.cmake)
+
+find_package(Qt5 COMPONENTS Core REQUIRED)
+
 add_subdirectory(Protockol)
 add_subdirectory(client)
 add_subdirectory(Server)

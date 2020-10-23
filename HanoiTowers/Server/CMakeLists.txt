@@ -7,11 +7,7 @@
 
 cmake_minimum_required(VERSION 3.1)
 
-set(CURRENT_PROJECT ServerHanoiTowers)
-
-include(../Heart/QuasarAppLib/CMake/ProjectOut.cmake)
-include(../Heart/QuasarAppLib/CMake/Version.cmake)
-
+set(CURRENT_PROJECT "${PROJECT_NAME}Server")
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_AUTOMOC ON)
@@ -29,4 +25,4 @@ add_executable(${CURRENT_PROJECT} ${SOURCE_CPP})
 target_link_libraries(${CURRENT_PROJECT} PRIVATE Heart Patronum)
 target_include_directories(${CURRENT_PROJECT} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 
-setVersion(${PRODUCT_VER_Mj} ${PRODUCT_VER_Mn} ${PRODUCT_VER_Re})
+setVersionForTarget(${CURRENT_PROJECT} ${PRODUCT_VER_Mj} ${PRODUCT_VER_Mn} ${PRODUCT_VER_Re})
