@@ -35,8 +35,8 @@ BackEnd::BackEnd(QQmlApplicationEngine *engine):
     init();
     setProfile(_settings->getStrValue(CURRENT_PROFILE_KEY, DEFAULT_USER));
 
-    connect(&_client, &HanoiClient::statusChanged,
-            this, &BackEnd::handleLogined);
+//    connect(&_client, &HanoiClient::statusChanged,
+//            this, &BackEnd::handleLogined);
 
     _loginModel = new LoginView::LVMainModel("userLogin");
     _loginModel->setComponents(LoginView::Nickname);
@@ -48,8 +48,8 @@ BackEnd::BackEnd(QQmlApplicationEngine *engine):
     connect(_loginModel , &LoginView::LVMainModel::sigRegisterRequest,
             this, &BackEnd::handleOnlineRequest);
 
-    connect(&_client , &HanoiClient::requestError,
-            this, &BackEnd::handleOnlineRequestError);
+//    connect(&_client , &HanoiClient::requestError,
+//            this, &BackEnd::handleOnlineRequestError);
 
 }
 
@@ -204,11 +204,11 @@ void BackEnd::handleOnlineRequestfromProfile(const QString &name) {
 
 void BackEnd::handleOnlineRequest(const LoginView::UserData & user) {
 
-    if (!_client.login(user.nickname(), user.rawPassword().toLatin1())) {
-        QmlNotificationService::NotificationService::getService()->setNotify(
-                    tr("Register online error"), tr("Failed to register this account, if this account was created by you, try to restore it."), "",
-                    QmlNotificationService::NotificationData::Error);
-    }
+//    if (!_client.login(user.nickname(), user.rawPassword().toLatin1())) {
+//        QmlNotificationService::NotificationService::getService()->setNotify(
+//                    tr("Register online error"), tr("Failed to register this account, if this account was created by you, try to restore it."), "",
+//                    QmlNotificationService::NotificationData::Error);
+//    }
 
 }
 
@@ -218,10 +218,10 @@ void BackEnd::handleOnlineRequestError(const QString &) {
 
 void BackEnd::handleLogined(int state) {
 
-    if (state == 2) {
-        auto logineduser = _client.user();
-        _profileList[logineduser->mail()]->update(logineduser.data());
-    }
+//    if (state == 2) {
+//        auto logineduser = _client.user();
+//        _profileList[logineduser->mail()]->update(logineduser.data());
+//    }
 }
 
 bool BackEnd::randomColor() const {
@@ -293,7 +293,7 @@ QObject* BackEnd::gameState() {
 }
 
 QObject *BackEnd::onlineStatus() {
-    return &_client;
+    return nullptr;// &_client;
 }
 
 bool BackEnd::isOnline(const QString &name) {
@@ -340,16 +340,16 @@ void BackEnd::setProfile(QString profile) {
 
     auto profileData = dynamic_cast<ProfileData*>(profileObject());
 
-    if (profileData->isOnline()) {
-        _client.setUser(profileData->userData());
-        if (!_client.login()) {
-            QmlNotificationService::NotificationService::getService()->setNotify(
-                        tr("Login failed"),
-                        tr("Failed to login %0, if this account was created by you, try to restore it.").arg(_profile),
-                        "",
-                        QmlNotificationService::NotificationData::Warning);
-        }
-    }
+//    if (profileData->isOnline()) {
+//        _client.setUser(profileData->userData());
+//        if (!_client.login()) {
+//            QmlNotificationService::NotificationService::getService()->setNotify(
+//                        tr("Login failed"),
+//                        tr("Failed to login %0, if this account was created by you, try to restore it.").arg(_profile),
+//                        "",
+//                        QmlNotificationService::NotificationData::Warning);
+//        }
+//    }
 
     emit profileChanged(_profile);
 }
@@ -368,11 +368,11 @@ void BackEnd::setReward(int revard) {
 void BackEnd::removeOnlineProfile(QString) {
     // not supported
 
-    if (!_client.removeProfile()) {
+//    if (!_client.removeProfile()) {
 
-        QmlNotificationService::NotificationService::getService()->setNotify(
-                    tr("Remove online error"), tr("current profile not online!"), "",
-                    QmlNotificationService::NotificationData::Warning);
-    }
+//        QmlNotificationService::NotificationService::getService()->setNotify(
+//                    tr("Remove online error"), tr("current profile not online!"), "",
+//                    QmlNotificationService::NotificationData::Warning);
+//    }
 
 }

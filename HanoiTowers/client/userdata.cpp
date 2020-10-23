@@ -36,7 +36,11 @@ bool UserData::copyFrom(const QH::PKG::AbstractData *other) {
 }
 
 QH::PKG::DBObject *UserData::createDBObject() const {
-    QH::PKG::DBObject
+    return new UserData();
+}
+
+QH::PKG::PrepareResult UserData::prepareSaveQuery(QSqlQuery &q) const {
+    return QH::PKG::PrepareResult::Disabled;
 }
 
 QDataStream &UserData::fromStream(QDataStream &stream) {
@@ -49,4 +53,8 @@ QDataStream &UserData::toStream(QDataStream &stream) const {
     AbstractData::toStream(stream);
     stream << _userData;
     return stream;
+}
+
+QH::BaseId UserData::generateId() const {
+    return {};
 }

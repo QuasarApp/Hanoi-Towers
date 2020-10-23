@@ -7,20 +7,18 @@
 
 #include "hanoiclient.h"
 #include <qmlnotifyservice.h>
-#include <userrequest.h>
 
-HanoiClient::HanoiClient():
-    NP::Client(REMOTE_HOST, REMOTE_PORT) {
-    connectClient();
+HanoiClient::HanoiClient(){
+//    connectClient();
 
-    connect(this, &HanoiClient::requestError,
-            this, &HanoiClient::handleError);
+//    connect(this, &HanoiClient::requestError,
+//            this, &HanoiClient::handleError);
 }
 
-void HanoiClient::handleError(const QString &error) {
-    QmlNotificationService::NotificationService::getService()->setNotify(
-                tr("Jnline error"), error, "",
-                QmlNotificationService::NotificationData::Error);
-}
+//void HanoiClient::handleError(const QString &error) {
+//    QmlNotificationService::NotificationService::getService()->setNotify(
+//                tr("Jnline error"), error, "",
+//                QmlNotificationService::NotificationData::Error);
+//}
 
 

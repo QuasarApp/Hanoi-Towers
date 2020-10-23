@@ -15,14 +15,13 @@
 #endif
 #define REMOTE_PORT 7770
 
-#include <client.h>
-class HanoiClient: public NP::Client
+class HanoiClient/*: public NP::Client*/
 {
 public:
     HanoiClient();
 
-private slots:
-    void handleError(const QString& error);
+//private slots:
+//    void handleError(const QString& error);
 };
 
 #endif // HANOICLIENT_H
