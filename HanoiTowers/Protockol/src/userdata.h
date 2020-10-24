@@ -6,7 +6,7 @@
 
 using namespace QH::PKG;
 
-class UserData: public DBObject
+class HANOITOWERSPROTOCOL_EXPORT UserData: public DBObject
 {
 public:
     UserData();
@@ -17,10 +17,7 @@ public:
     void clear() override;
     DBObject *createDBObject() const override;
     //sql
-    PrepareResult prepareSaveQuery(QSqlQuery &q) const override;
-    PrepareResult prepareSelectQuery(QSqlQuery &q) const override;
     bool fromSqlRecord(const QSqlRecord &q) override;
-    PrepareResult prepareRemoveQuery(QSqlQuery &q) const override;
     QPair<QString, QString> altarnativeKey() const override;
 
 
@@ -31,9 +28,11 @@ protected:
     QDataStream &fromStream(QDataStream &stream) override;
     QDataStream &toStream(QDataStream &stream) const override;
     QH::BaseId generateId() const override;
+    DBVariantMap variantMap() const override;
 
 private:
     ProfileData _userData;
+
 };
 
 #endif // USERDATA_H

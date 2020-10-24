@@ -8,8 +8,9 @@
 #ifndef PROFILEDATA_H
 #define PROFILEDATA_H
 #include "gamestate.h"
+#include "hanoitowersprotockol_global.h"
 
-class ProfileData : public QObject, public QH::StreamBase
+class HANOITOWERSPROTOCOL_EXPORT ProfileData : public QObject, public QH::StreamBase
 {
     Q_OBJECT
 

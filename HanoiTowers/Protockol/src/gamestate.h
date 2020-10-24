@@ -13,8 +13,9 @@
 #include <QHash>
 #include <QDataStream>
 #include <streambase.h>
+#include "hanoitowersprotockol_global.h"
 
-class GameState : public QObject, public QH::StreamBase
+class HANOITOWERSPROTOCOL_EXPORT GameState : public QObject, public QH::StreamBase
 {
    Q_OBJECT
    Q_PROPERTY(short lvl READ lvl WRITE saveLvl)

@@ -21,13 +21,13 @@ add_definitions(-DHANOITOWERSPROTOCOL_LIBRARY)
 file(GLOB SOURCE_CPP
     "src/*.cpp"
     "src/*.qrc"
-    "src/Private/*.cpp"
-    "src/Private/*.qrc"
+    "src/private/*.cpp"
+    "src/private/*.qrc"
 )
 
-add_library(${CURRENT_PROJECT} SHARED ${SOURCE_CPP})
+add_library(${CURRENT_PROJECT} ${SOURCE_CPP})
 target_link_libraries(${CURRENT_PROJECT} PUBLIC Heart)
 target_include_directories(${CURRENT_PROJECT} PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/src")
-target_include_directories(${CURRENT_PROJECT} PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/src/Private")
+target_include_directories(${CURRENT_PROJECT} PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/src/private")
 
 setVersionForTarget(${CURRENT_PROJECT} ${PRODUCT_VER_Mj} ${PRODUCT_VER_Mn} ${PRODUCT_VER_Re})

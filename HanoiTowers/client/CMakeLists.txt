@@ -22,14 +22,12 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(Qt5 COMPONENTS Core REQUIRED)
-
 file(GLOB SOURCE_CPP
     "*.cpp" "*.qrc"
 )
 
 add_executable(${CURRENT_PROJECT} ${SOURCE_CPP})
-target_link_libraries(${CURRENT_PROJECT} PRIVATE QmlNotyfyService Heart LoginView)
+target_link_libraries(${CURRENT_PROJECT} PRIVATE QmlNotyfyService HanoiTowersProtockol LoginView)
 target_include_directories(${CURRENT_PROJECT} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 
 setVersionForTarget(${CURRENT_PROJECT} ${PRODUCT_VER_Mj} ${PRODUCT_VER_Mn} ${PRODUCT_VER_Re})

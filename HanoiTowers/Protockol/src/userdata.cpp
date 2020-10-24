@@ -34,40 +34,6 @@ QH::PKG::DBObject *UserData::createDBObject() const {
     return new UserData();
 }
 
-QH::PKG::PrepareResult UserData::prepareSaveQuery(QSqlQuery &q) const {
-    QString queryString = "INSERT INTO %0(%1) VALUES (%3) "
-                          "ON CONFLICT(id) DO UPDATE SET %2";
-    queryString = queryString.arg(tableName());
-    queryString = queryString.arg("id, name, points, userdata");
-    queryString = queryString.arg("points=:points, userdata=:userdata");
-
-    QString values;
-
-    values += "'" + getId().toBase64() + "', ";
-    values += "'" + _userData.name() + "', ";
-    values += ":points, ";
-    values += ":userdata";
-
-    queryString = queryString.arg(values);
-
-    if (q.prepare(queryString)) {
-
-        q.bindValue(":points", _userData.record());
-        q.bindValue(":userdata", _userData.toBytes());
-
-        return PrepareResult::Success;
-    }
-
-    QuasarAppUtils::Params::log("Query:" + queryString,
-                                QuasarAppUtils::Error);
-
-    return PrepareResult::Fail;
-}
-
-PrepareResult UserData::prepareSelectQuery(QSqlQuery &q) const {
-    return DBObject::prepareSelectQuery(q);
-}
-
 bool UserData::fromSqlRecord(const QSqlRecord &q) {
     if (!DBObject::fromSqlRecord(q)) {
         return false;
@@ -75,10 +41,6 @@ bool UserData::fromSqlRecord(const QSqlRecord &q) {
 
     _userData.fromBytes(q.value("userdata").toByteArray());
     return isValid();
-}
-
-PrepareResult UserData::prepareRemoveQuery(QSqlQuery &q) const {
-    return DBObject::prepareRemoveQuery(q);
 }
 
 QPair<QString, QString> UserData::altarnativeKey() const {
@@ -103,6 +65,12 @@ QDataStream &UserData::toStream(QDataStream &stream) const {
 
 QH::BaseId UserData::generateId() const {
     return {};
+}
+
+DBVariantMap UserData::variantMap() const {
+    return {{"name",        {_userData.name(),      QH::PKG::MemberType::InsertOnly}},
+            {"points",      {_userData.record(),    QH::PKG::MemberType::InsertUpdate}},
+            {"userdata",    {_userData.toBytes(),   QH::PKG::MemberType::InsertUpdate}}};
 }
 
 void UserData::clear() {
