@@ -16,10 +16,11 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-add_definitions(-DHANOITOWERSPROTOCOL)
+add_definitions(-DHANOITOWERSPROTOCOL_LIBRARY)
 
 file(GLOB SOURCE_CPP
     "src/*.cpp"
+    "src/*.qrc"
     "src/Private/*.cpp"
     "src/Private/*.qrc"
 )

@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/HanoiTowersSql">
+        <file>sql/database.sql</file>
+    </qresource>
+</RCC>
