@@ -15,14 +15,13 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(Qt5 COMPONENTS Core Network REQUIRED)
-
 file(GLOB SOURCE_CPP
-    "*.cpp"
+    "*.cpp",
+    "*.qrc"
 )
 
 add_executable(${CURRENT_PROJECT} ${SOURCE_CPP})
-target_link_libraries(${CURRENT_PROJECT} PRIVATE Heart Patronum)
+target_link_libraries(${CURRENT_PROJECT} PRIVATE HanoiTowersProtockol Patronum)
 target_include_directories(${CURRENT_PROJECT} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 
 setVersionForTarget(${CURRENT_PROJECT} ${PRODUCT_VER_Mj} ${PRODUCT_VER_Mn} ${PRODUCT_VER_Re})
