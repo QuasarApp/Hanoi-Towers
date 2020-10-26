@@ -5,11 +5,11 @@
 #define DEFAULT_HANOI_PORT 7770
 
 #include <quasarapp.h>
-#include <databasenode.h>
+#include <singleserver.h>
 
-class HanoiServer : public QH::DataBaseNode
+class HanoiServer : public QH::SingleServer
 {
-//    Q_OBJECT
+    Q_OBJECT
 public:
     HanoiServer();
 

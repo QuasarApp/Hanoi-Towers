@@ -14,14 +14,22 @@
 #define REMOTE_HOST "127.0.0.1"
 #endif
 #define REMOTE_PORT 7770
+#include <databasenode.h>
 
-class HanoiClient/*: public NP::Client*/
+class HanoiClient: public QH::DataBaseNode
 {
+    Q_OBJECT
 public:
     HanoiClient();
 
-//private slots:
-//    void handleError(const QString& error);
+    QH::ParserResult parsePackage(const QH::Package &pkg,
+                                  const QH::AbstractNodeInfo *sender) override;
+
+    QStringList SQLSources() const override;
+
+
+private slots:
+    void handleError(const QString& error);
 };
 
 #endif // HANOICLIENT_H

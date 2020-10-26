@@ -10,6 +10,7 @@
 #include <QNetworkInterface>
 #include <QCoreApplication>
 #include <userdata.h>
+#include <user.h>
 #include "config.h"
 
 HanoiServer::HanoiServer() {

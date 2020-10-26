@@ -8,17 +8,24 @@
 #include "hanoiclient.h"
 #include <qmlnotifyservice.h>
 
-HanoiClient::HanoiClient(){
-//    connectClient();
+HanoiClient::HanoiClient() {
+    initSqlDb();
 
-//    connect(this, &HanoiClient::requestError,
-//            this, &HanoiClient::handleError);
 }
 
-//void HanoiClient::handleError(const QString &error) {
-//    QmlNotificationService::NotificationService::getService()->setNotify(
-//                tr("Jnline error"), error, "",
-//                QmlNotificationService::NotificationData::Error);
-//}
+QH::ParserResult HanoiClient::parsePackage(const QH::Package &pkg,
+                                           const QH::AbstractNodeInfo *sender) {
+
+}
+
+QStringList HanoiClient::SQLSources() const {
+
+}
+
+void HanoiClient::handleError(const QString &error) {
+    QmlNotificationService::NotificationService::getService()->setNotify(
+                tr("Jnline error"), error, "",
+                QmlNotificationService::NotificationData::Error);
+}
 
 
