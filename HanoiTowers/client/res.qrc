@@ -2,4 +2,7 @@
     <qresource prefix="/textures">
         <file>res/wood.png</file>
     </qresource>
+    <qresource prefix="/sql">
+        <file>sql/database.sql</file>
+    </qresource>
 </RCC>
