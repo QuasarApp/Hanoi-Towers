@@ -30,6 +30,9 @@ public:
 
 private slots:
     void handleError(const QString& error);
+
+
+
 };
 
 #endif // HANOICLIENT_H
