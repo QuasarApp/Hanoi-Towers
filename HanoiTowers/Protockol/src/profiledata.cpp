@@ -25,7 +25,11 @@ void ProfileData::setRecord(int rec) {
 
 ProfileData::ProfileData(const QString &name):
     QObject(nullptr) {
-    _name = name;
+    setName(name);
+}
+
+ProfileData::ProfileData(const ProfileData &oither) {
+    operator=(oither);
 }
 
 ProfileData::~ProfileData() = default;
@@ -44,6 +48,10 @@ int ProfileData::record() const {
 
 bool ProfileData::isOnline() const {
     return _online;
+}
+
+void ProfileData::setName(const QString &name) {
+    _name = name;
 }
 
 QDataStream &ProfileData::fromStream(QDataStream &stream) {

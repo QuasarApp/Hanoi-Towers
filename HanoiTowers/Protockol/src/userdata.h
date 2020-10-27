@@ -24,6 +24,10 @@ public:
     bool isValid() const override;
     bool copyFrom(const AbstractData *other) override;
 
+    void setName(const QString& name);
+    ProfileData userData() const;
+    void setUserData(const ProfileData &userData);
+
 protected:
     QDataStream &fromStream(QDataStream &stream) override;
     QDataStream &toStream(QDataStream &stream) const override;

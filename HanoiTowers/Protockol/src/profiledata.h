@@ -22,6 +22,8 @@ class HANOITOWERSPROTOCOL_EXPORT ProfileData : public QObject, public QH::Stream
 
 public:
     ProfileData(const QString& name);
+    ProfileData(const ProfileData& oither);
+
     ~ProfileData() override;
 
     Q_INVOKABLE QObject* gameState();
@@ -29,6 +31,8 @@ public:
     Q_INVOKABLE QString name() const;
     Q_INVOKABLE int record() const;
     Q_INVOKABLE bool isOnline() const;
+
+    void setName(const QString& name);
 
     // StreamBase interface
     QDataStream &fromStream(QDataStream &stream) override;

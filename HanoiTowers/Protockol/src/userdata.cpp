@@ -30,6 +30,10 @@ bool UserData::copyFrom(const QH::PKG::AbstractData *other) {
     return true;
 }
 
+void UserData::setName(const QString &name) {
+    _userData.setName(name);
+}
+
 QH::PKG::DBObject *UserData::createDBObject() const {
     return new UserData();
 }
@@ -71,6 +75,14 @@ DBVariantMap UserData::variantMap() const {
     return {{"name",        {_userData.name(),      QH::PKG::MemberType::InsertOnly}},
             {"points",      {_userData.record(),    QH::PKG::MemberType::InsertUpdate}},
             {"userdata",    {_userData.toBytes(),   QH::PKG::MemberType::InsertUpdate}}};
+}
+
+ProfileData UserData::userData() const {
+    return _userData;
+}
+
+void UserData::setUserData(const ProfileData &userData) {
+    _userData = userData;
 }
 
 void UserData::clear() {
