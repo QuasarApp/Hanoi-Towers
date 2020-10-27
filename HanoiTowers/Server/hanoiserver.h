@@ -7,6 +7,8 @@
 #include <quasarapp.h>
 #include <singleserver.h>
 
+class UserData;
+
 class HanoiServer : public QH::SingleServer
 {
     Q_OBJECT
@@ -20,8 +22,9 @@ protected:
 
     QVariantMap defaultDbParams() const override;
 
-    // DataBaseNode interface
-protected:
+private:
+    bool workWirthUserData(const UserData *obj,
+                           const QH::AbstractNodeInfo *sender);
 };
 
 #endif // SNAKESERVER_H

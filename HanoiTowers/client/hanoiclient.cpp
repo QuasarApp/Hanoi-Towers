@@ -7,10 +7,12 @@
 
 #include "hanoiclient.h"
 #include <qmlnotifyservice.h>
-#include <user.h>
+#include <usermember.h>
 #include <userdata.h>
 #include <sqldbcache.h>
 #include <localuser.h>
+#include <authrequest.h>
+#include <userdatarequest.h>
 
 HanoiClient::HanoiClient() {
     initSqlDb("", new QH::SqlDBCache(DEFAULT_UPDATE_INTERVAL, QH::SqlDBCasheWriteMode::Force));
@@ -35,8 +37,8 @@ QH::ParserResult HanoiClient::parsePackage(const QH::Package &pkg,
 
         return QH::ParserResult::Processed;
 
-    } else if (H_16<QH::PKG::User>() == pkg.hdr.command) {
-        QH::PKG::User obj(pkg);
+    } else if (H_16<QH::PKG::UserMember>() == pkg.hdr.command) {
+        QH::PKG::UserMember obj(pkg);
 
         auto localuser = db()->getObject(obj)->cloneRaw();
         localuser->copyFrom(&obj);
@@ -62,20 +64,32 @@ void HanoiClient::handleError(const QString &error) {
                 QmlNotificationService::NotificationData::Error);
 }
 
-const LocalUser *HanoiClient::getUser(const QString& userId) const {
-    LocalUser request;
+bool HanoiClient::login(const QString& userId) {
+    QH::PKG::AuthRequest request;
     request.setId(userId);
+    request.setRequest(QH::PKG::UserRequestType::Login);
 
-    if (!db()) {
-        return nullptr;
-    }
-
-    return db()->getObject(request);
+    return sendData(&request, _serverAddress);
 }
 
-const UserData *HanoiClient::getUserData(const QString &userId) const {
-    UserData request;
-    request.setName(userId);
+bool HanoiClient::signIn(const QString &userId) {
+    QH::PKG::AuthRequest request;
+    request.setId(userId);
+    request.setRequest(QH::PKG::UserRequestType::SignIn);
+
+    return sendData(&request, _serverAddress);
+}
+
+bool HanoiClient::userDatarequest(const QString &userId) {
+    UserDataRequest request;
+    request.setId(userId);
+
+    return sendData(&request, _serverAddress);
+}
+
+const LocalUser *HanoiClient::getLocalUser(const QString &userId) const {
+    LocalUser request;
+    request.setId(userId);
 
     if (!db()) {
         return nullptr;
@@ -98,7 +112,7 @@ void HanoiClient::setCurrentUserName(const QString &currentUserName) {
 
 ProfileData HanoiClient::currentProfile() {
 
-    auto userData = getUserData(_currentUserName);
+    auto userData = getLocalUser(_currentUserName);
 
     if (userData)
         return userData->userData();

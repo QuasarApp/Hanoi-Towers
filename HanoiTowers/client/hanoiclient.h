@@ -20,6 +20,12 @@
 class LocalUser;
 class UserData;
 
+namespace QH {
+namespace PKG {
+class UserMember;
+}
+}
+
 enum class Status {
     OfflineUser,
     Dissconnected,
@@ -51,13 +57,19 @@ private slots:
 
 private:
 
-    const LocalUser *getUser(const QString &userId) const;
-    const UserData *getUserData(const QString &userId) const;
-    defaultProfile();
+    bool login(const QString &userId);
+    bool signIn(const QString &userId);
+
+    bool userDatarequest(const QString &userId);
+    const LocalUser *getLocalUser(const QString &userId) const;
+
+
+    ProfileData defaultProfile() const;
 
     Status _status;
     QString _currentUserName;
     QH::HostAddress _serverAddress;
+    QList<LocalUser*> _usersList;
 
 
 };

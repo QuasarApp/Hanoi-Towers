@@ -10,7 +10,8 @@
 #include <QNetworkInterface>
 #include <QCoreApplication>
 #include <userdata.h>
-#include <user.h>
+#include <usermember.h>
+#include <userdatarequest.h>
 #include "config.h"
 
 HanoiServer::HanoiServer() {
@@ -58,6 +59,12 @@ QH::ParserResult HanoiServer::parsePackage(const QH::Package &pkg,
 
         return QH::ParserResult::Processed;
 
+    } else if (H_16<UserDataRequest>() == pkg.hdr.command) {
+        UserDataRequest obj(pkg);
+
+
+        return QH::ParserResult::Processed;
+
     }
 
     return QH::ParserResult::NotProcessed;
@@ -69,4 +76,17 @@ QStringList HanoiServer::SQLSources() const {
 
 QVariantMap HanoiServer::defaultDbParams() const {
     return QH::DataBaseNode::defaultDbParams();
+}
+
+bool HanoiServer::workWirthUserData(const UserData *obj,
+                                    const QH::AbstractNodeInfo *sender) {
+
+    QH::BaseId requesterId = getSender(sender, obj);
+    const DBObject *userData;
+
+    if (getObject(requesterId, *obj, &userData) != QH::DBOperationResult::Allowed) {
+        return false;
+    }
+
+    return sendData(userData, sender->networkAddress());
 }
