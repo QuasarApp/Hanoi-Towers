@@ -4,4 +4,5 @@ CREATE TABLE IF NOT EXISTS Users (
     token BLOB default NULL,
     onlineUser BOOLEAN default false,
     userdata BLOB default NULL,
+    updateTime INTEGER default 0
 );

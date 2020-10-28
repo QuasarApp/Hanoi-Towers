@@ -21,6 +21,7 @@ bool LocalUser::copyFrom(const QH::PKG::AbstractData *other) {
     this->_hashPassword = otherObject->_hashPassword;
     this->_token = otherObject->_token;
     this->_userData = otherObject->_userData;
+    this->_updateTime = otherObject->_updateTime;
 
     return true;
 }
@@ -34,15 +35,21 @@ bool LocalUser::fromSqlRecord(const QSqlRecord &q) {
     setToken(QH::AccessToken{q.value("token").toByteArray()});
     setOnline(q.value("onlineUser").toBool());
     setUserData({q.value("userdata").toByteArray()});
+    setUpdateTime(q.value("updateTime").toInt());
 
     return LocalUser::isValid();
+}
+
+bool LocalUser::isValid() const {
+    return DBObject::isValid() && _updateTime > 1603891116;
 }
 
 QH::PKG::DBVariantMap LocalUser::variantMap() const {
     return {{"passwordHash",       {_hashPassword,        MT::InsertUpdate}},
             {"token",              {_token.toBytes(),     MT::InsertUpdate}},
             {"userdata",           {_userData.toBytes(),  MT::InsertUpdate}},
-            {"onlineUser",         {_online,              MT::InsertUpdate}}};
+            {"onlineUser",         {_online,              MT::InsertUpdate}},
+            {"updateTime",         {_updateTime,          MT::InsertUpdate}}};
 
 }
 
@@ -52,6 +59,16 @@ QH::BaseId LocalUser::generateId() const {
 
 QH::PKG::DBObject *LocalUser::createDBObject() const {
     return create<LocalUser>();
+}
+
+int LocalUser::updateTime() const
+{
+    return _updateTime;
+}
+
+void LocalUser::setUpdateTime(int updateTime)
+{
+    _updateTime = updateTime;
 }
 
 ProfileData LocalUser::userData() const {

@@ -13,6 +13,7 @@ public:
 
     bool copyFrom(const QH::PKG::AbstractData *other) override;
     bool fromSqlRecord(const QSqlRecord &q) override;
+    bool isValid() const override;
 
     // DBObject interface
     bool online() const;
@@ -30,6 +31,9 @@ public:
     ProfileData userData() const;
     void setUserData(const ProfileData &userData);
 
+    int updateTime() const;
+    void setUpdateTime(int updateTime);
+
 protected:
     QH::PKG::DBVariantMap variantMap() const override;
     QH::BaseId generateId() const override;
@@ -40,7 +44,11 @@ private:
     QByteArray _hashPassword;
     QH::AccessToken _token;
     ProfileData _userData;
+    int _updateTime;
 
+
+    // AbstractData interface
+public:
 };
 
 #endif // LOCALUSER_H
