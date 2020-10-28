@@ -46,9 +46,6 @@ private:
     ProfileData _userData;
     int _updateTime;
 
-
-    // AbstractData interface
-public:
 };
 
 #endif // LOCALUSER_H
