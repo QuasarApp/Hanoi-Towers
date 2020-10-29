@@ -9,6 +9,10 @@ LocalUser::LocalUser():
 
 }
 
+LocalUser::LocalUser(const QH::PKG::DBObject *other ):LocalUser() {
+    copyFrom(other);
+}
+
 bool LocalUser::copyFrom(const QH::PKG::AbstractData *other) {
     if (!QH::PKG::DBObject::copyFrom(other))
         return false;
@@ -45,11 +49,11 @@ bool LocalUser::isValid() const {
 }
 
 QH::PKG::DBVariantMap LocalUser::variantMap() const {
-    return {{"passwordHash",       {_hashPassword,        MT::InsertUpdate}},
-            {"token",              {_token.toBytes(),     MT::InsertUpdate}},
-            {"userdata",           {_userData.toBytes(),  MT::InsertUpdate}},
-            {"onlineUser",         {_online,              MT::InsertUpdate}},
-            {"updateTime",         {_updateTime,          MT::InsertUpdate}}};
+    return {{"passwordHash",       {_hashPassword,                      MT::InsertUpdate}},
+            {"token",              {_token.toBytes(),                   MT::InsertUpdate}},
+            {"userdata",           {_userData.toBytes(),                MT::InsertUpdate}},
+            {"onlineUser",         {_online,                            MT::InsertUpdate}},
+            {"updateTime",         {static_cast<int>(time(nullptr)),    MT::InsertUpdate}}};
 
 }
 

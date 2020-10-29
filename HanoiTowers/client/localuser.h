@@ -10,6 +10,7 @@ class LocalUser: public QH::PKG::DBObject
 {
 public:
     LocalUser();
+    LocalUser(const QH::PKG::DBObject*);
 
     bool copyFrom(const QH::PKG::AbstractData *other) override;
     bool fromSqlRecord(const QSqlRecord &q) override;
@@ -18,9 +19,6 @@ public:
     // DBObject interface
     bool online() const;
     void setOnline(bool online);
-
-    QString userName() const;
-    void setUserName(const QString &userName);
 
     QByteArray hashPassword() const;
     void setHashPassword(const QByteArray &hashPassword);

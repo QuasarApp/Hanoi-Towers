@@ -29,7 +29,8 @@ class UserMember;
 enum class Status {
     OfflineUser,
     Dissconnected,
-    Connected
+    Connected,
+    Logined
 };
 
 class HanoiClient: public QH::DataBaseNode
@@ -45,20 +46,29 @@ public:
 
     QString currentUserName() const;
     void setCurrentUserName(const QString &currentUserName);
-    ProfileData currentProfile();
+    ProfileData* currentProfile();
     void connectToServer(const QH::HostAddress& host);
+
+    // AbstractNode interface
+    Status getStatus() const;
+    void setStatus(const Status &status);
+
+protected:
+    void nodeConfirmend(const QH::HostAddress &node) override;
+    void nodeConnected(const QH::HostAddress &node) override;
+    void nodeDisconnected(const QH::HostAddress &node) override;
 
 signals:
     void requestError(const QString & err);
     void statusChanged(int state);
 
 private slots:
-    void handleError(const QString& error);
+    void handleError(unsigned char status, const QString& error);
 
 private:
 
-    bool login(const QString &userId);
-    bool signIn(const QString &userId);
+    bool login(const QString &userId, const QByteArray &hashPassword = {});
+    bool signIn(const QString &userId, const QByteArray &hashPassword);
 
     bool userDatarequest(const QString &userId);
     const LocalUser *getLocalUser(const QString &userId) const;
@@ -70,6 +80,8 @@ private:
     QString _currentUserName;
     QH::HostAddress _serverAddress;
     QList<LocalUser*> _usersList;
+
+
 
 
 };

@@ -34,7 +34,7 @@ class BackEnd: public QObject
     Q_PROPERTY(bool randomColor READ randomColor WRITE setRandomColor NOTIFY randomColorChanged)
     Q_PROPERTY(bool animation READ animation WRITE setAnimation NOTIFY animationChanged)
     Q_PROPERTY(QObject* gameState READ gameState)
-    Q_PROPERTY(QObject* onlineStatus READ onlineStatus)
+    Q_PROPERTY(QObject* client READ client)
     Q_PROPERTY(QObject* profileObject READ profileObject NOTIFY profileChanged)
 //    Q_PROPERTY(QObject* usersListModel READ usersListModel NOTIFY usersListModelChanged)
 
@@ -129,10 +129,10 @@ public slots:
     QObject *gameState();
 
     /**
-     * @brief onlineStatus
+     * @brief client
      * @return
      */
-    QObject *onlineStatus();
+    QObject *client();
 
     /**
      * @brief profileObject

@@ -13,6 +13,9 @@
 #include <usermember.h>
 #include <userdatarequest.h>
 #include "config.h"
+#include "basedefines.h"
+#include "badrequest.h"
+#include "hanoierrorcodes.h"
 
 HanoiServer::HanoiServer() {
     QString address = DEFAULT_ADDRESS;
@@ -43,7 +46,7 @@ HanoiServer::HanoiServer() {
 QH::ParserResult HanoiServer::parsePackage(const QH::Package &pkg,
                                            const QH::AbstractNodeInfo *sender) {
 
-    auto parentResult = DataBaseNode::parsePackage(pkg, sender);
+    auto parentResult = SingleServer::parsePackage(pkg, sender);
     if (parentResult != QH::ParserResult::NotProcessed) {
         return parentResult;
     }
@@ -61,7 +64,22 @@ QH::ParserResult HanoiServer::parsePackage(const QH::Package &pkg,
 
     } else if (H_16<UserDataRequest>() == pkg.hdr.command) {
         UserDataRequest obj(pkg);
+        QH::BaseId requesterId = getSender(sender, &obj);
+        const QH::PKG::DBObject* userData;
 
+        if (getObject(requesterId, obj, &userData) != QH::DBOperationResult::Allowed) {
+            badRequest(sender->networkAddress(), pkg.hdr,
+                       {
+                           ErrorCodes::PermissionDenied,
+                           "The user don not have a premsion of the requested object."
+                       });
+
+            return QH::ParserResult::Error;
+        };
+
+        if (!sendData(userData, sender->networkAddress(), &pkg.hdr)) {
+            return QH::ParserResult::Error;
+        }
 
         return QH::ParserResult::Processed;
 
