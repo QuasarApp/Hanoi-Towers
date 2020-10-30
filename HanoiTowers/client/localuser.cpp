@@ -65,13 +65,11 @@ QH::PKG::DBObject *LocalUser::createDBObject() const {
     return create<LocalUser>();
 }
 
-int LocalUser::updateTime() const
-{
+int LocalUser::updateTime() const {
     return _updateTime;
 }
 
-void LocalUser::setUpdateTime(int updateTime)
-{
+void LocalUser::setUpdateTime(int updateTime) {
     _updateTime = updateTime;
 }
 

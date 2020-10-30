@@ -36,6 +36,8 @@ QH::ParserResult HanoiClient::parsePackage(const QH::Package &pkg,
             return QH::ParserResult::Error;
         }
 
+        emit profileIsUpdated();
+
         return QH::ParserResult::Processed;
 
     } else if (H_16<QH::PKG::UserMember>() == pkg.hdr.command) {
@@ -46,7 +48,7 @@ QH::ParserResult HanoiClient::parsePackage(const QH::Package &pkg,
         localuser->setToken(obj.token());
         localuser->setOnline(true);
 
-        if (db()->saveObject(localuser.data())) {
+        if (!db()->saveObject(localuser.data())) {
             return QH::ParserResult::Error;
         }
 
@@ -72,7 +74,7 @@ void HanoiClient::handleError(unsigned char status, const QString &error) {
                 QmlNotificationService::NotificationData::Error);
 }
 
-bool HanoiClient::login(const QString& userId, const QByteArray &hashPassword) {
+bool HanoiClient::p_login(const QString& userId, const QByteArray &hashPassword) {
     QH::PKG::AuthRequest request;
     request.setId(userId);
     request.setRequest(QH::PKG::UserRequestType::Login);
@@ -80,6 +82,7 @@ bool HanoiClient::login(const QString& userId, const QByteArray &hashPassword) {
     if (hashPassword.isEmpty()) {
         const LocalUser* localUser = getLocalUser(userId);
         if (!(localUser && localUser->token().isValid())) {
+            emit requestError("User '" + userId + "' have a invalid token.");
             return false;
         }
 
@@ -89,7 +92,7 @@ bool HanoiClient::login(const QString& userId, const QByteArray &hashPassword) {
     return sendData(&request, _serverAddress);
 }
 
-bool HanoiClient::signIn(const QString &userId, const QByteArray& hashPassword) {
+bool HanoiClient::p_signIn(const QString &userId, const QByteArray& hashPassword) {
     QH::PKG::AuthRequest request;
     request.setId(userId);
     request.setAuthenticationData(hashPassword);
@@ -116,6 +119,10 @@ const LocalUser *HanoiClient::getLocalUser(const QString &userId) const {
     return db()->getObject(request);
 }
 
+QSharedPointer<LocalUser>&& HanoiClient::getEditableLocalUser(const QString &userId) {
+    return getLocalUser(userId)->clone<LocalUser>();
+}
+
 ProfileData HanoiClient::defaultProfile() const {
     return ProfileData("User");
 }
@@ -127,7 +134,7 @@ Status HanoiClient::getStatus() const {
 void HanoiClient::setStatus(const Status &status) {
     if (_status != status) {
         _status = status;
-        emit statusChanged(static_cast<int>(_status));
+        emit statusChanged(static_cast<unsigned char>(_status));
     }
 }
 
@@ -135,18 +142,77 @@ QString HanoiClient::currentUserName() const {
     return _currentUserName;
 }
 
-void HanoiClient::setCurrentUserName(const QString &currentUserName) {
-    _currentUserName = currentUserName;
-}
-
-ProfileData *HanoiClient::currentProfile() {
+ProfileData HanoiClient::currentProfile() {
 
     auto userData = getLocalUser(_currentUserName);
 
     if (userData)
         return userData->userData();
 
-    return nullptr;
+    return defaultProfile();
+}
+
+bool HanoiClient::updateProfile(const ProfileData &profile) {
+    auto userData = getEditableLocalUser(_currentUserName);
+
+    if (userData.isNull())
+        return false;
+
+    userData->setUserData(profile);
+
+    if (!db()->saveObject(userData.data())) {
+        return false;
+    }
+
+    if (userData->online()) {
+        UserData data;
+        data.setId(profile.name());
+        data.setUserData(profile);
+
+        return sendData(&data, _serverAddress);
+    }
+
+    return true;
+}
+
+
+bool HanoiClient::login(const QString &login, const QString &rawPassword) {
+
+    auto user = getLocalUser(login);
+
+    if (!user || !user->isValid()) {
+        emit requestError("User '" + login + "' is not exists");
+        return false;
+    }
+
+    _currentUserName = login;
+
+    if (user->online() && !p_login(login, hashgenerator(rawPassword.toLatin1()))) {
+        return false;
+    }
+
+    return true;
+
+}
+
+bool HanoiClient::registerUser(const QString &login, const QString &rawPassword) {
+    auto user = getLocalUser(login);
+
+    if (user) {
+        emit requestError("User '" + login + "' is alredy exists");
+        return false;
+    }
+
+    return p_signIn(login, hashgenerator(rawPassword.toLatin1()));
+}
+
+bool HanoiClient::removeUser(const QString &login) {
+    auto user = getLocalUser(login);
+    QH::PKG::AuthRequest request;
+    request.setId(user->getId());
+    request.setRequest(UserRequestType::Remove);
+
+    return sendData(&request, _serverAddress);
 }
 
 void HanoiClient::connectToServer(const QH::HostAddress &host) {
@@ -167,6 +233,13 @@ void HanoiClient::nodeConnected(const QH::HostAddress &node) {
 void HanoiClient::nodeDisconnected(const QH::HostAddress &node) {
     setStatus(Status::Dissconnected);
     DataBaseNode::nodeDisconnected(node);
+}
+
+QByteArray HanoiClient::hashgenerator(const QByteArray &data) {
+    if (data.isEmpty())
+        return {};
+
+    return DataBaseNode::hashgenerator(data);
 }
 
 

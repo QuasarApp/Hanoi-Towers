@@ -15,7 +15,7 @@ class HANOITOWERSPROTOCOL_EXPORT ProfileData : public QObject, public QH::Stream
     Q_OBJECT
 
     Q_PROPERTY(QObject* gameState READ gameState NOTIFY gameStateChanged)
-    Q_PROPERTY(QString name READ name)
+    Q_PROPERTY(QString name READ name NOTIFY nameChanged)
     Q_PROPERTY(int record READ record WRITE setRecord NOTIFY recordChanged)
     Q_PROPERTY(bool onlineUser READ isOnline WRITE setOnline NOTIFY onlineChanged)
 
@@ -49,6 +49,7 @@ signals:
     void onlineChanged(bool onlineUser);
     void onlineRequest(const QString& name);
     void recordChanged(int record);
+    void nameChanged(QString name);
 
 private:
     GameState _state;

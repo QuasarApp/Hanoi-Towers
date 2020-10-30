@@ -51,11 +51,20 @@ bool ProfileData::isOnline() const {
 }
 
 void ProfileData::setName(const QString &name) {
-    _name = name;
+    if (_name != name) {
+        _name = name;
+        emit nameChanged(_name);
+    }
 }
 
 QDataStream &ProfileData::fromStream(QDataStream &stream) {
-    return stream >> _name >> _record >> _online >> _state;
+    stream >> _name >> _record >> _online >> _state;
+
+    emit gameStateChanged(&_state);
+    emit onlineChanged(_online);
+    emit recordChanged(_record);
+    emit nameChanged(_name);
+    return stream;
 }
 
 QDataStream &ProfileData::toStream(QDataStream &stream) const {

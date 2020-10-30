@@ -26,7 +26,7 @@ class UserMember;
 }
 }
 
-enum class Status {
+enum class Status: unsigned char {
     OfflineUser,
     Dissconnected,
     Connected,
@@ -45,8 +45,14 @@ public:
     QStringList SQLSources() const override;
 
     QString currentUserName() const;
-    void setCurrentUserName(const QString &currentUserName);
-    ProfileData* currentProfile();
+
+    ProfileData currentProfile();
+    bool updateProfile(const ProfileData& profile);
+
+    bool login(const QString& login, const QString& rawPassword = "");
+    bool registerUser(const QString& login, const QString& rawPassword);
+    bool removeUser(const QString& login);
+
     void connectToServer(const QH::HostAddress& host);
 
     // AbstractNode interface
@@ -57,21 +63,24 @@ protected:
     void nodeConfirmend(const QH::HostAddress &node) override;
     void nodeConnected(const QH::HostAddress &node) override;
     void nodeDisconnected(const QH::HostAddress &node) override;
+    QByteArray hashgenerator(const QByteArray &data) override;
 
 signals:
     void requestError(const QString & err);
-    void statusChanged(int state);
+    void statusChanged(unsigned char state);
+    void profileIsUpdated();
 
 private slots:
     void handleError(unsigned char status, const QString& error);
 
 private:
 
-    bool login(const QString &userId, const QByteArray &hashPassword = {});
-    bool signIn(const QString &userId, const QByteArray &hashPassword);
+    bool p_login(const QString &userId, const QByteArray &hashPassword = {});
+    bool p_signIn(const QString &userId, const QByteArray &hashPassword);
 
     bool userDatarequest(const QString &userId);
     const LocalUser *getLocalUser(const QString &userId) const;
+    QSharedPointer<LocalUser> &&getEditableLocalUser(const QString &userId);
 
 
     ProfileData defaultProfile() const;
@@ -80,9 +89,6 @@ private:
     QString _currentUserName;
     QH::HostAddress _serverAddress;
     QList<LocalUser*> _usersList;
-
-
-
 
 };
 

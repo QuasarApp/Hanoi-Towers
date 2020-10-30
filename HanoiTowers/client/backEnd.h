@@ -60,7 +60,7 @@ private slots:
     void handleOnlineRequest(const LoginView::UserData&);
     void handleOnlineRequestError(const QString&Errr);
 
-    void handleLogined(int);
+    void handleLogined(unsigned char);
 
 public:
     BackEnd(QQmlApplicationEngine *engine);
@@ -156,7 +156,7 @@ public slots:
 
     void setReward(int);
 
-    void removeOnlineProfile(QString profile);
+    void removeOnlineProfile(const QString& profile);
 
 signals:
     void firstChanged();
