@@ -22,6 +22,7 @@
         <file>menu/UsersTable.qml</file>
         <file>menu/UserTableRow.qml</file>
         <file>menu/ToolBar.qml</file>
+        <file>menu/UserTableDelegate.qml</file>
     </qresource>
     <qresource prefix="/textures">
         <file>res/wood.png</file>

@@ -13,6 +13,7 @@
 #include "gamestate.h"
 #include <QQmlApplicationEngine>
 #include <lvmainmodel.h>
+#include <recordlistmodel.h>
 
 constexpr unsigned char currentVersion = 6;
 
@@ -38,9 +39,11 @@ BackEnd::BackEnd(QQmlApplicationEngine *engine):
     connect(&_client, &HanoiClient::statusChanged,
             this, &BackEnd::handleLogined);
 
-    _loginModel = new LoginView::LVMainModel("userLogin");
+    _loginModel = new LoginView::LVMainModel("userLogin", this);
     _loginModel->setComponents(LoginView::Nickname);
     _loginModel->init(engine);
+
+    _recordsTable = new RecordListModel(this);
 
     connect(_loginModel , &LoginView::LVMainModel::sigLoginRequest,
             this, &BackEnd::handleOnlineRequest);
@@ -264,7 +267,7 @@ QString BackEnd::profile() const {
     return _profile;
 }
 
-QStringList BackEnd::profileList() {
+QObject* BackEnd::profileList() {
     return _profileList.keys();
 }
 

@@ -47,7 +47,7 @@ Item {
             }
         }
 
-        ListView {
+        TableView {
 
             id: listView
             Layout.fillWidth: true
@@ -56,12 +56,8 @@ Item {
             clip: true
 
             model: backEnd.profileList
-            delegate: UserTableRow {
-                name: modelData
-                online: backEnd.isOnline(modelData)
-                record: backEnd.record(modelData)
-                width: listView.width
-                recordLength: button.width - gridLayout.rowSpacing
+            delegate: UserTableDelegate {
+
                 selected: modelData == backEnd.profile;
                 onRemovedRow: {
                     backEnd.removeUser(modelData)
