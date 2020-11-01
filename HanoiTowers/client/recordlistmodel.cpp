@@ -47,7 +47,7 @@ QVariant RecordListModel::data(const QModelIndex &index, int role) const {
         return -1;
     }
 
-    return QAbstractTableModel::data(index, role);
+    return {};
 }
 
 void RecordListModel::setSource(const QMap<QString, userPreview> &data) {

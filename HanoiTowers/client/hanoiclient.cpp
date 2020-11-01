@@ -119,8 +119,13 @@ const LocalUser *HanoiClient::getLocalUser(const QString &userId) const {
     return db()->getObject(request);
 }
 
-QSharedPointer<LocalUser>&& HanoiClient::getEditableLocalUser(const QString &userId) {
-    return getLocalUser(userId)->clone<LocalUser>();
+QSharedPointer<LocalUser>&&
+HanoiClient::getEditableLocalUser(const QString &userId) {
+    if (auto edit = getLocalUser(userId)) {
+        return edit->clone<LocalUser>();
+    }
+
+    return std::move(QSharedPointer<LocalUser>{});
 }
 
 ProfileData HanoiClient::defaultProfile() const {

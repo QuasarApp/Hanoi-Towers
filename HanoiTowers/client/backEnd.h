@@ -42,25 +42,6 @@ class BackEnd: public QObject
     Q_PROPERTY(QString profile READ profile WRITE setProfile NOTIFY profileChanged)
 
 
-private:
-    void init();
-    ProfileData *addProfile(const QString& userName, bool isOnlineuser);
-    void saveLocalData() const;
-    void removeLocalUserData(const QString &name);
-
-    QuasarAppUtils::Settings *_settings = nullptr;
-    LoginView::LVMainModel *_loginModel = nullptr;
-    RecordListModel * _recordsTable = nullptr;
-
-    QString _profile;
-    HanoiClient _client;
-
-private slots:
-    void handleOnlineRequestfromProfile(const QString&);
-    void handleOnlineRequest(const LoginView::UserData&);
-    void handleOnlineRequestError(const QString&Errr);
-
-    void handleLogined(unsigned char);
 
 public:
     BackEnd(QQmlApplicationEngine *engine);
@@ -141,13 +122,10 @@ public slots:
     QObject* profileObject() const;
 
     void removeUser(const QString& name);
-    void setOnline(const QString& name, bool online);
 
     void setProfile(QString profile);
 
     void setReward(int);
-
-    void removeOnlineProfile(const QString& profile);
 
 signals:
     void firstChanged();
@@ -158,6 +136,24 @@ signals:
 
     void usersListModelChanged(QObject* usersListModel);
     void showOnlinePage();
+
+
+private slots:
+    void handleOnlineRequestfromProfile(const QString&);
+    void handleOnlineRequest(const LoginView::UserData&);
+    void handleOnlineRequestError(const QString&Errr);
+
+    void handleLogined(unsigned char);
+private:
+    void init();
+    ProfileData *addProfile(const QString& userName, bool isOnlineuser);
+
+    QuasarAppUtils::Settings *_settings = nullptr;
+    LoginView::LVMainModel *_loginModel = nullptr;
+    RecordListModel * _recordsTable = nullptr;
+
+    ProfileData *_profile = nullptr;
+    HanoiClient _client;
 
 };
 

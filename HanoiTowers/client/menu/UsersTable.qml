@@ -58,7 +58,6 @@ Item {
             model: backEnd.profileList
             delegate: UserTableDelegate {
 
-                selected: modelData == backEnd.profile;
                 onRemovedRow: {
                     backEnd.removeUser(modelData)
                 }

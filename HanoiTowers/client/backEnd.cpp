@@ -63,10 +63,7 @@ void BackEnd::reset(){
     _settings->setValue(ANIMATION_KEY, true);
     _settings->setValue(RANDOM_COLOR_KEY, false);
 
-    for (auto& item : _profileList) {
-        item->deleteLater();
-    }
-    _profileList.clear();
+
     setProfile(addProfile(DEFAULT_USER, false)->name());
 
 }
@@ -78,35 +75,7 @@ void BackEnd::init() {
 
         unsigned char dataVersion;
         stream >> dataVersion;
-        if (dataVersion == currentVersion) {
-            // TO-DO - find solution of input data from pointers list
-
-            int size;
-            stream >> size;
-
-            if (size * 10 > f.size()) {
-                reset();
-                return;
-            }
-
-            for (int i = 0; i < size; ++i ) {
-                QString key;
-                stream >> key;
-                auto obj = addProfile(key, false);
-
-                stream >> *obj;
-                _profileList[key] = obj;
-
-            }
-
-            if (_profileList.isEmpty()) {
-                setProfile(addProfile(DEFAULT_USER, false)->name());
-            } else if (_profile.isEmpty()) {
-                setProfile(_profileList.begin().key());
-
-            }
-
-        } else {
+        if (dataVersion != currentVersion) {
             unsigned short lvl;
             bool isFirstStart, _animation, _randomColor;
             stream >> lvl;
@@ -137,66 +106,24 @@ void BackEnd::init() {
 }
 
 ProfileData* BackEnd::addProfile(const QString &userName, bool isOnlineuser) {
-    auto profile = _profileList.value(userName, nullptr);
-    if (profile) {
-        return profile;
-    }
 
-    profile = new ProfileData(userName);
+    if (_profile)
+        _profile->deleteLater();
 
-    connect(profile, &ProfileData::onlineRequest,
+    _profile = new ProfileData(userName);
+    _client.updateProfile(*_profile);
+
+    _profile->setOnline(isOnlineuser);
+
+    connect(_profile, &ProfileData::onlineRequest,
             this, &BackEnd::handleOnlineRequestfromProfile);
 
-
-    profile->setOnline(isOnlineuser);
-
-    _profileList[userName] = profile;
-
     emit profileListChanged();
 
-    return profile;
-}
-
-void BackEnd::saveLocalData() const {
-    QFile f(MAIN_SETINGS_FILE);
-
-    QDir().mkpath(MAIN_FOLDER);
-
-    if(f.open(QIODevice::ReadWrite | QIODevice::Truncate)) {
-        QDataStream stream(&f);
-        stream << currentVersion;
-
-        stream << static_cast<int>(_profileList.size());
-        for (auto it = _profileList.begin(); it != _profileList.end(); ++it ) {
-            stream << it.key();
-            stream << *it.value();
-        }
-
-        f.close();
-        return;
-    }
-
-    QuasarAppUtils::Params::log("local file data not opened on not created1 " + f.fileName(),
-                                       QuasarAppUtils::Error);
-}
-
-void BackEnd::removeLocalUserData(const QString& name) {
-    _profileList.remove(name);
-
-    if (name == _profile && _profileList.size()) {
-        setProfile(_profileList.begin().key());
-    } else if (_profileList.isEmpty()) {
-        reset();
-    }
-
-    emit profileListChanged();
-
+    return _profile;
 }
 
 void BackEnd::handleOnlineRequestfromProfile(const QString &name) {
-    if (name != _profile) {
-        return;
-    }
 
     LoginView::UserData data;
     data.setNickname(name);
@@ -216,14 +143,13 @@ void BackEnd::handleOnlineRequest(const LoginView::UserData & user) {
 }
 
 void BackEnd::handleOnlineRequestError(const QString &) {
-    emit handleOnlineRequestfromProfile(_profile);
+    emit handleOnlineRequestfromProfile("");
 }
 
 void BackEnd::handleLogined(unsigned char state) {
 
     if (static_cast<Status>(state) == Status::Logined) {
-        auto logineduser = _client.currentProfile();
-        *_profileList[logineduser.name()] = logineduser;
+        *_profile = _client.currentProfile();
     }
 }
 
@@ -259,32 +185,26 @@ void BackEnd::setShowHelp(bool state) {
 
 }
 
-BackEnd::~BackEnd(){
-    saveLocalData();
+BackEnd::~BackEnd() {
+    _client.updateProfile(profile());
 }
 
 QString BackEnd::profile() const {
-    return _profile;
+    if (_profile)
+        return _profile->name();
+    return "";
 }
 
 QObject* BackEnd::profileList() {
-    return _profileList.keys();
+    return _recordsTable;
 }
 
 void BackEnd::createProfile(const QString &userName, bool isOnlineuser) {
     addProfile(userName, isOnlineuser);
 }
 
-//QObject *BackEnd::usersListModel() const {
-//    return _usersList;
-//}
-
 QObject *BackEnd::profileObject() const {
-    if (!_profileList.contains(_profile)) {
-        return nullptr;
-    }
-
-    return _profileList[_profile];
+    return _profile;
 }
 
 QObject* BackEnd::gameState() {
@@ -299,82 +219,25 @@ QObject *BackEnd::client() {
     return &_client;
 }
 
-bool BackEnd::isOnline(const QString &name) {
-    auto profile = _profileList.value(name, nullptr);
-    if (!profile) {
-        return false;
-    }
-
-    return profile->isOnline();
-}
-
-int BackEnd::record(const QString &name) {
-    auto profile = _profileList.value(name, nullptr);
-    if (!profile) {
-        return 0;
-    }
-
-    return profile->record();
-}
-
 void BackEnd::removeUser(const QString &name) {
-    auto profile = _profileList.value(name, nullptr);
-    if (!profile) {
-        return;
-    }
-    removeLocalUserData(name);
 
-}
-
-void BackEnd::setOnline(const QString &name, bool online) {
-    auto profile = _profileList.value(name, nullptr);
-    if (!profile) {
-        return;
-    }
-
-    profile->setOnline(online);
-}
-
-void BackEnd::setProfile(QString profile) {
-    if (!_profileList.contains(profile) || _profile == profile)
-        return;
-
-    _profile = profile;
-
-    auto profileData = dynamic_cast<ProfileData*>(profileObject());
-
-    if (profileData->isOnline()) {
-        if (!_client.login(_profile)) {
-            QmlNotificationService::NotificationService::getService()->setNotify(
-                        tr("Login failed"),
-                        tr("Failed to login %0, if this account was created by you, try to restore it.").arg(_profile),
-                        "",
-                        QmlNotificationService::NotificationData::Warning);
-        }
-    }
-
-    emit profileChanged(_profile);
-}
-
-void BackEnd::setReward(int revard) {
-    auto profile = _profileList.value(_profile, nullptr);
-    if (!profile) {
-        return;
-    }
-
-    if (profile->record() < revard) {
-        profile->setRecord(revard);
-    }
-}
-
-void BackEnd::removeOnlineProfile(const QString &user) {
-    // not supported
-
-    if (!_client.removeUser(user)) {
-
+    if (!_client.removeUser(name)) {
         QmlNotificationService::NotificationService::getService()->setNotify(
                     tr("Remove online error"), tr("current profile not online!"), "",
                     QmlNotificationService::NotificationData::Warning);
     }
+}
 
+void BackEnd::setProfile(QString profile) {
+
+    if (_client.login(profile)) {
+        emit profileChanged(profile);
+    }
+}
+
+void BackEnd::setReward(int revard) {
+
+    if (_profile->record() < revard) {
+        _profile->setRecord(revard);
+    }
 }
