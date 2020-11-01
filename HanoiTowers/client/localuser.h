@@ -32,6 +32,12 @@ public:
     int updateTime() const;
     void setUpdateTime(int updateTime);
 
+    QString name() const;
+    void setName(const QString &name);
+
+    int points() const;
+    void setPoints(int points);
+
 protected:
     QH::PKG::DBVariantMap variantMap() const override;
     QH::BaseId generateId() const override;
@@ -39,10 +45,12 @@ protected:
 
 private:
     bool _online = false;
+    QString _name;
     QByteArray _hashPassword;
     QH::AccessToken _token;
     ProfileData _userData;
-    int _updateTime;
+    int _updateTime = 0;
+    int _points = 0;
 
 };
 

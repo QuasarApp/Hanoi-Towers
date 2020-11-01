@@ -27,6 +27,8 @@ bool UserData::copyFrom(const QH::PKG::AbstractData *other) {
         return false;
 
     _userData = otherObject->_userData;
+    _updateTime = otherObject->_updateTime;
+
     return true;
 }
 
@@ -44,15 +46,17 @@ bool UserData::fromSqlRecord(const QSqlRecord &q) {
     }
 
     _userData.fromBytes(q.value("userdata").toByteArray());
+    setUpdateTime(q.value("updateTime").toInt());
+
     return isValid();
 }
 
 QPair<QString, QString> UserData::altarnativeKey() const {
-    return {"name", _userData.name()};
+    return {};
 }
 
 bool UserData::isValid() const {
-    return DBObject::isValid() && _userData.name().size() > 0;
+    return DBObject::isValid() && _userData.name().size() > 0 && _updateTime > 1604255995;
 }
 
 QDataStream &UserData::fromStream(QDataStream &stream) {
@@ -68,13 +72,22 @@ QDataStream &UserData::toStream(QDataStream &stream) const {
 }
 
 QH::BaseId UserData::generateId() const {
-    return {};
+    return getId();
 }
 
 DBVariantMap UserData::variantMap() const {
-    return {{"name",        {_userData.name(),      QH::PKG::MemberType::InsertOnly}},
+    return {{"visibleName", {_userData.name(),      QH::PKG::MemberType::InsertUpdate}},
             {"points",      {_userData.record(),    QH::PKG::MemberType::InsertUpdate}},
+            {"updateTime",  {_updateTime,           QH::PKG::MemberType::InsertUpdate}},
             {"userdata",    {_userData.toBytes(),   QH::PKG::MemberType::InsertUpdate}}};
+}
+
+int UserData::updateTime() const {
+    return _updateTime;
+}
+
+void UserData::setUpdateTime(int updateTime){
+    _updateTime = updateTime;
 }
 
 ProfileData UserData::userData() const {

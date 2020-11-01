@@ -47,7 +47,7 @@ private:
     int maxValueOfLoadedSave = 0;
     int step = 0;
 
-    short _lvl;
+    short _lvl = 0;
 
 };
 

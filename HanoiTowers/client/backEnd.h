@@ -50,7 +50,7 @@ public:
     Q_INVOKABLE QString profile() const;
     Q_INVOKABLE QObject* profileList();
 
-    Q_INVOKABLE void createProfile(const QString& userName);
+    Q_INVOKABLE bool createProfile(const QString &userId, const QString& userName);
 
 
 public slots:
@@ -121,9 +121,9 @@ public slots:
      */
     QObject* profileObject() const;
 
-    void removeUser(const QString& name);
+    void removeUser(const QByteArray &userId);
 
-    void setProfile(QString profile);
+    void setProfile(QString userId);
 
     void setReward(int);
 
@@ -146,7 +146,7 @@ private slots:
     void handleLogined(unsigned char);
 private:
     void init();
-    ProfileData *addProfile(const QString& userName);
+    ProfileData *addProfile(const QByteArray& userid, const QString& userName = "");
 
     QuasarAppUtils::Settings *_settings = nullptr;
     LoginView::LVMainModel *_loginModel = nullptr;

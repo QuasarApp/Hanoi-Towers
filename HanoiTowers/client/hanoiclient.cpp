@@ -13,10 +13,13 @@
 #include <localuser.h>
 #include <authrequest.h>
 #include <userdatarequest.h>
+#include <sqldbwriter.h>
 #include "hanoierrorcodes.h"
 
 HanoiClient::HanoiClient() {
-    initSqlDb("", new QH::SqlDBCache(DEFAULT_UPDATE_INTERVAL, QH::SqlDBCasheWriteMode::Force));
+    initSqlDb("",
+              new QH::SqlDBCache(DEFAULT_UPDATE_INTERVAL, QH::SqlDBCasheWriteMode::Force),
+              new QH::SqlDBWriter());
 
 }
 
@@ -30,9 +33,7 @@ QH::ParserResult HanoiClient::parsePackage(const QH::Package &pkg,
     if (H_16<UserData>() == pkg.hdr.command) {
         UserData obj(pkg);
 
-        QH::BaseId requesterId = getSender(sender, &obj);
-
-        if (setObject(requesterId, &obj) != QH::DBOperationResult::Allowed) {
+        if (!db()->saveObject(&obj)) {
             return QH::ParserResult::Error;
         }
 
@@ -74,7 +75,7 @@ void HanoiClient::handleError(unsigned char status, const QString &error) {
                 QmlNotificationService::NotificationData::Error);
 }
 
-bool HanoiClient::p_login(const QString& userId, const QByteArray &hashPassword) {
+bool HanoiClient::p_login(const QByteArray& userId, const QByteArray &hashPassword) {
     QH::PKG::AuthRequest request;
     request.setId(userId);
     request.setRequest(QH::PKG::UserRequestType::Login);
@@ -92,7 +93,7 @@ bool HanoiClient::p_login(const QString& userId, const QByteArray &hashPassword)
     return sendData(&request, _serverAddress);
 }
 
-bool HanoiClient::p_signIn(const QString &userId, const QByteArray& hashPassword) {
+bool HanoiClient::p_signIn(const QByteArray &userId, const QByteArray& hashPassword) {
     QH::PKG::AuthRequest request;
     request.setId(userId);
     request.setAuthenticationData(hashPassword);
@@ -101,14 +102,14 @@ bool HanoiClient::p_signIn(const QString &userId, const QByteArray& hashPassword
     return sendData(&request, _serverAddress);
 }
 
-bool HanoiClient::userDatarequest(const QString &userId) {
+bool HanoiClient::userDatarequest(const QByteArray &userId) {
     UserDataRequest request;
     request.setId(userId);
 
     return sendData(&request, _serverAddress);
 }
 
-const LocalUser *HanoiClient::getLocalUser(const QString &userId) const {
+const LocalUser *HanoiClient::getLocalUser(const QByteArray &userId) const {
     LocalUser request;
     request.setId(userId);
 
@@ -120,16 +121,12 @@ const LocalUser *HanoiClient::getLocalUser(const QString &userId) const {
 }
 
 QSharedPointer<LocalUser>
-HanoiClient::getEditableLocalUser(const QString &userId) {
+HanoiClient::getEditableLocalUser(const QByteArray &userId) {
     if (auto edit = getLocalUser(userId)) {
         return edit->clone<LocalUser>();
     }
 
     return {nullptr};
-}
-
-ProfileData HanoiClient::defaultProfile() const {
-    return ProfileData("User");
 }
 
 Status HanoiClient::getStatus() const {
@@ -143,29 +140,39 @@ void HanoiClient::setStatus(const Status &status) {
     }
 }
 
-QString HanoiClient::currentUserName() const {
-    return _currentUserName;
+QByteArray HanoiClient::currentUserId() const {
+    return _currentUserId;
 }
 
 ProfileData HanoiClient::currentProfile() {
 
-    auto userData = getLocalUser(_currentUserName);
+    auto userData = getLocalUser(_currentUserId);
 
     if (userData)
         return userData->userData();
 
-    return defaultProfile();
+    return {""};
+}
+
+LocalUser HanoiClient::profileToLocalUser(const ProfileData &profile) {
+    LocalUser user;
+    user.setId(profile.userId().toLatin1());
+    user.setName(profile.name());
+    user.setPoints(profile.record());
+    user.setOnline(profile.isOnline());
+    user.setUpdateTime(time(nullptr));
+
+    return user;
 }
 
 bool HanoiClient::addProfile(const ProfileData &profile) {
-    auto userData = getEditableLocalUser(_currentUserName);
+    auto userData = getEditableLocalUser(profile.userIdRaw());
 
-    if (userData) {
+    if (!userData.isNull()) {
         return false;
     }
 
-    LocalUser user;
-    user.setId(profile.name());
+    auto user = profileToLocalUser(profile);
 
     if (auto database = db()) {
         return database->saveObject(&user);
@@ -176,7 +183,7 @@ bool HanoiClient::addProfile(const ProfileData &profile) {
 }
 
 bool HanoiClient::updateProfile(const ProfileData &profile) {
-    auto userData = getEditableLocalUser(_currentUserName);
+    auto userData = getEditableLocalUser(_currentUserId);
 
     if (userData.isNull()) {
         return false;
@@ -189,10 +196,7 @@ bool HanoiClient::updateProfile(const ProfileData &profile) {
     }
 
     if (userData->online()) {
-        UserData data;
-        data.setId(profile.name());
-        data.setUserData(profile);
-
+        auto data = profileToLocalUser(profile);
         return sendData(&data, _serverAddress);
     }
 
@@ -200,18 +204,18 @@ bool HanoiClient::updateProfile(const ProfileData &profile) {
 }
 
 
-bool HanoiClient::login(const QString &login, const QString &rawPassword) {
+bool HanoiClient::login(const QByteArray &userId, const QString &rawPassword) {
 
-    auto user = getLocalUser(login);
+    auto user = getLocalUser(userId);
 
     if (!user || !user->isValid()) {
-        emit requestError("User '" + login + "' is not exists");
+        emit requestError("User '" + userId + "' is not exists");
         return false;
     }
 
-    _currentUserName = login;
+    _currentUserId = userId;
 
-    if (user->online() && !p_login(login, hashgenerator(rawPassword.toLatin1()))) {
+    if (user->online() && !p_login(userId, hashgenerator(rawPassword.toLatin1()))) {
         return false;
     }
 
@@ -219,15 +223,15 @@ bool HanoiClient::login(const QString &login, const QString &rawPassword) {
 
 }
 
-bool HanoiClient::registerUser(const QString &login, const QString &rawPassword) {
-    auto user = getLocalUser(login);
+bool HanoiClient::registerUser(const QByteArray &userId, const QString &rawPassword) {
+    auto user = getLocalUser(userId);
 
     if (user) {
-        emit requestError("User '" + login + "' is alredy exists");
+        emit requestError("User '" + userId + "' is alredy exists");
         return false;
     }
 
-    return p_signIn(login, hashgenerator(rawPassword.toLatin1()));
+    return p_signIn(userId, hashgenerator(rawPassword.toLatin1()));
 }
 
 bool HanoiClient::registerOflineUser(const QString &login) {
@@ -237,8 +241,8 @@ bool HanoiClient::registerOflineUser(const QString &login) {
     return db()->saveObject(&user);
 }
 
-bool HanoiClient::removeUser(const QString &login) {
-    auto user = getLocalUser(login);
+bool HanoiClient::removeUser(const QByteArray &userId) {
+    auto user = getLocalUser(userId);
     QH::PKG::AuthRequest request;
     request.setId(user->getId());
     request.setRequest(UserRequestType::Remove);

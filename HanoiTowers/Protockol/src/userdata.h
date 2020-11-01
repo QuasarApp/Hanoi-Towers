@@ -28,6 +28,9 @@ public:
     ProfileData userData() const;
     void setUserData(const ProfileData &userData);
 
+    int updateTime() const;
+    void setUpdateTime(int updateTime);
+
 protected:
     QDataStream &fromStream(QDataStream &stream) override;
     QDataStream &toStream(QDataStream &stream) const override;
@@ -36,6 +39,7 @@ protected:
 
 private:
     ProfileData _userData;
+    int _updateTime;
 
 };
 

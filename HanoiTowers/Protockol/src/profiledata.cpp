@@ -23,9 +23,9 @@ void ProfileData::setRecord(int rec) {
     emit recordChanged(rec);
 }
 
-ProfileData::ProfileData(const QString &name):
+ProfileData::ProfileData(const QByteArray &userID):
     QObject(nullptr) {
-    setName(name);
+    _userId = userID;
 }
 
 ProfileData::ProfileData(const ProfileData &oither) {
@@ -74,4 +74,12 @@ QDataStream &ProfileData::toStream(QDataStream &stream) const {
 ProfileData &ProfileData::operator =(const ProfileData &right) {
     this->fromBytes(right.toBytes());
     return *this;
+}
+
+QString ProfileData::userId() const{
+    return _userId;
+}
+
+QByteArray ProfileData::userIdRaw() const {
+    return _userId;
 }

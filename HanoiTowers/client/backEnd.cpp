@@ -14,10 +14,9 @@
 #include <QQmlApplicationEngine>
 #include <lvmainmodel.h>
 #include <recordlistmodel.h>
+#include <execution>
 
-constexpr unsigned char currentVersion = 6;
-
-#define DEFAULT_USER "User"
+#define DEFAULT_USER QByteArray("User")
 #define FIRST_RUN_KEY "isFirstStart"
 #define LVL_KEY "lvl"
 #define ANIMATION_KEY "animation"
@@ -63,8 +62,12 @@ void BackEnd::reset(){
     _settings->setValue(ANIMATION_KEY, true);
     _settings->setValue(RANDOM_COLOR_KEY, false);
 
-
-    setProfile(addProfile(DEFAULT_USER)->name());
+    if (!_client.login(DEFAULT_USER)) {
+         auto defaultProfile = addProfile(DEFAULT_USER);
+         if (!defaultProfile) {
+             throw std::runtime_error("Init default profile is failed!!! on the " + std::string(__func__) + " functions");
+         }
+    }
 
 }
 
@@ -73,30 +76,32 @@ void BackEnd::init() {
     if(f.open(QIODevice::ReadOnly)){
         QDataStream stream(&f);
 
-        unsigned char dataVersion;
-        stream >> dataVersion;
-        if (dataVersion != currentVersion) {
-            unsigned short lvl;
-            bool isFirstStart, _animation, _randomColor;
-            stream >> lvl;
-            stream >> isFirstStart;
-            stream >> _animation;
-            stream >> _randomColor;
+        unsigned short lvl;
+        bool isFirstStart, _animation, _randomColor;
+        stream >> lvl;
+        stream >> isFirstStart;
+        stream >> _animation;
+        stream >> _randomColor;
 
-            if(lvl < 1 || lvl > 99) {
-                lvl = 1;
-            }
-
-            setAnimation(_animation);
-            setRandomColor(_randomColor);
-            setShowHelp(isFirstStart);
-
-            auto profile = addProfile(DEFAULT_USER);
-            static_cast<GameState*>((profile->
-                                    gameState()))->saveLvl(
-                        static_cast<short>(lvl));
-
+        if(lvl < 1 || lvl > 99) {
+            lvl = 1;
         }
+
+        setAnimation(_animation);
+        setRandomColor(_randomColor);
+        setShowHelp(isFirstStart);
+
+        auto profile = addProfile(DEFAULT_USER);
+        if (!profile) {
+            f.close();
+            throw std::runtime_error("Init default profile is failed!!! on the " + std::string(__func__) + " functions");
+        }
+
+        static_cast<GameState*>((profile->
+                                gameState()))->saveLvl(
+                    static_cast<short>(lvl));
+
+
         f.close();
 
     } else {
@@ -105,13 +110,20 @@ void BackEnd::init() {
 
 }
 
-ProfileData* BackEnd::addProfile(const QString &userName) {
+ProfileData* BackEnd::addProfile(const QByteArray &userid, const QString &userName) {
 
     if (_profile)
         _profile->deleteLater();
 
-    _profile = new ProfileData(userName);
-    _client.addProfile(userName);
+    _profile = new ProfileData(userid);
+    _profile->setName(userName);
+
+    if (!_client.addProfile(*_profile)) {
+        delete  _profile;
+        _profile = nullptr;
+        return _profile;
+    };
+
 
     connect(_profile, &ProfileData::onlineRequest,
             this, &BackEnd::handleOnlineRequestfromProfile);
@@ -132,9 +144,10 @@ void BackEnd::handleOnlineRequestfromProfile(const QString &name) {
 
 void BackEnd::handleOnlineRequest(const LoginView::UserData & user) {
 
-    if (!_client.login(user.nickname(), user.rawPassword().toLatin1())) {
+    if (!_client.login(user.nickname().toLatin1(), user.rawPassword().toLatin1())) {
         QmlNotificationService::NotificationService::getService()->setNotify(
-                    tr("Register online error"), tr("Failed to register this account, if this account was created by you, try to restore it."), "",
+                    tr("Register online error"),
+                    tr("Failed to register this account, if this account was created by you, try to restore it."), "",
                     QmlNotificationService::NotificationData::Error);
     }
 
@@ -184,7 +197,7 @@ void BackEnd::setShowHelp(bool state) {
 }
 
 BackEnd::~BackEnd() {
-    _client.updateProfile(profile());
+    _client.updateProfile(*_profile);
 }
 
 QString BackEnd::profile() const {
@@ -197,8 +210,13 @@ QObject* BackEnd::profileList() {
     return _recordsTable;
 }
 
-void BackEnd::createProfile(const QString &userName) {
-    addProfile(userName);
+bool BackEnd::createProfile(const QString& userId, const QString &userName) {
+
+    auto usrId = userId.toLatin1();
+    if (usrId != userId)
+        return false;
+
+    return addProfile(usrId, userName);
 }
 
 QObject *BackEnd::profileObject() const {
@@ -217,19 +235,19 @@ QObject *BackEnd::client() {
     return &_client;
 }
 
-void BackEnd::removeUser(const QString &name) {
+void BackEnd::removeUser(const QByteArray &userId) {
 
-    if (!_client.removeUser(name)) {
+    if (!_client.removeUser(userId)) {
         QmlNotificationService::NotificationService::getService()->setNotify(
                     tr("Remove online error"), tr("current profile not online!"), "",
                     QmlNotificationService::NotificationData::Warning);
     }
 }
 
-void BackEnd::setProfile(QString profile) {
+void BackEnd::setProfile(QString userId) {
 
-    if (_client.login(profile)) {
-        emit profileChanged(profile);
+    if (_client.login(userId.toLatin1())) {
+        emit profileChanged(userId);
     }
 }
 

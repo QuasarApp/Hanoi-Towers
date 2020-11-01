@@ -26,6 +26,8 @@ bool LocalUser::copyFrom(const QH::PKG::AbstractData *other) {
     this->_token = otherObject->_token;
     this->_userData = otherObject->_userData;
     this->_updateTime = otherObject->_updateTime;
+    this->_name = otherObject->_name;
+    this->_points = otherObject->_points;
 
     return true;
 }
@@ -40,6 +42,8 @@ bool LocalUser::fromSqlRecord(const QSqlRecord &q) {
     setOnline(q.value("onlineUser").toBool());
     setUserData({q.value("userdata").toByteArray()});
     setUpdateTime(q.value("updateTime").toInt());
+    setName(q.value("name").toString());
+    setPoints(q.value("points").toInt());
 
     return LocalUser::isValid();
 }
@@ -51,8 +55,10 @@ bool LocalUser::isValid() const {
 QH::PKG::DBVariantMap LocalUser::variantMap() const {
     return {{"passwordHash",       {_hashPassword,                      MT::InsertUpdate}},
             {"token",              {_token.toBytes(),                   MT::InsertUpdate}},
+            {"name",               {_name,                              MT::InsertUpdate}},
             {"userdata",           {_userData.toBytes(),                MT::InsertUpdate}},
             {"onlineUser",         {_online,                            MT::InsertUpdate}},
+            {"points",             {_points,                            MT::InsertUpdate}},
             {"updateTime",         {static_cast<int>(time(nullptr)),    MT::InsertUpdate}}};
 
 }
@@ -63,6 +69,22 @@ QH::BaseId LocalUser::generateId() const {
 
 QH::PKG::DBObject *LocalUser::createDBObject() const {
     return create<LocalUser>();
+}
+
+int LocalUser::points() const {
+    return _points;
+}
+
+void LocalUser::setPoints(int points) {
+    _points = points;
+}
+
+QString LocalUser::name() const {
+    return _name;
+}
+
+void LocalUser::setName(const QString &name) {
+    _name = name;
 }
 
 int LocalUser::updateTime() const {
