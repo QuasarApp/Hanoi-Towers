@@ -48,9 +48,12 @@ public:
 
     ProfileData currentProfile();
     bool updateProfile(const ProfileData& profile);
+    bool addProfile(const ProfileData& profile);
 
     bool login(const QString& login, const QString& rawPassword = "");
     bool registerUser(const QString& login, const QString& rawPassword);
+
+    bool registerOflineUser(const QString& login);
     bool removeUser(const QString& login);
 
     void connectToServer(const QH::HostAddress& host);
@@ -80,7 +83,7 @@ private:
 
     bool userDatarequest(const QString &userId);
     const LocalUser *getLocalUser(const QString &userId) const;
-    QSharedPointer<LocalUser> &&getEditableLocalUser(const QString &userId);
+    QSharedPointer<LocalUser> getEditableLocalUser(const QString &userId);
 
 
     ProfileData defaultProfile() const;

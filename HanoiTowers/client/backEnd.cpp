@@ -64,7 +64,7 @@ void BackEnd::reset(){
     _settings->setValue(RANDOM_COLOR_KEY, false);
 
 
-    setProfile(addProfile(DEFAULT_USER, false)->name());
+    setProfile(addProfile(DEFAULT_USER)->name());
 
 }
 
@@ -91,7 +91,7 @@ void BackEnd::init() {
             setRandomColor(_randomColor);
             setShowHelp(isFirstStart);
 
-            auto profile = addProfile(DEFAULT_USER, false);
+            auto profile = addProfile(DEFAULT_USER);
             static_cast<GameState*>((profile->
                                     gameState()))->saveLvl(
                         static_cast<short>(lvl));
@@ -105,15 +105,13 @@ void BackEnd::init() {
 
 }
 
-ProfileData* BackEnd::addProfile(const QString &userName, bool isOnlineuser) {
+ProfileData* BackEnd::addProfile(const QString &userName) {
 
     if (_profile)
         _profile->deleteLater();
 
     _profile = new ProfileData(userName);
-    _client.updateProfile(*_profile);
-
-    _profile->setOnline(isOnlineuser);
+    _client.addProfile(userName);
 
     connect(_profile, &ProfileData::onlineRequest,
             this, &BackEnd::handleOnlineRequestfromProfile);
@@ -199,8 +197,8 @@ QObject* BackEnd::profileList() {
     return _recordsTable;
 }
 
-void BackEnd::createProfile(const QString &userName, bool isOnlineuser) {
-    addProfile(userName, isOnlineuser);
+void BackEnd::createProfile(const QString &userName) {
+    addProfile(userName);
 }
 
 QObject *BackEnd::profileObject() const {

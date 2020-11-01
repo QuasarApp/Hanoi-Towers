@@ -50,7 +50,7 @@ public:
     Q_INVOKABLE QString profile() const;
     Q_INVOKABLE QObject* profileList();
 
-    Q_INVOKABLE void createProfile(const QString& userName, bool isOnlineuser);
+    Q_INVOKABLE void createProfile(const QString& userName);
 
 
 public slots:
@@ -146,7 +146,7 @@ private slots:
     void handleLogined(unsigned char);
 private:
     void init();
-    ProfileData *addProfile(const QString& userName, bool isOnlineuser);
+    ProfileData *addProfile(const QString& userName);
 
     QuasarAppUtils::Settings *_settings = nullptr;
     LoginView::LVMainModel *_loginModel = nullptr;
