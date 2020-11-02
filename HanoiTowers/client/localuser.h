@@ -26,17 +26,11 @@ public:
     QH::AccessToken token() const;
     void setToken(const QH::AccessToken &token);
 
-    ProfileData userData() const;
+    const ProfileData *userData() const;
     void setUserData(const ProfileData &userData);
 
     int updateTime() const;
     void setUpdateTime(int updateTime);
-
-    QString name() const;
-    void setName(const QString &name);
-
-    int points() const;
-    void setPoints(int points);
 
 protected:
     QH::PKG::DBVariantMap variantMap() const override;
@@ -44,13 +38,10 @@ protected:
     QH::PKG::DBObject *createDBObject() const override;
 
 private:
-    bool _online = false;
-    QString _name;
     QByteArray _hashPassword;
     QH::AccessToken _token;
     ProfileData _userData;
     int _updateTime = 0;
-    int _points = 0;
 
 };
 

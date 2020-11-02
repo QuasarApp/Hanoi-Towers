@@ -16,7 +16,9 @@
 #include <recordlistmodel.h>
 #include <execution>
 
-#define DEFAULT_USER QByteArray("User")
+#define DEFAULT_USER_ID QByteArray("DefaultUser")
+#define DEFAULT_USER_NAME "User"
+
 #define FIRST_RUN_KEY "isFirstStart"
 #define LVL_KEY "lvl"
 #define ANIMATION_KEY "animation"
@@ -33,7 +35,7 @@ BackEnd::BackEnd(QQmlApplicationEngine *engine):
     });
 
     init();
-    setProfile(_settings->getStrValue(CURRENT_PROFILE_KEY, DEFAULT_USER));
+    setProfile(_settings->getStrValue(CURRENT_PROFILE_KEY, DEFAULT_USER_ID));
 
     connect(&_client, &HanoiClient::statusChanged,
             this, &BackEnd::handleLogined);
@@ -55,6 +57,34 @@ BackEnd::BackEnd(QQmlApplicationEngine *engine):
 
 }
 
+ProfileData* BackEnd::initProfile(const QByteArray& userId, const QString &userName) {
+    if (_profile) {
+        _profile->deleteLater();
+    }
+
+    _profile = new ProfileData(userId);
+
+    connect(_profile, &ProfileData::onlineRequest,
+            this, &BackEnd::handleOnlineRequestfromProfile);
+
+    if (!_client.login(userId)) {
+        _profile->setName(userName);
+
+        if (!(_client.registerOflineUser(userId) && _client.updateProfile(*_profile))) {
+            _profile->deleteLater();
+            return nullptr;
+        }
+
+        return _profile;
+    }
+
+    *_profile = *_client.currentProfile();
+
+    emit profileListChanged();
+
+    return _profile;
+}
+
 void BackEnd::reset(){
 
     _settings->setValue(FIRST_RUN_KEY, true);
@@ -62,13 +92,9 @@ void BackEnd::reset(){
     _settings->setValue(ANIMATION_KEY, true);
     _settings->setValue(RANDOM_COLOR_KEY, false);
 
-    if (!_client.login(DEFAULT_USER)) {
-         auto defaultProfile = addProfile(DEFAULT_USER);
-         if (!defaultProfile) {
-             throw std::runtime_error("Init default profile is failed!!! on the " + std::string(__func__) + " functions");
-         }
+    if (!initProfile(DEFAULT_USER_ID, DEFAULT_USER_NAME)) {
+        throw std::runtime_error("Init default profile is failed!!! on the " + std::string(__func__) + " functions");
     }
-
 }
 
 void BackEnd::init() {
@@ -91,7 +117,7 @@ void BackEnd::init() {
         setRandomColor(_randomColor);
         setShowHelp(isFirstStart);
 
-        auto profile = addProfile(DEFAULT_USER);
+        auto profile = initProfile(DEFAULT_USER_ID, DEFAULT_USER_NAME);
         if (!profile) {
             f.close();
             throw std::runtime_error("Init default profile is failed!!! on the " + std::string(__func__) + " functions");
@@ -103,34 +129,12 @@ void BackEnd::init() {
 
 
         f.close();
+        f.remove();
 
     } else {
         reset();
     }
 
-}
-
-ProfileData* BackEnd::addProfile(const QByteArray &userid, const QString &userName) {
-
-    if (_profile)
-        _profile->deleteLater();
-
-    _profile = new ProfileData(userid);
-    _profile->setName(userName);
-
-    if (!_client.addProfile(*_profile)) {
-        delete  _profile;
-        _profile = nullptr;
-        return _profile;
-    };
-
-
-    connect(_profile, &ProfileData::onlineRequest,
-            this, &BackEnd::handleOnlineRequestfromProfile);
-
-    emit profileListChanged();
-
-    return _profile;
 }
 
 void BackEnd::handleOnlineRequestfromProfile(const QString &name) {
@@ -160,7 +164,7 @@ void BackEnd::handleOnlineRequestError(const QString &) {
 void BackEnd::handleLogined(unsigned char state) {
 
     if (static_cast<Status>(state) == Status::Logined) {
-        *_profile = _client.currentProfile();
+        *_profile = *_client.currentProfile();
     }
 }
 
@@ -216,7 +220,7 @@ bool BackEnd::createProfile(const QString& userId, const QString &userName) {
     if (usrId != userId)
         return false;
 
-    return addProfile(usrId, userName);
+    return initProfile(usrId, userName);
 }
 
 QObject *BackEnd::profileObject() const {

@@ -146,7 +146,7 @@ private slots:
     void handleLogined(unsigned char);
 private:
     void init();
-    ProfileData *addProfile(const QByteArray& userid, const QString& userName = "");
+    ProfileData *initProfile(const QByteArray &userId, const QString& userName = "");
 
     QuasarAppUtils::Settings *_settings = nullptr;
     LoginView::LVMainModel *_loginModel = nullptr;

@@ -144,23 +144,29 @@ QByteArray HanoiClient::currentUserId() const {
     return _currentUserId;
 }
 
-ProfileData HanoiClient::currentProfile() {
+const ProfileData* HanoiClient::currentProfile() {
 
     auto userData = getLocalUser(_currentUserId);
 
     if (userData)
         return userData->userData();
 
-    return {""};
+    return nullptr;
+}
+
+LocalUser HanoiClient::profileToLocalUser(const QByteArray &login) {
+    LocalUser user;
+    user.setId(login);
+    user.setUpdateTime(time(nullptr));
+
+    return user;
 }
 
 LocalUser HanoiClient::profileToLocalUser(const ProfileData &profile) {
     LocalUser user;
     user.setId(profile.userId().toLatin1());
-    user.setName(profile.name());
-    user.setPoints(profile.record());
-    user.setOnline(profile.isOnline());
     user.setUpdateTime(time(nullptr));
+    user.setUserData(profile);
 
     return user;
 }
@@ -183,7 +189,7 @@ bool HanoiClient::addProfile(const ProfileData &profile) {
 }
 
 bool HanoiClient::updateProfile(const ProfileData &profile) {
-    auto userData = getEditableLocalUser(_currentUserId);
+    auto userData = getEditableLocalUser(profile.userIdRaw());
 
     if (userData.isNull()) {
         return false;
@@ -234,10 +240,8 @@ bool HanoiClient::registerUser(const QByteArray &userId, const QString &rawPassw
     return p_signIn(userId, hashgenerator(rawPassword.toLatin1()));
 }
 
-bool HanoiClient::registerOflineUser(const QString &login) {
-    LocalUser user;
-    user.setId(login);
-
+bool HanoiClient::registerOflineUser(const QByteArray &login) {
+    LocalUser user = profileToLocalUser(login);
     return db()->saveObject(&user);
 }
 

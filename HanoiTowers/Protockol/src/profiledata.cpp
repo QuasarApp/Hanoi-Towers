@@ -58,17 +58,27 @@ void ProfileData::setName(const QString &name) {
 }
 
 QDataStream &ProfileData::fromStream(QDataStream &stream) {
-    stream >> _name >> _record >> _online >> _state;
+    stream >> _name >>
+            _userId >>
+            _record >>
+            _online >>
+            _state;
 
     emit gameStateChanged(&_state);
     emit onlineChanged(_online);
     emit recordChanged(_record);
     emit nameChanged(_name);
+    emit userIdChanged(_userId);
+
     return stream;
 }
 
 QDataStream &ProfileData::toStream(QDataStream &stream) const {
-    return stream << _name << _record << _online << _state;
+    return stream << _name <<
+                     _userId <<
+                     _record <<
+                     _online <<
+                     _state;
 }
 
 ProfileData &ProfileData::operator =(const ProfileData &right) {

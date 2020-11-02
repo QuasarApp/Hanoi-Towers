@@ -46,14 +46,14 @@ public:
 
     QByteArray currentUserId() const;
 
-    ProfileData currentProfile();
+    const ProfileData *currentProfile();
     bool updateProfile(const ProfileData& profile);
     bool addProfile(const ProfileData& profile);
 
     bool login(const QByteArray &userId, const QString& rawPassword = "");
     bool registerUser(const QByteArray &userId, const QString& rawPassword);
 
-    bool registerOflineUser(const QString& login);
+    bool registerOflineUser(const QByteArray &login);
     bool removeUser(const QByteArray &userId);
 
     void connectToServer(const QH::HostAddress& host);
@@ -85,6 +85,7 @@ private:
     const LocalUser *getLocalUser(const QByteArray &userId) const;
     QSharedPointer<LocalUser> getEditableLocalUser(const QByteArray &userId);
     LocalUser profileToLocalUser(const ProfileData &profile);
+    LocalUser profileToLocalUser(const QByteArray &login);
 
 
     Status _status;

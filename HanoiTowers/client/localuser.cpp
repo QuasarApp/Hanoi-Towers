@@ -21,13 +21,10 @@ bool LocalUser::copyFrom(const QH::PKG::AbstractData *other) {
     if (!otherObject)
         return false;
 
-    this->_online = otherObject->_online;
     this->_hashPassword = otherObject->_hashPassword;
     this->_token = otherObject->_token;
     this->_userData = otherObject->_userData;
     this->_updateTime = otherObject->_updateTime;
-    this->_name = otherObject->_name;
-    this->_points = otherObject->_points;
 
     return true;
 }
@@ -39,11 +36,9 @@ bool LocalUser::fromSqlRecord(const QSqlRecord &q) {
 
     setHashPassword(q.value("passwordHash").toByteArray());
     setToken(QH::AccessToken{q.value("token").toByteArray()});
-    setOnline(q.value("onlineUser").toBool());
-    setUserData({q.value("userdata").toByteArray()});
+    _userData.fromBytes(q.value("userdata").toByteArray());
     setUpdateTime(q.value("updateTime").toInt());
-    setName(q.value("name").toString());
-    setPoints(q.value("points").toInt());
+
 
     return LocalUser::isValid();
 }
@@ -55,10 +50,7 @@ bool LocalUser::isValid() const {
 QH::PKG::DBVariantMap LocalUser::variantMap() const {
     return {{"passwordHash",       {_hashPassword,                      MT::InsertUpdate}},
             {"token",              {_token.toBytes(),                   MT::InsertUpdate}},
-            {"name",               {_name,                              MT::InsertUpdate}},
             {"userdata",           {_userData.toBytes(),                MT::InsertUpdate}},
-            {"onlineUser",         {_online,                            MT::InsertUpdate}},
-            {"points",             {_points,                            MT::InsertUpdate}},
             {"updateTime",         {static_cast<int>(time(nullptr)),    MT::InsertUpdate}}};
 
 }
@@ -71,22 +63,6 @@ QH::PKG::DBObject *LocalUser::createDBObject() const {
     return create<LocalUser>();
 }
 
-int LocalUser::points() const {
-    return _points;
-}
-
-void LocalUser::setPoints(int points) {
-    _points = points;
-}
-
-QString LocalUser::name() const {
-    return _name;
-}
-
-void LocalUser::setName(const QString &name) {
-    _name = name;
-}
-
 int LocalUser::updateTime() const {
     return _updateTime;
 }
@@ -95,8 +71,8 @@ void LocalUser::setUpdateTime(int updateTime) {
     _updateTime = updateTime;
 }
 
-ProfileData LocalUser::userData() const {
-    return _userData;
+const ProfileData* LocalUser::userData() const {
+    return &_userData;
 }
 
 void LocalUser::setUserData(const ProfileData &userData) {
@@ -120,9 +96,9 @@ void LocalUser::setHashPassword(const QByteArray &hashPassword) {
 }
 
 bool LocalUser::online() const {
-    return _online;
+    return _userData.isOnline();
 }
 
 void LocalUser::setOnline(bool online) {
-    _online = online;
+    _userData.setOnline(online);
 }
