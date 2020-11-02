@@ -18,6 +18,10 @@ Page {
         id: theme;
     }
 
+    signal load()
+    signal start()
+    signal newState(var state)
+
     contentItem: Item {
         id: content;
 
@@ -33,8 +37,7 @@ Page {
                 text: qsTr("continue");
                 width:  about.width * 0.8;
                 onClicked: {
-                    menuPage.parent.load()
-
+                    menuPage.load();
                 }
             }
 
@@ -47,8 +50,7 @@ Page {
                 text: qsTr("start");
                 width:  about.width * 0.8;
                 onClicked: {
-                    menuPage.parent.start()
-
+                    menuPage.start();
                 }
             }
 
@@ -60,8 +62,7 @@ Page {
                 text: qsTr("About");
                 width:  config.width * 0.8;
                 onClicked: {
-                    menuPage.parent.source = "../about.qml"
-
+                    newState("About")
                 }
             }
 
@@ -73,7 +74,8 @@ Page {
                 text: qsTr("Config");
                 width:  exit.width * 0.8;
                 onClicked: {
-                    menuPage.parent.source = "Config.qml"
+                    newState("Settings")
+
                 }
             }
 
@@ -85,7 +87,7 @@ Page {
                 text: qsTr("Users");
                 width:  exit.width * 0.8;
                 onClicked: {
-                    menuPage.parent.source = "UsersTable.qml"
+                    newState("UsersTable")
                 }
             }
 

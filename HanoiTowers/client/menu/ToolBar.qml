@@ -12,7 +12,7 @@ Rectangle {
     property var client: backEnd.onlineStatus;
     property int onlineStatus: (client)? client.status : 0
     property bool returnButton: false
-    property bool profileLabel: false
+    property string wecomMessage: ""
 
     function getStatusColor(status) {
         switch(status) {
@@ -23,29 +23,19 @@ Rectangle {
         }
     }
 
+    signal returnToMenu();
+
     height: parent.height * 0.15;
     RowLayout {
 
-        Base.BaseText {
-            Layout.alignment: Qt.AlignCenter
-
-            text: qsTr("Welcom to Hanoi Towers ") +  backEnd.profile;
-            horizontalAlignment: Text.AlignHCenter
-            verticalAlignment: Text.AlignVCenter
-            font.pixelSize: theme.headerSize;
-
-            visible: !profileLabel
-        }
 
         Base.BaseText {
             Layout.alignment: Qt.AlignCenter
 
-            text: qsTr("Profiles") + " (" + backEnd.profile + ")";
+            text: wecomMessage
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignVCenter
             font.pixelSize: theme.headerSize;
-            visible: profileLabel
-
         }
 
         Base.BaseButton {
@@ -55,7 +45,7 @@ Rectangle {
             visible: returnButton
 
             onClicked: {
-                menuPage.parent.source = "MainMenu.qml"
+                returnToMenu()
             }
         }
 
@@ -68,8 +58,8 @@ Rectangle {
             PropertyChanges {
                 target: root
                 returnButton: false
-                profileLabel: false
                 visible: true
+                wecomMessage: qsTr("Welcom to Hanoi Towers ") +  backEnd.profile
 
             }
         },
@@ -78,8 +68,8 @@ Rectangle {
             PropertyChanges {
                 target: root
                 returnButton: true
-                profileLabel: true
                 visible: true
+                wecomMessage: qsTr("Profiles") + " (" + backEnd.profile + ")";
 
             }
         },
@@ -89,8 +79,8 @@ Rectangle {
             PropertyChanges {
                 target: root
                 returnButton: true
-                profileLabel: false
                 visible: true
+                wecomMessage: qsTr("This are the main settings")
 
             }
         },
@@ -100,8 +90,8 @@ Rectangle {
             PropertyChanges {
                 target: root
                 returnButton: true
-                profileLabel: false
                 visible: true
+                wecomMessage: qsTr("About Page")
 
             }
         },
@@ -111,8 +101,8 @@ Rectangle {
             PropertyChanges {
                 target: root
                 returnButton: true
-                profileLabel: false
                 visible: false
+                wecomMessage: ""
 
             }
         }

@@ -6,8 +6,8 @@
 //#
 
 
-import QtQuick 2.9
-import QtQuick.Controls 2.2
+import QtQuick 2.15
+import QtQuick.Controls 2.15
 import NotifyModule 1.0
 import "./base" as Base
 import "./menu" as Menu
@@ -26,36 +26,95 @@ ApplicationWindow {
     }
 
     header: Menu.ToolBar {
-        state: "MainMenu"
+        state: stackview.state
+
+        onReturnToMenu: {
+            stackview.state = "MainMenu"
+        }
     }
 
-    contentData: Loader {
-        id: core
-        source: "menu/MainMenu.qml"
+    contentData: SwipeView {
+        id: stackview
+        currentIndex: 0
         anchors.fill: parent
+        interactive: false
+        Menu.MainMenu {
+            id: mainmenu
+            onStart: {
+                gamePage.start();
+                stackview.state = "Game"
 
-        property bool isLoad: false
+            }
+            onLoad: {
+                gamePage.load();
+                stackview.state = "Game"
 
-        function start() {
-            isLoad = false;
-            source = "../game.qml"
-        }
 
-        function load() {
-            isLoad = true;
-            source = "../game.qml"
-        }
-
-        onLoaded: {
-            if (isLoad) {
-                item.continue_game();
-            } else {
-                item.launch(-1);
+            }
+            onNewState: {
+                stackview.state = state;
             }
         }
+
+        Menu.UsersTable {
+            id: usersTable
+        }
+
+        Menu.Config {
+            id: configPage
+        }
+
+        About {
+            id: aboutPage
+        }
+
+        Game {
+            id: gamePage
+        }
+
+        states: [
+            State {
+                name: "MainMenu"
+                PropertyChanges {
+                    target: stackview
+                    currentIndex: 0
+                }
+            },
+            State {
+                name: "UsersTable"
+                PropertyChanges {
+                    target: stackview
+                    currentIndex: 1
+                }
+            },
+
+            State {
+                name: "Settings"
+                PropertyChanges {
+                    target: stackview
+                    currentIndex: 2
+                }
+            },
+
+            State {
+                name: "About"
+                PropertyChanges {
+                    target: stackview
+                    currentIndex: 3
+                }
+            },
+
+            State {
+                name: "Game"
+                PropertyChanges {
+                    target: stackview
+                    currentIndex: 4
+                }
+            }
+        ]
     }
 
     NotificationServiceView {
-         anchors.fill: parent;
+        anchors.fill: parent;
     }
 }

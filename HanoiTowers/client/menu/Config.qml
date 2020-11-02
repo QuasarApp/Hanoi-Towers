@@ -18,39 +18,6 @@ Item {
         id: theme;
     }
 
-    Rectangle {
-        id: head
-        color: theme.headerColor
-        height: parent.height * 0.15;
-        RowLayout {
-
-            Base.BaseText {
-                Layout.alignment: Qt.AlignCenter
-
-                text: qsTr("Settings");
-                horizontalAlignment: Text.AlignHCenter
-                verticalAlignment: Text.AlignVCenter
-                font.pixelSize: theme.headerSize;
-            }
-
-            Base.BaseButton {
-                text: qsTr("Return to main menu");
-                Layout.alignment: Qt.AlignRight
-                Layout.rightMargin: theme.pading
-
-                onClicked: {
-                    menuPage.parent.source = "MainMenu.qml"
-                }
-            }
-
-            anchors.fill: parent
-        }
-        anchors.top: parent.top
-        anchors.left: parent.left
-        anchors.right: parent.right
-
-    }
-
     Row {
 
         Image {
@@ -109,7 +76,7 @@ Item {
         anchors.left: parent.left
         anchors.right: parent.right
         anchors.bottom: parent.bottom
-        anchors.top: head.bottom
+        anchors.top: parent.top
 
     }
 

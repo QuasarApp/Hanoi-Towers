@@ -2,9 +2,9 @@
     <qresource prefix="/">
         <file>main.qml</file>
         <file>plate.qml</file>
-        <file>game.qml</file>
+        <file>Game.qml</file>
         <file>Tower.qml</file>
-        <file>about.qml</file>
+        <file>About.qml</file>
         <file>qtquickcontrols2.conf</file>
         <file>res/icon.ico</file>
         <file>base/BaseButton.qml</file>
