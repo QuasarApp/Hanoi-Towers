@@ -10,6 +10,7 @@ import QtQuick.Window 2.1
 import "utils.js" as Utils
 
 Item {
+    readonly property int gameStateFontSize: Utils.baseGameStateFontSize(Screen.pixelDensity)
     readonly property int fontSize: Utils.baseFontSize(Screen.pixelDensity)
     readonly property int headerSize: Utils.headerFontSize(Screen.pixelDensity);
     readonly property int buttonsWidth: Utils.dp(Screen.pixelDensity, 80)

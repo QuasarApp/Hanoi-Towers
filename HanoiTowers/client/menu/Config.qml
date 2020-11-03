@@ -10,6 +10,7 @@ import QtQuick.Controls 2.2
 import QtQuick.Layouts 1.3
 import QtQuick.Extras 1.4
 import "./../base" as Base
+import ".."
 
 Item {
     id:menuPage
@@ -55,12 +56,51 @@ Item {
                     backEnd.animation = checked;
                 }
             }
+
+            CheckBox {
+                id: fogConfig
+                Component.onCompleted: {
+                    checked = backEnd.fog
+                }
+                text: qsTr("Fog")
+                onCheckedChanged: {
+                    backEnd.fog = checked;
+                }
+            }
+
+            CheckBox {
+                Component.onCompleted: {
+                    checked = backEnd.fogAnimation
+                }
+                text: qsTr("Fog Animations")
+                onCheckedChanged: {
+                    backEnd.fogAnimation = checked;
+                }
+                enabled: fogConfig.checked
+            }
         }
 
-        Image {
-            id: colorsView
-            fillMode: Image.PreserveAspectFit
-            source: (backEnd && backEnd.randomColor)? "../img/random":"../img/standart"
+
+        Tower {
+            id: exampleTower
+            Component.onCompleted: {
+                let all = 5
+                let value = all
+                while (value--) {
+                    var temp = Qt.createComponent("../plate.qml")
+                    if (temp.status === Component.Ready) {
+                        let obj = temp.createObject(this)
+                        obj.mass = value + 1
+                        obj.value = all
+                        exampleTower.push(obj)
+                        obj.updateCoordinates();
+
+                    }
+                }
+            }
+
+            Layout.fillHeight: true
+            Layout.fillWidth: true
 
         }
 

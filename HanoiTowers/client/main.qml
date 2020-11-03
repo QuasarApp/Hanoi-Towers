@@ -34,21 +34,31 @@ ApplicationWindow {
         }
     }
 
+
+    background:  Fog {
+        source: "qrc:/textures/res/fogBack.png"
+        anchors.fill: parent
+        opacity: 0.2
+    }
+
     contentData: SwipeView {
         id: stackview
         state: "MainMenu"
         anchors.fill: parent
         interactive: false
+
+        background: Item {}
+
         Menu.MainMenu {
             id: mainmenu
             onStart: {
-                gamePage.start();
                 stackview.state = "Game"
+                gamePage.launch();
 
             }
             onLoad: {
-                gamePage.load();
                 stackview.state = "Game"
+                gamePage.load();
 
 
             }
@@ -71,6 +81,7 @@ ApplicationWindow {
 
         Game {
             id: gamePage
+            stateWidget: gameWindow.header.gameState
         }
 
         states: [

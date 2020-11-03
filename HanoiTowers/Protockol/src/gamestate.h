@@ -44,10 +44,10 @@ protected:
 
 private:
     QList<QList<int>> save;
-    int maxValueOfLoadedSave = 0;
+    int maxValueOfLoadedSave = 1;
     int step = 0;
 
-    short _lvl = 0;
+    short _lvl = 1;
 
 };
 

@@ -20,15 +20,19 @@
 #define DEFAULT_USER_NAME "User"
 
 #define FIRST_RUN_KEY "isFirstStart"
-#define LVL_KEY "lvl"
 #define ANIMATION_KEY "animation"
 #define RANDOM_COLOR_KEY "randomColor"
 #define CURRENT_PROFILE_KEY "currentProfile"
+#define FOG "fog"
+#define FOG_ANIMATION "fogAnimation"
 
 BackEnd::BackEnd(QQmlApplicationEngine *engine):
     QObject()
 {
     _settings = QuasarAppUtils::Settings::get();
+
+    _settingsData.animation = animation();
+    _settingsData.randomColor = randomColor();
 
     connect(this, &BackEnd::profileChanged, [this](){
         _settings->setValue(CURRENT_PROFILE_KEY, profile());
@@ -88,9 +92,10 @@ ProfileData* BackEnd::initProfile(const QByteArray& userId, const QString &userN
 void BackEnd::reset(){
 
     _settings->setValue(FIRST_RUN_KEY, true);
-    _settings->setValue(LVL_KEY, 1);
     _settings->setValue(ANIMATION_KEY, true);
     _settings->setValue(RANDOM_COLOR_KEY, false);
+    _settings->setValue(FOG, true);
+    _settings->setValue(FOG_ANIMATION, true);
 
     if (!initProfile(DEFAULT_USER_ID, DEFAULT_USER_NAME)) {
         throw std::runtime_error("Init default profile is failed!!! on the " + std::string(__func__) + " functions");
@@ -207,6 +212,14 @@ void BackEnd::setShowHelp(bool state) {
     _settings->setValue(FIRST_RUN_KEY, state);
 }
 
+bool BackEnd::fog() const {
+    return _settings->getValue(FOG, true).toBool();
+}
+
+bool BackEnd::fogAnimation() const {
+    return _settings->getValue(FOG_ANIMATION, true).toBool();
+}
+
 BackEnd::~BackEnd() {
     _client.updateProfile(*_profile);
 }
@@ -267,4 +280,28 @@ void BackEnd::setReward(int revard) {
     if (_profile->record() < revard) {
         _profile->setRecord(revard);
     }
+}
+
+void BackEnd::setFog(bool fog) {
+    if (_settingsData.fog == fog)
+        return;
+
+    _settingsData.fog = fog;
+    _settings->setValue(FOG, fog);
+
+    if (!_settingsData.fog)
+        setFogAnimation(_settingsData.fog);
+
+    emit fogChanged(_settingsData.fog);
+}
+
+void BackEnd::setFogAnimation(bool fogAnimation) {
+    if (_settingsData.fogAnimation == fogAnimation ||
+            !_settingsData.fog)
+        return;
+
+    _settingsData.fogAnimation = fogAnimation;
+    _settings->setValue(FOG_ANIMATION, fogAnimation);
+
+    emit fogAnimationChanged(_settingsData.fogAnimation);
 }

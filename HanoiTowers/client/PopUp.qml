@@ -15,6 +15,7 @@ Dialog {
     x: (parent.width - width) / 2
     y: (parent.height - height) / 2
     property alias text : textContainer.text
+    property var action: function () {}
 
     Base.BaseText {
         id: textContainer
@@ -23,5 +24,9 @@ Dialog {
 
         horizontalAlignment: Qt.AlignLeft
         verticalAlignment: Qt.AlignTop
+    }
+
+    onAccepted: {
+        action();
     }
 }

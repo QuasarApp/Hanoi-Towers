@@ -38,6 +38,10 @@ function baseFontSize(pixelDensity){
     return Number(dp(pixelDensity, 14));
 }
 
+function baseGameStateFontSize(pixelDensity){
+    return Number(dp(pixelDensity, 16));
+}
+
 function headerFontSize(pixelDensity){
     return Number(dp(pixelDensity, 28));
 }

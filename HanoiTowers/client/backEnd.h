@@ -34,6 +34,9 @@ class BackEnd: public QObject
     Q_OBJECT
     Q_PROPERTY(bool randomColor READ randomColor WRITE setRandomColor NOTIFY randomColorChanged)
     Q_PROPERTY(bool animation READ animation WRITE setAnimation NOTIFY animationChanged)
+    Q_PROPERTY(bool fog READ fog WRITE setFog NOTIFY fogChanged)
+    Q_PROPERTY(bool fogAnimation READ fogAnimation WRITE setFogAnimation NOTIFY fogAnimationChanged)
+
     Q_PROPERTY(QObject* gameState READ gameState)
     Q_PROPERTY(QObject* client READ client)
     Q_PROPERTY(QObject* profileObject READ profileObject NOTIFY profileChanged)
@@ -63,6 +66,10 @@ public:
      * @param state - a new state of show help message
      */
     Q_INVOKABLE void setShowHelp(bool state);
+
+    bool fog() const;
+
+    bool fogAnimation() const;
 
 public slots:
 
@@ -123,10 +130,10 @@ public slots:
     QObject* profileObject() const;
 
     void removeUser(const QByteArray &userId);
-
     void setProfile(QString userId);
-
     void setReward(int);
+    void setFog(bool fog);
+    void setFogAnimation(bool fogAnimation);
 
 signals:
     void animationChanged();
@@ -137,6 +144,10 @@ signals:
     void usersListModelChanged(QObject* usersListModel);
     void showOnlinePage();
 
+
+    void fogChanged(bool fog);
+
+    void fogAnimationChanged(bool fogAnimation);
 
 private slots:
     void handleOnlineRequestfromProfile(const QString&);

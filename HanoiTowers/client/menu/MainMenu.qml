@@ -18,6 +18,8 @@ Page {
         id: theme;
     }
 
+    background: Item {}
+
     signal load()
     signal start()
     signal newState(var state)

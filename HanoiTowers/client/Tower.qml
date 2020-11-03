@@ -18,45 +18,12 @@ Item {
     signal click(var obj)
 
     Rectangle {
-
-        id: centerLine
-        height: parent.height
-        width: parent.width / 20
-        x: parent.width / 2 - width / 2
-        y: 0
-        radius: 20
-
-
-        LinearGradient {
-            source: parent
-            anchors.fill: parent
-            start: Qt.point(0, centerLine.height / 2)
-            end: Qt.point(centerLine.width, parent.height / 2)
-            gradient: Gradient {
-                GradientStop {
-                    position: 0.0
-                    color: "#f0cb98"
-                }
-                GradientStop {
-                    position: 1.0
-                    color: "#d9b077"
-                }
-            }
-        }
-
-    }
-
-    Image {
-
-        id: bottomLine
-        width: parent.width
-        height: 10
-        x: 0
-        fillMode: Image.TileVertically
-        source: "/textures/res/wood.png"
-
+        color: "#d1cccc"
         anchors.bottomMargin: 0
         anchors.bottom: parent.bottom
+        height: 10
+        x: 0
+        width: parent.width
     }
 
     function up() {

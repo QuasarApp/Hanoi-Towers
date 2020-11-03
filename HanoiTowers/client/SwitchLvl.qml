@@ -6,8 +6,8 @@
 //#
 
 
-import QtQuick 2.9
-import QtQuick.Controls 2.2
+import QtQuick 2.15
+import QtQuick.Controls 2.15
 import "./base" as Base
 
 Rectangle {
@@ -17,7 +17,7 @@ Rectangle {
     visible: false
 
     signal start(var lvl);
-    property var spin: spin
+    property alias spin: spin
 
     Tumbler {
 
@@ -26,10 +26,6 @@ Rectangle {
         model: 99
         property int value: 4
         property int maximumValue: 99
-
-        function format(){
-
-        }
 
         delegate: Text {
 

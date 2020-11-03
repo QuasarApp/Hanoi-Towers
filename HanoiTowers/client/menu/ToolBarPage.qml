@@ -10,9 +10,13 @@ ToolBar {
     property var client: (backEnd)? backEnd.onlineStatus: null;
     property int onlineStatus: (client)? client.status : 0
     property bool returnButton: false
+    property bool gameStateWidget: false
+
     property string wecomMessage: ""
 
     property string p_profile: (backEnd)? backEnd.profile: ""
+
+    property alias gameState: gameWidget
 
     function getStatusColor(status) {
         switch(status) {
@@ -31,7 +35,6 @@ ToolBar {
 
     RowLayout {
 
-
         Base.BaseText {
             Layout.alignment: Qt.AlignCenter
             Layout.preferredHeight: returnBut.height
@@ -40,6 +43,14 @@ ToolBar {
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignVCenter
             font.pixelSize: theme.headerSize;
+        }
+
+        GameStateWidget {
+            id: gameWidget
+            visible: gameStateWidget
+            Layout.preferredHeight: returnBut.height
+            Layout.fillWidth: true
+
         }
 
         ToolButton {
@@ -64,6 +75,7 @@ ToolBar {
                 target: root
                 returnButton: false
                 visible: true
+                gameStateWidget: false
                 wecomMessage: qsTr("Welcom to Hanoi Towers ") + p_profile
 
             }
@@ -74,6 +86,7 @@ ToolBar {
                 target: root
                 returnButton: true
                 visible: true
+                gameStateWidget: false
                 wecomMessage: qsTr("Profiles") + " (" + p_profile + ")";
 
             }
@@ -85,6 +98,7 @@ ToolBar {
                 target: root
                 returnButton: true
                 visible: true
+                gameStateWidget: false
                 wecomMessage: qsTr("This are the main settings")
 
             }
@@ -96,6 +110,7 @@ ToolBar {
                 target: root
                 returnButton: true
                 visible: true
+                gameStateWidget: false
                 wecomMessage: qsTr("About Page")
 
             }
@@ -106,7 +121,8 @@ ToolBar {
             PropertyChanges {
                 target: root
                 returnButton: true
-                visible: false
+                visible: true
+                gameStateWidget: true
                 wecomMessage: ""
 
             }
