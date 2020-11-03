@@ -80,7 +80,7 @@ Dialog {
                 id: indicator
                 width: height * 0.9
                 color: "#3bffd1"
-                active: !backEnd.isFirst;
+                active: (backEnd)? !backEnd.isFirst(): false;
                 anchors.left: text.right
                 anchors.leftMargin: width / 2
                 anchors.top: parent.top

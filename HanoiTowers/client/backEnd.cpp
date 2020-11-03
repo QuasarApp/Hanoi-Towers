@@ -173,17 +173,26 @@ bool BackEnd::randomColor() const {
 }
 
 void BackEnd::setRandomColor(bool random) {
-    _settings->setValue(RANDOM_COLOR_KEY, random);
-    emit randomColorChanged();
+
+    if (_settingsData.randomColor != random) {
+
+        _settings->setValue(RANDOM_COLOR_KEY, random);
+        _settingsData.randomColor = random;
+        emit randomColorChanged();
+    }
 }
 
 bool BackEnd::animation() const{
     return _settings->getValue(ANIMATION_KEY, true).toBool();
 }
 
-void BackEnd::setAnimation(bool name) {
-    _settings->setValue(ANIMATION_KEY, name);
-    emit animationChanged();
+void BackEnd::setAnimation(bool value) {
+    if (_settingsData.animation != value) {
+
+        _settings->setValue(ANIMATION_KEY, value);
+        _settingsData.animation = value;
+        emit animationChanged();
+    }
 }
 
 unsigned short BackEnd::getMinSteps(const unsigned short lvl) const{
@@ -196,8 +205,6 @@ bool BackEnd::isFirst()const{
 
 void BackEnd::setShowHelp(bool state) {
     _settings->setValue(FIRST_RUN_KEY, state);
-    emit firstChanged();
-
 }
 
 BackEnd::~BackEnd() {

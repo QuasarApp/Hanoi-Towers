@@ -18,65 +18,53 @@ Item {
         id: theme;
     }
 
-    Row {
+    RowLayout {
 
-        Image {
-            id: colorsView
-            fillMode: Image.PreserveAspectFit
-            source: (backEnd.randomColor)? "../img/random":"../img/standart"
-            height: width
-            width: menuPage.width * 0.5
-
-        }
-
-        Column {
+        ColumnLayout {
 
             id: colors
-            width: colorsView.width
-            height: colorsView.height
-            anchors.right: parent.right
-            anchors.rightMargin: parent.width * 0.1
-            anchors.left: colorsView.right
 
+            Layout.alignment: Layout.Center
 
             RadioButton {
                 id: r1
-                checked: !backEnd.randomColor
+                checked: backEnd&& !backEnd.randomColor
                 text: qsTr("Standart color")
 
-                width: colorsView.width;
                 onCheckedChanged: {
-                    backEnd.randomColor = false;
+                    if (backEnd)
+                        backEnd.randomColor = false;
                 }
             }
 
             RadioButton {
                 id:r2
-                checked: backEnd.randomColor
+                checked: backEnd && backEnd.randomColor
                 text: qsTr("Random color")
-                width: colorsView.width;
                 onCheckedChanged: {
                     backEnd.randomColor = true;
                 }
             }
 
             CheckBox {
-                height: colorsView.height * 0.3;
-                width: colorsView.width;
+                Component.onCompleted: {
+                    checked = backEnd.animation
+                }
                 text: qsTr("Animation")
-                checked: backEnd.animation
                 onCheckedChanged: {
                     backEnd.animation = checked;
                 }
             }
-
-            Layout.alignment: Qt.AlignLeft
         }
 
-        anchors.left: parent.left
-        anchors.right: parent.right
-        anchors.bottom: parent.bottom
-        anchors.top: parent.top
+        Image {
+            id: colorsView
+            fillMode: Image.PreserveAspectFit
+            source: (backEnd && backEnd.randomColor)? "../img/random":"../img/standart"
+
+        }
+
+        anchors.fill: parent
 
     }
 

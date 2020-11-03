@@ -8,6 +8,7 @@
 
 import QtQuick 2.15
 import QtQuick.Controls 2.15
+import QtQuick.Controls.Material 2.15
 import NotifyModule 1.0
 import "./base" as Base
 import "./menu" as Menu
@@ -25,7 +26,7 @@ ApplicationWindow {
         id: theme;
     }
 
-    header: Menu.ToolBar {
+    header: Menu.ToolBarPage {
         state: stackview.state
 
         onReturnToMenu: {
@@ -35,7 +36,7 @@ ApplicationWindow {
 
     contentData: SwipeView {
         id: stackview
-        currentIndex: 0
+        state: "MainMenu"
         anchors.fill: parent
         interactive: false
         Menu.MainMenu {

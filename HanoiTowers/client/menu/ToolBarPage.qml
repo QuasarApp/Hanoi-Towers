@@ -4,15 +4,15 @@ import QtQuick.Layouts 1.3
 
 import "./../base" as Base
 
-Rectangle {
+ToolBar {
     id: root
 
-    color: getStatusColor(onlineStatus)
-
-    property var client: backEnd.onlineStatus;
+    property var client: (backEnd)? backEnd.onlineStatus: null;
     property int onlineStatus: (client)? client.status : 0
     property bool returnButton: false
     property string wecomMessage: ""
+
+    property string p_profile: (backEnd)? backEnd.profile: ""
 
     function getStatusColor(status) {
         switch(status) {
@@ -25,12 +25,16 @@ Rectangle {
 
     signal returnToMenu();
 
-    height: parent.height * 0.15;
+    background: Rectangle {
+        color: getStatusColor(onlineStatus)
+    }
+
     RowLayout {
 
 
         Base.BaseText {
             Layout.alignment: Qt.AlignCenter
+            Layout.preferredHeight: returnBut.height
 
             text: wecomMessage
             horizontalAlignment: Text.AlignHCenter
@@ -38,7 +42,8 @@ Rectangle {
             font.pixelSize: theme.headerSize;
         }
 
-        Base.BaseButton {
+        ToolButton {
+            id: returnBut
             text: qsTr("Return to main menu");
             Layout.alignment: Qt.AlignRight
             Layout.rightMargin: theme.pading
@@ -59,7 +64,7 @@ Rectangle {
                 target: root
                 returnButton: false
                 visible: true
-                wecomMessage: qsTr("Welcom to Hanoi Towers ") +  backEnd.profile
+                wecomMessage: qsTr("Welcom to Hanoi Towers ") + p_profile
 
             }
         },
@@ -69,7 +74,7 @@ Rectangle {
                 target: root
                 returnButton: true
                 visible: true
-                wecomMessage: qsTr("Profiles") + " (" + backEnd.profile + ")";
+                wecomMessage: qsTr("Profiles") + " (" + p_profile + ")";
 
             }
         },

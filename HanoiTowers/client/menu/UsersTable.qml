@@ -55,7 +55,7 @@ Item {
             Layout.columnSpan: 3
             clip: true
 
-            model: backEnd.profileList
+            model: (backEnd)? backEnd.profileList: null
             delegate: UserTableDelegate {
 
                 onRemovedRow: {
@@ -81,7 +81,7 @@ Item {
 
         Connections {
             target: backEnd;
-            onShowOnlinePage :{
+            function onShowOnlinePage () {
                 loginPopUp.open();
             }
         }

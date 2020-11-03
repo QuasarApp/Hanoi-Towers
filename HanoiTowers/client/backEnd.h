@@ -10,6 +10,7 @@
 #include "gamestate.h"
 #include "hanoiclient.h"
 #include "profiledata.h"
+#include "settingsdata.h"
 #include <quasarapp.h>
 #include <QObject>
 #include <QFile>
@@ -31,7 +32,6 @@ class RecordListModel;
 class BackEnd: public QObject
 {
     Q_OBJECT
-    Q_PROPERTY(bool isFirst READ isFirst WRITE setShowHelp NOTIFY firstChanged)
     Q_PROPERTY(bool randomColor READ randomColor WRITE setRandomColor NOTIFY randomColorChanged)
     Q_PROPERTY(bool animation READ animation WRITE setAnimation NOTIFY animationChanged)
     Q_PROPERTY(QObject* gameState READ gameState)
@@ -52,6 +52,17 @@ public:
 
     Q_INVOKABLE bool createProfile(const QString &userId, const QString& userName);
 
+    /**
+     * @brief isFirst
+     * @return true if is first start
+     */
+    Q_INVOKABLE bool isFirst()const;
+
+    /**
+     * @brief setShowHelp set new state for show help message
+     * @param state - a new state of show help message
+     */
+    Q_INVOKABLE void setShowHelp(bool state);
 
 public slots:
 
@@ -62,17 +73,7 @@ public slots:
      */
     unsigned short getMinSteps(const unsigned short lvl) const;
 
-    /**
-     * @brief isFirst
-     * @return true if is first start
-     */
-    bool isFirst()const;
 
-    /**
-     * @brief setShowHelp set new state for show help message
-     * @param state - a new state of show help message
-     */
-    void setShowHelp(bool state);
 
     /**
      * @brief reset all config to default values.
@@ -95,7 +96,7 @@ public slots:
      * @brief setAnimation
      * @param name of new animation;
      */
-    void setAnimation(bool name);
+    void setAnimation(bool valeu);
 
     /**
      * @brief setRandomColor
@@ -128,7 +129,6 @@ public slots:
     void setReward(int);
 
 signals:
-    void firstChanged();
     void animationChanged();
     void randomColorChanged();
     void profileListChanged();
@@ -154,6 +154,8 @@ private:
 
     ProfileData *_profile = nullptr;
     HanoiClient _client;
+
+    SettingsData _settingsData;
 
 };
 
