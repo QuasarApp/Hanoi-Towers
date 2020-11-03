@@ -32,6 +32,10 @@ ApplicationWindow {
         onReturnToMenu: {
             stackview.state = "MainMenu"
         }
+
+        onRestart: {
+            gamePage.start(level);
+        }
     }
 
 

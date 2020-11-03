@@ -6,9 +6,9 @@
 //#
 
 
-import QtQuick 2.9
-import QtQuick.Controls 2.2
-import QtQuick.Extras 1.4
+import QtQuick 2.15
+import QtQuick.Controls 2.15
+import QtQuick.Layouts 1.3
 
 import "./base" as Base
 
@@ -22,16 +22,17 @@ Dialog {
     y: (parent.height - height) / 2
 
 
-    Item {
+    ColumnLayout {
+
+        spacing: 40
 
         Image {
             id: example
 
-            height: parent.height * 0.45
             fillMode: Image.PreserveAspectFit
-            anchors.left: parent.left
-            anchors.right: parent.right
-            anchors.top: parent.top
+
+            Layout.preferredHeight:  helpDialog.height * 0.5
+            Layout.fillWidth: true;
 
             source: "/img/Help"
         }
@@ -39,18 +40,8 @@ Dialog {
         Base.BaseText {
             id: textContainer
 
-            anchors.left: parent.left
-            anchors.leftMargin: parent.width * 0.05
-
-            anchors.right: parent.right
-            anchors.rightMargin: parent.height * 0.05
-
-            anchors.top: example.bottom
-            anchors.topMargin: parent.width * 0.05
-
-            anchors.bottom: status.top
-            anchors.bottomMargin: parent.height * 0.05
-
+            Layout.fillHeight: true;
+            Layout.fillWidth: true;
 
             wrapMode:Text.Wrap ;
 
@@ -63,64 +54,27 @@ Dialog {
             horizontalAlignment: Text.AlignLeft
         }
 
-        Item{
-            id: status;
-            Base.BaseText{
-                id: text
-                text: qsTr("Do not show again:");
-                verticalAlignment: Text.AlignVCenter
-                horizontalAlignment: Text.AlignHCenter
-                anchors.left: parent.left
-                anchors.top: parent.top
+        CheckBox {
+            id: indicator
 
-
-            }
-
-            StatusIndicator{
-                id: indicator
-                width: height * 0.9
-                color: "#3bffd1"
-                active: (backEnd)? !backEnd.isFirst(): false;
-                anchors.left: text.right
-                anchors.leftMargin: width / 2
-                anchors.top: parent.top
-
-                MouseArea{
-                    anchors.fill: parent;
-                    onClicked: {
-                        backEnd.setShowHelp(indicator.active);
-                    }
+            Layout.alignment: Qt.AlignBottom
+            text: qsTr("Do not show again")
+            Component.onCompleted: {
+                if (backEnd) {
+                    checked = !backEnd.isFirst()
                 }
-
             }
 
-            Base.BaseButton{
-                text: qsTr("Ok");
-                onClicked: {
-                    backEnd.setShowHelp(!indicator.active);
-                    helpDialog.close();
-                }
-                anchors.top: parent.top
-                anchors.right: parent.right
+            onCheckedChanged: {
+                backEnd.setShowHelp(!indicator.checked);
             }
-
-            height: parent.height * 0.1;
-
-            anchors.left: parent.left
-            anchors.leftMargin: parent.width * 0.05
-
-            anchors.right: parent.right
-            anchors.rightMargin: parent.height * 0.05
-
-            anchors.bottom: parent.bottom
-            anchors.bottomMargin: parent.height * 0.05
 
         }
 
         anchors.fill: parent
     }
-    onAccepted:{
-        backEnd.setShowHelp(!indicator.active);
-    }
+
+    standardButtons: Dialog.Ok
+
 
 }

@@ -36,7 +36,7 @@ Item {
     }
 
     function launch() {
-        if (backEnd.isFirst) {
+        if (backEnd.isFirst()) {
             help.open();
         }
 

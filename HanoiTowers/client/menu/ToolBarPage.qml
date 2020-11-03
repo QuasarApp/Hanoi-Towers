@@ -28,6 +28,7 @@ ToolBar {
     }
 
     signal returnToMenu();
+    signal restart(var level);
 
     background: Rectangle {
         color: getStatusColor(onlineStatus)
@@ -50,6 +51,10 @@ ToolBar {
             visible: gameStateWidget
             Layout.preferredHeight: returnBut.height
             Layout.fillWidth: true
+
+            onRestart: {
+                root.restart(level);
+            }
 
         }
 

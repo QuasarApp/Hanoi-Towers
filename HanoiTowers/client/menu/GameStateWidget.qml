@@ -12,6 +12,7 @@ RowLayout {
 
     property alias tumbler: tumblerWidget
     property alias step: stepWidget.ste
+    signal restart(var level);
 
     spacing: Screen.pixelDensity * 5
 
@@ -39,7 +40,7 @@ RowLayout {
             id: tumblerWidget
 
             onStart: {
-                gameWindow.start(lvl);
+                restart(lvl);
             }
             height: parent.height * 4
             anchors.top: parent.bottom
