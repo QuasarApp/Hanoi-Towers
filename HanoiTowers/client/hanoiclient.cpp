@@ -259,6 +259,10 @@ void HanoiClient::connectToServer(const QH::HostAddress &host) {
     _serverAddress = host;
 }
 
+QMap<QString, UserPreview> HanoiClient::localUsersPreview() {
+
+}
+
 void HanoiClient::nodeConfirmend(const QH::HostAddress &node) {
     setStatus(Status::Connected);
     DataBaseNode::nodeConfirmend(node);

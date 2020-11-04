@@ -51,7 +51,7 @@ bool UserData::fromSqlRecord(const QSqlRecord &q) {
     return isValid();
 }
 
-QPair<QString, QString> UserData::altarnativeKey() const {
+QPair<QString, QString> UserData::condition() const {
     return {};
 }
 

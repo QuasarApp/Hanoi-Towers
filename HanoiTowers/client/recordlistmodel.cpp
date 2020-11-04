@@ -50,13 +50,13 @@ QVariant RecordListModel::data(const QModelIndex &index, int role) const {
     return {};
 }
 
-void RecordListModel::setSource(const QMap<QString, userPreview> &data) {
+void RecordListModel::setSource(const QMap<QString, UserPreview> &data) {
     beginResetModel();
     _data = data;
     endResetModel();
 }
 
-void RecordListModel::updateSourceInte(const userPreview &data) {
+void RecordListModel::updateSourceItem(const UserPreview &data) {
     int row = std::distance(_data.begin(), _data.find(data.UserName));
     if (row >= 0) {
         emit dataChanged(index(row, 0), index(row, 3));

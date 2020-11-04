@@ -18,7 +18,7 @@ public:
     DBObject *createDBObject() const override;
     //sql
     bool fromSqlRecord(const QSqlRecord &q) override;
-    QPair<QString, QString> altarnativeKey() const override;
+    QPair<QString, QString> condition() const override;
 
 
     bool isValid() const override;

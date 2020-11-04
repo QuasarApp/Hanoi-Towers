@@ -3,12 +3,7 @@
 #include <QAbstractTableModel>
 #include <QMap>
 #include <qqml.h>
-
-struct userPreview {
-    QString UserName;
-    int record;
-    bool online;
-};
+#include "userpreview.h"
 
 class RecordListModel: public QAbstractTableModel
 {
@@ -28,12 +23,12 @@ public:
     int columnCount(const QModelIndex &parent) const override;
     QVariant data(const QModelIndex &index, int role) const override;
 
-    void setSource(const QMap<QString, userPreview> &data);
-    void updateSourceInte(const userPreview& data);
+    void setSource(const QMap<QString, UserPreview> &data);
+    void updateSourceItem(const UserPreview& data);
     void removeSourceItem(const QString& name);
 
 private:
-    QMap<QString, userPreview>  _data;
+    QMap<QString, UserPreview>  _data;
 
     // QAbstractItemModel interface
 public:

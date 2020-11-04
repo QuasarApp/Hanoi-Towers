@@ -9,10 +9,6 @@ Item {
 
     visible: backEnd.fog
 
-    onVisibleChanged: {
-
-        console.log("Fog visible = " + fog)
-    }
 
     Image {
         id: background

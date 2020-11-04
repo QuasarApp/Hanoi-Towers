@@ -16,6 +16,7 @@
 #define REMOTE_PORT 7770
 #include <databasenode.h>
 #include <profiledata.h>
+#include <userpreview.h>
 
 class LocalUser;
 class UserData;
@@ -42,7 +43,6 @@ public:
     QH::ParserResult parsePackage(const QH::Package &pkg,
                                   const QH::AbstractNodeInfo *sender) override;
 
-    QStringList SQLSources() const override;
 
     QByteArray currentUserId() const;
 
@@ -58,6 +58,8 @@ public:
 
     void connectToServer(const QH::HostAddress& host);
 
+    QMap<QString, UserPreview> localUsersPreview();
+
     // AbstractNode interface
     Status getStatus() const;
     void setStatus(const Status &status);
@@ -67,6 +69,7 @@ protected:
     void nodeConnected(const QH::HostAddress &node) override;
     void nodeDisconnected(const QH::HostAddress &node) override;
     QByteArray hashgenerator(const QByteArray &data) override;
+    QStringList SQLSources() const override;
 
 signals:
     void requestError(const QString & err);
