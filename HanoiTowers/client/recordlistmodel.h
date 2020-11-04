@@ -5,22 +5,20 @@
 #include <qqml.h>
 #include "userpreview.h"
 
-class RecordListModel: public QAbstractTableModel
+class RecordListModel: public QAbstractListModel
 {
     Q_OBJECT
 
 public:
 
     enum RecordListModelRoles {
-        OnlineRole = Qt::UserRole,
-        RemoveRole
-
+        Username = Qt::UserRole,
+        Record
     };
 
     RecordListModel(QObject * parent = nullptr);
 
     int rowCount(const QModelIndex &parent) const override;
-    int columnCount(const QModelIndex &parent) const override;
     QVariant data(const QModelIndex &index, int role) const override;
 
     void setSource(const QMap<QString, UserPreview> &data);
@@ -29,6 +27,7 @@ public:
 
 private:
     QMap<QString, UserPreview>  _data;
+
 
     // QAbstractItemModel interface
 public:

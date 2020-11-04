@@ -51,10 +51,6 @@ bool UserData::fromSqlRecord(const QSqlRecord &q) {
     return isValid();
 }
 
-QPair<QString, QString> UserData::condition() const {
-    return {};
-}
-
 bool UserData::isValid() const {
     return DBObject::isValid() && _userData.name().size() > 0 && _updateTime > 1604255995;
 }

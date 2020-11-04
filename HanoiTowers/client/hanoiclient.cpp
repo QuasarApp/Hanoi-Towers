@@ -15,6 +15,7 @@
 #include <userdatarequest.h>
 #include <sqldbwriter.h>
 #include "hanoierrorcodes.h"
+#include "localrecordstable.h"
 
 HanoiClient::HanoiClient() {
     initSqlDb("",
@@ -260,7 +261,13 @@ void HanoiClient::connectToServer(const QH::HostAddress &host) {
 }
 
 QMap<QString, UserPreview> HanoiClient::localUsersPreview() {
+    LocalRecordsTable query;
+    auto result = db()->getObject(query);
 
+    if (!result)
+        return {};
+
+    return result->data();
 }
 
 void HanoiClient::nodeConfirmend(const QH::HostAddress &node) {

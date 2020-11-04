@@ -12,33 +12,30 @@ import QtQuick.Controls 2.13
 import QtQuick.Controls.Material 2.13
 import "./../base" as Base
 import LoginViewModule 1.0
+import QtQuick.Window 2.15
 
 Item {
     id:menuPage
 
     GridLayout {
         id: gridLayout
+
         rows: 3
-        columns: 3
+        columns: 2
 
         anchors.fill: parent
 
-        Switch {
-            id: element
-            text: qsTr("Online user")
-        }
+        flow: GridLayout.TopToBottom
 
-        TextField {
-            Layout.fillWidth: true
-
-            id: textField
-            text: ""
-            placeholderText: qsTr("Enter the name of new user");
+        UserView {
+            Layout.rowSpan: 3
         }
 
         Base.BaseButton {
             id: button
             text: qsTr("Create the new user")
+
+            Layout.alignment:  Qt.AlignRight
 
             onClicked: {
                 if (backEnd) {
@@ -47,28 +44,34 @@ Item {
             }
         }
 
-        TableView {
+        TextField {
+            readOnly: true;
+            text: qsTr("Locale users list")
+            Layout.columnSpan: 2
+            Layout.fillWidth: true
+            horizontalAlignment: Text.AlignHCenter
+
+        }
+
+        ListView {
 
             id: listView
             Layout.fillWidth: true
             Layout.fillHeight: true
-            Layout.columnSpan: 3
+            Layout.columnSpan: 2
             clip: true
 
             model: (backEnd)? backEnd.profileList: null
-            delegate: UserTableDelegate {
-
-                onRemovedRow: {
-                    backEnd.removeUser(modelData)
-                }
-
-                onOnlineRowChanged: {
-                    backEnd.setOnline(modelData, online);
-                }
+            delegate:
+                UserTableRow {
+                name: username
+                points: record
+                width: listView.width
 
                 onClicked: {
                     backEnd.setProfile(modelData);
                 }
+
             }
         }
 
@@ -86,7 +89,4 @@ Item {
             }
         }
     }
-
-
-
 }

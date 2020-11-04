@@ -31,9 +31,6 @@ BackEnd::BackEnd(QQmlApplicationEngine *engine):
 {
     _settings = QuasarAppUtils::Settings::get();
 
-    _settingsData.animation = animation();
-    _settingsData.randomColor = randomColor();
-
     connect(this, &BackEnd::profileChanged, [this](){
         _settings->setValue(CURRENT_PROFILE_KEY, profile());
     });
@@ -49,6 +46,7 @@ BackEnd::BackEnd(QQmlApplicationEngine *engine):
     _loginModel->init(engine);
 
     _recordsTable = new RecordListModel(this);
+    _recordsTable->setSource(_client.localUsersPreview());
 
     connect(_loginModel , &LoginView::LVMainModel::sigLoginRequest,
             this, &BackEnd::handleOnlineRequest);

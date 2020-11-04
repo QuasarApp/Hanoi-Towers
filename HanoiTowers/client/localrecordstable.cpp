@@ -23,25 +23,16 @@ bool LocalRecordsTable::fromSqlRecord(const QSqlRecord &q) {
     return true;
 }
 
-QDataStream &LocalRecordsTable::fromStream(QDataStream &stream) {
-    QH::PKG::DBObject::fromStream(stream);
-
-    stream >> _data;
-    return stream;
-}
-
-QDataStream &LocalRecordsTable::toStream(QDataStream &stream) const {
-    QH::PKG::DBObject::toStream(stream);
-
-    stream << _data;
-
-    return stream;
-
+QH::PKG::DBObject *LocalRecordsTable::createDBObject() const {
+    return create<LocalRecordsTable>();
 }
 
 QH::PKG::DBVariantMap LocalRecordsTable::variantMap() const {
-    return {{"id",          {}},
-            {"userdata",    {}}};
+    return {{"userdata",    {}}};
+}
+
+QString LocalRecordsTable::condition() const {
+    return "";
 }
 
 const QMap<QString, UserPreview> &LocalRecordsTable::data() const {
@@ -57,5 +48,5 @@ void LocalRecordsTable::clear() {
 }
 
 bool LocalRecordsTable::isValid() const{
-    return _data.size();
+    return true;
 }

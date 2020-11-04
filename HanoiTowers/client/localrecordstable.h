@@ -11,6 +11,7 @@ public:
     LocalRecordsTable();
 
     bool fromSqlRecord(const QSqlRecord &q) override;
+    QH::PKG::DBObject *createDBObject() const override;
 
     const QMap<QString, UserPreview>& data() const;
     void setData(const QMap<QString, UserPreview> &data);
@@ -18,13 +19,11 @@ public:
     bool isValid() const override;
 
 protected:
-    QDataStream &fromStream(QDataStream &stream) override;
-    QDataStream &toStream(QDataStream &stream) const override;
     QH::PKG::DBVariantMap variantMap() const override;
+    QString condition() const override;
 
 private:
     QMap<QString, UserPreview> _data;
-
 };
 
 #endif // LOCALRECORDSTABLE_H

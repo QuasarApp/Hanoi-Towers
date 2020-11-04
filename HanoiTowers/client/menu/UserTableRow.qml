@@ -6,18 +6,18 @@
 //#
 
 
-import QtQuick 2.13
+import QtQuick 2.15
 import QtQuick.Layouts 1.3
-import QtQuick.Controls 2.13
-import QtQuick.Controls.Material 2.13
+import QtQuick.Controls 2.15
+import QtQuick.Controls.Material 2.15
+import QtQuick.Window 2.15
+
 import "./../base" as Base
 
 Item {
     id: row
     property string name: ""
-    property bool online: false
-    property string record: "0"
-    property int recordLength: 0
+    property string points: "0"
     property bool selected: false
 
     height: source.height
@@ -37,29 +37,15 @@ Item {
         }
     }
 
+    Base.Theme{
+        id: theme;
+    }
+
     RowLayout {
         id : source
 
         anchors.left: parent.left
         anchors.right: parent.right
-
-        Base.Theme{
-            id: theme;
-        }
-
-        Switch {
-            text: qsTr("Online user")
-            position: online
-            onPositionChanged: {
-                onlineRowChanged(Boolean(position));
-            }
-
-            ToolTip.visible: pressed || hovered
-            ToolTip.delay: Qt.styleHints.mousePressAndHoldInterval
-            ToolTip.timeout: 10000
-            ToolTip.text: qsTr("If this option is enabled, your saves and the record will be saved on the network.")
-
-        }
 
         TextField {
             Layout.fillWidth: true
@@ -72,22 +58,11 @@ Item {
             }
         }
 
-        Text {
-            text: record
-            Layout.minimumWidth: recordLength - deleteUser.width
+        TextField {
+            text: points
+            readOnly: true;
+            Layout.minimumWidth: 5 * Screen.pixelDensity
 
-        }
-
-        Base.BaseButton {
-            id: deleteUser;
-            text: "X"
-
-            Layout.maximumHeight:  theme.smallbuttonsSize
-            Layout.maximumWidth: theme.smallbuttonsSize
-
-            onClicked: {
-                removedRow();
-            }
         }
     }
 }

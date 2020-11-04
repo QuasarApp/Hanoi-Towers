@@ -18,8 +18,8 @@ import QtQuick.Layouts 1.3
 ApplicationWindow {
     visible: true
     id: gameWindow
-    width: 640
-    height: 480
+    width: 1240
+    height: 720
     title: qsTr("Hanoi Towers")
 
     Base.Theme{

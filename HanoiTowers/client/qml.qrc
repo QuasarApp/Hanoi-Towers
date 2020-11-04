@@ -21,9 +21,9 @@
         <file>menu/UsersTable.qml</file>
         <file>menu/UserTableRow.qml</file>
         <file>menu/ToolBarPage.qml</file>
-        <file>menu/UserTableDelegate.qml</file>
         <file>menu/GameStateWidget.qml</file>
         <file>Fog.qml</file>
+        <file>menu/UserView.qml</file>
     </qresource>
     <qresource prefix="/textures">
         <file>res/fogBack.png</file>
