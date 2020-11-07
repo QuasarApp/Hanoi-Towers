@@ -5,3 +5,12 @@ CREATE TABLE IF NOT EXISTS Users (
     userdata BLOB default NULL,
     updateTime INTEGER default 0
 );
+
+CREATE TABLE IF NOT EXISTS Avatars (
+    id VARCHAR(64) NOT NULL,
+    data BLOB default NULL,
+
+    FOREIGN KEY(id) REFERENCES Users(id)
+            ON UPDATE CASCADE
+            ON DELETE CASCADE
+);
