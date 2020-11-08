@@ -14,6 +14,7 @@
 #define REMOTE_HOST "127.0.0.1"
 #endif
 #define REMOTE_PORT 7770
+#include <QImage>
 #include <databasenode.h>
 #include <profiledata.h>
 #include <userpreview.h>
@@ -46,7 +47,7 @@ public:
 
     QByteArray currentUserId() const;
 
-    const ProfileData *currentProfile();
+    const ProfileData *currentProfile() const;
     bool updateProfile(const ProfileData& profile);
     bool addProfile(const ProfileData& profile);
 
@@ -63,6 +64,9 @@ public:
     // AbstractNode interface
     Status getStatus() const;
     void setStatus(const Status &status);
+
+    bool setNewAvatar(const QByteArray &userId, const QImage& image);
+    QImage userAvatar(const QByteArray &userId) const;
 
 protected:
     void nodeConfirmend(const QH::HostAddress &node) override;

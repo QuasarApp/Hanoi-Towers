@@ -23,6 +23,14 @@ void ProfileData::setRecord(int rec) {
     emit recordChanged(rec);
 }
 
+void ProfileData::setAvatarHash(int avatarHash) {
+    if (_avatarHash == avatarHash)
+        return;
+
+    _avatarHash = avatarHash;
+    emit avatarHashChanged(_avatarHash);
+}
+
 ProfileData::ProfileData(const QByteArray &userID):
     QObject(nullptr) {
     _userId = userID;
@@ -92,4 +100,8 @@ QString ProfileData::userId() const{
 
 QByteArray ProfileData::userIdRaw() const {
     return _userId;
+}
+
+int ProfileData::avatarHash() const {
+    return _avatarHash;
 }

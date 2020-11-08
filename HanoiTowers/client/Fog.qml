@@ -7,7 +7,7 @@ Item {
     property real spread: 0.1
     readonly property int duration: 10000
 
-    visible: backEnd.fog
+    visible: backEnd && backEnd.fog
 
 
     Image {
@@ -71,7 +71,7 @@ Item {
         id: tim
 
         repeat: true;
-        running: backEnd.fogAnimation
+        running: backEnd && backEnd.fogAnimation
         interval: root.duration
         onTriggered: {
 

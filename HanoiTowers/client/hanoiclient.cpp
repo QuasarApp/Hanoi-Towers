@@ -14,6 +14,7 @@
 #include <authrequest.h>
 #include <userdatarequest.h>
 #include <sqldbwriter.h>
+#include <useravatar.h>
 #include "hanoierrorcodes.h"
 #include "localrecordstable.h"
 
@@ -141,11 +142,47 @@ void HanoiClient::setStatus(const Status &status) {
     }
 }
 
+bool HanoiClient::setNewAvatar(const QByteArray &userId, const QImage &image) {
+    UserAvatar avatarData;
+    avatarData.setId(userId);
+
+    QByteArray array;
+    QDataStream stram(&array, QIODevice::WriteOnly);
+
+    stram << image;
+    avatarData.setImage(array);
+
+    if (!db()->saveObject(&avatarData)) {
+        return false;
+    }
+
+    auto profile = currentProfile();
+
+    if(profile && profile->isOnline()) {
+        return sendData(&avatarData, _serverAddress);
+    }
+
+    return true;
+}
+
+QImage HanoiClient::userAvatar(const QByteArray &userId) const {
+    UserAvatar avatarData;
+    avatarData.setId(userId);
+
+    auto result = db()->getObject(avatarData);
+
+    if (result) {
+        return QImage::fromData(result->image());
+    }
+
+    return {};
+}
+
 QByteArray HanoiClient::currentUserId() const {
     return _currentUserId;
 }
 
-const ProfileData* HanoiClient::currentProfile() {
+const ProfileData* HanoiClient::currentProfile() const {
 
     auto userData = getLocalUser(_currentUserId);
 

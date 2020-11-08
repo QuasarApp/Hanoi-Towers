@@ -28,6 +28,7 @@ class UserData;
 }
 class QQmlApplicationEngine;
 class RecordListModel;
+class HanoiImageProvider;
 
 class BackEnd: public QObject
 {
@@ -66,6 +67,7 @@ public:
      * @param state - a new state of show help message
      */
     Q_INVOKABLE void setShowHelp(bool state);
+    Q_INVOKABLE void setNewAvatar(const QString& pathToAvatar);
 
     bool fog() const;
 
@@ -151,6 +153,8 @@ signals:
 
 private slots:
     void handleOnlineRequestfromProfile(const QString&);
+    void handleChangeName(const QString&);
+
     void handleOnlineRequest(const LoginView::UserData&);
     void handleOnlineRequestError(const QString&Errr);
 
@@ -167,6 +171,7 @@ private:
     HanoiClient _client;
 
     SettingsData _settingsData;
+    HanoiImageProvider *_imageProvider = nullptr;
 
 };
 

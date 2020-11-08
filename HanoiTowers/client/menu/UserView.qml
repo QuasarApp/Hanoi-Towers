@@ -3,6 +3,7 @@ import QtQuick.Controls 2.15
 import QtQuick.Controls.Material 2.15
 import QtQuick.Layouts 1.15
 import QtQuick.Window 2.15
+import QtQuick.Dialogs 1.0
 
 GridLayout {
     id: mainLayout
@@ -10,16 +11,37 @@ GridLayout {
     columns: 2
     clip: true
 
-    Image {
-        id: userAvatar
-        source: "qrc:/qtquickplugin/images/template_image.png"
+    property var userModel: null
+
+    signal newAvatar(var path);
+
+    Button {
         Layout.preferredHeight: 50 * Screen.pixelDensity
         Layout.preferredWidth: 50 * Screen.pixelDensity
         Layout.rowSpan: 1
-        fillMode: Image.PreserveAspectFit
-
-        Button {
+        Image {
+            id: userAvatar
+            source: "image://HanoiImages/" + ((userModel)? userModel.userId: "")
             anchors.fill: parent
+
+            fillMode: Image.PreserveAspectFit
+
+            opacity: 0.1
+        }
+
+        onClicked: {
+            fileDialog.open()
+        }
+    }
+
+    FileDialog {
+        id: fileDialog
+        title: qsTr("Please choose a new Avatar")
+        folder: shortcuts.home
+        onAccepted: {
+            if (fileDialog.fileUrls.length) {
+                newAvatar(fileDialog.fileUrls[0])
+            }
         }
     }
 
@@ -60,21 +82,27 @@ GridLayout {
             id: eid
 
             readOnly: true
-            text: ""
+            text: (userModel)? userModel.userId: ""
             horizontalAlignment: Text.AlignHCenter
         }
 
         TextField {
             id: ename
 
-            text: qsTr("")
+            text: (userModel)? userModel.name: ""
             horizontalAlignment: Text.AlignHCenter
+            maximumLength: 64
+
+            onEditingFinished: {
+                if (userModel)
+                    userModel.name = text
+            }
         }
 
         TextField {
             id: erecord
 
-            text: "0"
+            text: (userModel)? userModel.record: ""
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignVCenter
             readOnly: true
@@ -83,7 +111,13 @@ GridLayout {
 
         Switch {
             id: eonline
-            text: qsTr("")
+            checked: (userModel)? userModel.onlineUser: false
+
+            onCheckedChanged: {
+                if (userModel)
+                    userModel.onlineUser = checked
+            }
+            text: ""
         }
     }
 

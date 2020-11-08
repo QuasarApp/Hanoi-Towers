@@ -16,8 +16,9 @@ class HANOITOWERSPROTOCOL_EXPORT ProfileData : public QObject, public QH::Stream
 
     Q_PROPERTY(QObject* gameState READ gameState NOTIFY gameStateChanged)
     Q_PROPERTY(QString userId READ userId NOTIFY userIdChanged)
-    Q_PROPERTY(QString name READ name NOTIFY nameChanged)
+    Q_PROPERTY(QString name READ name WRITE setName NOTIFY nameChanged)
     Q_PROPERTY(int record READ record WRITE setRecord NOTIFY recordChanged)
+    Q_PROPERTY(int avatarHash READ avatarHash WRITE setAvatarHash NOTIFY avatarHashChanged)
     Q_PROPERTY(bool onlineUser READ isOnline WRITE setOnline NOTIFY onlineChanged)
 
 
@@ -44,9 +45,13 @@ public:
     QString userId() const;
     QByteArray userIdRaw() const;
 
+    int avatarHash() const;
+
 public slots:
     void setOnline(bool onlineUser);
     void setRecord(int record);
+
+    void setAvatarHash(int avatarHash);
 
 signals:
     void gameStateChanged(QObject* gameState);
@@ -57,12 +62,15 @@ signals:
 
     void userIdChanged(QString userId);
 
+    void avatarHashChanged(int avatarHash);
+
 private:
     GameState _state;
     QString _name;
     int _record = 0;
     bool _online = false;
     QByteArray _userId;
+    int _avatarHash;
 };
 
 

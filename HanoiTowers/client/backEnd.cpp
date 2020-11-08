@@ -11,10 +11,12 @@
 #include <QDir>
 #include <qmlnotifyservice.h>
 #include "gamestate.h"
+#include "hanoiimageprovider.h"
 #include <QQmlApplicationEngine>
 #include <lvmainmodel.h>
 #include <recordlistmodel.h>
 #include <execution>
+#include <QQmlContext>
 
 #define DEFAULT_USER_ID QByteArray("DefaultUser")
 #define DEFAULT_USER_NAME "User"
@@ -48,6 +50,9 @@ BackEnd::BackEnd(QQmlApplicationEngine *engine):
     _recordsTable = new RecordListModel(this);
     _recordsTable->setSource(_client.localUsersPreview());
 
+    _imageProvider = new HanoiImageProvider(&_client);
+    engine->addImageProvider("HanoiImages", _imageProvider);
+
     connect(_loginModel , &LoginView::LVMainModel::sigLoginRequest,
             this, &BackEnd::handleOnlineRequest);
 
@@ -68,6 +73,9 @@ ProfileData* BackEnd::initProfile(const QByteArray& userId, const QString &userN
 
     connect(_profile, &ProfileData::onlineRequest,
             this, &BackEnd::handleOnlineRequestfromProfile);
+
+    connect(_profile, &ProfileData::nameChanged,
+            this, &BackEnd::handleChangeName);
 
     if (!_client.login(userId)) {
         _profile->setName(userName);
@@ -149,6 +157,10 @@ void BackEnd::handleOnlineRequestfromProfile(const QString &name) {
     emit showOnlinePage();
 }
 
+void BackEnd::handleChangeName(const QString &) {
+    _client.updateProfile(*_profile);
+}
+
 void BackEnd::handleOnlineRequest(const LoginView::UserData & user) {
 
     if (!_client.login(user.nickname().toLatin1(), user.rawPassword().toLatin1())) {
@@ -208,6 +220,16 @@ bool BackEnd::isFirst()const{
 
 void BackEnd::setShowHelp(bool state) {
     _settings->setValue(FIRST_RUN_KEY, state);
+}
+
+void BackEnd::setNewAvatar(const QString &pathToAvatar) {
+    QImage image;
+    if (pathToAvatar.contains("file://")) {
+        image = QImage(pathToAvatar.right(pathToAvatar.size() - 7));
+    } else {
+        image = QImage(pathToAvatar);
+    }
+    _client.setNewAvatar(_profile->userId().toLocal8Bit(), image);
 }
 
 bool BackEnd::fog() const {

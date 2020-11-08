@@ -4,6 +4,7 @@ CREATE TABLE IF NOT EXISTS UsersData (
     points INTEGER default 0,
     userdata BLOB default NULL,
     updateTime INTEGER default 0,
+    userAvatar INTEGER default 0,
 
     FOREIGN KEY(id) REFERENCES NetworkMembers(id)
             ON UPDATE CASCADE
@@ -11,10 +12,11 @@ CREATE TABLE IF NOT EXISTS UsersData (
 );
 
 CREATE TABLE IF NOT EXISTS Avatars (
-    id VARCHAR(64) NOT NULL,
+    id INTEGER PRIMARY KEY NOT NULL
+    user_id VARCHAR(64) NOT NULL,
     data BLOB default NULL,
 
-    FOREIGN KEY(id) REFERENCES NetworkMembers(id)
+    FOREIGN KEY(user_id) REFERENCES NetworkMembers(id)
             ON UPDATE CASCADE
             ON DELETE CASCADE
 );

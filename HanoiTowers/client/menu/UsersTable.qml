@@ -29,6 +29,11 @@ Item {
 
         UserView {
             Layout.rowSpan: 3
+            userModel: (backEnd)? backEnd.profileObject: null
+
+            onNewAvatar: {
+                backEnd.setNewAvatar(path);
+            }
         }
 
         Base.BaseButton {
