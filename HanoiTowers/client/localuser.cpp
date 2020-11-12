@@ -4,7 +4,7 @@
 using MT = QH::PKG::MemberType;
 
 LocalUser::LocalUser():
-    QH::PKG::DBObject("Users"),
+    QH::PKG::DBObject("Users", "id"),
     _userData("") {
 
 }
@@ -53,10 +53,6 @@ QH::PKG::DBVariantMap LocalUser::variantMap() const {
             {"userdata",           {_userData.toBytes(),                MT::InsertUpdate}},
             {"updateTime",         {static_cast<int>(time(nullptr)),    MT::InsertUpdate}}};
 
-}
-
-QH::BaseId LocalUser::generateId() const {
-    return getId();
 }
 
 QH::PKG::DBObject *LocalUser::createDBObject() const {

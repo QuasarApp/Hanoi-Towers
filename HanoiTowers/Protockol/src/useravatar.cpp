@@ -1,6 +1,6 @@
 #include "useravatar.h"
 
-UserAvatar::UserAvatar(): QH::PKG::DBObject("Avatars") {
+UserAvatar::UserAvatar(): QH::PKG::DBObject("Avatars", "id") {
 
 }
 
@@ -45,10 +45,6 @@ QDataStream &UserAvatar::toStream(QDataStream &stream) const {
     DBObject::toStream(stream);
     stream << _image;
     return stream;
-}
-
-QH::BaseId UserAvatar::generateId() const {
-    return getId();
 }
 
 QH::PKG::DBVariantMap UserAvatar::variantMap() const {

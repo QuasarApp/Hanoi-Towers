@@ -4,7 +4,7 @@
 #include <QSqlQuery>
 
 UserData::UserData():
-    QH::PKG::DBObject("UsersData"),
+    QH::PKG::DBObject("UsersData", "id"),
     _userData("") {
 
 }
@@ -65,10 +65,6 @@ QDataStream &UserData::toStream(QDataStream &stream) const {
     DBObject::toStream(stream);
     stream << _userData;
     return stream;
-}
-
-QH::BaseId UserData::generateId() const {
-    return getId();
 }
 
 DBVariantMap UserData::variantMap() const {

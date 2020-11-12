@@ -54,7 +54,7 @@ QH::ParserResult HanoiServer::parsePackage(const QH::Package &pkg,
     if (H_16<UserData>() == pkg.hdr.command) {
         UserData obj(pkg);
 
-        QH::BaseId requesterId = getSender(sender, &obj);
+        auto requesterId = getSender(sender, &obj);
 
         if (setObject(requesterId, &obj) != QH::DBOperationResult::Allowed) {
             return QH::ParserResult::Error;
@@ -64,7 +64,7 @@ QH::ParserResult HanoiServer::parsePackage(const QH::Package &pkg,
 
     } else if (H_16<UserDataRequest>() == pkg.hdr.command) {
         UserDataRequest obj(pkg);
-        QH::BaseId requesterId = getSender(sender, &obj);
+        auto requesterId = getSender(sender, &obj);
         const QH::PKG::DBObject* userData;
 
         if (getObject(requesterId, obj, &userData) != QH::DBOperationResult::Allowed) {
@@ -99,7 +99,7 @@ QVariantMap HanoiServer::defaultDbParams() const {
 bool HanoiServer::workWirthUserData(const UserData *obj,
                                     const QH::AbstractNodeInfo *sender) {
 
-    QH::BaseId requesterId = getSender(sender, obj);
+    auto requesterId = getSender(sender, obj);
     const DBObject *userData;
 
     if (getObject(requesterId, *obj, &userData) != QH::DBOperationResult::Allowed) {

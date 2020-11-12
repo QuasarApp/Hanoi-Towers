@@ -34,7 +34,6 @@ public:
 
 protected:
     QH::PKG::DBVariantMap variantMap() const override;
-    QH::BaseId generateId() const override;
     QH::PKG::DBObject *createDBObject() const override;
 
 private:

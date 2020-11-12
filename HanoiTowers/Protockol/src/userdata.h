@@ -33,7 +33,6 @@ public:
 protected:
     QDataStream &fromStream(QDataStream &stream) override;
     QDataStream &toStream(QDataStream &stream) const override;
-    QH::BaseId generateId() const override;
     DBVariantMap variantMap() const override;
 
 private:
