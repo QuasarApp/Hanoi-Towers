@@ -21,9 +21,11 @@ protected:
     QDataStream &toStream(QDataStream &stream) const override;
 
     QH::PKG::DBVariantMap variantMap() const override;
+    QString primaryKey() const override;
 
 private:
     QByteArray _image;
+
 };
 
 #endif // USERAVATAR_H

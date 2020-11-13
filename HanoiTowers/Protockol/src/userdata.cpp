@@ -4,7 +4,7 @@
 #include <QSqlQuery>
 
 UserData::UserData():
-    QH::PKG::DBObject("UsersData", "id"),
+    QH::PKG::DBObject("UsersData"),
     _userData("") {
 
 }
@@ -37,7 +37,7 @@ void UserData::setName(const QString &name) {
 }
 
 QH::PKG::DBObject *UserData::createDBObject() const {
-    return new UserData();
+    return create<UserData>();
 }
 
 bool UserData::fromSqlRecord(const QSqlRecord &q) {
@@ -72,6 +72,10 @@ DBVariantMap UserData::variantMap() const {
             {"points",      {_userData.record(),    QH::PKG::MemberType::InsertUpdate}},
             {"updateTime",  {_updateTime,           QH::PKG::MemberType::InsertUpdate}},
             {"userdata",    {_userData.toBytes(),   QH::PKG::MemberType::InsertUpdate}}};
+}
+
+QString UserData::primaryKey() const {
+    return "id";
 }
 
 int UserData::updateTime() const {

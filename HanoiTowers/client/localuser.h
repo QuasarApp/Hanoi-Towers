@@ -35,13 +35,13 @@ public:
 protected:
     QH::PKG::DBVariantMap variantMap() const override;
     QH::PKG::DBObject *createDBObject() const override;
+    QString primaryKey() const override;
 
 private:
     QByteArray _hashPassword;
     QH::AccessToken _token;
     ProfileData _userData;
     int _updateTime = 0;
-
 };
 
 #endif // LOCALUSER_H

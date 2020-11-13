@@ -4,7 +4,7 @@
 using MT = QH::PKG::MemberType;
 
 LocalUser::LocalUser():
-    QH::PKG::DBObject("Users", "id"),
+    QH::PKG::DBObject("Users"),
     _userData("") {
 
 }
@@ -57,6 +57,10 @@ QH::PKG::DBVariantMap LocalUser::variantMap() const {
 
 QH::PKG::DBObject *LocalUser::createDBObject() const {
     return create<LocalUser>();
+}
+
+QString LocalUser::primaryKey() const {
+    return "id";
 }
 
 int LocalUser::updateTime() const {

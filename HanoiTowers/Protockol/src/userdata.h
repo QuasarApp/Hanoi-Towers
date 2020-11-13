@@ -34,6 +34,7 @@ protected:
     QDataStream &fromStream(QDataStream &stream) override;
     QDataStream &toStream(QDataStream &stream) const override;
     DBVariantMap variantMap() const override;
+    QString primaryKey() const override;
 
 private:
     ProfileData _userData;

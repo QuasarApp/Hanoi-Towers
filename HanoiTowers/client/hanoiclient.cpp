@@ -35,7 +35,7 @@ QH::ParserResult HanoiClient::parsePackage(const QH::Package &pkg,
     if (H_16<UserData>() == pkg.hdr.command) {
         UserData obj(pkg);
 
-        if (!db()->saveObject(&obj)) {
+        if (!db()->updateObject(&obj)) {
             return QH::ParserResult::Error;
         }
 
@@ -51,7 +51,7 @@ QH::ParserResult HanoiClient::parsePackage(const QH::Package &pkg,
         localuser->setToken(obj.token());
         localuser->setOnline(true);
 
-        if (!db()->saveObject(localuser.data())) {
+        if (!db()->updateObject(localuser.data())) {
             return QH::ParserResult::Error;
         }
 
@@ -152,7 +152,7 @@ bool HanoiClient::setNewAvatar(const QByteArray &userId, const QImage &image) {
     stram << image;
     avatarData.setImage(array);
 
-    if (!db()->saveObject(&avatarData)) {
+    if (!db()->updateObject(&avatarData)) {
         return false;
     }
 
@@ -219,7 +219,7 @@ bool HanoiClient::addProfile(const ProfileData &profile) {
     auto user = profileToLocalUser(profile);
 
     if (auto database = db()) {
-        return database->saveObject(&user);
+        return database->updateObject(&user);
     }
 
     return false;
@@ -235,7 +235,7 @@ bool HanoiClient::updateProfile(const ProfileData &profile) {
 
     userData->setUserData(profile);
 
-    if (!db()->saveObject(userData.data())) {
+    if (!db()->updateObject(userData.data())) {
         return false;
     }
 
@@ -280,7 +280,7 @@ bool HanoiClient::registerUser(const QByteArray &userId, const QString &rawPassw
 
 bool HanoiClient::registerOflineUser(const QByteArray &login) {
     LocalUser user = profileToLocalUser(login);
-    return db()->saveObject(&user);
+    return db()->updateObject(&user);
 }
 
 bool HanoiClient::removeUser(const QByteArray &userId) {
