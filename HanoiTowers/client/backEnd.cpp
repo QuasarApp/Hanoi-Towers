@@ -15,7 +15,6 @@
 #include <QQmlApplicationEngine>
 #include <lvmainmodel.h>
 #include <recordlistmodel.h>
-#include <execution>
 #include <QQmlContext>
 
 #define DEFAULT_USER_ID QByteArray("DefaultUser")
