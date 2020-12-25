@@ -52,11 +52,12 @@ QH::ParserResult HanoiServer::parsePackage(const QH::Package &pkg,
     }
 
     if (H_16<UserData>() == pkg.hdr.command) {
-        UserData obj(pkg);
+        auto obj = QSharedPointer<UserData>::create(pkg);
 
-        auto requesterId = getSender(sender, &obj);
+        auto requesterId = getSender(sender, obj.data());
 
-        if (setObject(requesterId, &obj) != QH::DBOperationResult::Allowed) {
+        auto opResult = updateIfNotExistsCreateObject(requesterId, obj);
+        if (opResult != QH::DBOperationResult::Allowed) {
             return QH::ParserResult::Error;
         }
 
