@@ -89,10 +89,9 @@ private:
     bool p_signIn(const QByteArray &userId, const QByteArray &hashPassword);
 
     bool userDatarequest(const QByteArray &userId);
-    const LocalUser *getLocalUser(const QByteArray &userId) const;
-    QSharedPointer<LocalUser> getEditableLocalUser(const QByteArray &userId);
-    LocalUser profileToLocalUser(const ProfileData &profile);
-    LocalUser profileToLocalUser(const QByteArray &login);
+    QSharedPointer<LocalUser> getLocalUser(const QByteArray &userId) const;
+    QSharedPointer<LocalUser> profileToLocalUser(const ProfileData &profile);
+    QSharedPointer<LocalUser> profileToLocalUser(const QByteArray &login);
 
 
     Status _status;

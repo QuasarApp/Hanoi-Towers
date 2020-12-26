@@ -66,9 +66,9 @@ QH::ParserResult HanoiServer::parsePackage(const QH::Package &pkg,
     } else if (H_16<UserDataRequest>() == pkg.hdr.command) {
         UserDataRequest obj(pkg);
         auto requesterId = getSender(sender, &obj);
-        const QH::PKG::DBObject* userData;
+        QSharedPointer<QH::PKG::DBObject> userData;
 
-        if (getObject(requesterId, obj, &userData) != QH::DBOperationResult::Allowed) {
+        if (getObject(requesterId, obj, userData) != QH::DBOperationResult::Allowed) {
             badRequest(sender->networkAddress(), pkg.hdr,
                        {
                            ErrorCodes::PermissionDenied,
@@ -78,7 +78,7 @@ QH::ParserResult HanoiServer::parsePackage(const QH::Package &pkg,
             return QH::ParserResult::Error;
         };
 
-        if (!sendData(userData, sender->networkAddress(), &pkg.hdr)) {
+        if (!sendData(userData.data(), sender->networkAddress(), &pkg.hdr)) {
             return QH::ParserResult::Error;
         }
 
@@ -101,11 +101,11 @@ bool HanoiServer::workWirthUserData(const UserData *obj,
                                     const QH::AbstractNodeInfo *sender) {
 
     auto requesterId = getSender(sender, obj);
-    const DBObject *userData;
+     QSharedPointer<DBObject> userData;
 
-    if (getObject(requesterId, *obj, &userData) != QH::DBOperationResult::Allowed) {
+    if (getObject(requesterId, *obj, userData) != QH::DBOperationResult::Allowed) {
         return false;
     }
 
-    return sendData(userData, sender->networkAddress());
+    return sendData(userData.data(), sender->networkAddress());
 }
