@@ -33,9 +33,9 @@ QH::ParserResult HanoiClient::parsePackage(const QH::Package &pkg,
     }
 
     if (H_16<UserData>() == pkg.hdr.command) {
-        UserData obj(pkg);
+        auto obj = QSharedPointer<UserData>::create(pkg);
 
-        if (!db()->updateObject(&obj)) {
+        if (!db()->updateObject(obj)) {
             return QH::ParserResult::Error;
         }
 
@@ -47,6 +47,9 @@ QH::ParserResult HanoiClient::parsePackage(const QH::Package &pkg,
         QH::PKG::UserMember obj(pkg);
 
         LocalUser user(&obj);
+
+        change
+
         auto localuser = db()->getObject(user)->clone().dynamicCast<LocalUser>();
         localuser->setToken(obj.token());
         localuser->setOnline(true);
