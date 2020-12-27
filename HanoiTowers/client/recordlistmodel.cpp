@@ -14,7 +14,7 @@ QVariant RecordListModel::data(const QModelIndex &index, int role) const {
         return {};
     }
 
-    auto iten = _data.begin() + index.row();
+    auto iten = std::next(_data.begin(), index.row());
 
     if (role == Username) {
         return iten.value().userName;

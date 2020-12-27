@@ -11,7 +11,8 @@ include(../Heart/QuasarAppLib/CMake/ProjectOut.cmake)
 include(../Heart/QuasarAppLib/CMake/ccache.cmake)
 include(../Heart/QuasarAppLib/CMake/Version.cmake)
 
-find_package(Qt5 COMPONENTS Core REQUIRED)
+find_package(QT NAMES Qt6 Qt5 COMPONENTS Core REQUIRED)
+find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Core REQUIRED)
 
 add_subdirectory(Protockol)
 add_subdirectory(client)
