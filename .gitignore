@@ -64,7 +64,10 @@ installer/HanoiTowersInstaller
 
 # QtCtreator CMake
 CMakeLists.txt.user*
-
+cmake_install.cmake
+*_autogen
+CMakeFiles
+CMakeCache.txt
 
 snap/plugins/__pycache__/
 *.snap
