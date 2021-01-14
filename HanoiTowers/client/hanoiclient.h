@@ -45,17 +45,17 @@ public:
                                   const QH::AbstractNodeInfo *sender) override;
 
 
-    QByteArray currentUserId() const;
+    QString currentUserId() const;
 
     const ProfileData *currentProfile() const;
     bool updateProfile(const ProfileData& profile);
     bool addProfile(const ProfileData& profile);
 
-    bool login(const QByteArray &userId, const QString& rawPassword = "");
-    bool registerUser(const QByteArray &userId, const QString& rawPassword);
+    bool login(const QString &userId, const QString& rawPassword = "");
+    bool registerUser(const QString &userId, const QString& rawPassword);
 
-    bool registerOflineUser(const QByteArray &login);
-    bool removeUser(const QByteArray &userId);
+    bool registerOflineUser(const QString &login);
+    bool removeUser(const QString &userId);
 
     void connectToServer(const QH::HostAddress& host);
 
@@ -85,17 +85,17 @@ private slots:
 
 private:
 
-    bool p_login(const QByteArray &userId, const QByteArray &hashPassword = {});
-    bool p_signIn(const QByteArray &userId, const QByteArray &hashPassword);
+    bool p_login(const QString &userId, const QByteArray &hashPassword = {});
+    bool p_signIn(const QString &userId, const QByteArray &hashPassword);
 
     bool userDatarequest(const QByteArray &userId);
-    QSharedPointer<LocalUser> getLocalUser(const QByteArray &userId) const;
+    QSharedPointer<LocalUser> getLocalUser(const QString &userId) const;
     QSharedPointer<LocalUser> profileToLocalUser(const ProfileData &profile);
-    QSharedPointer<LocalUser> profileToLocalUser(const QByteArray &login);
+    QSharedPointer<LocalUser> profileToLocalUser(const QString &login);
 
 
     Status _status;
-    QByteArray _currentUserId;
+    QString _currentUserId;
     QH::HostAddress _serverAddress;
     QList<LocalUser*> _usersList;
 

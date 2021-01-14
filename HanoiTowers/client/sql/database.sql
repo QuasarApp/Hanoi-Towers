@@ -3,13 +3,13 @@ CREATE TABLE IF NOT EXISTS Users (
     passwordHash BLOB default NULL,
     token BLOB default NULL,
     userdata BLOB default NULL,
-    updateTime INTEGER default 0
-    userAvatar INTEGER default 0,
+    updateTime INTEGER default 0,
+    userAvatar INTEGER default 0
 
 );
 
 CREATE TABLE IF NOT EXISTS Avatars (
-    id INTEGER PRIMARY KEY NOT NULL
+    id INTEGER PRIMARY KEY NOT NULL,
     user_id VARCHAR(64) NOT NULL,
     data BLOB default NULL,
 

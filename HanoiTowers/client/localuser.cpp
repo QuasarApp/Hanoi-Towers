@@ -48,7 +48,8 @@ bool LocalUser::isValid() const {
 }
 
 QH::PKG::DBVariantMap LocalUser::variantMap() const {
-    return {{"passwordHash",       {_hashPassword,                      MT::InsertUpdate}},
+    return {{primaryKey(),         {getId(),                            MT::PrimaryKey}},
+            {"passwordHash",       {_hashPassword,                      MT::InsertUpdate}},
             {"token",              {_token.toBytes(),                   MT::InsertUpdate}},
             {"userdata",           {_userData.toBytes(),                MT::InsertUpdate}},
             {"updateTime",         {static_cast<int>(time(nullptr)),    MT::InsertUpdate}}};

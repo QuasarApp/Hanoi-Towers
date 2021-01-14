@@ -13,15 +13,16 @@
 #include <localuser.h>
 #include <authrequest.h>
 #include <userdatarequest.h>
-#include <sqldbwriter.h>
+#include <asyncsqldbwriter.h>
 #include <useravatar.h>
+#include <sqldb.h>
 #include "hanoierrorcodes.h"
 #include "localrecordstable.h"
 
 HanoiClient::HanoiClient() {
     initSqlDb("",
-              new QH::SqlDBCache(DEFAULT_UPDATE_INTERVAL, QH::SqlDBCasheWriteMode::Force),
-              new QH::SqlDBWriter());
+              new QH::SqlDB(),
+              new QH::AsyncSqlDbWriter());
 
 }
 
@@ -85,7 +86,7 @@ void HanoiClient::handleError(unsigned char status, const QString &error) {
                 QmlNotificationService::NotificationData::Error);
 }
 
-bool HanoiClient::p_login(const QByteArray& userId, const QByteArray &hashPassword) {
+bool HanoiClient::p_login(const QString& userId, const QByteArray &hashPassword) {
     QH::PKG::AuthRequest request;
     request.setId(userId);
     request.setRequest(QH::PKG::UserRequestType::Login);
@@ -103,7 +104,7 @@ bool HanoiClient::p_login(const QByteArray& userId, const QByteArray &hashPasswo
     return sendData(&request, _serverAddress);
 }
 
-bool HanoiClient::p_signIn(const QByteArray &userId, const QByteArray& hashPassword) {
+bool HanoiClient::p_signIn(const QString &userId, const QByteArray& hashPassword) {
     QH::PKG::AuthRequest request;
     request.setId(userId);
     request.setAuthenticationData(hashPassword);
@@ -119,7 +120,7 @@ bool HanoiClient::userDatarequest(const QByteArray &userId) {
     return sendData(&request, _serverAddress);
 }
 
-QSharedPointer<LocalUser> HanoiClient::getLocalUser(const QByteArray &userId) const {
+QSharedPointer<LocalUser> HanoiClient::getLocalUser(const QString &userId) const {
     LocalUser request;
     request.setId(userId);
 
@@ -177,7 +178,7 @@ QImage HanoiClient::userAvatar(const QByteArray &userId) const {
     return {};
 }
 
-QByteArray HanoiClient::currentUserId() const {
+QString HanoiClient::currentUserId() const {
     return _currentUserId;
 }
 
@@ -191,7 +192,7 @@ const ProfileData* HanoiClient::currentProfile() const {
     return nullptr;
 }
 
-QSharedPointer<LocalUser> HanoiClient::profileToLocalUser(const QByteArray &login) {
+QSharedPointer<LocalUser> HanoiClient::profileToLocalUser(const QString &login) {
     auto user = QSharedPointer<LocalUser>::create();
     user->setId(login);
     user->setUpdateTime(time(nullptr));
@@ -247,7 +248,7 @@ bool HanoiClient::updateProfile(const ProfileData &profile) {
 }
 
 
-bool HanoiClient::login(const QByteArray &userId, const QString &rawPassword) {
+bool HanoiClient::login(const QString &userId, const QString &rawPassword) {
 
     auto user = getLocalUser(userId);
 
@@ -266,7 +267,7 @@ bool HanoiClient::login(const QByteArray &userId, const QString &rawPassword) {
 
 }
 
-bool HanoiClient::registerUser(const QByteArray &userId, const QString &rawPassword) {
+bool HanoiClient::registerUser(const QString &userId, const QString &rawPassword) {
     auto user = getLocalUser(userId);
 
     if (user) {
@@ -277,12 +278,12 @@ bool HanoiClient::registerUser(const QByteArray &userId, const QString &rawPassw
     return p_signIn(userId, hashgenerator(rawPassword.toLatin1()));
 }
 
-bool HanoiClient::registerOflineUser(const QByteArray &login) {
+bool HanoiClient::registerOflineUser(const QString &login) {
     auto user = profileToLocalUser(login);
-    return db()->updateObject(user);
+    return db()->insertObject(user);
 }
 
-bool HanoiClient::removeUser(const QByteArray &userId) {
+bool HanoiClient::removeUser(const QString &userId) {
     auto user = getLocalUser(userId);
     QH::PKG::AuthRequest request;
     request.setId(user->getId());
