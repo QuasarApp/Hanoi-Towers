@@ -1,3 +1,10 @@
+/*
+ * Copyright (C) 2018-2020 QuasarApp.
+ * Distributed under the lgplv3 software license, see the accompanying
+ * Everyone is permitted to copy and distribute verbatim copies
+ * of this license document, but changing it is not allowed.
+*/
+
 #include "localrecordstable.h"
 
 #include <QDataStream>
@@ -15,7 +22,7 @@ bool LocalRecordsTable::fromSqlRecord(const QSqlRecord &q) {
     profile.fromBytes(q.value("userdata").toByteArray());
 
     data.userName = profile.name();
-    data.id = profile.userId().toLatin1();
+    data.id = getId().toString();
     data.record = profile.record();
 
     _data[data.id] = data;

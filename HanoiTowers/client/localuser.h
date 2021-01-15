@@ -1,3 +1,10 @@
+/*
+ * Copyright (C) 2018-2020 QuasarApp.
+ * Distributed under the lgplv3 software license, see the accompanying
+ * Everyone is permitted to copy and distribute verbatim copies
+ * of this license document, but changing it is not allowed.
+*/
+
 #ifndef LOCALUSER_H
 #define LOCALUSER_H
 
@@ -6,8 +13,17 @@
 #include <profiledata.h>
 
 
-class LocalUser: public QH::PKG::DBObject
+class LocalUser: public QObject, public QH::PKG::DBObject
 {
+    Q_OBJECT
+
+    Q_PROPERTY(GameState* gameState READ gameState NOTIFY prfileDataChanged)
+    Q_PROPERTY(QString name READ name WRITE setName NOTIFY prfileDataChanged)
+    Q_PROPERTY(QString userId READ userId  NOTIFY prfileDataChanged)
+    Q_PROPERTY(int record READ record WRITE setRecord NOTIFY prfileDataChanged)
+    Q_PROPERTY(int avatarHash READ avatarHash WRITE setAvatarHash NOTIFY prfileDataChanged)
+    Q_PROPERTY(bool onlineUser READ isOnline WRITE setOnline NOTIFY prfileDataChanged)
+
 public:
     LocalUser();
     LocalUser(const QH::PKG::DBObject*);
@@ -16,9 +32,23 @@ public:
     bool fromSqlRecord(const QSqlRecord &q) override;
     bool isValid() const override;
 
+    // QOBJECT
+
+    Q_INVOKABLE QObject* gameState();
+    Q_INVOKABLE QString userId() const;
+
+    Q_INVOKABLE QString name() const;
+    Q_INVOKABLE int record() const;
+    Q_INVOKABLE bool isOnline() const;
+    Q_INVOKABLE int avatarHash() const;
+
+    Q_INVOKABLE void setName(const QString& name);
+
+    // QOBJECT END
+
+
     // DBObject interface
     bool online() const;
-    void setOnline(bool online);
 
     QByteArray hashPassword() const;
     void setHashPassword(const QByteArray &hashPassword);
@@ -27,10 +57,25 @@ public:
     void setToken(const QH::AccessToken &token);
 
     const ProfileData *userData() const;
+    ProfileData *userData();
     void setUserData(const ProfileData &userData);
 
     int updateTime() const;
     void setUpdateTime(int updateTime);
+
+public slots:
+    void setOnline(bool online);
+    void setRecord(int record);
+    void setAvatarHash(int avatarHash);
+
+signals:
+    void prfileDataChanged();
+    void nameChanged(QString);
+    void recordChanged(int);
+    void avatarChanged(int);
+
+    void onlineChanged(bool onlineUser);
+    void onlineRequest(const QString& name);
 
 protected:
     QH::PKG::DBVariantMap variantMap() const override;

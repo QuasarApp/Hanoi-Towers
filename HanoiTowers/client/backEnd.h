@@ -9,6 +9,7 @@
 #define SAVER_H
 #include "gamestate.h"
 #include "hanoiclient.h"
+#include "localuser.h"
 #include "profiledata.h"
 #include "settingsdata.h"
 #include <quasarapp.h>
@@ -40,7 +41,6 @@ class BackEnd: public QObject
 
     Q_PROPERTY(QObject* gameState READ gameState)
     Q_PROPERTY(QObject* client READ client)
-    Q_PROPERTY(QObject* profileObject READ profileObject NOTIFY profileChanged)
 
     Q_PROPERTY(QObject* profileList READ profileList  NOTIFY profileListChanged)
     Q_PROPERTY(QString profile READ profile WRITE setProfile NOTIFY profileChanged)
@@ -129,9 +129,9 @@ public slots:
      * @brief profileObject
      * @return
      */
-    QObject* profileObject() const;
+    QObject* profileObject();
 
-    void removeUser(const QByteArray &userId);
+    void removeUser(const QString &userId);
     void setProfile(QString userId);
     void setReward(int);
     void setFog(bool fog);
@@ -158,21 +158,19 @@ private slots:
     void handleOnlineRequest(const LoginView::UserData&);
     void handleOnlineRequestError(const QString&Errr);
 
-    void handleLogined(unsigned char);
+    void handleProfileChanged(QSharedPointer<LocalUser> profileId);
 private:
     void init();
-    ProfileData *initProfile(const QByteArray &userId, const QString& userName = "");
 
     QuasarAppUtils::Settings *_settings = nullptr;
     LoginView::LVMainModel *_loginModel = nullptr;
     RecordListModel * _recordsTable = nullptr;
 
-    ProfileData *_profile = nullptr;
-    HanoiClient _client;
+    LocalUser _profile;
+    HanoiClient *_client = nullptr;
 
     SettingsData _settingsData;
-    HanoiImageProvider *_imageProvider = nullptr;
-
+    HanoiImageProvider *_imageProvider = nullptr;    
 };
 
 #endif // SAVER_H

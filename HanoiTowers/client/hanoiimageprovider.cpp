@@ -1,3 +1,10 @@
+/*
+ * Copyright (C) 2018-2020 QuasarApp.
+ * Distributed under the lgplv3 software license, see the accompanying
+ * Everyone is permitted to copy and distribute verbatim copies
+ * of this license document, but changing it is not allowed.
+*/
+
 #include "hanoiclient.h"
 #include "hanoiimageprovider.h"
 
@@ -7,6 +14,10 @@
 HanoiImageProvider::HanoiImageProvider(const HanoiClient *client) {
     _pool = new QThreadPool();
     _client = client;
+}
+
+void HanoiImageProvider::stop() {
+    _client = nullptr;
 }
 
 HanoiImageProvider::~HanoiImageProvider() {
@@ -33,6 +44,11 @@ QQuickTextureFactory *AsyncImageResponse::textureFactory() const {
 }
 
 void AsyncImageResponse::run() {
+    if (!_client) {
+        emit finished();
+        return;
+    }
+
 
     QImage image = _client->userAvatar(m_id.toLocal8Bit());;
 

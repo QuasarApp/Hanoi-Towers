@@ -47,14 +47,14 @@ public:
 
     QString currentUserId() const;
 
-    const ProfileData *currentProfile() const;
-    bool updateProfile(const ProfileData& profile);
-    bool addProfile(const ProfileData& profile);
+    QSharedPointer<LocalUser> currentProfile() const;
+    bool updateProfile(const LocalUser &data);
+    bool addProfile(const LocalUser &);
 
     bool login(const QString &userId, const QString& rawPassword = "");
     bool registerUser(const QString &userId, const QString& rawPassword);
 
-    bool registerOflineUser(const QString &login);
+    bool registerOflineUser(const QString &login, const QString &username = "");
     bool removeUser(const QString &userId);
 
     void connectToServer(const QH::HostAddress& host);
@@ -65,8 +65,8 @@ public:
     Status getStatus() const;
     void setStatus(const Status &status);
 
-    bool setNewAvatar(const QByteArray &userId, const QImage& image);
-    QImage userAvatar(const QByteArray &userId) const;
+    bool setNewAvatar(const QString &userId, const QImage& image);
+    QImage userAvatar(const QString &userId) const;
 
 protected:
     void nodeConfirmend(const QH::HostAddress &node) override;
@@ -79,6 +79,7 @@ signals:
     void requestError(const QString & err);
     void statusChanged(unsigned char state);
     void profileIsUpdated();
+    void profileChanged(QSharedPointer<LocalUser>);
 
 private slots:
     void handleError(unsigned char status, const QString& error);
@@ -90,8 +91,7 @@ private:
 
     bool userDatarequest(const QByteArray &userId);
     QSharedPointer<LocalUser> getLocalUser(const QString &userId) const;
-    QSharedPointer<LocalUser> profileToLocalUser(const ProfileData &profile);
-    QSharedPointer<LocalUser> profileToLocalUser(const QString &login);
+    QSharedPointer<LocalUser> createLocalUser(const QString &login);
 
 
     Status _status;

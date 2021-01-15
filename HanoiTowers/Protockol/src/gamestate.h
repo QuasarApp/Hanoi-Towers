@@ -15,9 +15,9 @@
 #include <streambase.h>
 #include "hanoitowersprotockol_global.h"
 
-class HANOITOWERSPROTOCOL_EXPORT GameState : public QObject, public QH::StreamBase
+class HANOITOWERSPROTOCOL_EXPORT GameState : public QH::StreamBase
 {
-   Q_OBJECT
+   Q_GADGET
    Q_PROPERTY(short lvl READ lvl WRITE saveLvl)
 
 public:
@@ -51,5 +51,5 @@ private:
 
 };
 
-
+Q_DECLARE_METATYPE(GameState)
 #endif // GAMESTATE_H

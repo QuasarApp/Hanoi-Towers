@@ -16,13 +16,14 @@
 #include <asyncsqldbwriter.h>
 #include <useravatar.h>
 #include <sqldb.h>
+#include <sqldbwriter.h>
 #include "hanoierrorcodes.h"
 #include "localrecordstable.h"
 
 HanoiClient::HanoiClient() {
     initSqlDb("",
               new QH::SqlDB(),
-              new QH::AsyncSqlDbWriter());
+              new QH::SqlDBWriter());
 
 }
 
@@ -142,7 +143,7 @@ void HanoiClient::setStatus(const Status &status) {
     }
 }
 
-bool HanoiClient::setNewAvatar(const QByteArray &userId, const QImage &image) {
+bool HanoiClient::setNewAvatar(const QString &userId, const QImage &image) {
     auto avatarData = QSharedPointer<UserAvatar>::create();
     avatarData->setId(userId);
 
@@ -156,16 +157,17 @@ bool HanoiClient::setNewAvatar(const QByteArray &userId, const QImage &image) {
         return false;
     }
 
-    auto profile = currentProfile();
+    auto profile = getLocalUser(userId);
 
-    if(profile && profile->isOnline()) {
+    if (profile->online()) {
         return sendData(avatarData.data(), _serverAddress);
     }
+
 
     return true;
 }
 
-QImage HanoiClient::userAvatar(const QByteArray &userId) const {
+QImage HanoiClient::userAvatar(const QString &userId) const {
     UserAvatar avatarData;
     avatarData.setId(userId);
 
@@ -182,17 +184,11 @@ QString HanoiClient::currentUserId() const {
     return _currentUserId;
 }
 
-const ProfileData* HanoiClient::currentProfile() const {
-
-    auto userData = getLocalUser(_currentUserId);
-
-    if (userData)
-        return userData->userData();
-
-    return nullptr;
+QSharedPointer<LocalUser> HanoiClient::currentProfile() const {
+    return getLocalUser(_currentUserId);
 }
 
-QSharedPointer<LocalUser> HanoiClient::profileToLocalUser(const QString &login) {
+QSharedPointer<LocalUser> HanoiClient::createLocalUser(const QString &login) {
     auto user = QSharedPointer<LocalUser>::create();
     user->setId(login);
     user->setUpdateTime(time(nullptr));
@@ -200,53 +196,33 @@ QSharedPointer<LocalUser> HanoiClient::profileToLocalUser(const QString &login) 
     return user;
 }
 
-QSharedPointer<LocalUser> HanoiClient::profileToLocalUser(const ProfileData &profile) {
-    auto user = QSharedPointer<LocalUser>::create();
-    user->setId(profile.userId().toLatin1());
-    user->setUpdateTime(time(nullptr));
-    user->setUserData(profile);
+bool HanoiClient::addProfile(const LocalUser& user) {
 
-    return user;
-}
-
-bool HanoiClient::addProfile(const ProfileData &profile) {
-    auto userData = getLocalUser(profile.userIdRaw());
-
-    if (!userData.isNull()) {
-        return false;
-    }
-
-    auto user = profileToLocalUser(profile);
+    auto localUser = QSharedPointer<LocalUser>::create();
+    localUser->copyFrom(&user);
 
     if (auto database = db()) {
-        return database->updateObject(user);
+        return database->updateObject(localUser);
     }
 
     return false;
 
 }
 
-bool HanoiClient::updateProfile(const ProfileData &profile) {
-    auto userData = getLocalUser(profile.userIdRaw());
+bool HanoiClient::updateProfile(const LocalUser& data) {
+    auto localUser = QSharedPointer<LocalUser>::create();
+    localUser->copyFrom(&data);
 
-    if (userData.isNull()) {
+    if (!db()->updateObject(localUser)) {
         return false;
     }
 
-    userData->setUserData(profile);
-
-    if (!db()->updateObject(userData)) {
-        return false;
-    }
-
-    if (userData->online()) {
-        auto data = profileToLocalUser(profile);
-        return sendData(data.data(), _serverAddress);
+    if (localUser->online()) {
+        return sendData(localUser.data(), _serverAddress);
     }
 
     return true;
 }
-
 
 bool HanoiClient::login(const QString &userId, const QString &rawPassword) {
 
@@ -258,6 +234,8 @@ bool HanoiClient::login(const QString &userId, const QString &rawPassword) {
     }
 
     _currentUserId = userId;
+
+    emit profileChanged(user);
 
     if (user->online() && !p_login(userId, hashgenerator(rawPassword.toLatin1()))) {
         return false;
@@ -275,12 +253,22 @@ bool HanoiClient::registerUser(const QString &userId, const QString &rawPassword
         return false;
     }
 
+    emit profileChanged(user);
+
     return p_signIn(userId, hashgenerator(rawPassword.toLatin1()));
 }
 
-bool HanoiClient::registerOflineUser(const QString &login) {
-    auto user = profileToLocalUser(login);
-    return db()->insertObject(user);
+bool HanoiClient::registerOflineUser(const QString &login, const QString& username) {
+    auto user = createLocalUser(login);
+    user->userData()->setName(username);
+
+    if (!db()->insertObject(user)) {
+        return false;
+    }
+
+    emit profileChanged(user);
+
+    return true;
 }
 
 bool HanoiClient::removeUser(const QString &userId) {
