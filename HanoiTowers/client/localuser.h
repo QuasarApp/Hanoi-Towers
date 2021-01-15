@@ -34,7 +34,7 @@ public:
 
     // QOBJECT
 
-    Q_INVOKABLE QObject* gameState();
+    Q_INVOKABLE GameState* gameState();
     Q_INVOKABLE QString userId() const;
 
     Q_INVOKABLE QString name() const;
