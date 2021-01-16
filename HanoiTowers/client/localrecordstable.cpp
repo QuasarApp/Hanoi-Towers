@@ -18,12 +18,10 @@ LocalRecordsTable::LocalRecordsTable():
 bool LocalRecordsTable::fromSqlRecord(const QSqlRecord &q) {
 
     UserPreview data;
-    ProfileData profile(q.value("id").toByteArray());
-    profile.fromBytes(q.value("userdata").toByteArray());
+    data.id = q.value("id").toString();
 
-    data.userName = profile.name();
-    data.id = getId().toString();
-    data.record = profile.record();
+    data.userName = q.value("userName").toString();
+    data.record = q.value("points").toInt();
 
     _data[data.id] = data;
 
@@ -35,7 +33,9 @@ QH::PKG::DBObject *LocalRecordsTable::createDBObject() const {
 }
 
 QH::PKG::DBVariantMap LocalRecordsTable::variantMap() const {
-    return {{"userdata",    {}}};
+    return {{"id",          {}},
+            {"points",      {}},
+            {"userName",    {}}};
 }
 
 QString LocalRecordsTable::condition() const {

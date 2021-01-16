@@ -4,8 +4,7 @@
 #include <QSqlQuery>
 
 UserData::UserData():
-    QH::PKG::DBObject("UsersData"),
-    _userData("") {
+    QH::PKG::DBObject("UsersData") {
 
 }
 
@@ -33,7 +32,7 @@ bool UserData::copyFrom(const QH::PKG::AbstractData *other) {
 }
 
 void UserData::setName(const QString &name) {
-    _userData.setName(name);
+    _userData._name = name;
 }
 
 QH::PKG::DBObject *UserData::createDBObject() const {
@@ -45,33 +44,43 @@ bool UserData::fromSqlRecord(const QSqlRecord &q) {
         return false;
     }
 
-    _userData.fromBytes(q.value("userdata").toByteArray());
+    _userData._avatarHash = q.value("userAvatar").toInt();
+    _userData._name = q.value("userName").toString();
+    _userData._record = q.value("points").toInt();
+    _userData._state.fromBytes(q.value("gameState").toByteArray());
+
     setUpdateTime(q.value("updateTime").toInt());
 
     return isValid();
 }
 
 bool UserData::isValid() const {
-    return DBObject::isValid() && _userData.name().size() > 0 && _updateTime > 1604255995;
+    return DBObject::isValid() && _userData._name.size() > 0 && _updateTime > 1604255995;
 }
 
 QDataStream &UserData::fromStream(QDataStream &stream) {
     DBObject::fromStream(stream);
     stream >> _userData;
+    stream >> _updateTime;
+
     return stream;
 }
 
 QDataStream &UserData::toStream(QDataStream &stream) const {
     DBObject::toStream(stream);
     stream << _userData;
+    stream << _updateTime;
+
     return stream;
 }
 
 DBVariantMap UserData::variantMap() const {
-    return {{"visibleName", {_userData.name(),      QH::PKG::MemberType::InsertUpdate}},
-            {"points",      {_userData.record(),    QH::PKG::MemberType::InsertUpdate}},
-            {"updateTime",  {_updateTime,           QH::PKG::MemberType::InsertUpdate}},
-            {"userdata",    {_userData.toBytes(),   QH::PKG::MemberType::InsertUpdate}}};
+    return {{primaryKey(),  {getId(),                   QH::PKG::MemberType::PrimaryKey}},
+            {"userName",    {_userData._name,           QH::PKG::MemberType::InsertUpdate}},
+            {"points",      {_userData._record,         QH::PKG::MemberType::InsertUpdate}},
+            {"updateTime",  {_updateTime,               QH::PKG::MemberType::InsertUpdate}},
+            {"gameState",   {_userData._state.toBytes(),QH::PKG::MemberType::InsertUpdate}},
+            {"userAvatar",  {_userData._avatarHash,     QH::PKG::MemberType::InsertUpdate}}};
 }
 
 QString UserData::primaryKey() const {

@@ -39,7 +39,7 @@ class BackEnd: public QObject
     Q_PROPERTY(bool fog READ fog WRITE setFog NOTIFY fogChanged)
     Q_PROPERTY(bool fogAnimation READ fogAnimation WRITE setFogAnimation NOTIFY fogAnimationChanged)
 
-    Q_PROPERTY(QObject* gameState READ gameState)
+    Q_PROPERTY(GameState* gameState READ gameState)
     Q_PROPERTY(QObject* client READ client)
 
     Q_PROPERTY(QObject* profileList READ profileList  NOTIFY profileListChanged)
@@ -117,7 +117,7 @@ public slots:
      * @brief gameState
      * @return
      */
-    QObject *gameState();
+    GameState *gameState();
 
     /**
      * @brief client

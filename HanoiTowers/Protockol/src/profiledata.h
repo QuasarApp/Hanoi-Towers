@@ -9,12 +9,18 @@
 #define PROFILEDATA_H
 #include "gamestate.h"
 
-struct HANOITOWERSPROTOCOL_EXPORT ProfileData {
+class HANOITOWERSPROTOCOL_EXPORT ProfileData : public QH::StreamBase {
+public:
     GameState _state;
     QString _name;
     int _record = 0;
     bool _online = false;
     int _avatarHash;
+
+    // StreamBase interface
+protected:
+    QDataStream &fromStream(QDataStream &stream) override;
+    QDataStream &toStream(QDataStream &stream) const override;
 };
 
 

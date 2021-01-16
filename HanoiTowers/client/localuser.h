@@ -17,12 +17,12 @@ class LocalUser: public QObject, public QH::PKG::DBObject
 {
     Q_OBJECT
 
-    Q_PROPERTY(GameState* gameState READ gameState NOTIFY prfileDataChanged)
-    Q_PROPERTY(QString name READ name WRITE setName NOTIFY prfileDataChanged)
-    Q_PROPERTY(QString userId READ userId  NOTIFY prfileDataChanged)
-    Q_PROPERTY(int record READ record WRITE setRecord NOTIFY prfileDataChanged)
-    Q_PROPERTY(int avatarHash READ avatarHash WRITE setAvatarHash NOTIFY prfileDataChanged)
-    Q_PROPERTY(bool onlineUser READ isOnline WRITE setOnline NOTIFY prfileDataChanged)
+    Q_PROPERTY(GameState* gameState READ gameState NOTIFY gameStateChanged)
+    Q_PROPERTY(QString name READ name WRITE setName NOTIFY nameChanged)
+    Q_PROPERTY(QString userId READ userId  NOTIFY userIdChanged)
+    Q_PROPERTY(int record READ record WRITE setRecord NOTIFY recordChanged)
+    Q_PROPERTY(int avatarHash READ avatarHash WRITE setAvatarHash NOTIFY avatarChanged)
+    Q_PROPERTY(bool onlineUser READ isOnline WRITE setOnline NOTIFY onlineChanged)
 
 public:
     LocalUser();
@@ -35,6 +35,8 @@ public:
     // QOBJECT
 
     Q_INVOKABLE GameState* gameState();
+    Q_INVOKABLE const GameState* gameState() const;
+
     Q_INVOKABLE QString userId() const;
 
     Q_INVOKABLE QString name() const;
@@ -69,7 +71,8 @@ public slots:
     void setAvatarHash(int avatarHash);
 
 signals:
-    void prfileDataChanged();
+    void userIdChanged(QString);
+    void gameStateChanged(const GameState*);
     void nameChanged(QString);
     void recordChanged(int);
     void avatarChanged(int);
@@ -82,11 +85,19 @@ protected:
     QH::PKG::DBObject *createDBObject() const override;
     QString primaryKey() const override;
 
+    void setUserId(const QString& id);
+    void setGameState(const GameState& state);
+    void setGameState(const QByteArray& state);
+
+
 private:
     QByteArray _hashPassword;
     QH::AccessToken _token;
     ProfileData _userData;
     int _updateTime = 0;
+
+
+
 };
 
 #endif // LOCALUSER_H

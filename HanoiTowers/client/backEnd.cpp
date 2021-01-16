@@ -235,7 +235,7 @@ QObject *BackEnd::profileObject() {
     return &_profile;
 }
 
-QObject* BackEnd::gameState() {
+GameState* BackEnd::gameState() {
     if (auto obj = dynamic_cast<LocalUser*>(profileObject())) {
         return obj->gameState();
     }

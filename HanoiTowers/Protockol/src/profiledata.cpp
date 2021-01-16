@@ -7,3 +7,24 @@
 
 #include "profiledata.h"
 
+
+QDataStream &ProfileData::fromStream(QDataStream &stream) {
+
+    stream >> _state;
+    stream >> _name;
+    stream >> _record;
+    stream >> _online;
+    stream >> _avatarHash;
+
+    return stream;
+}
+
+QDataStream &ProfileData::toStream(QDataStream &stream) const {
+    stream << _state;
+    stream << _name;
+    stream << _record;
+    stream << _online;
+    stream << _avatarHash;
+    return stream;
+
+}

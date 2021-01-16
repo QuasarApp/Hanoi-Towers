@@ -260,7 +260,7 @@ bool HanoiClient::registerUser(const QString &userId, const QString &rawPassword
 
 bool HanoiClient::registerOflineUser(const QString &login, const QString& username) {
     auto user = createLocalUser(login);
-    user->userData()->setName(username);
+    user->setName(username);
 
     if (!db()->insertObject(user)) {
         return false;

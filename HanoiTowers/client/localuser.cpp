@@ -21,40 +21,38 @@ LocalUser::LocalUser(const QH::PKG::DBObject *other ):LocalUser() {
 }
 
 bool LocalUser::copyFrom(const QH::PKG::AbstractData *other) {
-    if (!QH::PKG::DBObject::copyFrom(other))
-        return false;
-
     auto otherObject = dynamic_cast<const LocalUser*>(other);
     if (!otherObject)
         return false;
 
-    this->_hashPassword = otherObject->_hashPassword;
-    this->_token = otherObject->_token;
-    this->_userData._avatarHash = otherObject->_userData._avatarHash;
-    this->_userData._name = otherObject->_userData._name;
-    this->_userData._online = otherObject->_userData._online;
-    this->_userData._record = otherObject->_userData._record;
-    this->_userData._state = otherObject->_userData._state;
+    setUserId(otherObject->userId());
+    setHashPassword(otherObject->hashPassword());
 
-    this->_updateTime = otherObject->_updateTime;
+    setToken(otherObject->token());
+    setGameState(*static_cast<const GameState*>(otherObject->gameState()));
 
-    emit prfileDataChanged();
+    setAvatarHash(otherObject->avatarHash());
+    setName(otherObject->name());
+    setRecord(otherObject->record());
+    setOnline(otherObject->online());
+
+    setUpdateTime(otherObject->updateTime());
 
     return true;
 }
 
 bool LocalUser::fromSqlRecord(const QSqlRecord &q) {
-    if(!DBObject::fromSqlRecord(q)) {
-        return false;
-    }
+
+    setUserId(q.value("id").toString());
 
     setHashPassword(q.value("passwordHash").toByteArray());
     setToken(QH::AccessToken{q.value("token").toByteArray()});
+    setGameState(q.value("gameState").toByteArray());
 
-    setToken(QH::AccessToken{q.value("token").toByteArray()});
-    setToken(QH::AccessToken{q.value("token").toByteArray()});
-    setToken(QH::AccessToken{q.value("token").toByteArray()});
-    setToken(QH::AccessToken{q.value("token").toByteArray()});
+    setAvatarHash(q.value("userAvatar").toInt());
+    setName(q.value("userName").toString());
+    setRecord(q.value("points").toInt());
+    setOnline(q.value("fOnline").toBool());
 
     setUpdateTime(q.value("updateTime").toInt());
 
@@ -67,6 +65,10 @@ bool LocalUser::isValid() const {
 }
 
 GameState *LocalUser::gameState() {
+    return &_userData._state;
+}
+
+const GameState *LocalUser::gameState() const {
     return &_userData._state;
 }
 
@@ -119,6 +121,25 @@ QH::PKG::DBObject *LocalUser::createDBObject() const {
 
 QString LocalUser::primaryKey() const {
     return "id";
+}
+
+void LocalUser::setUserId(const QString &id) {
+    if (id == userId())
+        return;
+
+    setId(id);
+    emit userIdChanged(id);
+}
+
+void LocalUser::setGameState(const GameState &state) {
+    _userData._state = state;
+    emit gameStateChanged(&_userData._state);
+}
+
+void LocalUser::setGameState(const QByteArray &state) {
+    _userData._state.fromBytes(state);
+    emit gameStateChanged(&_userData._state);
+
 }
 
 int LocalUser::updateTime() const {
