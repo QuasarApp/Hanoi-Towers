@@ -48,7 +48,7 @@ public:
     QString currentUserId() const;
 
     QSharedPointer<LocalUser> currentProfile() const;
-    bool updateProfile(const LocalUser &data);
+    bool updateProfile(const LocalUser &user);
     bool addProfile(const LocalUser &);
 
     bool login(const QString &userId, const QString& rawPassword = "");

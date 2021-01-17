@@ -75,7 +75,7 @@ Item {
                 width: listView.width
 
                 onClicked: {
-                    backEnd.setProfile(modelData);
+                    backEnd.setProfile(username);
                 }
 
             }

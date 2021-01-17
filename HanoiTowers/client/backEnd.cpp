@@ -66,7 +66,7 @@ BackEnd::BackEnd(QQmlApplicationEngine *engine):
             this, &BackEnd::handleOnlineRequest);
 
     connect(_createNewOfflineUser , &LoginView::LVMainModel::sigRegisterRequest,
-            this, &BackEnd::handleOnlineRequest);
+            this, &BackEnd::handleCreateNewProfile);
 
     connect(_client , &HanoiClient::requestError,
             this, &BackEnd::handleOnlineRequestError);
@@ -152,7 +152,8 @@ void BackEnd::handleCreateNewProfile(const LoginView::UserData & data) {
                     QmlNotificationService::NotificationData::Error);
     }
 
-    emit profileListChanged();
+    _recordsTable->setSource(_client->localUsersPreview());
+
 }
 
 void BackEnd::handleOnlineRequest(const LoginView::UserData & user) {

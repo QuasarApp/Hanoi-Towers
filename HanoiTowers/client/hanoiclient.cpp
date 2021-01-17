@@ -200,25 +200,22 @@ bool HanoiClient::addProfile(const LocalUser& user) {
 
     auto localUser = QSharedPointer<LocalUser>::create();
     localUser->copyFrom(&user);
+    localUser->setUpdateTime(time(nullptr));
 
     if (auto database = db()) {
-        return database->updateObject(localUser);
+        return database->insertObject(localUser);
     }
 
     return false;
 
 }
 
-bool HanoiClient::updateProfile(const LocalUser& data) {
+bool HanoiClient::updateProfile(const LocalUser& user) {
     auto localUser = QSharedPointer<LocalUser>::create();
-    localUser->copyFrom(&data);
+    localUser->copyFrom(&user);
 
-    if (!db()->updateObject(localUser)) {
-        return false;
-    }
-
-    if (localUser->online()) {
-        return sendData(localUser.data(), _serverAddress);
+    if (auto database = db()) {
+        return database->updateObject(localUser);
     }
 
     return true;
