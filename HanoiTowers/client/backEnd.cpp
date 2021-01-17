@@ -41,11 +41,18 @@ BackEnd::BackEnd(QQmlApplicationEngine *engine):
     _recordsTable = new RecordListModel(this);
     _imageProvider = new HanoiImageProvider(_client);
 
-    _loginModel->setComponents(LoginView::Nickname | LoginView::Password | LoginView::RegisterPage | LoginView::LoginPage);
+    _loginModel->setComponents(LoginView::Nickname |
+                               LoginView::Title |
+                               LoginView::Password |
+                               LoginView::RegisterPage |
+                               LoginView::LoginPage |
+                               LoginView::TermOfUse);
     _loginModel->init(engine);
-    _createNewOfflineUser->setComponents(LoginView::Nickname | LoginView::RegisterPage);
-    _createNewOfflineUser->setAcceptButtonText(tr("Create new user"));
 
+    _createNewOfflineUser->setComponents(LoginView::Nickname |
+                                         LoginView::RegisterPage |
+                                         LoginView::Title);
+    _createNewOfflineUser->setAcceptButtonText(tr("Create new user"));
     _createNewOfflineUser->init(engine);
 
     _recordsTable->setSource(_client->localUsersPreview());
