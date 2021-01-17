@@ -35,7 +35,7 @@ public:
     // QOBJECT
 
     Q_INVOKABLE GameState* gameState();
-    Q_INVOKABLE const GameState* gameState() const;
+    Q_INVOKABLE const GameState *gameState() const;
 
     Q_INVOKABLE QString userId() const;
 
@@ -65,6 +65,10 @@ public:
     int updateTime() const;
     void setUpdateTime(int updateTime);
 
+    void setUserId(const QString& id);
+    void setGameState(const GameState& state);
+    void setGameState(const QByteArray& state);
+
 public slots:
     void setOnline(bool online);
     void setRecord(int record);
@@ -84,11 +88,6 @@ protected:
     QH::PKG::DBVariantMap variantMap() const override;
     QH::PKG::DBObject *createDBObject() const override;
     QString primaryKey() const override;
-
-    void setUserId(const QString& id);
-    void setGameState(const GameState& state);
-    void setGameState(const QByteArray& state);
-
 
 private:
     QByteArray _hashPassword;

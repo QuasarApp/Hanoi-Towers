@@ -29,7 +29,7 @@ bool LocalUser::copyFrom(const QH::PKG::AbstractData *other) {
     setHashPassword(otherObject->hashPassword());
 
     setToken(otherObject->token());
-    setGameState(*static_cast<const GameState*>(otherObject->gameState()));
+    setGameState(*otherObject->gameState());
 
     setAvatarHash(otherObject->avatarHash());
     setName(otherObject->name());
@@ -64,11 +64,11 @@ bool LocalUser::isValid() const {
     return DBObject::isValid() && _updateTime > 1603891116;
 }
 
-GameState *LocalUser::gameState() {
+GameState* LocalUser::gameState() {
     return &_userData._state;
 }
 
-const GameState *LocalUser::gameState() const {
+const GameState* LocalUser::gameState() const {
     return &_userData._state;
 }
 
@@ -132,8 +132,7 @@ void LocalUser::setUserId(const QString &id) {
 }
 
 void LocalUser::setGameState(const GameState &state) {
-    _userData._state = state;
-    emit gameStateChanged(&_userData._state);
+    setGameState(state.toBytes());
 }
 
 void LocalUser::setGameState(const QByteArray &state) {

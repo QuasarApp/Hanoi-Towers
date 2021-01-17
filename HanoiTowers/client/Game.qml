@@ -24,6 +24,7 @@ Item {
     property var upPlate : null
 
     property var stateWidget: null
+    property var stateData: (backEnd)? backEnd.gameState : null
 
     signal returnToMenu();
 
@@ -40,14 +41,14 @@ Item {
             help.open();
         }
 
-        backEnd.gameState.load();
+        stateData.load();
 
         start(-1);
     }
     function load () {
 
-        backEnd.gameState.load();
-        stateWidget.tumbler.spin.maximumValue = backEnd.gameState.getMaxValueOfLoadedSaves();
+        stateData.load();
+        stateWidget.tumbler.spin.maximumValue = stateData.getMaxValueOfLoadedSaves();
 
         tower1.clear()
         tower2.clear()
@@ -58,13 +59,13 @@ Item {
             upPlate = null;
         }
 
-        stateWidget.step = backEnd.gameState.getStep();
-        stateWidget.tumbler.spin.value = all = backEnd.gameState.getMaxValueOfLoadedSaves();
+        stateWidget.step = stateData.getStep();
+        stateWidget.tumbler.spin.value = all = stateData.getMaxValueOfLoadedSaves();
 
         const towers = [tower1, tower2, tower3]
 
         for (let i = 0; i < 3; ++i) {
-            const toewer = backEnd.gameState.getTower(i)
+            const toewer = stateData.getTower(i)
             toewer.forEach((mass)=>{
                                var temp = Qt.createComponent("plate.qml")
                                if (temp.status === Component.Ready) {
@@ -81,7 +82,7 @@ Item {
 
     function start(value = -1 ) {
 
-        stateWidget.tumbler.spin.maximumValue = backEnd.gameState.lvl;
+        stateWidget.tumbler.spin.maximumValue = stateData.lvl;
         if (stateWidget.tumbler.spin.maximumValue <= value || value < 0)
             stateWidget.tumbler.spin.value = all = value = stateWidget.tumbler.spin.maximumValue
         else {
@@ -103,14 +104,16 @@ Item {
             }
         }
 
-        saveState(tower1);
-        saveState(tower2);
-        saveState(tower3);
+        saveState();
     }
 
-    function saveState(obj) {
-        backEnd.gameState.setStep(stateWidget.step);
-        backEnd.gameState.setTower(obj.number, obj.itemsMassArray);
+    function saveState() {
+        stateData.setStep(stateWidget.step);
+        stateData.setTower(tower1.number, tower1.itemsMassArray);
+        stateData.setTower(tower2.number, tower2.itemsMassArray);
+        stateData.setTower(tower3.number, tower3.itemsMassArray);
+
+//        backEnd.gameState = stateData;
     }
 
     function move(from, into) {
@@ -118,6 +121,7 @@ Item {
             tower1.push()
         }
     }
+
     function trigered(obj) {
 
         stateWidget.tumbler.visible = false;
@@ -151,8 +155,8 @@ Item {
                 popUp.open()
 
                 const action = function () {
-                    backEnd.gameState.unlockNextLvl();
-                    start(backEnd.gameState.lvl)
+                    stateData.unlockNextLvl();
+                    start(stateData.lvl)
                 }
 
                 popUp.action = action;
@@ -181,9 +185,7 @@ Item {
             objectPlate.updateCoordinates();
 
         if (!upPlate) {
-            saveState(tower1);
-            saveState(tower2);
-            saveState(tower3);
+            saveState();
         }
     }
     

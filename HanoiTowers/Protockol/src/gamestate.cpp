@@ -77,3 +77,10 @@ bool GameState::load() {
     return true;
 
 }
+
+bool operator == (const GameState& left, const GameState& right) {
+    return left._lvl == right._lvl &&
+            left.save == right.save &&
+            left.step == right.step &&
+            left.maxValueOfLoadedSave == right.maxValueOfLoadedSave;
+}

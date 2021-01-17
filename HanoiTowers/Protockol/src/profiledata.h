@@ -11,16 +11,23 @@
 
 class HANOITOWERSPROTOCOL_EXPORT ProfileData : public QH::StreamBase {
 public:
+
+    ProfileData();
+    ProfileData(const ProfileData& other);
+
     GameState _state;
     QString _name;
     int _record = 0;
     bool _online = false;
     int _avatarHash;
 
+    ProfileData& operator= (const ProfileData& right);
+
     // StreamBase interface
 protected:
     QDataStream &fromStream(QDataStream &stream) override;
     QDataStream &toStream(QDataStream &stream) const override;
+
 };
 
 

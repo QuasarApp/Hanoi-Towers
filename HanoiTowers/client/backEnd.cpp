@@ -39,10 +39,6 @@ BackEnd::BackEnd(QQmlApplicationEngine *engine):
     _recordsTable = new RecordListModel(this);
     _imageProvider = new HanoiImageProvider(_client);
 
-
-
-
-
     _loginModel->setComponents(LoginView::Nickname);
     _loginModel->init(engine);
 
@@ -235,7 +231,7 @@ QObject *BackEnd::profileObject() {
     return &_profile;
 }
 
-GameState* BackEnd::gameState() {
+GameState *BackEnd::gameState() {
     if (auto obj = dynamic_cast<LocalUser*>(profileObject())) {
         return obj->gameState();
     }
@@ -297,4 +293,12 @@ void BackEnd::setFogAnimation(bool fogAnimation) {
     _settings->setValue(FOG_ANIMATION, fogAnimation);
 
     emit fogAnimationChanged(_settingsData.fogAnimation);
+}
+
+void BackEnd::setGameState(GameState *gameState) {
+    if (_profile.gameState() == gameState)
+        return;
+
+    _profile.setGameState(*gameState);
+    emit gameStateChanged(gameState);
 }

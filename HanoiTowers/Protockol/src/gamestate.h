@@ -15,9 +15,9 @@
 #include <streambase.h>
 #include "hanoitowersprotockol_global.h"
 
-class HANOITOWERSPROTOCOL_EXPORT GameState : public QH::StreamBase
+class HANOITOWERSPROTOCOL_EXPORT GameState : public QObject, public QH::StreamBase
 {
-   Q_GADGET
+   Q_OBJECT
    Q_PROPERTY(short lvl READ lvl WRITE saveLvl)
 
 public:
@@ -32,6 +32,8 @@ public:
     Q_INVOKABLE void setStep(int value);
 
     Q_INVOKABLE void unlockNextLvl();
+
+    friend bool operator == (const GameState& left, const GameState& right);
 
 
 public slots:
@@ -51,5 +53,4 @@ private:
 
 };
 
-Q_DECLARE_METATYPE(GameState)
 #endif // GAMESTATE_H

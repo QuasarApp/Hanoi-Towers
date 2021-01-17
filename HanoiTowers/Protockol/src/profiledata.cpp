@@ -7,6 +7,13 @@
 
 #include "profiledata.h"
 
+ProfileData::ProfileData() {
+
+}
+
+ProfileData::ProfileData(const ProfileData &other) {
+    ProfileData::operator=(other);
+}
 
 QDataStream &ProfileData::fromStream(QDataStream &stream) {
 
@@ -27,4 +34,8 @@ QDataStream &ProfileData::toStream(QDataStream &stream) const {
     stream << _avatarHash;
     return stream;
 
+}
+
+ProfileData &ProfileData::operator=(const ProfileData &right) {
+    return static_cast<ProfileData&>(StreamBase::operator=(right));
 }

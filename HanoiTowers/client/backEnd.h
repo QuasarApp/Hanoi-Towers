@@ -39,7 +39,7 @@ class BackEnd: public QObject
     Q_PROPERTY(bool fog READ fog WRITE setFog NOTIFY fogChanged)
     Q_PROPERTY(bool fogAnimation READ fogAnimation WRITE setFogAnimation NOTIFY fogAnimationChanged)
 
-    Q_PROPERTY(GameState* gameState READ gameState)
+    Q_PROPERTY(GameState* gameState READ gameState WRITE setGameState NOTIFY gameStateChanged)
     Q_PROPERTY(QObject* client READ client)
 
     Q_PROPERTY(QObject* profileList READ profileList  NOTIFY profileListChanged)
@@ -117,7 +117,7 @@ public slots:
      * @brief gameState
      * @return
      */
-    GameState *gameState();
+    GameState* gameState();
 
     /**
      * @brief client
@@ -137,6 +137,8 @@ public slots:
     void setFog(bool fog);
     void setFogAnimation(bool fogAnimation);
 
+    void setGameState(GameState* gameState);
+
 signals:
     void animationChanged();
     void randomColorChanged();
@@ -150,6 +152,8 @@ signals:
     void fogChanged(bool fog);
 
     void fogAnimationChanged(bool fogAnimation);
+
+    void gameStateChanged(GameState* gameState);
 
 private slots:
     void handleOnlineRequestfromProfile(const QString&);
@@ -170,7 +174,9 @@ private:
     HanoiClient *_client = nullptr;
 
     SettingsData _settingsData;
-    HanoiImageProvider *_imageProvider = nullptr;    
+    HanoiImageProvider *_imageProvider = nullptr;
 };
+
+
 
 #endif // SAVER_H
