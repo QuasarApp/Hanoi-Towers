@@ -44,7 +44,8 @@ Item {
 
             onClicked: {
                 if (backEnd) {
-                    backEnd.createProfile(textField.text, element.position)
+                    loginPopUp.lognViewModel = createUser;
+                    loginPopUp.open()
                 }
             }
         }
@@ -90,6 +91,7 @@ Item {
         Connections {
             target: backEnd;
             function onShowOnlinePage () {
+                loginPopUp.lognViewModel = userLogin;
                 loginPopUp.open();
             }
         }

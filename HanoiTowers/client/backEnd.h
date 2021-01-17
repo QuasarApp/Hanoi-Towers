@@ -159,6 +159,7 @@ private slots:
     void handleOnlineRequestfromProfile(const QString&);
     void handleChangeName(const QString&);
 
+    void handleCreateNewProfile(const LoginView::UserData&);
     void handleOnlineRequest(const LoginView::UserData&);
     void handleOnlineRequestError(const QString&Errr);
 
@@ -167,7 +168,10 @@ private:
     void init();
 
     QuasarAppUtils::Settings *_settings = nullptr;
+
     LoginView::LVMainModel *_loginModel = nullptr;
+    LoginView::LVMainModel *_createNewOfflineUser = nullptr;
+
     RecordListModel * _recordsTable = nullptr;
 
     LocalUser _profile;

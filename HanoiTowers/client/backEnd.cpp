@@ -36,11 +36,17 @@ BackEnd::BackEnd(QQmlApplicationEngine *engine):
 
     _client = new HanoiClient();
     _loginModel = new LoginView::LVMainModel("userLogin", this);
+    _createNewOfflineUser = new LoginView::LVMainModel("createUser", this);
+
     _recordsTable = new RecordListModel(this);
     _imageProvider = new HanoiImageProvider(_client);
 
-    _loginModel->setComponents(LoginView::Nickname);
+    _loginModel->setComponents(LoginView::Nickname | LoginView::Password | LoginView::RegisterPage | LoginView::LoginPage);
     _loginModel->init(engine);
+    _createNewOfflineUser->setComponents(LoginView::Nickname | LoginView::RegisterPage);
+    _createNewOfflineUser->setAcceptButtonText(tr("Create new user"));
+
+    _createNewOfflineUser->init(engine);
 
     _recordsTable->setSource(_client->localUsersPreview());
 
@@ -50,6 +56,9 @@ BackEnd::BackEnd(QQmlApplicationEngine *engine):
             this, &BackEnd::handleOnlineRequest);
 
     connect(_loginModel , &LoginView::LVMainModel::sigRegisterRequest,
+            this, &BackEnd::handleOnlineRequest);
+
+    connect(_createNewOfflineUser , &LoginView::LVMainModel::sigRegisterRequest,
             this, &BackEnd::handleOnlineRequest);
 
     connect(_client , &HanoiClient::requestError,
@@ -122,6 +131,21 @@ void BackEnd::handleOnlineRequestfromProfile(const QString &name) {
 void BackEnd::handleChangeName(const QString & name) {
     _client->updateProfile(_profile);
     emit profileChanged(name);
+}
+
+void BackEnd::handleCreateNewProfile(const LoginView::UserData & data) {
+    LocalUser user;
+    user.setName(data.nickname());
+    user.setUserId(data.nickname());
+
+    if (!_client->addProfile(user)) {
+        QmlNotificationService::NotificationService::getService()->setNotify(
+                    tr("Create user error"),
+                    tr("Failed to create a new user, The name %0 alredy used.").arg(data.nickname()), "",
+                    QmlNotificationService::NotificationData::Error);
+    }
+
+    emit profileListChanged();
 }
 
 void BackEnd::handleOnlineRequest(const LoginView::UserData & user) {
