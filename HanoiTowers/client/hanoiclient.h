@@ -59,7 +59,7 @@ public:
 
     void connectToServer(const QH::HostAddress& host);
 
-    QMap<QString, UserPreview> localUsersPreview();
+    QList<UserPreview> localUsersPreview();
 
     // AbstractNode interface
     Status getStatus() const;

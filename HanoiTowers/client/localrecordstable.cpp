@@ -23,7 +23,7 @@ bool LocalRecordsTable::fromSqlRecord(const QSqlRecord &q) {
     data.userName = q.value("userName").toString();
     data.record = q.value("points").toInt();
 
-    _data[data.id] = data;
+    _data.push_back(data);
 
     return true;
 }
@@ -42,11 +42,11 @@ QString LocalRecordsTable::condition() const {
     return "";
 }
 
-const QMap<QString, UserPreview> &LocalRecordsTable::data() const {
+const QList<UserPreview> &LocalRecordsTable::data() const {
     return _data;
 }
 
-void LocalRecordsTable::setData(const QMap<QString, UserPreview> &data) {
+void LocalRecordsTable::setData(const QList<UserPreview> &data) {
     _data = data;
 }
 

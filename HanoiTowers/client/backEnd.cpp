@@ -16,6 +16,7 @@
 #include <lvmainmodel.h>
 #include <recordlistmodel.h>
 #include <QQmlContext>
+#include "dataconverter.h"
 #include "localuser.h"
 
 #define DEFAULT_USER_ID "DefaultUser"
@@ -40,6 +41,7 @@ BackEnd::BackEnd(QQmlApplicationEngine *engine):
 
     _recordsTable = new RecordListModel(this);
     _imageProvider = new HanoiImageProvider(_client);
+    _dataConverter = new DataConverter;
 
     _loginModel->setComponents(LoginView::Nickname |
                                LoginView::Title |
@@ -58,6 +60,7 @@ BackEnd::BackEnd(QQmlApplicationEngine *engine):
     _recordsTable->setSource(_client->localUsersPreview());
 
     engine->addImageProvider("HanoiImages", _imageProvider);
+
 
     connect(_loginModel , &LoginView::LVMainModel::sigLoginRequest,
             this, &BackEnd::handleOnlineRequest);
@@ -82,8 +85,6 @@ BackEnd::BackEnd(QQmlApplicationEngine *engine):
 
     setProfile(_settings->getStrValue(CURRENT_PROFILE_KEY, DEFAULT_USER_ID));
     init();
-
-
 }
 
 void BackEnd::reset(){
@@ -136,7 +137,6 @@ void BackEnd::handleOnlineRequestfromProfile(const QString &name) {
 }
 
 void BackEnd::handleChangeName(const QString & name) {
-    _client->updateProfile(_profile);
     emit profileChanged(name);
 }
 
@@ -152,8 +152,7 @@ void BackEnd::handleCreateNewProfile(const LoginView::UserData & data) {
                     QmlNotificationService::NotificationData::Error);
     }
 
-    _recordsTable->setSource(_client->localUsersPreview());
-
+    _recordsTable->updateSourceItem(_dataConverter->toUserPreview(data));
 }
 
 void BackEnd::handleOnlineRequest(const LoginView::UserData & user) {
@@ -164,11 +163,13 @@ void BackEnd::handleOnlineRequest(const LoginView::UserData & user) {
                     tr("Failed to register this account, if this account was created by you, try to restore it."), "",
                     QmlNotificationService::NotificationData::Error);
     }
-
 }
 
-void BackEnd::handleOnlineRequestError(const QString &) {
-    handleOnlineRequestfromProfile("");
+void BackEnd::handleOnlineRequestError(const QString & err) {
+    QmlNotificationService::NotificationService::getService()->setNotify(
+                tr("Server error"),
+                err, "",
+                QmlNotificationService::NotificationData::Error);
 }
 
 void BackEnd::handleProfileChanged(QSharedPointer<LocalUser> profileId) {
@@ -240,6 +241,8 @@ BackEnd::~BackEnd() {
     _client->updateProfile(_profile);
     _imageProvider->stop();
     _client->softDelete();
+
+    delete _dataConverter;
 }
 
 QString BackEnd::profile() const {
@@ -282,11 +285,16 @@ void BackEnd::removeUser(const QString &userId) {
                     tr("Remove online error"), tr("current profile not online!"), "",
                     QmlNotificationService::NotificationData::Warning);
     }
+
+    _recordsTable->removeSourceItem(userId);
+
 }
 
 void BackEnd::setProfile(QString userId) {
     if (!_client)
         return;
+
+    _client->updateProfile(_profile);
 
     if ( _client->login(userId)) {
         emit profileChanged(userId);
@@ -300,6 +308,8 @@ void BackEnd::setReward(int revard) {
     if (_profile.record() < revard) {
         _profile.setRecord(revard);
         _client->updateProfile(_profile);
+        _recordsTable->updateSourceItem(_dataConverter->toUserPreview(_profile));
+
     }
 }
 

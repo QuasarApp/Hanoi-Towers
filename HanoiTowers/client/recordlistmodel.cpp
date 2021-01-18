@@ -21,44 +21,47 @@ QVariant RecordListModel::data(const QModelIndex &index, int role) const {
         return {};
     }
 
-    auto iten = std::next(_data.begin(), index.row());
+    auto iten = _data.value(index.row());
 
     if (role == Username) {
-        return iten.value().userName;
+        return iten.userName;
     }
 
     if (role == Record) {
-        return iten.value().record;
+        return iten.record;
+    }
+
+    if (role == UserId) {
+        return iten.id;
     }
 
     return "Not Supported";
 }
 
-void RecordListModel::setSource(const QMap<QString, UserPreview> &data) {
+void RecordListModel::setSource(const QList<UserPreview> &data) {
     beginResetModel();
     _data = data;
     endResetModel();
 }
 
 void RecordListModel::updateSourceItem(const UserPreview &data) {
-    int row = std::distance(_data.begin(), _data.find(data.userName));
+    auto row = _data.indexOf(data);
     if (row >= 0) {
         emit dataChanged(index(row, 0), index(row, 0));
     } else {
         beginInsertRows({}, _data.size(), _data.size());
-        _data.insert(data.userName, data);
+        _data.push_back(data);
         endInsertRows();
     }
 }
 
-void RecordListModel::removeSourceItem(const QString &name) {
-    int row = std::distance(_data.begin(), _data.find(name));
-
+void RecordListModel::removeSourceItem(const QString &id) {
+    auto row = _data.indexOf(id);
     if (row < 0)
         return;
 
     beginRemoveRows({}, row, row);
-    _data.remove(name);
+    _data.removeAt(row);
     endRemoveRows();
 }
 
@@ -67,6 +70,7 @@ QHash<int, QByteArray> RecordListModel::roleNames() const {
 
     result[Username]    = "username";
     result[Record]      = "record";
+    result[UserId]      = "userid";
 
     return result;
 }

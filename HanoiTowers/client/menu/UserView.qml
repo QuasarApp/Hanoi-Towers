@@ -3,7 +3,7 @@ import QtQuick.Controls 2.15
 import QtQuick.Controls.Material 2.15
 import QtQuick.Layouts 1.15
 import QtQuick.Window 2.15
-import QtQuick.Dialogs 1.0
+import QtQuick.Dialogs 1.1
 
 GridLayout {
     id: mainLayout
@@ -92,11 +92,6 @@ GridLayout {
             text: (userModel)? userModel.name: ""
             horizontalAlignment: Text.AlignHCenter
             maximumLength: 64
-
-            onEditingFinished: {
-                if (userModel)
-                    userModel.name = text
-            }
         }
 
         TextField {
@@ -112,11 +107,6 @@ GridLayout {
         Switch {
             id: eonline
             checked: (userModel)? userModel.onlineUser: false
-
-            onCheckedChanged: {
-                if (userModel)
-                    userModel.onlineUser = checked
-            }
             text: ""
         }
     }
@@ -126,16 +116,58 @@ GridLayout {
         Layout.columnSpan: 2
 
         Button {
-            id: accept
-            text: qsTr("Accept")
+            id: remove
+
+            Material.background: Material.Red
+
+            text: qsTr("Remove This Profile")
+
+            readonly property int questionCode: Math.random() * 1000
+            onClicked: {
+                notificationService.setQuestion(qsTr("Remove %0 user").arg(userModel.userId),
+                                             qsTr("All saved data and records will be delete, Do you want continuee?"),
+                                             "",
+                                             questionCode)
+
+            }
+
+            Connections {
+                target: notificationService
+                function onQuestionCompleted(accepted, code) {
+                    if (accepted && code === remove.questionCode) {
+                        console.log("User Removed")
+                        // Remove
+                    }
+                }
+            }
+        }
+
+        Item {
+            Layout.fillWidth: true
         }
 
         Button {
-            id: remove
-            text: qsTr("Remove This Profile")
+            id: restore
+            text: qsTr("Restore")
+        }
+
+        Button {
+            id: accept
+            text: qsTr("Accept")
+            Material.background: Material.Green
+
+            onClicked: {
+                if (userModel) {
+                    userModel.onlineUser = eonline.checked
+                    userModel.name = ename.text
+
+                    notificationService.setNotify(qsTr("User is updated"), qsTr("User data will be changed."));
+
+                }
+            }
+
         }
     }
-
 }
 
 

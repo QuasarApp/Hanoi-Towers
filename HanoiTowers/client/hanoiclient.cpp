@@ -282,7 +282,7 @@ void HanoiClient::connectToServer(const QH::HostAddress &host) {
     _serverAddress = host;
 }
 
-QMap<QString, UserPreview> HanoiClient::localUsersPreview() {
+QList<UserPreview> HanoiClient::localUsersPreview() {
     LocalRecordsTable query;
     auto result = db()->getObject(query);
 

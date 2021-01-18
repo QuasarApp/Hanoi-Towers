@@ -20,7 +20,8 @@ public:
 
     enum RecordListModelRoles {
         Username = Qt::UserRole,
-        Record
+        Record,
+        UserId
     };
 
     RecordListModel(QObject * parent = nullptr);
@@ -28,12 +29,14 @@ public:
     int rowCount(const QModelIndex &parent) const override;
     QVariant data(const QModelIndex &index, int role) const override;
 
-    void setSource(const QMap<QString, UserPreview> &data);
     void updateSourceItem(const UserPreview& data);
-    void removeSourceItem(const QString& name);
+    void removeSourceItem(const QString& id);
+
+public slots:
+    void setSource(const QList<UserPreview> &data);
 
 private:
-    QMap<QString, UserPreview>  _data;
+    QList<UserPreview>  _data;
 
 
     // QAbstractItemModel interface

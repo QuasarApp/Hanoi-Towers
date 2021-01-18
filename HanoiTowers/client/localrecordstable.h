@@ -20,8 +20,8 @@ public:
     bool fromSqlRecord(const QSqlRecord &q) override;
     QH::PKG::DBObject *createDBObject() const override;
 
-    const QMap<QString, UserPreview>& data() const;
-    void setData(const QMap<QString, UserPreview> &data);
+    const QList<UserPreview>& data() const;
+    void setData(const QList<UserPreview>& data);
     void clear() override;
     bool isValid() const override;
 
@@ -30,7 +30,7 @@ protected:
     QString condition() const override;
 
 private:
-    QMap<QString, UserPreview> _data;
+    QList<UserPreview> _data;
 };
 
 #endif // LOCALRECORDSTABLE_H

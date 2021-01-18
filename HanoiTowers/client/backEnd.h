@@ -30,6 +30,7 @@ class UserData;
 class QQmlApplicationEngine;
 class RecordListModel;
 class HanoiImageProvider;
+class DataConverter;
 
 class BackEnd: public QObject
 {
@@ -179,6 +180,7 @@ private:
 
     SettingsData _settingsData;
     HanoiImageProvider *_imageProvider = nullptr;
+    DataConverter *_dataConverter = nullptr;
 };
 
 

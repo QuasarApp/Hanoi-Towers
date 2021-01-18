@@ -12,8 +12,13 @@
 #include <QString>
 
 struct UserPreview {
+    UserPreview();
+    UserPreview(const QString& id);
+
     QString id;
     QString userName;
     int record;
+
+    friend bool operator==(const UserPreview& left, const UserPreview& right);
 };
 #endif // USERPREVIEW_H
