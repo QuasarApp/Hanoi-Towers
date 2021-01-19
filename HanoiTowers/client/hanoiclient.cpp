@@ -203,7 +203,7 @@ QSharedPointer<UserAvatar> HanoiClient::getDefaultAvatar(const QString& userId) 
     QByteArray array;
     QDataStream stram(&array, QIODevice::WriteOnly);
 
-    QImage image("qrc:/img/DefaultAvatar");
+    QImage image(":/img/DefaultAvatar");
 
     stram << image;
     avatar->setImage(array);
