@@ -17,6 +17,7 @@
 #include <QImage>
 #include <databasenode.h>
 #include <profiledata.h>
+#include <useravatar.h>
 #include <userpreview.h>
 
 class LocalUser;
@@ -93,6 +94,7 @@ private:
     QSharedPointer<LocalUser> getLocalUser(const QString &userId) const;
     QSharedPointer<LocalUser> createLocalUser(const QString &login);
 
+    QSharedPointer<UserAvatar> getDefaultAvatar(const QString &userId) const;
 
     Status _status;
     QString _currentUserId;

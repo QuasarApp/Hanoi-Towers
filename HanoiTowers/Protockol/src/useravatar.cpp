@@ -13,6 +13,7 @@ bool UserAvatar::copyFrom(const QH::PKG::AbstractData *other) {
         return false;
 
     _image = otherObject->_image;
+    _userId = otherObject->_userId;
 
     return true;
 }
@@ -27,32 +28,47 @@ bool UserAvatar::fromSqlRecord(const QSqlRecord &q) {
     }
 
     _image = q.value("data").toByteArray();
+    _userId = q.value("user_id").toString();
 
     return isValid();
 }
 
 bool UserAvatar::isValid() const {
-    return DBObject::isValid();
+    return DBObject::isValid() && _userId.size() && !_image.isEmpty();
 }
 
 QDataStream &UserAvatar::fromStream(QDataStream &stream) {
     DBObject::toStream(stream);
     stream >> _image;
+    stream >> _userId;
+
     return stream;
 }
 
 QDataStream &UserAvatar::toStream(QDataStream &stream) const {
     DBObject::toStream(stream);
     stream << _image;
+    stream << _userId;
+
     return stream;
 }
 
 QH::PKG::DBVariantMap UserAvatar::variantMap() const {
-    return {{"data", {_image,      QH::PKG::MemberType::InsertUpdate}}};
+    return {{primaryKey(),  {primaryValue(),      QH::PKG::MemberType::PrimaryKeyAutoIncrement}},
+            {"user_id",     {_userId,             QH::PKG::MemberType::InsertUpdate}},
+            {"data",        {_image,              QH::PKG::MemberType::InsertUpdate}}};
 }
 
 QString UserAvatar::primaryKey() const {
     return "id";
+}
+
+QString UserAvatar::userId() const {
+    return _userId;
+}
+
+void UserAvatar::setUserId(const QString &userId) {
+    _userId = userId;
 }
 
 QByteArray UserAvatar::image() const {

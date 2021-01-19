@@ -49,12 +49,7 @@ void AsyncImageResponse::run() {
         return;
     }
 
-
     QImage image = _client->userAvatar(m_id.toLocal8Bit());;
-
-    if (image.isNull()) {
-        image = QImage(":/img/DefaultAvatar");
-    }
 
     if (m_requestedSize.isValid())
         image = image.scaled(m_requestedSize);

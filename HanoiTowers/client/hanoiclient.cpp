@@ -25,6 +25,7 @@ HanoiClient::HanoiClient() {
               new QH::SqlDB(),
               new QH::SqlDBWriter());
 
+
 }
 
 QH::ParserResult HanoiClient::parsePackage(const QH::Package &pkg,
@@ -196,17 +197,41 @@ QSharedPointer<LocalUser> HanoiClient::createLocalUser(const QString &login) {
     return user;
 }
 
+QSharedPointer<UserAvatar> HanoiClient::getDefaultAvatar(const QString& userId) const {
+    auto avatar = QSharedPointer<UserAvatar>::create();
+
+    QByteArray array;
+    QDataStream stram(&array, QIODevice::WriteOnly);
+
+    QImage image("qrc:/img/DefaultAvatar");
+
+    stram << image;
+    avatar->setImage(array);
+    avatar->setUserId(userId);
+
+    return avatar;
+}
+
 bool HanoiClient::addProfile(const LocalUser& user) {
 
     auto localUser = QSharedPointer<LocalUser>::create();
     localUser->copyFrom(&user);
     localUser->setUpdateTime(time(nullptr));
 
-    if (auto database = db()) {
-        return database->insertObject(localUser);
+    if (!db())
+        return false;
+
+    if (!db()->insertObject(localUser)) {
+        return false;
     }
 
-    return false;
+    auto avatar = getDefaultAvatar(user.userId());
+
+    if (!db()->insertObject(avatar)) {
+        return false;
+    }
+
+    return true;
 
 }
 

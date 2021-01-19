@@ -33,7 +33,7 @@ Item {
                 text: qsTr("Standart color")
 
                 onCheckedChanged: {
-                    if (backEnd)
+                    if (backEnd && checked)
                         backEnd.randomColor = false;
                 }
             }
@@ -43,7 +43,8 @@ Item {
                 checked: backEnd && backEnd.randomColor
                 text: qsTr("Random color")
                 onCheckedChanged: {
-                    backEnd.randomColor = true;
+                    if (backEnd && checked)
+                        backEnd.randomColor = true;
                 }
             }
 

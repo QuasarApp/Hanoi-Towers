@@ -20,15 +20,15 @@ Item {
     GridLayout {
         id: gridLayout
 
-        rows: 3
-        columns: 2
+        rows: 4
+        columns: 3
 
         anchors.fill: parent
 
         flow: GridLayout.TopToBottom
 
         UserView {
-            Layout.rowSpan: 3
+            Layout.rowSpan: 2
             userModel: (backEnd)? backEnd.profileObject(): null
 
             onNewAvatar: {
@@ -36,24 +36,15 @@ Item {
             }
         }
 
-        Base.BaseButton {
-            id: button
-            text: qsTr("Create the new user")
-
-            Layout.alignment:  Qt.AlignRight
-
-            onClicked: {
-                if (backEnd) {
-                    loginPopUp.lognViewModel = createUser;
-                    loginPopUp.open()
-                }
-            }
+        Item {
+            Layout.fillHeight: true
+            Layout.rowSpan: 2
         }
 
         TextField {
             readOnly: true;
             text: qsTr("Locale users list")
-            Layout.columnSpan: 2
+            Layout.columnSpan: 1
             Layout.fillWidth: true
             horizontalAlignment: Text.AlignHCenter
 
@@ -65,8 +56,9 @@ Item {
             Layout.fillWidth: true
             Layout.fillHeight: true
             Layout.columnSpan: 2
+            Layout.rowSpan: 3
             clip: true
-
+            ScrollBar.vertical: ScrollBar {}
             model: (backEnd)? backEnd.profileList: null
             delegate:
                 UserTableRow {
@@ -80,7 +72,20 @@ Item {
 
             }
         }
+        Base.BaseButton {
+            id: button
+            text: qsTr("Create the new user")
+            Layout.alignment: Qt.AlignHCenter| Qt.AlignVCenter
+            Layout.columnSpan: 1
+            Material.background: Material.Green
 
+            onClicked: {
+                if (backEnd) {
+                    loginPopUp.lognViewModel = createUser;
+                    loginPopUp.open()
+                }
+            }
+        }
     }
 
     LoginViewDialog {
@@ -95,5 +100,13 @@ Item {
                 loginPopUp.open();
             }
         }
+    }
+
+    Item {
+        id: item1
+        x: 80
+        y: 349
+        width: 200
+        height: 200
     }
 }

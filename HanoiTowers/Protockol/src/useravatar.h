@@ -16,6 +16,9 @@ public:
     QByteArray image() const;
     void setImage(const QByteArray &image);
 
+    QString userId() const;
+    void setUserId(const QString &userId);
+
 protected:
     QDataStream &fromStream(QDataStream &stream) override;
     QDataStream &toStream(QDataStream &stream) const override;
@@ -25,6 +28,7 @@ protected:
 
 private:
     QByteArray _image;
+    QString _userId;
 
 };
 

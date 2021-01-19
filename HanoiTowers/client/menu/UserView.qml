@@ -47,6 +47,7 @@ GridLayout {
 
     GridLayout {
         id: userDataGrid
+
         rows: 4
         columns: 2
         flow: GridLayout.TopToBottom
@@ -89,25 +90,25 @@ GridLayout {
         TextField {
             id: ename
 
-            text: (userModel)? userModel.name: ""
             horizontalAlignment: Text.AlignHCenter
             maximumLength: 64
+            text: privateRoot.userName
         }
 
         TextField {
             id: erecord
 
-            text: (userModel)? userModel.record: ""
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignVCenter
             readOnly: true
+            text: (userModel)? userModel.record: ""
 
         }
 
         Switch {
             id: eonline
-            checked: (userModel)? userModel.onlineUser: false
             text: ""
+            checked: privateRoot.onlieUser
         }
     }
 
@@ -119,27 +120,9 @@ GridLayout {
             id: remove
 
             Material.background: Material.Red
-
             text: qsTr("Remove This Profile")
+            onClicked: privateRoot.remove()
 
-            readonly property int questionCode: Math.random() * 1000
-            onClicked: {
-                notificationService.setQuestion(qsTr("Remove %0 user").arg(userModel.userId),
-                                             qsTr("All saved data and records will be delete, Do you want continuee?"),
-                                             "",
-                                             questionCode)
-
-            }
-
-            Connections {
-                target: notificationService
-                function onQuestionCompleted(accepted, code) {
-                    if (accepted && code === remove.questionCode) {
-                        console.log("User Removed")
-                        // Remove
-                    }
-                }
-            }
         }
 
         Item {
@@ -149,6 +132,8 @@ GridLayout {
         Button {
             id: restore
             text: qsTr("Restore")
+            onClicked: privateRoot.restore()
+
         }
 
         Button {
@@ -156,16 +141,46 @@ GridLayout {
             text: qsTr("Accept")
             Material.background: Material.Green
 
-            onClicked: {
-                if (userModel) {
-                    userModel.onlineUser = eonline.checked
-                    userModel.name = ename.text
+            onClicked: privateRoot.accept()
+        }
+    }
 
-                    notificationService.setNotify(qsTr("User is updated"), qsTr("User data will be changed."));
+    Item {
+        id: privateRoot
 
+        property string userName: (userModel)? userModel.name: ""
+        property bool onlieUser: (userModel)? userModel.onlineUser: false
+
+        function accept() {
+            if (userModel) {
+                userModel.onlineUser = eonline.checked
+                userModel.name = ename.text
+
+                notificationService.setNotify(qsTr("User is updated"), qsTr("User data will be changed."));
+
+            }
+        }
+
+        function restore() {
+            ename.text = userName
+            eonline.checked = onlieUser
+        }
+
+        readonly property int questionCode: Math.random() * 1000
+        function remove() {
+            notificationService.setQuestion(qsTr("Remove %0 user").arg(userModel.userId),
+                                            qsTr("All saved data and records will be delete, Do you want continuee?"),
+                                            "",
+                                            questionCode)
+        }
+        Connections {
+            target: notificationService
+            function onQuestionCompleted(accepted, code) {
+                if (accepted && code === privateRoot.questionCode) {
+                    if (userModel)
+                        backEnd.removeUser(userModel.userId)
                 }
             }
-
         }
     }
 }
