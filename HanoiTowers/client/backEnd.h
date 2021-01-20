@@ -44,6 +44,8 @@ class BackEnd: public QObject
     Q_PROPERTY(QObject* client READ client)
 
     Q_PROPERTY(QObject* profileList READ profileList  NOTIFY profileListChanged)
+    Q_PROPERTY(QObject* profileObject READ profileObject  NOTIFY profileChanged)
+
     Q_PROPERTY(QString profile READ profile WRITE setProfile NOTIFY profileChanged)
 
 
@@ -68,7 +70,7 @@ public:
      * @param state - a new state of show help message
      */
     Q_INVOKABLE void setShowHelp(bool state);
-    Q_INVOKABLE void setNewAvatar(const QString& pathToAvatar);
+    Q_INVOKABLE void setNewAvatar(QString pathToAvatar);
 
     bool fog() const;
 

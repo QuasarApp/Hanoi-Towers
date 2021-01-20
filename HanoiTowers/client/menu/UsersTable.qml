@@ -29,7 +29,7 @@ Item {
 
         UserView {
             Layout.rowSpan: 2
-            userModel: (backEnd)? backEnd.profileObject(): null
+            userModel: (backEnd)? backEnd.profileObject: null
 
             onNewAvatar: {
                 backEnd.setNewAvatar(path);

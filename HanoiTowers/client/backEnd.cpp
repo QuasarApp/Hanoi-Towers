@@ -219,14 +219,23 @@ void BackEnd::setShowHelp(bool state) {
     _settings->setValue(FIRST_RUN_KEY, state);
 }
 
-void BackEnd::setNewAvatar(const QString &pathToAvatar) {
-    QImage image;
+void BackEnd::setNewAvatar(QString pathToAvatar) {
     if (pathToAvatar.contains("file://")) {
-        image = QImage(pathToAvatar.right(pathToAvatar.size() - 7));
-    } else {
-        image = QImage(pathToAvatar);
+        pathToAvatar = pathToAvatar.right(pathToAvatar.size() - 7);
     }
-    _client->setNewAvatar(_profile.getId().toString(), image);
+
+    int id = _profile.avatarHash();
+    _profile.setAvatarHash(-1);
+
+    QFile file(pathToAvatar);
+    if (file.open(QIODevice::ReadOnly)) {
+        auto userId = _profile.getId().toString();
+        _client->setNewAvatar(userId, file.readAll());
+        file.close();
+
+    }
+    _profile.setAvatarHash(id);
+
 }
 
 bool BackEnd::fog() const {
