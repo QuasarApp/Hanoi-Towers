@@ -14,7 +14,6 @@
 #include <authrequest.h>
 #include <userdatarequest.h>
 #include <asyncsqldbwriter.h>
-#include <useravatar.h>
 #include <sqldb.h>
 #include <sqldbwriter.h>
 #include <cacheddbobjectsrequest.h>
@@ -150,60 +149,27 @@ void HanoiClient::setStatus(const Status &status) {
 
 bool HanoiClient::setNewAvatar(const QString &userId, const QByteArray &image) {
 
-    auto profile = getLocalUser(userId);
-
-
-    auto avatarData = UserAvatar();
-    avatarData.setId(profile->avatarHash());
+    auto profile = LocalUser();
+    profile.setUserId(userId);
 
     auto updateAction = [image](const QSharedPointer<QH::PKG::DBObject>& object) {
 
-        auto obj = object.dynamicCast<UserAvatar>();
+        auto obj = object.dynamicCast<LocalUser>();
 
         if (!obj) {
             return false;
         }
 
-        obj->setImage(image);
+        obj->setAvatar(image);
 
         return true;
     };
 
-    if (!db()->changeObjects(avatarData, updateAction))  {
+    if (!db()->changeObjects(profile, updateAction))  {
         return false;
     }
 
-    if (profile->online()) {
-        return sendData(&avatarData, _serverAddress);
-    }
-
     return true;
-}
-
-QImage HanoiClient::userAvatar(int avatarId) const {
-    UserAvatar avatarData;
-    avatarData.setId(avatarId);
-
-    auto result = db()->getObject(avatarData);
-
-    if (result) {
-        return QImage::fromData(result->image());
-    }
-
-    return {};
-}
-
-QImage HanoiClient::userAvatar(const QString &userId) const {
-    using RequestType = QH::PKG::CachedDbObjectsRequest<UserAvatar>;
-    const RequestType request = QString("id=(select userAvatar from Users where id='%0')").arg(userId);
-
-    auto result = db()->getObject<UserAvatar>(request);
-
-    if (result && result->isValid()) {
-        return QImage::fromData(result->image());
-    }
-
-    return {};
 }
 
 QString HanoiClient::currentUserId() const {
@@ -222,42 +188,16 @@ QSharedPointer<LocalUser> HanoiClient::createLocalUser(const QString &login) {
     return user;
 }
 
-QSharedPointer<UserAvatar> HanoiClient::getDefaultAvatar(const QString& userId) const {
-    auto avatar = QSharedPointer<UserAvatar>::create();
-
-    QFile image(":/img/DefaultAvatar");
-    if (image.open(QIODevice::ReadOnly)) {
-        avatar->setImage(image.readAll());
-        image.close();
-    }
-
-    avatar->setUserId(userId);
-
-    return avatar;
-}
-
 bool HanoiClient::addProfile(const LocalUser& user) {
 
     if (!db())
         return false;
 
-    auto maxId = db()->getObject(QH::PKG::GetMaxIntegerId("Avatars", "id"));
-    if (!maxId) {
-        return false;
-    }
-
     auto localUser = QSharedPointer<LocalUser>::create();
     localUser->copyFrom(&user);
     localUser->setUpdateTime(time(nullptr));
-    localUser->setAvatarHash(maxId->value() + 1);
 
     if (!db()->insertObject(localUser)) {
-        return false;
-    }
-
-    auto avatar = getDefaultAvatar(user.userId());
-
-    if (!db()->insertObject(avatar)) {
         return false;
     }
 
@@ -325,11 +265,24 @@ bool HanoiClient::registerOflineUser(const QString &login, const QString& userna
 
 bool HanoiClient::removeUser(const QString &userId) {
     auto user = getLocalUser(userId);
-    QH::PKG::AuthRequest request;
-    request.setId(user->getId());
-    request.setRequest(UserRequestType::Remove);
 
-    return sendData(&request, _serverAddress);
+
+    if (!db()->deleteObject(user)) {
+        return false;
+    }
+
+    if (user->online()) {
+        QH::PKG::AuthRequest request;
+        request.setId(user->getId());
+        request.setRequest(UserRequestType::Remove);
+        if (!sendData(&request, _serverAddress)) {
+            return false;
+        };
+
+    }
+
+    return true;
+
 }
 
 void HanoiClient::connectToServer(const QH::HostAddress &host) {

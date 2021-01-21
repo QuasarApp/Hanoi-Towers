@@ -21,7 +21,7 @@ QDataStream &ProfileData::fromStream(QDataStream &stream) {
     stream >> _name;
     stream >> _record;
     stream >> _online;
-    stream >> _avatarHash;
+    stream >> _avatar;
 
     return stream;
 }
@@ -31,7 +31,8 @@ QDataStream &ProfileData::toStream(QDataStream &stream) const {
     stream << _name;
     stream << _record;
     stream << _online;
-    stream << _avatarHash;
+    stream << _avatar;
+
     return stream;
 
 }

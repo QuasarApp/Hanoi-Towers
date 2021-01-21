@@ -21,7 +21,7 @@ class LocalUser: public QObject, public QH::PKG::DBObject
     Q_PROPERTY(QString name READ name WRITE setName NOTIFY nameChanged)
     Q_PROPERTY(QString userId READ userId  NOTIFY userIdChanged)
     Q_PROPERTY(int record READ record WRITE setRecord NOTIFY recordChanged)
-    Q_PROPERTY(int avatarHash READ avatarHash WRITE setAvatarHash NOTIFY avatarChanged)
+    Q_PROPERTY(int avatarHash READ avatarHash NOTIFY avatarChanged)
     Q_PROPERTY(bool onlineUser READ isOnline WRITE setOnline NOTIFY onlineChanged)
 
 public:
@@ -69,10 +69,12 @@ public:
     void setGameState(const GameState& state);
     void setGameState(const QByteArray& state);
 
+    QByteArray avatarData() const;
+
 public slots:
     void setOnline(bool online);
     void setRecord(int record);
-    void setAvatarHash(int avatarHash);
+    void setAvatar(const QByteArray& avatarHash);
 
 signals:
     void userIdChanged(QString);
@@ -94,6 +96,7 @@ private:
     QH::AccessToken _token;
     ProfileData _userData;
     int _updateTime = 0;
+    unsigned int _avatarHash = 0;
 
 
 

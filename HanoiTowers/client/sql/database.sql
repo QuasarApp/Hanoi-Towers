@@ -10,16 +10,7 @@ CREATE TABLE IF NOT EXISTS Users (
     fOnline BOOLEAN default false,
 
     updateTime INTEGER default 0,
-    userAvatar INTEGER default 0
+    userAvatar BLOB default NULL
 
 );
 
-CREATE TABLE IF NOT EXISTS Avatars (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    user_id VARCHAR(64) NOT NULL,
-    data BLOB default NULL,
-
-    FOREIGN KEY(user_id) REFERENCES Users(id)
-            ON UPDATE CASCADE
-            ON DELETE CASCADE
-);

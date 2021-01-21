@@ -16,6 +16,7 @@
 #include <lvmainmodel.h>
 #include <recordlistmodel.h>
 #include <QQmlContext>
+#include <QBuffer>
 #include "dataconverter.h"
 #include "localuser.h"
 
@@ -40,7 +41,7 @@ BackEnd::BackEnd(QQmlApplicationEngine *engine):
     _createNewOfflineUser = new LoginView::LVMainModel("createUser", this);
 
     _recordsTable = new RecordListModel(this);
-    _imageProvider = new HanoiImageProvider(_client);
+    _imageProvider = new HanoiImageProvider(&_profile);
     _dataConverter = new DataConverter;
 
     _loginModel->setComponents(LoginView::Nickname |
@@ -87,16 +88,6 @@ BackEnd::BackEnd(QQmlApplicationEngine *engine):
     init();
 }
 
-void BackEnd::reset(){
-
-    _settings->setValue(FIRST_RUN_KEY, true);
-    _settings->setValue(ANIMATION_KEY, true);
-    _settings->setValue(RANDOM_COLOR_KEY, false);
-    _settings->setValue(FOG, true);
-    _settings->setValue(FOG_ANIMATION, true);
-
-}
-
 void BackEnd::init() {
     QFile f(MAIN_SETINGS_FILE);
     if(f.open(QIODevice::ReadOnly)){
@@ -122,7 +113,11 @@ void BackEnd::init() {
         f.remove();
 
     } else {
-        reset();
+        _settingsData.animation = _settings->getValue(ANIMATION_KEY, true).toBool();
+        _settingsData.randomColor = _settings->getValue(RANDOM_COLOR_KEY, false).toBool();
+        _settingsData.fog = _settings->getValue(FOG, true).toBool();
+        _settingsData.fogAnimation = _settings->getValue(FOG_ANIMATION, true).toBool();
+
     }
 
 }
@@ -141,18 +136,7 @@ void BackEnd::handleChangeName(const QString & name) {
 }
 
 void BackEnd::handleCreateNewProfile(const LoginView::UserData & data) {
-    LocalUser user;
-    user.setName(data.nickname());
-    user.setUserId(data.nickname());
-
-    if (!_client->addProfile(user)) {
-        QmlNotificationService::NotificationService::getService()->setNotify(
-                    tr("Create user error"),
-                    tr("Failed to create a new user, The name %0 alredy used.").arg(data.nickname()), "",
-                    QmlNotificationService::NotificationData::Error);
-    }
-
-    _recordsTable->updateSourceItem(_dataConverter->toUserPreview(data));
+    createProfile(data.nickname(), data.nickname());
 }
 
 void BackEnd::handleOnlineRequest(const LoginView::UserData & user) {
@@ -224,17 +208,27 @@ void BackEnd::setNewAvatar(QString pathToAvatar) {
         pathToAvatar = pathToAvatar.right(pathToAvatar.size() - 7);
     }
 
-    int id = _profile.avatarHash();
-    _profile.setAvatarHash(-1);
+    QImage img(pathToAvatar);
+    int maxSize = std::max(img.size().width(), img.size().height());
+    bool widthIsLarge = maxSize == img.size().width();
+    if (maxSize > 400) {
+        if (widthIsLarge) {
+            img = img.scaledToWidth(400,
+                                    Qt::TransformationMode::SmoothTransformation);
 
-    QFile file(pathToAvatar);
-    if (file.open(QIODevice::ReadOnly)) {
-        auto userId = _profile.getId().toString();
-        _client->setNewAvatar(userId, file.readAll());
-        file.close();
-
+        } else {
+            img = img.scaledToHeight(400,
+                                    Qt::TransformationMode::SmoothTransformation);
+        }
     }
-    _profile.setAvatarHash(id);
+
+    QByteArray arr;
+    QBuffer buf(&arr);
+    buf.open(QIODevice::WriteOnly);
+    img.save(&buf, "PNG");
+    buf.close();
+
+    _profile.setAvatar(arr);
 
 }
 
@@ -263,6 +257,21 @@ QObject* BackEnd::profileList() {
 }
 
 bool BackEnd::createProfile(const QString& userId, const QString &userName) {
+
+    LocalUser user;
+    user.setName(userName);
+    user.setUserId(userId);
+
+    if (!_client->addProfile(user)) {
+        QmlNotificationService::NotificationService::getService()->setNotify(
+                    tr("Create user error"),
+                    tr("Failed to create a new user, The name %0 alredy used.").arg(userId), "",
+                    QmlNotificationService::NotificationData::Error);
+        return false;
+
+    }
+
+    _recordsTable->updateSourceItem(_dataConverter->toUserPreview(user));
 
     if (!(_client->registerOflineUser(userId, userName))) {
         return false;
@@ -297,15 +306,24 @@ void BackEnd::removeUser(const QString &userId) {
 
     _recordsTable->removeSourceItem(userId);
 
+    auto userID = _recordsTable->data(QModelIndex(), RecordListModel::UserId).toString();
+
+    if (userID.isEmpty()) {
+        userID = DEFAULT_USER_ID;
+    }
+
+    setProfile(userID);
+
 }
 
 void BackEnd::setProfile(QString userId) {
     if (!_client)
         return;
 
-    _client->updateProfile(_profile);
 
     if ( _client->login(userId)) {
+        _client->updateProfile(_profile);
+
         emit profileChanged(userId);
     } else if (userId == DEFAULT_USER_ID) {
         createProfile(DEFAULT_USER_ID, DEFAULT_USER_NAME);

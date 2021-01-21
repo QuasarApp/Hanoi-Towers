@@ -26,7 +26,7 @@ GridLayout {
 
             fillMode: Image.PreserveAspectFit
 
-            opacity: 0.1
+            opacity: 1
         }
 
         onClicked: {

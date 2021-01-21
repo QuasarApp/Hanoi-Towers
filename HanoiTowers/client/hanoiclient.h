@@ -17,8 +17,6 @@
 #include <QImage>
 #include <databasenode.h>
 #include <profiledata.h>
-#include <useravatar.h>
-#include <useravatar.h>
 #include <userpreview.h>
 
 class LocalUser;
@@ -68,9 +66,7 @@ public:
     void setStatus(const Status &status);
 
     bool setNewAvatar(const QString &userId, const QByteArray& image);
-    QImage userAvatar(int avatarId) const;
-    QImage userAvatar(const QString &userId) const;
-
+\
 
 protected:
     void nodeConfirmend(const QH::HostAddress &node) override;
@@ -96,8 +92,6 @@ private:
     bool userDatarequest(const QByteArray &userId);
     QSharedPointer<LocalUser> getLocalUser(const QString &userId) const;
     QSharedPointer<LocalUser> createLocalUser(const QString &login);
-
-    QSharedPointer<UserAvatar> getDefaultAvatar(const QString &userId) const;
 
     Status _status;
     QString _currentUserId;

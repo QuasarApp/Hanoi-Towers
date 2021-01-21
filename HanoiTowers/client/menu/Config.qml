@@ -28,14 +28,9 @@ Item {
             Layout.alignment: Layout.Center
 
             RadioButton {
+                checked: true
                 id: r1
-                checked: backEnd&& !backEnd.randomColor
                 text: qsTr("Standart color")
-
-                onCheckedChanged: {
-                    if (backEnd && checked)
-                        backEnd.randomColor = false;
-                }
             }
 
             RadioButton {
@@ -43,8 +38,8 @@ Item {
                 checked: backEnd && backEnd.randomColor
                 text: qsTr("Random color")
                 onCheckedChanged: {
-                    if (backEnd && checked)
-                        backEnd.randomColor = true;
+                    if (backEnd)
+                        backEnd.randomColor = checked;
                 }
             }
 

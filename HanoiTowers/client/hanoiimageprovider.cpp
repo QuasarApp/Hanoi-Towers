@@ -7,17 +7,18 @@
 
 #include "hanoiclient.h"
 #include "hanoiimageprovider.h"
+#include "localuser.h"
 
 #include <QThread>
 #include <QThreadPool>
 
-HanoiImageProvider::HanoiImageProvider(const HanoiClient *client) {
+HanoiImageProvider::HanoiImageProvider(const LocalUser *user) {
     _pool = new QThreadPool();
-    _client = client;
+    _currentUser = user;
 }
 
 void HanoiImageProvider::stop() {
-    _client = nullptr;
+    _currentUser = nullptr;
 }
 
 HanoiImageProvider::~HanoiImageProvider() {
@@ -27,15 +28,15 @@ HanoiImageProvider::~HanoiImageProvider() {
 QQuickImageResponse *HanoiImageProvider::requestImageResponse(const QString &id,
                                                               const QSize &requestedSize) {
 
-    AsyncImageResponse *response = new AsyncImageResponse(id, requestedSize, _client);
+    AsyncImageResponse *response = new AsyncImageResponse(id, requestedSize, _currentUser);
     _pool->start(response);
     return response;
 
 }
 
 AsyncImageResponse::AsyncImageResponse(const QString &id, const QSize &requestedSize,
-                                       const HanoiClient *client)
-    : m_id(id), m_requestedSize(requestedSize), m_texture(0), _client(client) {
+                                       const LocalUser *client)
+    : m_id(id), m_requestedSize(requestedSize), m_texture(0), _currentUser(client) {
     setAutoDelete(false);
 }
 
@@ -44,12 +45,19 @@ QQuickTextureFactory *AsyncImageResponse::textureFactory() const {
 }
 
 void AsyncImageResponse::run() {
-    if (!_client) {
+    if (!_currentUser) {
         emit finished();
         return;
     }
 
-    QImage image = _client->userAvatar(m_id.toInt());
+    QByteArray imageData = _currentUser->avatarData();
+
+    QImage image;
+    if (imageData.size()) {
+        image = QImage::fromData(imageData);
+    } else {
+        image = QImage(":/img/DefaultAvatar");
+    }
 
     if (m_requestedSize.isValid())
         image = image.scaled(m_requestedSize);

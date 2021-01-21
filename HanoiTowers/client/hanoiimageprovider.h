@@ -12,12 +12,12 @@
 #include <QRunnable>
 
 class QThreadPool;
-class HanoiClient;
+class LocalUser;
 
 class AsyncImageResponse : public QQuickImageResponse, public QRunnable
 {
     public:
-        AsyncImageResponse(const QString &id, const QSize &requestedSize, const HanoiClient *client);
+        AsyncImageResponse(const QString &id, const QSize &requestedSize, const LocalUser *client);
 
         QQuickTextureFactory *textureFactory() const override;
 
@@ -28,14 +28,14 @@ class AsyncImageResponse : public QQuickImageResponse, public QRunnable
         QQuickTextureFactory *m_texture;
 
 private:
-        const HanoiClient *_client = nullptr;
+        const LocalUser *_currentUser = nullptr;
 };
 
 
 class HanoiImageProvider: public QQuickAsyncImageProvider
 {
 public:
-    HanoiImageProvider(const HanoiClient* client);
+    HanoiImageProvider(const LocalUser *user);
     void stop();
     ~HanoiImageProvider() override;
 
@@ -43,7 +43,7 @@ public:
 
 private:
     QThreadPool *_pool = nullptr;
-    const HanoiClient *_client = nullptr;
+    const LocalUser *_currentUser = nullptr;
 };
 
 #endif // HANOIIMAGEPROVIDER_H

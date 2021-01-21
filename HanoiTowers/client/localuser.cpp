@@ -31,7 +31,7 @@ bool LocalUser::copyFrom(const QH::PKG::AbstractData *other) {
     setToken(otherObject->token());
     setGameState(*otherObject->gameState());
 
-    setAvatarHash(otherObject->avatarHash());
+    setAvatar(otherObject->avatarData());
     setName(otherObject->name());
     setRecord(otherObject->record());
     setOnline(otherObject->online());
@@ -49,7 +49,7 @@ bool LocalUser::fromSqlRecord(const QSqlRecord &q) {
     setToken(QH::AccessToken{q.value("token").toByteArray()});
     setGameState(q.value("gameState").toByteArray());
 
-    setAvatarHash(q.value("userAvatar").toInt());
+    setAvatar(q.value("userAvatar").toByteArray());
     setName(q.value("userName").toString());
     setRecord(q.value("points").toInt());
     setOnline(q.value("fOnline").toBool());
@@ -89,7 +89,7 @@ bool LocalUser::isOnline() const {
 }
 
 int LocalUser::avatarHash() const {
-    return _userData._avatarHash;
+    return _avatarHash;
 }
 
 void LocalUser::setName(const QString &name) {
@@ -110,7 +110,7 @@ QH::PKG::DBVariantMap LocalUser::variantMap() const {
             {"points",             {_userData._record,                  MT::InsertUpdate}},
             {"fOnline",            {_userData._online,                  MT::InsertUpdate}},
 
-            {"userAvatar",         {_userData._avatarHash,              MT::InsertUpdate}},
+            {"userAvatar",         {_userData._avatar,                  MT::InsertUpdate}},
             {"updateTime",         {static_cast<int>(time(nullptr)),    MT::InsertUpdate}}};
 
 }
@@ -139,6 +139,10 @@ void LocalUser::setGameState(const QByteArray &state) {
     _userData._state.fromBytes(state);
     emit gameStateChanged(&_userData._state);
 
+}
+
+QByteArray LocalUser::avatarData() const {
+    return _userData._avatar;
 }
 
 int LocalUser::updateTime() const {
@@ -200,11 +204,12 @@ void LocalUser::setRecord(int record) {
     emit recordChanged(record);
 }
 
-void LocalUser::setAvatarHash(int avatarHash) {
-    if (_userData._avatarHash == avatarHash)
+void LocalUser::setAvatar(const QByteArray& avatar) {
+    if (_userData._avatar == avatar)
         return;
 
-    _userData._avatarHash = avatarHash;
-    emit avatarChanged(avatarHash);
+    _userData._avatar = avatar;
+    _avatarHash = qHash(avatar);
+    emit avatarChanged(_avatarHash);
 
 }

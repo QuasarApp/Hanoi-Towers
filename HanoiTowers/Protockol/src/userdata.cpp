@@ -44,7 +44,7 @@ bool UserData::fromSqlRecord(const QSqlRecord &q) {
         return false;
     }
 
-    _userData._avatarHash = q.value("userAvatar").toInt();
+    _userData._avatar = q.value("userAvatar").toByteArray();
     _userData._name = q.value("userName").toString();
     _userData._record = q.value("points").toInt();
     _userData._state.fromBytes(q.value("gameState").toByteArray());
@@ -80,7 +80,7 @@ DBVariantMap UserData::variantMap() const {
             {"points",      {_userData._record,         QH::PKG::MemberType::InsertUpdate}},
             {"updateTime",  {_updateTime,               QH::PKG::MemberType::InsertUpdate}},
             {"gameState",   {_userData._state.toBytes(),QH::PKG::MemberType::InsertUpdate}},
-            {"userAvatar",  {_userData._avatarHash,     QH::PKG::MemberType::InsertUpdate}}};
+            {"userAvatar",  {_userData._avatar,         QH::PKG::MemberType::InsertUpdate}}};
 }
 
 QString UserData::primaryKey() const {

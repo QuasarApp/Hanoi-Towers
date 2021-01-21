@@ -19,7 +19,7 @@ public:
     QString _name;
     int _record = 0;
     bool _online = false;
-    int _avatarHash;
+    QByteArray _avatar;
 
     ProfileData& operator= (const ProfileData& right);
 

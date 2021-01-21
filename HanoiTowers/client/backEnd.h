@@ -85,13 +85,6 @@ public slots:
      */
     unsigned short getMinSteps(const unsigned short lvl) const;
 
-
-
-    /**
-     * @brief reset all config to default values.
-     */
-    void reset();
-
     /**
      * @brief randomColor
      * @return return true if enable random color of plate;
