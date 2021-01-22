@@ -46,15 +46,13 @@ public:
 
 
     QString currentUserId() const;
-
     QSharedPointer<LocalUser> currentProfile() const;
     bool updateProfile(const LocalUser &user);
     bool addProfile(const LocalUser &);
 
     bool login(const QString &userId, const QString& rawPassword = "");
-    bool registerUser(const QString &userId, const QString& rawPassword);
+    bool registerOnlineUser(const QString &userId, const QString& rawPassword);
 
-    bool registerOflineUser(const QString &login, const QString &username = "");
     bool removeUser(const QString &userId);
 
     void connectToServer(const QH::HostAddress& host);
@@ -91,7 +89,10 @@ private:
 
     bool userDatarequest(const QByteArray &userId);
     QSharedPointer<LocalUser> getLocalUser(const QString &userId) const;
-    QSharedPointer<LocalUser> createLocalUser(const QString &login);
+
+    bool sendUserData(const QSharedPointer<LocalUser>& data);
+
+    bool isOnline(const QSharedPointer<LocalUser>& data);
 
     Status _status;
     QString _currentUserId;

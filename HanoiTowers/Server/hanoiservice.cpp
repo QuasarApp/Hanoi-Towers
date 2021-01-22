@@ -17,7 +17,7 @@ HanoiService::HanoiService(int argc, char *argv[]):
 }
 
 HanoiService::~HanoiService() {
-    onStop();
+    HanoiService::onStop();
 }
 
 void HanoiService::onStart() {

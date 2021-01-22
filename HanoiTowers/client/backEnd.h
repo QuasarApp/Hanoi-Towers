@@ -76,6 +76,9 @@ public:
 
     bool fogAnimation() const;
 
+    Q_INVOKABLE void onlineRequest(const QString& userId);
+
+
 public slots:
 
     /**
@@ -135,6 +138,7 @@ public slots:
 
     void setGameState(GameState* gameState);
 
+
 signals:
     void animationChanged();
     void randomColorChanged();
@@ -152,11 +156,12 @@ signals:
     void gameStateChanged(GameState* gameState);
 
 private slots:
-    void handleOnlineRequestfromProfile(const QString&);
     void handleChangeName(const QString&);
 
     void handleCreateNewProfile(const LoginView::UserData&);
     void handleOnlineRequest(const LoginView::UserData&);
+    void handleOnlineRegisterRequest(const LoginView::UserData&);
+
     void handleOnlineRequestError(const QString&Errr);
 
     void handleProfileChanged(QSharedPointer<LocalUser> profileId);

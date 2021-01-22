@@ -187,13 +187,13 @@ bool LocalUser::online() const {
 }
 
 void LocalUser::setOnline(bool online) {
+    if (_userData._online == online) {
+        return;
+    }
+
     _userData._online = online;
 
-    if (online) {
-        emit onlineRequest(name());
-    } else {
-        emit onlineChanged(online);
-    }
+    emit onlineChanged(online);
 }
 
 void LocalUser::setRecord(int record) {

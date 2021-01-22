@@ -67,7 +67,7 @@ BackEnd::BackEnd(QQmlApplicationEngine *engine):
             this, &BackEnd::handleOnlineRequest);
 
     connect(_loginModel , &LoginView::LVMainModel::sigRegisterRequest,
-            this, &BackEnd::handleOnlineRequest);
+            this, &BackEnd::handleOnlineRegisterRequest);
 
     connect(_createNewOfflineUser , &LoginView::LVMainModel::sigRegisterRequest,
             this, &BackEnd::handleCreateNewProfile);
@@ -77,9 +77,6 @@ BackEnd::BackEnd(QQmlApplicationEngine *engine):
 
     connect(_client , &HanoiClient::profileChanged,
             this, &BackEnd::handleProfileChanged);
-
-    connect(&_profile, &LocalUser::onlineRequest,
-            this, &BackEnd::handleOnlineRequestfromProfile);
 
     connect(&_profile, &LocalUser::nameChanged,
             this, &BackEnd::handleChangeName);
@@ -122,10 +119,14 @@ void BackEnd::init() {
 
 }
 
-void BackEnd::handleOnlineRequestfromProfile(const QString &name) {
+void BackEnd::onlineRequest(const QString &userId) {
+
+    if (_profile.token().isValid() && _client->login(userId)) {
+        return;
+    }
 
     LoginView::UserData data;
-    data.setNickname(name);
+    data.setNickname(userId);
     _loginModel->setData(data);
 
     emit showOnlinePage();
@@ -141,10 +142,22 @@ void BackEnd::handleCreateNewProfile(const LoginView::UserData & data) {
 
 void BackEnd::handleOnlineRequest(const LoginView::UserData & user) {
 
-    if (!_client->login(user.nickname().toLatin1(), user.rawPassword().toLatin1())) {
+    if (!_client->login(user.nickname(), user.rawPassword())) {
+        QmlNotificationService::NotificationService::getService()->setNotify(
+                    tr("login error"),
+                    tr("Failed to login into online account,"
+                       " please check your password and username"), "",
+                    QmlNotificationService::NotificationData::Error);
+
+    }
+}
+
+void BackEnd::handleOnlineRegisterRequest(const LoginView::UserData &user) {
+    if (!_client->registerOnlineUser(user.nickname(), user.rawPassword())) {
         QmlNotificationService::NotificationService::getService()->setNotify(
                     tr("Register online error"),
-                    tr("Failed to register this account, if this account was created by you, try to restore it."), "",
+                    tr("Failed to register this account,"
+                       " if this account was created by you, try to restore it."), "",
                     QmlNotificationService::NotificationData::Error);
     }
 }
@@ -157,7 +170,6 @@ void BackEnd::handleOnlineRequestError(const QString & err) {
 }
 
 void BackEnd::handleProfileChanged(QSharedPointer<LocalUser> profileId) {
-
     _profile.copyFrom(profileId.data());
     _settings->setValue(CURRENT_PROFILE_KEY, _profile.getId());
 
@@ -273,10 +285,6 @@ bool BackEnd::createProfile(const QString& userId, const QString &userName) {
 
     _recordsTable->updateSourceItem(_dataConverter->toUserPreview(user));
 
-    if (!(_client->registerOflineUser(userId, userName))) {
-        return false;
-    }
-
     return true;
 }
 
@@ -320,10 +328,9 @@ void BackEnd::setProfile(QString userId) {
     if (!_client)
         return;
 
+    _client->updateProfile(_profile);
 
     if ( _client->login(userId)) {
-        _client->updateProfile(_profile);
-
         emit profileChanged(userId);
     } else if (userId == DEFAULT_USER_ID) {
         createProfile(DEFAULT_USER_ID, DEFAULT_USER_NAME);

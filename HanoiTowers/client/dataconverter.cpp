@@ -36,3 +36,4 @@ UserPreview DataConverter::toUserPreview(const LoginView::UserData &input) const
 
     return result;
 }
+

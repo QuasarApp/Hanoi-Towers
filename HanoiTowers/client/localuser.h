@@ -84,7 +84,6 @@ signals:
     void avatarChanged(int);
 
     void onlineChanged(bool onlineUser);
-    void onlineRequest(const QString& name);
 
 protected:
     QH::PKG::DBVariantMap variantMap() const override;
