@@ -7,7 +7,7 @@ CREATE TABLE IF NOT EXISTS UsersData (
     points INTEGER default NULL,
 
     updateTime INTEGER default 0,
-    userAvatar BLOB default NULL
+    userAvatar BLOB default NULL,
 
     FOREIGN KEY(id) REFERENCES NetworkMembers(userName)
             ON UPDATE CASCADE

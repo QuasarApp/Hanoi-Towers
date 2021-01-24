@@ -28,7 +28,7 @@ void HanoiService::onStart() {
 
 void HanoiService::onStop() {
     if (_server) {
-        delete _server;
+        _server->softDelete();
         _server = nullptr;
     }
 

@@ -90,7 +90,7 @@ QH::ParserResult HanoiServer::parsePackage(const QH::Package &pkg,
 }
 
 QStringList HanoiServer::SQLSources() const {
-    return DataBaseNode::SQLSources() << "qrc:/HanoiTowersSql/sql/database.sql";
+    return SingleServer::SQLSources() << ":/HanoiTowersSql/sql/database.sql";
 }
 
 QVariantMap HanoiServer::defaultDbParams() const {
