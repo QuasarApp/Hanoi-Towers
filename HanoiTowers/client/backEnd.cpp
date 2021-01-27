@@ -83,6 +83,8 @@ BackEnd::BackEnd(QQmlApplicationEngine *engine):
 
     setProfile(_settings->getStrValue(CURRENT_PROFILE_KEY, DEFAULT_USER_ID));
     init();
+
+    _client->connectToServer(QH::HostAddress{DEFAULT_HANOI_ADDRESS, DEFAULT_HANOI_PORT});
 }
 
 void BackEnd::init() {

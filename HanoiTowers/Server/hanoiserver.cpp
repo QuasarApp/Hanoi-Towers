@@ -18,7 +18,7 @@
 #include "hanoierrorcodes.h"
 
 HanoiServer::HanoiServer() {
-    QString address = DEFAULT_ADDRESS;
+    QString address = "";
     unsigned short port = DEFAULT_HANOI_PORT;
 
     if (QuasarAppUtils::Params::isEndable("address")) {

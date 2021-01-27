@@ -27,8 +27,6 @@ HanoiClient::HanoiClient() {
     initSqlDb("",
               new QH::SqlDB(),
               new QH::SqlDBWriter());
-
-
 }
 
 QH::ParserResult HanoiClient::parsePackage(const QH::Package &pkg,
