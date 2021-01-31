@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2018-2020 QuasarApp.
+ * Copyright (C) 2018-2021 QuasarApp.
  * Distributed under the lgplv3 software license, see the accompanying
  * Everyone is permitted to copy and distribute verbatim copies
  * of this license document, but changing it is not allowed.
@@ -15,6 +15,7 @@
 #include <quasarapp.h>
 #include <QObject>
 #include <QFile>
+#include "onlinestatusqml.h"
 //#include <listviewmodel.h>
 
 #define SAVE "data"
@@ -47,6 +48,7 @@ class BackEnd: public QObject
     Q_PROPERTY(QObject* profileObject READ profileObject  NOTIFY profileChanged)
 
     Q_PROPERTY(QString profile READ profile WRITE setProfile NOTIFY profileChanged)
+    Q_PROPERTY(int onlineStatus READ onlineStatus WRITE setOnlineStatus NOTIFY onlineStatusChanged)
 
 
 
@@ -78,6 +80,7 @@ public:
 
     Q_INVOKABLE void onlineRequest(const QString& userId);
 
+    int onlineStatus() const;
 
 public slots:
 
@@ -139,6 +142,7 @@ public slots:
     void setGameState(GameState* gameState);
 
 
+
 signals:
     void animationChanged();
     void randomColorChanged();
@@ -155,6 +159,8 @@ signals:
 
     void gameStateChanged(GameState* gameState);
 
+    void onlineStatusChanged(int onlineStatus);
+
 private slots:
     void handleChangeName(const QString&);
 
@@ -165,6 +171,8 @@ private slots:
     void handleOnlineRequestError(const QString&Errr);
 
     void handleProfileChanged(QSharedPointer<LocalUser> profileId);
+    void setOnlineStatus(int onlineStatus);
+
 private:
     void init();
 
@@ -181,6 +189,7 @@ private:
     SettingsData _settingsData;
     HanoiImageProvider *_imageProvider = nullptr;
     DataConverter *_dataConverter = nullptr;
+    OnlineStatus _onlineStatus = OnlineStatus::Offline;
 };
 
 

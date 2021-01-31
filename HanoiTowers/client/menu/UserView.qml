@@ -109,6 +109,13 @@ GridLayout {
             id: eonline
             text: ""
             checked: privateRoot.onlieUser
+            visible: privateRoot.onlineStatus === OnlineStatusQml.offline || privateRoot.onlineStatus === OnlineStatusQml.loggined
+
+        }
+
+        BusyIndicator {
+            running: true;
+            visible: !eonline.visible
         }
     }
 
@@ -150,6 +157,7 @@ GridLayout {
 
         property string userName: (userModel)? userModel.name: ""
         property bool onlieUser: (userModel)? userModel.onlineUser: false
+        property int onlineStatus: backEnd.onlineStatus
 
         function accept() {
             if (userModel) {

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2018-2020 QuasarApp.
+ * Copyright (C) 2018-2021 QuasarApp.
  * Distributed under the lgplv3 software license, see the accompanying
  * Everyone is permitted to copy and distribute verbatim copies
  * of this license document, but changing it is not allowed.
@@ -49,13 +49,15 @@ public:
     QSharedPointer<LocalUser> currentProfile() const;
     bool updateProfile(const LocalUser &user);
     bool addProfile(const LocalUser &);
+    bool setProfile(const QString &userId,
+                    QSharedPointer<LocalUser> *selectedProfileData = nullptr);
 
     bool login(const QString &userId, const QString& rawPassword = "");
     bool registerOnlineUser(const QString &userId, const QString& rawPassword);
 
     bool removeUser(const QString &userId);
 
-    void connectToServer(const QH::HostAddress& host);
+    void connectToServer();
 
     QList<UserPreview> localUsersPreview();
 
@@ -67,9 +69,9 @@ public:
 \
 
 protected:
-    void nodeConfirmend(const QH::HostAddress &node) override;
-    void nodeConnected(const QH::HostAddress &node) override;
-    void nodeDisconnected(const QH::HostAddress &node) override;
+    void nodeConfirmend(QH::AbstractNodeInfo* node) override;
+    void nodeConnected(QH::AbstractNodeInfo *node) override;
+    void nodeDisconnected(QH::AbstractNodeInfo *node) override;
     QByteArray hashgenerator(const QByteArray &data) override;
     QStringList SQLSources() const override;
 
@@ -93,10 +95,11 @@ private:
     bool sendUserData(const QSharedPointer<LocalUser>& data);
 
     bool isOnline(const QSharedPointer<LocalUser>& data);
+    bool isOnlineAndLoginned(const QSharedPointer<LocalUser>& data);
 
     Status _status;
     QString _currentUserId;
-    QH::HostAddress _serverAddress;
+    const QH::HostAddress _serverAddress;
     QList<LocalUser*> _usersList;
 
 };

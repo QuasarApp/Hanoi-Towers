@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2018-2020 QuasarApp.
+ * Copyright (C) 2018-2021 QuasarApp.
  * Distributed under the lgplv3 software license, see the accompanying
  * Everyone is permitted to copy and distribute verbatim copies
  * of this license document, but changing it is not allowed.
@@ -23,7 +23,9 @@
 #include "hanoierrorcodes.h"
 #include "localrecordstable.h"
 
-HanoiClient::HanoiClient() {
+HanoiClient::HanoiClient():
+    _serverAddress(DEFAULT_HANOI_ADDRESS, DEFAULT_HANOI_PORT) {
+
     initSqlDb("",
               new QH::SqlDB(),
               new QH::SqlDBWriter());
@@ -142,11 +144,20 @@ bool HanoiClient::sendUserData(const QSharedPointer<LocalUser> &data) {
 }
 
 bool HanoiClient::isOnline(const QSharedPointer<LocalUser> &data) {
+    if (data->userId() != _currentUserId) {
+        return false;
+    }
+
     if (!data->isOnline()) {
         return false;
     }
 
-    if (data->userId() != _currentUserId) {
+    return _status >= Status::Connected;
+}
+
+bool HanoiClient::isOnlineAndLoginned(const QSharedPointer<LocalUser> &data) {
+
+    if (!isOnline(data)) {
         return false;
     }
 
@@ -184,7 +195,7 @@ bool HanoiClient::setNewAvatar(const QString &userId, const QByteArray &image) {
 
         obj->setAvatar(image);
 
-        if (isOnline(obj)) {
+        if (isOnlineAndLoginned(obj)) {
             return sendUserData(obj);
         }
 
@@ -220,7 +231,30 @@ bool HanoiClient::addProfile(const LocalUser& user) {
     }
 
     return true;
+}
 
+bool HanoiClient::setProfile(const QString &userId,
+                             QSharedPointer<LocalUser>* selectedProfileData) {
+    auto user = getLocalUser(userId);
+
+    if (!user || !user->isValid()) {
+        emit requestError("User '" + userId + "' is not exists");
+        return false;
+    }
+
+    _currentUserId = userId;
+
+    if (selectedProfileData) {
+        *selectedProfileData = user;
+    }
+
+    emit profileChanged(user);
+
+    if ( user->online()) {
+        connectToServer();
+    }
+
+    return true;
 }
 
 bool HanoiClient::updateProfile(const LocalUser& user) {
@@ -231,44 +265,37 @@ bool HanoiClient::updateProfile(const LocalUser& user) {
         return database->updateObject(localUser);
     }
 
-    if (isOnline(localUser)) {
+    if (isOnlineAndLoginned(localUser)) {
         return sendUserData(localUser);
     }
 
     return true;
 }
 
-bool HanoiClient::login(const QString &userId, const QString &rawPassword) {
+bool HanoiClient::login(const QString &userId, const QString& rawPassword) {
 
-    auto user = getLocalUser(userId);
-
-    if (!user || !user->isValid()) {
-        emit requestError("User '" + userId + "' is not exists");
+    QSharedPointer<LocalUser> user;
+    if (!setProfile(userId, &user)) {
         return false;
     }
 
-    _currentUserId = userId;
-
-    emit profileChanged(user);
-
-    bool fOnline = rawPassword.size() || user->online();
-    if (fOnline && !p_login(userId, hashgenerator(rawPassword.toLatin1()))) {
+    if (!(isOnline(user) && p_login(userId, hashgenerator(rawPassword.toLatin1())))) {
         return false;
     }
 
     return true;
-
 }
 
 bool HanoiClient::registerOnlineUser(const QString &userId, const QString &rawPassword) {
-    auto user = getLocalUser(userId);
+    QSharedPointer<LocalUser> user;
+    if (!setProfile(userId, &user)) {
+        return false;
+    }
 
     if (user) {
         emit requestError("User '" + userId + "' is alredy exists");
         return false;
     }
-
-    emit profileChanged(user);
 
     return p_signIn(userId, hashgenerator(rawPassword.toLatin1()));
 }
@@ -281,7 +308,7 @@ bool HanoiClient::removeUser(const QString &userId) {
         return false;
     }
 
-    if (isOnline(user)) {
+    if (isOnlineAndLoginned(user)) {
         QH::PKG::AuthRequest request;
         request.setId(user->getId());
         request.setRequest(UserRequestType::Remove);
@@ -295,9 +322,8 @@ bool HanoiClient::removeUser(const QString &userId) {
 
 }
 
-void HanoiClient::connectToServer(const QH::HostAddress &host) {
-    addNode(host);
-    _serverAddress = host;
+void HanoiClient::connectToServer() {
+    addNode(_serverAddress);
 }
 
 QList<UserPreview> HanoiClient::localUsersPreview() {
@@ -310,17 +336,18 @@ QList<UserPreview> HanoiClient::localUsersPreview() {
     return result->data();
 }
 
-void HanoiClient::nodeConfirmend(const QH::HostAddress &node) {
+void HanoiClient::nodeConfirmend(QH::AbstractNodeInfo *node) {
     setStatus(Status::Connected);
     DataBaseNode::nodeConfirmend(node);
 
 }
 
-void HanoiClient::nodeConnected(const QH::HostAddress &node) {
+void HanoiClient::nodeConnected(QH::AbstractNodeInfo* node) {
+    setStatus(Status::Connected);
     DataBaseNode::nodeConnected(node);
 }
 
-void HanoiClient::nodeDisconnected(const QH::HostAddress &node) {
+void HanoiClient::nodeDisconnected(QH::AbstractNodeInfo *node) {
     setStatus(Status::Dissconnected);
     DataBaseNode::nodeDisconnected(node);
 }

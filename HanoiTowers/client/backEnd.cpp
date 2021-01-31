@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2018-2020 QuasarApp.
+ * Copyright (C) 2018-2021 QuasarApp.
  * Distributed under the lgplv3 software license, see the accompanying
  * Everyone is permitted to copy and distribute verbatim copies
  * of this license document, but changing it is not allowed.
@@ -84,7 +84,6 @@ BackEnd::BackEnd(QQmlApplicationEngine *engine):
     setProfile(_settings->getStrValue(CURRENT_PROFILE_KEY, DEFAULT_USER_ID));
     init();
 
-    _client->connectToServer(QH::HostAddress{DEFAULT_HANOI_ADDRESS, DEFAULT_HANOI_PORT});
 }
 
 void BackEnd::init() {
@@ -132,6 +131,10 @@ void BackEnd::onlineRequest(const QString &userId) {
     _loginModel->setData(data);
 
     emit showOnlinePage();
+}
+
+int BackEnd::onlineStatus() const {
+    return static_cast<int>(_onlineStatus);
 }
 
 void BackEnd::handleChangeName(const QString & name) {
@@ -379,4 +382,12 @@ void BackEnd::setGameState(GameState *gameState) {
 
     _profile.setGameState(*gameState);
     emit gameStateChanged(gameState);
+}
+
+void BackEnd::setOnlineStatus(int onlineStatus) {
+    if (_onlineStatus == static_cast<OnlineStatus>(onlineStatus))
+        return;
+
+    _onlineStatus = static_cast<OnlineStatus>(onlineStatus);
+    emit onlineStatusChanged(static_cast<int>(_onlineStatus));
 }
