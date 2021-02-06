@@ -94,7 +94,7 @@ void HanoiClient::handleError(unsigned char status, const QString &error) {
 bool HanoiClient::p_login(const QString& userId, const QByteArray &hashPassword) {
     QH::PKG::AuthRequest request;
     request.setId(userId);
-    request.setRequest(QH::PKG::UserRequestType::Login);
+    request.setRequest(QH::PKG::UserRequestType::LogIn);
 
     if (hashPassword.isEmpty()) {
         auto localUser = getLocalUser(userId);
@@ -113,7 +113,7 @@ bool HanoiClient::p_signIn(const QString &userId, const QByteArray& hashPassword
     QH::PKG::AuthRequest request;
     request.setId(userId);
     request.setAuthenticationData(hashPassword);
-    request.setRequest(QH::PKG::UserRequestType::SignIn);
+    request.setRequest(QH::PKG::UserRequestType::SignUp);
 
     return sendData(&request, _serverAddress);
 }

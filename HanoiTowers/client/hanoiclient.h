@@ -28,13 +28,6 @@ class UserMember;
 }
 }
 
-enum class Status: unsigned char {
-    OfflineUser,
-    Dissconnected,
-    Connected,
-    Logined
-};
-
 class HanoiClient: public QH::DataBaseNode
 {
     Q_OBJECT
@@ -60,10 +53,6 @@ public:
     void connectToServer();
 
     QList<UserPreview> localUsersPreview();
-
-    // AbstractNode interface
-    Status getStatus() const;
-    void setStatus(const Status &status);
 
     bool setNewAvatar(const QString &userId, const QByteArray& image);
 \
@@ -97,7 +86,6 @@ private:
     bool isOnline(const QSharedPointer<LocalUser>& data);
     bool isOnlineAndLoginned(const QSharedPointer<LocalUser>& data);
 
-    Status _status;
     QString _currentUserId;
     const QH::HostAddress _serverAddress;
     QList<LocalUser*> _usersList;
