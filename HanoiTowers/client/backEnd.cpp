@@ -72,8 +72,8 @@ BackEnd::BackEnd(QQmlApplicationEngine *engine):
     connect(_createNewOfflineUser , &LoginView::LVMainModel::sigRegisterRequest,
             this, &BackEnd::handleCreateNewProfile);
 
-    connect(_client , &HanoiClient::requestError,
-            this, &BackEnd::handleOnlineRequestError);
+//    connect(_client , &HanoiClient::requestError,
+//            this, &BackEnd::handleOnlineRequestError);
 
     connect(_client , &HanoiClient::profileChanged,
             this, &BackEnd::handleProfileChanged);
@@ -158,7 +158,7 @@ void BackEnd::handleOnlineRequest(const LoginView::UserData & user) {
 }
 
 void BackEnd::handleOnlineRegisterRequest(const LoginView::UserData &user) {
-    if (!_client->registerOnlineUser(user.nickname(), user.rawPassword())) {
+    if (!_client->signup(user.nickname(), user.rawPassword())) {
         QmlNotificationService::NotificationService::getService()->setNotify(
                     tr("Register online error"),
                     tr("Failed to register this account,"
@@ -311,7 +311,7 @@ QObject *BackEnd::client() {
 
 void BackEnd::removeUser(const QString &userId) {
 
-    if (!_client->removeUser(userId)) {
+    if (!_client->removeUser()) {
         QmlNotificationService::NotificationService::getService()->setNotify(
                     tr("Remove online error"), tr("current profile not online!"), "",
                     QmlNotificationService::NotificationData::Warning);

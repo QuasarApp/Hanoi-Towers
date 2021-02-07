@@ -23,8 +23,7 @@
 #include "hanoierrorcodes.h"
 #include "localrecordstable.h"
 
-HanoiClient::HanoiClient():
-    _serverAddress(DEFAULT_HANOI_ADDRESS, DEFAULT_HANOI_PORT) {
+HanoiClient::HanoiClient() {
 
     initSqlDb("",
               new QH::SqlDB(),
@@ -49,27 +48,6 @@ QH::ParserResult HanoiClient::parsePackage(const QH::Package &pkg,
 
         return QH::ParserResult::Processed;
 
-    } else if (H_16<QH::PKG::UserMember>() == pkg.hdr.command) {
-        QH::PKG::UserMember obj(pkg);
-
-        LocalUser user(&obj);
-        auto action = [&obj](auto object) {
-            auto localuser = object.template dynamicCast<LocalUser>();
-
-            if (!localuser)
-                return false;
-
-            localuser->setToken(obj.token());
-            localuser->setOnline(true);
-
-            return true;
-        };
-
-        if (!db()->changeObjects(user, action)) {
-            return QH::ParserResult::Error;
-        };
-
-        setStatus(Status::Logined);
     }
 
     return QH::ParserResult::NotProcessed;
@@ -81,48 +59,22 @@ QStringList HanoiClient::SQLSources() const {
     };
 }
 
-void HanoiClient::handleError(unsigned char status, const QString &error) {
-    if (status == ErrorCodes::PermissionDenied) {
-        setStatus(Status::Connected);
-    }
+QH::HostAddress HanoiClient::serverAddress() const {
+    return QH::HostAddress{DEFAULT_HANOI_ADDRESS, DEFAULT_HANOI_PORT};
+}
+
+void HanoiClient::handleError(QH::ErrorCodes::Code , const QString &error) {
 
     QmlNotificationService::NotificationService::getService()->setNotify(
                 tr("Jnline error"), error, "",
                 QmlNotificationService::NotificationData::Error);
 }
 
-bool HanoiClient::p_login(const QString& userId, const QByteArray &hashPassword) {
-    QH::PKG::AuthRequest request;
-    request.setId(userId);
-    request.setRequest(QH::PKG::UserRequestType::LogIn);
-
-    if (hashPassword.isEmpty()) {
-        auto localUser = getLocalUser(userId);
-        if (!(localUser && localUser->token().isValid())) {
-            emit requestError("User '" + userId + "' have a invalid token.");
-            return false;
-        }
-
-        request.setToken(localUser->token());
-    }
-
-    return sendData(&request, _serverAddress);
-}
-
-bool HanoiClient::p_signIn(const QString &userId, const QByteArray& hashPassword) {
-    QH::PKG::AuthRequest request;
-    request.setId(userId);
-    request.setAuthenticationData(hashPassword);
-    request.setRequest(QH::PKG::UserRequestType::SignUp);
-
-    return sendData(&request, _serverAddress);
-}
-
 bool HanoiClient::userDatarequest(const QByteArray &userId) {
     UserDataRequest request;
     request.setId(userId);
 
-    return sendData(&request, _serverAddress);
+    return sendData(&request, serverAddress());
 }
 
 QSharedPointer<LocalUser> HanoiClient::getLocalUser(const QString &userId) const {
@@ -139,7 +91,7 @@ QSharedPointer<LocalUser> HanoiClient::getLocalUser(const QString &userId) const
 bool HanoiClient::sendUserData(const QSharedPointer<LocalUser> &data) {
     UserData result(*data->userData());
 
-    return sendData(&result, _serverAddress);
+    return sendData(&result, serverAddress());
 
 }
 
@@ -152,7 +104,7 @@ bool HanoiClient::isOnline(const QSharedPointer<LocalUser> &data) {
         return false;
     }
 
-    return _status >= Status::Connected;
+    return getStatus() >= QH::ClientStatus::Connected;
 }
 
 bool HanoiClient::isOnlineAndLoginned(const QSharedPointer<LocalUser> &data) {
@@ -165,20 +117,10 @@ bool HanoiClient::isOnlineAndLoginned(const QSharedPointer<LocalUser> &data) {
         return false;
     }
 
-    return _status == Status::Logined;
+    return getStatus() >= QH::ClientStatus::Logined;
 
 }
 
-Status HanoiClient::getStatus() const {
-    return _status;
-}
-
-void HanoiClient::setStatus(const Status &status) {
-    if (_status != status) {
-        _status = status;
-        emit statusChanged(static_cast<unsigned char>(_status));
-    }
-}
 
 bool HanoiClient::setNewAvatar(const QString &userId, const QByteArray &image) {
 
@@ -238,7 +180,7 @@ bool HanoiClient::setProfile(const QString &userId,
     auto user = getLocalUser(userId);
 
     if (!user || !user->isValid()) {
-        emit requestError("User '" + userId + "' is not exists");
+        emit requestError(0, "User '" + userId + "' is not exists");
         return false;
     }
 
@@ -272,60 +214,6 @@ bool HanoiClient::updateProfile(const LocalUser& user) {
     return true;
 }
 
-bool HanoiClient::login(const QString &userId, const QString& rawPassword) {
-
-    QSharedPointer<LocalUser> user;
-    if (!setProfile(userId, &user)) {
-        return false;
-    }
-
-    if (!(isOnline(user) && p_login(userId, hashgenerator(rawPassword.toLatin1())))) {
-        return false;
-    }
-
-    return true;
-}
-
-bool HanoiClient::registerOnlineUser(const QString &userId, const QString &rawPassword) {
-    QSharedPointer<LocalUser> user;
-    if (!setProfile(userId, &user)) {
-        return false;
-    }
-
-    if (user) {
-        emit requestError("User '" + userId + "' is alredy exists");
-        return false;
-    }
-
-    return p_signIn(userId, hashgenerator(rawPassword.toLatin1()));
-}
-
-bool HanoiClient::removeUser(const QString &userId) {
-    auto user = getLocalUser(userId);
-
-
-    if (!db()->deleteObject(user)) {
-        return false;
-    }
-
-    if (isOnlineAndLoginned(user)) {
-        QH::PKG::AuthRequest request;
-        request.setId(user->getId());
-        request.setRequest(UserRequestType::Remove);
-        if (!sendData(&request, _serverAddress)) {
-            return false;
-        };
-
-    }
-
-    return true;
-
-}
-
-void HanoiClient::connectToServer() {
-    addNode(_serverAddress);
-}
-
 QList<UserPreview> HanoiClient::localUsersPreview() {
     LocalRecordsTable query;
     auto result = db()->getObject(query);
@@ -334,29 +222,6 @@ QList<UserPreview> HanoiClient::localUsersPreview() {
         return {};
 
     return result->data();
-}
-
-void HanoiClient::nodeConfirmend(QH::AbstractNodeInfo *node) {
-    setStatus(Status::Connected);
-    DataBaseNode::nodeConfirmend(node);
-
-}
-
-void HanoiClient::nodeConnected(QH::AbstractNodeInfo* node) {
-    setStatus(Status::Connected);
-    DataBaseNode::nodeConnected(node);
-}
-
-void HanoiClient::nodeDisconnected(QH::AbstractNodeInfo *node) {
-    setStatus(Status::Dissconnected);
-    DataBaseNode::nodeDisconnected(node);
-}
-
-QByteArray HanoiClient::hashgenerator(const QByteArray &data) {
-    if (data.isEmpty())
-        return {};
-
-    return DataBaseNode::hashgenerator(data);
 }
 
 

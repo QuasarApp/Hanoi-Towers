@@ -17,6 +17,7 @@
 #include <QImage>
 #include <databasenode.h>
 #include <profiledata.h>
+#include <singleserverclient.h>
 #include <userpreview.h>
 
 class LocalUser;
@@ -28,7 +29,7 @@ class UserMember;
 }
 }
 
-class HanoiClient: public QH::DataBaseNode
+class HanoiClient: public QH::SingleServerClient
 {
     Q_OBJECT
 public:
@@ -45,38 +46,20 @@ public:
     bool setProfile(const QString &userId,
                     QSharedPointer<LocalUser> *selectedProfileData = nullptr);
 
-    bool login(const QString &userId, const QString& rawPassword = "");
-    bool registerOnlineUser(const QString &userId, const QString& rawPassword);
-
-    bool removeUser(const QString &userId);
-
-    void connectToServer();
-
     QList<UserPreview> localUsersPreview();
 
     bool setNewAvatar(const QString &userId, const QByteArray& image);
 \
 
 protected:
-    void nodeConfirmend(QH::AbstractNodeInfo* node) override;
-    void nodeConnected(QH::AbstractNodeInfo *node) override;
-    void nodeDisconnected(QH::AbstractNodeInfo *node) override;
-    QByteArray hashgenerator(const QByteArray &data) override;
     QStringList SQLSources() const override;
+    QH::HostAddress serverAddress() const override;
 
 signals:
-    void requestError(const QString & err);
-    void statusChanged(unsigned char state);
     void profileIsUpdated();
     void profileChanged(QSharedPointer<LocalUser>);
 
-private slots:
-    void handleError(unsigned char status, const QString& error);
-
 private:
-
-    bool p_login(const QString &userId, const QByteArray &hashPassword = {});
-    bool p_signIn(const QString &userId, const QByteArray &hashPassword);
 
     bool userDatarequest(const QByteArray &userId);
     QSharedPointer<LocalUser> getLocalUser(const QString &userId) const;
@@ -85,9 +68,9 @@ private:
 
     bool isOnline(const QSharedPointer<LocalUser>& data);
     bool isOnlineAndLoginned(const QSharedPointer<LocalUser>& data);
+    void handleError(QH::ErrorCodes::Code, const QString& error);
 
     QString _currentUserId;
-    const QH::HostAddress _serverAddress;
     QList<LocalUser*> _usersList;
 
 };
