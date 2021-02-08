@@ -335,10 +335,14 @@ void BackEnd::setProfile(QString userId) {
 
     _client->updateProfile(_profile);
 
-    if ( _client->login(userId)) {
+    if (_client->setProfile(userId)) {
         emit profileChanged(userId);
+
+        _client->login(userId);
+
     } else if (userId == DEFAULT_USER_ID) {
         createProfile(DEFAULT_USER_ID, DEFAULT_USER_NAME);
+        _client->setProfile(userId);
     }
 }
 

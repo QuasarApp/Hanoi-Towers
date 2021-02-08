@@ -70,7 +70,6 @@ private:
     bool isOnlineAndLoginned(const QSharedPointer<LocalUser>& data);
     void handleError(QH::ErrorCodes::Code, const QString& error);
 
-    QString _currentUserId;
     QList<LocalUser*> _usersList;
 
 };

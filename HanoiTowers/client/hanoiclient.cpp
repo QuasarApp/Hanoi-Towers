@@ -96,10 +96,6 @@ bool HanoiClient::sendUserData(const QSharedPointer<LocalUser> &data) {
 }
 
 bool HanoiClient::isOnline(const QSharedPointer<LocalUser> &data) {
-    if (data->userId() != _currentUserId) {
-        return false;
-    }
-
     if (!data->isOnline()) {
         return false;
     }
@@ -151,14 +147,6 @@ bool HanoiClient::setNewAvatar(const QString &userId, const QByteArray &image) {
     return true;
 }
 
-QString HanoiClient::currentUserId() const {
-    return _currentUserId;
-}
-
-QSharedPointer<LocalUser> HanoiClient::currentProfile() const {
-    return getLocalUser(_currentUserId);
-}
-
 bool HanoiClient::addProfile(const LocalUser& user) {
 
     if (!db())
@@ -183,8 +171,6 @@ bool HanoiClient::setProfile(const QString &userId,
         emit requestError(0, "User '" + userId + "' is not exists");
         return false;
     }
-
-    _currentUserId = userId;
 
     if (selectedProfileData) {
         *selectedProfileData = user;

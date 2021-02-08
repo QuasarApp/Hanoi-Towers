@@ -157,7 +157,7 @@ GridLayout {
 
         property string userName: (userModel)? userModel.name: ""
         property bool onlieUser: (userModel)? userModel.onlineUser: false
-        property int onlineStatus: backEnd.onlineStatus
+        property int onlineStatus: (backEnd)? backEnd.onlineStatus : 0
 
         function accept() {
             if (userModel) {
