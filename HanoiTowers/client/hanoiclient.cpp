@@ -20,6 +20,8 @@
 #include <getmaxintegerid.h>
 #include <QBuffer>
 #include <getsinglevalue.h>
+#include <dataconverter.h>
+#include <setsinglevalue.h>
 #include "hanoierrorcodes.h"
 #include "localrecordstable.h"
 
@@ -32,7 +34,7 @@ HanoiClient::HanoiClient() {
 
 QH::ParserResult HanoiClient::parsePackage(const QH::Package &pkg,
                                            const QH::AbstractNodeInfo *sender) {
-    auto parentResult = DataBaseNode::parsePackage(pkg, sender);
+    auto parentResult = SingleServerClient::parsePackage(pkg, sender);
     if (parentResult != QH::ParserResult::NotProcessed) {
         return parentResult;
     }
@@ -63,6 +65,34 @@ QH::HostAddress HanoiClient::serverAddress() const {
     return QH::HostAddress{DEFAULT_HANOI_ADDRESS, DEFAULT_HANOI_PORT};
 }
 
+void HanoiClient::incomingData(AbstractData *pkg, const QH::AbstractNodeInfo *sender) {
+    Q_UNUSED(sender);
+
+    if (pkg->cmd() == H_16<UserData>()) {
+        auto user = getLocalUser(static_cast<UserMember*>(pkg)->getId().toString());
+        user->setToken(static_cast<UserMember*>(pkg)->token());
+
+        if (auto database = db()) {
+
+            using SetSingleVal = QSharedPointer<QH::PKG::SetSingleValue>;
+
+            auto request = SetSingleVal::create(QH::DbAddress("Users", static_cast<UserMember*>(pkg)->getId().toString()),
+                                                "token", static_cast<UserMember*>(pkg)->token().toBytes());
+
+            if (database->updateObject(request)) {
+
+                QmlNotificationService::NotificationService::getService()->setNotify(
+                            tr("Local user has been updated"), tr("local user accept nbew data from the server."), "",
+                            QmlNotificationService::NotificationData::Normal);
+                emit profileIsUpdated();
+            } else {
+                handleError(0, tr("Internal Error, server send invalid data,"
+                                 " and this data can't be saved into local database."));
+            }
+        }
+    }
+}
+
 void HanoiClient::handleError(QH::ErrorCodes::Code , const QString &error) {
 
     QmlNotificationService::NotificationService::getService()->setNotify(
@@ -88,11 +118,8 @@ QSharedPointer<LocalUser> HanoiClient::getLocalUser(const QString &userId) const
     return db()->getObject(request);
 }
 
-bool HanoiClient::sendUserData(const QSharedPointer<LocalUser> &data) {
-    UserData result(*data->userData());
-
-    return sendData(&result, serverAddress());
-
+bool HanoiClient::sendUserData(QSharedPointer<UserData> data) {
+    return sendData(data.data(), serverAddress());
 }
 
 bool HanoiClient::isOnline(const QSharedPointer<LocalUser> &data) {
@@ -134,7 +161,7 @@ bool HanoiClient::setNewAvatar(const QString &userId, const QByteArray &image) {
         obj->setAvatar(image);
 
         if (isOnlineAndLoginned(obj)) {
-            return sendUserData(obj);
+            return sendUserData(DataConverter::toUserDataPtr(obj));
         }
 
         return true;
@@ -194,7 +221,7 @@ bool HanoiClient::updateProfile(const LocalUser& user) {
     }
 
     if (isOnlineAndLoginned(localUser)) {
-        return sendUserData(localUser);
+        return sendUserData(DataConverter::toUserDataPtr(localUser));
     }
 
     return true;

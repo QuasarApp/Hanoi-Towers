@@ -17,10 +17,14 @@ class DataConverter
 public:
     DataConverter();
 
-    UserPreview toUserPreview(const LocalUser& input) const;
-    UserPreview toUserPreview(const QSharedPointer<LocalUser>& input) const;
-    UserPreview toUserPreview(const LoginView::UserData& input) const;
+    static UserPreview toUserPreview(const LocalUser& input);
+    static UserPreview toUserPreview(const QSharedPointer<LocalUser>& input);
+    static UserPreview toUserPreview(const LoginView::UserData& input);
 
+    static UserData toUserData(const QSharedPointer<LocalUser>& input);
+    static UserData toUserData(const LocalUser& input);
+    static QSharedPointer<UserData> toUserDataPtr(const QSharedPointer<LocalUser>& input);
+    static QSharedPointer<UserData> toUserDataPtr(const LocalUser& input);
 };
 
 #endif // DATACONVERTER_H

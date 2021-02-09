@@ -54,6 +54,7 @@ public:
 protected:
     QStringList SQLSources() const override;
     QH::HostAddress serverAddress() const override;
+    void incomingData(QH::PKG::AbstractData *pkg, const QH::AbstractNodeInfo *sender) override;
 
 signals:
     void profileIsUpdated();
@@ -64,14 +65,13 @@ private:
     bool userDatarequest(const QByteArray &userId);
     QSharedPointer<LocalUser> getLocalUser(const QString &userId) const;
 
-    bool sendUserData(const QSharedPointer<LocalUser>& data);
+    bool sendUserData(QSharedPointer<UserData> data);
 
     bool isOnline(const QSharedPointer<LocalUser>& data);
     bool isOnlineAndLoginned(const QSharedPointer<LocalUser>& data);
     void handleError(QH::ErrorCodes::Code, const QString& error);
 
     QList<LocalUser*> _usersList;
-
 };
 
 #endif // HANOICLIENT_H

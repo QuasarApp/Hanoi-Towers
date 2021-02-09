@@ -72,8 +72,8 @@ BackEnd::BackEnd(QQmlApplicationEngine *engine):
     connect(_createNewOfflineUser , &LoginView::LVMainModel::sigRegisterRequest,
             this, &BackEnd::handleCreateNewProfile);
 
-//    connect(_client , &HanoiClient::requestError,
-//            this, &BackEnd::handleOnlineRequestError);
+    connect(_client , &HanoiClient::requestError,
+            this, &BackEnd::handleOnlineRequestError);
 
     connect(_client , &HanoiClient::profileChanged,
             this, &BackEnd::handleProfileChanged);
@@ -130,6 +130,17 @@ void BackEnd::onlineRequest(const QString &userId) {
     data.setNickname(userId);
     _loginModel->setData(data);
 
+    if (!_client->connectToServer()) {
+
+        QmlNotificationService::NotificationService::getService()->setNotify(
+                    tr("Connect error"),
+                    tr("Failed to connect to server"
+                       " please check network connection befor login"), "",
+                    QmlNotificationService::NotificationData::Error);
+
+        return;
+    }
+
     emit showOnlinePage();
 }
 
@@ -167,7 +178,7 @@ void BackEnd::handleOnlineRegisterRequest(const LoginView::UserData &user) {
     }
 }
 
-void BackEnd::handleOnlineRequestError(const QString & err) {
+void BackEnd::handleOnlineRequestError(QH::ErrorCodes::Code, const QString & err) {
     QmlNotificationService::NotificationService::getService()->setNotify(
                 tr("Server error"),
                 err, "",

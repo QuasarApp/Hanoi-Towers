@@ -168,7 +168,7 @@ private slots:
     void handleOnlineRequest(const LoginView::UserData&);
     void handleOnlineRegisterRequest(const LoginView::UserData&);
 
-    void handleOnlineRequestError(const QString&Errr);
+    void handleOnlineRequestError(QH::ErrorCodes::Code, const QString&Errr);
 
     void handleProfileChanged(QSharedPointer<LocalUser> profileId);
     void setOnlineStatus(int onlineStatus);
