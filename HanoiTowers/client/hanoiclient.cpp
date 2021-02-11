@@ -96,7 +96,7 @@ void HanoiClient::incomingData(AbstractData *pkg, const QH::AbstractNodeInfo *se
 void HanoiClient::handleError(QH::ErrorCodes::Code , const QString &error) {
 
     QmlNotificationService::NotificationService::getService()->setNotify(
-                tr("Jnline error"), error, "",
+                tr("Online error"), error, "",
                 QmlNotificationService::NotificationData::Error);
 }
 
