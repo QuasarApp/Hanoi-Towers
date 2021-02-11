@@ -6,7 +6,7 @@
     <message>
         <location filename="../backEnd.cpp" line="209"/>
         <source>Register online error</source>
-        <translation type="unfinished"></translation>
+        <translation>Ошибка регистрации</translation>
     </message>
     <message>
         <location filename="../backEnd.cpp" line="209"/>

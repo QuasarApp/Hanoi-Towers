@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1">
+<TS version="2.1" language="en_US">
 <context>
     <name>BackEnd</name>
     <message>
         <location filename="../backEnd.cpp" line="209"/>
         <source>Register online error</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../backEnd.cpp" line="209"/>
