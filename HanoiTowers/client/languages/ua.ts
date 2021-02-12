@@ -6,7 +6,7 @@
     <message>
         <location filename="../About.qml" line="22"/>
         <source>about</source>
-        <translation type="unfinished">Про автора</translation>
+        <translation>Про автора</translation>
     </message>
     <message>
         <location filename="../About.qml" line="45"/>
@@ -16,7 +16,7 @@
 * This game is distributed under the LGPLv3 license.
 * Contact: https://github.com/EndrII
 * Copyright (C) 2018-2019 Yankovich N. Andrei.</source>
-        <translation type="unfinished">Продукт компанії QuasarApp
+        <translation>Продукт компанії QuasarApp
 * Розробники:
 * Програміст: Янкович Н. Андрій.
 * Ця гра поширюється під ліцензією LGPLv3.
@@ -29,62 +29,62 @@
     <message>
         <location filename="../backEnd.cpp" line="58"/>
         <source>Create new user</source>
-        <translation type="unfinished"></translation>
+        <translation>Створити нового користувача</translation>
     </message>
     <message>
         <location filename="../backEnd.cpp" line="136"/>
         <source>Connect error</source>
-        <translation type="unfinished"></translation>
+        <translation>Помилка підключення</translation>
     </message>
     <message>
         <location filename="../backEnd.cpp" line="137"/>
         <source>Failed to connect to server please check network connection befor login</source>
-        <translation type="unfinished"></translation>
+        <translation>Не вдалося підключитися до сервера, перевірте мережеве підключення для входу</translation>
     </message>
     <message>
         <location filename="../backEnd.cpp" line="163"/>
         <source>login error</source>
-        <translation type="unfinished"></translation>
+        <translation>помилка входу</translation>
     </message>
     <message>
         <location filename="../backEnd.cpp" line="164"/>
         <source>Failed to login into online account, please check your password and username</source>
-        <translation type="unfinished"></translation>
+        <translation>Не вдалося увійти в онлайн-акаунт, перевірте свій пароль та ім’я користувача</translation>
     </message>
     <message>
         <location filename="../backEnd.cpp" line="174"/>
         <source>Register online error</source>
-        <translation type="unfinished"></translation>
+        <translation>помилка реєстрації в Інтернеті</translation>
     </message>
     <message>
         <location filename="../backEnd.cpp" line="175"/>
         <source>Failed to register this account, if this account was created by you, try to restore it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Не вдалося зареєструвати цей обліковий запис, якщо цей обліковий запис був створений вами, спробуйте відновити його.</translation>
     </message>
     <message>
         <location filename="../backEnd.cpp" line="183"/>
         <source>Server error</source>
-        <translation type="unfinished"></translation>
+        <translation>Помилка серверу</translation>
     </message>
     <message>
         <location filename="../backEnd.cpp" line="295"/>
         <source>Create user error</source>
-        <translation type="unfinished"></translation>
+        <translation>Помилка створення користувача</translation>
     </message>
     <message>
         <location filename="../backEnd.cpp" line="296"/>
         <source>Failed to create a new user, The name %0 alredy used.</source>
-        <translation type="unfinished"></translation>
+        <translation>Не вдалося створити нового користувача, ім’я %0 вже використовується.</translation>
     </message>
     <message>
         <location filename="../backEnd.cpp" line="327"/>
         <source>current profile not online!</source>
-        <translation type="unfinished"></translation>
+        <translation>Поточний профіль офлайн!</translation>
     </message>
     <message>
         <location filename="../backEnd.cpp" line="327"/>
         <source>Remove online error</source>
-        <translation type="unfinished"></translation>
+        <translation>Помилка видалення онлайн даних користувачів</translation>
     </message>
 </context>
 <context>
@@ -123,12 +123,12 @@
     <message>
         <location filename="../menu/Config.qml" line="61"/>
         <source>Fog</source>
-        <translation type="unfinished"></translation>
+        <translation>Туман</translation>
     </message>
     <message>
         <location filename="../menu/Config.qml" line="71"/>
         <source>Fog Animations</source>
-        <translation type="unfinished"></translation>
+        <translation>Анімація туману</translation>
     </message>
 </context>
 <context>
@@ -136,31 +136,34 @@
     <message>
         <location filename="../Game.qml" line="149"/>
         <source>You have passed the level in %0 steps and unlocked level %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Ви пройшли рівень за %0 кроків і розблокували рівень %1</translation>
     </message>
     <message>
         <location filename="../Game.qml" line="150"/>
         <source>
  Minimum steps for this lvl: %2</source>
-        <translation type="unfinished"></translation>
+        <translation>
+ Мінімальні кроки для цього рівня: %2</translation>
     </message>
     <message>
         <location filename="../Game.qml" line="151"/>
         <location filename="../Game.qml" line="167"/>
         <source>
  you reward = %3</source>
-        <translation type="unfinished"></translation>
+        <translation>
+ ваша винагорода = %3</translation>
     </message>
     <message>
         <location filename="../Game.qml" line="165"/>
         <source>You have passed the level in %0 steps.
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Ви пройшли рівень за кроки %0.
+</translation>
     </message>
     <message>
         <location filename="../Game.qml" line="166"/>
         <source>Minimum steps for this lvl: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Мінімальні кроки для цього рівня: %1</translation>
     </message>
 </context>
 <context>
@@ -168,12 +171,12 @@
     <message>
         <location filename="../menu/GameStateWidget.qml" line="27"/>
         <source>Tower height: </source>
-        <translation type="unfinished"></translation>
+        <translation>Висота вежі: </translation>
     </message>
     <message>
         <location filename="../menu/GameStateWidget.qml" line="61"/>
         <source>step </source>
-        <translation type="unfinished">крок </translation>
+        <translation>крок </translation>
     </message>
 </context>
 <context>
@@ -181,22 +184,22 @@
     <message>
         <location filename="../hanoiclient.cpp" line="85"/>
         <source>Local user has been updated</source>
-        <translation type="unfinished"></translation>
+        <translation>Локальний користувач був оновлений</translation>
     </message>
     <message>
         <location filename="../hanoiclient.cpp" line="85"/>
         <source>local user accept nbew data from the server.</source>
-        <translation type="unfinished"></translation>
+        <translation>локальний користувач приймає нові дані з сервера.</translation>
     </message>
     <message>
         <location filename="../hanoiclient.cpp" line="89"/>
         <source>Internal Error, server send invalid data, and this data can&apos;t be saved into local database.</source>
-        <translation type="unfinished"></translation>
+        <translation>Внутрішня помилка, сервер надсилає недійсні дані, і ці дані не можна зберегти в локальній базі даних.</translation>
     </message>
     <message>
         <location filename="../hanoiclient.cpp" line="99"/>
         <source>Online error</source>
-        <translation type="unfinished"></translation>
+        <translation>Помилка в мережі</translation>
     </message>
 </context>
 <context>
@@ -220,12 +223,12 @@
     <message>
         <location filename="../Help.qml" line="48"/>
         <source>Your task is to transfer discs of different sizesfrom the left tower to third tower.You can only transfer the top drive of the tower.You can not transfer several disks at once and put larger disks on small disks.</source>
-        <translation>Ваше завдання полягає в тому, щоб передати диски різних розмірів з лівої вежі до третьої вежі.</translation>
+        <translation>Ваше завдання  перенести диски різних розмірів з лівої вежі на третю вежу. Ви можете перенести лише верхній привід вежі. Ви не можете перенести кілька дисків одночасно і поставити більші диски на маленькі диски.</translation>
     </message>
     <message>
         <location filename="../Help.qml" line="61"/>
         <source>Do not show again</source>
-        <translation type="unfinished"></translation>
+        <translation>Не показувати знову</translation>
     </message>
     <message>
         <source>Do not show again:</source>
@@ -241,108 +244,108 @@
     <message>
         <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="21"/>
         <source>Create a new account</source>
-        <translation type="unfinished"></translation>
+        <translation>Створити новий акаунт</translation>
     </message>
     <message>
         <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="21"/>
         <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="249"/>
         <source>LogIn</source>
-        <translation type="unfinished"></translation>
+        <translation>Увійти</translation>
     </message>
     <message>
         <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="22"/>
         <source>Please fill this form to create an account</source>
-        <translation type="unfinished"></translation>
+        <translation>Заповніть цю форму, щоб створити обліковий запис</translation>
     </message>
     <message>
         <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="23"/>
         <source>Please fill this form to login in your account</source>
-        <translation type="unfinished"></translation>
+        <translation>Заповніть цю форму, щоб увійти у свій обліковий запис</translation>
     </message>
     <message>
         <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="62"/>
         <source>First Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Ім&apos;я</translation>
     </message>
     <message>
         <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="65"/>
         <source>Empy or incorrect name. Please enter yuor name.</source>
-        <translation type="unfinished"></translation>
+        <translation>Порожня форма або неправильне ім&apos;я. Введіть коректне ім&apos;я.</translation>
     </message>
     <message>
         <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="80"/>
         <source>Last Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Прізвище</translation>
     </message>
     <message>
         <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="107"/>
         <source>Select you country</source>
-        <translation type="unfinished"></translation>
+        <translation>Виберіть країну</translation>
     </message>
     <message>
         <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="129"/>
         <source>EMail</source>
-        <translation type="unfinished"></translation>
+        <translation>EMail</translation>
     </message>
     <message>
         <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="133"/>
         <source>Empty or incorrect email address. Please enter yuor name.</source>
-        <translation type="unfinished"></translation>
+        <translation>Форма не заповнена або введений невірний email. Введіть вірний email.</translation>
     </message>
     <message>
         <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="148"/>
         <source>Nickname</source>
-        <translation type="unfinished"></translation>
+        <translation>Нікнейм</translation>
     </message>
     <message>
         <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="152"/>
         <source>Empty or incorrect Nickname. Please enter yuor name.</source>
-        <translation type="unfinished"></translation>
+        <translation>Порожня форма або неправильний нікнейм. Введіть коректний нікнейм.</translation>
     </message>
     <message>
         <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="174"/>
         <source>Pasword</source>
-        <translation type="unfinished"></translation>
+        <translation>Пароль</translation>
     </message>
     <message>
         <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="188"/>
         <source>Confirm pasword</source>
-        <translation type="unfinished"></translation>
+        <translation>Підтвердьте пароль</translation>
     </message>
     <message>
         <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="200"/>
         <source>Forgot password</source>
-        <translation type="unfinished"></translation>
+        <translation>Забули пароль</translation>
     </message>
     <message>
         <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="220"/>
         <source>I accept the Terms of use</source>
-        <translation type="unfinished"></translation>
+        <translation>Я приймаю Умови використання</translation>
     </message>
     <message>
         <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="227"/>
         <source>Show terms of use</source>
-        <translation type="unfinished"></translation>
+        <translation>Показати умови використання</translation>
     </message>
     <message>
         <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="248"/>
         <source>SignUp</source>
-        <translation type="unfinished"></translation>
+        <translation>Реєстрація</translation>
     </message>
     <message>
         <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="281"/>
         <source>Login In</source>
-        <translation type="unfinished"></translation>
+        <translation>Логін</translation>
     </message>
     <message>
         <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="284"/>
         <source>Sign Up</source>
-        <translation type="unfinished"></translation>
+        <translation>Реєстрація</translation>
     </message>
     <message>
         <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="332"/>
         <source>Password must match the 1st field and the password cannot be empty</source>
-        <translation type="unfinished"></translation>
+        <translation>Пароль повинен відповідати 1-му полю, і пароль не може бути порожнім</translation>
     </message>
 </context>
 <context>
@@ -350,32 +353,32 @@
     <message>
         <location filename="../QMLLoginView/LoginView/src/lvmainmodel.cpp" line="186"/>
         <source>must be longer than 8 characters</source>
-        <translation type="unfinished"></translation>
+        <translation>має містити більше 8 символів</translation>
     </message>
     <message>
         <location filename="../QMLLoginView/LoginView/src/lvmainmodel.cpp" line="190"/>
         <source>must contain numbers</source>
-        <translation type="unfinished"></translation>
+        <translation>повинні містити цифри</translation>
     </message>
     <message>
         <location filename="../QMLLoginView/LoginView/src/lvmainmodel.cpp" line="194"/>
         <source>must contain small chars</source>
-        <translation type="unfinished"></translation>
+        <translation>повинен містити невеликі символи</translation>
     </message>
     <message>
         <location filename="../QMLLoginView/LoginView/src/lvmainmodel.cpp" line="198"/>
         <source>must contain large chars</source>
-        <translation type="unfinished"></translation>
+        <translation>повинен містити великі символи</translation>
     </message>
     <message>
         <location filename="../QMLLoginView/LoginView/src/lvmainmodel.cpp" line="202"/>
         <source>must contain extra chars (!@#$%^&amp;*)</source>
-        <translation type="unfinished"></translation>
+        <translation>повинен містити додаткові символи (! @ # $% ^ &amp; *)</translation>
     </message>
     <message>
         <location filename="../QMLLoginView/LoginView/src/lvmainmodel.cpp" line="205"/>
         <source>Password requirements: </source>
-        <translation type="unfinished"></translation>
+        <translation>Вимоги до пароля:</translation>
     </message>
 </context>
 <context>
@@ -387,7 +390,7 @@
     <message>
         <location filename="../menu/MainMenu.qml" line="39"/>
         <source>continue</source>
-        <translation type="unfinished"></translation>
+        <translation>Продовжувати</translation>
     </message>
     <message>
         <location filename="../menu/MainMenu.qml" line="52"/>
@@ -407,7 +410,7 @@
     <message>
         <location filename="../menu/MainMenu.qml" line="89"/>
         <source>Users</source>
-        <translation type="unfinished"></translation>
+        <translation>Користувачі</translation>
     </message>
     <message>
         <location filename="../menu/MainMenu.qml" line="102"/>
@@ -421,7 +424,7 @@
         <location filename="../SimpleQmlNotify/NotifyModule/NotificationForm.qml" line="16"/>
         <location filename="../SimpleQmlNotify/NotifyModule/NotificationForm.qml" line="18"/>
         <source>Message</source>
-        <translation type="unfinished"></translation>
+        <translation>Повідомлення</translation>
     </message>
 </context>
 <context>
@@ -444,27 +447,27 @@
     <message>
         <location filename="../menu/ToolBarPage.qml" line="63"/>
         <source>Return to main menu</source>
-        <translation type="unfinished">Головне меню</translation>
+        <translation>Головне меню</translation>
     </message>
     <message>
         <location filename="../menu/ToolBarPage.qml" line="84"/>
         <source>Welcom to Hanoi Towers </source>
-        <translation type="unfinished"></translation>
+        <translation>Ласкаво просимо до Ханойських веж</translation>
     </message>
     <message>
         <location filename="../menu/ToolBarPage.qml" line="95"/>
         <source>Profiles</source>
-        <translation type="unfinished"></translation>
+        <translation>Профілі</translation>
     </message>
     <message>
         <location filename="../menu/ToolBarPage.qml" line="107"/>
         <source>This are the main settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Це основні налаштування</translation>
     </message>
     <message>
         <location filename="../menu/ToolBarPage.qml" line="119"/>
         <source>About Page</source>
-        <translation type="unfinished"></translation>
+        <translation>Довідка</translation>
     </message>
 </context>
 <context>
@@ -472,62 +475,62 @@
     <message>
         <location filename="../menu/UserView.qml" line="39"/>
         <source>Please choose a new Avatar</source>
-        <translation type="unfinished"></translation>
+        <translation>Виберіть новий Аватар</translation>
     </message>
     <message>
         <location filename="../menu/UserView.qml" line="56"/>
         <source>Id</source>
-        <translation type="unfinished"></translation>
+        <translation>Id</translation>
     </message>
     <message>
         <location filename="../menu/UserView.qml" line="63"/>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Ім&apos;я</translation>
     </message>
     <message>
         <location filename="../menu/UserView.qml" line="70"/>
         <source>Record</source>
-        <translation type="unfinished"></translation>
+        <translation>Рекорд</translation>
     </message>
     <message>
         <location filename="../menu/UserView.qml" line="77"/>
         <source>Online profile</source>
-        <translation type="unfinished"></translation>
+        <translation>Онлайн-профіль</translation>
     </message>
     <message>
         <location filename="../menu/UserView.qml" line="130"/>
         <source>Remove This Profile</source>
-        <translation type="unfinished"></translation>
+        <translation>Видалити цей профіль</translation>
     </message>
     <message>
         <location filename="../menu/UserView.qml" line="141"/>
         <source>Restore</source>
-        <translation type="unfinished"></translation>
+        <translation>Відновлювати</translation>
     </message>
     <message>
         <location filename="../menu/UserView.qml" line="148"/>
         <source>Accept</source>
-        <translation type="unfinished"></translation>
+        <translation>Прийміть</translation>
     </message>
     <message>
         <location filename="../menu/UserView.qml" line="165"/>
         <source>User is updated</source>
-        <translation type="unfinished"></translation>
+        <translation>Користувач оновлений</translation>
     </message>
     <message>
         <location filename="../menu/UserView.qml" line="165"/>
         <source>User data will be changed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Дані користувача буде змінено.</translation>
     </message>
     <message>
         <location filename="../menu/UserView.qml" line="183"/>
         <source>Remove %0 user</source>
-        <translation type="unfinished"></translation>
+        <translation>Видалити користувача %0</translation>
     </message>
     <message>
         <location filename="../menu/UserView.qml" line="184"/>
         <source>All saved data and records will be delete, Do you want continuee?</source>
-        <translation type="unfinished"></translation>
+        <translation>Усі збережені дані та записи будуть видалені. Продовжити?</translation>
     </message>
 </context>
 <context>
@@ -539,12 +542,12 @@
     <message>
         <location filename="../menu/UsersTable.qml" line="46"/>
         <source>Locale users list</source>
-        <translation type="unfinished"></translation>
+        <translation>Локальний список користувачів</translation>
     </message>
     <message>
         <location filename="../menu/UsersTable.qml" line="77"/>
         <source>Create the new user</source>
-        <translation type="unfinished"></translation>
+        <translation>Створіть нового користувача</translation>
     </message>
 </context>
 <context>
@@ -623,12 +626,12 @@ Minimum steps for this lvl: %1</source>
     <message>
         <location filename="../QMLLoginView/example/main.qml" line="28"/>
         <source>Example of LoginView</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../ViewSolutions/Examples/src/main.qml" line="113"/>
         <source>Examples of View Solutions</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 </TS>

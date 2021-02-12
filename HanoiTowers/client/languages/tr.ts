@@ -6,7 +6,7 @@
     <message>
         <location filename="../About.qml" line="22"/>
         <source>about</source>
-        <translation type="unfinished">hakkında</translation>
+        <translation>hakkında</translation>
     </message>
     <message>
         <location filename="../About.qml" line="45"/>
@@ -16,7 +16,7 @@
 * This game is distributed under the LGPLv3 license.
 * Contact: https://github.com/EndrII
 * Copyright (C) 2018-2019 Yankovich N. Andrei.</source>
-        <translation type="unfinished">QuasarApp ürünü
+        <translation>QuasarApp ürünü
 * Geliştiriciler:
 * Programcı: Yankovich N. Andrei.
 * Bu oyun LGPLv3 lisansı altında dağıtılmaktadır.
@@ -29,62 +29,62 @@
     <message>
         <location filename="../backEnd.cpp" line="58"/>
         <source>Create new user</source>
-        <translation type="unfinished"></translation>
+        <translation>Yeni kullanıcı oluştur</translation>
     </message>
     <message>
         <location filename="../backEnd.cpp" line="136"/>
         <source>Connect error</source>
-        <translation type="unfinished"></translation>
+        <translation>Bağlantı hatası</translation>
     </message>
     <message>
         <location filename="../backEnd.cpp" line="137"/>
         <source>Failed to connect to server please check network connection befor login</source>
-        <translation type="unfinished"></translation>
+        <translation>Sunucuya bağlanılamadı, lütfen oturum açmadan önce ağ bağlantısını kontrol edin</translation>
     </message>
     <message>
         <location filename="../backEnd.cpp" line="163"/>
         <source>login error</source>
-        <translation type="unfinished"></translation>
+        <translation>sisteme giriş hatası</translation>
     </message>
     <message>
         <location filename="../backEnd.cpp" line="164"/>
         <source>Failed to login into online account, please check your password and username</source>
-        <translation type="unfinished"></translation>
+        <translation>Çevrimiçi hesaba giriş yapılamadı, lütfen şifrenizi ve kullanıcı adınızı kontrol edin</translation>
     </message>
     <message>
         <location filename="../backEnd.cpp" line="174"/>
         <source>Register online error</source>
-        <translation type="unfinished"></translation>
+        <translation>Çevrimiçi kayıt hatası</translation>
     </message>
     <message>
         <location filename="../backEnd.cpp" line="175"/>
         <source>Failed to register this account, if this account was created by you, try to restore it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bu hesap kaydedilemedi, bu hesap sizin tarafınızdan oluşturulduysa, geri yüklemeyi deneyin.</translation>
     </message>
     <message>
         <location filename="../backEnd.cpp" line="183"/>
         <source>Server error</source>
-        <translation type="unfinished"></translation>
+        <translation>Server hatası</translation>
     </message>
     <message>
         <location filename="../backEnd.cpp" line="295"/>
         <source>Create user error</source>
-        <translation type="unfinished"></translation>
+        <translation>Kullanıcı hatası oluştur</translation>
     </message>
     <message>
         <location filename="../backEnd.cpp" line="296"/>
         <source>Failed to create a new user, The name %0 alredy used.</source>
-        <translation type="unfinished"></translation>
+        <translation>Yeni bir kullanıcı oluşturulamadı, %0 adı kullanıldı.</translation>
     </message>
     <message>
         <location filename="../backEnd.cpp" line="327"/>
         <source>current profile not online!</source>
-        <translation type="unfinished"></translation>
+        <translation>Mevcut profil çevrimdışı!</translation>
     </message>
     <message>
         <location filename="../backEnd.cpp" line="327"/>
         <source>Remove online error</source>
-        <translation type="unfinished"></translation>
+        <translation>Çevrimiçi kullanıcı verilerini kaldırma hatası</translation>
     </message>
 </context>
 <context>
@@ -108,12 +108,12 @@
     <message>
         <location filename="../menu/Config.qml" line="33"/>
         <source>Standart color</source>
-        <translation>Klasik arka ışık</translation>
+        <translation>standart renk</translation>
     </message>
     <message>
         <location filename="../menu/Config.qml" line="39"/>
         <source>Random color</source>
-        <translation>Çok renkli arka ışık</translation>
+        <translation>Rastgele renk</translation>
     </message>
     <message>
         <location filename="../menu/Config.qml" line="50"/>
@@ -123,12 +123,12 @@
     <message>
         <location filename="../menu/Config.qml" line="61"/>
         <source>Fog</source>
-        <translation type="unfinished"></translation>
+        <translation>Sis</translation>
     </message>
     <message>
         <location filename="../menu/Config.qml" line="71"/>
         <source>Fog Animations</source>
-        <translation type="unfinished"></translation>
+        <translation>Sis Animasyonu</translation>
     </message>
 </context>
 <context>
@@ -136,31 +136,34 @@
     <message>
         <location filename="../Game.qml" line="149"/>
         <source>You have passed the level in %0 steps and unlocked level %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Seviyeyi %0 adımda geçtiniz ve %1  seviyesinin kilidini açtınız</translation>
     </message>
     <message>
         <location filename="../Game.qml" line="150"/>
         <source>
  Minimum steps for this lvl: %2</source>
-        <translation type="unfinished"></translation>
+        <translation>
+Bu seviye için minimum adımlar: %2</translation>
     </message>
     <message>
         <location filename="../Game.qml" line="151"/>
         <location filename="../Game.qml" line="167"/>
         <source>
  you reward = %3</source>
-        <translation type="unfinished"></translation>
+        <translation>
+ ödülünüz = %3</translation>
     </message>
     <message>
         <location filename="../Game.qml" line="165"/>
         <source>You have passed the level in %0 steps.
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Seviyey i%0 adımda geçtiniz.
+</translation>
     </message>
     <message>
         <location filename="../Game.qml" line="166"/>
         <source>Minimum steps for this lvl: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Bu seviye için minimum adımlar: %1</translation>
     </message>
 </context>
 <context>
@@ -168,12 +171,12 @@
     <message>
         <location filename="../menu/GameStateWidget.qml" line="27"/>
         <source>Tower height: </source>
-        <translation type="unfinished"></translation>
+        <translation>Kule yüksekliği: </translation>
     </message>
     <message>
         <location filename="../menu/GameStateWidget.qml" line="61"/>
         <source>step </source>
-        <translation type="unfinished">adım </translation>
+        <translation>adım </translation>
     </message>
 </context>
 <context>
@@ -181,22 +184,22 @@
     <message>
         <location filename="../hanoiclient.cpp" line="85"/>
         <source>Local user has been updated</source>
-        <translation type="unfinished"></translation>
+        <translation>Yerel kullanıcı güncellendi</translation>
     </message>
     <message>
         <location filename="../hanoiclient.cpp" line="85"/>
         <source>local user accept nbew data from the server.</source>
-        <translation type="unfinished"></translation>
+        <translation>yerel kullanıcı sunucudan yeni verileri kabul eder.</translation>
     </message>
     <message>
         <location filename="../hanoiclient.cpp" line="89"/>
         <source>Internal Error, server send invalid data, and this data can&apos;t be saved into local database.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dahili Hata, sunucu geçersiz veri gönderdi ve bu veriler yerel veritabanına kaydedilemez.</translation>
     </message>
     <message>
         <location filename="../hanoiclient.cpp" line="99"/>
         <source>Online error</source>
-        <translation type="unfinished"></translation>
+        <translation>Çevrimiçi hata</translation>
     </message>
 </context>
 <context>
@@ -220,12 +223,12 @@
     <message>
         <location filename="../Help.qml" line="48"/>
         <source>Your task is to transfer discs of different sizesfrom the left tower to third tower.You can only transfer the top drive of the tower.You can not transfer several disks at once and put larger disks on small disks.</source>
-        <translation>Göreviniz, sol kuleden farklı büyüklükteki diskleri üçüncü kuleye aktarmaktır. Yalnızca kulenin üst sürücüsünü aktarabilirsiniz. Aynı anda birkaç diski aktaramaz ve daha küçük disklere daha büyük diskler yerleştiremezsiniz.</translation>
+        <translation>Göreviniz, farklı boyutlardaki diskleri sol kuleden üçüncü kuleye aktarmaktır. Kulenin yalnızca en üst sürücüsünü aktarabilirsiniz, aynı anda birkaç diski aktaramaz ve küçük disklere daha büyük diskler koyamazsınız.</translation>
     </message>
     <message>
         <location filename="../Help.qml" line="61"/>
         <source>Do not show again</source>
-        <translation type="unfinished"></translation>
+        <translation>Tekrar gösterme</translation>
     </message>
     <message>
         <source>Do not show again:</source>
@@ -241,108 +244,108 @@
     <message>
         <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="21"/>
         <source>Create a new account</source>
-        <translation type="unfinished"></translation>
+        <translation>Yeni bir hesap oluştur</translation>
     </message>
     <message>
         <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="21"/>
         <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="249"/>
         <source>LogIn</source>
-        <translation type="unfinished"></translation>
+        <translation>Oturum aç</translation>
     </message>
     <message>
         <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="22"/>
         <source>Please fill this form to create an account</source>
-        <translation type="unfinished"></translation>
+        <translation>Lütfen bir hesap oluşturmak için bu formu doldurun</translation>
     </message>
     <message>
         <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="23"/>
         <source>Please fill this form to login in your account</source>
-        <translation type="unfinished"></translation>
+        <translation>Lütfen hesabınıza giriş yapmak için bu formu doldurun</translation>
     </message>
     <message>
         <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="62"/>
         <source>First Name</source>
-        <translation type="unfinished"></translation>
+        <translation>İsim</translation>
     </message>
     <message>
         <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="65"/>
         <source>Empy or incorrect name. Please enter yuor name.</source>
-        <translation type="unfinished"></translation>
+        <translation>Empy veya yanlış isim. Lütfen adınızı girin.</translation>
     </message>
     <message>
         <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="80"/>
         <source>Last Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Soyad</translation>
     </message>
     <message>
         <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="107"/>
         <source>Select you country</source>
-        <translation type="unfinished"></translation>
+        <translation>Ülkenizi seçin</translation>
     </message>
     <message>
         <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="129"/>
         <source>EMail</source>
-        <translation type="unfinished"></translation>
+        <translation>EMail</translation>
     </message>
     <message>
         <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="133"/>
         <source>Empty or incorrect email address. Please enter yuor name.</source>
-        <translation type="unfinished"></translation>
+        <translation>E-posta adresi boş veya yanlış. Lütfen e-posta adresinizi girin.</translation>
     </message>
     <message>
         <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="148"/>
         <source>Nickname</source>
-        <translation type="unfinished"></translation>
+        <translation>Takma ad</translation>
     </message>
     <message>
         <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="152"/>
         <source>Empty or incorrect Nickname. Please enter yuor name.</source>
-        <translation type="unfinished"></translation>
+        <translation>Boş veya yanlış Takma ad. Lütfen takma adınızı girin.</translation>
     </message>
     <message>
         <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="174"/>
         <source>Pasword</source>
-        <translation type="unfinished"></translation>
+        <translation>Parola</translation>
     </message>
     <message>
         <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="188"/>
         <source>Confirm pasword</source>
-        <translation type="unfinished"></translation>
+        <translation>Şifreyi Onayla</translation>
     </message>
     <message>
         <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="200"/>
         <source>Forgot password</source>
-        <translation type="unfinished"></translation>
+        <translation>Parolanızı mı unuttunuz</translation>
     </message>
     <message>
         <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="220"/>
         <source>I accept the Terms of use</source>
-        <translation type="unfinished"></translation>
+        <translation>Kullanım şartlarını kabul ediyorum</translation>
     </message>
     <message>
         <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="227"/>
         <source>Show terms of use</source>
-        <translation type="unfinished"></translation>
+        <translation>Kullanım şartlarını göster</translation>
     </message>
     <message>
         <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="248"/>
         <source>SignUp</source>
-        <translation type="unfinished"></translation>
+        <translation>Kaydol</translation>
     </message>
     <message>
         <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="281"/>
         <source>Login In</source>
-        <translation type="unfinished"></translation>
+        <translation>Oturum aç</translation>
     </message>
     <message>
         <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="284"/>
         <source>Sign Up</source>
-        <translation type="unfinished"></translation>
+        <translation>Kaydol</translation>
     </message>
     <message>
         <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="332"/>
         <source>Password must match the 1st field and the password cannot be empty</source>
-        <translation type="unfinished"></translation>
+        <translation>Parola 1. alanla eşleşmelidir ve parola boş olamaz</translation>
     </message>
 </context>
 <context>
@@ -350,32 +353,32 @@
     <message>
         <location filename="../QMLLoginView/LoginView/src/lvmainmodel.cpp" line="186"/>
         <source>must be longer than 8 characters</source>
-        <translation type="unfinished"></translation>
+        <translation>8 karakterden uzun olmalıdır</translation>
     </message>
     <message>
         <location filename="../QMLLoginView/LoginView/src/lvmainmodel.cpp" line="190"/>
         <source>must contain numbers</source>
-        <translation type="unfinished"></translation>
+        <translation>sayıları içermelidir</translation>
     </message>
     <message>
         <location filename="../QMLLoginView/LoginView/src/lvmainmodel.cpp" line="194"/>
         <source>must contain small chars</source>
-        <translation type="unfinished"></translation>
+        <translation>küçük karakterler içermelidir</translation>
     </message>
     <message>
         <location filename="../QMLLoginView/LoginView/src/lvmainmodel.cpp" line="198"/>
         <source>must contain large chars</source>
-        <translation type="unfinished"></translation>
+        <translation>küçük karakterler içermelidir</translation>
     </message>
     <message>
         <location filename="../QMLLoginView/LoginView/src/lvmainmodel.cpp" line="202"/>
         <source>must contain extra chars (!@#$%^&amp;*)</source>
-        <translation type="unfinished"></translation>
+        <translation>ekstra karakterler içermelidir (!@#$%^&amp;*)</translation>
     </message>
     <message>
         <location filename="../QMLLoginView/LoginView/src/lvmainmodel.cpp" line="205"/>
         <source>Password requirements: </source>
-        <translation type="unfinished"></translation>
+        <translation>Parola gereksinimleri: </translation>
     </message>
 </context>
 <context>
@@ -387,7 +390,7 @@
     <message>
         <location filename="../menu/MainMenu.qml" line="39"/>
         <source>continue</source>
-        <translation type="unfinished"></translation>
+        <translation>devam et</translation>
     </message>
     <message>
         <location filename="../menu/MainMenu.qml" line="52"/>
@@ -407,7 +410,7 @@
     <message>
         <location filename="../menu/MainMenu.qml" line="89"/>
         <source>Users</source>
-        <translation type="unfinished"></translation>
+        <translation>Kullanıcılar</translation>
     </message>
     <message>
         <location filename="../menu/MainMenu.qml" line="102"/>
@@ -421,7 +424,7 @@
         <location filename="../SimpleQmlNotify/NotifyModule/NotificationForm.qml" line="16"/>
         <location filename="../SimpleQmlNotify/NotifyModule/NotificationForm.qml" line="18"/>
         <source>Message</source>
-        <translation type="unfinished"></translation>
+        <translation>İleti</translation>
     </message>
 </context>
 <context>
@@ -444,27 +447,27 @@
     <message>
         <location filename="../menu/ToolBarPage.qml" line="63"/>
         <source>Return to main menu</source>
-        <translation type="unfinished">Ana menüye dön</translation>
+        <translation>Ana menüye dön</translation>
     </message>
     <message>
         <location filename="../menu/ToolBarPage.qml" line="84"/>
         <source>Welcom to Hanoi Towers </source>
-        <translation type="unfinished"></translation>
+        <translation>Hanoi Kuleleri&apos;ne hoş geldiniz </translation>
     </message>
     <message>
         <location filename="../menu/ToolBarPage.qml" line="95"/>
         <source>Profiles</source>
-        <translation type="unfinished"></translation>
+        <translation>Profiller</translation>
     </message>
     <message>
         <location filename="../menu/ToolBarPage.qml" line="107"/>
         <source>This are the main settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Bu ana ayarlar</translation>
     </message>
     <message>
         <location filename="../menu/ToolBarPage.qml" line="119"/>
         <source>About Page</source>
-        <translation type="unfinished"></translation>
+        <translation>Sayfa Hakkında</translation>
     </message>
 </context>
 <context>
@@ -472,62 +475,62 @@
     <message>
         <location filename="../menu/UserView.qml" line="39"/>
         <source>Please choose a new Avatar</source>
-        <translation type="unfinished"></translation>
+        <translation>Lütfen yeni bir Avatar seçin</translation>
     </message>
     <message>
         <location filename="../menu/UserView.qml" line="56"/>
         <source>Id</source>
-        <translation type="unfinished"></translation>
+        <translation>Id</translation>
     </message>
     <message>
         <location filename="../menu/UserView.qml" line="63"/>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation>İsim</translation>
     </message>
     <message>
         <location filename="../menu/UserView.qml" line="70"/>
         <source>Record</source>
-        <translation type="unfinished"></translation>
+        <translation>Kayıt</translation>
     </message>
     <message>
         <location filename="../menu/UserView.qml" line="77"/>
         <source>Online profile</source>
-        <translation type="unfinished"></translation>
+        <translation>Çevrimiçi profil</translation>
     </message>
     <message>
         <location filename="../menu/UserView.qml" line="130"/>
         <source>Remove This Profile</source>
-        <translation type="unfinished"></translation>
+        <translation>Bu Profili Kaldır</translation>
     </message>
     <message>
         <location filename="../menu/UserView.qml" line="141"/>
         <source>Restore</source>
-        <translation type="unfinished"></translation>
+        <translation>Onarmak</translation>
     </message>
     <message>
         <location filename="../menu/UserView.qml" line="148"/>
         <source>Accept</source>
-        <translation type="unfinished"></translation>
+        <translation>Kabul etmek</translation>
     </message>
     <message>
         <location filename="../menu/UserView.qml" line="165"/>
         <source>User is updated</source>
-        <translation type="unfinished"></translation>
+        <translation>Kullanıcı güncellendi</translation>
     </message>
     <message>
         <location filename="../menu/UserView.qml" line="165"/>
         <source>User data will be changed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kullanıcı verileri değiştirilecek.</translation>
     </message>
     <message>
         <location filename="../menu/UserView.qml" line="183"/>
         <source>Remove %0 user</source>
-        <translation type="unfinished"></translation>
+        <translation>%0 kullanıcıyı kaldır</translation>
     </message>
     <message>
         <location filename="../menu/UserView.qml" line="184"/>
         <source>All saved data and records will be delete, Do you want continuee?</source>
-        <translation type="unfinished"></translation>
+        <translation>Kaydedilen tüm veriler ve kayıtlar silinecek, devam etmek istiyor musunuz?</translation>
     </message>
 </context>
 <context>
@@ -539,12 +542,12 @@
     <message>
         <location filename="../menu/UsersTable.qml" line="46"/>
         <source>Locale users list</source>
-        <translation type="unfinished"></translation>
+        <translation>Yerel kullanıcı listesi</translation>
     </message>
     <message>
         <location filename="../menu/UsersTable.qml" line="77"/>
         <source>Create the new user</source>
-        <translation type="unfinished"></translation>
+        <translation>Yeni kullanıcıyı oluşturun</translation>
     </message>
 </context>
 <context>
@@ -639,12 +642,12 @@ Bu lvl için minimum adımlar:%1</translation>
     <message>
         <location filename="../QMLLoginView/example/main.qml" line="28"/>
         <source>Example of LoginView</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../ViewSolutions/Examples/src/main.qml" line="113"/>
         <source>Examples of View Solutions</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 </TS>
