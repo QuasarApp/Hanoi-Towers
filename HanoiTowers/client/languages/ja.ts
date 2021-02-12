@@ -79,12 +79,12 @@
     <message>
         <location filename="../backEnd.cpp" line="327"/>
         <source>current profile not online!</source>
-        <translation>現在のプロファイルはオンライン！</translation>
+        <translation>現在のプロファイルはオフラインです！</translation>
     </message>
     <message>
         <location filename="../backEnd.cpp" line="327"/>
         <source>Remove online error</source>
-        <translation>削除エラー</translation>
+        <translation>オンラインユーザーデータの削除中にエラーが発生しました</translation>
     </message>
 </context>
 <context>
@@ -108,7 +108,7 @@
     <message>
         <location filename="../menu/Config.qml" line="33"/>
         <source>Standart color</source>
-        <translation>クラシックバックライト</translation>
+        <translation>標準色</translation>
     </message>
     <message>
         <location filename="../menu/Config.qml" line="39"/>
@@ -128,7 +128,7 @@
     <message>
         <location filename="../menu/Config.qml" line="71"/>
         <source>Fog Animations</source>
-        <translation>霧アニメーション</translation>
+        <translation>フォグアニメーション</translation>
     </message>
 </context>
 <context>
@@ -227,9 +227,9 @@
         <location filename="../Help.qml" line="48"/>
         <source>Your task is to transfer discs of different sizesfrom the left tower to third tower.You can only transfer the top drive of the tower.You can not transfer several disks at once and put larger disks on small disks.</source>
         <translation variants="yes">
-            <lengthvariant>あなたの仕事は左の塔から三番目の塔へ異なるサイズのディスクを移すことです。あなたは塔の一番上のドライブだけを移すことができます。あなたは一度に数枚のディスクを移すことはできません。</lengthvariant>
-            <lengthvariant>あなたの仕事は左の塔から三番目の塔へ異なるサイズのディスクを移すことです。あなたは塔の一番上のドライブだけを移すことができます。あなたは一度に数枚のディスクを移すことはできません。</lengthvariant>
-            <lengthvariant>あなたの仕事は左の塔から三番目の塔へ異なるサイズのディスクを移すことです。あなたは塔の一番上のドライブだけを移すことができます。あなたは一度に数枚のディスクを移すことはできません。</lengthvariant>
+            <lengthvariant>あなたの仕事は、異なるサイズのディスクを左側のタワーから3番目のタワーに移すことです。タワーの一番上のドライブのみを転送できます。一度に複数のディスクを転送して、小さなディスクに大きなディスクを配置することはできません。</lengthvariant>
+            <lengthvariant></lengthvariant>
+            <lengthvariant></lengthvariant>
         </translation>
     </message>
     <message>
@@ -293,7 +293,7 @@
     <message>
         <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="133"/>
         <source>Empty or incorrect email address. Please enter yuor name.</source>
-        <translation>空または不正なメールアドレス。お名前をどうぞ。</translation>
+        <translation>空のまたは間違ったメールアドレス。 yuorメールを入力してください。</translation>
     </message>
     <message>
         <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="148"/>
@@ -303,7 +303,7 @@
     <message>
         <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="152"/>
         <source>Empty or incorrect Nickname. Please enter yuor name.</source>
-        <translation>空または不正なニックネーム。お名前をどうぞ。</translation>
+        <translation>空または間違ったニックネーム。ニックネームを入力してください。</translation>
     </message>
     <message>
         <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="174"/>

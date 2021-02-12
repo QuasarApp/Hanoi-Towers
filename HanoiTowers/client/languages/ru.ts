@@ -84,7 +84,7 @@
     <message>
         <location filename="../backEnd.cpp" line="327"/>
         <source>Remove online error</source>
-        <translation>Исправить ошибку подключения</translation>
+        <translation>Ошибка удаления данных онлайн-пользователя</translation>
     </message>
 </context>
 <context>

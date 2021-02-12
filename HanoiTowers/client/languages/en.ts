@@ -16,7 +16,8 @@
 * This game is distributed under the LGPLv3 license.
 * Contact: https://github.com/EndrII
 * Copyright (C) 2018-2019 Yankovich N. Andrei.</source>
-        <translation type="unfinished"></translation>
+        <translatorcomment>Need update</translatorcomment>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -74,12 +75,12 @@
     <message>
         <location filename="../backEnd.cpp" line="327"/>
         <source>current profile not online!</source>
-        <translation>Current profile not online!</translation>
+        <translation>Current profile is offline!</translation>
     </message>
     <message>
         <location filename="../backEnd.cpp" line="327"/>
         <source>Remove online error</source>
-        <translation>Remove online error</translation>
+        <translation>Error remove online user data</translation>
     </message>
 </context>
 <context>
@@ -95,12 +96,12 @@
     <message>
         <location filename="../menu/Config.qml" line="33"/>
         <source>Standart color</source>
-        <translation>Standart color</translation>
+        <translation>Standard color</translation>
     </message>
     <message>
         <location filename="../menu/Config.qml" line="39"/>
         <source>Random color</source>
-        <translation>Standart color</translation>
+        <translation>Random color</translation>
     </message>
     <message>
         <location filename="../menu/Config.qml" line="50"/>
@@ -115,7 +116,7 @@
     <message>
         <location filename="../menu/Config.qml" line="71"/>
         <source>Fog Animations</source>
-        <translation>Fog animations</translation>
+        <translation>Fog animation</translation>
     </message>
 </context>
 <context>
@@ -202,7 +203,7 @@
     <message>
         <location filename="../Help.qml" line="48"/>
         <source>Your task is to transfer discs of different sizesfrom the left tower to third tower.You can only transfer the top drive of the tower.You can not transfer several disks at once and put larger disks on small disks.</source>
-        <translation>Your task is to transfer discs of different sizesfrom the left tower to third tower.You can only transfer the top drive of the tower.You can not transfer several disks at once and put larger disks on small disks.</translation>
+        <translation>Your task is to transfer discs of different sizes from the left tower to third tower.You can only transfer the top drive of the tower. You can not transfer several disks at once and put larger disks on small disks.</translation>
     </message>
     <message>
         <location filename="../Help.qml" line="61"/>
@@ -261,7 +262,7 @@
     <message>
         <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="133"/>
         <source>Empty or incorrect email address. Please enter yuor name.</source>
-        <translation>Empty or incorrect email address. Please enter your name.</translation>
+        <translation>Empty or incorrect email address. Please enter your email.</translation>
     </message>
     <message>
         <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="148"/>
@@ -271,7 +272,7 @@
     <message>
         <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="152"/>
         <source>Empty or incorrect Nickname. Please enter yuor name.</source>
-        <translation>Empty or incorrect Nickname. Please enter your name.</translation>
+        <translation>Empty or incorrect Nickname. Please enter your Nickname.</translation>
     </message>
     <message>
         <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="174"/>
@@ -306,12 +307,12 @@
     <message>
         <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="281"/>
         <source>Login In</source>
-        <translation>Login In</translation>
+        <translation>Login</translation>
     </message>
     <message>
         <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="284"/>
         <source>Sign Up</source>
-        <translation>Sign Up</translation>
+        <translation>SignUp</translation>
     </message>
     <message>
         <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="332"/>

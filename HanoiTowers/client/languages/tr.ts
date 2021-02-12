@@ -79,12 +79,12 @@
     <message>
         <location filename="../backEnd.cpp" line="327"/>
         <source>current profile not online!</source>
-        <translation>mevcut profil çevrimiçi değil!</translation>
+        <translation>Mevcut profil çevrimdışı!</translation>
     </message>
     <message>
         <location filename="../backEnd.cpp" line="327"/>
         <source>Remove online error</source>
-        <translation>Çevrimiçi hatayı kaldır</translation>
+        <translation>Çevrimiçi kullanıcı verilerini kaldırma hatası</translation>
     </message>
 </context>
 <context>
@@ -108,12 +108,12 @@
     <message>
         <location filename="../menu/Config.qml" line="33"/>
         <source>Standart color</source>
-        <translation>Klasik arka ışık</translation>
+        <translation>standart renk</translation>
     </message>
     <message>
         <location filename="../menu/Config.qml" line="39"/>
         <source>Random color</source>
-        <translation>Çok renkli arka ışık</translation>
+        <translation>Rastgele renk</translation>
     </message>
     <message>
         <location filename="../menu/Config.qml" line="50"/>
@@ -128,7 +128,7 @@
     <message>
         <location filename="../menu/Config.qml" line="71"/>
         <source>Fog Animations</source>
-        <translation>Sis Animasyonları</translation>
+        <translation>Sis Animasyonu</translation>
     </message>
 </context>
 <context>
@@ -223,7 +223,7 @@ Bu seviye için minimum adımlar: %2</translation>
     <message>
         <location filename="../Help.qml" line="48"/>
         <source>Your task is to transfer discs of different sizesfrom the left tower to third tower.You can only transfer the top drive of the tower.You can not transfer several disks at once and put larger disks on small disks.</source>
-        <translation>Göreviniz, sol kuleden farklı büyüklükteki diskleri üçüncü kuleye aktarmaktır. Yalnızca kulenin üst sürücüsünü aktarabilirsiniz. Aynı anda birkaç diski aktaramaz ve daha küçük disklere daha büyük diskler yerleştiremezsiniz.</translation>
+        <translation>Göreviniz, farklı boyutlardaki diskleri sol kuleden üçüncü kuleye aktarmaktır. Kulenin yalnızca en üst sürücüsünü aktarabilirsiniz, aynı anda birkaç diski aktaramaz ve küçük disklere daha büyük diskler koyamazsınız.</translation>
     </message>
     <message>
         <location filename="../Help.qml" line="61"/>
@@ -290,7 +290,7 @@ Bu seviye için minimum adımlar: %2</translation>
     <message>
         <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="133"/>
         <source>Empty or incorrect email address. Please enter yuor name.</source>
-        <translation>E-posta adresi boş veya yanlış. Lütfen adınızı girin.</translation>
+        <translation>E-posta adresi boş veya yanlış. Lütfen e-posta adresinizi girin.</translation>
     </message>
     <message>
         <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="148"/>
@@ -300,7 +300,7 @@ Bu seviye için minimum adımlar: %2</translation>
     <message>
         <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="152"/>
         <source>Empty or incorrect Nickname. Please enter yuor name.</source>
-        <translation>Boş veya yanlış Takma ad. Lütfen adınızı girin.</translation>
+        <translation>Boş veya yanlış Takma ad. Lütfen takma adınızı girin.</translation>
     </message>
     <message>
         <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="174"/>
@@ -335,7 +335,7 @@ Bu seviye için minimum adımlar: %2</translation>
     <message>
         <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="281"/>
         <source>Login In</source>
-        <translation>Giriş yap</translation>
+        <translation>Oturum aç</translation>
     </message>
     <message>
         <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="284"/>

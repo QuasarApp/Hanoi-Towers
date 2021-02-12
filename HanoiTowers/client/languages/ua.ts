@@ -79,12 +79,12 @@
     <message>
         <location filename="../backEnd.cpp" line="327"/>
         <source>current profile not online!</source>
-        <translation>поточний профіль не в мережі!</translation>
+        <translation>Поточний профіль офлайн!</translation>
     </message>
     <message>
         <location filename="../backEnd.cpp" line="327"/>
         <source>Remove online error</source>
-        <translation>Усунути помилку з&apos;єднання</translation>
+        <translation>Помилка видалення онлайн даних користувачів</translation>
     </message>
 </context>
 <context>
@@ -223,7 +223,7 @@
     <message>
         <location filename="../Help.qml" line="48"/>
         <source>Your task is to transfer discs of different sizesfrom the left tower to third tower.You can only transfer the top drive of the tower.You can not transfer several disks at once and put larger disks on small disks.</source>
-        <translation>Ваше завдання полягає в тому, щоб передати диски різних розмірів з лівої вежі до третьої вежі.</translation>
+        <translation>Ваше завдання  перенести диски різних розмірів з лівої вежі на третю вежу. Ви можете перенести лише верхній привід вежі. Ви не можете перенести кілька дисків одночасно і поставити більші диски на маленькі диски.</translation>
     </message>
     <message>
         <location filename="../Help.qml" line="61"/>
@@ -335,12 +335,12 @@
     <message>
         <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="281"/>
         <source>Login In</source>
-        <translation>Вхід</translation>
+        <translation>Логін</translation>
     </message>
     <message>
         <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="284"/>
         <source>Sign Up</source>
-        <translation>Зареєструйтесь</translation>
+        <translation>Реєстрація</translation>
     </message>
     <message>
         <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="332"/>
