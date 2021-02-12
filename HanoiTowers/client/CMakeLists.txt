@@ -31,3 +31,12 @@ target_link_libraries(${CURRENT_PROJECT} PRIVATE QmlNotyfyService HanoiTowersPro
 target_include_directories(${CURRENT_PROJECT} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 
 setVersionForTarget(${CURRENT_PROJECT} ${PRODUCT_VER_Mj} ${PRODUCT_VER_Mn} ${PRODUCT_VER_Re})
+
+set(LANGS ${CMAKE_CURRENT_SOURCE_DIR}/languages/en.ts
+          ${CMAKE_CURRENT_SOURCE_DIR}/languages/ru.ts
+          ${CMAKE_CURRENT_SOURCE_DIR}/languages/ja.ts
+          ${CMAKE_CURRENT_SOURCE_DIR}/languages/tr.ts
+          ${CMAKE_CURRENT_SOURCE_DIR}/languages/ua.ts)
+
+
+prepareQM(${CMAKE_CURRENT_SOURCE_DIR} "${LANGS}")
