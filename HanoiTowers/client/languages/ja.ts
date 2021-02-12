@@ -226,10 +226,10 @@
     <message>
         <location filename="../Help.qml" line="48"/>
         <source>Your task is to transfer discs of different sizesfrom the left tower to third tower.You can only transfer the top drive of the tower.You can not transfer several disks at once and put larger disks on small disks.</source>
-        <translation variants="yes">
+        <translation type="unfinished" variants="yes">
             <lengthvariant>あなたの仕事は、異なるサイズのディスクを左側のタワーから3番目のタワーに移すことです。タワーの一番上のドライブのみを転送できます。一度に複数のディスクを転送して、小さなディスクに大きなディスクを配置することはできません。</lengthvariant>
-            <lengthvariant></lengthvariant>
-            <lengthvariant></lengthvariant>
+            <lengthvariant>あなたの仕事は、異なるサイズのディスクを左側のタワーから3番目のタワーに移すことです。タワーの一番上のドライブのみを転送できます。一度に複数のディスクを転送して、小さなディスクに大きなディスクを配置することはできません。</lengthvariant>
+            <lengthvariant>あなたの仕事は、異なるサイズのディスクを左側のタワーから3番目のタワーに移すことです。タワーの一番上のドライブのみを転送できます。一度に複数のディスクを転送して、小さなディスクに大きなディスクを配置することはできません。</lengthvariant>
         </translation>
     </message>
     <message>
