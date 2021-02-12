@@ -48,7 +48,7 @@ class BackEnd: public QObject
     Q_PROPERTY(QObject* profileObject READ profileObject  NOTIFY profileChanged)
 
     Q_PROPERTY(QString profile READ profile WRITE setProfile NOTIFY profileChanged)
-    Q_PROPERTY(int onlineStatus READ onlineStatus WRITE setOnlineStatus NOTIFY onlineStatusChanged)
+    Q_PROPERTY(int onlineStatus READ onlineStatus NOTIFY onlineStatusChanged)
 
 
 
@@ -171,7 +171,7 @@ private slots:
     void handleOnlineRequestError(QH::ErrorCodes::Code, const QString&Errr);
 
     void handleProfileChanged(QSharedPointer<LocalUser> profileId);
-    void setOnlineStatus(int onlineStatus);
+    void setOnlineStatus(QH::ClientStatus onlineStatus);
 
 private:
     void init();
@@ -189,7 +189,7 @@ private:
     SettingsData _settingsData;
     HanoiImageProvider *_imageProvider = nullptr;
     DataConverter *_dataConverter = nullptr;
-    OnlineStatus _onlineStatus = OnlineStatus::Offline;
+    OnlineStatus _onlineStatus = OnlineStatus::Dissconnected;
 };
 
 

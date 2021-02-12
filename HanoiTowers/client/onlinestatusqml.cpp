@@ -6,7 +6,7 @@ OnlineStatusQml::OnlineStatusQml()
 }
 
 int OnlineStatusQml::offline() const {
-    return static_cast<int>(OnlineStatus::Offline);
+    return static_cast<int>(OnlineStatus::Dissconnected);
 }
 
 int OnlineStatusQml::connecting() const {
@@ -25,6 +25,6 @@ int OnlineStatusQml::loginning() const {
 }
 
 int OnlineStatusQml::loggined() const {
-    return static_cast<int>(OnlineStatus::Loggined);
+    return static_cast<int>(OnlineStatus::Logined);
 
 }

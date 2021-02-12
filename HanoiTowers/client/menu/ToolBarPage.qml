@@ -7,8 +7,7 @@ import "./../base" as Base
 ToolBar {
     id: root
 
-    property var client: (backEnd)? backEnd.onlineStatus: null;
-    property int onlineStatus: (client)? client.status : 0
+    property int onlineStatus: (backEnd)? backEnd.onlineStatus: 0
     property bool returnButton: false
     property bool gameStateWidget: false
 
@@ -21,9 +20,12 @@ ToolBar {
     function getStatusColor(status) {
         switch(status) {
 
-        case 0: return theme.headerColorOffline;
-        case 1: return theme.headerColorOnline;
-        case 2: return theme.headerColorLogined;
+        case OnlineStatusQml.connecting: return theme.headerColorOffline;
+        case OnlineStatusQml.connected: return theme.headerColorOnline;
+        case OnlineStatusQml.loginning: return theme.headerColorOnline;
+        case OnlineStatusQml.loggined: return theme.headerColorLogined;
+        default:
+            return theme.headerColorOffline
         }
     }
 

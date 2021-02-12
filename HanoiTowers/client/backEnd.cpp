@@ -78,6 +78,9 @@ BackEnd::BackEnd(QQmlApplicationEngine *engine):
     connect(_client , &HanoiClient::profileChanged,
             this, &BackEnd::handleProfileChanged);
 
+    connect(_client , &HanoiClient::statusChanged,
+            this, &BackEnd::setOnlineStatus);
+
     connect(&_profile, &LocalUser::nameChanged,
             this, &BackEnd::handleChangeName);
 
@@ -399,7 +402,7 @@ void BackEnd::setGameState(GameState *gameState) {
     emit gameStateChanged(gameState);
 }
 
-void BackEnd::setOnlineStatus(int onlineStatus) {
+void BackEnd::setOnlineStatus(QH::ClientStatus onlineStatus) {
     if (_onlineStatus == static_cast<OnlineStatus>(onlineStatus))
         return;
 

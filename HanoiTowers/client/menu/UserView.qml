@@ -109,13 +109,14 @@ GridLayout {
             id: eonline
             text: ""
             checked: privateRoot.onlieUser
-            visible: privateRoot.onlineStatus === OnlineStatusQml.offline || privateRoot.onlineStatus === OnlineStatusQml.loggined
+            visible: !bonline.visible
 
         }
 
         BusyIndicator {
+            id: bonline
             running: true;
-            visible: !eonline.visible
+            visible: privateRoot.onlineStatus === OnlineStatusQml.loginning || privateRoot.onlineStatus === OnlineStatusQml.loggined
         }
     }
 

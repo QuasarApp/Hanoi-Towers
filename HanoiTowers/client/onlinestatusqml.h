@@ -1,15 +1,9 @@
 #ifndef ONLINESTATUSQML_H
 #define ONLINESTATUSQML_H
 #include <QObject>
+#include <singleserverclient.h>
 
-
-enum class OnlineStatus: int {
-    Offline,
-    Connecting,
-    Connected,
-    Loginning,
-    Loggined
-};
+typedef QH::ClientStatus OnlineStatus;
 
 class OnlineStatusQml
 {
