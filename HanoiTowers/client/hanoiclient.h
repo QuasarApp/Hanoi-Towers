@@ -57,7 +57,6 @@ protected:
     void incomingData(QH::PKG::AbstractData *pkg, const QH::AbstractNodeInfo *sender) override;
 
 signals:
-    void profileIsUpdated();
     void profileChanged(QSharedPointer<LocalUser>);
 
 private:
@@ -73,5 +72,7 @@ private:
 
     QList<LocalUser*> _usersList;
 };
+
+Q_DECLARE_METATYPE(QSharedPointer<LocalUser>)
 
 #endif // HANOICLIENT_H

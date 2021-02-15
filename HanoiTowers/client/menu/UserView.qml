@@ -116,7 +116,7 @@ GridLayout {
         BusyIndicator {
             id: bonline
             running: true;
-            visible: privateRoot.onlineStatus === OnlineStatusQml.loginning || privateRoot.onlineStatus === OnlineStatusQml.loggined
+            visible: privateRoot.onlineStatus === OnlineStatusQml.loginning || privateRoot.onlineStatus === OnlineStatusQml.connecting
         }
     }
 

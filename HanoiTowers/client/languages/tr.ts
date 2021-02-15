@@ -32,57 +32,57 @@
         <translation>Yeni kullanıcı oluştur</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="136"/>
+        <location filename="../backEnd.cpp" line="139"/>
         <source>Connect error</source>
         <translation>Bağlantı hatası</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="137"/>
+        <location filename="../backEnd.cpp" line="140"/>
         <source>Failed to connect to server please check network connection befor login</source>
         <translation>Sunucuya bağlanılamadı, lütfen oturum açmadan önce ağ bağlantısını kontrol edin</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="163"/>
+        <location filename="../backEnd.cpp" line="166"/>
         <source>login error</source>
         <translation>sisteme giriş hatası</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="164"/>
+        <location filename="../backEnd.cpp" line="167"/>
         <source>Failed to login into online account, please check your password and username</source>
         <translation>Çevrimiçi hesaba giriş yapılamadı, lütfen şifrenizi ve kullanıcı adınızı kontrol edin</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="174"/>
+        <location filename="../backEnd.cpp" line="177"/>
         <source>Register online error</source>
         <translation>Çevrimiçi kayıt hatası</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="175"/>
+        <location filename="../backEnd.cpp" line="178"/>
         <source>Failed to register this account, if this account was created by you, try to restore it.</source>
         <translation>Bu hesap kaydedilemedi, bu hesap sizin tarafınızdan oluşturulduysa, geri yüklemeyi deneyin.</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="183"/>
+        <location filename="../backEnd.cpp" line="186"/>
         <source>Server error</source>
         <translation>Server hatası</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="295"/>
+        <location filename="../backEnd.cpp" line="298"/>
         <source>Create user error</source>
         <translation>Kullanıcı hatası oluştur</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="296"/>
+        <location filename="../backEnd.cpp" line="299"/>
         <source>Failed to create a new user, The name %0 alredy used.</source>
         <translation>Yeni bir kullanıcı oluşturulamadı, %0 adı kullanıldı.</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="327"/>
+        <location filename="../backEnd.cpp" line="330"/>
         <source>current profile not online!</source>
         <translation>Mevcut profil çevrimdışı!</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="327"/>
+        <location filename="../backEnd.cpp" line="330"/>
         <source>Remove online error</source>
         <translation>Çevrimiçi kullanıcı verilerini kaldırma hatası</translation>
     </message>
@@ -445,27 +445,27 @@ Bu seviye için minimum adımlar: %2</translation>
 <context>
     <name>ToolBarPage</name>
     <message>
-        <location filename="../menu/ToolBarPage.qml" line="63"/>
+        <location filename="../menu/ToolBarPage.qml" line="65"/>
         <source>Return to main menu</source>
         <translation>Ana menüye dön</translation>
     </message>
     <message>
-        <location filename="../menu/ToolBarPage.qml" line="84"/>
+        <location filename="../menu/ToolBarPage.qml" line="86"/>
         <source>Welcom to Hanoi Towers </source>
         <translation>Hanoi Kuleleri&apos;ne hoş geldiniz </translation>
     </message>
     <message>
-        <location filename="../menu/ToolBarPage.qml" line="95"/>
+        <location filename="../menu/ToolBarPage.qml" line="97"/>
         <source>Profiles</source>
         <translation>Profiller</translation>
     </message>
     <message>
-        <location filename="../menu/ToolBarPage.qml" line="107"/>
+        <location filename="../menu/ToolBarPage.qml" line="109"/>
         <source>This are the main settings</source>
         <translation>Bu ana ayarlar</translation>
     </message>
     <message>
-        <location filename="../menu/ToolBarPage.qml" line="119"/>
+        <location filename="../menu/ToolBarPage.qml" line="121"/>
         <source>About Page</source>
         <translation>Sayfa Hakkında</translation>
     </message>
@@ -498,37 +498,37 @@ Bu seviye için minimum adımlar: %2</translation>
         <translation>Çevrimiçi profil</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="130"/>
+        <location filename="../menu/UserView.qml" line="131"/>
         <source>Remove This Profile</source>
         <translation>Bu Profili Kaldır</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="141"/>
+        <location filename="../menu/UserView.qml" line="142"/>
         <source>Restore</source>
         <translation>Onarmak</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="148"/>
+        <location filename="../menu/UserView.qml" line="149"/>
         <source>Accept</source>
         <translation>Kabul etmek</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="165"/>
+        <location filename="../menu/UserView.qml" line="166"/>
         <source>User is updated</source>
         <translation>Kullanıcı güncellendi</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="165"/>
+        <location filename="../menu/UserView.qml" line="166"/>
         <source>User data will be changed.</source>
         <translation>Kullanıcı verileri değiştirilecek.</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="183"/>
+        <location filename="../menu/UserView.qml" line="184"/>
         <source>Remove %0 user</source>
         <translation>%0 kullanıcıyı kaldır</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="184"/>
+        <location filename="../menu/UserView.qml" line="185"/>
         <source>All saved data and records will be delete, Do you want continuee?</source>
         <translation>Kaydedilen tüm veriler ve kayıtlar silinecek, devam etmek istiyor musunuz?</translation>
     </message>

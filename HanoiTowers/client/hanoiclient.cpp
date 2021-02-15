@@ -30,6 +30,8 @@ HanoiClient::HanoiClient() {
     initSqlDb("",
               new QH::SqlDB(),
               new QH::SqlDBWriter());
+
+    qRegisterMetaType<QSharedPointer<LocalUser>>();
 }
 
 QH::ParserResult HanoiClient::parsePackage(const QH::Package &pkg,
@@ -41,12 +43,16 @@ QH::ParserResult HanoiClient::parsePackage(const QH::Package &pkg,
 
     if (H_16<UserData>() == pkg.hdr.command) {
         auto obj = QSharedPointer<UserData>::create(pkg);
+        auto localUser = getLocalUser(obj->name());
 
-        if (!db()->updateObject(obj)) {
-            return QH::ParserResult::Error;
+        if (obj->updateTime() > localUser->updateTime()) {
+            localUser->setUserData(obj->userData());
+            if (!db()->updateObject(obj)) {
+                return QH::ParserResult::Error;
+            }
+
+            emit profileChanged(localUser);
         }
-
-        emit profileIsUpdated();
 
         return QH::ParserResult::Processed;
 
@@ -68,26 +74,28 @@ QH::HostAddress HanoiClient::serverAddress() const {
 void HanoiClient::incomingData(AbstractData *pkg, const QH::AbstractNodeInfo *sender) {
     Q_UNUSED(sender);
 
-    if (pkg->cmd() == H_16<UserData>()) {
-        auto user = getLocalUser(static_cast<UserMember*>(pkg)->getId().toString());
-        user->setToken(static_cast<UserMember*>(pkg)->token());
+    if (pkg->cmd() == H_16<UserMember>()) {
+        if (auto user = getLocalUser(static_cast<UserMember*>(pkg)->name())) {
+            user->setToken(static_cast<UserMember*>(pkg)->token());
+            user->setOnline(true);
 
-        if (auto database = db()) {
+            if (auto database = db()) {
 
-            using SetSingleVal = QSharedPointer<QH::PKG::SetSingleValue>;
+                using SetSingleVal = QSharedPointer<QH::PKG::SetSingleValue>;
 
-            auto request = SetSingleVal::create(QH::DbAddress("Users", static_cast<UserMember*>(pkg)->getId().toString()),
-                                                "token", static_cast<UserMember*>(pkg)->token().toBytes());
+                auto request = SetSingleVal::create(QH::DbAddress("Users", static_cast<UserMember*>(pkg)->getId().toString()),
+                                                    "token", static_cast<UserMember*>(pkg)->token().toBytes());
 
-            if (database->updateObject(request)) {
+                if (database->updateObject(request)) {
 
-                QmlNotificationService::NotificationService::getService()->setNotify(
-                            tr("Local user has been updated"), tr("local user accept nbew data from the server."), "",
-                            QmlNotificationService::NotificationData::Normal);
-                emit profileIsUpdated();
-            } else {
-                handleError(0, tr("Internal Error, server send invalid data,"
-                                 " and this data can't be saved into local database."));
+                    QmlNotificationService::NotificationService::getService()->setNotify(
+                                tr("Local user has been updated"), tr("local user accept nbew data from the server."), "",
+                                QmlNotificationService::NotificationData::Normal);
+                    emit profileChanged(user);
+                } else {
+                    handleError(0, tr("Internal Error, server send invalid data,"
+                                     " and this data can't be saved into local database."));
+                }
             }
         }
     }

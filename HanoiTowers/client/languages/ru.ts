@@ -32,57 +32,57 @@
         <translation>Создать нового пользователя</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="136"/>
+        <location filename="../backEnd.cpp" line="139"/>
         <source>Connect error</source>
         <translation>Ошибка подключения</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="137"/>
+        <location filename="../backEnd.cpp" line="140"/>
         <source>Failed to connect to server please check network connection befor login</source>
         <translation>Ошибка подключения к серверу, пожалуйста проверьте интернет соединение перед входом</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="163"/>
+        <location filename="../backEnd.cpp" line="166"/>
         <source>login error</source>
         <translation>Ошибк входа</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="164"/>
+        <location filename="../backEnd.cpp" line="167"/>
         <source>Failed to login into online account, please check your password and username</source>
         <translation>Ошибка входа в онлайн аккаунт, пожалуйста проверьте свой логин и пароль</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="174"/>
+        <location filename="../backEnd.cpp" line="177"/>
         <source>Register online error</source>
         <translation>Ошибка регистрации</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="175"/>
+        <location filename="../backEnd.cpp" line="178"/>
         <source>Failed to register this account, if this account was created by you, try to restore it.</source>
         <translation>Не удалось зарегистрировать аккаунт, если этот аккаунт был создан вами попробуйте восстановить его.</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="183"/>
+        <location filename="../backEnd.cpp" line="186"/>
         <source>Server error</source>
         <translation>Ошибка сервера</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="295"/>
+        <location filename="../backEnd.cpp" line="298"/>
         <source>Create user error</source>
         <translation>Ошибка создания пользователя</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="296"/>
+        <location filename="../backEnd.cpp" line="299"/>
         <source>Failed to create a new user, The name %0 alredy used.</source>
         <translation>Не удалось создать пользователя. Данное имя %0 уже используется</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="327"/>
+        <location filename="../backEnd.cpp" line="330"/>
         <source>current profile not online!</source>
         <translation>Текущий профиль не в сети!</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="327"/>
+        <location filename="../backEnd.cpp" line="330"/>
         <source>Remove online error</source>
         <translation>Ошибка удаления данных онлайн-пользователя</translation>
     </message>
@@ -444,27 +444,27 @@
 <context>
     <name>ToolBarPage</name>
     <message>
-        <location filename="../menu/ToolBarPage.qml" line="63"/>
+        <location filename="../menu/ToolBarPage.qml" line="65"/>
         <source>Return to main menu</source>
         <translation>Вернутся в главное меню</translation>
     </message>
     <message>
-        <location filename="../menu/ToolBarPage.qml" line="84"/>
+        <location filename="../menu/ToolBarPage.qml" line="86"/>
         <source>Welcom to Hanoi Towers </source>
         <translation>Добро пожаловать в Hanoi Towers </translation>
     </message>
     <message>
-        <location filename="../menu/ToolBarPage.qml" line="95"/>
+        <location filename="../menu/ToolBarPage.qml" line="97"/>
         <source>Profiles</source>
         <translation>Профили</translation>
     </message>
     <message>
-        <location filename="../menu/ToolBarPage.qml" line="107"/>
+        <location filename="../menu/ToolBarPage.qml" line="109"/>
         <source>This are the main settings</source>
         <translation>Основные настройки</translation>
     </message>
     <message>
-        <location filename="../menu/ToolBarPage.qml" line="119"/>
+        <location filename="../menu/ToolBarPage.qml" line="121"/>
         <source>About Page</source>
         <translation>Справка</translation>
     </message>
@@ -497,37 +497,37 @@
         <translation>Онлайн профиль</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="130"/>
+        <location filename="../menu/UserView.qml" line="131"/>
         <source>Remove This Profile</source>
         <translation>Удалить это профиль</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="141"/>
+        <location filename="../menu/UserView.qml" line="142"/>
         <source>Restore</source>
         <translation>Восстановить</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="148"/>
+        <location filename="../menu/UserView.qml" line="149"/>
         <source>Accept</source>
         <translation>Принять</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="165"/>
+        <location filename="../menu/UserView.qml" line="166"/>
         <source>User is updated</source>
         <translation>Пользователь обновлен</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="165"/>
+        <location filename="../menu/UserView.qml" line="166"/>
         <source>User data will be changed.</source>
         <translation>Данные пользователя изменены</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="183"/>
+        <location filename="../menu/UserView.qml" line="184"/>
         <source>Remove %0 user</source>
         <translation>Удалить %0 пользователя</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="184"/>
+        <location filename="../menu/UserView.qml" line="185"/>
         <source>All saved data and records will be delete, Do you want continuee?</source>
         <translation>Все сохраненные данные и записи будут удалены. Продолжить?</translation>
     </message>

@@ -12,6 +12,7 @@
 #include <userdata.h>
 #include <usermember.h>
 #include <userdatarequest.h>
+#include <basenodeinfo.h>
 #include "config.h"
 #include "basedefines.h"
 #include "badrequest.h"
@@ -65,20 +66,7 @@ QH::ParserResult HanoiServer::parsePackage(const QH::Package &pkg,
 
     } else if (H_16<UserDataRequest>() == pkg.hdr.command) {
         UserDataRequest obj(pkg);
-        auto requesterId = getSender(sender, &obj);
-        QSharedPointer<QH::PKG::DBObject> userData;
-
-        if (getObject(requesterId, obj, userData) != QH::DBOperationResult::Allowed) {
-            badRequest(sender->networkAddress(), pkg.hdr,
-                       {
-                           ErrorCodes::PermissionDenied,
-                           "The user don not have a premsion of the requested object."
-                       });
-
-            return QH::ParserResult::Error;
-        };
-
-        if (!sendData(userData.data(), sender->networkAddress(), &pkg.hdr)) {
+        if (!workWirthUserData(&obj, sender, &pkg.hdr)) {
             return QH::ParserResult::Error;
         }
 
@@ -98,14 +86,33 @@ QVariantMap HanoiServer::defaultDbParams() const {
 }
 
 bool HanoiServer::workWirthUserData(const UserData *obj,
-                                    const QH::AbstractNodeInfo *sender) {
+                                    const QH::AbstractNodeInfo *sender,
+                                    const QH::Header *oldHeader) {
 
     auto requesterId = getSender(sender, obj);
-     QSharedPointer<DBObject> userData;
+    QSharedPointer<DBObject> userData;
 
-    if (getObject(requesterId, *obj, userData) != QH::DBOperationResult::Allowed) {
+    if (getObject(*requesterId, *obj, userData) != QH::DBOperationResult::Allowed) {
+        if (oldHeader) {
+            badRequest(sender->networkAddress(), *oldHeader,
+                       {
+                           ErrorCodes::PermissionDenied,
+                           "The user don not have a premsion of the requested object."
+                       });
+        }
+
         return false;
     }
 
     return sendData(userData.data(), sender->networkAddress());
+}
+
+void HanoiServer::nodeConfirmend(QH::AbstractNodeInfo *node) {
+    if (auto baseNode = dynamic_cast<QH::BaseNodeInfo*>(node)) {
+        UserDataRequest request;
+        request.setId(baseNode->id());
+
+        workWirthUserData(&request, node);
+
+    }
 }

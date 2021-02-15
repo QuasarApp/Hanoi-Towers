@@ -32,57 +32,57 @@
         <translation>新規ユーザーの作成</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="136"/>
+        <location filename="../backEnd.cpp" line="139"/>
         <source>Connect error</source>
         <translation>接続エラー</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="137"/>
+        <location filename="../backEnd.cpp" line="140"/>
         <source>Failed to connect to server please check network connection befor login</source>
         <translation>サーバへの接続に失敗しました</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="163"/>
+        <location filename="../backEnd.cpp" line="166"/>
         <source>login error</source>
         <translation>ログインエラー</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="164"/>
+        <location filename="../backEnd.cpp" line="167"/>
         <source>Failed to login into online account, please check your password and username</source>
         <translation>オンラインアカウントにログインできませんでした。パスワードとユーザー名を確認してください</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="174"/>
+        <location filename="../backEnd.cpp" line="177"/>
         <source>Register online error</source>
         <translation>登録オンラインエラー</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="175"/>
+        <location filename="../backEnd.cpp" line="178"/>
         <source>Failed to register this account, if this account was created by you, try to restore it.</source>
         <translation>このアカウントが登録されなかった場合、このアカウントが作成された場合、それを元に戻してください。</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="183"/>
+        <location filename="../backEnd.cpp" line="186"/>
         <source>Server error</source>
         <translation>サーバエラー</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="295"/>
+        <location filename="../backEnd.cpp" line="298"/>
         <source>Create user error</source>
         <translation>ユーザーエラーの作成</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="296"/>
+        <location filename="../backEnd.cpp" line="299"/>
         <source>Failed to create a new user, The name %0 alredy used.</source>
         <translation>新しいユーザーの作成に失敗しました。名前 %0 はすでに使用されています。</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="327"/>
+        <location filename="../backEnd.cpp" line="330"/>
         <source>current profile not online!</source>
         <translation>現在のプロファイルはオフラインです！</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="327"/>
+        <location filename="../backEnd.cpp" line="330"/>
         <source>Remove online error</source>
         <translation>オンラインユーザーデータの削除中にエラーが発生しました</translation>
     </message>
@@ -448,27 +448,27 @@
 <context>
     <name>ToolBarPage</name>
     <message>
-        <location filename="../menu/ToolBarPage.qml" line="63"/>
+        <location filename="../menu/ToolBarPage.qml" line="65"/>
         <source>Return to main menu</source>
         <translation>メインメニューへ戻る</translation>
     </message>
     <message>
-        <location filename="../menu/ToolBarPage.qml" line="84"/>
+        <location filename="../menu/ToolBarPage.qml" line="86"/>
         <source>Welcom to Hanoi Towers </source>
         <translation>ハノイタワー</translation>
     </message>
     <message>
-        <location filename="../menu/ToolBarPage.qml" line="95"/>
+        <location filename="../menu/ToolBarPage.qml" line="97"/>
         <source>Profiles</source>
         <translation>プロファイル</translation>
     </message>
     <message>
-        <location filename="../menu/ToolBarPage.qml" line="107"/>
+        <location filename="../menu/ToolBarPage.qml" line="109"/>
         <source>This are the main settings</source>
         <translation>これはメインの設定です</translation>
     </message>
     <message>
-        <location filename="../menu/ToolBarPage.qml" line="119"/>
+        <location filename="../menu/ToolBarPage.qml" line="121"/>
         <source>About Page</source>
         <translation>ページに関して</translation>
     </message>
@@ -501,37 +501,37 @@
         <translation>オンラインプロフィール</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="130"/>
+        <location filename="../menu/UserView.qml" line="131"/>
         <source>Remove This Profile</source>
         <translation>このプロファイルを削除する</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="141"/>
+        <location filename="../menu/UserView.qml" line="142"/>
         <source>Restore</source>
         <translation>戻す</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="148"/>
+        <location filename="../menu/UserView.qml" line="149"/>
         <source>Accept</source>
         <translation>受け入れる</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="165"/>
+        <location filename="../menu/UserView.qml" line="166"/>
         <source>User is updated</source>
         <translation>ユーザーが更新されました</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="165"/>
+        <location filename="../menu/UserView.qml" line="166"/>
         <source>User data will be changed.</source>
         <translation>ユーザーデータが変更されます。</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="183"/>
+        <location filename="../menu/UserView.qml" line="184"/>
         <source>Remove %0 user</source>
         <translation>%0ユーザーを削除</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="184"/>
+        <location filename="../menu/UserView.qml" line="185"/>
         <source>All saved data and records will be delete, Do you want continuee?</source>
         <translation>すべての保存されたデータとレコードが削除されます、あなたが継続したいですか？</translation>
     </message>
