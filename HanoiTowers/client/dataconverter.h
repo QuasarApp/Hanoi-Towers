@@ -25,6 +25,7 @@ public:
     static UserData toUserData(const LocalUser& input);
     static QSharedPointer<UserData> toUserDataPtr(const QSharedPointer<LocalUser>& input);
     static QSharedPointer<UserData> toUserDataPtr(const LocalUser& input);
+
 };
 
 #endif // DATACONVERTER_H

@@ -3,7 +3,7 @@
 #include <QObject>
 #include <singleserverclient.h>
 
-typedef QH::ClientStatus OnlineStatus;
+using OnlineStatus = QH::ClientStatus;
 
 class OnlineStatusQml
 {
@@ -26,6 +26,5 @@ public:
 };
 
 Q_DECLARE_METATYPE(OnlineStatusQml)
-Q_DECLARE_METATYPE(OnlineStatus)
 
 #endif // ONLINESTATUSQML_H

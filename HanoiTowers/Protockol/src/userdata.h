@@ -24,6 +24,8 @@ public:
     bool copyFrom(const AbstractData *other) override;
 
     void setName(const QString& name);
+    QString name() const;
+
     ProfileData userData() const;
     void setUserData(const ProfileData &userData);
 

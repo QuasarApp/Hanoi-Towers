@@ -35,6 +35,10 @@ void UserData::setName(const QString &name) {
     _userData._name = name;
 }
 
+QString UserData::name() const {
+    return _userData._name;
+}
+
 QH::PKG::DBObject *UserData::createDBObject() const {
     return create<UserData>();
 }

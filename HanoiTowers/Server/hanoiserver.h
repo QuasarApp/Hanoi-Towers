@@ -21,7 +21,14 @@ protected:
 
 private:
     bool workWirthUserData(const UserData *obj,
-                           const QH::AbstractNodeInfo *sender);
+                           const QH::AbstractNodeInfo *sender,
+                           const QH::Header *oldHeader = nullptr);
+
+
+
+    // AbstractNode interface
+protected:
+    void nodeConfirmend(QH::AbstractNodeInfo *node) override;
 };
 
 #endif // SNAKESERVER_H

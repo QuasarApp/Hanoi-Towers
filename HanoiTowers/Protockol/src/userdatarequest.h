@@ -16,9 +16,8 @@ public:
     UserDataRequest();
     UserDataRequest(const QH::Package& package);
 
-    // Request interface
-public:
     unsigned char getRequestCmd() const override;
+    bool isValid() const override;
 };
 
 #endif // USERDATAREQUEST_H
