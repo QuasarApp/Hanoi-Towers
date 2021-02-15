@@ -12,6 +12,9 @@
 
 # Qt-es
 /Build*
+HanoiTowersTerminal/build/Release/
+HanoiTowersTerminal/build
+HanoiTowers/build/
 *.stash
 /Release*
 /parts/*
@@ -20,6 +23,7 @@
 /stage/*
 /Build-*
 /Release-*
+HanoiTowers/client/build/
 *.stash
 /source/android/*
 !/source/android/AndroidManifest.xml
@@ -38,6 +42,9 @@ Makefile*
 *build-*
 
 hanoi_towers/build/
+HanoiTowersServer/build/
+Testing
+
 installer/installer
 
 *.snap
@@ -57,7 +64,10 @@ installer/HanoiTowersInstaller
 
 # QtCtreator CMake
 CMakeLists.txt.user*
-
+cmake_install.cmake
+*_autogen
+CMakeFiles
+CMakeCache.txt
 
 snap/plugins/__pycache__/
 *.snap

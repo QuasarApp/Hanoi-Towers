@@ -1,0 +1,18 @@
+{
+    "binDir": "./../hanoi_towers/build/Release",
+    "clear": true,
+    "libDir": "./../",
+    "recursiveDepth": "10",
+    "deploySystem": false,
+    "qmlDir": "../",
+    "ignoreEnv": [
+        "./../installer",
+        "./../Distro",
+        "./../parts",
+        "./../snap",
+        "./../prime",
+        "./../stage"
+        ],
+    "extraLib": "crypto",
+    "targetDir": "./../installer/packages/HanoiTowers/data"
+}

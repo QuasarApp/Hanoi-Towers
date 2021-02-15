@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/textures"/>
+    <qresource prefix="/sql">
+        <file>sql/database.sql</file>
+    </qresource>
+</RCC>

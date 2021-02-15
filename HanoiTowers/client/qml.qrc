@@ -1,0 +1,43 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>plate.qml</file>
+        <file>Game.qml</file>
+        <file>Tower.qml</file>
+        <file>About.qml</file>
+        <file>qtquickcontrols2.conf</file>
+        <file>res/icon.ico</file>
+        <file>base/BaseButton.qml</file>
+        <file>base/BaseText.qml</file>
+        <file>base/Theme.qml</file>
+        <file>base/utils.js</file>
+        <file>PopUp.qml</file>
+        <file>Help.qml</file>
+        <file>menu/MainMenu.qml</file>
+        <file>menu/Config.qml</file>
+        <file>SwitchLvl.qml</file>
+        <file>base/BaseRadioButton.qml</file>
+        <file>base/BoseCheckBox.qml</file>
+        <file>menu/UsersTable.qml</file>
+        <file>menu/UserTableRow.qml</file>
+        <file>menu/ToolBarPage.qml</file>
+        <file>menu/GameStateWidget.qml</file>
+        <file>Fog.qml</file>
+        <file>menu/UserView.qml</file>
+    </qresource>
+    <qresource prefix="/textures">
+        <file>res/fogBack.png</file>
+        <file>res/fog.png</file>
+    </qresource>
+    <qresource prefix="/img">
+        <file alias="Help">res/help.png</file>
+        <file alias="DefaultAvatar">res/DefaultAvatar.png</file>
+    </qresource>
+    <qresource prefix="/languages">
+        <file alias="ru">languages/ru.qm</file>
+        <file alias="en">languages/en.qm</file>
+        <file alias="ja">languages/ja.qm</file>
+        <file alias="tr">languages/tr.qm</file>
+        <file alias="uk">languages/ua.qm</file>
+    </qresource>
+</RCC>

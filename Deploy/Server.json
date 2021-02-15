@@ -1,0 +1,22 @@
+{
+    "bin": [
+        "./../HanoiTowersServer/build/Release",
+        "./../HanoiTowersTerminal/build/Release"
+        ],
+    "clear": true,
+    "libDir": "./../",
+    "recursiveDepth": "10",
+    "deploySystem": true,
+    "ignoreEnv": [
+        "./../installer",
+        "./../Distro",
+        "./../parts",
+        "./../snap",
+        "./../prime",
+        "./../stage"
+        ],
+    "extraLib": "crypto",
+    "name": "HanoiCore",
+    "targetDir": "./../Distro/Server",
+    "qif": true
+}
