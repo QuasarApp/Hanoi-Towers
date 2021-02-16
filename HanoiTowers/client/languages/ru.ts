@@ -27,62 +27,73 @@
 <context>
     <name>BackEnd</name>
     <message>
-        <location filename="../backEnd.cpp" line="58"/>
+        <location filename="../backEnd.cpp" line="60"/>
         <source>Create new user</source>
         <translation>Создать нового пользователя</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="139"/>
+        <location filename="../backEnd.cpp" line="141"/>
         <source>Connect error</source>
         <translation>Ошибка подключения</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="140"/>
+        <location filename="../backEnd.cpp" line="142"/>
         <source>Failed to connect to server please check network connection befor login</source>
         <translation>Ошибка подключения к серверу, пожалуйста проверьте интернет соединение перед входом</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="166"/>
+        <location filename="../backEnd.cpp" line="168"/>
         <source>login error</source>
         <translation>Ошибк входа</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="167"/>
+        <location filename="../backEnd.cpp" line="169"/>
         <source>Failed to login into online account, please check your password and username</source>
         <translation>Ошибка входа в онлайн аккаунт, пожалуйста проверьте свой логин и пароль</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="177"/>
+        <location filename="../backEnd.cpp" line="179"/>
         <source>Register online error</source>
         <translation>Ошибка регистрации</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="178"/>
+        <location filename="../backEnd.cpp" line="180"/>
         <source>Failed to register this account, if this account was created by you, try to restore it.</source>
         <translation>Не удалось зарегистрировать аккаунт, если этот аккаунт был создан вами попробуйте восстановить его.</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="186"/>
+        <location filename="../backEnd.cpp" line="190"/>
+        <location filename="../backEnd.cpp" line="212"/>
         <source>Server error</source>
         <translation>Ошибка сервера</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="298"/>
+        <location filename="../backEnd.cpp" line="197"/>
+        <source>User with this id is not registered. If it you then use please the sigup form.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../backEnd.cpp" line="205"/>
+        <source>User with this id already registered. If it you then use please the login form.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../backEnd.cpp" line="324"/>
         <source>Create user error</source>
         <translation>Ошибка создания пользователя</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="299"/>
+        <location filename="../backEnd.cpp" line="325"/>
         <source>Failed to create a new user, The name %0 alredy used.</source>
         <translation>Не удалось создать пользователя. Данное имя %0 уже используется</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="330"/>
+        <location filename="../backEnd.cpp" line="356"/>
         <source>current profile not online!</source>
         <translation>Текущий профиль не в сети!</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="330"/>
+        <location filename="../backEnd.cpp" line="356"/>
         <source>Remove online error</source>
         <translation>Ошибка удаления данных онлайн-пользователя</translation>
     </message>
@@ -181,24 +192,23 @@
 <context>
     <name>HanoiClient</name>
     <message>
-        <location filename="../hanoiclient.cpp" line="85"/>
+        <location filename="../hanoiclient.cpp" line="92"/>
         <source>Local user has been updated</source>
         <translation>Локальный пользователь обновлён</translation>
     </message>
     <message>
-        <location filename="../hanoiclient.cpp" line="85"/>
+        <location filename="../hanoiclient.cpp" line="92"/>
         <source>local user accept nbew data from the server.</source>
         <translation>Локальный пользователь принял новые данные с сервера.</translation>
     </message>
     <message>
-        <location filename="../hanoiclient.cpp" line="89"/>
+        <location filename="../hanoiclient.cpp" line="96"/>
         <source>Internal Error, server send invalid data, and this data can&apos;t be saved into local database.</source>
         <translation>Внутренняя ошибка, сервер отправил неверные данные, и эти данные не могут быть сохранены в локальной базе данных.</translation>
     </message>
     <message>
-        <location filename="../hanoiclient.cpp" line="99"/>
         <source>Online error</source>
-        <translation>Ошибка соединения</translation>
+        <translation type="vanished">Ошибка соединения</translation>
     </message>
 </context>
 <context>
@@ -342,7 +352,7 @@
         <translation>Зарегистрироваться</translation>
     </message>
     <message>
-        <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="332"/>
+        <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="347"/>
         <source>Password must match the 1st field and the password cannot be empty</source>
         <translation>Пароль должен совпадать, и не может быть пустым.</translation>
     </message>
@@ -350,32 +360,32 @@
 <context>
     <name>LoginView::LVMainModel</name>
     <message>
-        <location filename="../QMLLoginView/LoginView/src/lvmainmodel.cpp" line="186"/>
+        <location filename="../QMLLoginView/LoginView/src/lvmainmodel.cpp" line="204"/>
         <source>must be longer than 8 characters</source>
         <translation>Должен быть длиннее 8 символов</translation>
     </message>
     <message>
-        <location filename="../QMLLoginView/LoginView/src/lvmainmodel.cpp" line="190"/>
+        <location filename="../QMLLoginView/LoginView/src/lvmainmodel.cpp" line="208"/>
         <source>must contain numbers</source>
         <translation>Должен содержать цифры</translation>
     </message>
     <message>
-        <location filename="../QMLLoginView/LoginView/src/lvmainmodel.cpp" line="194"/>
+        <location filename="../QMLLoginView/LoginView/src/lvmainmodel.cpp" line="212"/>
         <source>must contain small chars</source>
         <translation>Должен содержать строчные буквы</translation>
     </message>
     <message>
-        <location filename="../QMLLoginView/LoginView/src/lvmainmodel.cpp" line="198"/>
+        <location filename="../QMLLoginView/LoginView/src/lvmainmodel.cpp" line="216"/>
         <source>must contain large chars</source>
         <translation>Должен содержать заглавные буквы</translation>
     </message>
     <message>
-        <location filename="../QMLLoginView/LoginView/src/lvmainmodel.cpp" line="202"/>
+        <location filename="../QMLLoginView/LoginView/src/lvmainmodel.cpp" line="220"/>
         <source>must contain extra chars (!@#$%^&amp;*)</source>
         <translation>Должен содержать символы (! @ # $% ^ &amp; *)</translation>
     </message>
     <message>
-        <location filename="../QMLLoginView/LoginView/src/lvmainmodel.cpp" line="205"/>
+        <location filename="../QMLLoginView/LoginView/src/lvmainmodel.cpp" line="223"/>
         <source>Password requirements: </source>
         <translation>Требования к паролю:</translation>
     </message>

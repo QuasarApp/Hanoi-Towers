@@ -4,6 +4,7 @@
 #include <localuser.h>
 #include <userpreview.h>
 #include <userdata.h>
+#include <usermember.h>
 
 namespace LoginView {
    class UserData;
@@ -25,6 +26,9 @@ public:
     static UserData toUserData(const LocalUser& input);
     static QSharedPointer<UserData> toUserDataPtr(const QSharedPointer<LocalUser>& input);
     static QSharedPointer<UserData> toUserDataPtr(const LocalUser& input);
+
+    static QH::PKG::UserMember toUserMember(const QSharedPointer<LocalUser>& input);
+    static QH::PKG::UserMember toUserMember(const LocalUser& input);
 
 };
 

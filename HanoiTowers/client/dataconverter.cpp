@@ -32,12 +32,11 @@ UserPreview DataConverter::toUserPreview(const LoginView::UserData &input) {
 }
 
 UserData DataConverter::toUserData(const QSharedPointer<LocalUser> &input) {
-    return toUserData(input.data());
+    return toUserData(*input.data());
 }
 
 UserData DataConverter::toUserData(const LocalUser &input) {
     UserData result;
-    result.setName(input.name());
     result.setUpdateTime(input.updateTime());
     result.setId(input.getId());
     result.setUserData(*input.userData());
@@ -47,11 +46,24 @@ UserData DataConverter::toUserData(const LocalUser &input) {
 
 QSharedPointer<UserData> DataConverter::toUserDataPtr(
         const QSharedPointer<LocalUser> &input) {
-    return toUserDataPtr(input.data());
+    return toUserDataPtr(*input.data());
 }
 
 QSharedPointer<UserData> DataConverter::toUserDataPtr(const LocalUser &input) {
     auto result = QSharedPointer<UserData>::create(toUserData(input));
+    return result;
+}
+
+QH::PKG::UserMember DataConverter::toUserMember(const QSharedPointer<LocalUser> &input) {
+    return toUserMember(*input.data());
+}
+
+QH::PKG::UserMember DataConverter::toUserMember(const LocalUser &input) {
+    QH::PKG::UserMember result;
+    result.setName(input.getId().toString());
+    result.setToken(input.token());
+    result.setAuthenticationData(input.hashPassword());
+
     return result;
 }
 

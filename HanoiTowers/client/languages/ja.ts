@@ -27,62 +27,73 @@
 <context>
     <name>BackEnd</name>
     <message>
-        <location filename="../backEnd.cpp" line="58"/>
+        <location filename="../backEnd.cpp" line="60"/>
         <source>Create new user</source>
         <translation>新規ユーザーの作成</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="139"/>
+        <location filename="../backEnd.cpp" line="141"/>
         <source>Connect error</source>
         <translation>接続エラー</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="140"/>
+        <location filename="../backEnd.cpp" line="142"/>
         <source>Failed to connect to server please check network connection befor login</source>
         <translation>サーバへの接続に失敗しました</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="166"/>
+        <location filename="../backEnd.cpp" line="168"/>
         <source>login error</source>
         <translation>ログインエラー</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="167"/>
+        <location filename="../backEnd.cpp" line="169"/>
         <source>Failed to login into online account, please check your password and username</source>
         <translation>オンラインアカウントにログインできませんでした。パスワードとユーザー名を確認してください</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="177"/>
+        <location filename="../backEnd.cpp" line="179"/>
         <source>Register online error</source>
         <translation>登録オンラインエラー</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="178"/>
+        <location filename="../backEnd.cpp" line="180"/>
         <source>Failed to register this account, if this account was created by you, try to restore it.</source>
         <translation>このアカウントが登録されなかった場合、このアカウントが作成された場合、それを元に戻してください。</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="186"/>
+        <location filename="../backEnd.cpp" line="190"/>
+        <location filename="../backEnd.cpp" line="212"/>
         <source>Server error</source>
         <translation>サーバエラー</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="298"/>
+        <location filename="../backEnd.cpp" line="197"/>
+        <source>User with this id is not registered. If it you then use please the sigup form.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../backEnd.cpp" line="205"/>
+        <source>User with this id already registered. If it you then use please the login form.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../backEnd.cpp" line="324"/>
         <source>Create user error</source>
         <translation>ユーザーエラーの作成</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="299"/>
+        <location filename="../backEnd.cpp" line="325"/>
         <source>Failed to create a new user, The name %0 alredy used.</source>
         <translation>新しいユーザーの作成に失敗しました。名前 %0 はすでに使用されています。</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="330"/>
+        <location filename="../backEnd.cpp" line="356"/>
         <source>current profile not online!</source>
         <translation>現在のプロファイルはオフラインです！</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="330"/>
+        <location filename="../backEnd.cpp" line="356"/>
         <source>Remove online error</source>
         <translation>オンラインユーザーデータの削除中にエラーが発生しました</translation>
     </message>
@@ -181,24 +192,23 @@
 <context>
     <name>HanoiClient</name>
     <message>
-        <location filename="../hanoiclient.cpp" line="85"/>
+        <location filename="../hanoiclient.cpp" line="92"/>
         <source>Local user has been updated</source>
         <translation>ローカルユーザーが更新されました</translation>
     </message>
     <message>
-        <location filename="../hanoiclient.cpp" line="85"/>
+        <location filename="../hanoiclient.cpp" line="92"/>
         <source>local user accept nbew data from the server.</source>
         <translation>ローカルユーザはサーバからNBEWデータを受け入れます。</translation>
     </message>
     <message>
-        <location filename="../hanoiclient.cpp" line="89"/>
+        <location filename="../hanoiclient.cpp" line="96"/>
         <source>Internal Error, server send invalid data, and this data can&apos;t be saved into local database.</source>
         <translation>内部エラー、サーバーが無効なデータを送信し、このデータをローカルデータベースに保存することはできません。</translation>
     </message>
     <message>
-        <location filename="../hanoiclient.cpp" line="99"/>
         <source>Online error</source>
-        <translation>オンラインエラー</translation>
+        <translation type="vanished">オンラインエラー</translation>
     </message>
 </context>
 <context>
@@ -346,7 +356,7 @@
         <translation>サインアップ</translation>
     </message>
     <message>
-        <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="332"/>
+        <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="347"/>
         <source>Password must match the 1st field and the password cannot be empty</source>
         <translation>パスワードは1番目のフィールドと一致する必要がありますパスワードを空にすることはできません</translation>
     </message>
@@ -354,32 +364,32 @@
 <context>
     <name>LoginView::LVMainModel</name>
     <message>
-        <location filename="../QMLLoginView/LoginView/src/lvmainmodel.cpp" line="186"/>
+        <location filename="../QMLLoginView/LoginView/src/lvmainmodel.cpp" line="204"/>
         <source>must be longer than 8 characters</source>
         <translation>8文字以上でなければなりません</translation>
     </message>
     <message>
-        <location filename="../QMLLoginView/LoginView/src/lvmainmodel.cpp" line="190"/>
+        <location filename="../QMLLoginView/LoginView/src/lvmainmodel.cpp" line="208"/>
         <source>must contain numbers</source>
         <translation>数字を含まなければなりません</translation>
     </message>
     <message>
-        <location filename="../QMLLoginView/LoginView/src/lvmainmodel.cpp" line="194"/>
+        <location filename="../QMLLoginView/LoginView/src/lvmainmodel.cpp" line="212"/>
         <source>must contain small chars</source>
         <translation>小さい文字を含まなければなりません</translation>
     </message>
     <message>
-        <location filename="../QMLLoginView/LoginView/src/lvmainmodel.cpp" line="198"/>
+        <location filename="../QMLLoginView/LoginView/src/lvmainmodel.cpp" line="216"/>
         <source>must contain large chars</source>
         <translation>大きな文字を含まなければなりません</translation>
     </message>
     <message>
-        <location filename="../QMLLoginView/LoginView/src/lvmainmodel.cpp" line="202"/>
+        <location filename="../QMLLoginView/LoginView/src/lvmainmodel.cpp" line="220"/>
         <source>must contain extra chars (!@#$%^&amp;*)</source>
         <translation>追加の文字を含める必要があります （！@＃$％^＆*）</translation>
     </message>
     <message>
-        <location filename="../QMLLoginView/LoginView/src/lvmainmodel.cpp" line="205"/>
+        <location filename="../QMLLoginView/LoginView/src/lvmainmodel.cpp" line="223"/>
         <source>Password requirements: </source>
         <translation>パスワード要件:</translation>
     </message>

@@ -93,7 +93,7 @@ void HanoiClient::incomingData(AbstractData *pkg, const QH::AbstractNodeInfo *se
                                 QmlNotificationService::NotificationData::Normal);
                     emit profileChanged(user);
                 } else {
-                    handleError(0, tr("Internal Error, server send invalid data,"
+                    emit requestError(0, tr("Internal Error, server send invalid data,"
                                      " and this data can't be saved into local database."));
                 }
             }
@@ -101,12 +101,6 @@ void HanoiClient::incomingData(AbstractData *pkg, const QH::AbstractNodeInfo *se
     }
 }
 
-void HanoiClient::handleError(QH::ErrorCodes::Code , const QString &error) {
-
-    QmlNotificationService::NotificationService::getService()->setNotify(
-                tr("Online error"), error, "",
-                QmlNotificationService::NotificationData::Error);
-}
 
 bool HanoiClient::userDatarequest(const QByteArray &userId) {
     UserDataRequest request;
@@ -214,7 +208,8 @@ bool HanoiClient::setProfile(const QString &userId,
     emit profileChanged(user);
 
     if ( user->online()) {
-        connectToServer();
+        auto userMember = DataConverter::toUserMember(user);
+        connectToServer(&userMember);
     }
 
     return true;
@@ -223,9 +218,11 @@ bool HanoiClient::setProfile(const QString &userId,
 bool HanoiClient::updateProfile(const LocalUser& user) {
     auto localUser = QSharedPointer<LocalUser>::create();
     localUser->copyFrom(&user);
+    localUser->setUpdateTime(time(nullptr));
 
     if (auto database = db()) {
-        return database->updateObject(localUser);
+        if (!database->updateObject(localUser))
+            return false;
     }
 
     if (isOnlineAndLoginned(localUser)) {

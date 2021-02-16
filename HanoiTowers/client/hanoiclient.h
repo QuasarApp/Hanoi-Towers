@@ -58,7 +58,6 @@ protected:
 
 signals:
     void profileChanged(QSharedPointer<LocalUser>);
-
 private:
 
     bool userDatarequest(const QByteArray &userId);
@@ -68,9 +67,9 @@ private:
 
     bool isOnline(const QSharedPointer<LocalUser>& data);
     bool isOnlineAndLoginned(const QSharedPointer<LocalUser>& data);
-    void handleError(QH::ErrorCodes::Code, const QString& error);
 
     QList<LocalUser*> _usersList;
+
 };
 
 Q_DECLARE_METATYPE(QSharedPointer<LocalUser>)

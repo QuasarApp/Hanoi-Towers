@@ -38,5 +38,5 @@ QDataStream &ProfileData::toStream(QDataStream &stream) const {
 }
 
 ProfileData &ProfileData::operator=(const ProfileData &right) {
-    return static_cast<ProfileData&>(StreamBase::operator=(right));
+    return copy<ProfileData>(right);
 }

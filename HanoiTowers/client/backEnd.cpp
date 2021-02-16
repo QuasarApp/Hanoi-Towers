@@ -47,13 +47,15 @@ BackEnd::BackEnd(QQmlApplicationEngine *engine):
     _loginModel->setComponents(LoginView::Nickname |
                                LoginView::Title |
                                LoginView::Password |
-                               LoginView::RegisterPage |
+                               LoginView::SigupPage |
                                LoginView::LoginPage |
                                LoginView::TermOfUse);
+
+    _loginModel->setCurrentPage(LoginView::ViewComponents::LoginPage);
     _loginModel->init(engine);
 
     _createNewOfflineUser->setComponents(LoginView::Nickname |
-                                         LoginView::RegisterPage |
+                                         LoginView::SigupPage |
                                          LoginView::Title);
     _createNewOfflineUser->setAcceptButtonText(tr("Create new user"));
     _createNewOfflineUser->init(engine);
@@ -133,7 +135,7 @@ void BackEnd::onlineRequest(const QString &userId) {
     data.setNickname(userId);
     _loginModel->setData(data);
 
-    if (!_client->connectToServer()) {
+    if (!_client->isConnected() && !_client->connectToServer()) {
 
         QmlNotificationService::NotificationService::getService()->setNotify(
                     tr("Connect error"),
@@ -181,7 +183,31 @@ void BackEnd::handleOnlineRegisterRequest(const LoginView::UserData &user) {
     }
 }
 
-void BackEnd::handleOnlineRequestError(QH::ErrorCodes::Code, const QString & err) {
+void BackEnd::handleOnlineRequestError(QH::ErrorCodes::Code code, const QString & err) {
+
+    auto errMessage = [](const QString &err) {
+        QmlNotificationService::NotificationService::getService()->setNotify(
+                    tr("Server error"),
+                    err, "",
+                    QmlNotificationService::NotificationData::Error);
+    };
+
+    if (code == QH::ErrorCodes::UserNotExits) {
+        _loginModel->setCurrentPage(LoginView::ViewComponents::SigupPage);
+        errMessage(tr("User with this id is not registered. If it you then use please the sigup form."));
+        emit showOnlinePage();
+
+        return;
+    }
+
+    if (code == QH::ErrorCodes::UserExits) {
+        _loginModel->setCurrentPage(LoginView::ViewComponents::LoginPage);
+        errMessage(tr("User with this id already registered. If it you then use please the login form."));
+        emit showOnlinePage();
+
+        return;
+    }
+
     QmlNotificationService::NotificationService::getService()->setNotify(
                 tr("Server error"),
                 err, "",
@@ -354,8 +380,8 @@ void BackEnd::setProfile(QString userId) {
 
         _client->login(userId);
 
-    } else if (userId == DEFAULT_USER_ID) {
-        createProfile(DEFAULT_USER_ID, DEFAULT_USER_NAME);
+    } else {
+        createProfile(userId, userId);
         _client->setProfile(userId);
     }
 }
