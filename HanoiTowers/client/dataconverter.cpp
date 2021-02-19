@@ -38,7 +38,6 @@ UserData DataConverter::toUserData(const QSharedPointer<LocalUser> &input) {
 UserData DataConverter::toUserData(const LocalUser &input) {
     UserData result;
     result.setUpdateTime(input.updateTime());
-    result.setId(input.getId());
     result.setUserData(*input.userData());
 
     return result;

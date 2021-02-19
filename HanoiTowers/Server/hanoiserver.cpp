@@ -53,7 +53,8 @@ QH::ParserResult HanoiServer::parsePackage(const QH::Package &pkg,
     }
 
     if (H_16<UserData>() == pkg.hdr.command) {
-        auto obj = QSharedPointer<UserData>::create(pkg);
+        auto obj = QSharedPointer<UserData>::create(pkg).
+                staticCast<QH::PKG::DBObject>();
 
         auto requesterId = getSender(sender, obj.data());
 
@@ -89,10 +90,9 @@ bool HanoiServer::workWirthUserData(const UserData *obj,
                                     const QH::AbstractNodeInfo *sender,
                                     const QH::Header *oldHeader) {
 
-    auto requesterId = getSender(sender, obj);
     QSharedPointer<DBObject> userData;
 
-    if (getObject(*requesterId, *obj, userData) != QH::DBOperationResult::Allowed) {
+    if (getObject(getSender(sender, obj), *obj, userData) != QH::DBOperationResult::Allowed) {
         if (oldHeader) {
             badRequest(sender->networkAddress(), *oldHeader,
                        {
@@ -110,6 +110,7 @@ bool HanoiServer::workWirthUserData(const UserData *obj,
 void HanoiServer::nodeConfirmend(QH::AbstractNodeInfo *node) {
     if (auto baseNode = dynamic_cast<QH::BaseNodeInfo*>(node)) {
         UserDataRequest request;
+
         request.setId(baseNode->id());
 
         workWirthUserData(&request, node);

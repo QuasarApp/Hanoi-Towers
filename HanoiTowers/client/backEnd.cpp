@@ -17,6 +17,7 @@
 #include <recordlistmodel.h>
 #include <QQmlContext>
 #include <QBuffer>
+#include <QCoreApplication>
 #include "dataconverter.h"
 #include "localuser.h"
 
@@ -268,13 +269,13 @@ void BackEnd::setNewAvatar(QString pathToAvatar) {
     QImage img(pathToAvatar);
     int maxSize = std::max(img.size().width(), img.size().height());
     bool widthIsLarge = maxSize == img.size().width();
-    if (maxSize > 400) {
+    if (maxSize > 200) {
         if (widthIsLarge) {
-            img = img.scaledToWidth(400,
+            img = img.scaledToWidth(200,
                                     Qt::TransformationMode::SmoothTransformation);
 
         } else {
-            img = img.scaledToHeight(400,
+            img = img.scaledToHeight(200,
                                     Qt::TransformationMode::SmoothTransformation);
         }
     }
@@ -299,6 +300,8 @@ bool BackEnd::fogAnimation() const {
 
 BackEnd::~BackEnd() {
     _client->updateProfile(_profile);
+    QCoreApplication::processEvents();
+
     _imageProvider->stop();
     _client->softDelete();
 

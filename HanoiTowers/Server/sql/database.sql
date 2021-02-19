@@ -1,5 +1,5 @@
 CREATE TABLE IF NOT EXISTS UsersData (
-    id VARCHAR(64) NOT NULL,
+    id INTEGER NOT NULL UNIQUE,
     userName VARCHAR(64) default NULL,
 
 --Profile data

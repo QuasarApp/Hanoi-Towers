@@ -51,6 +51,10 @@ QH::ParserResult HanoiClient::parsePackage(const QH::Package &pkg,
                 return QH::ParserResult::Error;
             }
 
+            QmlNotificationService::NotificationService::getService()->setNotify(
+                        tr("Local user has been updated"), tr("local user accept nbew data from the server."), "",
+                        QmlNotificationService::NotificationData::Normal);
+
             emit profileChanged(localUser);
         }
 
@@ -87,10 +91,6 @@ void HanoiClient::incomingData(AbstractData *pkg, const QH::AbstractNodeInfo *se
                                                     "token", static_cast<UserMember*>(pkg)->token().toBytes());
 
                 if (database->updateObject(request)) {
-
-                    QmlNotificationService::NotificationService::getService()->setNotify(
-                                tr("Local user has been updated"), tr("local user accept nbew data from the server."), "",
-                                QmlNotificationService::NotificationData::Normal);
                     emit profileChanged(user);
                 } else {
                     emit requestError(0, tr("Internal Error, server send invalid data,"
@@ -163,7 +163,9 @@ bool HanoiClient::setNewAvatar(const QString &userId, const QByteArray &image) {
         obj->setAvatar(image);
 
         if (isOnlineAndLoginned(obj)) {
-            return sendUserData(DataConverter::toUserDataPtr(obj));
+            auto userData = DataConverter::toUserDataPtr(obj);
+            userData->setId(getMember().getId());
+            return sendUserData(userData);
         }
 
         return true;
@@ -181,9 +183,9 @@ bool HanoiClient::addProfile(const LocalUser& user) {
     if (!db())
         return false;
 
-    auto localUser = QSharedPointer<LocalUser>::create();
+    auto localUser = QSharedPointer<LocalUser>::create().
+            staticCast<QH::PKG::DBObject>();
     localUser->copyFrom(&user);
-    localUser->setUpdateTime(time(nullptr));
 
     if (!db()->insertObject(localUser)) {
         return false;
@@ -226,7 +228,9 @@ bool HanoiClient::updateProfile(const LocalUser& user) {
     }
 
     if (isOnlineAndLoginned(localUser)) {
-        return sendUserData(DataConverter::toUserDataPtr(localUser));
+        auto userData = DataConverter::toUserDataPtr(localUser);
+        userData->setId(getMember().getId());
+        return sendUserData(userData);
     }
 
     return true;

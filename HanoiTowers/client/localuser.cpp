@@ -61,7 +61,7 @@ bool LocalUser::fromSqlRecord(const QSqlRecord &q) {
 }
 
 bool LocalUser::isValid() const {
-    return DBObject::isValid() && _updateTime > 1603891116;
+    return DBObject::isValid();
 }
 
 GameState* LocalUser::gameState() {
@@ -111,7 +111,7 @@ QH::PKG::DBVariantMap LocalUser::variantMap() const {
             {"fOnline",            {_userData._online,                  MT::InsertUpdate}},
 
             {"userAvatar",         {_userData._avatar,                  MT::InsertUpdate}},
-            {"updateTime",         {static_cast<int>(time(nullptr)),    MT::InsertUpdate}}};
+            {"updateTime",         {_updateTime,                        MT::InsertUpdate}}};
 
 }
 
