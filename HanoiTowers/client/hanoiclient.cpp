@@ -32,17 +32,19 @@ HanoiClient::HanoiClient() {
               new QH::SqlDBWriter());
 
     qRegisterMetaType<QSharedPointer<LocalUser>>();
+    registerPackageType<UserData>();
 }
 
-QH::ParserResult HanoiClient::parsePackage(const QH::Package &pkg,
+QH::ParserResult HanoiClient::parsePackage(QH::PKG::AbstractData *pkg,
+                                           const QH::Header &pkgHeader,
                                            const QH::AbstractNodeInfo *sender) {
-    auto parentResult = SingleServerClient::parsePackage(pkg, sender);
+    auto parentResult = SingleServerClient::parsePackage(pkg, pkgHeader, sender);
     if (parentResult != QH::ParserResult::NotProcessed) {
         return parentResult;
     }
 
-    if (H_16<UserData>() == pkg.hdr.command) {
-        auto obj = QSharedPointer<UserData>::create(pkg);
+    if (H_16<UserData>() == pkg->cmd()) {
+        auto obj = QSharedPointer<UserData>(static_cast<UserData*>(pkg));
         auto localUser = getLocalUser(obj->name());
 
         if (obj->updateTime() > localUser->updateTime()) {
@@ -209,9 +211,9 @@ bool HanoiClient::setProfile(const QString &userId,
 
     emit profileChanged(user);
 
-    if ( user->online()) {
+    if ( user->online() && connectToServer()) {
         auto userMember = DataConverter::toUserMember(user);
-        connectToServer(&userMember);
+        login(userMember);
     }
 
     return true;

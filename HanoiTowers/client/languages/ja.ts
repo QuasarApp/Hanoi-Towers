@@ -27,73 +27,73 @@
 <context>
     <name>BackEnd</name>
     <message>
-        <location filename="../backEnd.cpp" line="60"/>
+        <location filename="../backEnd.cpp" line="61"/>
         <source>Create new user</source>
         <translation>新規ユーザーの作成</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="141"/>
+        <location filename="../backEnd.cpp" line="142"/>
         <source>Connect error</source>
         <translation>接続エラー</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="142"/>
+        <location filename="../backEnd.cpp" line="143"/>
         <source>Failed to connect to server please check network connection befor login</source>
         <translation>サーバへの接続に失敗しました</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="168"/>
+        <location filename="../backEnd.cpp" line="169"/>
         <source>login error</source>
         <translation>ログインエラー</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="169"/>
+        <location filename="../backEnd.cpp" line="170"/>
         <source>Failed to login into online account, please check your password and username</source>
         <translation>オンラインアカウントにログインできませんでした。パスワードとユーザー名を確認してください</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="179"/>
+        <location filename="../backEnd.cpp" line="180"/>
         <source>Register online error</source>
         <translation>登録オンラインエラー</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="180"/>
+        <location filename="../backEnd.cpp" line="181"/>
         <source>Failed to register this account, if this account was created by you, try to restore it.</source>
         <translation>このアカウントが登録されなかった場合、このアカウントが作成された場合、それを元に戻してください。</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="190"/>
-        <location filename="../backEnd.cpp" line="212"/>
+        <location filename="../backEnd.cpp" line="191"/>
+        <location filename="../backEnd.cpp" line="213"/>
         <source>Server error</source>
         <translation>サーバエラー</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="197"/>
+        <location filename="../backEnd.cpp" line="198"/>
         <source>User with this id is not registered. If it you then use please the sigup form.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="205"/>
+        <location filename="../backEnd.cpp" line="206"/>
         <source>User with this id already registered. If it you then use please the login form.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="324"/>
+        <location filename="../backEnd.cpp" line="327"/>
         <source>Create user error</source>
         <translation>ユーザーエラーの作成</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="325"/>
+        <location filename="../backEnd.cpp" line="328"/>
         <source>Failed to create a new user, The name %0 alredy used.</source>
         <translation>新しいユーザーの作成に失敗しました。名前 %0 はすでに使用されています。</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="356"/>
+        <location filename="../backEnd.cpp" line="359"/>
         <source>current profile not online!</source>
         <translation>現在のプロファイルはオフラインです！</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="356"/>
+        <location filename="../backEnd.cpp" line="359"/>
         <source>Remove online error</source>
         <translation>オンラインユーザーデータの削除中にエラーが発生しました</translation>
     </message>
@@ -192,12 +192,12 @@
 <context>
     <name>HanoiClient</name>
     <message>
-        <location filename="../hanoiclient.cpp" line="92"/>
+        <location filename="../hanoiclient.cpp" line="55"/>
         <source>Local user has been updated</source>
         <translation>ローカルユーザーが更新されました</translation>
     </message>
     <message>
-        <location filename="../hanoiclient.cpp" line="92"/>
+        <location filename="../hanoiclient.cpp" line="55"/>
         <source>local user accept nbew data from the server.</source>
         <translation>ローカルユーザはサーバからNBEWデータを受け入れます。</translation>
     </message>
