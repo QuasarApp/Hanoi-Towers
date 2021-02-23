@@ -35,16 +35,17 @@ HanoiClient::HanoiClient() {
     registerPackageType<UserData>();
 }
 
-QH::ParserResult HanoiClient::parsePackage(QH::PKG::AbstractData *pkg,
+QH::ParserResult HanoiClient::parsePackage(const QSharedPointer<QH::PKG::AbstractData> &pkg,
                                            const QH::Header &pkgHeader,
                                            const QH::AbstractNodeInfo *sender) {
+
     auto parentResult = SingleServerClient::parsePackage(pkg, pkgHeader, sender);
     if (parentResult != QH::ParserResult::NotProcessed) {
         return parentResult;
     }
 
     if (H_16<UserData>() == pkg->cmd()) {
-        auto obj = QSharedPointer<UserData>(static_cast<UserData*>(pkg));
+        auto obj = pkg.staticCast<UserData>();
         auto localUser = getLocalUser(obj->name());
 
         if (obj->updateTime() > localUser->updateTime()) {

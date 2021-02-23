@@ -48,7 +48,7 @@ HanoiServer::HanoiServer() {
 
 }
 
-QH::ParserResult HanoiServer::parsePackage(QH::PKG::AbstractData *pkg,
+QH::ParserResult HanoiServer::parsePackage(const QSharedPointer<QH::PKG::AbstractData> &pkg,
                                            const QH::Header &pkgHeader,
                                            const QH::AbstractNodeInfo *sender) {
 
@@ -58,7 +58,7 @@ QH::ParserResult HanoiServer::parsePackage(QH::PKG::AbstractData *pkg,
     }
 
     if (H_16<UserData>() == pkg->cmd()) {
-        auto obj = QSharedPointer<UserData>(static_cast<UserData*>(pkg));
+        auto obj = pkg.staticCast<UserData>();
 
         auto requesterId = getSender(sender, obj.data());
 
@@ -70,9 +70,9 @@ QH::ParserResult HanoiServer::parsePackage(QH::PKG::AbstractData *pkg,
         return QH::ParserResult::Processed;
 
     } else if (H_16<UserDataRequest>() == pkg->cmd()) {
-        auto obj = static_cast<UserDataRequest*>(pkg);
+        auto obj = pkg.staticCast<UserDataRequest>();
 
-        if (!workWirthUserData(obj, sender, &pkgHeader)) {
+        if (!workWirthUserData(obj.data(), sender, &pkgHeader)) {
             return QH::ParserResult::Error;
         }
 

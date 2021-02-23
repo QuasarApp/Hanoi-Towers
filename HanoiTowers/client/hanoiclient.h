@@ -35,7 +35,7 @@ class HanoiClient: public QH::SingleServerClient
 public:
     HanoiClient();
 
-    QH::ParserResult parsePackage(QH::PKG::AbstractData *pkg,
+    QH::ParserResult parsePackage(const QSharedPointer<QH::PKG::AbstractData> &pkg,
                                   const QH::Header &pkgHeader,
                                   const QH::AbstractNodeInfo *sender) override;
 

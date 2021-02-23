@@ -13,7 +13,7 @@ public:
     HanoiServer();
 
 protected:
-    QH::ParserResult parsePackage(QH::PKG::AbstractData *pkg,
+    QH::ParserResult parsePackage(const QSharedPointer<QH::PKG::AbstractData> &pkg,
                                   const QH::Header &pkgHeader,
                                   const QH::AbstractNodeInfo *sender) override;
     QStringList SQLSources() const override;
