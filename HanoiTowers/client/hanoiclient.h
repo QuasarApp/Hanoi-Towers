@@ -17,7 +17,7 @@
 #include <QImage>
 #include <databasenode.h>
 #include <profiledata.h>
-#include <singleserverclient.h>
+#include <singleclient.h>
 #include <userpreview.h>
 
 class LocalUser;
@@ -29,7 +29,7 @@ class UserMember;
 }
 }
 
-class HanoiClient: public QH::SingleServerClient
+class HanoiClient: public QH::SingleClient
 {
     Q_OBJECT
 public:

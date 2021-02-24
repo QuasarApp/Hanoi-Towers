@@ -39,7 +39,7 @@ QH::ParserResult HanoiClient::parsePackage(const QSharedPointer<QH::PKG::Abstrac
                                            const QH::Header &pkgHeader,
                                            const QH::AbstractNodeInfo *sender) {
 
-    auto parentResult = SingleServerClient::parsePackage(pkg, pkgHeader, sender);
+    auto parentResult = SingleClient::parsePackage(pkg, pkgHeader, sender);
     if (parentResult != QH::ParserResult::NotProcessed) {
         return parentResult;
     }

@@ -9,7 +9,7 @@
 #ifndef ONLINESTATUSQML_H
 #define ONLINESTATUSQML_H
 #include <QObject>
-#include <singleserverclient.h>
+#include <singleclient.h>
 
 using OnlineStatus = QH::ClientStatus;
 
