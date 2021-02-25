@@ -7,7 +7,8 @@
 
 #include "worldupdate.h"
 
-WorldUpdate::WorldUpdate() {
+WorldUpdate::WorldUpdate(const QString &worldName) {
+    _subscribeId = qHash(worldName);
 
 }
 
@@ -19,12 +20,17 @@ const QH::AccessToken &WorldUpdate::getSignToken() const {
     return _token;
 }
 
+unsigned int WorldUpdate::subscribeId() const {
+    return _subscribeId;
+}
+
 QDataStream &WorldUpdate::fromStream(QDataStream &stream) {
     AbstractData::fromStream(stream);
 
     stream >> _dataAddUpdate;
     stream >> _dataRemove;
     stream >> _token;
+    stream >> _subscribeId;
 
     return stream;
 }
@@ -35,6 +41,7 @@ QDataStream &WorldUpdate::toStream(QDataStream &stream) const {
     stream << _dataAddUpdate;
     stream << _dataRemove;
     stream << _token;
+    stream << _subscribeId;
 
     return stream;
 }

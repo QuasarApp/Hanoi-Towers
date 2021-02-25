@@ -19,13 +19,14 @@ class WorldUpdate;
 class World: public QH::PKG::DBObjectSet, public QH::IToken
 {
 public:
-    World();
+    World(const QString& worldName = "World");
 
     bool fromSqlRecord(const QSqlRecord &q) override;
     QH::PKG::DBObject *createDBObject() const override;
     void clear() override;
     bool isValid() const override;
     const QH::AccessToken &getSignToken() const override;
+    unsigned int subscribeId() const override;
 
 
     void setToken(const QH::AccessToken &token);
@@ -48,6 +49,8 @@ private:
     QSet<UserPreview> _data;
 
     QH::AccessToken _token;
+    unsigned int _subscribeId;
+
 };
 
 #endif // WORLD_H

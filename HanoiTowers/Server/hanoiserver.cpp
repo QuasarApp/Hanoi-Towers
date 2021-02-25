@@ -13,6 +13,7 @@
 #include <usermember.h>
 #include <userdatarequest.h>
 #include <basenodeinfo.h>
+#include <world.h>
 #include "config.h"
 #include "basedefines.h"
 #include "badrequest.h"
@@ -46,6 +47,7 @@ HanoiServer::HanoiServer() {
     registerPackageType<UserData>();
     registerPackageType<UserDataRequest>();
 
+    _world = new World;
 }
 
 QH::ParserResult HanoiServer::parsePackage(const QSharedPointer<QH::PKG::AbstractData> &pkg,

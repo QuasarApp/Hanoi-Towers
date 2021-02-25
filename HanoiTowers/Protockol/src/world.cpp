@@ -1,10 +1,9 @@
 #include "world.h"
 #include "worldupdate.h"
 
-World::World():
+World::World(const QString &worldName):
 QH::PKG::DBObjectSet("UsersData") {
-
-
+    _subscribeId = qHash(worldName);
 }
 
 bool World::fromSqlRecord(const QSqlRecord &q) {
@@ -35,6 +34,10 @@ const QH::AccessToken &World::getSignToken() const {
     return _token;
 }
 
+unsigned int World::subscribeId() const {
+    return _subscribeId;
+}
+
 QH::PKG::DBVariantMap World::variantMap() const {
     return {{"id",          {}},
             {"points",      {}},
@@ -50,6 +53,7 @@ QDataStream &World::fromStream(QDataStream &stream) {
 
     stream >> _data;
     stream >> _token;
+    stream >> _subscribeId;
 
     return stream;
 }
@@ -59,6 +63,7 @@ QDataStream &World::toStream(QDataStream &stream) const {
 
     stream << _data;
     stream << _token;
+    stream << _subscribeId;
 
     return stream;
 }

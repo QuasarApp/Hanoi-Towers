@@ -5,6 +5,7 @@
 #include <singleserver.h>
 
 class UserData;
+class World;
 
 class HanoiServer : public QH::SingleServer
 {
@@ -19,6 +20,7 @@ protected:
     QStringList SQLSources() const override;
 
     QVariantMap defaultDbParams() const override;
+    void nodeConfirmend(QH::AbstractNodeInfo *node) override;
 
 private:
     bool workWirthUserData(const UserData *obj,
@@ -26,10 +28,10 @@ private:
                            const QH::Header *oldHeader = nullptr);
 
 
+    World *_world = nullptr;
 
     // AbstractNode interface
-protected:
-    void nodeConfirmend(QH::AbstractNodeInfo *node) override;
+
 };
 
 #endif // SNAKESERVER_H

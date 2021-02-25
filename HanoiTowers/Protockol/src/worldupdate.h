@@ -13,15 +13,17 @@
 
 #include <QSet>
 #include <abstractdata.h>
+#include <isubscribabledata.h>
 #include <itoken.h>
 
-class WorldUpdate: public QH::PKG::AbstractData, public QH::IToken
+class WorldUpdate: public QH::PKG::AbstractData, public QH::IToken, public QH::PKG::ISubscribableData
 {
 public:
-    WorldUpdate();
+    WorldUpdate(const QString& worldName = "World");
 
     bool isValid() const override;
     const QH::AccessToken &getSignToken() const override;
+    unsigned int subscribeId() const override;
 
     // StreamBase interface
     const QSet<UserPreview> &getDataAddUpdate() const;
@@ -39,6 +41,10 @@ private:
     QSet<UserPreview> _dataRemove;
 
     QH::AccessToken _token;
+
+    unsigned int _subscribeId;
+
+
 };
 
 #endif // WORLDUPDATE_H
