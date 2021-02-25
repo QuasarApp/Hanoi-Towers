@@ -82,7 +82,7 @@ void HanoiClient::incomingData(AbstractData *pkg, const QH::AbstractNodeInfo *se
     Q_UNUSED(sender);
 
     if (pkg->cmd() == H_16<UserMember>()) {
-        if (auto user = getLocalUser(static_cast<UserMember*>(pkg)->name())) {
+        if (auto user = getLocalUser(static_cast<UserMember*>(pkg)->getId().toString())) {
             user->setToken(static_cast<UserMember*>(pkg)->token());
             user->setOnline(true);
 
@@ -124,6 +124,7 @@ QSharedPointer<LocalUser> HanoiClient::getLocalUser(const QString &userId) const
 }
 
 bool HanoiClient::sendUserData(QSharedPointer<UserData> data) {
+    data->setToken(getMember().token());
     return sendData(data.data(), serverAddress());
 }
 
@@ -166,9 +167,7 @@ bool HanoiClient::setNewAvatar(const QString &userId, const QByteArray &image) {
         obj->setAvatar(image);
 
         if (isOnlineAndLoginned(obj)) {
-            auto userData = DataConverter::toUserDataPtr(obj);
-            userData->setId(getMember().getId());
-            return sendUserData(userData);
+            return sendUserData(DataConverter::toUserDataPtr(obj));
         }
 
         return true;
@@ -231,9 +230,7 @@ bool HanoiClient::updateProfile(const LocalUser& user) {
     }
 
     if (isOnlineAndLoginned(localUser)) {
-        auto userData = DataConverter::toUserDataPtr(localUser);
-        userData->setId(getMember().getId());
-        return sendUserData(userData);
+        return sendUserData(DataConverter::toUserDataPtr(localUser));
     }
 
     return true;

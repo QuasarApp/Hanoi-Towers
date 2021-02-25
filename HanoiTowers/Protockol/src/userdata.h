@@ -3,10 +3,11 @@
 #include "profiledata.h"
 
 #include <dbobject.h>
+#include <itoken.h>
 
 using namespace QH::PKG;
 
-class HANOITOWERSPROTOCOL_EXPORT UserData: public DBObject
+class HANOITOWERSPROTOCOL_EXPORT UserData: public DBObject, public QH::IToken
 {
 public:
     UserData();
@@ -23,6 +24,8 @@ public:
     bool isValid() const override;
     bool copyFrom(const AbstractData *other) override;
 
+    const QH::AccessToken &getSignToken() const override;
+
     void setName(const QString& name);
     QString name() const;
 
@@ -32,6 +35,8 @@ public:
     int updateTime() const;
     void setUpdateTime(int updateTime);
 
+    void setToken(const QH::AccessToken &token);
+
 protected:
     QDataStream &fromStream(QDataStream &stream) override;
     QDataStream &toStream(QDataStream &stream) const override;
@@ -40,7 +45,9 @@ protected:
 
 private:
     ProfileData _userData;
+    QH::AccessToken _token;
     int _updateTime;
+
 
 };
 

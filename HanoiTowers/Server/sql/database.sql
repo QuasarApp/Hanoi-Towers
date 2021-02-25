@@ -1,5 +1,7 @@
 CREATE TABLE IF NOT EXISTS UsersData (
-    id INTEGER NOT NULL UNIQUE,
+    id VARCHAR(64) NOT NULL UNIQUE,
+
+--General user name, it is not userID of local user. for get userId see NetworkMembers.userName of the UserDB.sql
     userName VARCHAR(64) default NULL,
 
 --Profile data
@@ -9,7 +11,7 @@ CREATE TABLE IF NOT EXISTS UsersData (
     updateTime INTEGER default 0,
     userAvatar BLOB default NULL,
 
-    FOREIGN KEY(id) REFERENCES NetworkMembers(userName)
+    FOREIGN KEY(id) REFERENCES NetworkMembers(id)
             ON UPDATE CASCADE
             ON DELETE CASCADE
 );

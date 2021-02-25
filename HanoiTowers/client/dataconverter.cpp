@@ -37,6 +37,7 @@ UserData DataConverter::toUserData(const QSharedPointer<LocalUser> &input) {
 
 UserData DataConverter::toUserData(const LocalUser &input) {
     UserData result;
+    result.setId(input.getId());
     result.setUpdateTime(input.updateTime());
     result.setUserData(*input.userData());
 
@@ -59,7 +60,7 @@ QH::PKG::UserMember DataConverter::toUserMember(const QSharedPointer<LocalUser> 
 
 QH::PKG::UserMember DataConverter::toUserMember(const LocalUser &input) {
     QH::PKG::UserMember result;
-    result.setName(input.getId().toString());
+    result.setId(input.getId());
     result.setToken(input.token());
     result.setAuthenticationData(input.hashPassword());
 

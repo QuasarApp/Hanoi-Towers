@@ -435,6 +435,10 @@ void BackEnd::setOnlineStatus(QH::ClientStatus onlineStatus) {
     if (_onlineStatus == static_cast<OnlineStatus>(onlineStatus))
         return;
 
+    if (_profile.isOnline() && onlineStatus == QH::ClientStatus::Connected) {
+        _client->login(DataConverter::toUserMember(_profile));
+    }
+
     _onlineStatus = static_cast<OnlineStatus>(onlineStatus);
     emit onlineStatusChanged(static_cast<int>(_onlineStatus));
 }

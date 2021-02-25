@@ -27,8 +27,13 @@ bool UserData::copyFrom(const QH::PKG::AbstractData *other) {
 
     _userData = otherObject->_userData;
     _updateTime = otherObject->_updateTime;
+    _token = otherObject->_token;
 
     return true;
+}
+
+const QH::AccessToken &UserData::getSignToken() const {
+    return _token;
 }
 
 void UserData::setName(const QString &name) {
@@ -66,6 +71,7 @@ QDataStream &UserData::fromStream(QDataStream &stream) {
     DBObject::fromStream(stream);
     stream >> _userData;
     stream >> _updateTime;
+    stream >> _token;
 
     return stream;
 }
@@ -74,6 +80,7 @@ QDataStream &UserData::toStream(QDataStream &stream) const {
     DBObject::toStream(stream);
     stream << _userData;
     stream << _updateTime;
+    stream << _token;
 
     return stream;
 }
@@ -89,6 +96,10 @@ DBVariantMap UserData::variantMap() const {
 
 QString UserData::primaryKey() const {
     return "id";
+}
+
+void UserData::setToken(const QH::AccessToken &token) {
+    _token = token;
 }
 
 int UserData::updateTime() const {
