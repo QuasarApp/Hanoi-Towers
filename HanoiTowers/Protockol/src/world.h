@@ -10,9 +10,13 @@
 
 #include "userpreview.h"
 
+#include <QSet>
 #include <dbobjectset.h>
+#include <itoken.h>
 
-class World: public QH::PKG::DBObjectSet
+class WorldUpdate;
+
+class World: public QH::PKG::DBObjectSet, public QH::IToken
 {
 public:
     World();
@@ -21,14 +25,29 @@ public:
     QH::PKG::DBObject *createDBObject() const override;
     void clear() override;
     bool isValid() const override;
+    const QH::AccessToken &getSignToken() const override;
+
+
+    void setToken(const QH::AccessToken &token);
+
+
+    QSet<UserPreview> getData() const;
+    void setData(const QSet<UserPreview> &data);
+
+    void applyUpdate(const WorldUpdate& update);
+
 
 protected:
     QH::PKG::DBVariantMap variantMap() const override;
     QString condition() const override;
 
-private:
-    QList<UserPreview> _data;
+    QDataStream &fromStream(QDataStream &stream) override;
+    QDataStream &toStream(QDataStream &stream) const override;
 
+private:
+    QSet<UserPreview> _data;
+
+    QH::AccessToken _token;
 };
 
 #endif // WORLD_H

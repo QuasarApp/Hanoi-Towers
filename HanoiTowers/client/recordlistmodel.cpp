@@ -56,7 +56,7 @@ void RecordListModel::updateSourceItem(const UserPreview &data) {
 }
 
 void RecordListModel::removeSourceItem(const QString &id) {
-    auto row = _data.indexOf(id);
+    auto row = _data.indexOf(UserPreview{id});
     if (row < 0)
         return;
 

@@ -8,17 +8,24 @@
 #ifndef USERPREVIEW_H
 #define USERPREVIEW_H
 
-#include <QByteArray>
 #include <QString>
+#include <streambase.h>
 
-struct UserPreview {
-    UserPreview();
-    UserPreview(const QString& id);
+struct UserPreview: public QH::StreamBase {
+    explicit UserPreview();
+    explicit UserPreview(const QString& id);
 
     QString id;
     QString userName;
     int record;
 
     friend bool operator==(const UserPreview& left, const UserPreview& right);
+
+    // StreamBase interface
+protected:
+    QDataStream &fromStream(QDataStream &stream) override;
+    QDataStream &toStream(QDataStream &stream) const override;
 };
+
+uint qHash(const UserPreview& input);
 #endif // USERPREVIEW_H

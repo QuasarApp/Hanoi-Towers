@@ -6,7 +6,7 @@
 */
 
 #include "userpreview.h"
-
+#include <QDataStream>
 
 UserPreview::UserPreview() {
 
@@ -16,6 +16,26 @@ UserPreview::UserPreview(const QString &id) {
     this->id = id;
 }
 
+QDataStream &UserPreview::fromStream(QDataStream &stream) {
+    stream >> id;
+    stream >> userName;
+    stream >> record;
+
+    return stream;
+}
+
+QDataStream &UserPreview::toStream(QDataStream &stream) const {
+    stream << id;
+    stream << userName;
+    stream << record;
+
+    return stream;
+}
+
 bool operator==(const UserPreview& left, const UserPreview& right) {
     return left.id == right.id;
+}
+
+uint qHash(const UserPreview &input) {
+    return qHash(input.id);
 }
