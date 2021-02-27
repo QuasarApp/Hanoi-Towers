@@ -28,15 +28,15 @@ public:
     const QH::AccessToken &getSignToken() const override;
     unsigned int subscribeId() const override;
 
-
     void setToken(const QH::AccessToken &token);
 
 
     QSet<UserPreview> getData() const;
     void setData(const QSet<UserPreview> &data);
 
-    void applyUpdate(const WorldUpdate& update);
+    bool applyUpdate(const WorldUpdate& update);
 
+    unsigned int getWorldVersion() const;
 
 protected:
     QH::PKG::DBVariantMap variantMap() const override;
@@ -47,10 +47,9 @@ protected:
 
 private:
     QSet<UserPreview> _data;
-
     QH::AccessToken _token;
     unsigned int _subscribeId;
-
+    unsigned int _worldVersion = 0;
 };
 
 #endif // WORLD_H

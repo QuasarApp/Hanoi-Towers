@@ -181,17 +181,17 @@
 <context>
     <name>HanoiClient</name>
     <message>
-        <location filename="../hanoiclient.cpp" line="58"/>
+        <location filename="../hanoiclient.cpp" line="65"/>
         <source>Local user has been updated</source>
         <translation>Local user has been updated</translation>
     </message>
     <message>
-        <location filename="../hanoiclient.cpp" line="58"/>
+        <location filename="../hanoiclient.cpp" line="65"/>
         <source>local user accept nbew data from the server.</source>
         <translation>Local user accept new data from the server.</translation>
     </message>
     <message>
-        <location filename="../hanoiclient.cpp" line="99"/>
+        <location filename="../hanoiclient.cpp" line="122"/>
         <source>Internal Error, server send invalid data, and this data can&apos;t be saved into local database.</source>
         <translation>Internal Error, server send invalid data, and this data can&apos;t be saved into local database.</translation>
     </message>

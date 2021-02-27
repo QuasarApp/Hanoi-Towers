@@ -16,7 +16,8 @@
 #include <isubscribabledata.h>
 #include <itoken.h>
 
-class WorldUpdate: public QH::PKG::AbstractData, public QH::IToken, public QH::PKG::ISubscribableData
+class WorldUpdate: public QH::PKG::AbstractData, public QH::IToken,
+        public QH::PKG::ISubscribableData
 {
 public:
     WorldUpdate(const QString& worldName = "World");
@@ -32,6 +33,9 @@ public:
     const QSet<UserPreview>& getDataRemove() const;
     void setDataRemove(const QSet<UserPreview> &dataRemove);
 
+    unsigned int getWorldVersion() const;
+    void setWorldVersion(unsigned int worldVersion);
+
 protected:
     QDataStream &fromStream(QDataStream &stream) override;
     QDataStream &toStream(QDataStream &stream) const override;
@@ -39,10 +43,9 @@ protected:
 private:
     QSet<UserPreview> _dataAddUpdate;
     QSet<UserPreview> _dataRemove;
-
     QH::AccessToken _token;
-
     unsigned int _subscribeId;
+    unsigned int _worldVersion = 0;
 
 
 };

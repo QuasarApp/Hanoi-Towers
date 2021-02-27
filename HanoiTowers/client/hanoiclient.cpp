@@ -22,6 +22,9 @@
 #include <getsinglevalue.h>
 #include <dataconverter.h>
 #include <setsinglevalue.h>
+#include <world.h>
+#include <worldupdate.h>
+#include <fixworldrequest.h>
 #include "hanoierrorcodes.h"
 #include "localrecordstable.h"
 
@@ -32,7 +35,16 @@ HanoiClient::HanoiClient() {
               new QH::SqlDBWriter());
 
     qRegisterMetaType<QSharedPointer<LocalUser>>();
+
     registerPackageType<UserData>();
+    registerPackageType<FixWorldRequest>();
+    registerPackageType<World>();
+    registerPackageType<WorldUpdate>();
+
+    _world = nullptr;
+}
+
+HanoiClient::~HanoiClient() {
 }
 
 QH::ParserResult HanoiClient::parsePackage(const QSharedPointer<QH::PKG::AbstractData> &pkg,
@@ -63,6 +75,27 @@ QH::ParserResult HanoiClient::parsePackage(const QSharedPointer<QH::PKG::Abstrac
 
         return QH::ParserResult::Processed;
 
+    }
+
+    if (H_16<World>() == pkg->cmd()) {
+        _world = pkg.staticCast<World>();
+        return QH::ParserResult::Processed;
+    }
+
+    if (H_16<WorldUpdate>() == pkg->cmd()) {
+        if (!_world) {
+            return QH::ParserResult::Error;
+        }
+
+        if (!_world->applyUpdate(*static_cast<WorldUpdate*>(pkg.data()))) {
+            FixWorldRequest rquest;
+            rquest.setWorldVersion(_world->getWorldVersion() + 1);
+
+            if (!sendData(&rquest, sender->networkAddress())) {
+                return QH::ParserResult::Error;
+            }
+        }
+        return QH::ParserResult::Processed;
     }
 
     return QH::ParserResult::NotProcessed;

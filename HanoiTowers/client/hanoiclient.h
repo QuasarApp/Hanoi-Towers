@@ -22,6 +22,7 @@
 
 class LocalUser;
 class UserData;
+class World;
 
 namespace QH {
 namespace PKG {
@@ -34,6 +35,7 @@ class HanoiClient: public QH::SingleClient
     Q_OBJECT
 public:
     HanoiClient();
+    ~HanoiClient();
 
     QH::ParserResult parsePackage(const QSharedPointer<QH::PKG::AbstractData> &pkg,
                                   const QH::Header &pkgHeader,
@@ -70,6 +72,7 @@ private:
     bool isOnlineAndLoginned(const QSharedPointer<LocalUser>& data);
 
     QList<LocalUser*> _usersList;
+    QSharedPointer<World> _world;
 
 };
 

@@ -54,6 +54,7 @@ QDataStream &World::fromStream(QDataStream &stream) {
     stream >> _data;
     stream >> _token;
     stream >> _subscribeId;
+    stream >> _worldVersion;
 
     return stream;
 }
@@ -64,8 +65,13 @@ QDataStream &World::toStream(QDataStream &stream) const {
     stream << _data;
     stream << _token;
     stream << _subscribeId;
+    stream << _worldVersion;
 
     return stream;
+}
+
+unsigned int World::getWorldVersion() const {
+    return _worldVersion;
 }
 
 QSet<UserPreview> World::getData() const {
@@ -76,10 +82,18 @@ void World::setData(const QSet<UserPreview> &data) {
     _data = data;
 }
 
-void World::applyUpdate(const WorldUpdate &update) {
+bool World::applyUpdate(const WorldUpdate &update) {
+
+    if (update.getWorldVersion() != _worldVersion + 1) {
+        return false;
+    }
+
     _data += update.getDataAddUpdate();
     _data -= update.getDataRemove();
 
+    _worldVersion++;
+
+    return true;
 }
 
 void World::setToken(const QH::AccessToken &token) {

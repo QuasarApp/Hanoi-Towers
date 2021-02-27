@@ -18,6 +18,8 @@
 #include "basedefines.h"
 #include "badrequest.h"
 #include "hanoierrorcodes.h"
+#include <fixworldrequest.h>
+#include <worldupdate.h>
 
 HanoiServer::HanoiServer() {
     QString address = "";
@@ -46,8 +48,15 @@ HanoiServer::HanoiServer() {
 
     registerPackageType<UserData>();
     registerPackageType<UserDataRequest>();
+    registerPackageType<FixWorldRequest>();
+    registerPackageType<World>();
+    registerPackageType<WorldUpdate>();
 
-    _world = new World;
+    _world = new World();
+}
+
+HanoiServer::~HanoiServer() {
+    delete _world;
 }
 
 QH::ParserResult HanoiServer::parsePackage(const QSharedPointer<QH::PKG::AbstractData> &pkg,
@@ -69,6 +78,8 @@ QH::ParserResult HanoiServer::parsePackage(const QSharedPointer<QH::PKG::Abstrac
             return QH::ParserResult::Error;
         }
 
+        updateUserInWorld(obj.data());
+
         return QH::ParserResult::Processed;
 
     } else if (H_16<UserDataRequest>() == pkg->cmd()) {
@@ -80,6 +91,13 @@ QH::ParserResult HanoiServer::parsePackage(const QSharedPointer<QH::PKG::Abstrac
 
         return QH::ParserResult::Processed;
 
+    } else if (H_16<FixWorldRequest>() == pkg->cmd()) {
+        unsigned int version = (static_cast<FixWorldRequest*>(pkg.data()))->worldVersion();
+
+        for (unsigned int i = version; i <= _world->getWorldVersion(); ++i) {
+            auto point = getHistoryPoint(i);
+            sendData(point.data(), sender->networkAddress(), &pkgHeader);
+        }
     }
 
     return QH::ParserResult::NotProcessed;
@@ -114,6 +132,44 @@ bool HanoiServer::workWirthUserData(const UserData *obj,
     return sendData(userData.data(), sender->networkAddress());
 }
 
+void HanoiServer::updateUserInWorld(const UserData *data) {
+    UserPreview user;
+    user.id = data->getId().toString();
+    user.record = data->userData()._record;
+    user.userName = data->name();
+
+    updateWorld(user, false);
+}
+
+void HanoiServer::removeUserFromWorld(const QString &userId) {
+    UserPreview user;
+    user.id = userId;
+
+    updateWorld(user, true);
+}
+
+void HanoiServer::updateWorld(const UserPreview &user, bool isRemove) {
+    auto update = QSharedPointer<WorldUpdate>::create();
+    update->setWorldVersion(_world->getWorldVersion() + 1);
+
+    if (isRemove)
+        update->setDataRemove({user});
+    else
+        update->setDataAddUpdate({user});
+
+    _worldHistory[update->getWorldVersion()] = update;
+
+    _world->applyUpdate(*update.data());
+
+    objectChanged(update);
+}
+
+QSharedPointer<WorldUpdate>
+HanoiServer::getHistoryPoint(unsigned int version) {
+    QMutexLocker lock(&_worldHistoryMutexl);
+    return _worldHistory[version];
+}
+
 void HanoiServer::nodeConfirmend(QH::AbstractNodeInfo *node) {
     if (auto baseNode = dynamic_cast<QH::BaseNodeInfo*>(node)) {
         UserDataRequest request;
@@ -124,3 +180,27 @@ void HanoiServer::nodeConfirmend(QH::AbstractNodeInfo *node) {
 
     }
 }
+
+QH::ErrorCodes::Code HanoiServer::deleteUser(const QSharedPointer<UserMember> &user,
+                                             const QH::AbstractNodeInfo *info) {
+
+    QH::ErrorCodes::Code code = QH::SingleServer::deleteUser(user, info);
+    if (code == QH::ErrorCodes::NoError) {
+
+        auto baseNode = dynamic_cast<const QH::BaseNodeInfo*>(info);
+        if (baseNode) {
+            removeUserFromWorld(baseNode->id().toString());
+        }
+    }
+
+    return code;
+}
+
+void HanoiServer::memberSubsribed(const QVariant &clientId,
+                                  unsigned int subscribeId) {
+
+    if (subscribeId == _world->subscribeId()) {
+        sendData(_world, clientId);
+    }
+}
+

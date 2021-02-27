@@ -31,6 +31,7 @@ QDataStream &WorldUpdate::fromStream(QDataStream &stream) {
     stream >> _dataRemove;
     stream >> _token;
     stream >> _subscribeId;
+    stream >> _worldVersion;
 
     return stream;
 }
@@ -42,8 +43,17 @@ QDataStream &WorldUpdate::toStream(QDataStream &stream) const {
     stream << _dataRemove;
     stream << _token;
     stream << _subscribeId;
+    stream << _worldVersion;
 
     return stream;
+}
+
+unsigned int WorldUpdate::getWorldVersion() const {
+    return _worldVersion;
+}
+
+void WorldUpdate::setWorldVersion(unsigned int worldVersion) {
+    _worldVersion = worldVersion;
 }
 
 const QSet<UserPreview>& WorldUpdate::getDataRemove() const {
