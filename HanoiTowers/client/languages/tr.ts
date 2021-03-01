@@ -193,17 +193,17 @@ Bu seviye için minimum adımlar: %2</translation>
 <context>
     <name>HanoiClient</name>
     <message>
-        <location filename="../hanoiclient.cpp" line="65"/>
+        <location filename="../hanoiclient.cpp" line="70"/>
         <source>Local user has been updated</source>
         <translation>Yerel kullanıcı güncellendi</translation>
     </message>
     <message>
-        <location filename="../hanoiclient.cpp" line="65"/>
+        <location filename="../hanoiclient.cpp" line="70"/>
         <source>local user accept nbew data from the server.</source>
         <translation>yerel kullanıcı sunucudan yeni verileri kabul eder.</translation>
     </message>
     <message>
-        <location filename="../hanoiclient.cpp" line="122"/>
+        <location filename="../hanoiclient.cpp" line="132"/>
         <source>Internal Error, server send invalid data, and this data can&apos;t be saved into local database.</source>
         <translation>Dahili Hata, sunucu geçersiz veri gönderdi ve bu veriler yerel veritabanına kaydedilemez.</translation>
     </message>

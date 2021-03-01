@@ -436,7 +436,15 @@ void BackEnd::setOnlineStatus(QH::ClientStatus onlineStatus) {
         return;
 
     if (_profile.isOnline() && onlineStatus == QH::ClientStatus::Connected) {
-        _client->login(DataConverter::toUserMember(_profile));
+        if (!_client->login(DataConverter::toUserMember(_profile))) {
+            QuasarAppUtils::Params::log("Fail to login.", QuasarAppUtils::Error);
+        }
+    }
+
+    if (_profile.isOnline() && onlineStatus == QH::ClientStatus::Logined) {
+        if (!_client->subscribeToWorld()) {
+            QuasarAppUtils::Params::log("Fail to subscribe to world.", QuasarAppUtils::Error);
+        }
     }
 
     _onlineStatus = static_cast<OnlineStatus>(onlineStatus);

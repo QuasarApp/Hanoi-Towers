@@ -52,6 +52,7 @@ public:
     QList<UserPreview> localUsersPreview();
 
     bool setNewAvatar(const QString &userId, const QByteArray& image);
+    bool subscribeToWorld();
 \
 
 protected:

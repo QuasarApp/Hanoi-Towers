@@ -41,7 +41,7 @@ HanoiClient::HanoiClient() {
     registerPackageType<World>();
     registerPackageType<WorldUpdate>();
 
-    _world = nullptr;
+    _world = QSharedPointer<World>::create();
 }
 
 HanoiClient::~HanoiClient() {
@@ -211,6 +211,10 @@ bool HanoiClient::setNewAvatar(const QString &userId, const QByteArray &image) {
     }
 
     return true;
+}
+
+bool HanoiClient::subscribeToWorld() {
+    return subscribe(_world->subscribeId());
 }
 
 bool HanoiClient::addProfile(const LocalUser& user) {
