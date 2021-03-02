@@ -23,73 +23,73 @@
 <context>
     <name>BackEnd</name>
     <message>
-        <location filename="../backEnd.cpp" line="61"/>
+        <location filename="../backEnd.cpp" line="64"/>
         <source>Create new user</source>
         <translation>Create new user</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="142"/>
+        <location filename="../backEnd.cpp" line="147"/>
         <source>Connect error</source>
         <translation>Connection error</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="143"/>
+        <location filename="../backEnd.cpp" line="148"/>
         <source>Failed to connect to server please check network connection befor login</source>
         <translation>Failed to connect to server please check network connection befor login</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="169"/>
+        <location filename="../backEnd.cpp" line="174"/>
         <source>login error</source>
         <translation>Login error</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="170"/>
+        <location filename="../backEnd.cpp" line="175"/>
         <source>Failed to login into online account, please check your password and username</source>
         <translation>Failed to login into online account, please check your password and username</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="180"/>
+        <location filename="../backEnd.cpp" line="185"/>
         <source>Register online error</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="181"/>
+        <location filename="../backEnd.cpp" line="186"/>
         <source>Failed to register this account, if this account was created by you, try to restore it.</source>
         <translation>Failed to register this account, if this account was created by you, try to restore it.</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="191"/>
-        <location filename="../backEnd.cpp" line="213"/>
+        <location filename="../backEnd.cpp" line="196"/>
+        <location filename="../backEnd.cpp" line="218"/>
         <source>Server error</source>
         <translation>Server error</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="198"/>
+        <location filename="../backEnd.cpp" line="203"/>
         <source>User with this id is not registered. If it you then use please the sigup form.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="206"/>
+        <location filename="../backEnd.cpp" line="211"/>
         <source>User with this id already registered. If it you then use please the login form.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="327"/>
+        <location filename="../backEnd.cpp" line="336"/>
         <source>Create user error</source>
         <translation>User create error</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="328"/>
+        <location filename="../backEnd.cpp" line="337"/>
         <source>Failed to create a new user, The name %0 alredy used.</source>
         <translation>Failed to create a new user, This name %0 alredy used.</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="359"/>
+        <location filename="../backEnd.cpp" line="368"/>
         <source>current profile not online!</source>
         <translation>Current profile is offline!</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="359"/>
+        <location filename="../backEnd.cpp" line="368"/>
         <source>Remove online error</source>
         <translation>Error remove online user data</translation>
     </message>
@@ -191,7 +191,7 @@
         <translation>Local user accept new data from the server.</translation>
     </message>
     <message>
-        <location filename="../hanoiclient.cpp" line="132"/>
+        <location filename="../hanoiclient.cpp" line="142"/>
         <source>Internal Error, server send invalid data, and this data can&apos;t be saved into local database.</source>
         <translation>Internal Error, server send invalid data, and this data can&apos;t be saved into local database.</translation>
     </message>
@@ -366,32 +366,37 @@
 <context>
     <name>MainMenu</name>
     <message>
-        <location filename="../menu/MainMenu.qml" line="39"/>
+        <location filename="../menu/MainMenu.qml" line="52"/>
         <source>continue</source>
         <translation>Continue</translation>
     </message>
     <message>
-        <location filename="../menu/MainMenu.qml" line="52"/>
+        <location filename="../menu/MainMenu.qml" line="64"/>
         <source>start</source>
         <translation>Start</translation>
     </message>
     <message>
-        <location filename="../menu/MainMenu.qml" line="64"/>
+        <location filename="../menu/MainMenu.qml" line="75"/>
+        <source>HanoiTowers World</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../menu/MainMenu.qml" line="88"/>
         <source>About</source>
         <translation>About</translation>
     </message>
     <message>
-        <location filename="../menu/MainMenu.qml" line="76"/>
+        <location filename="../menu/MainMenu.qml" line="99"/>
         <source>Config</source>
         <translation>Config</translation>
     </message>
     <message>
-        <location filename="../menu/MainMenu.qml" line="89"/>
+        <location filename="../menu/MainMenu.qml" line="111"/>
         <source>Users</source>
         <translation>Users</translation>
     </message>
     <message>
-        <location filename="../menu/MainMenu.qml" line="102"/>
+        <location filename="../menu/MainMenu.qml" line="122"/>
         <source>exit</source>
         <translation>Exit</translation>
     </message>
@@ -439,6 +444,11 @@
         <location filename="../menu/ToolBarPage.qml" line="121"/>
         <source>About Page</source>
         <translation>About Page</translation>
+    </message>
+    <message>
+        <location filename="../menu/ToolBarPage.qml" line="133"/>
+        <source>World Of Hanoi Towers</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -507,14 +517,20 @@
 <context>
     <name>UsersTable</name>
     <message>
-        <location filename="../menu/UsersTable.qml" line="46"/>
+        <location filename="../menu/UsersTable.qml" line="38"/>
+        <location filename="../menu/UsersTable.qml" line="93"/>
         <source>Locale users list</source>
         <translation>Local users list</translation>
     </message>
     <message>
-        <location filename="../menu/UsersTable.qml" line="77"/>
+        <location filename="../menu/UsersTable.qml" line="72"/>
         <source>Create the new user</source>
         <translation>Create the new user</translation>
+    </message>
+    <message>
+        <location filename="../menu/UsersTable.qml" line="106"/>
+        <source>Best users in the world</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

@@ -79,6 +79,9 @@ QH::ParserResult HanoiClient::parsePackage(const QSharedPointer<QH::PKG::Abstrac
 
     if (H_16<World>() == pkg->cmd()) {
         _world = pkg.staticCast<World>();
+
+        emit worldInited(_world->getData());
+
         return QH::ParserResult::Processed;
     }
 
@@ -87,14 +90,21 @@ QH::ParserResult HanoiClient::parsePackage(const QSharedPointer<QH::PKG::Abstrac
             return QH::ParserResult::Error;
         }
 
-        if (!_world->applyUpdate(*static_cast<WorldUpdate*>(pkg.data()))) {
+        auto wUpdate = pkg.staticCast<WorldUpdate>();
+
+        if (!_world->applyUpdate(*wUpdate)) {
             FixWorldRequest rquest;
             rquest.setWorldVersion(_world->getWorldVersion() + 1);
 
             if (!sendData(&rquest, sender->networkAddress())) {
                 return QH::ParserResult::Error;
             }
+
+            return QH::ParserResult::Processed;
         }
+
+        emit worldChanged(wUpdate);
+
         return QH::ParserResult::Processed;
     }
 

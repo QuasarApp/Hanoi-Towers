@@ -20,6 +20,8 @@ Page {
 
     background: Item {}
 
+    property int onlineStatus: 0;
+
     signal load()
     signal start()
     signal newState(var state)
@@ -27,17 +29,28 @@ Page {
     contentItem: Item {
         id: content;
 
+        GridLayout {
+            columns: 3
+            rows: 9
+            flow: GridLayout.TopToBottom
+            layoutDirection: Qt.LeftToRight
 
-        ColumnLayout {
+            Item {
+                Layout.rowSpan: 9
+                Layout.fillWidth: true
+                Layout.minimumWidth: menuPage.width * 0.3
+            }
+
+            Item {
+                Layout.fillHeight: true
+            }
 
             Base.BaseButton {
                 id: load;
-                Layout.preferredWidth: parent.width * 0.5;
-                Layout.preferredHeight: parent.height * 0.15
                 Layout.alignment: Qt.AlignCenter
 
                 text: qsTr("continue");
-                width:  about.width * 0.8;
+                Layout.fillWidth: true
                 onClicked: {
                     menuPage.load();
                 }
@@ -45,24 +58,34 @@ Page {
 
             Base.BaseButton {
                 id: start;
-                Layout.preferredWidth: parent.width * 0.5;
-                Layout.preferredHeight: parent.height * 0.15
                 Layout.alignment: Qt.AlignCenter
+                Layout.fillWidth: true
 
                 text: qsTr("start");
-                width:  about.width * 0.8;
                 onClicked: {
                     menuPage.start();
                 }
             }
 
             Base.BaseButton {
-                id: about;
-                Layout.preferredWidth: parent.width * 0.5;
-                Layout.preferredHeight: parent.height * 0.15
+                id: world;
                 Layout.alignment: Qt.AlignCenter
+                Layout.fillWidth: true
+
+                text: qsTr("HanoiTowers World");
+                onClicked: {
+                    newState("WorldTable")
+                }
+
+                visible: onlineStatus === OnlineStatusQml.loggined;
+            }
+
+            Base.BaseButton {
+                id: about;
+                Layout.alignment: Qt.AlignCenter
+                Layout.fillWidth: true
+
                 text: qsTr("About");
-                width:  config.width * 0.8;
                 onClicked: {
                     newState("About")
                 }
@@ -70,11 +93,10 @@ Page {
 
             Base.BaseButton {
                 id: config;
-                Layout.preferredWidth: parent.width * 0.5;
-                Layout.preferredHeight: parent.height * 0.15
                 Layout.alignment: Qt.AlignCenter
+                Layout.fillWidth: true
+
                 text: qsTr("Config");
-                width:  exit.width * 0.8;
                 onClicked: {
                     newState("Settings")
 
@@ -83,11 +105,10 @@ Page {
 
             Base.BaseButton {
                 id: users;
-                Layout.preferredWidth: parent.width * 0.5;
-                Layout.preferredHeight: parent.height * 0.15
                 Layout.alignment: Qt.AlignCenter
+                Layout.fillWidth: true
+
                 text: qsTr("Users");
-                width:  exit.width * 0.8;
                 onClicked: {
                     newState("UsersTable")
                 }
@@ -95,16 +116,28 @@ Page {
 
             Base.BaseButton {
                 id: exit;
-                Layout.preferredWidth: parent.width * 0.5;
-                Layout.preferredHeight: parent.height * 0.15
                 Layout.alignment: Qt.AlignCenter
-                width: content.width * 0.5;
+                Layout.fillWidth: true
+
                 text: qsTr("exit");
                 onClicked: {
                     Qt.quit();
                 }
             }
+
+            Item {
+                Layout.fillHeight: true
+            }
+
+            Item {
+                Layout.rowSpan: 9
+                Layout.fillWidth: true
+                Layout.minimumWidth: menuPage.width * 0.3
+
+            }
+
             anchors.fill: parent
+
         }
     }
 

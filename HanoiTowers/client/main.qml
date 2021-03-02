@@ -27,6 +27,7 @@ ApplicationWindow {
     }
 
     header: Menu.ToolBarPage {
+        id: toolBar
         state: stackview.state
 
         onReturnToMenu: {
@@ -55,6 +56,7 @@ ApplicationWindow {
 
         Menu.MainMenu {
             id: mainmenu
+            onlineStatus : toolBar.onlineStatus
             onStart: {
                 stackview.state = "Game"
                 gamePage.launch();
@@ -71,8 +73,12 @@ ApplicationWindow {
             }
         }
 
-        Menu.UsersTable {
+        Menu.LocalUsersTable {
             id: usersTable
+        }
+
+        Menu.World {
+            id: worldTable
         }
 
         Menu.Config {
@@ -105,7 +111,7 @@ ApplicationWindow {
             },
 
             State {
-                name: "Settings"
+                name: "WorldTable"
                 PropertyChanges {
                     target: stackview
                     currentIndex: 2
@@ -113,7 +119,7 @@ ApplicationWindow {
             },
 
             State {
-                name: "About"
+                name: "Settings"
                 PropertyChanges {
                     target: stackview
                     currentIndex: 3
@@ -121,10 +127,18 @@ ApplicationWindow {
             },
 
             State {
-                name: "Game"
+                name: "About"
                 PropertyChanges {
                     target: stackview
                     currentIndex: 4
+                }
+            },
+
+            State {
+                name: "Game"
+                PropertyChanges {
+                    target: stackview
+                    currentIndex: 5
                 }
             }
         ]

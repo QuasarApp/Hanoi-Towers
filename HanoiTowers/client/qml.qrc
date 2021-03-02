@@ -24,6 +24,8 @@
         <file>menu/GameStateWidget.qml</file>
         <file>Fog.qml</file>
         <file>menu/UserView.qml</file>
+        <file>menu/World.qml</file>
+        <file>menu/LocalUsersTable.qml</file>
     </qresource>
     <qresource prefix="/textures">
         <file>res/fogBack.png</file>

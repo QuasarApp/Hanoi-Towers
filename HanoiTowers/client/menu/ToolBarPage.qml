@@ -11,7 +11,7 @@ ToolBar {
     property bool returnButton: false
     property bool gameStateWidget: false
 
-    property string wecomMessage: ""
+    property string welcomMessage: ""
 
     property string p_profile: (backEnd)? backEnd.profile: ""
 
@@ -42,7 +42,7 @@ ToolBar {
             Layout.alignment: Qt.AlignCenter
             Layout.preferredHeight: returnBut.height
 
-            text: wecomMessage
+            text: welcomMessage
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignVCenter
             font.pixelSize: theme.headerSize;
@@ -83,7 +83,7 @@ ToolBar {
                 returnButton: false
                 visible: true
                 gameStateWidget: false
-                wecomMessage: qsTr("Welcom to Hanoi Towers ") + p_profile
+                welcomMessage: qsTr("Welcom to Hanoi Towers ") + p_profile
 
             }
         },
@@ -94,7 +94,7 @@ ToolBar {
                 returnButton: true
                 visible: true
                 gameStateWidget: false
-                wecomMessage: qsTr("Profiles") + " (" + p_profile + ")";
+                welcomMessage: qsTr("Profiles") + " (" + p_profile + ")";
 
             }
         },
@@ -106,7 +106,7 @@ ToolBar {
                 returnButton: true
                 visible: true
                 gameStateWidget: false
-                wecomMessage: qsTr("This are the main settings")
+                welcomMessage: qsTr("This are the main settings")
 
             }
         },
@@ -118,7 +118,19 @@ ToolBar {
                 returnButton: true
                 visible: true
                 gameStateWidget: false
-                wecomMessage: qsTr("About Page")
+                welcomMessage: qsTr("About Page")
+
+            }
+        },
+
+        State {
+            name: "WorldTable"
+            PropertyChanges {
+                target: root
+                returnButton: true
+                visible: true
+                gameStateWidget: false
+                welcomMessage: qsTr("World Of Hanoi Towers")
 
             }
         },
@@ -130,7 +142,7 @@ ToolBar {
                 returnButton: true
                 visible: true
                 gameStateWidget: true
-                wecomMessage: ""
+                welcomMessage: ""
 
             }
         }

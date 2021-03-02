@@ -29,7 +29,7 @@ public:
     int rowCount(const QModelIndex &parent) const override;
     QVariant data(const QModelIndex &index, int role) const override;
 
-    void updateSourceItem(const UserPreview& data);
+    void updateAddSourceItem(const UserPreview& data);
     void removeSourceItem(const QString& id);
 
 public slots:

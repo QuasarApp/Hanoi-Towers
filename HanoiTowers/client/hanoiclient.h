@@ -23,6 +23,7 @@
 class LocalUser;
 class UserData;
 class World;
+class WorldUpdate;
 
 namespace QH {
 namespace PKG {
@@ -62,6 +63,9 @@ protected:
 
 signals:
     void profileChanged(QSharedPointer<LocalUser>);
+    void worldChanged(QSharedPointer<WorldUpdate>);
+    void worldInited(QSet<UserPreview>);
+
 private:
 
     bool userDatarequest(const QByteArray &userId);

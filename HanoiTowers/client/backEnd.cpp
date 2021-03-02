@@ -18,6 +18,7 @@
 #include <QQmlContext>
 #include <QBuffer>
 #include <QCoreApplication>
+#include <worldupdate.h>
 #include "dataconverter.h"
 #include "localuser.h"
 
@@ -41,7 +42,9 @@ BackEnd::BackEnd(QQmlApplicationEngine *engine):
     _loginModel = new LoginView::LVMainModel("userLogin", this);
     _createNewOfflineUser = new LoginView::LVMainModel("createUser", this);
 
-    _recordsTable = new RecordListModel(this);
+    _recordsTable   = new RecordListModel(this);
+    _world          = new RecordListModel(this);
+
     _imageProvider = new HanoiImageProvider(&_profile);
     _dataConverter = new DataConverter;
 
@@ -83,6 +86,12 @@ BackEnd::BackEnd(QQmlApplicationEngine *engine):
 
     connect(_client , &HanoiClient::statusChanged,
             this, &BackEnd::setOnlineStatus);
+
+    connect(_client, &HanoiClient::worldChanged,
+            this, &BackEnd::handleWorldChanged);
+
+    connect(_client, &HanoiClient::worldInited,
+            this, &BackEnd::handleWorldInited);
 
     connect(&_profile, &LocalUser::nameChanged,
             this, &BackEnd::handleChangeName);
@@ -312,6 +321,10 @@ QObject* BackEnd::profileList() {
     return _recordsTable;
 }
 
+QObject *BackEnd::worldList() {
+    return _world;
+}
+
 bool BackEnd::createProfile(const QString& userId, const QString &userName) {
 
     LocalUser user;
@@ -327,7 +340,7 @@ bool BackEnd::createProfile(const QString& userId, const QString &userName) {
 
     }
 
-    _recordsTable->updateSourceItem(_dataConverter->toUserPreview(user));
+    _recordsTable->updateAddSourceItem(_dataConverter->toUserPreview(user));
 
     return true;
 }
@@ -390,7 +403,7 @@ void BackEnd::setReward(int revard) {
     if (_profile.record() < revard) {
         _profile.setRecord(revard);
         _client->updateProfile(_profile);
-        _recordsTable->updateSourceItem(_dataConverter->toUserPreview(_profile));
+        _recordsTable->updateAddSourceItem(_dataConverter->toUserPreview(_profile));
 
     }
 }
@@ -445,4 +458,18 @@ void BackEnd::setOnlineStatus(QH::ClientStatus onlineStatus) {
 
     _onlineStatus = static_cast<OnlineStatus>(onlineStatus);
     emit onlineStatusChanged(static_cast<int>(_onlineStatus));
+}
+
+void BackEnd::handleWorldChanged(QSharedPointer<WorldUpdate> delta) {
+    for (const auto &val: qAsConst(delta->getDataAddUpdate())) {
+        _world->updateAddSourceItem(val);
+    }
+
+    for (const auto &val: qAsConst(delta->getDataRemove())) {
+        _world->removeSourceItem(val.id);
+    }
+}
+
+void BackEnd::handleWorldInited(QSet<UserPreview> initWorldList) {
+    _world->setSource({initWorldList.begin(), initWorldList.end()});
 }

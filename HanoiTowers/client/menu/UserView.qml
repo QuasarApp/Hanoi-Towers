@@ -12,6 +12,7 @@ GridLayout {
     clip: true
 
     property var userModel: null
+    property bool editable: true
 
     signal newAvatar(var path);
 
@@ -30,6 +31,9 @@ GridLayout {
         }
 
         onClicked: {
+            if (!editable)
+                return;
+
             fileDialog.open()
         }
     }
@@ -90,6 +94,7 @@ GridLayout {
         TextField {
             id: ename
 
+            readOnly: !editable
             horizontalAlignment: Text.AlignHCenter
             maximumLength: 64
             text: privateRoot.userName
@@ -109,21 +114,23 @@ GridLayout {
             id: eonline
             text: ""
             checked: privateRoot.onlieUser
-            visible: !bonline.visible
-
+            visible: !bonline.visible && editable
         }
 
         BusyIndicator {
             id: bonline
             running: true;
-            visible: privateRoot.onlineStatus === OnlineStatusQml.loginning || privateRoot.onlineStatus === OnlineStatusQml.connecting
+            visible: (privateRoot.onlineStatus === OnlineStatusQml.loginning ||
+                      privateRoot.onlineStatus === OnlineStatusQml.connecting)
+                     && editable
+
         }
     }
 
     RowLayout {
         id: rowLayout
         Layout.columnSpan: 2
-
+        visible: editable
         Button {
             id: remove
 

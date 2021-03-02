@@ -44,6 +44,7 @@ class BackEnd: public QObject
     Q_PROPERTY(GameState* gameState READ gameState WRITE setGameState NOTIFY gameStateChanged)
     Q_PROPERTY(QObject* client READ client)
 
+    Q_PROPERTY(QObject* worldList READ worldList  NOTIFY worldListChanged)
     Q_PROPERTY(QObject* profileList READ profileList  NOTIFY profileListChanged)
     Q_PROPERTY(QObject* profileObject READ profileObject  NOTIFY profileChanged)
 
@@ -58,6 +59,7 @@ public:
 
     Q_INVOKABLE QString profile() const;
     Q_INVOKABLE QObject* profileList();
+    Q_INVOKABLE QObject* worldList();
 
     Q_INVOKABLE bool createProfile(const QString &userId, const QString& userName);
 
@@ -161,6 +163,8 @@ signals:
 
     void onlineStatusChanged(int onlineStatus);
 
+    void worldListChanged(QObject* worldList);
+
 private slots:
     void handleChangeName(const QString&);
 
@@ -172,6 +176,8 @@ private slots:
 
     void handleProfileChanged(QSharedPointer<LocalUser> profileId);
     void setOnlineStatus(QH::ClientStatus onlineStatus);
+    void handleWorldChanged(QSharedPointer<WorldUpdate>);
+    void handleWorldInited(QSet<UserPreview> initWorldList);
 
 private:
     void init();
@@ -182,6 +188,7 @@ private:
     LoginView::LVMainModel *_createNewOfflineUser = nullptr;
 
     RecordListModel * _recordsTable = nullptr;
+    RecordListModel * _world = nullptr;
 
     LocalUser _profile;
     HanoiClient *_client = nullptr;

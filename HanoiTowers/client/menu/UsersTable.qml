@@ -17,6 +17,11 @@ import QtQuick.Window 2.15
 Item {
     id:menuPage
 
+    property var model: null
+
+    signal userSelected(var userId)
+    signal createNewUser()
+
     GridLayout {
         id: gridLayout
 
@@ -27,24 +32,11 @@ Item {
 
         flow: GridLayout.TopToBottom
 
-        UserView {
-            Layout.rowSpan: 2
-            userModel: (backEnd)? backEnd.profileObject: null
-
-            onNewAvatar: {
-                backEnd.setNewAvatar(path);
-            }
-        }
-
-        Item {
-            Layout.fillHeight: true
-            Layout.rowSpan: 2
-        }
-
         TextField {
+            id: title
             readOnly: true;
             text: qsTr("Locale users list")
-            Layout.columnSpan: 1
+            Layout.columnSpan: (button.visible)? 1 : 2
             Layout.fillWidth: true
             horizontalAlignment: Text.AlignHCenter
 
@@ -53,13 +45,14 @@ Item {
         ListView {
 
             id: listView
+
             Layout.fillWidth: true
             Layout.fillHeight: true
             Layout.columnSpan: 2
             Layout.rowSpan: 3
             clip: true
             ScrollBar.vertical: ScrollBar {}
-            model: (backEnd)? backEnd.profileList: null
+            model: menuPage.model
             delegate:
                 UserTableRow {
                 name: username
@@ -67,7 +60,7 @@ Item {
                 width: listView.width
 
                 onClicked: {
-                    backEnd.setProfile(userid);
+                    userSelected(userid)
                 }
 
             }
@@ -75,38 +68,42 @@ Item {
         Base.BaseButton {
             id: button
             text: qsTr("Create the new user")
-            Layout.alignment: Qt.AlignHCenter| Qt.AlignVCenter
+            Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
             Layout.columnSpan: 1
             Material.background: Material.Green
 
             onClicked: {
-                if (backEnd) {
-                    loginPopUp.lognViewModel = createUser;
-                    loginPopUp.open()
-                }
+                createNewUser()
             }
         }
     }
 
-    LoginViewDialog {
+    states: [
+        State {
+            name: "Local"
+            PropertyChanges {
+                target: button
+                visible: true
+            }
 
-        id: loginPopUp
-        lognViewModel: userLogin // exampleLogin - this is inited model in main.cpp
+            PropertyChanges {
+                target: title
+                text: qsTr("Locale users list")
 
-        Connections {
-            target: backEnd;
-            function onShowOnlinePage () {
-                loginPopUp.lognViewModel = userLogin;
-                loginPopUp.open();
+            }
+        },
+        State {
+            name: "World"
+            PropertyChanges {
+                target: button
+                visible: false
+            }
+
+            PropertyChanges {
+                target: title
+                text: qsTr("Best users in the world")
+
             }
         }
-    }
-
-    Item {
-        id: item1
-        x: 80
-        y: 349
-        width: 200
-        height: 200
-    }
+    ]
 }
