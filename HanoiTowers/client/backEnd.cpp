@@ -104,10 +104,6 @@ void BackEnd::init() {
         stream >> _animation;
         stream >> _randomColor;
 
-        if(lvl < 1 || lvl > 99) {
-            lvl = 1;
-        }
-
         setAnimation(_animation);
         setRandomColor(_randomColor);
         setShowHelp(isFirstStart);
