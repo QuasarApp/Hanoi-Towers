@@ -192,17 +192,17 @@
 <context>
     <name>HanoiClient</name>
     <message>
-        <location filename="../hanoiclient.cpp" line="70"/>
+        <location filename="../hanoiclient.cpp" line="71"/>
         <source>Local user has been updated</source>
         <translation>Локальный пользователь обновлён</translation>
     </message>
     <message>
-        <location filename="../hanoiclient.cpp" line="70"/>
+        <location filename="../hanoiclient.cpp" line="71"/>
         <source>local user accept nbew data from the server.</source>
         <translation>Локальный пользователь принял новые данные с сервера.</translation>
     </message>
     <message>
-        <location filename="../hanoiclient.cpp" line="142"/>
+        <location filename="../hanoiclient.cpp" line="143"/>
         <source>Internal Error, server send invalid data, and this data can&apos;t be saved into local database.</source>
         <translation>Внутренняя ошибка, сервер отправил неверные данные, и эти данные не могут быть сохранены в локальной базе данных.</translation>
     </message>
@@ -492,62 +492,62 @@
 <context>
     <name>UserView</name>
     <message>
-        <location filename="../menu/UserView.qml" line="39"/>
+        <location filename="../menu/UserView.qml" line="43"/>
         <source>Please choose a new Avatar</source>
         <translation>Пожалуйста выберете новый аватар</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="56"/>
+        <location filename="../menu/UserView.qml" line="60"/>
         <source>Id</source>
         <translation>Id</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="63"/>
+        <location filename="../menu/UserView.qml" line="67"/>
         <source>Name</source>
         <translation>Имя</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="70"/>
+        <location filename="../menu/UserView.qml" line="74"/>
         <source>Record</source>
         <translation>Рекорд</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="77"/>
+        <location filename="../menu/UserView.qml" line="81"/>
         <source>Online profile</source>
         <translation>Онлайн профиль</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="131"/>
+        <location filename="../menu/UserView.qml" line="138"/>
         <source>Remove This Profile</source>
         <translation>Удалить это профиль</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="142"/>
+        <location filename="../menu/UserView.qml" line="149"/>
         <source>Restore</source>
         <translation>Восстановить</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="149"/>
+        <location filename="../menu/UserView.qml" line="156"/>
         <source>Accept</source>
         <translation>Принять</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="166"/>
+        <location filename="../menu/UserView.qml" line="173"/>
         <source>User is updated</source>
         <translation>Пользователь обновлен</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="166"/>
+        <location filename="../menu/UserView.qml" line="173"/>
         <source>User data will be changed.</source>
         <translation>Данные пользователя изменены</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="184"/>
+        <location filename="../menu/UserView.qml" line="191"/>
         <source>Remove %0 user</source>
         <translation>Удалить %0 пользователя</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="185"/>
+        <location filename="../menu/UserView.qml" line="192"/>
         <source>All saved data and records will be delete, Do you want continuee?</source>
         <translation>Все сохраненные данные и записи будут удалены. Продолжить?</translation>
     </message>
@@ -560,17 +560,17 @@
     </message>
     <message>
         <location filename="../menu/UsersTable.qml" line="38"/>
-        <location filename="../menu/UsersTable.qml" line="93"/>
+        <location filename="../menu/UsersTable.qml" line="91"/>
         <source>Locale users list</source>
         <translation>Список локальных пользователей</translation>
     </message>
     <message>
-        <location filename="../menu/UsersTable.qml" line="72"/>
+        <location filename="../menu/UsersTable.qml" line="70"/>
         <source>Create the new user</source>
         <translation>Создать нового пользователя</translation>
     </message>
     <message>
-        <location filename="../menu/UsersTable.qml" line="106"/>
+        <location filename="../menu/UsersTable.qml" line="104"/>
         <source>Best users in the world</source>
         <translation type="unfinished"></translation>
     </message>

@@ -55,6 +55,7 @@ QDataStream &World::fromStream(QDataStream &stream) {
     stream >> _token;
     stream >> _subscribeId;
     stream >> _worldVersion;
+    stream >> _bestUserId;
 
     return stream;
 }
@@ -66,8 +67,58 @@ QDataStream &World::toStream(QDataStream &stream) const {
     stream << _token;
     stream << _subscribeId;
     stream << _worldVersion;
+    stream << _bestUserId;
 
     return stream;
+}
+
+bool World::softUpdate(const WorldUpdate &update) {
+
+    const auto &val =  update.getDataAddUpdate();
+
+    auto it = _data.find(UserPreview(_bestUserId));
+    int bestRecord = 0;
+    if (it != _data.end()) {
+        bestRecord = (*it).record;
+    }
+
+    for (const auto &item : val) {
+        if (item.record >= bestRecord) {
+            bestRecord = item.record;
+            _bestUserId = item.id;
+        }
+    }
+
+    _data -= update.getDataRemove();
+
+    return true;
+}
+
+bool World::hardUpdate(const WorldUpdate &update) {
+
+    _data += update.getDataAddUpdate();
+    _data -= update.getDataRemove();
+
+    if (_data.size()) {
+        _bestUserId = fullSearch()->id;
+    }
+
+    return true;
+}
+
+QSet<UserPreview>::ConstIterator World::fullSearch() const {
+    auto lessThen = [](const UserPreview & left, const UserPreview &right) {
+        return left.record <= right.record;
+    };
+    return std::max_element(_data.begin(), _data.end(), lessThen);
+}
+
+QString World::getBestUserId() const {
+    return _bestUserId;
+}
+
+void World::setBestUserId(const QString &value) {
+    _bestUserId = value;
 }
 
 unsigned int World::getWorldVersion() const {
@@ -87,9 +138,14 @@ bool World::applyUpdate(const WorldUpdate &update) {
     if (update.getWorldVersion() != _worldVersion + 1) {
         return false;
     }
+    auto oldBestUser = UserPreview{_bestUserId};
+    if (update.getDataRemove().contains(oldBestUser) ||
+        update.getDataAddUpdate().contains(oldBestUser)) {
 
-    _data += update.getDataAddUpdate();
-    _data -= update.getDataRemove();
+        hardUpdate(update);
+    } else {
+        softUpdate(update);
+    }
 
     _worldVersion++;
 

@@ -131,6 +131,10 @@ void BackEnd::init() {
 
 }
 
+void BackEnd::updateBestUser() {
+
+}
+
 void BackEnd::onlineRequest(const QString &userId) {
 
     if (_profile.token().isValid() && _client->login(userId)) {
@@ -157,6 +161,10 @@ void BackEnd::onlineRequest(const QString &userId) {
 
 int BackEnd::onlineStatus() const {
     return static_cast<int>(_onlineStatus);
+}
+
+QObject *BackEnd::bestUser() const {
+    return m_bestUser;
 }
 
 void BackEnd::handleChangeName(const QString & name) {

@@ -35,6 +35,8 @@ HanoiClient::HanoiClient() {
               new QH::SqlDBWriter());
 
     qRegisterMetaType<QSharedPointer<LocalUser>>();
+    qRegisterMetaType<QSet<UserPreview>>();
+    qRegisterMetaType<QSharedPointer<UserPreview>>();
 
     registerPackageType<UserData>();
     registerPackageType<FixWorldRequest>();

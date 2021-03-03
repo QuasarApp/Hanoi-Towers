@@ -10,6 +10,7 @@
 
 #include <QString>
 #include <streambase.h>
+#include <QSharedPointer>
 
 struct UserPreview: public QH::StreamBase {
     explicit UserPreview();
@@ -28,4 +29,8 @@ protected:
 };
 
 uint qHash(const UserPreview& input);
+
+Q_DECLARE_METATYPE(UserPreview)
+Q_DECLARE_METATYPE(QSharedPointer<UserPreview>)
+
 #endif // USERPREVIEW_H

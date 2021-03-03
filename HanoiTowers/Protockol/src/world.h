@@ -38,6 +38,9 @@ public:
 
     unsigned int getWorldVersion() const;
 
+    QString getBestUserId() const;
+    void setBestUserId(const QString &value);
+
 protected:
     QH::PKG::DBVariantMap variantMap() const override;
     QString condition() const override;
@@ -46,10 +49,16 @@ protected:
     QDataStream &toStream(QDataStream &stream) const override;
 
 private:
+    bool softUpdate(const WorldUpdate& update);
+    bool hardUpdate(const WorldUpdate& update);
+
+    QSet<UserPreview>::ConstIterator fullSearch() const;
+
     QSet<UserPreview> _data;
     QH::AccessToken _token;
     unsigned int _subscribeId;
     unsigned int _worldVersion = 0;
+    QString _bestUserId;
 };
 
 #endif // WORLD_H

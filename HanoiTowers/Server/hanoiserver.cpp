@@ -20,6 +20,7 @@
 #include "hanoierrorcodes.h"
 #include <fixworldrequest.h>
 #include <worldupdate.h>
+#include <isqldbcache.h>
 
 HanoiServer::HanoiServer() {
     QString address = "";
@@ -52,11 +53,10 @@ HanoiServer::HanoiServer() {
     registerPackageType<World>();
     registerPackageType<WorldUpdate>();
 
-    _world = new World();
+
 }
 
 HanoiServer::~HanoiServer() {
-    delete _world;
 }
 
 QH::ParserResult HanoiServer::parsePackage(const QSharedPointer<QH::PKG::AbstractData> &pkg,
@@ -170,6 +170,16 @@ HanoiServer::getHistoryPoint(unsigned int version) {
     return _worldHistory[version];
 }
 
+bool HanoiServer::initWorld() {
+    if (!db()) {
+        return false;
+    }
+
+    _world = db()->getObject(World{});
+
+   return _world && _world->isValid();
+}
+
 void HanoiServer::nodeConfirmend(QH::AbstractNodeInfo *node) {
     if (auto baseNode = dynamic_cast<QH::BaseNodeInfo*>(node)) {
         UserDataRequest request;
@@ -200,7 +210,19 @@ void HanoiServer::memberSubsribed(const QVariant &clientId,
                                   unsigned int subscribeId) {
 
     if (subscribeId == _world->subscribeId()) {
-        sendData(_world, clientId);
+        sendData(_world.data(), clientId);
     }
+}
+
+bool HanoiServer::initSqlDb(QString DBparamsFile,
+                            QH::ISqlDBCache *cache,
+                            QH::SqlDBWriter *writer) {
+
+    if (!SingleServer::initSqlDb(DBparamsFile, cache, writer)) {
+        return false;
+    }
+
+    return initWorld();
+
 }
 

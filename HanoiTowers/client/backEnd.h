@@ -47,6 +47,7 @@ class BackEnd: public QObject
     Q_PROPERTY(QObject* worldList READ worldList  NOTIFY worldListChanged)
     Q_PROPERTY(QObject* profileList READ profileList  NOTIFY profileListChanged)
     Q_PROPERTY(QObject* profileObject READ profileObject  NOTIFY profileChanged)
+    Q_PROPERTY(QObject* bestUser READ bestUser  NOTIFY bestUserChanged)
 
     Q_PROPERTY(QString profile READ profile WRITE setProfile NOTIFY profileChanged)
     Q_PROPERTY(int onlineStatus READ onlineStatus NOTIFY onlineStatusChanged)
@@ -83,6 +84,8 @@ public:
     Q_INVOKABLE void onlineRequest(const QString& userId);
 
     int onlineStatus() const;
+
+    QObject *bestUser() const;
 
 public slots:
 
@@ -165,6 +168,8 @@ signals:
 
     void worldListChanged(QObject* worldList);
 
+    void bestUserChanged(QObject* bestUser);
+
 private slots:
     void handleChangeName(const QString&);
 
@@ -181,6 +186,7 @@ private slots:
 
 private:
     void init();
+    void updateBestUser();
 
     QuasarAppUtils::Settings *_settings = nullptr;
 
@@ -191,6 +197,9 @@ private:
     RecordListModel * _world = nullptr;
 
     LocalUser _profile;
+    LocalUser _bestUser;
+
+
     HanoiClient *_client = nullptr;
 
     SettingsData _settingsData;

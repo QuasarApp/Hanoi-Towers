@@ -193,17 +193,17 @@ Bu seviye için minimum adımlar: %2</translation>
 <context>
     <name>HanoiClient</name>
     <message>
-        <location filename="../hanoiclient.cpp" line="70"/>
+        <location filename="../hanoiclient.cpp" line="71"/>
         <source>Local user has been updated</source>
         <translation>Yerel kullanıcı güncellendi</translation>
     </message>
     <message>
-        <location filename="../hanoiclient.cpp" line="70"/>
+        <location filename="../hanoiclient.cpp" line="71"/>
         <source>local user accept nbew data from the server.</source>
         <translation>yerel kullanıcı sunucudan yeni verileri kabul eder.</translation>
     </message>
     <message>
-        <location filename="../hanoiclient.cpp" line="142"/>
+        <location filename="../hanoiclient.cpp" line="143"/>
         <source>Internal Error, server send invalid data, and this data can&apos;t be saved into local database.</source>
         <translation>Dahili Hata, sunucu geçersiz veri gönderdi ve bu veriler yerel veritabanına kaydedilemez.</translation>
     </message>
@@ -493,62 +493,62 @@ Bu seviye için minimum adımlar: %2</translation>
 <context>
     <name>UserView</name>
     <message>
-        <location filename="../menu/UserView.qml" line="39"/>
+        <location filename="../menu/UserView.qml" line="43"/>
         <source>Please choose a new Avatar</source>
         <translation>Lütfen yeni bir Avatar seçin</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="56"/>
+        <location filename="../menu/UserView.qml" line="60"/>
         <source>Id</source>
         <translation>Id</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="63"/>
+        <location filename="../menu/UserView.qml" line="67"/>
         <source>Name</source>
         <translation>İsim</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="70"/>
+        <location filename="../menu/UserView.qml" line="74"/>
         <source>Record</source>
         <translation>Kayıt</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="77"/>
+        <location filename="../menu/UserView.qml" line="81"/>
         <source>Online profile</source>
         <translation>Çevrimiçi profil</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="131"/>
+        <location filename="../menu/UserView.qml" line="138"/>
         <source>Remove This Profile</source>
         <translation>Bu Profili Kaldır</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="142"/>
+        <location filename="../menu/UserView.qml" line="149"/>
         <source>Restore</source>
         <translation>Onarmak</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="149"/>
+        <location filename="../menu/UserView.qml" line="156"/>
         <source>Accept</source>
         <translation>Kabul etmek</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="166"/>
+        <location filename="../menu/UserView.qml" line="173"/>
         <source>User is updated</source>
         <translation>Kullanıcı güncellendi</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="166"/>
+        <location filename="../menu/UserView.qml" line="173"/>
         <source>User data will be changed.</source>
         <translation>Kullanıcı verileri değiştirilecek.</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="184"/>
+        <location filename="../menu/UserView.qml" line="191"/>
         <source>Remove %0 user</source>
         <translation>%0 kullanıcıyı kaldır</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="185"/>
+        <location filename="../menu/UserView.qml" line="192"/>
         <source>All saved data and records will be delete, Do you want continuee?</source>
         <translation>Kaydedilen tüm veriler ve kayıtlar silinecek, devam etmek istiyor musunuz?</translation>
     </message>
@@ -561,17 +561,17 @@ Bu seviye için minimum adımlar: %2</translation>
     </message>
     <message>
         <location filename="../menu/UsersTable.qml" line="38"/>
-        <location filename="../menu/UsersTable.qml" line="93"/>
+        <location filename="../menu/UsersTable.qml" line="91"/>
         <source>Locale users list</source>
         <translation>Yerel kullanıcı listesi</translation>
     </message>
     <message>
-        <location filename="../menu/UsersTable.qml" line="72"/>
+        <location filename="../menu/UsersTable.qml" line="70"/>
         <source>Create the new user</source>
         <translation>Yeni kullanıcıyı oluşturun</translation>
     </message>
     <message>
-        <location filename="../menu/UsersTable.qml" line="106"/>
+        <location filename="../menu/UsersTable.qml" line="104"/>
         <source>Best users in the world</source>
         <translation type="unfinished"></translation>
     </message>

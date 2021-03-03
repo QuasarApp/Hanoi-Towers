@@ -28,6 +28,9 @@ protected:
     QH::ErrorCodes::Code deleteUser(const QSharedPointer<QH::PKG::UserMember> &user,
                                     const QH::AbstractNodeInfo *info) override;
     void memberSubsribed(const QVariant &clientId, unsigned int subscribeId) override;
+    bool initSqlDb(QString DBparamsFile,
+                   QH::ISqlDBCache *cache,
+                   QH::SqlDBWriter *writer) override;
 
 private:
     bool workWirthUserData(const UserData *obj,
@@ -40,7 +43,9 @@ private:
     void updateWorld(const UserPreview& user, bool isRemove);
     QSharedPointer<WorldUpdate> getHistoryPoint(unsigned int version);
 
-    World *_world = nullptr;
+    bool initWorld();
+
+    QSharedPointer<World> _world = nullptr;
     QHash<unsigned int, QSharedPointer<WorldUpdate>> _worldHistory;
     mutable QMutex _worldHistoryMutexl;
 
