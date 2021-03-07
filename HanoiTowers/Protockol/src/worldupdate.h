@@ -25,6 +25,7 @@ public:
     bool isValid() const override;
     const QH::AccessToken &getSignToken() const override;
     unsigned int subscribeId() const override;
+    void setSignToken(const QH::AccessToken &) override;
 
     // StreamBase interface
     const QSet<UserPreview> &getDataAddUpdate() const;
@@ -41,6 +42,7 @@ protected:
     QDataStream &toStream(QDataStream &stream) const override;
 
 private:
+
     QSet<UserPreview> _dataAddUpdate;
     QSet<UserPreview> _dataRemove;
     QH::AccessToken _token;

@@ -24,6 +24,7 @@ class LocalUser;
 class UserData;
 class World;
 class WorldUpdate;
+class WorldClient;
 
 namespace QH {
 namespace PKG {
@@ -54,7 +55,14 @@ public:
 
     bool setNewAvatar(const QString &userId, const QByteArray& image);
     bool subscribeToWorld();
-\
+
+    /**
+     * @brief getUserData if the user with @a userId exits in cache then this method emit signal userDataChanged with user data
+     * else send request to server.
+     * @param userId
+     * @return
+     */
+    bool getUserData(const QString &userId);
 
 protected:
     QStringList SQLSources() const override;
@@ -62,13 +70,15 @@ protected:
     void incomingData(QH::PKG::AbstractData *pkg, const QH::AbstractNodeInfo *sender) override;
 
 signals:
-    void profileChanged(QSharedPointer<LocalUser>);
+    void userDataChanged(QSharedPointer<LocalUser>);
     void worldChanged(QSharedPointer<WorldUpdate>);
     void worldInited(QSet<UserPreview>);
 
+private slots:
+    void handleNewBestUser(QString userId);
+
 private:
 
-    bool userDatarequest(const QByteArray &userId);
     QSharedPointer<LocalUser> getLocalUser(const QString &userId) const;
 
     bool sendUserData(QSharedPointer<UserData> data);
@@ -76,8 +86,11 @@ private:
     bool isOnline(const QSharedPointer<LocalUser>& data);
     bool isOnlineAndLoginned(const QSharedPointer<LocalUser>& data);
 
-    QList<LocalUser*> _usersList;
-    QSharedPointer<World> _world;
+    bool workWithUserData(const QSharedPointer<UserData> & userData);
+
+    QHash<QString, QSharedPointer<LocalUser>> _usersCache;
+    QSharedPointer<WorldClient> _world;
+    QString _bestUserId;
 
 };
 

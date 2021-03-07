@@ -27,19 +27,15 @@ public:
     bool isValid() const override;
     const QH::AccessToken &getSignToken() const override;
     unsigned int subscribeId() const override;
+    bool copyFrom(const QH::PKG::AbstractData *other) override;
 
-    void setToken(const QH::AccessToken &token);
-
+    void setSignToken(const QH::AccessToken &token) override;
 
     QSet<UserPreview> getData() const;
     void setData(const QSet<UserPreview> &data);
-
     bool applyUpdate(const WorldUpdate& update);
-
     unsigned int getWorldVersion() const;
-
-    QString getBestUserId() const;
-    void setBestUserId(const QString &value);
+    const QString &getBestUserId() const;
 
 protected:
     QH::PKG::DBVariantMap variantMap() const override;
@@ -48,8 +44,12 @@ protected:
     QDataStream &fromStream(QDataStream &stream) override;
     QDataStream &toStream(QDataStream &stream) const override;
 
+    virtual void bestUserChanged(const QString &bestUser);
+    void setBestUserId(const QString &value);
+
 private:
     bool softUpdate(const WorldUpdate& update);
+    bool softUpdatePrivate(const QSet<UserPreview> &);
     bool hardUpdate(const WorldUpdate& update);
 
     QSet<UserPreview>::ConstIterator fullSearch() const;
@@ -59,6 +59,8 @@ private:
     unsigned int _subscribeId;
     unsigned int _worldVersion = 0;
     QString _bestUserId;
+
+
 };
 
 #endif // WORLD_H

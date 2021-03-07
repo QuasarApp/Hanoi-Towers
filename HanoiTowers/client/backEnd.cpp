@@ -81,8 +81,8 @@ BackEnd::BackEnd(QQmlApplicationEngine *engine):
     connect(_client , &HanoiClient::requestError,
             this, &BackEnd::handleOnlineRequestError);
 
-    connect(_client , &HanoiClient::profileChanged,
-            this, &BackEnd::handleProfileChanged);
+    connect(_client , &HanoiClient::userDataChanged,
+            this, &BackEnd::handleAcceptUserData);
 
     connect(_client , &HanoiClient::statusChanged,
             this, &BackEnd::setOnlineStatus);
@@ -163,8 +163,12 @@ int BackEnd::onlineStatus() const {
     return static_cast<int>(_onlineStatus);
 }
 
-QObject *BackEnd::bestUser() const {
-    return m_bestUser;
+QObject *BackEnd::bestUser() {
+    return &_bestUser;
+}
+
+QObject *BackEnd::selectedUser() {
+    return &_selectedUser;
 }
 
 void BackEnd::handleChangeName(const QString & name) {
@@ -228,11 +232,23 @@ void BackEnd::handleOnlineRequestError(QH::ErrorCodes::Code code, const QString 
                 QmlNotificationService::NotificationData::Error);
 }
 
-void BackEnd::handleProfileChanged(QSharedPointer<LocalUser> profileId) {
-    _profile.copyFrom(profileId.data());
-    _settings->setValue(CURRENT_PROFILE_KEY, _profile.getId());
+void BackEnd::handleAcceptUserData(QSharedPointer<LocalUser> data) {
+    if (_profile.getId() == data->getId()) {
 
-    emit profileChanged(_profile.getId().toString());
+        _profile.copyFrom(data.data());
+        _settings->setValue(CURRENT_PROFILE_KEY, _profile.getId());
+
+        emit profileChanged(_profile.getId().toString());
+
+    } else if (_bestUser.getId() == data->getId()) {
+        _bestUser.copyFrom(data.data());
+        emit bestUserChanged(&_bestUser);
+
+    } else if (_selectedUser.getId() == data->getId()) {
+        _selectedUser.copyFrom(data.data());
+        emit selectedUserChanged(&_selectedUser);
+
+    }
 }
 
 bool BackEnd::randomColor() const {
@@ -301,6 +317,11 @@ void BackEnd::setNewAvatar(QString pathToAvatar) {
 
     _profile.setAvatar(arr);
 
+}
+
+void BackEnd::selectUserFromWorldTable(const QString &userId) {
+    _selectedUser.setId(userId);
+    _client->getUserData(userId);
 }
 
 bool BackEnd::fog() const {
@@ -395,6 +416,7 @@ void BackEnd::setProfile(QString userId) {
 
     _client->updateProfile(_profile);
 
+    _profile.setId(userId);
     if (_client->setProfile(userId)) {
         emit profileChanged(userId);
 

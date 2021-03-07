@@ -14,7 +14,7 @@ Item {
         anchors.fill: parent
 
         UserView {
-            userModel: (backEnd)? backEnd.profileObject: null
+            userModel: (backEnd)? backEnd.bestUser: null
             editable: false;
         }
 
@@ -24,7 +24,29 @@ Item {
             model: (backEnd)? backEnd.worldList: null
             state: "World"
 
+            onUserSelected: {
+                privateRoot.showUser(userId);
+            }
+
         }
 
+    }
+
+    Dialog {
+        id: preview;
+        contentItem: UserView {
+            userModel: (backEnd)? backEnd.selectedUser: null
+            editable: false;
+        }
+
+        standardButtons: Dialog.Close
+    }
+
+    Item {
+        id: privateRoot
+
+        function showUser(id) {
+
+        }
     }
 }

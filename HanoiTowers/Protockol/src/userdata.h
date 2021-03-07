@@ -35,7 +35,8 @@ public:
     int updateTime() const;
     void setUpdateTime(int updateTime);
 
-    void setToken(const QH::AccessToken &token);
+    void setSignToken(const QH::AccessToken &token) override;
+
 
 protected:
     QDataStream &fromStream(QDataStream &stream) override;
@@ -47,7 +48,6 @@ private:
     ProfileData _userData;
     QH::AccessToken _token;
     int _updateTime;
-
 
 };
 

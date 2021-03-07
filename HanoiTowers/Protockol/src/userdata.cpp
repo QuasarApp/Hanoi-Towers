@@ -98,7 +98,7 @@ QString UserData::primaryKey() const {
     return "id";
 }
 
-void UserData::setToken(const QH::AccessToken &token) {
+void UserData::setSignToken(const QH::AccessToken &token) {
     _token = token;
 }
 

@@ -48,6 +48,10 @@ QDataStream &WorldUpdate::toStream(QDataStream &stream) const {
     return stream;
 }
 
+void WorldUpdate::setSignToken(const QH::AccessToken & token) {
+    _token = token;
+}
+
 unsigned int WorldUpdate::getWorldVersion() const {
     return _worldVersion;
 }

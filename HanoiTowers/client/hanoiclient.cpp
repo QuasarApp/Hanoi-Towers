@@ -22,9 +22,9 @@
 #include <getsinglevalue.h>
 #include <dataconverter.h>
 #include <setsinglevalue.h>
-#include <world.h>
 #include <worldupdate.h>
 #include <fixworldrequest.h>
+#include <worldclient.h>
 #include "hanoierrorcodes.h"
 #include "localrecordstable.h"
 
@@ -43,7 +43,11 @@ HanoiClient::HanoiClient() {
     registerPackageType<World>();
     registerPackageType<WorldUpdate>();
 
-    _world = QSharedPointer<World>::create();
+    _world = QSharedPointer<WorldClient>::create();
+
+    connect(_world.data(), &WorldClient::sigBestUserChanged,
+            this, &HanoiClient::handleNewBestUser,
+            Qt::QueuedConnection);
 }
 
 HanoiClient::~HanoiClient() {
@@ -58,29 +62,17 @@ QH::ParserResult HanoiClient::parsePackage(const QSharedPointer<QH::PKG::Abstrac
         return parentResult;
     }
 
-    if (H_16<UserData>() == pkg->cmd()) {
-        auto obj = pkg.staticCast<UserData>();
-        auto localUser = getLocalUser(obj->name());
+    if (H_16<UserData>() == pkg->cmd()) {        
+        if (!workWithUserData(pkg.staticCast<UserData>())) {
+            return QH::ParserResult::Error;
 
-        if (obj->updateTime() > localUser->updateTime()) {
-            localUser->setUserData(obj->userData());
-            if (!db()->updateObject(obj)) {
-                return QH::ParserResult::Error;
-            }
-
-            QmlNotificationService::NotificationService::getService()->setNotify(
-                        tr("Local user has been updated"), tr("local user accept nbew data from the server."), "",
-                        QmlNotificationService::NotificationData::Normal);
-
-            emit profileChanged(localUser);
         }
-
         return QH::ParserResult::Processed;
 
     }
 
     if (H_16<World>() == pkg->cmd()) {
-        _world = pkg.staticCast<World>();
+        _world->copyFrom(pkg.data());
 
         emit worldInited(_world->getData());
 
@@ -128,7 +120,7 @@ void HanoiClient::incomingData(AbstractData *pkg, const QH::AbstractNodeInfo *se
 
     if (pkg->cmd() == H_16<UserMember>()) {
         if (auto user = getLocalUser(static_cast<UserMember*>(pkg)->getId().toString())) {
-            user->setToken(static_cast<UserMember*>(pkg)->token());
+            user->setToken(static_cast<UserMember*>(pkg)->getSignToken());
             user->setOnline(true);
 
             if (auto database = db()) {
@@ -136,10 +128,10 @@ void HanoiClient::incomingData(AbstractData *pkg, const QH::AbstractNodeInfo *se
                 using SetSingleVal = QSharedPointer<QH::PKG::SetSingleValue>;
 
                 auto request = SetSingleVal::create(QH::DbAddress("Users", static_cast<UserMember*>(pkg)->getId().toString()),
-                                                    "token", static_cast<UserMember*>(pkg)->token().toBytes());
+                                                    "token", static_cast<UserMember*>(pkg)->getSignToken().toBytes());
 
                 if (database->updateObject(request)) {
-                    emit profileChanged(user);
+                    emit userDataChanged(user);
                 } else {
                     emit requestError(0, tr("Internal Error, server send invalid data,"
                                      " and this data can't be saved into local database."));
@@ -147,14 +139,6 @@ void HanoiClient::incomingData(AbstractData *pkg, const QH::AbstractNodeInfo *se
             }
         }
     }
-}
-
-
-bool HanoiClient::userDatarequest(const QByteArray &userId) {
-    UserDataRequest request;
-    request.setId(userId);
-
-    return sendData(&request, serverAddress());
 }
 
 QSharedPointer<LocalUser> HanoiClient::getLocalUser(const QString &userId) const {
@@ -169,7 +153,7 @@ QSharedPointer<LocalUser> HanoiClient::getLocalUser(const QString &userId) const
 }
 
 bool HanoiClient::sendUserData(QSharedPointer<UserData> data) {
-    data->setToken(getMember().token());
+    data->setSignToken(getMember().getSignToken());
     return sendData(data.data(), serverAddress());
 }
 
@@ -195,6 +179,36 @@ bool HanoiClient::isOnlineAndLoginned(const QSharedPointer<LocalUser> &data) {
 
 }
 
+bool HanoiClient::workWithUserData(const QSharedPointer<UserData>& obj) {
+    auto userId = getMember().getId();
+
+    QSharedPointer<LocalUser> localUser;
+
+    if (userId == obj->getId()) {
+        localUser = getLocalUser(obj->getId().toString());
+
+        if (obj->updateTime() > localUser->updateTime()) {
+            localUser->setUserData(obj->userData());
+            if (!db()->updateObject(obj)) {
+                return false;
+            }
+
+            QmlNotificationService::NotificationService::getService()->setNotify(
+                        tr("Local user has been updated"), tr("local user accept nbew data from the server."), "",
+                        QmlNotificationService::NotificationData::Normal);
+
+        }
+    } else {
+        localUser = QSharedPointer<LocalUser>::create();
+        localUser->setUserData(obj->userData());
+        _usersCache[obj->getId().toString()] = localUser;
+    }
+
+    emit userDataChanged(localUser);
+
+
+    return true;
+}
 
 bool HanoiClient::setNewAvatar(const QString &userId, const QByteArray &image) {
 
@@ -229,6 +243,19 @@ bool HanoiClient::subscribeToWorld() {
     return subscribe(_world->subscribeId());
 }
 
+bool HanoiClient::getUserData(const QString& userId) {
+    if (_usersCache.contains(userId)) {
+        emit userDataChanged(_usersCache[userId]);
+        return true;
+    }
+
+    UserDataRequest request;
+    request.setId(userId);
+    request.setSignToken(getMember().getSignToken());
+
+    return restRequest(&request, {});
+}
+
 bool HanoiClient::addProfile(const LocalUser& user) {
 
     if (!db())
@@ -258,7 +285,7 @@ bool HanoiClient::setProfile(const QString &userId,
         *selectedProfileData = user;
     }
 
-    emit profileChanged(user);
+    emit userDataChanged(user);
 
     if ( user->online() && connectToServer()) {
         auto userMember = DataConverter::toUserMember(user);
@@ -295,4 +322,9 @@ QList<UserPreview> HanoiClient::localUsersPreview() {
     return result->data();
 }
 
+void HanoiClient::handleNewBestUser(QString userId) {
+    unsubscribe(QH::PKG::UserMember{_bestUserId}.subscribeId());
+    _bestUserId = userId;
+    subscribe(QH::PKG::UserMember{_bestUserId}.subscribeId());
+}
 

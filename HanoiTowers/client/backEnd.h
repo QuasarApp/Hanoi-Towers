@@ -44,10 +44,14 @@ class BackEnd: public QObject
     Q_PROPERTY(GameState* gameState READ gameState WRITE setGameState NOTIFY gameStateChanged)
     Q_PROPERTY(QObject* client READ client)
 
-    Q_PROPERTY(QObject* worldList READ worldList  NOTIFY worldListChanged)
+    // local
     Q_PROPERTY(QObject* profileList READ profileList  NOTIFY profileListChanged)
     Q_PROPERTY(QObject* profileObject READ profileObject  NOTIFY profileChanged)
+
+    // global
+    Q_PROPERTY(QObject* worldList READ worldList  NOTIFY worldListChanged)
     Q_PROPERTY(QObject* bestUser READ bestUser  NOTIFY bestUserChanged)
+    Q_PROPERTY(QObject* selectedUser READ selectedUser  NOTIFY selectedUserChanged)
 
     Q_PROPERTY(QString profile READ profile WRITE setProfile NOTIFY profileChanged)
     Q_PROPERTY(int onlineStatus READ onlineStatus NOTIFY onlineStatusChanged)
@@ -75,7 +79,18 @@ public:
      * @param state - a new state of show help message
      */
     Q_INVOKABLE void setShowHelp(bool state);
+
+    /**
+     * @brief setNewAvatar This method sets new avatar for current user.
+     * @param pathToAvatar
+     */
     Q_INVOKABLE void setNewAvatar(QString pathToAvatar);
+
+    /**
+     * @brief selectUserFromWorldTable This method changes selectedUser object.
+     * @param userId
+     */
+    Q_INVOKABLE void selectUserFromWorldTable(const QString &userId);
 
     bool fog() const;
 
@@ -85,7 +100,8 @@ public:
 
     int onlineStatus() const;
 
-    QObject *bestUser() const;
+    QObject *bestUser();
+    QObject *selectedUser();
 
 public slots:
 
@@ -170,6 +186,8 @@ signals:
 
     void bestUserChanged(QObject* bestUser);
 
+    void selectedUserChanged(QObject* selectedUser);
+
 private slots:
     void handleChangeName(const QString&);
 
@@ -179,7 +197,7 @@ private slots:
 
     void handleOnlineRequestError(QH::ErrorCodes::Code, const QString&Errr);
 
-    void handleProfileChanged(QSharedPointer<LocalUser> profileId);
+    void handleAcceptUserData(QSharedPointer<LocalUser> profileId);
     void setOnlineStatus(QH::ClientStatus onlineStatus);
     void handleWorldChanged(QSharedPointer<WorldUpdate>);
     void handleWorldInited(QSet<UserPreview> initWorldList);
@@ -198,6 +216,7 @@ private:
 
     LocalUser _profile;
     LocalUser _bestUser;
+    LocalUser _selectedUser;
 
 
     HanoiClient *_client = nullptr;

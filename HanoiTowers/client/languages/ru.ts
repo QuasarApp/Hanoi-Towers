@@ -32,68 +32,68 @@
         <translation>Создать нового пользователя</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="147"/>
+        <location filename="../backEnd.cpp" line="151"/>
         <source>Connect error</source>
         <translation>Ошибка подключения</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="148"/>
+        <location filename="../backEnd.cpp" line="152"/>
         <source>Failed to connect to server please check network connection befor login</source>
         <translation>Ошибка подключения к серверу, пожалуйста проверьте интернет соединение перед входом</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="174"/>
+        <location filename="../backEnd.cpp" line="186"/>
         <source>login error</source>
         <translation>Ошибк входа</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="175"/>
+        <location filename="../backEnd.cpp" line="187"/>
         <source>Failed to login into online account, please check your password and username</source>
         <translation>Ошибка входа в онлайн аккаунт, пожалуйста проверьте свой логин и пароль</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="185"/>
+        <location filename="../backEnd.cpp" line="197"/>
         <source>Register online error</source>
         <translation>Ошибка регистрации</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="186"/>
+        <location filename="../backEnd.cpp" line="198"/>
         <source>Failed to register this account, if this account was created by you, try to restore it.</source>
         <translation>Не удалось зарегистрировать аккаунт, если этот аккаунт был создан вами попробуйте восстановить его.</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="196"/>
-        <location filename="../backEnd.cpp" line="218"/>
+        <location filename="../backEnd.cpp" line="208"/>
+        <location filename="../backEnd.cpp" line="230"/>
         <source>Server error</source>
         <translation>Ошибка сервера</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="203"/>
+        <location filename="../backEnd.cpp" line="215"/>
         <source>User with this id is not registered. If it you then use please the sigup form.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="211"/>
+        <location filename="../backEnd.cpp" line="223"/>
         <source>User with this id already registered. If it you then use please the login form.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="336"/>
+        <location filename="../backEnd.cpp" line="363"/>
         <source>Create user error</source>
         <translation>Ошибка создания пользователя</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="337"/>
+        <location filename="../backEnd.cpp" line="364"/>
         <source>Failed to create a new user, The name %0 alredy used.</source>
         <translation>Не удалось создать пользователя. Данное имя %0 уже используется</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="368"/>
+        <location filename="../backEnd.cpp" line="395"/>
         <source>current profile not online!</source>
         <translation>Текущий профиль не в сети!</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="368"/>
+        <location filename="../backEnd.cpp" line="395"/>
         <source>Remove online error</source>
         <translation>Ошибка удаления данных онлайн-пользователя</translation>
     </message>
@@ -192,17 +192,17 @@
 <context>
     <name>HanoiClient</name>
     <message>
-        <location filename="../hanoiclient.cpp" line="71"/>
+        <location filename="../hanoiclient.cpp" line="197"/>
         <source>Local user has been updated</source>
         <translation>Локальный пользователь обновлён</translation>
     </message>
     <message>
-        <location filename="../hanoiclient.cpp" line="71"/>
+        <location filename="../hanoiclient.cpp" line="197"/>
         <source>local user accept nbew data from the server.</source>
         <translation>Локальный пользователь принял новые данные с сервера.</translation>
     </message>
     <message>
-        <location filename="../hanoiclient.cpp" line="143"/>
+        <location filename="../hanoiclient.cpp" line="136"/>
         <source>Internal Error, server send invalid data, and this data can&apos;t be saved into local database.</source>
         <translation>Внутренняя ошибка, сервер отправил неверные данные, и эти данные не могут быть сохранены в локальной базе данных.</translation>
     </message>

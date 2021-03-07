@@ -61,7 +61,7 @@ QH::PKG::UserMember DataConverter::toUserMember(const QSharedPointer<LocalUser> 
 QH::PKG::UserMember DataConverter::toUserMember(const LocalUser &input) {
     QH::PKG::UserMember result;
     result.setId(input.getId());
-    result.setToken(input.token());
+    result.setSignToken(input.token());
     result.setAuthenticationData(input.hashPassword());
 
     return result;
