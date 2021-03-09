@@ -67,7 +67,6 @@ public:
 protected:
     QStringList SQLSources() const override;
     QH::HostAddress serverAddress() const override;
-    void incomingData(QH::PKG::AbstractData *pkg, const QH::AbstractNodeInfo *sender) override;
 
 signals:
     void userDataChanged(QSharedPointer<LocalUser>);
@@ -76,6 +75,7 @@ signals:
 
 private slots:
     void handleNewBestUser(QString userId);
+    void handleCurrentUserChanged();
 
 private:
 

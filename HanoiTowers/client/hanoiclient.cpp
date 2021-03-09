@@ -48,6 +48,10 @@ HanoiClient::HanoiClient() {
     connect(_world.data(), &WorldClient::sigBestUserChanged,
             this, &HanoiClient::handleNewBestUser,
             Qt::QueuedConnection);
+
+    connect(this, &HanoiClient::currentUserChanged,
+            this, &HanoiClient::handleCurrentUserChanged,
+            Qt::QueuedConnection);
 }
 
 HanoiClient::~HanoiClient() {
@@ -113,32 +117,6 @@ QStringList HanoiClient::SQLSources() const {
 
 QH::HostAddress HanoiClient::serverAddress() const {
     return QH::HostAddress{DEFAULT_HANOI_ADDRESS, DEFAULT_HANOI_PORT};
-}
-
-void HanoiClient::incomingData(AbstractData *pkg, const QH::AbstractNodeInfo *sender) {
-    Q_UNUSED(sender);
-
-    if (pkg->cmd() == H_16<UserMember>()) {
-        if (auto user = getLocalUser(static_cast<UserMember*>(pkg)->getId().toString())) {
-            user->setToken(static_cast<UserMember*>(pkg)->getSignToken());
-            user->setOnline(true);
-
-            if (auto database = db()) {
-
-                using SetSingleVal = QSharedPointer<QH::PKG::SetSingleValue>;
-
-                auto request = SetSingleVal::create(QH::DbAddress("Users", static_cast<UserMember*>(pkg)->getId().toString()),
-                                                    "token", static_cast<UserMember*>(pkg)->getSignToken().toBytes());
-
-                if (database->updateObject(request)) {
-                    emit userDataChanged(user);
-                } else {
-                    emit requestError(0, tr("Internal Error, server send invalid data,"
-                                     " and this data can't be saved into local database."));
-                }
-            }
-        }
-    }
 }
 
 QSharedPointer<LocalUser> HanoiClient::getLocalUser(const QString &userId) const {
@@ -326,5 +304,28 @@ void HanoiClient::handleNewBestUser(QString userId) {
     unsubscribe(QH::PKG::UserMember{_bestUserId}.subscribeId());
     _bestUserId = userId;
     subscribe(QH::PKG::UserMember{_bestUserId}.subscribeId());
+}
+
+void HanoiClient::handleCurrentUserChanged() {
+    auto member = getMember();
+    if (auto user = getLocalUser(member.getId().toString())) {
+        user->setToken(member.getSignToken());
+        user->setOnline(true);
+
+        if (auto database = db()) {
+
+            using SetSingleVal = QSharedPointer<QH::PKG::SetSingleValue>;
+
+            auto request = SetSingleVal::create(QH::DbAddress("Users", member.getId().toString()),
+                                                "token", member.getSignToken().toBytes());
+
+            if (database->updateObject(request)) {
+                emit userDataChanged(user);
+            } else {
+                emit requestError(0, tr("Internal Error, server send invalid data,"
+                                 " and this data can't be saved into local database."));
+            }
+        }
+    }
 }
 

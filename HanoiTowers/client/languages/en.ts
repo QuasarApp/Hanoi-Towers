@@ -74,22 +74,22 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="363"/>
+        <location filename="../backEnd.cpp" line="365"/>
         <source>Create user error</source>
         <translation>User create error</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="364"/>
+        <location filename="../backEnd.cpp" line="366"/>
         <source>Failed to create a new user, The name %0 alredy used.</source>
         <translation>Failed to create a new user, This name %0 alredy used.</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="395"/>
+        <location filename="../backEnd.cpp" line="397"/>
         <source>current profile not online!</source>
         <translation>Current profile is offline!</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="395"/>
+        <location filename="../backEnd.cpp" line="397"/>
         <source>Remove online error</source>
         <translation>Error remove online user data</translation>
     </message>

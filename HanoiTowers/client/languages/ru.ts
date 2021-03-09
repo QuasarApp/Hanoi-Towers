@@ -78,22 +78,22 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="363"/>
+        <location filename="../backEnd.cpp" line="365"/>
         <source>Create user error</source>
         <translation>Ошибка создания пользователя</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="364"/>
+        <location filename="../backEnd.cpp" line="366"/>
         <source>Failed to create a new user, The name %0 alredy used.</source>
         <translation>Не удалось создать пользователя. Данное имя %0 уже используется</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="395"/>
+        <location filename="../backEnd.cpp" line="397"/>
         <source>current profile not online!</source>
         <translation>Текущий профиль не в сети!</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="395"/>
+        <location filename="../backEnd.cpp" line="397"/>
         <source>Remove online error</source>
         <translation>Ошибка удаления данных онлайн-пользователя</translation>
     </message>

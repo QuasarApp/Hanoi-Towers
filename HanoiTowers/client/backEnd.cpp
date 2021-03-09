@@ -420,8 +420,6 @@ void BackEnd::setProfile(QString userId) {
     if (_client->setProfile(userId)) {
         emit profileChanged(userId);
 
-        _client->login(userId);
-
     } else {
         createProfile(userId, userId);
         _client->setProfile(userId);

@@ -78,22 +78,22 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="363"/>
+        <location filename="../backEnd.cpp" line="365"/>
         <source>Create user error</source>
         <translation>ユーザーエラーの作成</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="364"/>
+        <location filename="../backEnd.cpp" line="366"/>
         <source>Failed to create a new user, The name %0 alredy used.</source>
         <translation>新しいユーザーの作成に失敗しました。名前 %0 はすでに使用されています。</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="395"/>
+        <location filename="../backEnd.cpp" line="397"/>
         <source>current profile not online!</source>
         <translation>現在のプロファイルはオフラインです！</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="395"/>
+        <location filename="../backEnd.cpp" line="397"/>
         <source>Remove online error</source>
         <translation>オンラインユーザーデータの削除中にエラーが発生しました</translation>
     </message>
