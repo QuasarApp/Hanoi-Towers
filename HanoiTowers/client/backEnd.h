@@ -204,7 +204,6 @@ private slots:
 
 private:
     void init();
-    void updateBestUser();
 
     QuasarAppUtils::Settings *_settings = nullptr;
 

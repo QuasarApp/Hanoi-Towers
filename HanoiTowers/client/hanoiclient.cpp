@@ -229,9 +229,14 @@ bool HanoiClient::getUserData(const QString& userId) {
 
     UserDataRequest request;
     request.setId(userId);
-    request.setSignToken(getMember().getSignToken());
 
-    return restRequest(&request, {});
+    auto action = [this](const QSharedPointer<const QH::PKG::AbstractData> & resp) {
+        auto obj = resp.dynamicCast<const UserData>();
+        if (obj)
+            subscribe(obj->subscribeId());
+    };
+
+    return restRequest(&request, action);
 }
 
 bool HanoiClient::addProfile(const LocalUser& user) {
@@ -303,7 +308,20 @@ QList<UserPreview> HanoiClient::localUsersPreview() {
 void HanoiClient::handleNewBestUser(QString userId) {
     unsubscribe(QH::PKG::UserMember{_bestUserId}.subscribeId());
     _bestUserId = userId;
-    subscribe(QH::PKG::UserMember{_bestUserId}.subscribeId());
+
+    UserDataRequest request;
+    request.setId(userId);
+
+    auto action = [this](const QSharedPointer<const QH::PKG::AbstractData> & resp) {
+        auto obj = resp.dynamicCast<const UserData>();
+        if (obj)
+            subscribe(obj->subscribeId());
+    };
+
+    if (!restRequest(&request, action)) {
+        QuasarAppUtils::Params::log("Fail to get information about best user.",
+                                    QuasarAppUtils::Error);
+    }
 }
 
 void HanoiClient::handleCurrentUserChanged() {

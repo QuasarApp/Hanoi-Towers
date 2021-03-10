@@ -131,10 +131,6 @@ void BackEnd::init() {
 
 }
 
-void BackEnd::updateBestUser() {
-
-}
-
 void BackEnd::onlineRequest(const QString &userId) {
 
     if (_profile.token().isValid() && _client->login(userId)) {
