@@ -93,6 +93,9 @@ BackEnd::BackEnd(QQmlApplicationEngine *engine):
     connect(_client, &HanoiClient::worldInited,
             this, &BackEnd::handleWorldInited);
 
+    connect(_client, &HanoiClient::sigBestuserIdChanged,
+            this, &BackEnd::handleBestUserIdChanged);
+
     connect(&_profile, &LocalUser::nameChanged,
             this, &BackEnd::handleChangeName);
 
@@ -171,6 +174,10 @@ void BackEnd::handleChangeName(const QString & name) {
     emit profileChanged(name);
 }
 
+void BackEnd::handleBestUserIdChanged(const QString & userId) {
+    _bestUser.setId(userId);
+}
+
 void BackEnd::handleCreateNewProfile(const LoginView::UserData & data) {
     createProfile(data.nickname(), data.nickname());
 }
@@ -236,11 +243,15 @@ void BackEnd::handleAcceptUserData(QSharedPointer<LocalUser> data) {
 
         emit profileChanged(_profile.getId().toString());
 
-    } else if (_bestUser.getId() == data->getId()) {
+    }
+
+    if (_bestUser.getId() == data->getId()) {
         _bestUser.copyFrom(data.data());
         emit bestUserChanged(&_bestUser);
 
-    } else if (_selectedUser.getId() == data->getId()) {
+    }
+
+    if (_selectedUser.getId() == data->getId()) {
         _selectedUser.copyFrom(data.data());
         emit selectedUserChanged(&_selectedUser);
 

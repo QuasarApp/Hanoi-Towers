@@ -306,8 +306,14 @@ QList<UserPreview> HanoiClient::localUsersPreview() {
 }
 
 void HanoiClient::handleNewBestUser(QString userId) {
+    if (_bestUserId == userId) {
+        return;
+    }
+
     unsubscribe(QH::PKG::UserMember{_bestUserId}.subscribeId());
     _bestUserId = userId;
+
+    emit sigBestuserIdChanged(_bestUserId);
 
     UserDataRequest request;
     request.setId(userId);

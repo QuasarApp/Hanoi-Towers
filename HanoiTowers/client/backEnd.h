@@ -190,6 +190,7 @@ signals:
 
 private slots:
     void handleChangeName(const QString&);
+    void handleBestUserIdChanged(const QString&userId);
 
     void handleCreateNewProfile(const LoginView::UserData&);
     void handleOnlineRequest(const LoginView::UserData&);

@@ -70,6 +70,8 @@ protected:
 
 signals:
     void userDataChanged(QSharedPointer<LocalUser>);
+    void sigBestuserIdChanged(const QString &userId);
+
     void worldChanged(QSharedPointer<WorldUpdate>);
     void worldInited(QSet<UserPreview>);
 
