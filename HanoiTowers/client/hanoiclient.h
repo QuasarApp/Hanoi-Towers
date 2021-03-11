@@ -73,7 +73,7 @@ signals:
     void sigBestuserIdChanged(const QString &userId);
 
     void worldChanged(QSharedPointer<WorldUpdate>);
-    void worldInited(QSet<UserPreview>);
+    void worldInited(QHash<QString, UserPreview>);
 
 private slots:
     void handleNewBestUser(QString userId);

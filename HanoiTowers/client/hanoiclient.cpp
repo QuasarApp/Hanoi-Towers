@@ -35,8 +35,10 @@ HanoiClient::HanoiClient() {
               new QH::SqlDBWriter());
 
     qRegisterMetaType<QSharedPointer<LocalUser>>();
-    qRegisterMetaType<QSet<UserPreview>>();
+    qRegisterMetaType<QHash<QString,UserPreview>>();
     qRegisterMetaType<QSharedPointer<UserPreview>>();
+    qRegisterMetaType<WorldUpdate>();
+    qRegisterMetaType<QSharedPointer<WorldUpdate>>();
 
     registerPackageType<UserData>();
     registerPackageType<FixWorldRequest>();
@@ -269,6 +271,7 @@ bool HanoiClient::setProfile(const QString &userId,
     }
 
     emit userDataChanged(user);
+    resetUser();
 
     if ( user->online() && connectToServer()) {
         auto userMember = DataConverter::toUserMember(user);

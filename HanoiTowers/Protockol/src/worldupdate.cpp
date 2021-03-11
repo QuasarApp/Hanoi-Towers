@@ -60,18 +60,18 @@ void WorldUpdate::setWorldVersion(unsigned int worldVersion) {
     _worldVersion = worldVersion;
 }
 
-const QSet<UserPreview>& WorldUpdate::getDataRemove() const {
+const QSet<QString>& WorldUpdate::getDataRemove() const {
     return _dataRemove;
 }
 
-void WorldUpdate::setDataRemove(const QSet<UserPreview> &dataRemove) {
+void WorldUpdate::setDataRemove(const QSet<QString> &dataRemove) {
     _dataRemove = dataRemove;
 }
 
-const QSet<UserPreview>& WorldUpdate::getDataAddUpdate() const {
+const QHash<QString, UserPreview> &WorldUpdate::getDataAddUpdate() const {
     return _dataAddUpdate;
 }
 
-void WorldUpdate::setDataAddUpdate(const QSet<UserPreview> &dataAddUpdate) {
+void WorldUpdate::setDataAddUpdate(const QHash<QString, UserPreview> &dataAddUpdate) {
     _dataAddUpdate = dataAddUpdate;
 }

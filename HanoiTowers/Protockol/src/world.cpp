@@ -13,7 +13,7 @@ bool World::fromSqlRecord(const QSqlRecord &q) {
     data.userName = q.value("userName").toString();
     data.record = q.value("points").toInt();
 
-    softUpdatePrivate({data});
+    softUpdatePrivate({{data.id, data}});
 
     return true;
 }
@@ -89,29 +89,30 @@ bool World::softUpdate(const WorldUpdate &update) {
         return false;
     }
 
-    _data -= update.getDataRemove();
-
+    for (const auto& removeVal : qAsConst(update.getDataRemove())) {
+        _data.remove(removeVal);
+    }
 
     return true;
 }
 
-bool World::softUpdatePrivate(const QSet<UserPreview>& val) {
+bool World::softUpdatePrivate(const QHash<QString, UserPreview>& val) {
 
     QString bestid = getBestUserId();
-    auto it = _data.find(UserPreview(bestid));
+    auto it = _data.value(bestid);
     int bestRecord = 0;
-    if (it != _data.end()) {
-        bestRecord = (*it).record;
+    if (_data.contains(bestid)) {
+        bestRecord = _data[bestid].record;
     }
 
     bool userChanged = false;
-    for (const auto &item : val) {
-        if (item.record >= bestRecord) {
-            bestRecord = item.record;
-            bestid = item.id;
+    for (auto item = val.begin(); item != val.end(); ++item ) {
+        if (item->record >= bestRecord) {
+            bestRecord = item->record;
+            bestid = item->id;
             userChanged = true;
         }
-        _data += item;
+        _data[item.key()] = *item;
     }
 
     if (userChanged) {
@@ -123,8 +124,13 @@ bool World::softUpdatePrivate(const QSet<UserPreview>& val) {
 
 bool World::hardUpdate(const WorldUpdate &update) {
 
-    _data += update.getDataAddUpdate();
-    _data -= update.getDataRemove();
+    for (const auto& removeVal : qAsConst(update.getDataAddUpdate())) {
+        _data.insert(removeVal.id, removeVal);
+    }
+
+    for (const auto& removeVal : qAsConst(update.getDataRemove())) {
+        _data.remove(removeVal);
+    }
 
     if (_data.size()) {
         QString newBest = fullSearch()->id;
@@ -137,7 +143,7 @@ bool World::hardUpdate(const WorldUpdate &update) {
     return true;
 }
 
-QSet<UserPreview>::ConstIterator World::fullSearch() const {
+QHash<QString, UserPreview>::ConstIterator World::fullSearch() const {
     auto lessThen = [](const UserPreview & left, const UserPreview &right) {
         return left.record <= right.record;
     };
@@ -160,11 +166,11 @@ unsigned int World::getWorldVersion() const {
     return _worldVersion;
 }
 
-QSet<UserPreview> World::getData() const {
+QHash<QString, UserPreview> World::getData() const {
     return _data;
 }
 
-void World::setData(const QSet<UserPreview> &data) {
+void World::setData(const QHash<QString, UserPreview> &data) {
     _data = data;
 }
 
@@ -173,9 +179,9 @@ bool World::applyUpdate(const WorldUpdate &update) {
     if (update.getWorldVersion() != _worldVersion + 1) {
         return false;
     }
-    auto oldBestUser = UserPreview{getBestUserId()};
-    if (update.getDataRemove().contains(oldBestUser) ||
-        update.getDataAddUpdate().contains(oldBestUser)) {
+
+    if (update.getDataRemove().contains(getBestUserId()) ||
+        update.getDataAddUpdate().contains(getBestUserId())) {
 
         hardUpdate(update);
     } else {

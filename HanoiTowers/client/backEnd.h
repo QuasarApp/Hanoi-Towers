@@ -201,7 +201,7 @@ private slots:
     void handleAcceptUserData(QSharedPointer<LocalUser> profileId);
     void setOnlineStatus(QH::ClientStatus onlineStatus);
     void handleWorldChanged(QSharedPointer<WorldUpdate>);
-    void handleWorldInited(QSet<UserPreview> initWorldList);
+    void handleWorldInited(QHash<QString, UserPreview> initWorldList);
 
 private:
     void init();

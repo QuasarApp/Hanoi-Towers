@@ -32,68 +32,68 @@
         <translation>Yeni kullanıcı oluştur</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="147"/>
+        <location filename="../backEnd.cpp" line="149"/>
         <source>Connect error</source>
         <translation>Bağlantı hatası</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="148"/>
+        <location filename="../backEnd.cpp" line="150"/>
         <source>Failed to connect to server please check network connection befor login</source>
         <translation>Sunucuya bağlanılamadı, lütfen oturum açmadan önce ağ bağlantısını kontrol edin</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="182"/>
+        <location filename="../backEnd.cpp" line="188"/>
         <source>login error</source>
         <translation>sisteme giriş hatası</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="183"/>
+        <location filename="../backEnd.cpp" line="189"/>
         <source>Failed to login into online account, please check your password and username</source>
         <translation>Çevrimiçi hesaba giriş yapılamadı, lütfen şifrenizi ve kullanıcı adınızı kontrol edin</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="193"/>
+        <location filename="../backEnd.cpp" line="199"/>
         <source>Register online error</source>
         <translation>Çevrimiçi kayıt hatası</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="194"/>
+        <location filename="../backEnd.cpp" line="200"/>
         <source>Failed to register this account, if this account was created by you, try to restore it.</source>
         <translation>Bu hesap kaydedilemedi, bu hesap sizin tarafınızdan oluşturulduysa, geri yüklemeyi deneyin.</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="204"/>
-        <location filename="../backEnd.cpp" line="226"/>
+        <location filename="../backEnd.cpp" line="210"/>
+        <location filename="../backEnd.cpp" line="232"/>
         <source>Server error</source>
         <translation>Server hatası</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="211"/>
+        <location filename="../backEnd.cpp" line="217"/>
         <source>User with this id is not registered. If it you then use please the sigup form.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="219"/>
+        <location filename="../backEnd.cpp" line="225"/>
         <source>User with this id already registered. If it you then use please the login form.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="361"/>
+        <location filename="../backEnd.cpp" line="371"/>
         <source>Create user error</source>
         <translation>Kullanıcı hatası oluştur</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="362"/>
+        <location filename="../backEnd.cpp" line="372"/>
         <source>Failed to create a new user, The name %0 alredy used.</source>
         <translation>Yeni bir kullanıcı oluşturulamadı, %0 adı kullanıldı.</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="393"/>
+        <location filename="../backEnd.cpp" line="403"/>
         <source>current profile not online!</source>
         <translation>Mevcut profil çevrimdışı!</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="393"/>
+        <location filename="../backEnd.cpp" line="403"/>
         <source>Remove online error</source>
         <translation>Çevrimiçi kullanıcı verilerini kaldırma hatası</translation>
     </message>
@@ -193,17 +193,17 @@ Bu seviye için minimum adımlar: %2</translation>
 <context>
     <name>HanoiClient</name>
     <message>
-        <location filename="../hanoiclient.cpp" line="175"/>
+        <location filename="../hanoiclient.cpp" line="177"/>
         <source>Local user has been updated</source>
         <translation>Yerel kullanıcı güncellendi</translation>
     </message>
     <message>
-        <location filename="../hanoiclient.cpp" line="175"/>
+        <location filename="../hanoiclient.cpp" line="177"/>
         <source>local user accept nbew data from the server.</source>
         <translation>yerel kullanıcı sunucudan yeni verileri kabul eder.</translation>
     </message>
     <message>
-        <location filename="../hanoiclient.cpp" line="343"/>
+        <location filename="../hanoiclient.cpp" line="352"/>
         <source>Internal Error, server send invalid data, and this data can&apos;t be saved into local database.</source>
         <translation>Dahili Hata, sunucu geçersiz veri gönderdi ve bu veriler yerel veritabanına kaydedilemez.</translation>
     </message>

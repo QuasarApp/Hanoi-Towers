@@ -31,8 +31,8 @@ public:
 
     void setSignToken(const QH::AccessToken &token) override;
 
-    QSet<UserPreview> getData() const;
-    void setData(const QSet<UserPreview> &data);
+    QHash<QString, UserPreview> getData() const;
+    void setData(const QHash<QString, UserPreview> &data);
     bool applyUpdate(const WorldUpdate& update);
     unsigned int getWorldVersion() const;
     const QString &getBestUserId() const;
@@ -49,12 +49,12 @@ protected:
 
 private:
     bool softUpdate(const WorldUpdate& update);
-    bool softUpdatePrivate(const QSet<UserPreview> &);
+    bool softUpdatePrivate(const QHash<QString, UserPreview> &);
     bool hardUpdate(const WorldUpdate& update);
 
-    QSet<UserPreview>::ConstIterator fullSearch() const;
+    QHash<QString, UserPreview>::ConstIterator fullSearch() const;
 
-    QSet<UserPreview> _data;
+    QHash<QString, UserPreview> _data;
     QH::AccessToken _token;
     unsigned int _subscribeId;
     unsigned int _worldVersion = 0;

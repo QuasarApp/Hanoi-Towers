@@ -28,11 +28,11 @@ public:
     void setSignToken(const QH::AccessToken &) override;
 
     // StreamBase interface
-    const QSet<UserPreview> &getDataAddUpdate() const;
-    void setDataAddUpdate(const QSet<UserPreview> &dataAddUpdate);
+    const QHash<QString, UserPreview> &getDataAddUpdate() const;
+    void setDataAddUpdate(const QHash<QString, UserPreview> &dataAddUpdate);
 
-    const QSet<UserPreview>& getDataRemove() const;
-    void setDataRemove(const QSet<UserPreview> &dataRemove);
+    const QSet<QString> &getDataRemove() const;
+    void setDataRemove(const QSet<QString> &dataRemove);
 
     unsigned int getWorldVersion() const;
     void setWorldVersion(unsigned int worldVersion);
@@ -43,8 +43,8 @@ protected:
 
 private:
 
-    QSet<UserPreview> _dataAddUpdate;
-    QSet<UserPreview> _dataRemove;
+    QHash<QString, UserPreview> _dataAddUpdate;
+    QSet<QString> _dataRemove;
     QH::AccessToken _token;
     unsigned int _subscribeId;
     unsigned int _worldVersion = 0;
@@ -52,4 +52,6 @@ private:
 
 };
 
+Q_DECLARE_METATYPE(WorldUpdate)
+Q_DECLARE_METATYPE(QSharedPointer<WorldUpdate>)
 #endif // WORLDUPDATE_H

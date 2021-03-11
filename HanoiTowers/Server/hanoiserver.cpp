@@ -153,9 +153,9 @@ void HanoiServer::updateWorld(const UserPreview &user, bool isRemove) {
     update->setWorldVersion(_world->getWorldVersion() + 1);
 
     if (isRemove)
-        update->setDataRemove({user});
+        update->setDataRemove({user.id});
     else
-        update->setDataAddUpdate({user});
+        update->setDataAddUpdate({{user.id, user}});
 
     _worldHistory[update->getWorldVersion()] = update;
 

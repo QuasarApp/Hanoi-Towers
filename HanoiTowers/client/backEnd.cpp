@@ -69,22 +69,22 @@ BackEnd::BackEnd(QQmlApplicationEngine *engine):
     engine->addImageProvider("HanoiImages", _imageProvider);
 
 
-    connect(_loginModel , &LoginView::LVMainModel::sigLoginRequest,
+    connect(_loginModel, &LoginView::LVMainModel::sigLoginRequest,
             this, &BackEnd::handleOnlineRequest);
 
-    connect(_loginModel , &LoginView::LVMainModel::sigRegisterRequest,
+    connect(_loginModel, &LoginView::LVMainModel::sigRegisterRequest,
             this, &BackEnd::handleOnlineRegisterRequest);
 
     connect(_createNewOfflineUser , &LoginView::LVMainModel::sigRegisterRequest,
             this, &BackEnd::handleCreateNewProfile);
 
-    connect(_client , &HanoiClient::requestError,
+    connect(_client, &HanoiClient::requestError,
             this, &BackEnd::handleOnlineRequestError);
 
-    connect(_client , &HanoiClient::userDataChanged,
+    connect(_client, &HanoiClient::userDataChanged,
             this, &BackEnd::handleAcceptUserData);
 
-    connect(_client , &HanoiClient::statusChanged,
+    connect(_client, &HanoiClient::statusChanged,
             this, &BackEnd::setOnlineStatus);
 
     connect(_client, &HanoiClient::worldChanged,
@@ -101,7 +101,6 @@ BackEnd::BackEnd(QQmlApplicationEngine *engine):
 
     setProfile(_settings->getStrValue(CURRENT_PROFILE_KEY, DEFAULT_USER_ID));
     init();
-
 }
 
 void BackEnd::init() {
@@ -501,10 +500,10 @@ void BackEnd::handleWorldChanged(QSharedPointer<WorldUpdate> delta) {
     }
 
     for (const auto &val: qAsConst(delta->getDataRemove())) {
-        _world->removeSourceItem(val.id);
+        _world->removeSourceItem(val);
     }
 }
 
-void BackEnd::handleWorldInited(QSet<UserPreview> initWorldList) {
+void BackEnd::handleWorldInited(QHash<QString, UserPreview> initWorldList) {
     _world->setSource({initWorldList.begin(), initWorldList.end()});
 }

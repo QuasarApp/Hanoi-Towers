@@ -47,6 +47,7 @@ void RecordListModel::setSource(const QList<UserPreview> &data) {
 void RecordListModel::updateAddSourceItem(const UserPreview &data) {
     auto row = _data.indexOf(data);
     if (row >= 0) {
+        _data[row] = data;
         emit dataChanged(index(row, 0), index(row, 0));
     } else {
         beginInsertRows({}, _data.size(), _data.size());
