@@ -129,7 +129,7 @@ bool HanoiServer::workWirthUserData(const UserData *obj,
         return false;
     }
 
-    return sendData(userData.data(), sender->networkAddress());
+    return sendData(userData.data(), sender->networkAddress(), oldHeader);
 }
 
 void HanoiServer::updateUserInWorld(const UserData *data) {

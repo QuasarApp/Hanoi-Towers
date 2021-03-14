@@ -163,6 +163,8 @@ ProfileData *LocalUser::userData() {
 
 void LocalUser::setUserData(const ProfileData &userData) {
     _userData = userData;
+    _avatarHash = qHash(_userData._avatar);
+
 }
 
 QH::AccessToken LocalUser::token() const {
@@ -205,11 +207,13 @@ void LocalUser::setRecord(int record) {
 }
 
 void LocalUser::setAvatar(const QByteArray& avatar) {
-    if (_userData._avatar == avatar)
+    auto hash = qHash(avatar);
+
+    if (_avatarHash == hash)
         return;
 
     _userData._avatar = avatar;
-    _avatarHash = qHash(avatar);
+    _avatarHash = hash;
     emit avatarChanged(_avatarHash);
 
 }

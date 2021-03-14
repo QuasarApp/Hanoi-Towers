@@ -45,7 +45,7 @@ BackEnd::BackEnd(QQmlApplicationEngine *engine):
     _recordsTable   = new RecordListModel(this);
     _world          = new RecordListModel(this);
 
-    _imageProvider = new HanoiImageProvider(&_profile);
+    _imageProvider = new HanoiImageProvider(_client->getUsersCache());
     _dataConverter = new DataConverter;
 
     _loginModel->setComponents(LoginView::Nickname |
@@ -321,7 +321,7 @@ void BackEnd::setNewAvatar(QString pathToAvatar) {
     img.save(&buf, "PNG");
     buf.close();
 
-    _profile.setAvatar(arr);
+    _client->setNewAvatar(_profile.getId().toString(), arr);
 
 }
 

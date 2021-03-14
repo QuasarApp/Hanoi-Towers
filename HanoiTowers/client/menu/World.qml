@@ -46,6 +46,10 @@ Item {
         id: privateRoot
 
         function showUser(id) {
+            if (backEnd)
+                backEnd.selectUserFromWorldTable(id);
+
+            preview.open()
 
         }
     }

@@ -17,7 +17,9 @@ class LocalUser;
 class AsyncImageResponse : public QQuickImageResponse, public QRunnable
 {
     public:
-        AsyncImageResponse(const QString &id, const QSize &requestedSize, const LocalUser *client);
+        AsyncImageResponse(const QString &id,
+                           const QSize &requestedSize,
+                           const QHash<QString, QSharedPointer<LocalUser>>* cache);
 
         QQuickTextureFactory *textureFactory() const override;
 
@@ -28,14 +30,14 @@ class AsyncImageResponse : public QQuickImageResponse, public QRunnable
         QQuickTextureFactory *m_texture;
 
 private:
-        const LocalUser *_currentUser = nullptr;
+        const QHash<QString, QSharedPointer<LocalUser>>* _cache = nullptr;
 };
 
 
 class HanoiImageProvider: public QQuickAsyncImageProvider
 {
 public:
-    HanoiImageProvider(const LocalUser *user);
+    HanoiImageProvider(const QHash<QString, QSharedPointer<LocalUser>> *cache);
     void stop();
     ~HanoiImageProvider() override;
 
@@ -43,7 +45,7 @@ public:
 
 private:
     QThreadPool *_pool = nullptr;
-    const LocalUser *_currentUser = nullptr;
+    const QHash<QString, QSharedPointer<LocalUser>>* _cache = nullptr;
 };
 
 #endif // HANOIIMAGEPROVIDER_H

@@ -27,6 +27,9 @@ public:
     static QSharedPointer<UserData> toUserDataPtr(const QSharedPointer<LocalUser>& input);
     static QSharedPointer<UserData> toUserDataPtr(const LocalUser& input);
 
+    static QSharedPointer<LocalUser> toLocalUser(const QSharedPointer<UserData>& input);
+    static QSharedPointer<LocalUser> toLocalUser(const UserData& input);
+
     static QH::PKG::UserMember toUserMember(const QSharedPointer<LocalUser>& input);
     static QH::PKG::UserMember toUserMember(const LocalUser& input);
 

@@ -202,7 +202,7 @@
         <translation>ローカルユーザはサーバからNBEWデータを受け入れます。</translation>
     </message>
     <message>
-        <location filename="../hanoiclient.cpp" line="352"/>
+        <location filename="../hanoiclient.cpp" line="363"/>
         <source>Internal Error, server send invalid data, and this data can&apos;t be saved into local database.</source>
         <translation>内部エラー、サーバーが無効なデータを送信し、このデータをローカルデータベースに保存することはできません。</translation>
     </message>

@@ -22,7 +22,7 @@ GridLayout {
         Layout.rowSpan: 1
         Image {
             id: userAvatar
-            source: "image://HanoiImages/" + ((userModel)? userModel.avatarHash: "")
+            source: "image://HanoiImages/" + ((userModel)? userModel.userId + ":" + userModel.avatarHash: "")
             anchors.fill: parent
 
             fillMode: Image.PreserveAspectFit

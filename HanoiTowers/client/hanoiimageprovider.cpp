@@ -12,13 +12,13 @@
 #include <QThread>
 #include <QThreadPool>
 
-HanoiImageProvider::HanoiImageProvider(const LocalUser *user) {
+HanoiImageProvider::HanoiImageProvider(const QHash<QString, QSharedPointer<LocalUser> > *cache) {
     _pool = new QThreadPool();
-    _currentUser = user;
+    _cache = cache;
 }
 
 void HanoiImageProvider::stop() {
-    _currentUser = nullptr;
+    _cache = nullptr;
 }
 
 HanoiImageProvider::~HanoiImageProvider() {
@@ -28,15 +28,15 @@ HanoiImageProvider::~HanoiImageProvider() {
 QQuickImageResponse *HanoiImageProvider::requestImageResponse(const QString &id,
                                                               const QSize &requestedSize) {
 
-    AsyncImageResponse *response = new AsyncImageResponse(id, requestedSize, _currentUser);
+    AsyncImageResponse *response = new AsyncImageResponse(id, requestedSize, _cache);
     _pool->start(response);
     return response;
 
 }
 
 AsyncImageResponse::AsyncImageResponse(const QString &id, const QSize &requestedSize,
-                                       const LocalUser *client)
-    : m_id(id), m_requestedSize(requestedSize), m_texture(0), _currentUser(client) {
+                                       const QHash<QString, QSharedPointer<LocalUser> > *cache)
+    : m_id(id), m_requestedSize(requestedSize), m_texture(0), _cache(cache) {
     setAutoDelete(false);
 }
 
@@ -45,12 +45,18 @@ QQuickTextureFactory *AsyncImageResponse::textureFactory() const {
 }
 
 void AsyncImageResponse::run() {
-    if (!_currentUser) {
+    if (!_cache) {
         emit finished();
         return;
     }
 
-    QByteArray imageData = _currentUser->avatarData();
+    auto ids = m_id.split(":");
+    QByteArray imageData;
+
+    if (ids.size() && _cache->contains(ids[0])) {
+        imageData = _cache->value(ids[0])->avatarData();
+
+    }
 
     QImage image;
     if (imageData.size()) {

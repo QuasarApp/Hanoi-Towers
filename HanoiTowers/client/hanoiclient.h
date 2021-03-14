@@ -64,6 +64,13 @@ public:
      */
     bool getUserData(const QString &userId);
 
+    /**
+     * @brief getUsersCache return a pointer to the cache of users.
+     * @return
+     */
+    const QHash<QString, QSharedPointer<LocalUser> >*
+    getUsersCache() const;
+
 protected:
     QStringList SQLSources() const override;
     QH::HostAddress serverAddress() const override;
@@ -89,6 +96,7 @@ private:
     bool isOnlineAndLoginned(const QSharedPointer<LocalUser>& data);
 
     bool workWithUserData(const QSharedPointer<UserData> & userData);
+    void updateLocalCache(const QSharedPointer<LocalUser> &localUser);
 
     QHash<QString, QSharedPointer<LocalUser>> _usersCache;
     QSharedPointer<WorldClient> _world;

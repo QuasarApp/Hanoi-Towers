@@ -203,7 +203,7 @@
         <translation>локальний користувач приймає нові дані з сервера.</translation>
     </message>
     <message>
-        <location filename="../hanoiclient.cpp" line="352"/>
+        <location filename="../hanoiclient.cpp" line="363"/>
         <source>Internal Error, server send invalid data, and this data can&apos;t be saved into local database.</source>
         <translation>Внутрішня помилка, сервер надсилає недійсні дані, і ці дані не можна зберегти в локальній базі даних.</translation>
     </message>

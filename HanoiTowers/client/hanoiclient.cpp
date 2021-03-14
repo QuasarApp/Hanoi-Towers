@@ -159,13 +159,18 @@ bool HanoiClient::isOnlineAndLoginned(const QSharedPointer<LocalUser> &data) {
 
 }
 
+void HanoiClient::updateLocalCache(const QSharedPointer<LocalUser>& localUser) {
+    _usersCache[localUser->getId().toString()] = localUser;
+
+    emit userDataChanged(localUser);
+
+}
+
 bool HanoiClient::workWithUserData(const QSharedPointer<UserData>& obj) {
     auto userId = getMember().getId();
 
-    QSharedPointer<LocalUser> localUser;
-
     if (userId == obj->getId()) {
-        localUser = getLocalUser(obj->getId().toString());
+        QSharedPointer<LocalUser> localUser = getLocalUser(obj->getId().toString());
 
         if (obj->updateTime() > localUser->updateTime()) {
             localUser->setUserData(obj->userData());
@@ -178,16 +183,19 @@ bool HanoiClient::workWithUserData(const QSharedPointer<UserData>& obj) {
                         QmlNotificationService::NotificationData::Normal);
 
         }
+
+        emit userDataChanged(localUser);
+
     } else {
-        localUser = QSharedPointer<LocalUser>::create();
-        localUser->setUserData(obj->userData());
-        _usersCache[obj->getId().toString()] = localUser;
+        updateLocalCache(DataConverter::toLocalUser(obj));
     }
 
-    emit userDataChanged(localUser);
-
-
     return true;
+}
+
+const QHash<QString, QSharedPointer<LocalUser>>*
+HanoiClient::getUsersCache() const {
+    return &_usersCache;
 }
 
 bool HanoiClient::setNewAvatar(const QString &userId, const QByteArray &image) {
@@ -204,6 +212,7 @@ bool HanoiClient::setNewAvatar(const QString &userId, const QByteArray &image) {
         }
 
         obj->setAvatar(image);
+        updateLocalCache(obj);
 
         if (isOnlineAndLoginned(obj)) {
             return sendUserData(DataConverter::toUserDataPtr(obj));
@@ -224,6 +233,9 @@ bool HanoiClient::subscribeToWorld() {
 }
 
 bool HanoiClient::getUserData(const QString& userId) {
+    if (userId.isEmpty())
+        return false;
+
     if (_usersCache.contains(userId)) {
         emit userDataChanged(_usersCache[userId]);
         return true;
@@ -270,6 +282,8 @@ bool HanoiClient::setProfile(const QString &userId,
         *selectedProfileData = user;
     }
 
+    _usersCache[user->getId().toString()] = user;
+
     emit userDataChanged(user);
     resetUser();
 
@@ -277,6 +291,7 @@ bool HanoiClient::setProfile(const QString &userId,
         auto userMember = DataConverter::toUserMember(user);
         login(userMember);
     }
+
 
     return true;
 }

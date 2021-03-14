@@ -191,7 +191,7 @@
         <translation>Local user accept new data from the server.</translation>
     </message>
     <message>
-        <location filename="../hanoiclient.cpp" line="352"/>
+        <location filename="../hanoiclient.cpp" line="363"/>
         <source>Internal Error, server send invalid data, and this data can&apos;t be saved into local database.</source>
         <translation>Internal Error, server send invalid data, and this data can&apos;t be saved into local database.</translation>
     </message>

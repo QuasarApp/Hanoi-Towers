@@ -54,6 +54,20 @@ QSharedPointer<UserData> DataConverter::toUserDataPtr(const LocalUser &input) {
     return result;
 }
 
+QSharedPointer<LocalUser> DataConverter::toLocalUser(const QSharedPointer<UserData> &input) {
+    return toLocalUser(*input.data());
+}
+
+QSharedPointer<LocalUser> DataConverter::toLocalUser(const UserData &input) {
+    auto result = QSharedPointer<LocalUser>::create();
+    result->setId(input.getId());
+    result->setUpdateTime(input.updateTime());
+    result->setUserData(input.userData());
+    result->setToken(input.getSignToken());
+
+    return result;
+}
+
 QH::PKG::UserMember DataConverter::toUserMember(const QSharedPointer<LocalUser> &input) {
     return toUserMember(*input.data());
 }
