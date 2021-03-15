@@ -21,6 +21,7 @@
 #include <worldupdate.h>
 #include "dataconverter.h"
 #include "localuser.h"
+#include "recordsproxymodel.h"
 
 #define DEFAULT_USER_ID "DefaultUser"
 #define DEFAULT_USER_NAME "User"
@@ -44,6 +45,12 @@ BackEnd::BackEnd(QQmlApplicationEngine *engine):
 
     _recordsTable   = new RecordListModel(this);
     _world          = new RecordListModel(this);
+    _worldProxy     = new RecordsProxyModel(this);
+
+    _worldProxy->setSourceModel(_world);
+    _worldProxy->setDynamicSortFilter(true);
+    _worldProxy->setSortRole(RecordListModel::RecordListModelRoles::Record);
+    _worldProxy->sort(0, Qt::SortOrder::DescendingOrder);
 
     _imageProvider = new HanoiImageProvider(_client->getUsersCache());
     _dataConverter = new DataConverter;
@@ -169,7 +176,7 @@ QObject *BackEnd::selectedUser() {
     return &_selectedUser;
 }
 
-void BackEnd::handleChangeName(const QString & name) {
+void BackEnd::handleChangeName(const QString &) {
     emit profileChanged();
 }
 
@@ -357,7 +364,7 @@ QObject* BackEnd::profileList() {
 }
 
 QObject *BackEnd::worldList() {
-    return _world;
+    return _worldProxy;
 }
 
 bool BackEnd::createProfile(const QString& userId, const QString &userName) {

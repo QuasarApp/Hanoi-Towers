@@ -45,6 +45,7 @@ Item {
 
         start(-1);
     }
+
     function load () {
 
         stateData.load();

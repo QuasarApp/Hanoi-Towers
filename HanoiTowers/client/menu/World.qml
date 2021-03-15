@@ -9,13 +9,34 @@ Item {
         id: gridLayout
 
         rows: 2
-        columns: 1
+        columns: 3
 
         anchors.fill: parent
+
+        Item {
+            Layout.fillWidth: true
+            Text {
+                text: "BEST IMG"
+                anchors.fill: parent
+                horizontalAlignment: Text.AlignHCenter
+                verticalAlignment: Text.AlignVCenter
+            }
+        }
 
         UserView {
             userModel: (backEnd)? backEnd.bestUser: null
             editable: false;
+        }
+
+        Item {
+            Layout.fillWidth: true
+            Text {
+                text: "BEST IMG"
+                anchors.fill: parent
+                horizontalAlignment: Text.AlignHCenter
+                verticalAlignment: Text.AlignVCenter
+
+            }
         }
 
         UsersTable {
@@ -23,6 +44,7 @@ Item {
             Layout.fillWidth: true
             model: (backEnd)? backEnd.worldList: null
             state: "World"
+            Layout.columnSpan: 3
 
             onUserSelected: {
                 privateRoot.showUser(userId);

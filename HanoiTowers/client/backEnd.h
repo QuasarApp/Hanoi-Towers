@@ -32,6 +32,7 @@ class QQmlApplicationEngine;
 class RecordListModel;
 class HanoiImageProvider;
 class DataConverter;
+class RecordsProxyModel;
 
 class BackEnd: public QObject
 {
@@ -211,6 +212,7 @@ private:
 
     RecordListModel * _recordsTable = nullptr;
     RecordListModel * _world = nullptr;
+    RecordsProxyModel * _worldProxy = nullptr;
 
     LocalUser _profile;
     LocalUser _bestUser;

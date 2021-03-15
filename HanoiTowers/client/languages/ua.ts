@@ -398,37 +398,37 @@
         <translation type="vanished">Ханої вежі</translation>
     </message>
     <message>
-        <location filename="../menu/MainMenu.qml" line="52"/>
+        <location filename="../menu/MainMenu.qml" line="53"/>
         <source>continue</source>
         <translation>Продовжувати</translation>
     </message>
     <message>
-        <location filename="../menu/MainMenu.qml" line="66"/>
+        <location filename="../menu/MainMenu.qml" line="67"/>
         <source>start</source>
         <translation>Почати</translation>
     </message>
     <message>
-        <location filename="../menu/MainMenu.qml" line="77"/>
+        <location filename="../menu/MainMenu.qml" line="78"/>
         <source>HanoiTowers World</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../menu/MainMenu.qml" line="90"/>
+        <location filename="../menu/MainMenu.qml" line="91"/>
         <source>About</source>
         <translation>Про автора</translation>
     </message>
     <message>
-        <location filename="../menu/MainMenu.qml" line="101"/>
+        <location filename="../menu/MainMenu.qml" line="102"/>
         <source>Config</source>
         <translation>Конфігурація</translation>
     </message>
     <message>
-        <location filename="../menu/MainMenu.qml" line="113"/>
+        <location filename="../menu/MainMenu.qml" line="114"/>
         <source>Users</source>
         <translation>Користувачі</translation>
     </message>
     <message>
-        <location filename="../menu/MainMenu.qml" line="124"/>
+        <location filename="../menu/MainMenu.qml" line="125"/>
         <source>exit</source>
         <translation>Вихід</translation>
     </message>
