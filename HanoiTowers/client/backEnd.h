@@ -41,7 +41,7 @@ class BackEnd: public QObject
     Q_PROPERTY(bool fog READ fog WRITE setFog NOTIFY fogChanged)
     Q_PROPERTY(bool fogAnimation READ fogAnimation WRITE setFogAnimation NOTIFY fogAnimationChanged)
 
-    Q_PROPERTY(GameState* gameState READ gameState WRITE setGameState NOTIFY gameStateChanged)
+    Q_PROPERTY(GameState* gameState READ gameState WRITE setGameState NOTIFY profileChanged)
     Q_PROPERTY(QObject* client READ client)
 
     // local
@@ -168,7 +168,7 @@ signals:
     void animationChanged();
     void randomColorChanged();
     void profileListChanged();
-    void profileChanged(QString profile);
+    void profileChanged();
 
     void usersListModelChanged(QObject* usersListModel);
     void showOnlinePage();
@@ -177,8 +177,6 @@ signals:
     void fogChanged(bool fog);
 
     void fogAnimationChanged(bool fogAnimation);
-
-    void gameStateChanged(GameState* gameState);
 
     void onlineStatusChanged(int onlineStatus);
 

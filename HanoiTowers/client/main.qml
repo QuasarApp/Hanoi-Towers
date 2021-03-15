@@ -62,15 +62,18 @@ ApplicationWindow {
                 gamePage.launch();
 
             }
+
             onLoad: {
                 stackview.state = "Game"
                 gamePage.load();
 
-
             }
+
             onNewState: {
                 stackview.state = state;
             }
+
+            gameState: gamePage.stateData
         }
 
         Menu.LocalUsersTable {

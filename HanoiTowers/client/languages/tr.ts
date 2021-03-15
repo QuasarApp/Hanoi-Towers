@@ -193,17 +193,17 @@ Bu seviye için minimum adımlar: %2</translation>
 <context>
     <name>HanoiClient</name>
     <message>
-        <location filename="../hanoiclient.cpp" line="177"/>
+        <location filename="../hanoiclient.cpp" line="182"/>
         <source>Local user has been updated</source>
         <translation>Yerel kullanıcı güncellendi</translation>
     </message>
     <message>
-        <location filename="../hanoiclient.cpp" line="177"/>
+        <location filename="../hanoiclient.cpp" line="182"/>
         <source>local user accept nbew data from the server.</source>
         <translation>yerel kullanıcı sunucudan yeni verileri kabul eder.</translation>
     </message>
     <message>
-        <location filename="../hanoiclient.cpp" line="363"/>
+        <location filename="../hanoiclient.cpp" line="367"/>
         <source>Internal Error, server send invalid data, and this data can&apos;t be saved into local database.</source>
         <translation>Dahili Hata, sunucu geçersiz veri gönderdi ve bu veriler yerel veritabanına kaydedilemez.</translation>
     </message>
@@ -403,32 +403,32 @@ Bu seviye için minimum adımlar: %2</translation>
         <translation>devam et</translation>
     </message>
     <message>
-        <location filename="../menu/MainMenu.qml" line="64"/>
+        <location filename="../menu/MainMenu.qml" line="66"/>
         <source>start</source>
         <translation>başlamak</translation>
     </message>
     <message>
-        <location filename="../menu/MainMenu.qml" line="75"/>
+        <location filename="../menu/MainMenu.qml" line="77"/>
         <source>HanoiTowers World</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../menu/MainMenu.qml" line="88"/>
+        <location filename="../menu/MainMenu.qml" line="90"/>
         <source>About</source>
         <translation>hakkında</translation>
     </message>
     <message>
-        <location filename="../menu/MainMenu.qml" line="99"/>
+        <location filename="../menu/MainMenu.qml" line="101"/>
         <source>Config</source>
         <translation>ayarlar</translation>
     </message>
     <message>
-        <location filename="../menu/MainMenu.qml" line="111"/>
+        <location filename="../menu/MainMenu.qml" line="113"/>
         <source>Users</source>
         <translation>Kullanıcılar</translation>
     </message>
     <message>
-        <location filename="../menu/MainMenu.qml" line="122"/>
+        <location filename="../menu/MainMenu.qml" line="124"/>
         <source>exit</source>
         <translation>çıkış</translation>
     </message>

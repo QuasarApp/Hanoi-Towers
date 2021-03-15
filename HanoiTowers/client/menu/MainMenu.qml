@@ -21,6 +21,7 @@ Page {
     background: Item {}
 
     property int onlineStatus: 0;
+    property var gameState: null
 
     signal load()
     signal start()
@@ -54,6 +55,8 @@ Page {
                 onClicked: {
                     menuPage.load();
                 }
+
+                visible :(gameState)? gameState.fSavedGame: false
             }
 
             Base.BaseButton {

@@ -170,7 +170,7 @@ QObject *BackEnd::selectedUser() {
 }
 
 void BackEnd::handleChangeName(const QString & name) {
-    emit profileChanged(name);
+    emit profileChanged();
 }
 
 void BackEnd::handleBestUserIdChanged(const QString & userId) {
@@ -240,7 +240,7 @@ void BackEnd::handleAcceptUserData(QSharedPointer<LocalUser> data) {
         _profile.copyFrom(data.data());
         _settings->setValue(CURRENT_PROFILE_KEY, _profile.getId());
 
-        emit profileChanged(_profile.getId().toString());
+        emit profileChanged();
 
     }
 
@@ -424,7 +424,7 @@ void BackEnd::setProfile(QString userId) {
 
     _profile.setId(userId);
     if (_client->setProfile(userId)) {
-        emit profileChanged(userId);
+        emit profileChanged();
 
     } else {
         createProfile(userId, userId);
@@ -471,7 +471,7 @@ void BackEnd::setGameState(GameState *gameState) {
         return;
 
     _profile.setGameState(*gameState);
-    emit gameStateChanged(gameState);
+    emit profileChanged();
 }
 
 void BackEnd::setOnlineStatus(QH::ClientStatus onlineStatus) {

@@ -181,17 +181,17 @@
 <context>
     <name>HanoiClient</name>
     <message>
-        <location filename="../hanoiclient.cpp" line="177"/>
+        <location filename="../hanoiclient.cpp" line="182"/>
         <source>Local user has been updated</source>
         <translation>Local user has been updated</translation>
     </message>
     <message>
-        <location filename="../hanoiclient.cpp" line="177"/>
+        <location filename="../hanoiclient.cpp" line="182"/>
         <source>local user accept nbew data from the server.</source>
         <translation>Local user accept new data from the server.</translation>
     </message>
     <message>
-        <location filename="../hanoiclient.cpp" line="363"/>
+        <location filename="../hanoiclient.cpp" line="367"/>
         <source>Internal Error, server send invalid data, and this data can&apos;t be saved into local database.</source>
         <translation>Internal Error, server send invalid data, and this data can&apos;t be saved into local database.</translation>
     </message>
@@ -371,32 +371,32 @@
         <translation>Continue</translation>
     </message>
     <message>
-        <location filename="../menu/MainMenu.qml" line="64"/>
+        <location filename="../menu/MainMenu.qml" line="66"/>
         <source>start</source>
         <translation>Start</translation>
     </message>
     <message>
-        <location filename="../menu/MainMenu.qml" line="75"/>
+        <location filename="../menu/MainMenu.qml" line="77"/>
         <source>HanoiTowers World</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../menu/MainMenu.qml" line="88"/>
+        <location filename="../menu/MainMenu.qml" line="90"/>
         <source>About</source>
         <translation>About</translation>
     </message>
     <message>
-        <location filename="../menu/MainMenu.qml" line="99"/>
+        <location filename="../menu/MainMenu.qml" line="101"/>
         <source>Config</source>
         <translation>Config</translation>
     </message>
     <message>
-        <location filename="../menu/MainMenu.qml" line="111"/>
+        <location filename="../menu/MainMenu.qml" line="113"/>
         <source>Users</source>
         <translation>Users</translation>
     </message>
     <message>
-        <location filename="../menu/MainMenu.qml" line="122"/>
+        <location filename="../menu/MainMenu.qml" line="124"/>
         <source>exit</source>
         <translation>Exit</translation>
     </message>

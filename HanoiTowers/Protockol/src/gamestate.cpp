@@ -28,6 +28,16 @@ void GameState::unlockNextLvl() {
     _lvl = static_cast<short>(maxValueOfLoadedSave);
 }
 
+bool GameState::fSavedGame() const {
+    for (const auto &tower: qAsConst(save) ) {
+        if (tower.size()) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
 void GameState::saveLvl(short lvl) {
     _lvl = lvl;
 }
@@ -60,8 +70,10 @@ QList<int> GameState::getTower(int i) {
 }
 
 void GameState::setTower(int towerIndex ,const QList<int> &tower) {
-    if (save.size() > towerIndex)
+    if (save.size() > towerIndex) {
         save[towerIndex] = tower;
+        emit fSavedGameChanged();
+    }
 }
 
 bool GameState::load() {

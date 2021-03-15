@@ -19,6 +19,7 @@ class HANOITOWERSPROTOCOL_EXPORT GameState : public QObject, public QH::StreamBa
 {
    Q_OBJECT
    Q_PROPERTY(short lvl READ lvl WRITE saveLvl)
+   Q_PROPERTY(bool fSavedGame READ fSavedGame NOTIFY fSavedGameChanged)
 
 public:
     explicit GameState();
@@ -35,11 +36,14 @@ public:
 
     friend bool operator == (const GameState& left, const GameState& right);
 
+    Q_INVOKABLE bool fSavedGame() const;
 
 public slots:
     void saveLvl(short lvl);
 
-    // StreamBase interface
+signals:
+    void fSavedGameChanged();
+
 protected:
     QDataStream &fromStream(QDataStream &stream);
     QDataStream &toStream(QDataStream &stream) const;
@@ -50,7 +54,6 @@ private:
     int step = 0;
 
     short _lvl = 1;
-
 };
 
 #endif // GAMESTATE_H
