@@ -35,6 +35,11 @@ QVariant RecordListModel::data(const QModelIndex &index, int role) const {
         return iten.id;
     }
 
+    if (role == Row) {
+        return index.row();
+    }
+
+
     return "Not Supported";
 }
 
@@ -72,6 +77,7 @@ QHash<int, QByteArray> RecordListModel::roleNames() const {
     result[Username]    = "username";
     result[Record]      = "record";
     result[UserId]      = "userid";
+    result[Row]         = "rowNumber";
 
     return result;
 }

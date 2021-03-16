@@ -15,6 +15,10 @@ class RecordsProxyModel : public QSortFilterProxyModel
 {
 public:
     explicit RecordsProxyModel(QObject *parent = nullptr);
+
+    // QAbstractItemModel interface
+public:
+    QVariant data(const QModelIndex &index, int role) const override;
 };
 
 #endif // RECORDSPROXYMODEL_H

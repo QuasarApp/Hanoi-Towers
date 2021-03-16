@@ -17,6 +17,7 @@ import "./../base" as Base
 Item {
     id: row
     property string name: ""
+    property int number: 0
     property string points: "0"
     property bool selected: false
 
@@ -46,6 +47,16 @@ Item {
 
         anchors.left: parent.left
         anchors.right: parent.right
+
+        TextField {
+            readOnly: true;
+            text: number
+            TextMetrics {
+                id: textMetrics
+                text: "9999"
+            }
+            Layout.preferredWidth: textMetrics.advanceWidth
+        }
 
         TextField {
             Layout.fillWidth: true

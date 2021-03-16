@@ -7,8 +7,18 @@
 
 
 #include "recordsproxymodel.h"
+#include "recordlistmodel.h"
 
 RecordsProxyModel::RecordsProxyModel(QObject *parent):
     QSortFilterProxyModel(parent) {
 
+}
+
+QVariant RecordsProxyModel::data(const QModelIndex &index, int role) const {
+
+    if (role == RecordListModel::Row) {
+        return index.row();
+    }
+
+    return QSortFilterProxyModel::data(index, role);
 }

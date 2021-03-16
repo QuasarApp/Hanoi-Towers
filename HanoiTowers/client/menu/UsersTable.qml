@@ -57,6 +57,8 @@ Item {
                 UserTableRow {
                 name: username
                 points: record
+                number: rowNumber + 1
+
                 width: listView.width
 
                 onClicked: {

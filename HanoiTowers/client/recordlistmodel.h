@@ -21,7 +21,8 @@ public:
     enum RecordListModelRoles {
         Username = Qt::UserRole,
         Record,
-        UserId
+        UserId,
+        Row
     };
 
     RecordListModel(QObject * parent = nullptr);
