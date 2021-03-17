@@ -27,73 +27,73 @@
 <context>
     <name>BackEnd</name>
     <message>
-        <location filename="../backEnd.cpp" line="64"/>
+        <location filename="../backEnd.cpp" line="71"/>
         <source>Create new user</source>
         <translation>新規ユーザーの作成</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="149"/>
+        <location filename="../backEnd.cpp" line="156"/>
         <source>Connect error</source>
         <translation>接続エラー</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="150"/>
+        <location filename="../backEnd.cpp" line="157"/>
         <source>Failed to connect to server please check network connection befor login</source>
         <translation>サーバへの接続に失敗しました</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="188"/>
+        <location filename="../backEnd.cpp" line="195"/>
         <source>login error</source>
         <translation>ログインエラー</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="189"/>
+        <location filename="../backEnd.cpp" line="196"/>
         <source>Failed to login into online account, please check your password and username</source>
         <translation>オンラインアカウントにログインできませんでした。パスワードとユーザー名を確認してください</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="199"/>
+        <location filename="../backEnd.cpp" line="206"/>
         <source>Register online error</source>
         <translation>登録オンラインエラー</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="200"/>
+        <location filename="../backEnd.cpp" line="207"/>
         <source>Failed to register this account, if this account was created by you, try to restore it.</source>
         <translation>このアカウントが登録されなかった場合、このアカウントが作成された場合、それを元に戻してください。</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="210"/>
-        <location filename="../backEnd.cpp" line="232"/>
+        <location filename="../backEnd.cpp" line="217"/>
+        <location filename="../backEnd.cpp" line="239"/>
         <source>Server error</source>
         <translation>サーバエラー</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="217"/>
+        <location filename="../backEnd.cpp" line="224"/>
         <source>User with this id is not registered. If it you then use please the sigup form.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="225"/>
+        <location filename="../backEnd.cpp" line="232"/>
         <source>User with this id already registered. If it you then use please the login form.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="371"/>
+        <location filename="../backEnd.cpp" line="378"/>
         <source>Create user error</source>
         <translation>ユーザーエラーの作成</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="372"/>
+        <location filename="../backEnd.cpp" line="379"/>
         <source>Failed to create a new user, The name %0 alredy used.</source>
         <translation>新しいユーザーの作成に失敗しました。名前 %0 はすでに使用されています。</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="403"/>
+        <location filename="../backEnd.cpp" line="410"/>
         <source>current profile not online!</source>
         <translation>現在のプロファイルはオフラインです！</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="403"/>
+        <location filename="../backEnd.cpp" line="410"/>
         <source>Remove online error</source>
         <translation>オンラインユーザーデータの削除中にエラーが発生しました</translation>
     </message>
@@ -145,33 +145,33 @@
 <context>
     <name>Game</name>
     <message>
-        <location filename="../Game.qml" line="149"/>
+        <location filename="../Game.qml" line="150"/>
         <source>You have passed the level in %0 steps and unlocked level %1</source>
         <translation>%0 段階でレベルを超え、レベル %1 のロックを解除しました</translation>
     </message>
     <message>
-        <location filename="../Game.qml" line="150"/>
+        <location filename="../Game.qml" line="151"/>
         <source>
  Minimum steps for this lvl: %2</source>
         <translation>
  このLVLの最小ステップ: %2</translation>
     </message>
     <message>
-        <location filename="../Game.qml" line="151"/>
-        <location filename="../Game.qml" line="167"/>
+        <location filename="../Game.qml" line="152"/>
+        <location filename="../Game.qml" line="168"/>
         <source>
  you reward = %3</source>
         <translation> あなたの報酬 = %3</translation>
     </message>
     <message>
-        <location filename="../Game.qml" line="165"/>
+        <location filename="../Game.qml" line="166"/>
         <source>You have passed the level in %0 steps.
 </source>
         <translation>%0 段階でレベルが過ぎました。
 </translation>
     </message>
     <message>
-        <location filename="../Game.qml" line="166"/>
+        <location filename="../Game.qml" line="167"/>
         <source>Minimum steps for this lvl: %1</source>
         <translation>このLVLの最小ステップ： %1</translation>
     </message>
@@ -564,17 +564,17 @@
     </message>
     <message>
         <location filename="../menu/UsersTable.qml" line="38"/>
-        <location filename="../menu/UsersTable.qml" line="91"/>
+        <location filename="../menu/UsersTable.qml" line="93"/>
         <source>Locale users list</source>
         <translation>ローカルユーザーリスト</translation>
     </message>
     <message>
-        <location filename="../menu/UsersTable.qml" line="70"/>
+        <location filename="../menu/UsersTable.qml" line="72"/>
         <source>Create the new user</source>
         <translation>新しいユーザーを作成します</translation>
     </message>
     <message>
-        <location filename="../menu/UsersTable.qml" line="104"/>
+        <location filename="../menu/UsersTable.qml" line="106"/>
         <source>Best users in the world</source>
         <translation type="unfinished"></translation>
     </message>

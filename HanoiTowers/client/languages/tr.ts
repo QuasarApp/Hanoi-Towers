@@ -27,73 +27,73 @@
 <context>
     <name>BackEnd</name>
     <message>
-        <location filename="../backEnd.cpp" line="64"/>
+        <location filename="../backEnd.cpp" line="71"/>
         <source>Create new user</source>
         <translation>Yeni kullanıcı oluştur</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="149"/>
+        <location filename="../backEnd.cpp" line="156"/>
         <source>Connect error</source>
         <translation>Bağlantı hatası</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="150"/>
+        <location filename="../backEnd.cpp" line="157"/>
         <source>Failed to connect to server please check network connection befor login</source>
         <translation>Sunucuya bağlanılamadı, lütfen oturum açmadan önce ağ bağlantısını kontrol edin</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="188"/>
+        <location filename="../backEnd.cpp" line="195"/>
         <source>login error</source>
         <translation>sisteme giriş hatası</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="189"/>
+        <location filename="../backEnd.cpp" line="196"/>
         <source>Failed to login into online account, please check your password and username</source>
         <translation>Çevrimiçi hesaba giriş yapılamadı, lütfen şifrenizi ve kullanıcı adınızı kontrol edin</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="199"/>
+        <location filename="../backEnd.cpp" line="206"/>
         <source>Register online error</source>
         <translation>Çevrimiçi kayıt hatası</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="200"/>
+        <location filename="../backEnd.cpp" line="207"/>
         <source>Failed to register this account, if this account was created by you, try to restore it.</source>
         <translation>Bu hesap kaydedilemedi, bu hesap sizin tarafınızdan oluşturulduysa, geri yüklemeyi deneyin.</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="210"/>
-        <location filename="../backEnd.cpp" line="232"/>
+        <location filename="../backEnd.cpp" line="217"/>
+        <location filename="../backEnd.cpp" line="239"/>
         <source>Server error</source>
         <translation>Server hatası</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="217"/>
+        <location filename="../backEnd.cpp" line="224"/>
         <source>User with this id is not registered. If it you then use please the sigup form.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="225"/>
+        <location filename="../backEnd.cpp" line="232"/>
         <source>User with this id already registered. If it you then use please the login form.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="371"/>
+        <location filename="../backEnd.cpp" line="378"/>
         <source>Create user error</source>
         <translation>Kullanıcı hatası oluştur</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="372"/>
+        <location filename="../backEnd.cpp" line="379"/>
         <source>Failed to create a new user, The name %0 alredy used.</source>
         <translation>Yeni bir kullanıcı oluşturulamadı, %0 adı kullanıldı.</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="403"/>
+        <location filename="../backEnd.cpp" line="410"/>
         <source>current profile not online!</source>
         <translation>Mevcut profil çevrimdışı!</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="403"/>
+        <location filename="../backEnd.cpp" line="410"/>
         <source>Remove online error</source>
         <translation>Çevrimiçi kullanıcı verilerini kaldırma hatası</translation>
     </message>
@@ -145,34 +145,34 @@
 <context>
     <name>Game</name>
     <message>
-        <location filename="../Game.qml" line="149"/>
+        <location filename="../Game.qml" line="150"/>
         <source>You have passed the level in %0 steps and unlocked level %1</source>
         <translation>Seviyeyi %0 adımda geçtiniz ve %1  seviyesinin kilidini açtınız</translation>
     </message>
     <message>
-        <location filename="../Game.qml" line="150"/>
+        <location filename="../Game.qml" line="151"/>
         <source>
  Minimum steps for this lvl: %2</source>
         <translation>
 Bu seviye için minimum adımlar: %2</translation>
     </message>
     <message>
-        <location filename="../Game.qml" line="151"/>
-        <location filename="../Game.qml" line="167"/>
+        <location filename="../Game.qml" line="152"/>
+        <location filename="../Game.qml" line="168"/>
         <source>
  you reward = %3</source>
         <translation>
  ödülünüz = %3</translation>
     </message>
     <message>
-        <location filename="../Game.qml" line="165"/>
+        <location filename="../Game.qml" line="166"/>
         <source>You have passed the level in %0 steps.
 </source>
         <translation>Seviyey i%0 adımda geçtiniz.
 </translation>
     </message>
     <message>
-        <location filename="../Game.qml" line="166"/>
+        <location filename="../Game.qml" line="167"/>
         <source>Minimum steps for this lvl: %1</source>
         <translation>Bu seviye için minimum adımlar: %1</translation>
     </message>
@@ -561,17 +561,17 @@ Bu seviye için minimum adımlar: %2</translation>
     </message>
     <message>
         <location filename="../menu/UsersTable.qml" line="38"/>
-        <location filename="../menu/UsersTable.qml" line="91"/>
+        <location filename="../menu/UsersTable.qml" line="93"/>
         <source>Locale users list</source>
         <translation>Yerel kullanıcı listesi</translation>
     </message>
     <message>
-        <location filename="../menu/UsersTable.qml" line="70"/>
+        <location filename="../menu/UsersTable.qml" line="72"/>
         <source>Create the new user</source>
         <translation>Yeni kullanıcıyı oluşturun</translation>
     </message>
     <message>
-        <location filename="../menu/UsersTable.qml" line="104"/>
+        <location filename="../menu/UsersTable.qml" line="106"/>
         <source>Best users in the world</source>
         <translation type="unfinished"></translation>
     </message>

@@ -27,73 +27,73 @@
 <context>
     <name>BackEnd</name>
     <message>
-        <location filename="../backEnd.cpp" line="64"/>
+        <location filename="../backEnd.cpp" line="71"/>
         <source>Create new user</source>
         <translation>Створити нового користувача</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="149"/>
+        <location filename="../backEnd.cpp" line="156"/>
         <source>Connect error</source>
         <translation>Помилка підключення</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="150"/>
+        <location filename="../backEnd.cpp" line="157"/>
         <source>Failed to connect to server please check network connection befor login</source>
         <translation>Не вдалося підключитися до сервера, перевірте мережеве підключення для входу</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="188"/>
+        <location filename="../backEnd.cpp" line="195"/>
         <source>login error</source>
         <translation>помилка входу</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="189"/>
+        <location filename="../backEnd.cpp" line="196"/>
         <source>Failed to login into online account, please check your password and username</source>
         <translation>Не вдалося увійти в онлайн-акаунт, перевірте свій пароль та ім’я користувача</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="199"/>
+        <location filename="../backEnd.cpp" line="206"/>
         <source>Register online error</source>
         <translation>помилка реєстрації в Інтернеті</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="200"/>
+        <location filename="../backEnd.cpp" line="207"/>
         <source>Failed to register this account, if this account was created by you, try to restore it.</source>
         <translation>Не вдалося зареєструвати цей обліковий запис, якщо цей обліковий запис був створений вами, спробуйте відновити його.</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="210"/>
-        <location filename="../backEnd.cpp" line="232"/>
+        <location filename="../backEnd.cpp" line="217"/>
+        <location filename="../backEnd.cpp" line="239"/>
         <source>Server error</source>
         <translation>Помилка серверу</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="217"/>
+        <location filename="../backEnd.cpp" line="224"/>
         <source>User with this id is not registered. If it you then use please the sigup form.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="225"/>
+        <location filename="../backEnd.cpp" line="232"/>
         <source>User with this id already registered. If it you then use please the login form.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="371"/>
+        <location filename="../backEnd.cpp" line="378"/>
         <source>Create user error</source>
         <translation>Помилка створення користувача</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="372"/>
+        <location filename="../backEnd.cpp" line="379"/>
         <source>Failed to create a new user, The name %0 alredy used.</source>
         <translation>Не вдалося створити нового користувача, ім’я %0 вже використовується.</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="403"/>
+        <location filename="../backEnd.cpp" line="410"/>
         <source>current profile not online!</source>
         <translation>Поточний профіль офлайн!</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="403"/>
+        <location filename="../backEnd.cpp" line="410"/>
         <source>Remove online error</source>
         <translation>Помилка видалення онлайн даних користувачів</translation>
     </message>
@@ -145,34 +145,34 @@
 <context>
     <name>Game</name>
     <message>
-        <location filename="../Game.qml" line="149"/>
+        <location filename="../Game.qml" line="150"/>
         <source>You have passed the level in %0 steps and unlocked level %1</source>
         <translation>Ви пройшли рівень за %0 кроків і розблокували рівень %1</translation>
     </message>
     <message>
-        <location filename="../Game.qml" line="150"/>
+        <location filename="../Game.qml" line="151"/>
         <source>
  Minimum steps for this lvl: %2</source>
         <translation>
  Мінімальні кроки для цього рівня: %2</translation>
     </message>
     <message>
-        <location filename="../Game.qml" line="151"/>
-        <location filename="../Game.qml" line="167"/>
+        <location filename="../Game.qml" line="152"/>
+        <location filename="../Game.qml" line="168"/>
         <source>
  you reward = %3</source>
         <translation>
  ваша винагорода = %3</translation>
     </message>
     <message>
-        <location filename="../Game.qml" line="165"/>
+        <location filename="../Game.qml" line="166"/>
         <source>You have passed the level in %0 steps.
 </source>
         <translation>Ви пройшли рівень за кроки %0.
 </translation>
     </message>
     <message>
-        <location filename="../Game.qml" line="166"/>
+        <location filename="../Game.qml" line="167"/>
         <source>Minimum steps for this lvl: %1</source>
         <translation>Мінімальні кроки для цього рівня: %1</translation>
     </message>
@@ -561,17 +561,17 @@
     </message>
     <message>
         <location filename="../menu/UsersTable.qml" line="38"/>
-        <location filename="../menu/UsersTable.qml" line="91"/>
+        <location filename="../menu/UsersTable.qml" line="93"/>
         <source>Locale users list</source>
         <translation>Локальний список користувачів</translation>
     </message>
     <message>
-        <location filename="../menu/UsersTable.qml" line="70"/>
+        <location filename="../menu/UsersTable.qml" line="72"/>
         <source>Create the new user</source>
         <translation>Створіть нового користувача</translation>
     </message>
     <message>
-        <location filename="../menu/UsersTable.qml" line="104"/>
+        <location filename="../menu/UsersTable.qml" line="106"/>
         <source>Best users in the world</source>
         <translation type="unfinished"></translation>
     </message>
