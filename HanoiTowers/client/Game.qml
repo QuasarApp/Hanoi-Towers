@@ -145,37 +145,9 @@ Item {
             if (reward < 1) {
                 reward = 1;
             }
-            if (all === stateWidget.tumbler.spin.maximumValue) {
 
-                popUp.text = (qsTr("You have passed the level in %0 steps and unlocked level %1") +
-                                   qsTr("\n Minimum steps for this lvl: %2") +
-                                   qsTr("\n you reward = %3")).
-                arg(stateWidget.step).arg(all + 1).arg(backEnd.getMinSteps(all)).
-                arg(reward);
+            showResultMessage(all === stateWidget.tumbler.spin.maximumValue, reward)
 
-                popUp.open()
-
-                const action = function () {
-                    stateData.unlockNextLvl();
-                    start(stateData.lvl)
-                }
-
-                popUp.action = action;
-
-            } else {
-                popUp.text = (qsTr("You have passed the level in %0 steps.\n") +
-                             qsTr("Minimum steps for this lvl: %1") +
-                             qsTr("\n you reward = %3")).
-                arg(stateWidget.step).arg(backEnd.getMinSteps(all)).arg(reward);
-
-                popUp.open()
-
-                const action = function () {
-                    start(++stateWidget.tumbler.spin.value)
-                }
-
-                popUp.action = action;
-            }
             backEnd.setReward(reward);
         }
 
@@ -187,6 +159,49 @@ Item {
 
         if (!upPlate) {
             saveState();
+        }
+    }
+
+    function showResultMessage(newLvl, reward) {
+        if (newLvl) {
+
+            popUp.title = qsTr("Congratulations! You have passed the level %0").arg(all)
+
+
+            popUp.text = (qsTr("You got <b>%0</b> points for this level and unlocked the level <b>%1</b>!") +
+                          qsTr("<br><br> Totally <b>%2</b> steps.") +
+                          qsTr("<br> The minimum number of steps for this level : <b>%3</b>")).
+            arg(reward).arg(all + 1).
+            arg(stateWidget.step).
+            arg(backEnd.getMinSteps(all));
+
+            popUp.open()
+
+            const action = function () {
+                stateData.unlockNextLvl();
+                start(stateData.lvl)
+            }
+
+            popUp.action = action;
+
+        } else {
+            popUp.title = qsTr("Congratulations! You have passed the level %0").arg(all)
+
+
+            popUp.text = (qsTr("You got <b>%0</b> points for this level!") +
+                          qsTr("<br><br> Totally <b>%1</b> steps.") +
+                          qsTr("<br> The minimum number of steps for this level : <b>%2</b>")).
+            arg(reward).
+            arg(stateWidget.step).
+            arg(backEnd.getMinSteps(all));
+
+            popUp.open()
+
+            const action = function () {
+                start(++stateWidget.tumbler.spin.value)
+            }
+
+            popUp.action = action;
         }
     }
     
