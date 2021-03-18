@@ -26,10 +26,12 @@
         <file>menu/UserView.qml</file>
         <file>menu/World.qml</file>
         <file>menu/LocalUsersTable.qml</file>
+        <file>Background.qml</file>
     </qresource>
     <qresource prefix="/textures">
         <file>res/fogBack.png</file>
         <file>res/fog.png</file>
+        <file>res/green.png</file>
     </qresource>
     <qresource prefix="/img">
         <file alias="Help">res/help.png</file>

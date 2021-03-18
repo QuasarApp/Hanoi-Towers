@@ -40,7 +40,7 @@ ApplicationWindow {
     }
 
 
-    background:  Fog {
+    background:  Background {
         source: "qrc:/textures/res/fogBack.png"
         anchors.fill: parent
         opacity: 0.2
