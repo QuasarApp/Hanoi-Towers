@@ -143,38 +143,106 @@
     </message>
 </context>
 <context>
-    <name>Game</name>
+    <name>Credits</name>
     <message>
-        <location filename="../Game.qml" line="150"/>
-        <source>You have passed the level in %0 steps and unlocked level %1</source>
-        <translation>Seviyeyi %0 adımda geçtiniz ve %1  seviyesinin kilidini açtınız</translation>
+        <location filename="../Credits/src/Library/src/QuasarAppCreditsModule/Credits.qml" line="31"/>
+        <source>Join the development fund and support QuasarApp to help with the development of our projects.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Game.qml" line="151"/>
+        <location filename="../Credits/src/Library/src/QuasarAppCreditsModule/Credits.qml" line="50"/>
+        <source>If you would like to use bitcoins to support us, you can transfer coins to these address. If you want to be included in the patron list, send an e-mail message - **QuasarApp@yandex.by**</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Credits/src/Library/src/QuasarAppCreditsModule/Credits.qml" line="60"/>
+        <source>**Note**: You must send a message signed with address of the bitcoin wallet from which the payment was made.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Credits/src/Library/src/QuasarAppCreditsModule/Credits.qml" line="79"/>
+        <source>**bitcoin:bc1q4wnp58plhx4fwnfnzz3e4slulv2gzzts89w2f7**</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Credits/src/Library/src/QuasarAppCreditsModule/Credits.qml" line="89"/>
+        <source># Our patrons list:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Credits/src/Library/src/QuasarAppCreditsModule/Credits.qml" line="98"/>
+        <source>## Silver Membership Patrons:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Credits/src/Library/src/QuasarAppCreditsModule/Credits.qml" line="106"/>
+        <source>* Rustem Husnutdinov</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Game</name>
+    <message>
+        <source>You have passed the level in %0 steps and unlocked level %1</source>
+        <translation type="vanished">Seviyeyi %0 adımda geçtiniz ve %1  seviyesinin kilidini açtınız</translation>
+    </message>
+    <message>
         <source>
  Minimum steps for this lvl: %2</source>
-        <translation>
+        <translation type="vanished">
 Bu seviye için minimum adımlar: %2</translation>
     </message>
     <message>
-        <location filename="../Game.qml" line="152"/>
-        <location filename="../Game.qml" line="168"/>
         <source>
  you reward = %3</source>
-        <translation>
+        <translation type="vanished">
  ödülünüz = %3</translation>
     </message>
     <message>
-        <location filename="../Game.qml" line="166"/>
         <source>You have passed the level in %0 steps.
 </source>
-        <translation>Seviyey i%0 adımda geçtiniz.
+        <translation type="vanished">Seviyey i%0 adımda geçtiniz.
 </translation>
     </message>
     <message>
-        <location filename="../Game.qml" line="167"/>
         <source>Minimum steps for this lvl: %1</source>
-        <translation>Bu seviye için minimum adımlar: %1</translation>
+        <translation type="vanished">Bu seviye için minimum adımlar: %1</translation>
+    </message>
+    <message>
+        <location filename="../Game.qml" line="168"/>
+        <location filename="../Game.qml" line="188"/>
+        <source>Congratulations! You have passed the level %0</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Game.qml" line="171"/>
+        <source>You got &lt;b&gt;%0&lt;/b&gt; points for this level and unlocked the level &lt;b&gt;%1&lt;/b&gt;!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Game.qml" line="172"/>
+        <source>&lt;br&gt;&lt;br&gt; Totally &lt;b&gt;%2&lt;/b&gt; steps.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Game.qml" line="173"/>
+        <source>&lt;br&gt; The minimum number of steps for this level : &lt;b&gt;%3&lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Game.qml" line="191"/>
+        <source>You got &lt;b&gt;%0&lt;/b&gt; points for this level!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Game.qml" line="192"/>
+        <source>&lt;br&gt;&lt;br&gt; Totally &lt;b&gt;%1&lt;/b&gt; steps.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Game.qml" line="193"/>
+        <source>&lt;br&gt; The minimum number of steps for this level : &lt;b&gt;%2&lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

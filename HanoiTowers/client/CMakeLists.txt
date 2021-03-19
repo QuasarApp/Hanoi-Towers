@@ -14,6 +14,7 @@ set(CURRENT_PROJECT "${PROJECT_NAME}Client")
 add_subdirectory(QMLLoginView)
 add_subdirectory(SimpleQmlNotify)
 add_subdirectory(ViewSolutions)
+add_subdirectory(Credits)
 
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
@@ -27,7 +28,7 @@ file(GLOB SOURCE_CPP
 )
 
 add_executable(${CURRENT_PROJECT} ${SOURCE_CPP})
-target_link_libraries(${CURRENT_PROJECT} PRIVATE QmlNotyfyService HanoiTowersProtockol LoginView)
+target_link_libraries(${CURRENT_PROJECT} PRIVATE QmlNotyfyService HanoiTowersProtockol LoginView Credits)
 target_include_directories(${CURRENT_PROJECT} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 
 setVersionForTarget(${CURRENT_PROJECT} ${PRODUCT_VER_Mj} ${PRODUCT_VER_Mn} ${PRODUCT_VER_Re})
@@ -39,4 +40,4 @@ set(LANGS ${CMAKE_CURRENT_SOURCE_DIR}/languages/en.ts
           ${CMAKE_CURRENT_SOURCE_DIR}/languages/ua.ts)
 
 
-prepareQM(${CMAKE_CURRENT_SOURCE_DIR} "${LANGS}")
+prepareQM(${CURRENT_PROJECT} ${CMAKE_CURRENT_SOURCE_DIR} "${LANGS}")

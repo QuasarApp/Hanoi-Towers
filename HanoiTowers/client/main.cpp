@@ -9,13 +9,13 @@
 #include <QFont>
 #include <QFontDatabase>
 #include <iostream>
-//#include <QScreen>
 #include <QQmlApplicationEngine>
 #include <QQmlComponent>
 #include <QQmlContext>
 #include "backEnd.h"
 #include <QTranslator>
 #include <qmlnotifyservice.h>
+#include <credits.h>
 
 void setFont(const QGuiApplication& app){
 
@@ -71,6 +71,10 @@ int main(int argc, char *argv[])
 
     if (!QmlNotificationService::init(&engine)) {
         return 1;
+    }
+
+    if (!QuasarAppCredits::init(&engine)) {
+        return 2;
     }
 
     root->setContextProperty("backEnd", &back);

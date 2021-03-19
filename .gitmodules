@@ -13,3 +13,6 @@
 [submodule "HanoiTowers/client/QMLLoginView"]
 	path = HanoiTowers/client/QMLLoginView
 	url = https://github.com/QuasarApp/QMLLoginView.git
+[submodule "HanoiTowers/client/Credits"]
+	path = HanoiTowers/client/Credits
+	url = https://github.com/QuasarApp/Credits
