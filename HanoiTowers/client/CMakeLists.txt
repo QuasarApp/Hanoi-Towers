@@ -11,6 +11,11 @@ cmake_minimum_required(VERSION 3.1)
 set(CURRENT_PROJECT "${PROJECT_NAME}Client")
 
 
+set (CREDITS_TESTS OFF)
+set (CREDITS_EXAMPLES OFF)
+set (LOGINVIEW_EXAMPLES OFF)
+set (VIEWSOLUTIONS_EXAMPLES OFF)
+
 add_subdirectory(QMLLoginView)
 add_subdirectory(SimpleQmlNotify)
 add_subdirectory(ViewSolutions)
@@ -31,7 +36,6 @@ add_executable(${CURRENT_PROJECT} ${SOURCE_CPP})
 target_link_libraries(${CURRENT_PROJECT} PRIVATE QmlNotyfyService HanoiTowersProtockol LoginView Credits)
 target_include_directories(${CURRENT_PROJECT} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 
-setVersionForTarget(${CURRENT_PROJECT} ${PRODUCT_VER_Mj} ${PRODUCT_VER_Mn} ${PRODUCT_VER_Re})
 
 set(LANGS ${CMAKE_CURRENT_SOURCE_DIR}/languages/en.ts
           ${CMAKE_CURRENT_SOURCE_DIR}/languages/ru.ts

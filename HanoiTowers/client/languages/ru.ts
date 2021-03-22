@@ -9,14 +9,35 @@
         <translation>Об Авторе</translation>
     </message>
     <message>
-        <location filename="../About.qml" line="45"/>
+        <location filename="../About.qml" line="34"/>
+        <source>About</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../About.qml" line="37"/>
+        <source>Credits</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../About.qml" line="67"/>
+        <source>Product of QuasarApp
+            * Developers:
+            * Programmer: Yankovich N. Andrei.
+            * Disigner: Chernenkov I. Oleg.
+            * This game is distributed under the LGPLv3 license.
+            * Contact: https://github.com/EndrII
+            * Copyright (C) 2018-2019 Yankovich N. Andrei.
+            * Copyright (C) 2019-2021 QuasarApp group.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Product of QuasarApp
 * Developers:
 * Programmer: Yankovich N. Andrei.
 * This game is distributed under the LGPLv3 license.
 * Contact: https://github.com/EndrII
 * Copyright (C) 2018-2019 Yankovich N. Andrei.</source>
-        <translation>Продукт QuasarApp
+        <translation type="vanished">Продукт QuasarApp
 * Разработчики:
 * Программист: Янкович А. Н. 
 * Эта игра распостроняеться в соотвецтвии с лицензией LGPLv3.

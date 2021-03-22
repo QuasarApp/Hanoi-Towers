@@ -17,11 +17,4 @@
     <Banner>banner.png</Banner>
     <Logo>logo.png</Logo>
 
-    <RemoteRepositories>
-        <Repository>
-            <Url>http://quasarapp.ddns.net:3030/HanoiTowers/Linux</Url>
-            <Enabled>1</Enabled>
-            <DisplayName>QuasarApp</DisplayName>
-        </Repository>
-    </RemoteRepositories>
 </Installer>

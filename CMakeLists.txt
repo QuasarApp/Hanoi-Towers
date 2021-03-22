@@ -29,20 +29,20 @@ initAll()
 addDeployFromCustomFile("Client" "${CMAKE_CURRENT_SOURCE_DIR}/Deploy/Client.json")
 addDeployFromCustomFile("Server" "${CMAKE_CURRENT_SOURCE_DIR}/Deploy/Server.json")
 
-if (WIN32)
-    addDeployQIF("Client" ${INSTALLER_DIR} ${TARGET_DIR} "${INSTALLER_DIR}/config/configWin.xml")
+#if (WIN32)
+#    addDeployQIF("Client" ${INSTALLER_DIR} ${TARGET_DIR} "${INSTALLER_DIR}/config/configWin.xml")
 
-else (WIN32)
-    addDeployQIF("Client" ${INSTALLER_DIR} ${TARGET_DIR} "${INSTALLER_DIR}/config/configLinux.xml")
+#else (WIN32)
+#    addDeployQIF("Client" ${INSTALLER_DIR} ${TARGET_DIR} "${INSTALLER_DIR}/config/configLinux.xml")
 
-    addDeploySnap("Client" ${TARGET_DIR})
-    addReleaseSnap("Client")
+    #addDeploySnap("Client" ${TARGET_DIR})
+    #addReleaseSnap("Client")
 
-endif(WIN32)
+#endif(WIN32)
 
-addReleaseQif("Client" ${DATA_DIR} ${TARGET_DIR})
+#addReleaseQif("Client" ${DATA_DIR} ${TARGET_DIR})
 
-addDeployAPK("Android" "${CMAKE_CURRENT_SOURCE_DIR}/hanoi_towers/android-libHanoiTowers.so-deployment-settings.json" "digitalface" "${SIGN_PATH}/DigitalFaceMobily.keystore" "${SIGN_STORE_PASSWORD}" "${TARGET_DIR}")
+#addDeployAPK("Android" "${CMAKE_CURRENT_SOURCE_DIR}/hanoi_towers/android-libHanoiTowers.so-deployment-settings.json" "digitalface" "${SIGN_PATH}/DigitalFaceMobily.keystore" "${SIGN_STORE_PASSWORD}" "${TARGET_DIR}")
 
 
 # Add sub directories

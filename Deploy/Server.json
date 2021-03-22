@@ -1,12 +1,12 @@
 {
     "bin": [
-        "./../HanoiTowersServer/build/Release",
-        "./../HanoiTowersTerminal/build/Release"
+        "./../HanoiTowers/build/Release/HanoiTowersTerminal",
+        "./../HanoiTowers/build/Release/HanoiTowersServer"
         ],
     "clear": true,
     "libDir": "./../",
     "recursiveDepth": "10",
-    "deploySystem": true,
+    "deploySystem": false,
     "ignoreEnv": [
         "./../installer",
         "./../Distro",
@@ -18,5 +18,6 @@
     "extraLib": "crypto",
     "name": "HanoiCore",
     "targetDir": "./../Distro/Server",
-    "qif": true
+    "qif": false,
+    "deb": true
 }

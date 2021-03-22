@@ -1,10 +1,12 @@
 {
-    "binDir": "./../hanoi_towers/build/Release",
+    "bin": [
+        "./../HanoiTowers/build/Release/HanoiTowersClient"
+    ],
     "clear": true,
     "libDir": "./../",
     "recursiveDepth": "10",
     "deploySystem": false,
-    "qmlDir": "../",
+    "qmlDir": "./../HanoiTowers",
     "ignoreEnv": [
         "./../installer",
         "./../Distro",
@@ -14,5 +16,8 @@
         "./../stage"
         ],
     "extraLib": "crypto",
-    "targetDir": "./../installer/packages/HanoiTowers/data"
+    "qif": "./../installer",
+    "icon": "./../HanoiTowers/client/res/iconInstall.png",
+    "deb": true,
+    "targetDir": "./../Distro"
 }
