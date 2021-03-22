@@ -117,8 +117,8 @@ QStringList HanoiClient::SQLSources() const {
     };
 }
 
-QH::HostAddress HanoiClient::serverAddress() const {
-    return QH::HostAddress{DEFAULT_HANOI_ADDRESS, DEFAULT_HANOI_PORT};
+QPair<QString, unsigned short> HanoiClient::serverAddress() const {
+    return {DEFAULT_HANOI_ADDRESS, DEFAULT_HANOI_PORT};
 }
 
 QSharedPointer<LocalUser> HanoiClient::getLocalUser(const QString &userId) const {
@@ -134,7 +134,7 @@ QSharedPointer<LocalUser> HanoiClient::getLocalUser(const QString &userId) const
 
 bool HanoiClient::sendUserData(QSharedPointer<UserData> data) {
     data->setSignToken(getMember().getSignToken());
-    return sendData(data.data(), serverAddress());
+    return sendData(data.data(), realServerAddress());
 }
 
 bool HanoiClient::isOnline(const QSharedPointer<LocalUser> &data) {

@@ -73,7 +73,7 @@ public:
 
 protected:
     QStringList SQLSources() const override;
-    QH::HostAddress serverAddress() const override;
+    QPair<QString, unsigned short> serverAddress() const override;
 
 signals:
     void userDataChanged(QSharedPointer<LocalUser>);
