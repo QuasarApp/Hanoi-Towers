@@ -32,7 +32,7 @@ HanoiClient::HanoiClient() {
 
     initSqlDb("",
               new QH::SqlDB(),
-              new QH::SqlDBWriter());
+              new QH::AsyncSqlDBWriter());
 
     qRegisterMetaType<QSharedPointer<LocalUser>>();
     qRegisterMetaType<QHash<QString,UserPreview>>();
