@@ -25,8 +25,7 @@ protected:
     QVariantMap defaultDbParams() const override;
     void nodeConfirmend(QH::AbstractNodeInfo *node) override;
 
-    QH::ErrorCodes::Code deleteUser(const QSharedPointer<QH::PKG::UserMember> &user,
-                                    const QH::AbstractNodeInfo *info) override;
+    void objectRemoved(const QH::DbAddress & address) override;
     void memberSubsribed(const QVariant &clientId, unsigned int subscribeId) override;
     bool initSqlDb(QString DBparamsFile,
                    QH::ISqlDBCache *cache,

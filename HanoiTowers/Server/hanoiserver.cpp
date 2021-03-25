@@ -161,7 +161,7 @@ void HanoiServer::updateWorld(const UserPreview &user, bool isRemove) {
 
     _world->applyUpdate(*update.data());
 
-    objectChanged(update);
+    notifyObjectChanged(update);
 }
 
 QSharedPointer<WorldUpdate>
@@ -191,19 +191,8 @@ void HanoiServer::nodeConfirmend(QH::AbstractNodeInfo *node) {
     }
 }
 
-QH::ErrorCodes::Code HanoiServer::deleteUser(const QSharedPointer<UserMember> &user,
-                                             const QH::AbstractNodeInfo *info) {
-
-    QH::ErrorCodes::Code code = QH::SingleServer::deleteUser(user, info);
-    if (code == QH::ErrorCodes::NoError) {
-
-        auto baseNode = dynamic_cast<const QH::BaseNodeInfo*>(info);
-        if (baseNode) {
-            removeUserFromWorld(baseNode->id().toString());
-        }
-    }
-
-    return code;
+void HanoiServer::objectRemoved(const QH::DbAddress & address) {
+    removeUserFromWorld(address.id().toString());
 }
 
 void HanoiServer::memberSubsribed(const QVariant &clientId,
