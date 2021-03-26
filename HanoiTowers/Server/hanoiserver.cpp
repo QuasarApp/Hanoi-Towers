@@ -27,7 +27,7 @@ HanoiServer::HanoiServer() {
     unsigned short port = DEFAULT_HANOI_PORT;
 
     if (QuasarAppUtils::Params::isEndable("address")) {
-        auto addressList = QuasarAppUtils::Params::getStrArg("address").split(":");
+        auto addressList = QuasarAppUtils::Params::getArg("address").split(":");
         if (address.size() != 2) {
 
             QuasarAppUtils::Params::log("invalid address params",

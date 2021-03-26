@@ -133,7 +133,6 @@ QSharedPointer<LocalUser> HanoiClient::getLocalUser(const QString &userId) const
 }
 
 bool HanoiClient::sendUserData(QSharedPointer<UserData> data) {
-    data->setSignToken(getMember().getSignToken());
     return sendData(data.data(), realServerAddress());
 }
 

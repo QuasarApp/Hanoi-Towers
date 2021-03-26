@@ -170,15 +170,12 @@ GridLayout {
         function accept() {
             if (userModel) {
                 userModel.name = ename.text
-                notificationService.setNotify(qsTr("User is updated"), qsTr("User data will be changed."));
-
                 if (eonline.checked) {
                     backEnd.onlineRequest(userModel.userId)
                 }
+                backEnd.updateProfile()
+
             }
-
-            eonline.checked = false
-
         }
 
         function restore() {

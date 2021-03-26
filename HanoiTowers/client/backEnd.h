@@ -99,6 +99,8 @@ public:
 
     Q_INVOKABLE void onlineRequest(const QString& userId);
 
+    Q_INVOKABLE void updateProfile();
+
     int onlineStatus() const;
 
     QObject *bestUser();

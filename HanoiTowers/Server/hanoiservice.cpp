@@ -7,7 +7,9 @@
 
 #include "hanoiserver.h"
 #include "hanoiservice.h"
+#include <QFileInfo>
 #include <quasarapp.h>
+#include <QDir>
 
 HanoiService::HanoiService(int argc, char *argv[]):
     Patronum::Service<QCoreApplication>(argc, argv, "HanoiService") {
@@ -35,27 +37,51 @@ void HanoiService::onStop() {
     Service::onStop();
 }
 
-void HanoiService::handleReceive(const QList<Patronum::Feature> &data) {
+bool HanoiService::handleReceive(const Patronum::Feature &data) {
 
-    QList<Patronum::Feature> notSupported;
-    for (const auto& i: data) {
-        if (i.cmd() == "ping") {
-            sendResuylt("Pong");
-        } else if (i.cmd() == "State") {
-            sendResuylt(_server->getWorkState().toString());
+    if (data.cmd() == "ping") {
+        sendResuylt("Pong");
+    } else if (data.cmd() == "state") {
+        sendResuylt(_server->getWorkState().toString());
+    } else if (data.cmd() == "log") {
+        auto path = data.arg();
+
+        if (!changeFileLogPath(path)) {
+            return false;
+        }
+        sendResuylt("The logs now availabel it" + path);
+    } else if (data.cmd() == "logLvl") {
+        auto lvl = data.arg();
+
+        if (lvl.isEmpty()) {
+            sendResuylt("In current time logs print with level " + lvl);
         } else {
-            notSupported += i;
+            QuasarAppUtils::Params::setArg("verbose", lvl);
+            sendResuylt("The logs now print with level " + lvl);
         }
     }
 
-    Patronum::Service<QCoreApplication>::handleReceive(notSupported);
+
+    return true;
 }
 
-QList<Patronum::Feature> HanoiService::supportedFeatures() {
-    QList<Patronum::Feature> data;
+QSet<Patronum::Feature> HanoiService::supportedFeatures() {
+    QSet<Patronum::Feature> data;
 
     data << Patronum::Feature("ping");
-    data << Patronum::Feature("State");
+    data << Patronum::Feature("state");
+    data << Patronum::Feature("log");
+    data << Patronum::Feature("logLvl");
 
     return data;
+}
+
+bool HanoiService::changeFileLogPath(const QString& path) {
+    QFileInfo file(path);
+    if (file.dir().isReadable()) {
+        QuasarAppUtils::Params::setArg("fileLog", file.absoluteFilePath());
+        return true;
+    }
+
+    return false;
 }

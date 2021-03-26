@@ -142,6 +142,10 @@ void BackEnd::init() {
 
 void BackEnd::onlineRequest(const QString &userId) {
 
+    if (_client->isLogined()) {
+        return;
+    }
+
     if (_profile.token().isValid() && _client->login(userId)) {
         return;
     }
@@ -162,6 +166,21 @@ void BackEnd::onlineRequest(const QString &userId) {
     }
 
     emit showOnlinePage();
+}
+
+void BackEnd::updateProfile() {
+    if (!_client->updateProfile(_profile)) {
+        QmlNotificationService::NotificationService::getService()->setNotify(
+                    tr("Update Profile error"),
+                    tr("Failed to update yuo user data"
+                       " please check network connection befor update prifile"), "",
+                    QmlNotificationService::NotificationData::Error);
+    } else {
+        QmlNotificationService::NotificationService::getService()->setNotify(
+                    tr("Update Profile"),
+                    tr("User data updated successful"), "",
+                    QmlNotificationService::NotificationData::Normal);
+    }
 }
 
 int BackEnd::onlineStatus() const {
@@ -346,7 +365,6 @@ bool BackEnd::fogAnimation() const {
 }
 
 BackEnd::~BackEnd() {
-    _client->updateProfile(_profile);
     QCoreApplication::processEvents();
 
     _imageProvider->stop();
@@ -427,7 +445,7 @@ void BackEnd::setProfile(QString userId) {
     if (!_client)
         return;
 
-    _client->updateProfile(_profile);
+    updateProfile();
 
     _profile.setId(userId);
     if (_client->setProfile(userId)) {
@@ -443,7 +461,7 @@ void BackEnd::setReward(int revard) {
 
     if (_profile.record() < revard) {
         _profile.setRecord(revard);
-        _client->updateProfile(_profile);
+        updateProfile();
         _recordsTable->updateAddSourceItem(_dataConverter->toUserPreview(_profile));
 
     }

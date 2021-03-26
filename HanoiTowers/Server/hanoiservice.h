@@ -17,10 +17,11 @@ protected:
     void onStart() override;
     void onStop() override;
 
-    void handleReceive(const QList<Patronum::Feature> &data) override;
-    QList<Patronum::Feature> supportedFeatures() override;
+    bool handleReceive(const Patronum::Feature &data) override;
+    QSet<Patronum::Feature> supportedFeatures() override;
 
 private:
+    bool changeFileLogPath(const QString &path);
 
     HanoiServer *_server = nullptr;
 
