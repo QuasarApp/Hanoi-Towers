@@ -53,68 +53,88 @@
         <translation>新規ユーザーの作成</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="156"/>
+        <location filename="../backEnd.cpp" line="160"/>
         <source>Connect error</source>
         <translation>接続エラー</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="157"/>
+        <location filename="../backEnd.cpp" line="161"/>
         <source>Failed to connect to server please check network connection befor login</source>
         <translation>サーバへの接続に失敗しました</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="195"/>
+        <location filename="../backEnd.cpp" line="174"/>
+        <source>Update Profile error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../backEnd.cpp" line="175"/>
+        <source>Failed to update yuo user data please check network connection befor update prifile</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../backEnd.cpp" line="180"/>
+        <source>Update Profile</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../backEnd.cpp" line="181"/>
+        <source>User data updated successful</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../backEnd.cpp" line="214"/>
         <source>login error</source>
         <translation>ログインエラー</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="196"/>
+        <location filename="../backEnd.cpp" line="215"/>
         <source>Failed to login into online account, please check your password and username</source>
         <translation>オンラインアカウントにログインできませんでした。パスワードとユーザー名を確認してください</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="206"/>
+        <location filename="../backEnd.cpp" line="225"/>
         <source>Register online error</source>
         <translation>登録オンラインエラー</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="207"/>
+        <location filename="../backEnd.cpp" line="226"/>
         <source>Failed to register this account, if this account was created by you, try to restore it.</source>
         <translation>このアカウントが登録されなかった場合、このアカウントが作成された場合、それを元に戻してください。</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="217"/>
-        <location filename="../backEnd.cpp" line="239"/>
+        <location filename="../backEnd.cpp" line="236"/>
+        <location filename="../backEnd.cpp" line="258"/>
         <source>Server error</source>
         <translation>サーバエラー</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="224"/>
+        <location filename="../backEnd.cpp" line="243"/>
         <source>User with this id is not registered. If it you then use please the sigup form.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="232"/>
+        <location filename="../backEnd.cpp" line="251"/>
         <source>User with this id already registered. If it you then use please the login form.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="378"/>
+        <location filename="../backEnd.cpp" line="396"/>
         <source>Create user error</source>
         <translation>ユーザーエラーの作成</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="379"/>
+        <location filename="../backEnd.cpp" line="397"/>
         <source>Failed to create a new user, The name %0 alredy used.</source>
         <translation>新しいユーザーの作成に失敗しました。名前 %0 はすでに使用されています。</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="410"/>
+        <location filename="../backEnd.cpp" line="428"/>
         <source>current profile not online!</source>
         <translation>現在のプロファイルはオフラインです！</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="410"/>
+        <location filename="../backEnd.cpp" line="428"/>
         <source>Remove online error</source>
         <translation>オンラインユーザーデータの削除中にエラーが発生しました</translation>
     </message>
@@ -281,17 +301,17 @@
 <context>
     <name>HanoiClient</name>
     <message>
-        <location filename="../hanoiclient.cpp" line="182"/>
+        <location filename="../hanoiclient.cpp" line="181"/>
         <source>Local user has been updated</source>
         <translation>ローカルユーザーが更新されました</translation>
     </message>
     <message>
-        <location filename="../hanoiclient.cpp" line="182"/>
+        <location filename="../hanoiclient.cpp" line="181"/>
         <source>local user accept nbew data from the server.</source>
         <translation>ローカルユーザはサーバからNBEWデータを受け入れます。</translation>
     </message>
     <message>
-        <location filename="../hanoiclient.cpp" line="367"/>
+        <location filename="../hanoiclient.cpp" line="366"/>
         <source>Internal Error, server send invalid data, and this data can&apos;t be saved into local database.</source>
         <translation>内部エラー、サーバーが無効なデータを送信し、このデータをローカルデータベースに保存することはできません。</translation>
     </message>
@@ -625,22 +645,20 @@
         <translation>受け入れる</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="173"/>
         <source>User is updated</source>
-        <translation>ユーザーが更新されました</translation>
+        <translation type="vanished">ユーザーが更新されました</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="173"/>
         <source>User data will be changed.</source>
-        <translation>ユーザーデータが変更されます。</translation>
+        <translation type="vanished">ユーザーデータが変更されます。</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="191"/>
+        <location filename="../menu/UserView.qml" line="188"/>
         <source>Remove %0 user</source>
         <translation>%0ユーザーを削除</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="192"/>
+        <location filename="../menu/UserView.qml" line="189"/>
         <source>All saved data and records will be delete, Do you want continuee?</source>
         <translation>すべての保存されたデータとレコードが削除されます、あなたが継続したいですか？</translation>
     </message>

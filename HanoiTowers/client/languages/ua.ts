@@ -53,68 +53,88 @@
         <translation>Створити нового користувача</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="156"/>
+        <location filename="../backEnd.cpp" line="160"/>
         <source>Connect error</source>
         <translation>Помилка підключення</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="157"/>
+        <location filename="../backEnd.cpp" line="161"/>
         <source>Failed to connect to server please check network connection befor login</source>
         <translation>Не вдалося підключитися до сервера, перевірте мережеве підключення для входу</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="195"/>
+        <location filename="../backEnd.cpp" line="174"/>
+        <source>Update Profile error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../backEnd.cpp" line="175"/>
+        <source>Failed to update yuo user data please check network connection befor update prifile</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../backEnd.cpp" line="180"/>
+        <source>Update Profile</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../backEnd.cpp" line="181"/>
+        <source>User data updated successful</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../backEnd.cpp" line="214"/>
         <source>login error</source>
         <translation>помилка входу</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="196"/>
+        <location filename="../backEnd.cpp" line="215"/>
         <source>Failed to login into online account, please check your password and username</source>
         <translation>Не вдалося увійти в онлайн-акаунт, перевірте свій пароль та ім’я користувача</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="206"/>
+        <location filename="../backEnd.cpp" line="225"/>
         <source>Register online error</source>
         <translation>помилка реєстрації в Інтернеті</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="207"/>
+        <location filename="../backEnd.cpp" line="226"/>
         <source>Failed to register this account, if this account was created by you, try to restore it.</source>
         <translation>Не вдалося зареєструвати цей обліковий запис, якщо цей обліковий запис був створений вами, спробуйте відновити його.</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="217"/>
-        <location filename="../backEnd.cpp" line="239"/>
+        <location filename="../backEnd.cpp" line="236"/>
+        <location filename="../backEnd.cpp" line="258"/>
         <source>Server error</source>
         <translation>Помилка серверу</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="224"/>
+        <location filename="../backEnd.cpp" line="243"/>
         <source>User with this id is not registered. If it you then use please the sigup form.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="232"/>
+        <location filename="../backEnd.cpp" line="251"/>
         <source>User with this id already registered. If it you then use please the login form.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="378"/>
+        <location filename="../backEnd.cpp" line="396"/>
         <source>Create user error</source>
         <translation>Помилка створення користувача</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="379"/>
+        <location filename="../backEnd.cpp" line="397"/>
         <source>Failed to create a new user, The name %0 alredy used.</source>
         <translation>Не вдалося створити нового користувача, ім’я %0 вже використовується.</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="410"/>
+        <location filename="../backEnd.cpp" line="428"/>
         <source>current profile not online!</source>
         <translation>Поточний профіль офлайн!</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="410"/>
+        <location filename="../backEnd.cpp" line="428"/>
         <source>Remove online error</source>
         <translation>Помилка видалення онлайн даних користувачів</translation>
     </message>
@@ -282,17 +302,17 @@
 <context>
     <name>HanoiClient</name>
     <message>
-        <location filename="../hanoiclient.cpp" line="182"/>
+        <location filename="../hanoiclient.cpp" line="181"/>
         <source>Local user has been updated</source>
         <translation>Локальний користувач був оновлений</translation>
     </message>
     <message>
-        <location filename="../hanoiclient.cpp" line="182"/>
+        <location filename="../hanoiclient.cpp" line="181"/>
         <source>local user accept nbew data from the server.</source>
         <translation>локальний користувач приймає нові дані з сервера.</translation>
     </message>
     <message>
-        <location filename="../hanoiclient.cpp" line="367"/>
+        <location filename="../hanoiclient.cpp" line="366"/>
         <source>Internal Error, server send invalid data, and this data can&apos;t be saved into local database.</source>
         <translation>Внутрішня помилка, сервер надсилає недійсні дані, і ці дані не можна зберегти в локальній базі даних.</translation>
     </message>
@@ -622,22 +642,20 @@
         <translation>Прийміть</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="173"/>
         <source>User is updated</source>
-        <translation>Користувач оновлений</translation>
+        <translation type="vanished">Користувач оновлений</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="173"/>
         <source>User data will be changed.</source>
-        <translation>Дані користувача буде змінено.</translation>
+        <translation type="vanished">Дані користувача буде змінено.</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="191"/>
+        <location filename="../menu/UserView.qml" line="188"/>
         <source>Remove %0 user</source>
         <translation>Видалити користувача %0</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="192"/>
+        <location filename="../menu/UserView.qml" line="189"/>
         <source>All saved data and records will be delete, Do you want continuee?</source>
         <translation>Усі збережені дані та записи будуть видалені. Продовжити?</translation>
     </message>

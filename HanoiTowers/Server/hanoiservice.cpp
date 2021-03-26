@@ -7,8 +7,9 @@
 
 #include "hanoiserver.h"
 #include "hanoiservice.h"
-#include <QFileInfo>
 #include <quasarapp.h>
+
+#include <QFileInfo>
 #include <QDir>
 
 HanoiService::HanoiService(int argc, char *argv[]):

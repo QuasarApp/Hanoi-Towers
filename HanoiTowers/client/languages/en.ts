@@ -39,68 +39,88 @@
         <translation>Create new user</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="156"/>
+        <location filename="../backEnd.cpp" line="160"/>
         <source>Connect error</source>
         <translation>Connection error</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="157"/>
+        <location filename="../backEnd.cpp" line="161"/>
         <source>Failed to connect to server please check network connection befor login</source>
         <translation>Failed to connect to server please check network connection befor login</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="195"/>
+        <location filename="../backEnd.cpp" line="174"/>
+        <source>Update Profile error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../backEnd.cpp" line="175"/>
+        <source>Failed to update yuo user data please check network connection befor update prifile</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../backEnd.cpp" line="180"/>
+        <source>Update Profile</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../backEnd.cpp" line="181"/>
+        <source>User data updated successful</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../backEnd.cpp" line="214"/>
         <source>login error</source>
         <translation>Login error</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="196"/>
+        <location filename="../backEnd.cpp" line="215"/>
         <source>Failed to login into online account, please check your password and username</source>
         <translation>Failed to login into online account, please check your password and username</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="206"/>
+        <location filename="../backEnd.cpp" line="225"/>
         <source>Register online error</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="207"/>
+        <location filename="../backEnd.cpp" line="226"/>
         <source>Failed to register this account, if this account was created by you, try to restore it.</source>
         <translation>Failed to register this account, if this account was created by you, try to restore it.</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="217"/>
-        <location filename="../backEnd.cpp" line="239"/>
+        <location filename="../backEnd.cpp" line="236"/>
+        <location filename="../backEnd.cpp" line="258"/>
         <source>Server error</source>
         <translation>Server error</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="224"/>
+        <location filename="../backEnd.cpp" line="243"/>
         <source>User with this id is not registered. If it you then use please the sigup form.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="232"/>
+        <location filename="../backEnd.cpp" line="251"/>
         <source>User with this id already registered. If it you then use please the login form.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="378"/>
+        <location filename="../backEnd.cpp" line="396"/>
         <source>Create user error</source>
         <translation>User create error</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="379"/>
+        <location filename="../backEnd.cpp" line="397"/>
         <source>Failed to create a new user, The name %0 alredy used.</source>
         <translation>Failed to create a new user, This name %0 alredy used.</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="410"/>
+        <location filename="../backEnd.cpp" line="428"/>
         <source>current profile not online!</source>
         <translation>Current profile is offline!</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="410"/>
+        <location filename="../backEnd.cpp" line="428"/>
         <source>Remove online error</source>
         <translation>Error remove online user data</translation>
     </message>
@@ -260,17 +280,17 @@
 <context>
     <name>HanoiClient</name>
     <message>
-        <location filename="../hanoiclient.cpp" line="182"/>
+        <location filename="../hanoiclient.cpp" line="181"/>
         <source>Local user has been updated</source>
         <translation>Local user has been updated</translation>
     </message>
     <message>
-        <location filename="../hanoiclient.cpp" line="182"/>
+        <location filename="../hanoiclient.cpp" line="181"/>
         <source>local user accept nbew data from the server.</source>
         <translation>Local user accept new data from the server.</translation>
     </message>
     <message>
-        <location filename="../hanoiclient.cpp" line="367"/>
+        <location filename="../hanoiclient.cpp" line="366"/>
         <source>Internal Error, server send invalid data, and this data can&apos;t be saved into local database.</source>
         <translation>Internal Error, server send invalid data, and this data can&apos;t be saved into local database.</translation>
     </message>
@@ -573,22 +593,20 @@
         <translation>Accept</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="173"/>
         <source>User is updated</source>
-        <translation>User is updated</translation>
+        <translation type="vanished">User is updated</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="173"/>
         <source>User data will be changed.</source>
-        <translation>User data will be changed.</translation>
+        <translation type="vanished">User data will be changed.</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="191"/>
+        <location filename="../menu/UserView.qml" line="188"/>
         <source>Remove %0 user</source>
         <translation>Remove %0 user</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="192"/>
+        <location filename="../menu/UserView.qml" line="189"/>
         <source>All saved data and records will be delete, Do you want continuee?</source>
         <translation>All saved data and records will be deleted, Do you want continue?</translation>
     </message>
