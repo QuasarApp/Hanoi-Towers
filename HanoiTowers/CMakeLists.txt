@@ -10,7 +10,7 @@ cmake_minimum_required(VERSION 3.1)
 include(../Heart/QuasarAppLib/CMake/ProjectOut.cmake)
 include(../Heart/QuasarAppLib/CMake/ccache.cmake)
 include(../Heart/QuasarAppLib/CMake/Version.cmake)
-include(../Heart/QuasarAppLib/CMake/tr.cmake)
+include(../Heart/QuasarAppLib/CMake/QtUtils.cmake)
 
 find_package(QT NAMES Qt6 Qt5 COMPONENTS Core REQUIRED)
 find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Core REQUIRED)
