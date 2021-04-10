@@ -1,6 +1,6 @@
 # **Hanoi Towers** [![hanoi-tower](https://snapcraft.io/hanoi-tower/badge.svg)](https://snapcraft.io/hanoi-tower)
 
-# ![Hanoi Towers Logo](hanoitowers/res/HanoiTowers_Banner_Web.png)
+# ![Hanoi Towers Logo](/HanoiTowers/client/res/HanoiTowers_Banner_Web.png)
 
 
 ***************************
