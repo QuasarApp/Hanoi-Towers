@@ -10,6 +10,15 @@ project(HanoiTowers)
 
 set(BUILD_SHARED_LIBS ON)
 
+if (DEFINED TARGET_PLATFORM_TOOLCHAIN)
+    if (${TARGET_PLATFORM_TOOLCHAIN} STREQUAL "wasm32")
+        include(QuasarAppLib/CMake/QuasarAppCITargets.cmake)
+        initAll()
+        return()
+    endif()
+endif()
+
+
 include(Heart/QuasarAppLib/CMake/ccache.cmake)
 include(Heart/QuasarAppLib/CMake/QuasarAppCITargets.cmake)
 
