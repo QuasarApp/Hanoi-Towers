@@ -184,44 +184,6 @@
     </message>
 </context>
 <context>
-    <name>Credits</name>
-    <message>
-        <location filename="../Credits/src/Library/src/QuasarAppCreditsModule/Credits.qml" line="31"/>
-        <source>Join the development fund and support QuasarApp to help with the development of our projects.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../Credits/src/Library/src/QuasarAppCreditsModule/Credits.qml" line="50"/>
-        <source>If you would like to use bitcoins to support us, you can transfer coins to these address. If you want to be included in the patron list, send an e-mail message - **QuasarApp@yandex.by**</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../Credits/src/Library/src/QuasarAppCreditsModule/Credits.qml" line="60"/>
-        <source>**Note**: You must send a message signed with address of the bitcoin wallet from which the payment was made.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../Credits/src/Library/src/QuasarAppCreditsModule/Credits.qml" line="79"/>
-        <source>**bitcoin:bc1q4wnp58plhx4fwnfnzz3e4slulv2gzzts89w2f7**</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../Credits/src/Library/src/QuasarAppCreditsModule/Credits.qml" line="89"/>
-        <source># Our patrons list:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../Credits/src/Library/src/QuasarAppCreditsModule/Credits.qml" line="98"/>
-        <source>## Silver Membership Patrons:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../Credits/src/Library/src/QuasarAppCreditsModule/Credits.qml" line="106"/>
-        <source>* Rustem Husnutdinov</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
     <name>Game</name>
     <message>
         <source>You have passed the level in %0 steps and unlocked level %1</source>
@@ -361,143 +323,115 @@ Bu seviye için minimum adımlar: %2</translation>
 <context>
     <name>LoginView</name>
     <message>
-        <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="21"/>
         <source>Create a new account</source>
-        <translation>Yeni bir hesap oluştur</translation>
+        <translation type="vanished">Yeni bir hesap oluştur</translation>
     </message>
     <message>
-        <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="21"/>
-        <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="249"/>
         <source>LogIn</source>
-        <translation>Oturum aç</translation>
+        <translation type="vanished">Oturum aç</translation>
     </message>
     <message>
-        <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="22"/>
         <source>Please fill this form to create an account</source>
-        <translation>Lütfen bir hesap oluşturmak için bu formu doldurun</translation>
+        <translation type="vanished">Lütfen bir hesap oluşturmak için bu formu doldurun</translation>
     </message>
     <message>
-        <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="23"/>
         <source>Please fill this form to login in your account</source>
-        <translation>Lütfen hesabınıza giriş yapmak için bu formu doldurun</translation>
+        <translation type="vanished">Lütfen hesabınıza giriş yapmak için bu formu doldurun</translation>
     </message>
     <message>
-        <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="62"/>
         <source>First Name</source>
-        <translation>İsim</translation>
+        <translation type="vanished">İsim</translation>
     </message>
     <message>
-        <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="65"/>
         <source>Empy or incorrect name. Please enter yuor name.</source>
-        <translation>Empy veya yanlış isim. Lütfen adınızı girin.</translation>
+        <translation type="vanished">Empy veya yanlış isim. Lütfen adınızı girin.</translation>
     </message>
     <message>
-        <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="80"/>
         <source>Last Name</source>
-        <translation>Soyad</translation>
+        <translation type="vanished">Soyad</translation>
     </message>
     <message>
-        <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="107"/>
         <source>Select you country</source>
-        <translation>Ülkenizi seçin</translation>
+        <translation type="vanished">Ülkenizi seçin</translation>
     </message>
     <message>
-        <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="129"/>
         <source>EMail</source>
-        <translation>EMail</translation>
+        <translation type="vanished">EMail</translation>
     </message>
     <message>
-        <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="133"/>
         <source>Empty or incorrect email address. Please enter yuor name.</source>
-        <translation>E-posta adresi boş veya yanlış. Lütfen e-posta adresinizi girin.</translation>
+        <translation type="vanished">E-posta adresi boş veya yanlış. Lütfen e-posta adresinizi girin.</translation>
     </message>
     <message>
-        <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="148"/>
         <source>Nickname</source>
-        <translation>Takma ad</translation>
+        <translation type="vanished">Takma ad</translation>
     </message>
     <message>
-        <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="152"/>
         <source>Empty or incorrect Nickname. Please enter yuor name.</source>
-        <translation>Boş veya yanlış Takma ad. Lütfen takma adınızı girin.</translation>
+        <translation type="vanished">Boş veya yanlış Takma ad. Lütfen takma adınızı girin.</translation>
     </message>
     <message>
-        <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="174"/>
         <source>Pasword</source>
-        <translation>Parola</translation>
+        <translation type="vanished">Parola</translation>
     </message>
     <message>
-        <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="188"/>
         <source>Confirm pasword</source>
-        <translation>Şifreyi Onayla</translation>
+        <translation type="vanished">Şifreyi Onayla</translation>
     </message>
     <message>
-        <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="200"/>
         <source>Forgot password</source>
-        <translation>Parolanızı mı unuttunuz</translation>
+        <translation type="vanished">Parolanızı mı unuttunuz</translation>
     </message>
     <message>
-        <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="220"/>
         <source>I accept the Terms of use</source>
-        <translation>Kullanım şartlarını kabul ediyorum</translation>
+        <translation type="vanished">Kullanım şartlarını kabul ediyorum</translation>
     </message>
     <message>
-        <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="227"/>
         <source>Show terms of use</source>
-        <translation>Kullanım şartlarını göster</translation>
+        <translation type="vanished">Kullanım şartlarını göster</translation>
     </message>
     <message>
-        <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="248"/>
         <source>SignUp</source>
-        <translation>Kaydol</translation>
+        <translation type="vanished">Kaydol</translation>
     </message>
     <message>
-        <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="281"/>
         <source>Login In</source>
-        <translation>Oturum aç</translation>
+        <translation type="vanished">Oturum aç</translation>
     </message>
     <message>
-        <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="284"/>
         <source>Sign Up</source>
-        <translation>Kaydol</translation>
+        <translation type="vanished">Kaydol</translation>
     </message>
     <message>
-        <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="347"/>
         <source>Password must match the 1st field and the password cannot be empty</source>
-        <translation>Parola 1. alanla eşleşmelidir ve parola boş olamaz</translation>
+        <translation type="vanished">Parola 1. alanla eşleşmelidir ve parola boş olamaz</translation>
     </message>
 </context>
 <context>
     <name>LoginView::LVMainModel</name>
     <message>
-        <location filename="../QMLLoginView/LoginView/src/lvmainmodel.cpp" line="204"/>
         <source>must be longer than 8 characters</source>
-        <translation>8 karakterden uzun olmalıdır</translation>
+        <translation type="vanished">8 karakterden uzun olmalıdır</translation>
     </message>
     <message>
-        <location filename="../QMLLoginView/LoginView/src/lvmainmodel.cpp" line="208"/>
         <source>must contain numbers</source>
-        <translation>sayıları içermelidir</translation>
+        <translation type="vanished">sayıları içermelidir</translation>
     </message>
     <message>
-        <location filename="../QMLLoginView/LoginView/src/lvmainmodel.cpp" line="212"/>
         <source>must contain small chars</source>
-        <translation>küçük karakterler içermelidir</translation>
+        <translation type="vanished">küçük karakterler içermelidir</translation>
     </message>
     <message>
-        <location filename="../QMLLoginView/LoginView/src/lvmainmodel.cpp" line="216"/>
         <source>must contain large chars</source>
-        <translation>küçük karakterler içermelidir</translation>
+        <translation type="vanished">küçük karakterler içermelidir</translation>
     </message>
     <message>
-        <location filename="../QMLLoginView/LoginView/src/lvmainmodel.cpp" line="220"/>
         <source>must contain extra chars (!@#$%^&amp;*)</source>
-        <translation>ekstra karakterler içermelidir (!@#$%^&amp;*)</translation>
+        <translation type="vanished">ekstra karakterler içermelidir (!@#$%^&amp;*)</translation>
     </message>
     <message>
-        <location filename="../QMLLoginView/LoginView/src/lvmainmodel.cpp" line="223"/>
         <source>Password requirements: </source>
-        <translation>Parola gereksinimleri: </translation>
+        <translation type="vanished">Parola gereksinimleri: </translation>
     </message>
 </context>
 <context>
@@ -545,10 +479,8 @@ Bu seviye için minimum adımlar: %2</translation>
 <context>
     <name>NotificationForm</name>
     <message>
-        <location filename="../SimpleQmlNotify/NotifyModule/NotificationForm.qml" line="16"/>
-        <location filename="../SimpleQmlNotify/NotifyModule/NotificationForm.qml" line="18"/>
         <source>Message</source>
-        <translation>İleti</translation>
+        <translation type="vanished">İleti</translation>
     </message>
 </context>
 <context>
@@ -771,16 +703,6 @@ Bu lvl için minimum adımlar:%1</translation>
         <location filename="../main.qml" line="23"/>
         <source>Hanoi Towers</source>
         <translation>Hanoi Kuleleri</translation>
-    </message>
-    <message>
-        <location filename="../QMLLoginView/example/main.qml" line="28"/>
-        <source>Example of LoginView</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../ViewSolutions/Examples/src/main.qml" line="113"/>
-        <source>Examples of View Solutions</source>
-        <translation></translation>
     </message>
 </context>
 </TS>

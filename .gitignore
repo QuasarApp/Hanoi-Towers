@@ -73,3 +73,5 @@ snap/plugins/__pycache__/
 *.snap
 data/
 \.buildconfig
+
+build/

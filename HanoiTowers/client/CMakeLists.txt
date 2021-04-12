@@ -11,17 +11,6 @@ cmake_minimum_required(VERSION 3.1)
 set(CURRENT_PROJECT "${PROJECT_NAME}Client")
 
 
-set (CREDITS_TESTS OFF)
-set (CREDITS_EXAMPLES OFF)
-set (LOGINVIEW_EXAMPLES OFF)
-set (VIEWSOLUTIONS_EXAMPLES OFF)
-
-add_subdirectory(QMLLoginView)
-add_subdirectory(SimpleQmlNotify)
-add_subdirectory(ViewSolutions)
-add_subdirectory(Credits)
-
-
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)

@@ -1,18 +1,18 @@
 [submodule "Patronum"]
-	path = Patronum
+	path = submodules/Patronum
 	url = https://github.com/QuasarApp/Patronum.git
 [submodule "Heart"]
-	path = Heart
+	path = submodules/Heart
 	url = https://github.com/QuasarApp/Heart.git
 [submodule "HanoiTowers/client/ViewSolutions"]
-	path = HanoiTowers/client/ViewSolutions
+	path = submodules/ViewSolutions
 	url = https://github.com/QuasarApp/ViewSolutions.git
 [submodule "HanoiTowers/client/SimpleQmlNotify"]
-	path = HanoiTowers/client/SimpleQmlNotify
+	path = submodules/SimpleQmlNotify
 	url = https://github.com/QuasarApp/SimpleQmlNotify.git
 [submodule "HanoiTowers/client/QMLLoginView"]
-	path = HanoiTowers/client/QMLLoginView
+	path = submodules/QMLLoginView
 	url = https://github.com/QuasarApp/QMLLoginView.git
 [submodule "HanoiTowers/client/Credits"]
-	path = HanoiTowers/client/Credits
+	path = submodules/Credits
 	url = https://github.com/QuasarApp/Credits

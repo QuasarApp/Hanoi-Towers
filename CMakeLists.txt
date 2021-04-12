@@ -12,15 +12,39 @@ set(BUILD_SHARED_LIBS ON)
 
 
 
-include(Heart/QuasarAppLib/CMake/ccache.cmake)
-include(Heart/QuasarAppLib/CMake/QuasarAppCITargets.cmake)
-
+include(submodules/Heart/QuasarAppLib/CMake/ccache.cmake)
+include(submodules/Heart/QuasarAppLib/CMake/QuasarAppCITargets.cmake)
+include(submodules/Heart/QuasarAppLib/CMake/ProjectOut.cmake)
+include(submodules/Heart/QuasarAppLib/CMake/Version.cmake)
+include(submodules/Heart/QuasarAppLib/CMake/QtUtils.cmake)
 
 if (DEFINED TARGET_PLATFORM_TOOLCHAIN)
     if (${TARGET_PLATFORM_TOOLCHAIN} STREQUAL "wasm32")
         initAll()
         return()
     endif()
+endif()
+
+if (NOT DEFINED HANOI_TESTS)
+    set(HANOI_TESTS ON)
+
+    if (ANDROID)
+        set(HANOI_TESTS OFF)
+    endif()
+endif()
+
+if (NOT DEFINED HANOI_SERVER)
+    set(HANOI_SERVER ON)
+
+    if (ANDROID OR WIN32)
+        set(HANOI_SERVER OFF)
+    endif()
+
+endif()
+
+if (NOT DEFINED HANOI_CLIENT)
+    set(HANOI_CLIENT ON)
+
 endif()
 
 SET(INSTALLER_DIR "${CMAKE_CURRENT_SOURCE_DIR}/installer/")
@@ -59,10 +83,39 @@ find_package(QT NAMES Qt6 Qt5 COMPONENTS Core REQUIRED)
 find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Core REQUIRED)
 
 # Add sub directories
-add_subdirectory(Heart)
-add_subdirectory(Patronum)
-add_subdirectory(HanoiTowers)
-#add_subdirectory(hanoi_towers/ViewSolutions)
+
+if (HANOI_TESTS)
+    set (CREDITS_TESTS ON)
+    set (HEART_TESTS ON)
+    set (PATRONUM_TESTS ON)
+
+else()
+    set (CREDITS_TESTS OFF)
+    set (HEART_TESTS OFF)
+    set (PATRONUM_TESTS OFF)
+endif()
+
+
+add_subdirectory(submodules/Heart)
+add_subdirectory(HanoiTowers/Protockol)
+
+if (HANOI_CLIENT)
+    set (CREDITS_EXAMPLES OFF)
+    set (LOGINVIEW_EXAMPLES OFF)
+    set (VIEWSOLUTIONS_EXAMPLES OFF)
+
+    add_subdirectory(submodules/QMLLoginView)
+    add_subdirectory(submodules/SimpleQmlNotify)
+    add_subdirectory(submodules/ViewSolutions)
+    add_subdirectory(submodules/Credits)
+    add_subdirectory(HanoiTowers/client)
+endif()
+
+if (HANOI_SERVER)
+    add_subdirectory(submodules/Patronum)
+    add_subdirectory(HanoiTowers/Server)
+    add_subdirectory(HanoiTowers/Terminal)
+endif()
 
 
 
