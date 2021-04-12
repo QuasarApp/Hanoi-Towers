@@ -10,6 +10,12 @@ project(HanoiTowers)
 
 set(BUILD_SHARED_LIBS ON)
 
+
+
+include(Heart/QuasarAppLib/CMake/ccache.cmake)
+include(Heart/QuasarAppLib/CMake/QuasarAppCITargets.cmake)
+
+
 if (DEFINED TARGET_PLATFORM_TOOLCHAIN)
     if (${TARGET_PLATFORM_TOOLCHAIN} STREQUAL "wasm32")
         include(QuasarAppLib/CMake/QuasarAppCITargets.cmake)
@@ -17,10 +23,6 @@ if (DEFINED TARGET_PLATFORM_TOOLCHAIN)
         return()
     endif()
 endif()
-
-
-include(Heart/QuasarAppLib/CMake/ccache.cmake)
-include(Heart/QuasarAppLib/CMake/QuasarAppCITargets.cmake)
 
 SET(INSTALLER_DIR "${CMAKE_CURRENT_SOURCE_DIR}/installer/")
 SET(DATA_DIR "${INSTALLER_DIR}/packages/HanoiTowers/data")
