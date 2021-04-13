@@ -75,3 +75,5 @@ data/
 \.buildconfig
 
 build/
+
+docs/
