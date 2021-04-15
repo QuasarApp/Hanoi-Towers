@@ -11,8 +11,9 @@
 #include <QString>
 #include <streambase.h>
 #include <QSharedPointer>
+#include "hanoitowersprotockol_global.h"
 
-struct UserPreview: public QH::StreamBase {
+struct HANOITOWERSPROTOCOL_EXPORT UserPreview: public QH::StreamBase {
     explicit UserPreview();
     explicit UserPreview(const QString& id);
 
