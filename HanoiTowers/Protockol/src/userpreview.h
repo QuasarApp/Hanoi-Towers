@@ -21,7 +21,7 @@ struct HANOITOWERSPROTOCOL_EXPORT UserPreview: public QH::StreamBase {
     QString userName;
     int record;
 
-    friend bool operator==(const UserPreview& left, const UserPreview& right);
+    friend bool HANOITOWERSPROTOCOL_EXPORT operator==(const UserPreview& left, const UserPreview& right);
 
     // StreamBase interface
 protected:
