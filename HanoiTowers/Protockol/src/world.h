@@ -13,10 +13,11 @@
 #include <QSet>
 #include <dbobjectset.h>
 #include <itoken.h>
+#include "hanoitowersprotockol_global.h"
 
 class WorldUpdate;
 
-class World: public QH::PKG::DBObjectSet, public QH::IToken
+class HANOITOWERSPROTOCOL_EXPORT World: public QH::PKG::DBObjectSet, public QH::IToken
 {
 public:
     World(const QString& worldName = "World");
