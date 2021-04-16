@@ -183,12 +183,11 @@ GridLayout {
             eonline.checked = onlieUser
         }
 
-        readonly property int questionCode: Math.random() * 1000
+        readonly property int questionCode: 0;
         function remove() {
-            notificationService.setQuestion(qsTr("Remove %0 user").arg(userModel.userId),
+            questionCode = notificationService.setQuestion(qsTr("Remove %0 user").arg(userModel.userId),
                                             qsTr("All saved data and records will be delete, Do you want continuee?"),
-                                            "",
-                                            questionCode)
+                                            "")
         }
         Connections {
             target: notificationService

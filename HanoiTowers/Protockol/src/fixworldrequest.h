@@ -2,8 +2,9 @@
 #define FIXWORLDREQUEST_H
 
 #include <abstractdata.h>
+#include "hanoitowersprotockol_global.h"
 
-class FixWorldRequest: public QH::PKG::AbstractData
+class HANOITOWERSPROTOCOL_EXPORT FixWorldRequest: public QH::PKG::AbstractData
 {
 public:
     FixWorldRequest();

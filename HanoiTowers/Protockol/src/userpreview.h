@@ -11,8 +11,9 @@
 #include <QString>
 #include <streambase.h>
 #include <QSharedPointer>
+#include "hanoitowersprotockol_global.h"
 
-struct UserPreview: public QH::StreamBase {
+struct HANOITOWERSPROTOCOL_EXPORT UserPreview: public QH::StreamBase {
     explicit UserPreview();
     explicit UserPreview(const QString& id);
 
@@ -20,7 +21,7 @@ struct UserPreview: public QH::StreamBase {
     QString userName;
     int record;
 
-    friend bool operator==(const UserPreview& left, const UserPreview& right);
+    friend bool HANOITOWERSPROTOCOL_EXPORT operator==(const UserPreview& left, const UserPreview& right);
 
     // StreamBase interface
 protected:

@@ -184,44 +184,6 @@
     </message>
 </context>
 <context>
-    <name>Credits</name>
-    <message>
-        <location filename="../Credits/src/Library/src/QuasarAppCreditsModule/Credits.qml" line="31"/>
-        <source>Join the development fund and support QuasarApp to help with the development of our projects.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../Credits/src/Library/src/QuasarAppCreditsModule/Credits.qml" line="50"/>
-        <source>If you would like to use bitcoins to support us, you can transfer coins to these address. If you want to be included in the patron list, send an e-mail message - **QuasarApp@yandex.by**</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../Credits/src/Library/src/QuasarAppCreditsModule/Credits.qml" line="60"/>
-        <source>**Note**: You must send a message signed with address of the bitcoin wallet from which the payment was made.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../Credits/src/Library/src/QuasarAppCreditsModule/Credits.qml" line="79"/>
-        <source>**bitcoin:bc1q4wnp58plhx4fwnfnzz3e4slulv2gzzts89w2f7**</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../Credits/src/Library/src/QuasarAppCreditsModule/Credits.qml" line="89"/>
-        <source># Our patrons list:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../Credits/src/Library/src/QuasarAppCreditsModule/Credits.qml" line="98"/>
-        <source>## Silver Membership Patrons:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../Credits/src/Library/src/QuasarAppCreditsModule/Credits.qml" line="106"/>
-        <source>* Rustem Husnutdinov</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
     <name>Game</name>
     <message>
         <source>You have passed the level in %0 steps and unlocked level %1</source>
@@ -360,143 +322,115 @@
 <context>
     <name>LoginView</name>
     <message>
-        <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="21"/>
         <source>Create a new account</source>
-        <translation>Создать новый аккаунт</translation>
+        <translation type="vanished">Создать новый аккаунт</translation>
     </message>
     <message>
-        <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="21"/>
-        <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="249"/>
         <source>LogIn</source>
-        <translation>Логин</translation>
+        <translation type="vanished">Логин</translation>
     </message>
     <message>
-        <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="22"/>
         <source>Please fill this form to create an account</source>
-        <translation>Для создания аккаунта пожалуста заполните эту форму</translation>
+        <translation type="vanished">Для создания аккаунта пожалуста заполните эту форму</translation>
     </message>
     <message>
-        <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="23"/>
         <source>Please fill this form to login in your account</source>
-        <translation>Пожалуйста заполните эту форму для входа в свой аккаунт</translation>
+        <translation type="vanished">Пожалуйста заполните эту форму для входа в свой аккаунт</translation>
     </message>
     <message>
-        <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="62"/>
         <source>First Name</source>
-        <translation>Имя</translation>
+        <translation type="vanished">Имя</translation>
     </message>
     <message>
-        <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="65"/>
         <source>Empy or incorrect name. Please enter yuor name.</source>
-        <translation>Вы не заполнили форму или ввели некорректное имя. Пожалуйста, введите корректное имя.</translation>
+        <translation type="vanished">Вы не заполнили форму или ввели некорректное имя. Пожалуйста, введите корректное имя.</translation>
     </message>
     <message>
-        <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="80"/>
         <source>Last Name</source>
-        <translation>Фамилия</translation>
+        <translation type="vanished">Фамилия</translation>
     </message>
     <message>
-        <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="107"/>
         <source>Select you country</source>
-        <translation>Выберите свою страну</translation>
+        <translation type="vanished">Выберите свою страну</translation>
     </message>
     <message>
-        <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="129"/>
         <source>EMail</source>
-        <translation>EMail</translation>
+        <translation type="vanished">EMail</translation>
     </message>
     <message>
-        <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="133"/>
         <source>Empty or incorrect email address. Please enter yuor name.</source>
-        <translation>Вы не заполнили форму или ввели неверный адрес электронной почты. Пожалуйста, введите верный email адрес.</translation>
+        <translation type="vanished">Вы не заполнили форму или ввели неверный адрес электронной почты. Пожалуйста, введите верный email адрес.</translation>
     </message>
     <message>
-        <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="148"/>
         <source>Nickname</source>
-        <translation>Никнейм</translation>
+        <translation type="vanished">Никнейм</translation>
     </message>
     <message>
-        <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="152"/>
         <source>Empty or incorrect Nickname. Please enter yuor name.</source>
-        <translation>Вы не заполнили форму или ввели некорректный никнейм. Пожалуйста, введите корректный никнейм.</translation>
+        <translation type="vanished">Вы не заполнили форму или ввели некорректный никнейм. Пожалуйста, введите корректный никнейм.</translation>
     </message>
     <message>
-        <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="174"/>
         <source>Pasword</source>
-        <translation>Пароль</translation>
+        <translation type="vanished">Пароль</translation>
     </message>
     <message>
-        <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="188"/>
         <source>Confirm pasword</source>
-        <translation>Подтвердить пароль</translation>
+        <translation type="vanished">Подтвердить пароль</translation>
     </message>
     <message>
-        <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="200"/>
         <source>Forgot password</source>
-        <translation>Я не помню свой пароль</translation>
+        <translation type="vanished">Я не помню свой пароль</translation>
     </message>
     <message>
-        <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="220"/>
         <source>I accept the Terms of use</source>
-        <translation>Я принимаю Условия использования</translation>
+        <translation type="vanished">Я принимаю Условия использования</translation>
     </message>
     <message>
-        <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="227"/>
         <source>Show terms of use</source>
-        <translation>Показать Условия использования</translation>
+        <translation type="vanished">Показать Условия использования</translation>
     </message>
     <message>
-        <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="248"/>
         <source>SignUp</source>
-        <translation>Зарегистрироваться</translation>
+        <translation type="vanished">Зарегистрироваться</translation>
     </message>
     <message>
-        <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="281"/>
         <source>Login In</source>
-        <translation>Войти</translation>
+        <translation type="vanished">Войти</translation>
     </message>
     <message>
-        <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="284"/>
         <source>Sign Up</source>
-        <translation>Зарегистрироваться</translation>
+        <translation type="vanished">Зарегистрироваться</translation>
     </message>
     <message>
-        <location filename="../QMLLoginView/LoginView/src/LoginViewModule/LoginView.qml" line="347"/>
         <source>Password must match the 1st field and the password cannot be empty</source>
-        <translation>Пароль должен совпадать, и не может быть пустым.</translation>
+        <translation type="vanished">Пароль должен совпадать, и не может быть пустым.</translation>
     </message>
 </context>
 <context>
     <name>LoginView::LVMainModel</name>
     <message>
-        <location filename="../QMLLoginView/LoginView/src/lvmainmodel.cpp" line="204"/>
         <source>must be longer than 8 characters</source>
-        <translation>Должен быть длиннее 8 символов</translation>
+        <translation type="vanished">Должен быть длиннее 8 символов</translation>
     </message>
     <message>
-        <location filename="../QMLLoginView/LoginView/src/lvmainmodel.cpp" line="208"/>
         <source>must contain numbers</source>
-        <translation>Должен содержать цифры</translation>
+        <translation type="vanished">Должен содержать цифры</translation>
     </message>
     <message>
-        <location filename="../QMLLoginView/LoginView/src/lvmainmodel.cpp" line="212"/>
         <source>must contain small chars</source>
-        <translation>Должен содержать строчные буквы</translation>
+        <translation type="vanished">Должен содержать строчные буквы</translation>
     </message>
     <message>
-        <location filename="../QMLLoginView/LoginView/src/lvmainmodel.cpp" line="216"/>
         <source>must contain large chars</source>
-        <translation>Должен содержать заглавные буквы</translation>
+        <translation type="vanished">Должен содержать заглавные буквы</translation>
     </message>
     <message>
-        <location filename="../QMLLoginView/LoginView/src/lvmainmodel.cpp" line="220"/>
         <source>must contain extra chars (!@#$%^&amp;*)</source>
-        <translation>Должен содержать символы (! @ # $% ^ &amp; *)</translation>
+        <translation type="vanished">Должен содержать символы (! @ # $% ^ &amp; *)</translation>
     </message>
     <message>
-        <location filename="../QMLLoginView/LoginView/src/lvmainmodel.cpp" line="223"/>
         <source>Password requirements: </source>
-        <translation>Требования к паролю:</translation>
+        <translation type="vanished">Требования к паролю:</translation>
     </message>
 </context>
 <context>
@@ -544,10 +478,8 @@
 <context>
     <name>NotificationForm</name>
     <message>
-        <location filename="../SimpleQmlNotify/NotifyModule/NotificationForm.qml" line="16"/>
-        <location filename="../SimpleQmlNotify/NotifyModule/NotificationForm.qml" line="18"/>
         <source>Message</source>
-        <translation>Сообщение</translation>
+        <translation type="vanished">Сообщение</translation>
     </message>
 </context>
 <context>
@@ -770,16 +702,6 @@ Minimum steps for this lvl: %1</source>
         <location filename="../main.qml" line="23"/>
         <source>Hanoi Towers</source>
         <translation>Ханойские Башни</translation>
-    </message>
-    <message>
-        <location filename="../QMLLoginView/example/main.qml" line="28"/>
-        <source>Example of LoginView</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../ViewSolutions/Examples/src/main.qml" line="113"/>
-        <source>Examples of View Solutions</source>
-        <translation></translation>
     </message>
 </context>
 </TS>

@@ -16,7 +16,9 @@
 #include <isubscribabledata.h>
 #include <itoken.h>
 
-class WorldUpdate: public QH::PKG::AbstractData, public QH::IToken,
+#include "hanoitowersprotockol_global.h"
+
+class HANOITOWERSPROTOCOL_EXPORT WorldUpdate: public QH::PKG::AbstractData, public QH::IToken,
         public QH::PKG::ISubscribableData
 {
 public:
