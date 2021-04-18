@@ -1,6 +1,6 @@
 {
     "bin": [
-        "./../HanoiTowers/build/Release/HanoiTowersClient"
+        "./../build/Release/HanoiTowersClient"
     ],
     "clear": true,
     "libDir": "./../",
