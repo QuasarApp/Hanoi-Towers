@@ -24,3 +24,4 @@ add_executable(${CURRENT_PROJECT} ${SOURCE_CPP})
 target_link_libraries(${CURRENT_PROJECT} PRIVATE HanoiTowersProtockol Patronum)
 target_include_directories(${CURRENT_PROJECT} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 
+addDeployFromCustomFile("Server" "${CMAKE_SOURCE_DIR}/Deploy/Server.json")

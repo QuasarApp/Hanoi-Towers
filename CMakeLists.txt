@@ -61,8 +61,6 @@ file(MAKE_DIRECTORY ${TARGET_DIR})
 initAll()
 addDoc(${PROJECT_NAME} ${CMAKE_CURRENT_SOURCE_DIR}/doxygen.conf)
 
-addDeployFromCustomFile("Client" "${CMAKE_CURRENT_SOURCE_DIR}/Deploy/Client.json")
-addDeployFromCustomFile("Server" "${CMAKE_CURRENT_SOURCE_DIR}/Deploy/Server.json")
 
 #if (WIN32)
 #    addDeployQIF("Client" ${INSTALLER_DIR} ${TARGET_DIR} "${INSTALLER_DIR}/config/configWin.xml")
