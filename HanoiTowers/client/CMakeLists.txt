@@ -22,6 +22,7 @@ file(GLOB SOURCE_CPP
 )
 
 if (ANDROID)
+    set(ANDROID_PACKAGE_SOURCE_DIR ${CMAKE_CURRENT_LIST_DIR}/android CACHE INTERNAL "")
     add_library(${CURRENT_PROJECT} ${SOURCE_CPP})
 else()
     add_executable(${CURRENT_PROJECT} ${SOURCE_CPP})
