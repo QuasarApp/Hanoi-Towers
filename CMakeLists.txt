@@ -60,20 +60,6 @@ file(MAKE_DIRECTORY ${TARGET_DIR})
 initAll()
 addDoc(${PROJECT_NAME} ${CMAKE_CURRENT_SOURCE_DIR}/doxygen.conf)
 
-
-
-if (NOT WIN32)
-    #addDeployQIF("Client" ${INSTALLER_DIR} ${TARGET_DIR} "${INSTALLER_DIR}/config/configLinux.xml")
-
-    addDeploySnap("Client" ${TARGET_DIR})
-    #addReleaseSnap("Client")
-
-endif()
-
-#addReleaseQif("Client" ${DATA_DIR} ${TARGET_DIR})
-
-addDeployAPK("Android" "${CMAKE_CURRENT_SOURCE_DIR}/hanoi_towers/android-libHanoiTowers.so-deployment-settings.json" "digitalface" "${SIGN_PATH}/DigitalFaceMobily.keystore" "${SIGN_STORE_PASSWORD}" "${TARGET_DIR}")
-
 find_package(QT NAMES Qt6 Qt5 COMPONENTS Core REQUIRED)
 find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Core REQUIRED)
 

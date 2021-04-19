@@ -43,3 +43,17 @@ prepareQM(${CURRENT_PROJECT} ${CMAKE_CURRENT_SOURCE_DIR} "${LANGS}")
 if (NOT ANDROID)
     addDeployFromCustomFile("Client" "${CMAKE_SOURCE_DIR}/Deploy/Client.json")
 endif()
+
+if (UNIX AND NOT ANDROID)
+    #addDeployQIF("Client" ${INSTALLER_DIR} ${TARGET_DIR} "${INSTALLER_DIR}/config/configLinux.xml")
+    addDeploySnap("Client" ${TARGET_DIR})
+
+    #addReleaseSnap("Client")
+
+endif()
+
+#addReleaseQif("Client" ${DATA_DIR} ${TARGET_DIR})
+
+if (ANDROID)
+    addDeployAPK("Android" "${CMAKE_CURRENT_SOURCE_DIR}/hanoi_towers/android-libHanoiTowers.so-deployment-settings.json" "digitalface" "${SIGN_PATH}/DigitalFaceMobily.keystore" "${SIGN_STORE_PASSWORD}" "${TARGET_DIR}")
+endif()
