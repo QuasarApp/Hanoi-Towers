@@ -39,4 +39,7 @@ set(LANGS ${CMAKE_CURRENT_SOURCE_DIR}/languages/en.ts
 
 
 prepareQM(${CURRENT_PROJECT} ${CMAKE_CURRENT_SOURCE_DIR} "${LANGS}")
-addDeployFromCustomFile("Client" "${CMAKE_SOURCE_DIR}/Deploy/Client.json")
+
+if (NOT ANDROID)
+    addDeployFromCustomFile("Client" "${CMAKE_SOURCE_DIR}/Deploy/Client.json")
+endif()
