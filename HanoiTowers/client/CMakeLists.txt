@@ -8,7 +8,7 @@
 cmake_minimum_required(VERSION 3.1)
 
 
-set(CURRENT_PROJECT "${PROJECT_NAME}Client")
+set(CURRENT_PROJECT ${PROJECT_NAME})
 
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
