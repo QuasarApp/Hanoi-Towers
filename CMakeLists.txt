@@ -12,11 +12,8 @@ set(BUILD_SHARED_LIBS ON)
 
 
 
-include(submodules/Heart/QuasarAppLib/CMake/ccache.cmake)
-include(submodules/Heart/QuasarAppLib/CMake/QuasarAppCITargets.cmake)
-include(submodules/Heart/QuasarAppLib/CMake/ProjectOut.cmake)
+include(submodules/Heart/QuasarAppLib/CMake/QuasarApp.cmake)
 include(submodules/Heart/QuasarAppLib/CMake/Version.cmake)
-include(submodules/Heart/QuasarAppLib/CMake/QtUtils.cmake)
 
 if (DEFINED TARGET_PLATFORM_TOOLCHAIN)
     if (${TARGET_PLATFORM_TOOLCHAIN} STREQUAL "wasm32")
