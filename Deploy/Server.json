@@ -1,7 +1,7 @@
 {
     "bin": [
-        "./../build/Release/HanoiTowersTerminal",
-        "./../build/Release/HanoiTowersServer"
+        "HanoiTowersTerminal",
+        "HanoiTowersServer"
         ],
     "clear": true,
     "libDir": "./../",
