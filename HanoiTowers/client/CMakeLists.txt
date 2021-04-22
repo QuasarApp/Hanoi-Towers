@@ -42,6 +42,7 @@ set(LANGS ${CMAKE_CURRENT_SOURCE_DIR}/languages/en.ts
 prepareQM(${CURRENT_PROJECT} ${CMAKE_CURRENT_SOURCE_DIR} "${LANGS}")
 
 if (ANDROID)
+    set(QT_ANDROID_APPLICATION_BINARY "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}")
     addDeployAPK("Android" "${CMAKE_BINARY_DIR}/android_deployment_settings.json" "digitalface" "${SIGN_PATH}/DigitalFaceMobily.keystore" "${SIGN_STORE_PASSWORD}" "${TARGET_DIR}")
 else()
     # Desctop deploying
