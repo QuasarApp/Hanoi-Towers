@@ -37,7 +37,7 @@ BackEnd::BackEnd(QQmlApplicationEngine *engine):
     QObject(),
     _profile()
 {
-    _settings = QuasarAppUtils::Settings::get();
+    _settings = QuasarAppUtils::Settings::instance();
 
     _client = new HanoiClient();
     _loginModel = new LoginView::LVMainModel("userLogin", this);
