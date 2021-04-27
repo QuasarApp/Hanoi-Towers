@@ -48,7 +48,7 @@ if (ANDROID)
                          ${PROJECT_NAME}Protockol
                          QuasarApp)
 
-    addDeployAPK(${CURRENT_PROJECT} "${CMAKE_CURRENT_LIST_DIR}/android" "digitalface" "${SIGN_PATH}/DigitalFaceMobily.keystore" "${SIGN_STORE_PASSWORD}" "${TARGET_DIR_WRONG}" "${HANOI_EXTRA_LIBS}")
+    addDeployAPK(${CURRENT_PROJECT} "${CMAKE_CURRENT_LIST_DIR}/android" "digitalface" "${SIGN_PATH}/DigitalFaceMobily.keystore" "${SIGN_STORE_PASSWORD}" "${TARGET_DIR}" "${HANOI_EXTRA_LIBS}")
 else()
     # Desctop deploying
     addDeployFromCustomFile("Client" "${CMAKE_SOURCE_DIR}/Deploy/Client.json")
