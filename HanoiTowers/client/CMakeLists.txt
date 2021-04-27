@@ -42,14 +42,11 @@ set(LANGS ${CMAKE_CURRENT_SOURCE_DIR}/languages/en.ts
 prepareQM(${CURRENT_PROJECT} ${CMAKE_CURRENT_SOURCE_DIR} "${LANGS}")
 
 if (ANDROID)
-    set(HANOI_EXTRA_LIBS $ENV{OPENSSL_ROOT_DIR}/lib/libcrypto.so
-                         $ENV{OPENSSL_ROOT_DIR}/lib/libssl.so
-                         Heart
+    set(HANOI_EXTRA_LIBS Heart
                          ${PROJECT_NAME}Protockol
                          QuasarApp
                          LoginView
-                         QmlNotyfyService
-                         ViewSolutions)
+                         QmlNotyfyService)
 
     addDeployAPK(${CURRENT_PROJECT} "${CMAKE_CURRENT_LIST_DIR}/android" "digitalface" "${SIGN_PATH}/DigitalFaceMobily.keystore" "${SIGN_STORE_PASSWORD}" "${TARGET_DIR}" "${HANOI_EXTRA_LIBS}")
 else()
