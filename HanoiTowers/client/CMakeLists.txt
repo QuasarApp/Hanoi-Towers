@@ -42,8 +42,8 @@ set(LANGS ${CMAKE_CURRENT_SOURCE_DIR}/languages/en.ts
 prepareQM(${CURRENT_PROJECT} ${CMAKE_CURRENT_SOURCE_DIR} "${LANGS}")
 
 if (ANDROID)
-    set(EXTRA_LIBS $ENV{OPENSSL_ROOT_DIR}/lib/libcrypto_${ANDROID_ABI}.so
-                   $ENV{OPENSSL_ROOT_DIR}/lib/libssl_${ANDROID_ABI}.so)
+#    set(EXTRA_LIBS $ENV{OPENSSL_ROOT_DIR}/lib/libcrypto_${ANDROID_ABI}.so
+#                   $ENV{OPENSSL_ROOT_DIR}/lib/libssl_${ANDROID_ABI}.so)
 
     addDeployAPK(${CURRENT_PROJECT} "${CMAKE_CURRENT_LIST_DIR}/android" "digitalface" "${SIGN_PATH}/DigitalFaceMobily.keystore" "${SIGN_STORE_PASSWORD}" "${TARGET_DIR_WRONG}" "${EXTRA_LIBS}")
 else()
