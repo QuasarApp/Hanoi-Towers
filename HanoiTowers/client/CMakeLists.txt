@@ -47,7 +47,6 @@ if (ANDROID)
                          Heart
                          ${PROJECT_NAME}Protockol
                          QuasarApp
-                         Patronum
                          LoginView
                          QmlNotyfyService
                          ViewSolutions)
