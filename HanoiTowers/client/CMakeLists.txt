@@ -46,10 +46,10 @@ if (ANDROID)
                          $ENV{OPENSSL_ROOT_DIR}/lib/libssl.so
                          Heart
                          ${PROJECT_NAME}Protockol
-                         QuasarApp,
-                         Patronum,
-                         LoginView,
-                         QmlNotyfyService,
+                         QuasarApp
+                         Patronum
+                         LoginView
+                         QmlNotyfyService
                          ViewSolutions)
 
     addDeployAPK(${CURRENT_PROJECT} "${CMAKE_CURRENT_LIST_DIR}/android" "digitalface" "${SIGN_PATH}/DigitalFaceMobily.keystore" "${SIGN_STORE_PASSWORD}" "${TARGET_DIR}" "${HANOI_EXTRA_LIBS}")
