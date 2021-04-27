@@ -46,6 +46,7 @@ if (ANDROID)
                          ${PROJECT_NAME}Protockol
                          QuasarApp
                          LoginView
+                         Credits
                          QmlNotyfyService)
 
     addDeployAPK(${CURRENT_PROJECT} "${CMAKE_CURRENT_LIST_DIR}/android" "digitalface" "${SIGN_PATH}/DigitalFaceMobily.keystore" "${SIGN_STORE_PASSWORD}" "${TARGET_DIR}" "${HANOI_EXTRA_LIBS}")
