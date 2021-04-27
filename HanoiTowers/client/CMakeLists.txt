@@ -42,8 +42,8 @@ set(LANGS ${CMAKE_CURRENT_SOURCE_DIR}/languages/en.ts
 prepareQM(${CURRENT_PROJECT} ${CMAKE_CURRENT_SOURCE_DIR} "${LANGS}")
 
 if (ANDROID)
-    set(HANOI_EXTRA_LIBS $ENV{OPENSSL_ROOT_DIR}/lib/libcrypto.so.1.1
-                         $ENV{OPENSSL_ROOT_DIR}/lib/libssl.so.1.1
+    set(HANOI_EXTRA_LIBS $ENV{OPENSSL_ROOT_DIR}/lib/libcrypto.so
+                         $ENV{OPENSSL_ROOT_DIR}/lib/libssl.so
                          Heart
                          ${PROJECT_NAME}Protockol
                          QuasarApp,
