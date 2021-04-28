@@ -69,10 +69,10 @@ bool HanoiService::handleReceive(const Patronum::Feature &data) {
 QSet<Patronum::Feature> HanoiService::supportedFeatures() {
     QSet<Patronum::Feature> data;
 
-    data << Patronum::Feature("ping");
-    data << Patronum::Feature("state");
-    data << Patronum::Feature("log");
-    data << Patronum::Feature("logLvl");
+    data << Patronum::Feature("ping", "", "This is simple test command. Server should be responce \"Pong\"");
+    data << Patronum::Feature("state","", "retruns current status of the server.");
+    data << Patronum::Feature("log", "path/to/newLog/file", "Peint path to log file or sets new path if you set in in arguments", "-log [ath/to/new/log/file");
+    data << Patronum::Feature("logLvl", "[0-3]", "Sets new verbose log level.");
 
     return data;
 }
