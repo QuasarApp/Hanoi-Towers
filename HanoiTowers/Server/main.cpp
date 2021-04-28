@@ -9,7 +9,7 @@
 
 int main(int argc, char *argv[])
 {
-    QCoreApplication::setApplicationName("HanoiTowers Server"); // <--
+    QCoreApplication::setApplicationName("HanoiTowersServer"); // <--
     QCoreApplication::setOrganizationName("QuasarApp"); // <--
     QCoreApplication::setOrganizationDomain("https://github.com/QuasarApp"); // <--
 

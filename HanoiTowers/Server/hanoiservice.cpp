@@ -13,7 +13,7 @@
 #include <QDir>
 
 HanoiService::HanoiService(int argc, char *argv[]):
-    Patronum::Service<QCoreApplication>(argc, argv, "HanoiService") {
+    Patronum::Service<QCoreApplication>(argc, argv, "HanoiTowersService") {
 
     if (!QuasarAppUtils::Params::isEndable("fileLog"))
         QuasarAppUtils::Params::setArg("fileLog", "/var/log/HanoiService.log");
