@@ -12,11 +12,8 @@ set(BUILD_SHARED_LIBS ON)
 
 
 
-include(submodules/Heart/QuasarAppLib/CMake/ccache.cmake)
-include(submodules/Heart/QuasarAppLib/CMake/QuasarAppCITargets.cmake)
-include(submodules/Heart/QuasarAppLib/CMake/ProjectOut.cmake)
+include(submodules/Heart/QuasarAppLib/CMake/QuasarApp.cmake)
 include(submodules/Heart/QuasarAppLib/CMake/Version.cmake)
-include(submodules/Heart/QuasarAppLib/CMake/QtUtils.cmake)
 
 if (DEFINED TARGET_PLATFORM_TOOLCHAIN)
     if (${TARGET_PLATFORM_TOOLCHAIN} STREQUAL "wasm32")
@@ -50,7 +47,6 @@ endif()
 SET(INSTALLER_DIR "${CMAKE_CURRENT_SOURCE_DIR}/installer/")
 SET(DATA_DIR "${INSTALLER_DIR}/packages/HanoiTowers/data")
 
-SET(BIB_APP "${CMAKE_CURRENT_SOURCE_DIR}/hanoi_towers/build/Release/HanoiTowers")
 SET(TARGET_DIR "${CMAKE_CURRENT_SOURCE_DIR}/Distro")
 SET(PRODUCT_VER_Mj 1)
 SET(PRODUCT_VER_Mn 6)
@@ -60,24 +56,6 @@ file(MAKE_DIRECTORY ${TARGET_DIR})
 
 initAll()
 addDoc(${PROJECT_NAME} ${CMAKE_CURRENT_SOURCE_DIR}/doxygen.conf)
-
-addDeployFromCustomFile("Client" "${CMAKE_CURRENT_SOURCE_DIR}/Deploy/Client.json")
-addDeployFromCustomFile("Server" "${CMAKE_CURRENT_SOURCE_DIR}/Deploy/Server.json")
-
-#if (WIN32)
-#    addDeployQIF("Client" ${INSTALLER_DIR} ${TARGET_DIR} "${INSTALLER_DIR}/config/configWin.xml")
-
-#else (WIN32)
-#    addDeployQIF("Client" ${INSTALLER_DIR} ${TARGET_DIR} "${INSTALLER_DIR}/config/configLinux.xml")
-
-    #addDeploySnap("Client" ${TARGET_DIR})
-    #addReleaseSnap("Client")
-
-#endif(WIN32)
-
-#addReleaseQif("Client" ${DATA_DIR} ${TARGET_DIR})
-
-#addDeployAPK("Android" "${CMAKE_CURRENT_SOURCE_DIR}/hanoi_towers/android-libHanoiTowers.so-deployment-settings.json" "digitalface" "${SIGN_PATH}/DigitalFaceMobily.keystore" "${SIGN_STORE_PASSWORD}" "${TARGET_DIR}")
 
 find_package(QT NAMES Qt6 Qt5 COMPONENTS Core REQUIRED)
 find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Core REQUIRED)
