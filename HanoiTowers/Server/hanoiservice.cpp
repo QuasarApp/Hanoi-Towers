@@ -17,7 +17,10 @@ HanoiService::HanoiService(int argc, char *argv[]):
 }
 
 HanoiService::~HanoiService() {
-    HanoiService::onStop();
+    if (_server) {
+        _server->softDelete();
+        _server = nullptr;
+    }
 }
 
 void HanoiService::onStart() {
@@ -30,11 +33,6 @@ void HanoiService::onStart() {
 }
 
 void HanoiService::onStop() {
-    if (_server) {
-        _server->softDelete();
-        _server = nullptr;
-    }
-
     Service::onStop();
 }
 
