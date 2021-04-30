@@ -1,6 +1,7 @@
 {
     "bin": "HanoiTowers/Server/HanoiTowersServer",
-
+    "name" : "HanoiTowersServer",
+    "version": "1.0.0.1",
     "clear": true,
     "libDir": "./../",
     "recursiveDepth": "10",
