@@ -39,10 +39,10 @@ void HanoiService::onStop() {
 bool HanoiService::handleReceive(const Patronum::Feature &data) {
 
     if (data.cmd() == "ping") {
-        sendResuylt("Pong");
+        return sendResuylt("Pong");
 
-    } else if (data.cmd() == "state") {
-        sendResuylt(_server->getWorkState().toString());
+    } else if (data.cmd() == "status") {
+        return sendResuylt(_server->getWorkState().toString());
 
     } else if (data.cmd() == "log") {
         return workWithLogFile(data);
@@ -51,7 +51,7 @@ bool HanoiService::handleReceive(const Patronum::Feature &data) {
         return workWithLogLvl(data);
     }
 
-    return true;
+    return false;
 }
 
 QSet<Patronum::Feature> HanoiService::supportedFeatures() {
