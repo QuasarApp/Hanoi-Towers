@@ -180,17 +180,6 @@ bool HanoiServer::initWorld() {
    return _world && _world->isValid();
 }
 
-void HanoiServer::nodeConfirmend(QH::AbstractNodeInfo *node) {
-    if (auto baseNode = dynamic_cast<QH::BaseNodeInfo*>(node)) {
-        UserDataRequest request;
-
-        request.setId(baseNode->id());
-
-        workWirthUserData(&request, node);
-
-    }
-}
-
 void HanoiServer::objectRemoved(const QH::DbAddress & address) {
     removeUserFromWorld(address.id().toString());
 }

@@ -34,7 +34,7 @@ class HanoiImageProvider;
 class DataConverter;
 class RecordsProxyModel;
 
-class BackEnd: public QObject
+class HanoiTowers: public QObject
 {
     Q_OBJECT
     Q_PROPERTY(bool randomColor READ randomColor WRITE setRandomColor NOTIFY randomColorChanged)
@@ -60,8 +60,8 @@ class BackEnd: public QObject
 
 
 public:
-    BackEnd(QQmlApplicationEngine *engine);
-    ~BackEnd();
+    HanoiTowers(QQmlApplicationEngine *engine);
+    ~HanoiTowers();
 
     Q_INVOKABLE QString profile() const;
     Q_INVOKABLE QObject* profileList();

@@ -48,95 +48,52 @@
 <context>
     <name>BackEnd</name>
     <message>
-        <location filename="../backEnd.cpp" line="71"/>
         <source>Create new user</source>
-        <translation>新規ユーザーの作成</translation>
+        <translation type="vanished">新規ユーザーの作成</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="160"/>
         <source>Connect error</source>
-        <translation>接続エラー</translation>
+        <translation type="vanished">接続エラー</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="161"/>
         <source>Failed to connect to server please check network connection befor login</source>
-        <translation>サーバへの接続に失敗しました</translation>
+        <translation type="vanished">サーバへの接続に失敗しました</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="174"/>
-        <source>Update Profile error</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../backEnd.cpp" line="175"/>
-        <source>Failed to update yuo user data please check network connection befor update prifile</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../backEnd.cpp" line="180"/>
-        <source>Update Profile</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../backEnd.cpp" line="181"/>
-        <source>User data updated successful</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../backEnd.cpp" line="214"/>
         <source>login error</source>
-        <translation>ログインエラー</translation>
+        <translation type="vanished">ログインエラー</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="215"/>
         <source>Failed to login into online account, please check your password and username</source>
-        <translation>オンラインアカウントにログインできませんでした。パスワードとユーザー名を確認してください</translation>
+        <translation type="vanished">オンラインアカウントにログインできませんでした。パスワードとユーザー名を確認してください</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="225"/>
         <source>Register online error</source>
-        <translation>登録オンラインエラー</translation>
+        <translation type="vanished">登録オンラインエラー</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="226"/>
         <source>Failed to register this account, if this account was created by you, try to restore it.</source>
-        <translation>このアカウントが登録されなかった場合、このアカウントが作成された場合、それを元に戻してください。</translation>
+        <translation type="vanished">このアカウントが登録されなかった場合、このアカウントが作成された場合、それを元に戻してください。</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="236"/>
-        <location filename="../backEnd.cpp" line="258"/>
         <source>Server error</source>
-        <translation>サーバエラー</translation>
+        <translation type="vanished">サーバエラー</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="243"/>
-        <source>User with this id is not registered. If it you then use please the sigup form.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../backEnd.cpp" line="251"/>
-        <source>User with this id already registered. If it you then use please the login form.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../backEnd.cpp" line="396"/>
         <source>Create user error</source>
-        <translation>ユーザーエラーの作成</translation>
+        <translation type="vanished">ユーザーエラーの作成</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="397"/>
         <source>Failed to create a new user, The name %0 alredy used.</source>
-        <translation>新しいユーザーの作成に失敗しました。名前 %0 はすでに使用されています。</translation>
+        <translation type="vanished">新しいユーザーの作成に失敗しました。名前 %0 はすでに使用されています。</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="428"/>
         <source>current profile not online!</source>
-        <translation>現在のプロファイルはオフラインです！</translation>
+        <translation type="vanished">現在のプロファイルはオフラインです！</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="428"/>
         <source>Remove online error</source>
-        <translation>オンラインユーザーデータの削除中にエラーが発生しました</translation>
+        <translation type="vanished">オンラインユーザーデータの削除中にエラーが発生しました</translation>
     </message>
 </context>
 <context>
@@ -273,13 +230,107 @@
         <translation>ローカルユーザはサーバからNBEWデータを受け入れます。</translation>
     </message>
     <message>
-        <location filename="../hanoiclient.cpp" line="366"/>
+        <location filename="../hanoiclient.cpp" line="371"/>
         <source>Internal Error, server send invalid data, and this data can&apos;t be saved into local database.</source>
         <translation>内部エラー、サーバーが無効なデータを送信し、このデータをローカルデータベースに保存することはできません。</translation>
     </message>
     <message>
         <source>Online error</source>
         <translation type="vanished">オンラインエラー</translation>
+    </message>
+</context>
+<context>
+    <name>HanoiTowers</name>
+    <message>
+        <location filename="../hanoitowers.cpp" line="71"/>
+        <source>Create new user</source>
+        <translation type="unfinished">新規ユーザーの作成</translation>
+    </message>
+    <message>
+        <location filename="../hanoitowers.cpp" line="160"/>
+        <source>Connect error</source>
+        <translation type="unfinished">接続エラー</translation>
+    </message>
+    <message>
+        <location filename="../hanoitowers.cpp" line="161"/>
+        <source>Failed to connect to server please check network connection befor login</source>
+        <translation type="unfinished">サーバへの接続に失敗しました</translation>
+    </message>
+    <message>
+        <location filename="../hanoitowers.cpp" line="174"/>
+        <source>Update Profile error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../hanoitowers.cpp" line="175"/>
+        <source>Failed to update yuo user data please check network connection befor update prifile</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../hanoitowers.cpp" line="180"/>
+        <source>Update Profile</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../hanoitowers.cpp" line="181"/>
+        <source>User data updated successful</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../hanoitowers.cpp" line="214"/>
+        <source>login error</source>
+        <translation type="unfinished">ログインエラー</translation>
+    </message>
+    <message>
+        <location filename="../hanoitowers.cpp" line="215"/>
+        <source>Failed to login into online account, please check your password and username</source>
+        <translation type="unfinished">オンラインアカウントにログインできませんでした。パスワードとユーザー名を確認してください</translation>
+    </message>
+    <message>
+        <location filename="../hanoitowers.cpp" line="225"/>
+        <source>Register online error</source>
+        <translation type="unfinished">登録オンラインエラー</translation>
+    </message>
+    <message>
+        <location filename="../hanoitowers.cpp" line="226"/>
+        <source>Failed to register this account, if this account was created by you, try to restore it.</source>
+        <translation type="unfinished">このアカウントが登録されなかった場合、このアカウントが作成された場合、それを元に戻してください。</translation>
+    </message>
+    <message>
+        <location filename="../hanoitowers.cpp" line="236"/>
+        <location filename="../hanoitowers.cpp" line="258"/>
+        <source>Server error</source>
+        <translation type="unfinished">サーバエラー</translation>
+    </message>
+    <message>
+        <location filename="../hanoitowers.cpp" line="243"/>
+        <source>User with this id is not registered. If it you then use please the sigup form.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../hanoitowers.cpp" line="251"/>
+        <source>User with this id already registered. If it you then use please the login form.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../hanoitowers.cpp" line="396"/>
+        <source>Create user error</source>
+        <translation type="unfinished">ユーザーエラーの作成</translation>
+    </message>
+    <message>
+        <location filename="../hanoitowers.cpp" line="397"/>
+        <source>Failed to create a new user, The name %0 alredy used.</source>
+        <translation type="unfinished">新しいユーザーの作成に失敗しました。名前 %0 はすでに使用されています。</translation>
+    </message>
+    <message>
+        <location filename="../hanoitowers.cpp" line="428"/>
+        <source>Remove online error</source>
+        <translation type="unfinished">オンラインユーザーデータの削除中にエラーが発生しました</translation>
+    </message>
+    <message>
+        <location filename="../hanoitowers.cpp" line="428"/>
+        <source>current profile not online!</source>
+        <translation type="unfinished">現在のプロファイルはオフラインです！</translation>
     </message>
 </context>
 <context>

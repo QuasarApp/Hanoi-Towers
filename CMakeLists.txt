@@ -92,7 +92,6 @@ endif()
 if (HANOI_SERVER)
     add_subdirectory(submodules/Patronum)
     add_subdirectory(HanoiTowers/Server)
-    add_subdirectory(HanoiTowers/Terminal)
 endif()
 
 

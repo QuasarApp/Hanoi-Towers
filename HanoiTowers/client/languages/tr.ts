@@ -48,95 +48,52 @@
 <context>
     <name>BackEnd</name>
     <message>
-        <location filename="../backEnd.cpp" line="71"/>
         <source>Create new user</source>
-        <translation>Yeni kullanıcı oluştur</translation>
+        <translation type="vanished">Yeni kullanıcı oluştur</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="160"/>
         <source>Connect error</source>
-        <translation>Bağlantı hatası</translation>
+        <translation type="vanished">Bağlantı hatası</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="161"/>
         <source>Failed to connect to server please check network connection befor login</source>
-        <translation>Sunucuya bağlanılamadı, lütfen oturum açmadan önce ağ bağlantısını kontrol edin</translation>
+        <translation type="vanished">Sunucuya bağlanılamadı, lütfen oturum açmadan önce ağ bağlantısını kontrol edin</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="174"/>
-        <source>Update Profile error</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../backEnd.cpp" line="175"/>
-        <source>Failed to update yuo user data please check network connection befor update prifile</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../backEnd.cpp" line="180"/>
-        <source>Update Profile</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../backEnd.cpp" line="181"/>
-        <source>User data updated successful</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../backEnd.cpp" line="214"/>
         <source>login error</source>
-        <translation>sisteme giriş hatası</translation>
+        <translation type="vanished">sisteme giriş hatası</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="215"/>
         <source>Failed to login into online account, please check your password and username</source>
-        <translation>Çevrimiçi hesaba giriş yapılamadı, lütfen şifrenizi ve kullanıcı adınızı kontrol edin</translation>
+        <translation type="vanished">Çevrimiçi hesaba giriş yapılamadı, lütfen şifrenizi ve kullanıcı adınızı kontrol edin</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="225"/>
         <source>Register online error</source>
-        <translation>Çevrimiçi kayıt hatası</translation>
+        <translation type="vanished">Çevrimiçi kayıt hatası</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="226"/>
         <source>Failed to register this account, if this account was created by you, try to restore it.</source>
-        <translation>Bu hesap kaydedilemedi, bu hesap sizin tarafınızdan oluşturulduysa, geri yüklemeyi deneyin.</translation>
+        <translation type="vanished">Bu hesap kaydedilemedi, bu hesap sizin tarafınızdan oluşturulduysa, geri yüklemeyi deneyin.</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="236"/>
-        <location filename="../backEnd.cpp" line="258"/>
         <source>Server error</source>
-        <translation>Server hatası</translation>
+        <translation type="vanished">Server hatası</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="243"/>
-        <source>User with this id is not registered. If it you then use please the sigup form.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../backEnd.cpp" line="251"/>
-        <source>User with this id already registered. If it you then use please the login form.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../backEnd.cpp" line="396"/>
         <source>Create user error</source>
-        <translation>Kullanıcı hatası oluştur</translation>
+        <translation type="vanished">Kullanıcı hatası oluştur</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="397"/>
         <source>Failed to create a new user, The name %0 alredy used.</source>
-        <translation>Yeni bir kullanıcı oluşturulamadı, %0 adı kullanıldı.</translation>
+        <translation type="vanished">Yeni bir kullanıcı oluşturulamadı, %0 adı kullanıldı.</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="428"/>
         <source>current profile not online!</source>
-        <translation>Mevcut profil çevrimdışı!</translation>
+        <translation type="vanished">Mevcut profil çevrimdışı!</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="428"/>
         <source>Remove online error</source>
-        <translation>Çevrimiçi kullanıcı verilerini kaldırma hatası</translation>
+        <translation type="vanished">Çevrimiçi kullanıcı verilerini kaldırma hatası</translation>
     </message>
 </context>
 <context>
@@ -274,13 +231,107 @@ Bu seviye için minimum adımlar: %2</translation>
         <translation>yerel kullanıcı sunucudan yeni verileri kabul eder.</translation>
     </message>
     <message>
-        <location filename="../hanoiclient.cpp" line="366"/>
+        <location filename="../hanoiclient.cpp" line="371"/>
         <source>Internal Error, server send invalid data, and this data can&apos;t be saved into local database.</source>
         <translation>Dahili Hata, sunucu geçersiz veri gönderdi ve bu veriler yerel veritabanına kaydedilemez.</translation>
     </message>
     <message>
         <source>Online error</source>
         <translation type="vanished">Çevrimiçi hata</translation>
+    </message>
+</context>
+<context>
+    <name>HanoiTowers</name>
+    <message>
+        <location filename="../hanoitowers.cpp" line="71"/>
+        <source>Create new user</source>
+        <translation type="unfinished">Yeni kullanıcı oluştur</translation>
+    </message>
+    <message>
+        <location filename="../hanoitowers.cpp" line="160"/>
+        <source>Connect error</source>
+        <translation type="unfinished">Bağlantı hatası</translation>
+    </message>
+    <message>
+        <location filename="../hanoitowers.cpp" line="161"/>
+        <source>Failed to connect to server please check network connection befor login</source>
+        <translation type="unfinished">Sunucuya bağlanılamadı, lütfen oturum açmadan önce ağ bağlantısını kontrol edin</translation>
+    </message>
+    <message>
+        <location filename="../hanoitowers.cpp" line="174"/>
+        <source>Update Profile error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../hanoitowers.cpp" line="175"/>
+        <source>Failed to update yuo user data please check network connection befor update prifile</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../hanoitowers.cpp" line="180"/>
+        <source>Update Profile</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../hanoitowers.cpp" line="181"/>
+        <source>User data updated successful</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../hanoitowers.cpp" line="214"/>
+        <source>login error</source>
+        <translation type="unfinished">sisteme giriş hatası</translation>
+    </message>
+    <message>
+        <location filename="../hanoitowers.cpp" line="215"/>
+        <source>Failed to login into online account, please check your password and username</source>
+        <translation type="unfinished">Çevrimiçi hesaba giriş yapılamadı, lütfen şifrenizi ve kullanıcı adınızı kontrol edin</translation>
+    </message>
+    <message>
+        <location filename="../hanoitowers.cpp" line="225"/>
+        <source>Register online error</source>
+        <translation type="unfinished">Çevrimiçi kayıt hatası</translation>
+    </message>
+    <message>
+        <location filename="../hanoitowers.cpp" line="226"/>
+        <source>Failed to register this account, if this account was created by you, try to restore it.</source>
+        <translation type="unfinished">Bu hesap kaydedilemedi, bu hesap sizin tarafınızdan oluşturulduysa, geri yüklemeyi deneyin.</translation>
+    </message>
+    <message>
+        <location filename="../hanoitowers.cpp" line="236"/>
+        <location filename="../hanoitowers.cpp" line="258"/>
+        <source>Server error</source>
+        <translation type="unfinished">Server hatası</translation>
+    </message>
+    <message>
+        <location filename="../hanoitowers.cpp" line="243"/>
+        <source>User with this id is not registered. If it you then use please the sigup form.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../hanoitowers.cpp" line="251"/>
+        <source>User with this id already registered. If it you then use please the login form.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../hanoitowers.cpp" line="396"/>
+        <source>Create user error</source>
+        <translation type="unfinished">Kullanıcı hatası oluştur</translation>
+    </message>
+    <message>
+        <location filename="../hanoitowers.cpp" line="397"/>
+        <source>Failed to create a new user, The name %0 alredy used.</source>
+        <translation type="unfinished">Yeni bir kullanıcı oluşturulamadı, %0 adı kullanıldı.</translation>
+    </message>
+    <message>
+        <location filename="../hanoitowers.cpp" line="428"/>
+        <source>Remove online error</source>
+        <translation type="unfinished">Çevrimiçi kullanıcı verilerini kaldırma hatası</translation>
+    </message>
+    <message>
+        <location filename="../hanoitowers.cpp" line="428"/>
+        <source>current profile not online!</source>
+        <translation type="unfinished">Mevcut profil çevrimdışı!</translation>
     </message>
 </context>
 <context>

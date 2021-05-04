@@ -1,8 +1,7 @@
 {
-    "bin": [
-        "HanoiTowers/Terminal/HanoiTowersTerminal",
-        "HanoiTowers/Server/HanoiTowersServer"
-        ],
+    "bin": "HanoiTowers/Server/HanoiTowersServer",
+    "name" : "HanoiTowersServer",
+    "deployVersion": "1.0.0.1",
     "clear": true,
     "libDir": "./../",
     "recursiveDepth": "10",
@@ -16,7 +15,6 @@
         "./../stage"
         ],
     "extraLib": "crypto",
-    "name": "HanoiCore",
     "targetDir": "./../Distro/Server",
     "qif": false,
     "deb": true

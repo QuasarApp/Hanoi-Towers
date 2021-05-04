@@ -48,95 +48,52 @@
 <context>
     <name>BackEnd</name>
     <message>
-        <location filename="../backEnd.cpp" line="71"/>
         <source>Create new user</source>
-        <translation>Створити нового користувача</translation>
+        <translation type="vanished">Створити нового користувача</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="160"/>
         <source>Connect error</source>
-        <translation>Помилка підключення</translation>
+        <translation type="vanished">Помилка підключення</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="161"/>
         <source>Failed to connect to server please check network connection befor login</source>
-        <translation>Не вдалося підключитися до сервера, перевірте мережеве підключення для входу</translation>
+        <translation type="vanished">Не вдалося підключитися до сервера, перевірте мережеве підключення для входу</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="174"/>
-        <source>Update Profile error</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../backEnd.cpp" line="175"/>
-        <source>Failed to update yuo user data please check network connection befor update prifile</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../backEnd.cpp" line="180"/>
-        <source>Update Profile</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../backEnd.cpp" line="181"/>
-        <source>User data updated successful</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../backEnd.cpp" line="214"/>
         <source>login error</source>
-        <translation>помилка входу</translation>
+        <translation type="vanished">помилка входу</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="215"/>
         <source>Failed to login into online account, please check your password and username</source>
-        <translation>Не вдалося увійти в онлайн-акаунт, перевірте свій пароль та ім’я користувача</translation>
+        <translation type="vanished">Не вдалося увійти в онлайн-акаунт, перевірте свій пароль та ім’я користувача</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="225"/>
         <source>Register online error</source>
-        <translation>помилка реєстрації в Інтернеті</translation>
+        <translation type="vanished">помилка реєстрації в Інтернеті</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="226"/>
         <source>Failed to register this account, if this account was created by you, try to restore it.</source>
-        <translation>Не вдалося зареєструвати цей обліковий запис, якщо цей обліковий запис був створений вами, спробуйте відновити його.</translation>
+        <translation type="vanished">Не вдалося зареєструвати цей обліковий запис, якщо цей обліковий запис був створений вами, спробуйте відновити його.</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="236"/>
-        <location filename="../backEnd.cpp" line="258"/>
         <source>Server error</source>
-        <translation>Помилка серверу</translation>
+        <translation type="vanished">Помилка серверу</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="243"/>
-        <source>User with this id is not registered. If it you then use please the sigup form.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../backEnd.cpp" line="251"/>
-        <source>User with this id already registered. If it you then use please the login form.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../backEnd.cpp" line="396"/>
         <source>Create user error</source>
-        <translation>Помилка створення користувача</translation>
+        <translation type="vanished">Помилка створення користувача</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="397"/>
         <source>Failed to create a new user, The name %0 alredy used.</source>
-        <translation>Не вдалося створити нового користувача, ім’я %0 вже використовується.</translation>
+        <translation type="vanished">Не вдалося створити нового користувача, ім’я %0 вже використовується.</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="428"/>
         <source>current profile not online!</source>
-        <translation>Поточний профіль офлайн!</translation>
+        <translation type="vanished">Поточний профіль офлайн!</translation>
     </message>
     <message>
-        <location filename="../backEnd.cpp" line="428"/>
         <source>Remove online error</source>
-        <translation>Помилка видалення онлайн даних користувачів</translation>
+        <translation type="vanished">Помилка видалення онлайн даних користувачів</translation>
     </message>
 </context>
 <context>
@@ -274,13 +231,107 @@
         <translation>локальний користувач приймає нові дані з сервера.</translation>
     </message>
     <message>
-        <location filename="../hanoiclient.cpp" line="366"/>
+        <location filename="../hanoiclient.cpp" line="371"/>
         <source>Internal Error, server send invalid data, and this data can&apos;t be saved into local database.</source>
         <translation>Внутрішня помилка, сервер надсилає недійсні дані, і ці дані не можна зберегти в локальній базі даних.</translation>
     </message>
     <message>
         <source>Online error</source>
         <translation type="vanished">Помилка в мережі</translation>
+    </message>
+</context>
+<context>
+    <name>HanoiTowers</name>
+    <message>
+        <location filename="../hanoitowers.cpp" line="71"/>
+        <source>Create new user</source>
+        <translation type="unfinished">Створити нового користувача</translation>
+    </message>
+    <message>
+        <location filename="../hanoitowers.cpp" line="160"/>
+        <source>Connect error</source>
+        <translation type="unfinished">Помилка підключення</translation>
+    </message>
+    <message>
+        <location filename="../hanoitowers.cpp" line="161"/>
+        <source>Failed to connect to server please check network connection befor login</source>
+        <translation type="unfinished">Не вдалося підключитися до сервера, перевірте мережеве підключення для входу</translation>
+    </message>
+    <message>
+        <location filename="../hanoitowers.cpp" line="174"/>
+        <source>Update Profile error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../hanoitowers.cpp" line="175"/>
+        <source>Failed to update yuo user data please check network connection befor update prifile</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../hanoitowers.cpp" line="180"/>
+        <source>Update Profile</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../hanoitowers.cpp" line="181"/>
+        <source>User data updated successful</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../hanoitowers.cpp" line="214"/>
+        <source>login error</source>
+        <translation type="unfinished">помилка входу</translation>
+    </message>
+    <message>
+        <location filename="../hanoitowers.cpp" line="215"/>
+        <source>Failed to login into online account, please check your password and username</source>
+        <translation type="unfinished">Не вдалося увійти в онлайн-акаунт, перевірте свій пароль та ім’я користувача</translation>
+    </message>
+    <message>
+        <location filename="../hanoitowers.cpp" line="225"/>
+        <source>Register online error</source>
+        <translation type="unfinished">помилка реєстрації в Інтернеті</translation>
+    </message>
+    <message>
+        <location filename="../hanoitowers.cpp" line="226"/>
+        <source>Failed to register this account, if this account was created by you, try to restore it.</source>
+        <translation type="unfinished">Не вдалося зареєструвати цей обліковий запис, якщо цей обліковий запис був створений вами, спробуйте відновити його.</translation>
+    </message>
+    <message>
+        <location filename="../hanoitowers.cpp" line="236"/>
+        <location filename="../hanoitowers.cpp" line="258"/>
+        <source>Server error</source>
+        <translation type="unfinished">Помилка серверу</translation>
+    </message>
+    <message>
+        <location filename="../hanoitowers.cpp" line="243"/>
+        <source>User with this id is not registered. If it you then use please the sigup form.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../hanoitowers.cpp" line="251"/>
+        <source>User with this id already registered. If it you then use please the login form.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../hanoitowers.cpp" line="396"/>
+        <source>Create user error</source>
+        <translation type="unfinished">Помилка створення користувача</translation>
+    </message>
+    <message>
+        <location filename="../hanoitowers.cpp" line="397"/>
+        <source>Failed to create a new user, The name %0 alredy used.</source>
+        <translation type="unfinished">Не вдалося створити нового користувача, ім’я %0 вже використовується.</translation>
+    </message>
+    <message>
+        <location filename="../hanoitowers.cpp" line="428"/>
+        <source>Remove online error</source>
+        <translation type="unfinished">Помилка видалення онлайн даних користувачів</translation>
+    </message>
+    <message>
+        <location filename="../hanoitowers.cpp" line="428"/>
+        <source>current profile not online!</source>
+        <translation type="unfinished">Поточний профіль офлайн!</translation>
     </message>
 </context>
 <context>

@@ -21,7 +21,9 @@ protected:
     QSet<Patronum::Feature> supportedFeatures() override;
 
 private:
-    bool changeFileLogPath(const QString &path);
+    bool changeFileLogPath(const QString& path);
+    bool workWithLogFile(const Patronum::Feature &data);
+    bool workWithLogLvl(const Patronum::Feature &data);
 
     HanoiServer *_server = nullptr;
 
