@@ -8,7 +8,6 @@
 
 import QtQuick 2.15
 import QtQuick.Controls 2.15
-import "./base" as Base
 
 Rectangle {
     id: tumbler
@@ -60,7 +59,7 @@ Rectangle {
 
     }
 
-    Base.BaseButton{
+    Button {
         id: closeTumbler
         text: qsTr("Start")
         onClicked: {

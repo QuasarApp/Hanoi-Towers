@@ -7,17 +7,11 @@
         <file>About.qml</file>
         <file>qtquickcontrols2.conf</file>
         <file>res/icon.ico</file>
-        <file>base/BaseButton.qml</file>
-        <file>base/BaseText.qml</file>
-        <file>base/Theme.qml</file>
-        <file>base/utils.js</file>
         <file>PopUp.qml</file>
         <file>Help.qml</file>
         <file>menu/MainMenu.qml</file>
         <file>menu/Config.qml</file>
         <file>SwitchLvl.qml</file>
-        <file>base/BaseRadioButton.qml</file>
-        <file>base/BoseCheckBox.qml</file>
         <file>menu/UsersTable.qml</file>
         <file>menu/UserTableRow.qml</file>
         <file>menu/ToolBarPage.qml</file>

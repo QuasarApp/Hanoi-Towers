@@ -9,14 +9,10 @@
 import QtQuick 2.9
 import QtQuick.Controls 2.2
 import QtQuick.Layouts 1.3
-import "./../base" as Base
 
 Page {
     id:menuPage
 
-    Base.Theme{
-        id: theme;
-    }
 
     background: Item {}
 
@@ -46,7 +42,7 @@ Page {
                 Layout.fillHeight: true
             }
 
-            Base.BaseButton {
+            Button {
                 id: load;
                 Layout.alignment: Qt.AlignCenter
 
@@ -59,7 +55,7 @@ Page {
                 visible :(gameState)? gameState.fSavedGame: false
             }
 
-            Base.BaseButton {
+            Button {
                 id: start;
                 Layout.alignment: Qt.AlignCenter
                 Layout.fillWidth: true
@@ -70,7 +66,7 @@ Page {
                 }
             }
 
-            Base.BaseButton {
+            Button {
                 id: world;
                 Layout.alignment: Qt.AlignCenter
                 Layout.fillWidth: true
@@ -83,7 +79,7 @@ Page {
                 visible: onlineStatus === OnlineStatusQml.loggined;
             }
 
-            Base.BaseButton {
+            Button {
                 id: about;
                 Layout.alignment: Qt.AlignCenter
                 Layout.fillWidth: true
@@ -94,7 +90,7 @@ Page {
                 }
             }
 
-            Base.BaseButton {
+            Button {
                 id: config;
                 Layout.alignment: Qt.AlignCenter
                 Layout.fillWidth: true
@@ -106,7 +102,7 @@ Page {
                 }
             }
 
-            Base.BaseButton {
+            Button {
                 id: users;
                 Layout.alignment: Qt.AlignCenter
                 Layout.fillWidth: true
@@ -117,7 +113,7 @@ Page {
                 }
             }
 
-            Base.BaseButton {
+            Button {
                 id: exit;
                 Layout.alignment: Qt.AlignCenter
                 Layout.fillWidth: true

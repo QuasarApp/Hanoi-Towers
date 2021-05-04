@@ -51,7 +51,7 @@ GridLayout {
 
     GridLayout {
         id: userDataGrid
-
+        Layout.fillWidth: true
         rows: (editable && privateRoot.onlineFunctions)? 4 : 3
         columns: 2
         flow: GridLayout.TopToBottom

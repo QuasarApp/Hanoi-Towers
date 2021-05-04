@@ -99,9 +99,8 @@
 <context>
     <name>BaseButton</name>
     <message>
-        <location filename="../base/BaseButton.qml" line="15"/>
         <source>ok</source>
-        <translation>ok</translation>
+        <translation type="vanished">ok</translation>
     </message>
 </context>
 <context>
@@ -248,88 +247,88 @@ Bu seviye için minimum adımlar: %2</translation>
         <translation type="unfinished">Yeni kullanıcı oluştur</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="160"/>
+        <location filename="../hanoitowers.cpp" line="162"/>
         <source>Connect error</source>
         <translation type="unfinished">Bağlantı hatası</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="161"/>
+        <location filename="../hanoitowers.cpp" line="163"/>
         <source>Failed to connect to server please check network connection befor login</source>
         <translation type="unfinished">Sunucuya bağlanılamadı, lütfen oturum açmadan önce ağ bağlantısını kontrol edin</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="177"/>
+        <location filename="../hanoitowers.cpp" line="179"/>
         <source>Update Profile error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="178"/>
+        <location filename="../hanoitowers.cpp" line="180"/>
         <source>Failed to update yuo user data please check network connection befor update prifile</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="183"/>
+        <location filename="../hanoitowers.cpp" line="185"/>
         <source>Update Profile</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="184"/>
+        <location filename="../hanoitowers.cpp" line="186"/>
         <source>User data updated successful</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="217"/>
+        <location filename="../hanoitowers.cpp" line="219"/>
         <source>login error</source>
         <translation type="unfinished">sisteme giriş hatası</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="218"/>
+        <location filename="../hanoitowers.cpp" line="220"/>
         <source>Failed to login into online account, please check your password and username</source>
         <translation type="unfinished">Çevrimiçi hesaba giriş yapılamadı, lütfen şifrenizi ve kullanıcı adınızı kontrol edin</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="228"/>
+        <location filename="../hanoitowers.cpp" line="230"/>
         <source>Register online error</source>
         <translation type="unfinished">Çevrimiçi kayıt hatası</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="229"/>
+        <location filename="../hanoitowers.cpp" line="231"/>
         <source>Failed to register this account, if this account was created by you, try to restore it.</source>
         <translation type="unfinished">Bu hesap kaydedilemedi, bu hesap sizin tarafınızdan oluşturulduysa, geri yüklemeyi deneyin.</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="239"/>
-        <location filename="../hanoitowers.cpp" line="261"/>
+        <location filename="../hanoitowers.cpp" line="241"/>
+        <location filename="../hanoitowers.cpp" line="263"/>
         <source>Server error</source>
         <translation type="unfinished">Server hatası</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="246"/>
+        <location filename="../hanoitowers.cpp" line="248"/>
         <source>User with this id is not registered. If it you then use please the sigup form.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="254"/>
+        <location filename="../hanoitowers.cpp" line="256"/>
         <source>User with this id already registered. If it you then use please the login form.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="399"/>
+        <location filename="../hanoitowers.cpp" line="404"/>
         <source>Create user error</source>
         <translation type="unfinished">Kullanıcı hatası oluştur</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="400"/>
+        <location filename="../hanoitowers.cpp" line="405"/>
         <source>Failed to create a new user, The name %0 alredy used.</source>
         <translation type="unfinished">Yeni bir kullanıcı oluşturulamadı, %0 adı kullanıldı.</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="431"/>
+        <location filename="../hanoitowers.cpp" line="436"/>
         <source>Remove online error</source>
         <translation type="unfinished">Çevrimiçi kullanıcı verilerini kaldırma hatası</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="431"/>
+        <location filename="../hanoitowers.cpp" line="436"/>
         <source>current profile not online!</source>
         <translation type="unfinished">Mevcut profil çevrimdışı!</translation>
     </message>
@@ -610,17 +609,21 @@ Bu seviye için minimum adımlar: %2</translation>
         <translation>Çevrimiçi profil</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="136"/>
-        <source>Remove This Profile</source>
-        <translation>Bu Profili Kaldır</translation>
+        <location filename="../menu/UserView.qml" line="137"/>
+        <source>Remove</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="147"/>
+        <source>Remove This Profile</source>
+        <translation type="vanished">Bu Profili Kaldır</translation>
+    </message>
+    <message>
+        <location filename="../menu/UserView.qml" line="148"/>
         <source>Restore</source>
         <translation>Onarmak</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="154"/>
+        <location filename="../menu/UserView.qml" line="155"/>
         <source>Accept</source>
         <translation>Kabul etmek</translation>
     </message>
@@ -633,12 +636,12 @@ Bu seviye için minimum adımlar: %2</translation>
         <translation type="vanished">Kullanıcı verileri değiştirilecek.</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="190"/>
+        <location filename="../menu/UserView.qml" line="191"/>
         <source>Remove %0 user</source>
         <translation>%0 kullanıcıyı kaldır</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="191"/>
+        <location filename="../menu/UserView.qml" line="192"/>
         <source>All saved data and records will be delete, Do you want continuee?</source>
         <translation>Kaydedilen tüm veriler ve kayıtlar silinecek, devam etmek istiyor musunuz?</translation>
     </message>
@@ -657,8 +660,12 @@ Bu seviye için minimum adımlar: %2</translation>
     </message>
     <message>
         <location filename="../menu/UsersTable.qml" line="72"/>
+        <source>Add user</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Create the new user</source>
-        <translation>Yeni kullanıcıyı oluşturun</translation>
+        <translation type="vanished">Yeni kullanıcıyı oluşturun</translation>
     </message>
     <message>
         <location filename="../menu/UsersTable.qml" line="106"/>

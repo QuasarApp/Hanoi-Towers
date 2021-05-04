@@ -81,9 +81,8 @@
 <context>
     <name>BaseButton</name>
     <message>
-        <location filename="../base/BaseButton.qml" line="15"/>
         <source>ok</source>
-        <translation>Ok</translation>
+        <translation type="vanished">Ok</translation>
     </message>
 </context>
 <context>
@@ -222,88 +221,88 @@
         <translation type="unfinished">Create new user</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="160"/>
+        <location filename="../hanoitowers.cpp" line="162"/>
         <source>Connect error</source>
         <translation type="unfinished">Connection error</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="161"/>
+        <location filename="../hanoitowers.cpp" line="163"/>
         <source>Failed to connect to server please check network connection befor login</source>
         <translation type="unfinished">Failed to connect to server please check network connection befor login</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="177"/>
+        <location filename="../hanoitowers.cpp" line="179"/>
         <source>Update Profile error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="178"/>
+        <location filename="../hanoitowers.cpp" line="180"/>
         <source>Failed to update yuo user data please check network connection befor update prifile</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="183"/>
+        <location filename="../hanoitowers.cpp" line="185"/>
         <source>Update Profile</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="184"/>
+        <location filename="../hanoitowers.cpp" line="186"/>
         <source>User data updated successful</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="217"/>
+        <location filename="../hanoitowers.cpp" line="219"/>
         <source>login error</source>
         <translation type="unfinished">Login error</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="218"/>
+        <location filename="../hanoitowers.cpp" line="220"/>
         <source>Failed to login into online account, please check your password and username</source>
         <translation type="unfinished">Failed to login into online account, please check your password and username</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="228"/>
+        <location filename="../hanoitowers.cpp" line="230"/>
         <source>Register online error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="229"/>
+        <location filename="../hanoitowers.cpp" line="231"/>
         <source>Failed to register this account, if this account was created by you, try to restore it.</source>
         <translation type="unfinished">Failed to register this account, if this account was created by you, try to restore it.</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="239"/>
-        <location filename="../hanoitowers.cpp" line="261"/>
+        <location filename="../hanoitowers.cpp" line="241"/>
+        <location filename="../hanoitowers.cpp" line="263"/>
         <source>Server error</source>
         <translation type="unfinished">Server error</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="246"/>
+        <location filename="../hanoitowers.cpp" line="248"/>
         <source>User with this id is not registered. If it you then use please the sigup form.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="254"/>
+        <location filename="../hanoitowers.cpp" line="256"/>
         <source>User with this id already registered. If it you then use please the login form.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="399"/>
+        <location filename="../hanoitowers.cpp" line="404"/>
         <source>Create user error</source>
         <translation type="unfinished">User create error</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="400"/>
+        <location filename="../hanoitowers.cpp" line="405"/>
         <source>Failed to create a new user, The name %0 alredy used.</source>
         <translation type="unfinished">Failed to create a new user, This name %0 alredy used.</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="431"/>
+        <location filename="../hanoitowers.cpp" line="436"/>
         <source>Remove online error</source>
         <translation type="unfinished">Error remove online user data</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="431"/>
+        <location filename="../hanoitowers.cpp" line="436"/>
         <source>current profile not online!</source>
         <translation type="unfinished">Current profile is offline!</translation>
     </message>
@@ -557,17 +556,21 @@
         <translation>Online profile</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="136"/>
-        <source>Remove This Profile</source>
-        <translation>Remove This Profile</translation>
+        <location filename="../menu/UserView.qml" line="137"/>
+        <source>Remove</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="147"/>
+        <source>Remove This Profile</source>
+        <translation type="vanished">Remove This Profile</translation>
+    </message>
+    <message>
+        <location filename="../menu/UserView.qml" line="148"/>
         <source>Restore</source>
         <translation>Restore</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="154"/>
+        <location filename="../menu/UserView.qml" line="155"/>
         <source>Accept</source>
         <translation>Accept</translation>
     </message>
@@ -580,12 +583,12 @@
         <translation type="vanished">User data will be changed.</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="190"/>
+        <location filename="../menu/UserView.qml" line="191"/>
         <source>Remove %0 user</source>
         <translation>Remove %0 user</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="191"/>
+        <location filename="../menu/UserView.qml" line="192"/>
         <source>All saved data and records will be delete, Do you want continuee?</source>
         <translation>All saved data and records will be deleted, Do you want continue?</translation>
     </message>
@@ -600,8 +603,12 @@
     </message>
     <message>
         <location filename="../menu/UsersTable.qml" line="72"/>
+        <source>Add user</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Create the new user</source>
-        <translation>Create the new user</translation>
+        <translation type="vanished">Create the new user</translation>
     </message>
     <message>
         <location filename="../menu/UsersTable.qml" line="106"/>

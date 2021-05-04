@@ -11,8 +11,6 @@ import QtQuick.Controls 2.15
 import QtQuick.Dialogs 1.3
 import QtQuick.Layouts 1.15
 
-import "./base" as Base
-
 
 Item {
     visible: true
@@ -30,10 +28,6 @@ Item {
 
     function continue_game() {
         load("Player");
-    }
-
-    Base.Theme {
-        id: theme
     }
 
     function launch() {

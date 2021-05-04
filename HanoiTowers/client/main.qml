@@ -10,7 +10,6 @@ import QtQuick 2.15
 import QtQuick.Controls 2.15
 import QtQuick.Controls.Material 2.15
 import NotifyModule 1.0
-import "./base" as Base
 import "./menu" as Menu
 
 import QtQuick.Layouts 1.3
@@ -21,10 +20,6 @@ ApplicationWindow {
     width: 1240
     height: 720
     title: qsTr("Hanoi Towers")
-
-    Base.Theme{
-        id: theme;
-    }
 
     header: Menu.ToolBarPage {
         id: toolBar

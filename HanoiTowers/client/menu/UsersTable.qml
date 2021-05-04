@@ -10,7 +10,6 @@ import QtQuick 2.13
 import QtQuick.Layouts 1.3
 import QtQuick.Controls 2.13
 import QtQuick.Controls.Material 2.13
-import "./../base" as Base
 import LoginViewModule 1.0
 import QtQuick.Window 2.15
 
@@ -67,9 +66,9 @@ Item {
 
             }
         }
-        Base.BaseButton {
+        Button{
             id: button
-            text: qsTr("Create the new user")
+            text: qsTr("Add user")
             Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
             Layout.columnSpan: 1
             Material.background: Material.Green

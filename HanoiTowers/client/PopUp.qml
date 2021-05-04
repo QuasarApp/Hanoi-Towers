@@ -7,7 +7,6 @@
 
 import QtQuick 2.9
 import QtQuick.Controls 2.2
-import "./base" as Base
 
 Dialog {
     standardButtons: DialogButtonBox.Ok
@@ -17,7 +16,7 @@ Dialog {
     property alias text : textContainer.text
     property var action: function () {}
 
-    Base.BaseText {
+    Label {
         id: textContainer
 
         anchors.fill: parent

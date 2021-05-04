@@ -3,8 +3,6 @@ import QtQuick.Controls 2.15
 import QtQuick.Dialogs 1.3
 import QtQuick.Layouts 1.15
 import QtQuick.Window 2.1
-
-import "../base" as Base
 import ".."
 
 RowLayout {
@@ -19,7 +17,8 @@ RowLayout {
     Label {
         id: towerheight
         font.bold: true
-        font.pixelSize: theme.gameStateFontSize;
+
+        font.capitalization: Font.AllUppercase
         horizontalAlignment: Text.AlignHCenter
 
         styleColor: "#973c3c"
@@ -28,13 +27,15 @@ RowLayout {
 
     }
 
-    Base.BaseButton {
+    Button {
         id: frame
 
         text: tumblerWidget.spin.currentIndex + 1
         onClicked: {
             tumblerWidget.visible = true;
         }
+
+        Layout.preferredWidth: height * 1.8
 
         SwitchLvl {
             id: tumblerWidget
@@ -54,7 +55,7 @@ RowLayout {
         property int ste: 0
         font.bold: true
 
-        font.pixelSize: theme.gameStateFontSize;
+        font.capitalization: Font.AllUppercase
         horizontalAlignment: Text.AlignHCenter
         styleColor: "#973c3c"
         verticalAlignment: Text.AlignVCenter

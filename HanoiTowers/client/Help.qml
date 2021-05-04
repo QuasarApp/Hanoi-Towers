@@ -10,8 +10,6 @@ import QtQuick 2.15
 import QtQuick.Controls 2.15
 import QtQuick.Layouts 1.3
 
-import "./base" as Base
-
 Dialog {
 
     id: helpDialog
@@ -37,7 +35,7 @@ Dialog {
             source: "/img/Help"
         }
 
-        Base.BaseText {
+        Label {
             id: textContainer
 
             Layout.fillHeight: true;

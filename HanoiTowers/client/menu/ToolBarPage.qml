@@ -2,8 +2,6 @@ import QtQuick 2.15
 import QtQuick.Controls 2.15
 import QtQuick.Layouts 1.3
 
-import "./../base" as Base
-
 ToolBar {
     id: root
 
@@ -20,12 +18,12 @@ ToolBar {
     function getStatusColor(status) {
         switch(status) {
 
-        case OnlineStatusQml.connecting: return theme.headerColorOffline;
-        case OnlineStatusQml.connected: return theme.headerColorOnline;
-        case OnlineStatusQml.loginning: return theme.headerColorOnline;
-        case OnlineStatusQml.loggined: return theme.headerColorLogined;
+        case OnlineStatusQml.connecting: return "#787878";
+        case OnlineStatusQml.connected: return "#ffaa7f";
+        case OnlineStatusQml.loginning: return "#ffaa7f";
+        case OnlineStatusQml.loggined: return "#00ff7f";
         default:
-            return theme.headerColorOffline
+            return "#787878"
         }
     }
 
@@ -38,14 +36,14 @@ ToolBar {
 
     RowLayout {
 
-        Base.BaseText {
+        Label {
             Layout.alignment: Qt.AlignCenter
             Layout.preferredHeight: returnBut.height
-
+            font.capitalization: Font.AllUppercase
             text: welcomMessage
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignVCenter
-            font.pixelSize: theme.headerSize;
+            font.bold: true
         }
 
         GameStateWidget {
@@ -64,7 +62,6 @@ ToolBar {
             id: returnBut
             text: qsTr("Return to main menu");
             Layout.alignment: Qt.AlignRight
-            Layout.rightMargin: theme.pading
             visible: returnButton
 
             onClicked: {

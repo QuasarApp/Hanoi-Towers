@@ -10,7 +10,6 @@ import QtQuick 2.13
 import QtQuick.Layouts 1.3
 import QtQuick.Controls 2.13
 import QtQuick.Controls.Material 2.13
-import "./../base" as Base
 import LoginViewModule 1.0
 import QtQuick.Window 2.15
 

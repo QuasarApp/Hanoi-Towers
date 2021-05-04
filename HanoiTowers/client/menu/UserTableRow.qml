@@ -12,8 +12,6 @@ import QtQuick.Controls 2.15
 import QtQuick.Controls.Material 2.15
 import QtQuick.Window 2.15
 
-import "./../base" as Base
-
 Item {
     id: row
     property string name: ""
@@ -36,10 +34,6 @@ Item {
                 duration: 500
             }
         }
-    }
-
-    Base.Theme{
-        id: theme;
     }
 
     RowLayout {

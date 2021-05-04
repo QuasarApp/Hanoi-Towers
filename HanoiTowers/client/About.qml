@@ -8,20 +8,15 @@
 
 import QtQuick 2.15
 import QtQuick.Controls 2.15
-import "./base" as Base
 import QtQuick.Layouts 1.15
 import QuasarAppCreditsModule 1.0
 
 Item {
-    Base.Theme{
-        id: theme;
-    }
-
     id: ab
     signal exit
     property string type: qsTr("about")
     Rectangle {
-        color: theme.backgroundColor
+//        color: theme.backgroundColor
         anchors.fill: parent
     }
 
@@ -60,7 +55,7 @@ Item {
                     y: parent.height * 0.3
                     width: parent.width * 0.8
                     height: parent.height * 0.6
-                    color: theme.buttonsTextColor
+//                    color: theme.buttonsTextColor
                     font.pixelSize: (ab.width < ab.height) ? ab.width / 25 : ab.height / 25
                     font.italic: true
                     wrapMode: Text.Wrap
