@@ -12,7 +12,7 @@
 #include <QQmlApplicationEngine>
 #include <QQmlComponent>
 #include <QQmlContext>
-#include "backEnd.h"
+#include "hanoitowers.h"
 #include <QTranslator>
 #include <qmlnotifyservice.h>
 #include <credits.h>
@@ -66,7 +66,7 @@ int main(int argc, char *argv[])
     }
 
     QQmlApplicationEngine engine;
-    BackEnd back(&engine);
+    HanoiTowers back(&engine);
     auto root = engine.rootContext();
 
     if (!QmlNotificationService::init(&engine)) {

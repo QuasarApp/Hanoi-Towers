@@ -132,6 +132,19 @@ QSharedPointer<LocalUser> HanoiClient::getLocalUser(const QString &userId) const
     return db()->getObject(request);
 }
 
+bool HanoiClient::restUserData(const QString& userId) {
+    UserDataRequest request;
+    request.setId(userId);
+
+    auto action = [this](const QSharedPointer<const QH::PKG::AbstractData> & resp) {
+        auto obj = resp.dynamicCast<const UserData>();
+        if (obj)
+            subscribe(obj->subscribeId());
+    };
+
+    return restRequest(&request, action);
+}
+
 bool HanoiClient::sendUserData(QSharedPointer<UserData> data) {
     return sendData(data.data(), realServerAddress());
 }
@@ -159,8 +172,19 @@ bool HanoiClient::isOnlineAndLoginned(const QSharedPointer<LocalUser> &data) {
 }
 
 void HanoiClient::updateLocalCache(const QSharedPointer<LocalUser>& localUser) {
-    _usersCache[localUser->getId().toString()] = localUser;
+    QString userId = localUser->getId().toString();
+    auto oldData = _usersCache.value(userId, nullptr);
 
+    if (oldData) {
+        if (oldData->updateTime() < localUser->updateTime()) {
+            _usersCache[userId] = localUser;
+            emit userDataChanged(localUser);
+        }
+
+        return;
+    }
+
+    _usersCache[userId] = localUser;
     emit userDataChanged(localUser);
 
 }
@@ -211,6 +235,7 @@ bool HanoiClient::setNewAvatar(const QString &userId, const QByteArray &image) {
         }
 
         obj->setAvatar(image);
+        obj->setUpdateTime(time(0));
         updateLocalCache(obj);
 
         if (isOnlineAndLoginned(obj)) {
@@ -235,21 +260,26 @@ bool HanoiClient::getUserData(const QString& userId) {
     if (userId.isEmpty())
         return false;
 
-    if (_usersCache.contains(userId)) {
-        emit userDataChanged(_usersCache[userId]);
+    auto object = _usersCache.value(userId, nullptr);
+
+    if (!object.isNull()) {
+        emit userDataChanged(object);
+
+        if (!isSubscribed(object->subscribeId()) && getStatus() >= QH::ClientStatus::Logined) {
+            return restUserData(userId);
+        }
         return true;
     }
 
-    UserDataRequest request;
-    request.setId(userId);
+    if (auto user = getLocalUser(userId)) {
+        if (!isSubscribed(object->subscribeId()) && getStatus() >= QH::ClientStatus::Logined) {
+            return restUserData(userId);
+        }
 
-    auto action = [this](const QSharedPointer<const QH::PKG::AbstractData> & resp) {
-        auto obj = resp.dynamicCast<const UserData>();
-        if (obj)
-            subscribe(obj->subscribeId());
-    };
+        emit userDataChanged(user);
+    }
 
-    return restRequest(&request, action);
+    return restUserData(userId);
 }
 
 bool HanoiClient::addProfile(const LocalUser& user) {
@@ -281,16 +311,13 @@ bool HanoiClient::setProfile(const QString &userId,
         *selectedProfileData = user;
     }
 
-    _usersCache[user->getId().toString()] = user;
-
-    emit userDataChanged(user);
+    updateLocalCache(user);
     resetUser();
 
     if ( user->online() && connectToServer()) {
         auto userMember = DataConverter::toUserMember(user);
         login(userMember);
     }
-
 
     return true;
 }
@@ -362,6 +389,7 @@ void HanoiClient::handleCurrentUserChanged() {
 
             if (database->updateObject(request)) {
                 emit userDataChanged(user);
+
             } else {
                 emit requestError(0, tr("Internal Error, server send invalid data,"
                                  " and this data can't be saved into local database."));

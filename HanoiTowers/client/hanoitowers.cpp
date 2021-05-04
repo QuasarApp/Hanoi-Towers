@@ -5,7 +5,7 @@
  * of this license document, but changing it is not allowed.
 */
 
-#include "backEnd.h"
+#include "hanoitowers.h"
 #include <cmath>
 #include <QDataStream>
 #include <QDir>
@@ -33,7 +33,7 @@
 #define FOG "fog"
 #define FOG_ANIMATION "fogAnimation"
 
-BackEnd::BackEnd(QQmlApplicationEngine *engine):
+HanoiTowers::HanoiTowers(QQmlApplicationEngine *engine):
     QObject(),
     _profile()
 {
@@ -77,40 +77,40 @@ BackEnd::BackEnd(QQmlApplicationEngine *engine):
 
 
     connect(_loginModel, &LoginView::LVMainModel::sigLoginRequest,
-            this, &BackEnd::handleOnlineRequest);
+            this, &HanoiTowers::handleOnlineRequest);
 
     connect(_loginModel, &LoginView::LVMainModel::sigRegisterRequest,
-            this, &BackEnd::handleOnlineRegisterRequest);
+            this, &HanoiTowers::handleOnlineRegisterRequest);
 
     connect(_createNewOfflineUser , &LoginView::LVMainModel::sigRegisterRequest,
-            this, &BackEnd::handleCreateNewProfile);
+            this, &HanoiTowers::handleCreateNewProfile);
 
     connect(_client, &HanoiClient::requestError,
-            this, &BackEnd::handleOnlineRequestError);
+            this, &HanoiTowers::handleOnlineRequestError);
 
     connect(_client, &HanoiClient::userDataChanged,
-            this, &BackEnd::handleAcceptUserData);
+            this, &HanoiTowers::handleAcceptUserData);
 
     connect(_client, &HanoiClient::statusChanged,
-            this, &BackEnd::setOnlineStatus);
+            this, &HanoiTowers::setOnlineStatus);
 
     connect(_client, &HanoiClient::worldChanged,
-            this, &BackEnd::handleWorldChanged);
+            this, &HanoiTowers::handleWorldChanged);
 
     connect(_client, &HanoiClient::worldInited,
-            this, &BackEnd::handleWorldInited);
+            this, &HanoiTowers::handleWorldInited);
 
     connect(_client, &HanoiClient::sigBestuserIdChanged,
-            this, &BackEnd::handleBestUserIdChanged);
+            this, &HanoiTowers::handleBestUserIdChanged);
 
     connect(&_profile, &LocalUser::nameChanged,
-            this, &BackEnd::handleChangeName);
+            this, &HanoiTowers::handleChangeName);
 
     setProfile(_settings->getStrValue(CURRENT_PROFILE_KEY, DEFAULT_USER_ID));
     init();
 }
 
-void BackEnd::init() {
+void HanoiTowers::init() {
     QFile f(MAIN_SETINGS_FILE);
     if(f.open(QIODevice::ReadOnly)){
         QDataStream stream(&f);
@@ -140,7 +140,7 @@ void BackEnd::init() {
 
 }
 
-void BackEnd::onlineRequest(const QString &userId) {
+void HanoiTowers::onlineRequest(const QString &userId) {
 
     if (_client->isLogined()) {
         return;
@@ -168,7 +168,10 @@ void BackEnd::onlineRequest(const QString &userId) {
     emit showOnlinePage();
 }
 
-void BackEnd::updateProfile() {
+void HanoiTowers::updateProfile() {
+    if (!_profile.isValid())
+        return;
+
     if (!_client->updateProfile(_profile)) {
         QmlNotificationService::NotificationService::getService()->setNotify(
                     tr("Update Profile error"),
@@ -183,31 +186,31 @@ void BackEnd::updateProfile() {
     }
 }
 
-int BackEnd::onlineStatus() const {
+int HanoiTowers::onlineStatus() const {
     return static_cast<int>(_onlineStatus);
 }
 
-QObject *BackEnd::bestUser() {
+QObject *HanoiTowers::bestUser() {
     return &_bestUser;
 }
 
-QObject *BackEnd::selectedUser() {
+QObject *HanoiTowers::selectedUser() {
     return &_selectedUser;
 }
 
-void BackEnd::handleChangeName(const QString &) {
+void HanoiTowers::handleChangeName(const QString &) {
     emit profileChanged();
 }
 
-void BackEnd::handleBestUserIdChanged(const QString & userId) {
+void HanoiTowers::handleBestUserIdChanged(const QString & userId) {
     _bestUser.setId(userId);
 }
 
-void BackEnd::handleCreateNewProfile(const LoginView::UserData & data) {
+void HanoiTowers::handleCreateNewProfile(const LoginView::UserData & data) {
     createProfile(data.nickname(), data.nickname());
 }
 
-void BackEnd::handleOnlineRequest(const LoginView::UserData & user) {
+void HanoiTowers::handleOnlineRequest(const LoginView::UserData & user) {
 
     if (!_client->login(user.nickname(), user.rawPassword())) {
         QmlNotificationService::NotificationService::getService()->setNotify(
@@ -219,7 +222,7 @@ void BackEnd::handleOnlineRequest(const LoginView::UserData & user) {
     }
 }
 
-void BackEnd::handleOnlineRegisterRequest(const LoginView::UserData &user) {
+void HanoiTowers::handleOnlineRegisterRequest(const LoginView::UserData &user) {
     if (!_client->signup(user.nickname(), user.rawPassword())) {
         QmlNotificationService::NotificationService::getService()->setNotify(
                     tr("Register online error"),
@@ -229,7 +232,7 @@ void BackEnd::handleOnlineRegisterRequest(const LoginView::UserData &user) {
     }
 }
 
-void BackEnd::handleOnlineRequestError(QH::ErrorCodes::Code code, const QString & err) {
+void HanoiTowers::handleOnlineRequestError(QH::ErrorCodes::Code code, const QString & err) {
 
     auto errMessage = [](const QString &err) {
         QmlNotificationService::NotificationService::getService()->setNotify(
@@ -260,7 +263,7 @@ void BackEnd::handleOnlineRequestError(QH::ErrorCodes::Code code, const QString 
                 QmlNotificationService::NotificationData::Error);
 }
 
-void BackEnd::handleAcceptUserData(QSharedPointer<LocalUser> data) {
+void HanoiTowers::handleAcceptUserData(QSharedPointer<LocalUser> data) {
     if (_profile.getId() == data->getId()) {
 
         _profile.copyFrom(data.data());
@@ -283,11 +286,11 @@ void BackEnd::handleAcceptUserData(QSharedPointer<LocalUser> data) {
     }
 }
 
-bool BackEnd::randomColor() const {
+bool HanoiTowers::randomColor() const {
     return _settings->getValue(RANDOM_COLOR_KEY, false).toBool();
 }
 
-void BackEnd::setRandomColor(bool random) {
+void HanoiTowers::setRandomColor(bool random) {
 
     if (_settingsData.randomColor != random) {
 
@@ -297,11 +300,11 @@ void BackEnd::setRandomColor(bool random) {
     }
 }
 
-bool BackEnd::animation() const{
+bool HanoiTowers::animation() const{
     return _settings->getValue(ANIMATION_KEY, true).toBool();
 }
 
-void BackEnd::setAnimation(bool value) {
+void HanoiTowers::setAnimation(bool value) {
     if (_settingsData.animation != value) {
 
         _settings->setValue(ANIMATION_KEY, value);
@@ -310,19 +313,19 @@ void BackEnd::setAnimation(bool value) {
     }
 }
 
-unsigned short BackEnd::getMinSteps(const unsigned short lvl) const{
+unsigned short HanoiTowers::getMinSteps(const unsigned short lvl) const{
     return static_cast<unsigned short>(pow(2, lvl)) - 1;
 }
 
-bool BackEnd::isFirst()const{
+bool HanoiTowers::isFirst()const{
     return _settings->getValue(FIRST_RUN_KEY, true).toBool();
 }
 
-void BackEnd::setShowHelp(bool state) {
+void HanoiTowers::setShowHelp(bool state) {
     _settings->setValue(FIRST_RUN_KEY, state);
 }
 
-void BackEnd::setNewAvatar(QString pathToAvatar) {
+void HanoiTowers::setNewAvatar(QString pathToAvatar) {
     if (pathToAvatar.contains("file://")) {
         pathToAvatar = pathToAvatar.right(pathToAvatar.size() - 7);
     }
@@ -351,20 +354,20 @@ void BackEnd::setNewAvatar(QString pathToAvatar) {
 
 }
 
-void BackEnd::selectUserFromWorldTable(const QString &userId) {
+void HanoiTowers::selectUserFromWorldTable(const QString &userId) {
     _selectedUser.setId(userId);
     _client->getUserData(userId);
 }
 
-bool BackEnd::fog() const {
+bool HanoiTowers::fog() const {
     return _settings->getValue(FOG, true).toBool();
 }
 
-bool BackEnd::fogAnimation() const {
+bool HanoiTowers::fogAnimation() const {
     return _settings->getValue(FOG_ANIMATION, true).toBool();
 }
 
-BackEnd::~BackEnd() {
+HanoiTowers::~HanoiTowers() {
     QCoreApplication::processEvents();
 
     _imageProvider->stop();
@@ -373,19 +376,19 @@ BackEnd::~BackEnd() {
     delete _dataConverter;
 }
 
-QString BackEnd::profile() const {
+QString HanoiTowers::profile() const {
     return _profile.name();
 }
 
-QObject* BackEnd::profileList() {
+QObject* HanoiTowers::profileList() {
     return _recordsTable;
 }
 
-QObject *BackEnd::worldList() {
+QObject *HanoiTowers::worldList() {
     return _worldProxy;
 }
 
-bool BackEnd::createProfile(const QString& userId, const QString &userName) {
+bool HanoiTowers::createProfile(const QString& userId, const QString &userName) {
 
     LocalUser user;
     user.setName(userName);
@@ -405,11 +408,11 @@ bool BackEnd::createProfile(const QString& userId, const QString &userName) {
     return true;
 }
 
-QObject *BackEnd::profileObject() {
+QObject *HanoiTowers::profileObject() {
     return &_profile;
 }
 
-GameState *BackEnd::gameState() {
+GameState *HanoiTowers::gameState() {
     if (auto obj = dynamic_cast<LocalUser*>(profileObject())) {
         return obj->gameState();
     }
@@ -417,11 +420,11 @@ GameState *BackEnd::gameState() {
     return nullptr;
 }
 
-QObject *BackEnd::client() {
+QObject *HanoiTowers::client() {
     return _client;
 }
 
-void BackEnd::removeUser(const QString &userId) {
+void HanoiTowers::removeUser(const QString &userId) {
 
     if (!_client->removeUser()) {
         QmlNotificationService::NotificationService::getService()->setNotify(
@@ -441,7 +444,7 @@ void BackEnd::removeUser(const QString &userId) {
 
 }
 
-void BackEnd::setProfile(QString userId) {
+void HanoiTowers::setProfile(QString userId) {
     if (!_client)
         return;
 
@@ -457,7 +460,7 @@ void BackEnd::setProfile(QString userId) {
     }
 }
 
-void BackEnd::setReward(int revard) {
+void HanoiTowers::setReward(int revard) {
 
     if (_profile.record() < revard) {
         _profile.setRecord(revard);
@@ -467,7 +470,7 @@ void BackEnd::setReward(int revard) {
     }
 }
 
-void BackEnd::setFog(bool fog) {
+void HanoiTowers::setFog(bool fog) {
     if (_settingsData.fog == fog)
         return;
 
@@ -480,7 +483,7 @@ void BackEnd::setFog(bool fog) {
     emit fogChanged(_settingsData.fog);
 }
 
-void BackEnd::setFogAnimation(bool fogAnimation) {
+void HanoiTowers::setFogAnimation(bool fogAnimation) {
     if (_settingsData.fogAnimation == fogAnimation ||
             !_settingsData.fog)
         return;
@@ -491,7 +494,7 @@ void BackEnd::setFogAnimation(bool fogAnimation) {
     emit fogAnimationChanged(_settingsData.fogAnimation);
 }
 
-void BackEnd::setGameState(GameState *gameState) {
+void HanoiTowers::setGameState(GameState *gameState) {
     if (_profile.gameState() == gameState)
         return;
 
@@ -499,19 +502,23 @@ void BackEnd::setGameState(GameState *gameState) {
     emit profileChanged();
 }
 
-void BackEnd::setOnlineStatus(QH::ClientStatus onlineStatus) {
+void HanoiTowers::setOnlineStatus(QH::ClientStatus onlineStatus) {
     if (_onlineStatus == static_cast<OnlineStatus>(onlineStatus))
         return;
 
     if (_profile.isOnline() && onlineStatus == QH::ClientStatus::Connected) {
         if (!_client->login(DataConverter::toUserMember(_profile))) {
-            QuasarAppUtils::Params::log("Fail to login.", QuasarAppUtils::Error);
+            QuasarAppUtils::Params::log("Failed to login.", QuasarAppUtils::Error);
         }
     }
 
     if (_profile.isOnline() && onlineStatus == QH::ClientStatus::Logined) {
+        if (!_client->getUserData(_profile.getId().toString())) {
+            QuasarAppUtils::Params::log("Failed to send a user data request.", QuasarAppUtils::Error);
+        }
+
         if (!_client->subscribeToWorld()) {
-            QuasarAppUtils::Params::log("Fail to subscribe to world.", QuasarAppUtils::Error);
+            QuasarAppUtils::Params::log("Failed to subscribe to world.", QuasarAppUtils::Error);
         }
     }
 
@@ -519,7 +526,7 @@ void BackEnd::setOnlineStatus(QH::ClientStatus onlineStatus) {
     emit onlineStatusChanged(static_cast<int>(_onlineStatus));
 }
 
-void BackEnd::handleWorldChanged(QSharedPointer<WorldUpdate> delta) {
+void HanoiTowers::handleWorldChanged(QSharedPointer<WorldUpdate> delta) {
     for (const auto &val: qAsConst(delta->getDataAddUpdate())) {
         _world->updateAddSourceItem(val);
     }
@@ -529,6 +536,6 @@ void BackEnd::handleWorldChanged(QSharedPointer<WorldUpdate> delta) {
     }
 }
 
-void BackEnd::handleWorldInited(QHash<QString, UserPreview> initWorldList) {
+void HanoiTowers::handleWorldInited(QHash<QString, UserPreview> initWorldList) {
     _world->setSource({initWorldList.begin(), initWorldList.end()});
 }

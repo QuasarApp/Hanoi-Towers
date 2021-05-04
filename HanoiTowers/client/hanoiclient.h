@@ -57,10 +57,15 @@ public:
     bool subscribeToWorld();
 
     /**
-     * @brief getUserData if the user with @a userId exits in cache then this method emit signal userDataChanged with user data
+     * @brief getUserData if the user with @a userId exists in cache then this method emit signal userDataChanged with user data
      * else send request to server.
+     * This function find a object in next order:
+     *  1. Search a object in local cache. if object findet but a client not subscribed to it then send subscribe.
+     *  2. Search a object in local storage (data base). if object findet but a client not subscribed to it then send subscribe.
+     *  3. Send request if object not findet.
      * @param userId
-     * @return
+     * @param frce If this option will be sets to true then this method forced send request to server of object.
+     * @return true if reqest send succesfull.
      */
     bool getUserData(const QString &userId);
 
@@ -89,6 +94,7 @@ private slots:
 private:
 
     QSharedPointer<LocalUser> getLocalUser(const QString &userId) const;
+    bool restUserData(const QString &userId);
 
     bool sendUserData(QSharedPointer<UserData> data);
 

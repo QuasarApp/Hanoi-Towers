@@ -23,7 +23,6 @@ protected:
     QStringList SQLSources() const override;
 
     QVariantMap defaultDbParams() const override;
-    void nodeConfirmend(QH::AbstractNodeInfo *node) override;
 
     void objectRemoved(const QH::DbAddress & address) override;
     void memberSubsribed(const QVariant &clientId, unsigned int subscribeId) override;
