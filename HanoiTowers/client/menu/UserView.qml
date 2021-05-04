@@ -17,6 +17,7 @@ GridLayout {
     signal newAvatar(var path);
 
     Button {
+        id: avatarRectangle
         Layout.preferredHeight: eid.height * userDataGrid.rows
         Layout.preferredWidth: Layout.preferredHeight
         Layout.rowSpan: 1
@@ -86,6 +87,7 @@ GridLayout {
 
         TextField {
             id: eid
+            Layout.preferredWidth: avatarRectangle.width
 
             readOnly: true
             text: (userModel)? userModel.userId: ""
@@ -94,6 +96,7 @@ GridLayout {
 
         TextField {
             id: ename
+            Layout.preferredWidth: avatarRectangle.width
 
             readOnly: !editable
             horizontalAlignment: Text.AlignHCenter
@@ -103,6 +106,7 @@ GridLayout {
 
         TextField {
             id: erecord
+            Layout.preferredWidth: avatarRectangle.width
 
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignVCenter
@@ -186,7 +190,7 @@ GridLayout {
             eonline.checked = onlieUser
         }
 
-        readonly property int questionCode: 0;
+        property int questionCode: 0;
         function remove() {
             questionCode = notificationService.setQuestion(qsTr("Remove %0 user").arg(userModel.userId),
                                             qsTr("All saved data and records will be delete, Do you want continuee?"),
