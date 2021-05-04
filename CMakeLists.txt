@@ -22,6 +22,14 @@ if (DEFINED TARGET_PLATFORM_TOOLCHAIN)
     endif()
 endif()
 
+if (NOT DEFINED ONLINE_FUNCTIONS)
+    set(ONLINE_FUNCTIONS OFF)
+endif()
+
+if(ONLINE_FUNCTIONS)
+    add_definitions(-DONLINE_FUNCTIONS)
+endif()
+
 if (NOT DEFINED HANOI_TESTS)
     set(HANOI_TESTS ON)
 
@@ -34,6 +42,10 @@ if (NOT DEFINED HANOI_SERVER)
     set(HANOI_SERVER ON)
 
     if (ANDROID OR WIN32)
+        set(HANOI_SERVER OFF)
+    endif()
+
+    if (ONLINE_FUNCTIONS)
         set(HANOI_SERVER OFF)
     endif()
 
@@ -72,7 +84,6 @@ else()
     set (HEART_TESTS OFF)
     set (PATRONUM_TESTS OFF)
 endif()
-
 
 add_subdirectory(submodules/Heart)
 add_subdirectory(HanoiTowers/Protockol)

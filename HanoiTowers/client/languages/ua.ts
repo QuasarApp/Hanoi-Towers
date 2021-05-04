@@ -221,17 +221,17 @@
 <context>
     <name>HanoiClient</name>
     <message>
-        <location filename="../hanoiclient.cpp" line="181"/>
+        <location filename="../hanoiclient.cpp" line="205"/>
         <source>Local user has been updated</source>
         <translation>Локальний користувач був оновлений</translation>
     </message>
     <message>
-        <location filename="../hanoiclient.cpp" line="181"/>
+        <location filename="../hanoiclient.cpp" line="205"/>
         <source>local user accept nbew data from the server.</source>
         <translation>локальний користувач приймає нові дані з сервера.</translation>
     </message>
     <message>
-        <location filename="../hanoiclient.cpp" line="371"/>
+        <location filename="../hanoiclient.cpp" line="394"/>
         <source>Internal Error, server send invalid data, and this data can&apos;t be saved into local database.</source>
         <translation>Внутрішня помилка, сервер надсилає недійсні дані, і ці дані не можна зберегти в локальній базі даних.</translation>
     </message>
@@ -258,78 +258,78 @@
         <translation type="unfinished">Не вдалося підключитися до сервера, перевірте мережеве підключення для входу</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="174"/>
+        <location filename="../hanoitowers.cpp" line="177"/>
         <source>Update Profile error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="175"/>
+        <location filename="../hanoitowers.cpp" line="178"/>
         <source>Failed to update yuo user data please check network connection befor update prifile</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="180"/>
+        <location filename="../hanoitowers.cpp" line="183"/>
         <source>Update Profile</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="181"/>
+        <location filename="../hanoitowers.cpp" line="184"/>
         <source>User data updated successful</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="214"/>
+        <location filename="../hanoitowers.cpp" line="217"/>
         <source>login error</source>
         <translation type="unfinished">помилка входу</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="215"/>
+        <location filename="../hanoitowers.cpp" line="218"/>
         <source>Failed to login into online account, please check your password and username</source>
         <translation type="unfinished">Не вдалося увійти в онлайн-акаунт, перевірте свій пароль та ім’я користувача</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="225"/>
+        <location filename="../hanoitowers.cpp" line="228"/>
         <source>Register online error</source>
         <translation type="unfinished">помилка реєстрації в Інтернеті</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="226"/>
+        <location filename="../hanoitowers.cpp" line="229"/>
         <source>Failed to register this account, if this account was created by you, try to restore it.</source>
         <translation type="unfinished">Не вдалося зареєструвати цей обліковий запис, якщо цей обліковий запис був створений вами, спробуйте відновити його.</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="236"/>
-        <location filename="../hanoitowers.cpp" line="258"/>
+        <location filename="../hanoitowers.cpp" line="239"/>
+        <location filename="../hanoitowers.cpp" line="261"/>
         <source>Server error</source>
         <translation type="unfinished">Помилка серверу</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="243"/>
+        <location filename="../hanoitowers.cpp" line="246"/>
         <source>User with this id is not registered. If it you then use please the sigup form.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="251"/>
+        <location filename="../hanoitowers.cpp" line="254"/>
         <source>User with this id already registered. If it you then use please the login form.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="396"/>
+        <location filename="../hanoitowers.cpp" line="399"/>
         <source>Create user error</source>
         <translation type="unfinished">Помилка створення користувача</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="397"/>
+        <location filename="../hanoitowers.cpp" line="400"/>
         <source>Failed to create a new user, The name %0 alredy used.</source>
         <translation type="unfinished">Не вдалося створити нового користувача, ім’я %0 вже використовується.</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="428"/>
+        <location filename="../hanoitowers.cpp" line="431"/>
         <source>Remove online error</source>
         <translation type="unfinished">Помилка видалення онлайн даних користувачів</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="428"/>
+        <location filename="../hanoitowers.cpp" line="431"/>
         <source>current profile not online!</source>
         <translation type="unfinished">Поточний профіль офлайн!</translation>
     </message>
@@ -610,17 +610,17 @@
         <translation>Онлайн-профіль</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="138"/>
+        <location filename="../menu/UserView.qml" line="136"/>
         <source>Remove This Profile</source>
         <translation>Видалити цей профіль</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="149"/>
+        <location filename="../menu/UserView.qml" line="147"/>
         <source>Restore</source>
         <translation>Відновлювати</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="156"/>
+        <location filename="../menu/UserView.qml" line="154"/>
         <source>Accept</source>
         <translation>Прийміть</translation>
     </message>
@@ -633,12 +633,12 @@
         <translation type="vanished">Дані користувача буде змінено.</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="188"/>
+        <location filename="../menu/UserView.qml" line="190"/>
         <source>Remove %0 user</source>
         <translation>Видалити користувача %0</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="189"/>
+        <location filename="../menu/UserView.qml" line="191"/>
         <source>All saved data and records will be delete, Do you want continuee?</source>
         <translation>Усі збережені дані та записи будуть видалені. Продовжити?</translation>
     </message>

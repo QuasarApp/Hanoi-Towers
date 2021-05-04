@@ -125,6 +125,8 @@ void HanoiTowers::init() {
         setAnimation(_animation);
         setRandomColor(_randomColor);
         setShowHelp(isFirstStart);
+        if (lvl < 99)
+            gameState()->saveLvl(lvl);
 
 
         f.close();
@@ -368,10 +370,13 @@ bool HanoiTowers::fogAnimation() const {
 }
 
 HanoiTowers::~HanoiTowers() {
+    updateProfile();
+
     QCoreApplication::processEvents();
 
     _imageProvider->stop();
     _client->softDelete();
+
 
     delete _dataConverter;
 }

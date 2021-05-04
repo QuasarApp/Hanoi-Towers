@@ -17,8 +17,8 @@ GridLayout {
     signal newAvatar(var path);
 
     Button {
-        Layout.preferredHeight: 50 * Screen.pixelDensity
-        Layout.preferredWidth: 50 * Screen.pixelDensity
+        Layout.preferredHeight: eid.height * userDataGrid.rows
+        Layout.preferredWidth: Layout.preferredHeight
         Layout.rowSpan: 1
         Image {
             id: userAvatar
@@ -52,7 +52,7 @@ GridLayout {
     GridLayout {
         id: userDataGrid
 
-        rows: 4
+        rows: (editable && privateRoot.onlineFunctions)? 4 : 3
         columns: 2
         flow: GridLayout.TopToBottom
         Label {
@@ -80,6 +80,7 @@ GridLayout {
             id: uonline
             text: qsTr("Online profile")
             verticalAlignment: Text.AlignVCenter
+            visible: editable && privateRoot.onlineFunctions
 
         }
 
@@ -114,15 +115,13 @@ GridLayout {
             id: eonline
             text: ""
             checked: privateRoot.onlieUser
-            visible: !bonline.visible && editable
+            visible: !bonline.visible && editable && privateRoot.onlineFunctions
         }
 
         BusyIndicator {
             id: bonline
             running: true;
-            visible: (privateRoot.onlineStatus === OnlineStatusQml.loginning ||
-                      privateRoot.onlineStatus === OnlineStatusQml.connecting)
-                     && editable
+            visible: privateRoot.busyVisible
 
         }
     }
@@ -135,7 +134,7 @@ GridLayout {
             id: remove
 
             Material.background: Material.Red
-            text: qsTr("Remove This Profile")
+            text: qsTr("Remove")
             onClicked: privateRoot.remove()
 
         }
@@ -166,6 +165,10 @@ GridLayout {
         property string userName: (userModel)? userModel.name: ""
         property bool onlieUser: (userModel)? userModel.onlineUser: false
         property int onlineStatus: (backEnd)? backEnd.onlineStatus : 0
+        property bool onlineFunctions: (userModel)? userModel.onlineFunctions() : false
+        property bool busyVisible: (onlineStatus === OnlineStatusQml.loginning ||
+                                    onlineStatus === OnlineStatusQml.connecting)
+                                    && editable && onlineFunctions
 
         function accept() {
             if (userModel) {

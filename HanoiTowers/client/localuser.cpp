@@ -145,6 +145,14 @@ QByteArray LocalUser::avatarData() const {
     return _userData._avatar;
 }
 
+bool LocalUser::onlineFunctions() const {
+#ifdef ONLINE_FUNCTIONS
+    return true;
+#else
+    return false;
+#endif
+}
+
 int LocalUser::updateTime() const {
     return _updateTime;
 }
@@ -184,8 +192,7 @@ void LocalUser::setHashPassword(const QByteArray &hashPassword) {
 }
 
 bool LocalUser::online() const {
-
-    return _userData._online;
+    return _userData._online && onlineFunctions();
 }
 
 void LocalUser::setOnline(bool online) {

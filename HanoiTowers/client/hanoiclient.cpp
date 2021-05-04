@@ -328,7 +328,7 @@ bool HanoiClient::updateProfile(const LocalUser& user) {
     localUser->setUpdateTime(time(nullptr));
 
     if (auto database = db()) {
-        if (!database->updateObject(localUser))
+        if (!database->updateObject(localUser, true))
             return false;
     }
 

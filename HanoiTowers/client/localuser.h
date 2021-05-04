@@ -71,6 +71,8 @@ public:
 
     QByteArray avatarData() const;
 
+    Q_INVOKABLE bool onlineFunctions() const;
+
 public slots:
     void setOnline(bool online);
     void setRecord(int record);
@@ -96,9 +98,6 @@ private:
     ProfileData _userData;
     int _updateTime = 0;
     unsigned int _avatarHash = 0;
-
-
-
 };
 
 #endif // LOCALUSER_H
