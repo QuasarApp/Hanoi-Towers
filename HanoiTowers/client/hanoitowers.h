@@ -56,6 +56,7 @@ class HanoiTowers: public QObject
 
     Q_PROPERTY(QString profile READ profile WRITE setProfile NOTIFY profileChanged)
     Q_PROPERTY(int onlineStatus READ onlineStatus NOTIFY onlineStatusChanged)
+    Q_PROPERTY(QString onlineStatusColor READ onlineStatusColor NOTIFY onlineStatusChanged)
 
 
 
@@ -102,9 +103,12 @@ public:
     Q_INVOKABLE void updateProfile();
 
     int onlineStatus() const;
+    QString onlineStatusColor() const;
 
     QObject *bestUser();
     QObject *selectedUser();
+
+
 
 public slots:
 

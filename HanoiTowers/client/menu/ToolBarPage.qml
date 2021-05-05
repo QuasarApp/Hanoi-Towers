@@ -15,23 +15,12 @@ ToolBar {
 
     property alias gameState: gameWidget
 
-    function getStatusColor(status) {
-        switch(status) {
-
-        case OnlineStatusQml.connecting: return "#787878";
-        case OnlineStatusQml.connected: return "#ffaa7f";
-        case OnlineStatusQml.loginning: return "#ffaa7f";
-        case OnlineStatusQml.loggined: return "#00ff7f";
-        default:
-            return "#787878"
-        }
-    }
 
     signal returnToMenu();
     signal restart(var level);
 
     background: Rectangle {
-        color: getStatusColor(onlineStatus)
+        color: (backEnd)? backEnd.onlineStatusColor: ""
     }
 
     RowLayout {

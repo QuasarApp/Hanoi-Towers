@@ -27,7 +27,7 @@ RowLayout {
 
     }
 
-    Button {
+    ToolButton {
         id: frame
 
         text: tumblerWidget.spin.currentIndex + 1
@@ -43,7 +43,7 @@ RowLayout {
             onStart: {
                 restart(lvl);
             }
-            height: parent.height * 4
+            height: parent.height * 6
             anchors.top: parent.bottom
             anchors.left: parent.left
             anchors.right: parent.right

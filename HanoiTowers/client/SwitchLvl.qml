@@ -8,11 +8,12 @@
 
 import QtQuick 2.15
 import QtQuick.Controls 2.15
+import QtQuick.Controls.Material 2.15
 
 Rectangle {
     id: tumbler
-    color: "#ffffff"
-    border.color: "#d5d4d4"
+    color: (backEnd)? backEnd.onlineStatusColor: ""
+    border.width: 0
     visible: false
 
     signal start(var lvl);
@@ -28,13 +29,17 @@ Rectangle {
 
         delegate: Text {
 
-            color: Qt.rgba(0.5,0.5,0.5,1 / (Math.abs(spin.currentIndex - modelData)))
+            color: Qt.rgba(1,1,1,1 / (Math.abs(spin.currentIndex - modelData)))
             text: "" + (modelData + 1)
             width: tumbler.width
             verticalAlignment: Text.AlignVCenter
             horizontalAlignment: Text.AlignHCenter
             font.pixelSize: (spin.height / 4) / (Math.abs(spin.currentIndex - modelData) + 1 )
 
+        }
+
+        background: Rectangle {
+            color: (backEnd)? backEnd.onlineStatusColor: ""
         }
 
         onValueChanged: {
@@ -59,7 +64,7 @@ Rectangle {
 
     }
 
-    Button {
+    ToolButton {
         id: closeTumbler
         text: qsTr("Start")
         onClicked: {

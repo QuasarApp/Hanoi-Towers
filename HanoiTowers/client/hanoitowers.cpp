@@ -198,6 +198,20 @@ int HanoiTowers::onlineStatus() const {
     return static_cast<int>(_onlineStatus);
 }
 
+QString HanoiTowers::onlineStatusColor() const {
+    switch (_onlineStatus) {
+    case OnlineStatus::Connected:
+    case OnlineStatus::Connecting: {
+        return "#ffaa7f";
+    }
+    case OnlineStatus::Loginning:
+    case OnlineStatus::Logined: {
+        return "#00ff7f";
+    }
+    default: return "#787878";
+    }
+}
+
 QObject *HanoiTowers::bestUser() {
     return &_bestUser;
 }
