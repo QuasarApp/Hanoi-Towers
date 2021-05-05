@@ -17,32 +17,6 @@
 #include <qmlnotifyservice.h>
 #include <credits.h>
 
-void setFont(const QGuiApplication& app){
-
-    QString fontPath = "://ubuntu";
-    int fontId = QFontDatabase::addApplicationFont(fontPath);
-    if (fontId != -1)
-    {
-        QFont font(QFontDatabase::applicationFontFamilies(fontId).at(0));
-        app.setFont(font);
-    }
-}
-
-bool initLocale(const QString &locale, QGuiApplication& app, QTranslator &translator){
-
-    QString defaultLocale = QLocale::system().name();
-    defaultLocale.truncate(defaultLocale.lastIndexOf('_'));
-
-    if(!locale.isEmpty() && translator.load(QString(":/languages/%0").arg(locale))){
-        return app.installTranslator(&translator);
-    }
-
-    if(!translator.load(QString(":/languages/%0").arg(defaultLocale))){
-        return false;
-    }
-
-    return app.installTranslator(&translator);
-}
 
 int main(int argc, char *argv[])
 {
@@ -51,18 +25,18 @@ int main(int argc, char *argv[])
     QGuiApplication::setOrganizationDomain("https://github.com/QuasarApp"); // <--
 
     QGuiApplication app(argc, argv);
-    setFont(app);
 
-    QTranslator translator;
-
-    QString locale = "";
+    QLocale locale = QLocale::system();
 
     if(argc > 1) {
         locale = QString::fromLatin1(argv[1]);
     }
 
-    if(!initLocale(locale, app, translator)){
-        std::cout << "error load language : " << locale.toStdString() <<std::endl;
+    if(!QuasarAppUtils::Locales::init(locale, {":/languages/languages/",
+                                               ":/credits_languages/",
+                                               ":/qmlNotify_languages/",
+                                               ":/lv_languages/"})){
+        QuasarAppUtils::Params::log("Error load language : " , QuasarAppUtils::Error);
     }
 
     QQmlApplicationEngine engine;
