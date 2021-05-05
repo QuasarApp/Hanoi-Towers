@@ -74,7 +74,7 @@ HanoiTowers::HanoiTowers(QQmlApplicationEngine *engine):
     _createNewOfflineUser->setComponents(LoginView::Nickname |
                                          LoginView::SigupPage |
                                          LoginView::Title);
-    _createNewOfflineUser->setAcceptButtonText(tr("Create new user"));
+    _createNewOfflineUser->setAcceptButtonText(tr("Create"));
     _createNewOfflineUser->init(engine);
 
     _recordsTable->setSource(_client->localUsersPreview());

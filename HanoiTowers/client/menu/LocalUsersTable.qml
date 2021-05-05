@@ -59,7 +59,7 @@ Item {
 
         id: loginPopUp
         lognViewModel: userLogin // exampleLogin - this is inited model in main.cpp
-
+        height: 4 * point
         Connections {
             target: backEnd;
             function onShowOnlinePage () {

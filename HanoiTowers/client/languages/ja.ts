@@ -4,22 +4,22 @@
 <context>
     <name>About</name>
     <message>
-        <location filename="../About.qml" line="22"/>
+        <location filename="../About.qml" line="17"/>
         <source>about</source>
         <translation>約</translation>
     </message>
     <message>
-        <location filename="../About.qml" line="34"/>
+        <location filename="../About.qml" line="29"/>
         <source>About</source>
         <translation type="unfinished">約</translation>
     </message>
     <message>
-        <location filename="../About.qml" line="37"/>
+        <location filename="../About.qml" line="32"/>
         <source>Credits</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../About.qml" line="67"/>
+        <location filename="../About.qml" line="62"/>
         <source>Product of QuasarApp
             * Developers:
             * Programmer: Yankovich N. Andrei.
@@ -107,27 +107,27 @@
         <translation type="vanished">メインメニューに戻る</translation>
     </message>
     <message>
-        <location filename="../menu/Config.qml" line="33"/>
+        <location filename="../menu/Config.qml" line="28"/>
         <source>Standart color</source>
         <translation>標準色</translation>
     </message>
     <message>
-        <location filename="../menu/Config.qml" line="39"/>
+        <location filename="../menu/Config.qml" line="34"/>
         <source>Random color</source>
         <translation>多色バックライト</translation>
     </message>
     <message>
-        <location filename="../menu/Config.qml" line="50"/>
+        <location filename="../menu/Config.qml" line="45"/>
         <source>Animation</source>
         <translation>アニメーション</translation>
     </message>
     <message>
-        <location filename="../menu/Config.qml" line="61"/>
+        <location filename="../menu/Config.qml" line="56"/>
         <source>Fog</source>
         <translation>霧</translation>
     </message>
     <message>
-        <location filename="../menu/Config.qml" line="71"/>
+        <location filename="../menu/Config.qml" line="66"/>
         <source>Fog Animations</source>
         <translation>フォグアニメーション</translation>
     </message>
@@ -160,38 +160,38 @@
         <translation type="vanished">このLVLの最小ステップ： %1</translation>
     </message>
     <message>
-        <location filename="../Game.qml" line="168"/>
-        <location filename="../Game.qml" line="188"/>
+        <location filename="../Game.qml" line="162"/>
+        <location filename="../Game.qml" line="182"/>
         <source>Congratulations! You have passed the level %0</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Game.qml" line="171"/>
+        <location filename="../Game.qml" line="165"/>
         <source>You got &lt;b&gt;%0&lt;/b&gt; points for this level and unlocked the level &lt;b&gt;%1&lt;/b&gt;!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Game.qml" line="172"/>
+        <location filename="../Game.qml" line="166"/>
         <source>&lt;br&gt;&lt;br&gt; Totally &lt;b&gt;%2&lt;/b&gt; steps.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Game.qml" line="173"/>
+        <location filename="../Game.qml" line="167"/>
         <source>&lt;br&gt; The minimum number of steps for this level : &lt;b&gt;%3&lt;/b&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Game.qml" line="191"/>
+        <location filename="../Game.qml" line="185"/>
         <source>You got &lt;b&gt;%0&lt;/b&gt; points for this level!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Game.qml" line="192"/>
+        <location filename="../Game.qml" line="186"/>
         <source>&lt;br&gt;&lt;br&gt; Totally &lt;b&gt;%1&lt;/b&gt; steps.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Game.qml" line="193"/>
+        <location filename="../Game.qml" line="187"/>
         <source>&lt;br&gt; The minimum number of steps for this level : &lt;b&gt;%2&lt;/b&gt;</source>
         <translation type="unfinished"></translation>
     </message>
@@ -199,12 +199,12 @@
 <context>
     <name>GameStateWidget</name>
     <message>
-        <location filename="../menu/GameStateWidget.qml" line="27"/>
+        <location filename="../menu/GameStateWidget.qml" line="26"/>
         <source>Tower height: </source>
         <translation>塔の高さ: </translation>
     </message>
     <message>
-        <location filename="../menu/GameStateWidget.qml" line="61"/>
+        <location filename="../menu/GameStateWidget.qml" line="62"/>
         <source>step </source>
         <translation>ステップ </translation>
     </message>
@@ -222,7 +222,7 @@
         <translation>ローカルユーザはサーバからNBEWデータを受け入れます。</translation>
     </message>
     <message>
-        <location filename="../hanoiclient.cpp" line="394"/>
+        <location filename="../hanoiclient.cpp" line="401"/>
         <source>Internal Error, server send invalid data, and this data can&apos;t be saved into local database.</source>
         <translation>内部エラー、サーバーが無効なデータを送信し、このデータをローカルデータベースに保存することはできません。</translation>
     </message>
@@ -234,95 +234,109 @@
 <context>
     <name>HanoiTowers</name>
     <message>
-        <location filename="../hanoitowers.cpp" line="71"/>
         <source>Create new user</source>
-        <translation type="unfinished">新規ユーザーの作成</translation>
+        <translation type="obsolete">新規ユーザーの作成</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="162"/>
+        <location filename="../hanoitowers.cpp" line="77"/>
+        <source>Create</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../hanoitowers.cpp" line="168"/>
         <source>Connect error</source>
         <translation type="unfinished">接続エラー</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="163"/>
+        <location filename="../hanoitowers.cpp" line="169"/>
         <source>Failed to connect to server please check network connection befor login</source>
         <translation type="unfinished">サーバへの接続に失敗しました</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="179"/>
+        <location filename="../hanoitowers.cpp" line="185"/>
         <source>Update Profile error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="180"/>
+        <location filename="../hanoitowers.cpp" line="186"/>
         <source>Failed to update yuo user data please check network connection befor update prifile</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="185"/>
+        <location filename="../hanoitowers.cpp" line="191"/>
         <source>Update Profile</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="186"/>
+        <location filename="../hanoitowers.cpp" line="192"/>
         <source>User data updated successful</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="219"/>
+        <location filename="../hanoitowers.cpp" line="239"/>
         <source>login error</source>
         <translation type="unfinished">ログインエラー</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="220"/>
+        <location filename="../hanoitowers.cpp" line="240"/>
         <source>Failed to login into online account, please check your password and username</source>
         <translation type="unfinished">オンラインアカウントにログインできませんでした。パスワードとユーザー名を確認してください</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="230"/>
+        <location filename="../hanoitowers.cpp" line="250"/>
         <source>Register online error</source>
         <translation type="unfinished">登録オンラインエラー</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="231"/>
+        <location filename="../hanoitowers.cpp" line="251"/>
         <source>Failed to register this account, if this account was created by you, try to restore it.</source>
         <translation type="unfinished">このアカウントが登録されなかった場合、このアカウントが作成された場合、それを元に戻してください。</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="241"/>
-        <location filename="../hanoitowers.cpp" line="263"/>
+        <location filename="../hanoitowers.cpp" line="261"/>
+        <location filename="../hanoitowers.cpp" line="283"/>
         <source>Server error</source>
         <translation type="unfinished">サーバエラー</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="248"/>
+        <location filename="../hanoitowers.cpp" line="268"/>
         <source>User with this id is not registered. If it you then use please the sigup form.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="256"/>
+        <location filename="../hanoitowers.cpp" line="276"/>
         <source>User with this id already registered. If it you then use please the login form.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="404"/>
+        <location filename="../hanoitowers.cpp" line="424"/>
         <source>Create user error</source>
         <translation type="unfinished">ユーザーエラーの作成</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="405"/>
+        <location filename="../hanoitowers.cpp" line="425"/>
         <source>Failed to create a new user, The name %0 alredy used.</source>
         <translation type="unfinished">新しいユーザーの作成に失敗しました。名前 %0 はすでに使用されています。</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="436"/>
+        <location filename="../hanoitowers.cpp" line="456"/>
         <source>Remove online error</source>
         <translation type="unfinished">オンラインユーザーデータの削除中にエラーが発生しました</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="436"/>
+        <location filename="../hanoitowers.cpp" line="456"/>
         <source>current profile not online!</source>
         <translation type="unfinished">現在のプロファイルはオフラインです！</translation>
+    </message>
+    <message>
+        <location filename="../hanoitowers.cpp" line="462"/>
+        <source>Remove Local user</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../hanoitowers.cpp" line="462"/>
+        <source>Failed to remove the local user data</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -348,7 +362,7 @@
         </translation>
     </message>
     <message>
-        <location filename="../Help.qml" line="48"/>
+        <location filename="../Help.qml" line="46"/>
         <source>Your task is to transfer discs of different sizesfrom the left tower to third tower.You can only transfer the top drive of the tower.You can not transfer several disks at once and put larger disks on small disks.</source>
         <translation type="unfinished" variants="yes">
             <lengthvariant>あなたの仕事は、異なるサイズのディスクを左側のタワーから3番目のタワーに移すことです。タワーの一番上のドライブのみを転送できます。一度に複数のディスクを転送して、小さなディスクに大きなディスクを配置することはできません。</lengthvariant>
@@ -357,7 +371,7 @@
         </translation>
     </message>
     <message>
-        <location filename="../Help.qml" line="61"/>
+        <location filename="../Help.qml" line="59"/>
         <source>Do not show again</source>
         <translation>二度と現れない</translation>
     </message>
@@ -487,37 +501,37 @@
         <translation type="vanished">ハノイタワーズ</translation>
     </message>
     <message>
-        <location filename="../menu/MainMenu.qml" line="53"/>
+        <location filename="../menu/MainMenu.qml" line="49"/>
         <source>continue</source>
         <translation>続行</translation>
     </message>
     <message>
-        <location filename="../menu/MainMenu.qml" line="67"/>
+        <location filename="../menu/MainMenu.qml" line="63"/>
         <source>start</source>
         <translation>スタート</translation>
     </message>
     <message>
-        <location filename="../menu/MainMenu.qml" line="78"/>
+        <location filename="../menu/MainMenu.qml" line="74"/>
         <source>HanoiTowers World</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../menu/MainMenu.qml" line="91"/>
+        <location filename="../menu/MainMenu.qml" line="87"/>
         <source>About</source>
         <translation>約</translation>
     </message>
     <message>
-        <location filename="../menu/MainMenu.qml" line="102"/>
+        <location filename="../menu/MainMenu.qml" line="98"/>
         <source>Config</source>
         <translation>設定</translation>
     </message>
     <message>
-        <location filename="../menu/MainMenu.qml" line="114"/>
+        <location filename="../menu/MainMenu.qml" line="110"/>
         <source>Users</source>
         <translation>利用者</translation>
     </message>
     <message>
-        <location filename="../menu/MainMenu.qml" line="125"/>
+        <location filename="../menu/MainMenu.qml" line="121"/>
         <source>exit</source>
         <translation>出口</translation>
     </message>
@@ -532,7 +546,7 @@
 <context>
     <name>SwitchLvl</name>
     <message>
-        <location filename="../SwitchLvl.qml" line="65"/>
+        <location filename="../SwitchLvl.qml" line="69"/>
         <source>Start</source>
         <translation>スタート</translation>
     </message>
@@ -547,32 +561,32 @@
 <context>
     <name>ToolBarPage</name>
     <message>
-        <location filename="../menu/ToolBarPage.qml" line="65"/>
+        <location filename="../menu/ToolBarPage.qml" line="52"/>
         <source>Return to main menu</source>
         <translation>メインメニューへ戻る</translation>
     </message>
     <message>
-        <location filename="../menu/ToolBarPage.qml" line="86"/>
+        <location filename="../menu/ToolBarPage.qml" line="72"/>
         <source>Welcom to Hanoi Towers </source>
         <translation>ハノイタワー</translation>
     </message>
     <message>
-        <location filename="../menu/ToolBarPage.qml" line="97"/>
+        <location filename="../menu/ToolBarPage.qml" line="83"/>
         <source>Profiles</source>
         <translation>プロファイル</translation>
     </message>
     <message>
-        <location filename="../menu/ToolBarPage.qml" line="109"/>
+        <location filename="../menu/ToolBarPage.qml" line="95"/>
         <source>This are the main settings</source>
         <translation>これはメインの設定です</translation>
     </message>
     <message>
-        <location filename="../menu/ToolBarPage.qml" line="121"/>
+        <location filename="../menu/ToolBarPage.qml" line="107"/>
         <source>About Page</source>
         <translation>ページに関して</translation>
     </message>
     <message>
-        <location filename="../menu/ToolBarPage.qml" line="133"/>
+        <location filename="../menu/ToolBarPage.qml" line="119"/>
         <source>World Of Hanoi Towers</source>
         <translation type="unfinished"></translation>
     </message>
@@ -580,32 +594,32 @@
 <context>
     <name>UserView</name>
     <message>
-        <location filename="../menu/UserView.qml" line="43"/>
+        <location filename="../menu/UserView.qml" line="44"/>
         <source>Please choose a new Avatar</source>
         <translation>新しいアバターを選んでください</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="60"/>
+        <location filename="../menu/UserView.qml" line="61"/>
         <source>Id</source>
         <translation>Id</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="67"/>
+        <location filename="../menu/UserView.qml" line="68"/>
         <source>Name</source>
         <translation>名称</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="74"/>
+        <location filename="../menu/UserView.qml" line="75"/>
         <source>Record</source>
         <translation>レコード</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="81"/>
+        <location filename="../menu/UserView.qml" line="82"/>
         <source>Online profile</source>
         <translation>オンラインプロフィール</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="137"/>
+        <location filename="../menu/UserView.qml" line="141"/>
         <source>Remove</source>
         <translation type="unfinished"></translation>
     </message>
@@ -614,12 +628,12 @@
         <translation type="vanished">このプロファイルを削除する</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="148"/>
+        <location filename="../menu/UserView.qml" line="152"/>
         <source>Restore</source>
         <translation>戻す</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="155"/>
+        <location filename="../menu/UserView.qml" line="159"/>
         <source>Accept</source>
         <translation>受け入れる</translation>
     </message>
@@ -632,12 +646,12 @@
         <translation type="vanished">ユーザーデータが変更されます。</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="191"/>
+        <location filename="../menu/UserView.qml" line="195"/>
         <source>Remove %0 user</source>
         <translation>%0ユーザーを削除</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="192"/>
+        <location filename="../menu/UserView.qml" line="196"/>
         <source>All saved data and records will be delete, Do you want continuee?</source>
         <translation>すべての保存されたデータとレコードが削除されます、あなたが継続したいですか？</translation>
     </message>
@@ -649,13 +663,13 @@
         <translation type="obsolete">メインメニューに戻る</translation>
     </message>
     <message>
-        <location filename="../menu/UsersTable.qml" line="38"/>
-        <location filename="../menu/UsersTable.qml" line="93"/>
+        <location filename="../menu/UsersTable.qml" line="37"/>
+        <location filename="../menu/UsersTable.qml" line="92"/>
         <source>Locale users list</source>
         <translation>ローカルユーザーリスト</translation>
     </message>
     <message>
-        <location filename="../menu/UsersTable.qml" line="72"/>
+        <location filename="../menu/UsersTable.qml" line="71"/>
         <source>Add user</source>
         <translation type="unfinished"></translation>
     </message>
@@ -664,7 +678,7 @@
         <translation type="vanished">新しいユーザーを作成します</translation>
     </message>
     <message>
-        <location filename="../menu/UsersTable.qml" line="106"/>
+        <location filename="../menu/UsersTable.qml" line="105"/>
         <source>Best users in the world</source>
         <translation type="unfinished"></translation>
     </message>
@@ -750,7 +764,7 @@ Minimum steps for this lvl: %1</source>
 <context>
     <name>main</name>
     <message>
-        <location filename="../main.qml" line="23"/>
+        <location filename="../main.qml" line="22"/>
         <source>Hanoi Towers</source>
         <translation>ハノイタワーズ</translation>
     </message>
