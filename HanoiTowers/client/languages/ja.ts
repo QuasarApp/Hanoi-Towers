@@ -11,12 +11,12 @@
     <message>
         <location filename="../About.qml" line="29"/>
         <source>About</source>
-        <translation type="unfinished">約</translation>
+        <translation>約</translation>
     </message>
     <message>
         <location filename="../About.qml" line="32"/>
         <source>Credits</source>
-        <translation type="unfinished"></translation>
+        <translation>スポンサー</translation>
     </message>
     <message>
         <location filename="../About.qml" line="62"/>
@@ -28,7 +28,14 @@
             * Contact: https://github.com/EndrII
             * Copyright (C) 2018-2019 Yankovich N. Andrei.
             * Copyright (C) 2019-2021 QuasarApp group.</source>
-        <translation type="unfinished"></translation>
+        <translation>QuasarAppの製品
+             *開発者：
+             *プログラマー：Yankovich N. Andrei
+             *デザイナー：チェルネンコフI.オレグ。
+             *このゲームはLGPLv3ライセンスの下で配布されています。
+             *連絡先：https：//github.com/EndrII
+             * Copyright（C）2018-2019 Yankovich N.Andrei。
+             * Copyright（C）2019-2021QuasarAppグループ。</translation>
     </message>
     <message>
         <source>Product of QuasarApp
@@ -163,37 +170,37 @@
         <location filename="../Game.qml" line="162"/>
         <location filename="../Game.qml" line="182"/>
         <source>Congratulations! You have passed the level %0</source>
-        <translation type="unfinished"></translation>
+        <translation>おめでとう！ レベル %0 に合格しました</translation>
     </message>
     <message>
         <location filename="../Game.qml" line="165"/>
         <source>You got &lt;b&gt;%0&lt;/b&gt; points for this level and unlocked the level &lt;b&gt;%1&lt;/b&gt;!</source>
-        <translation type="unfinished"></translation>
+        <translation>あなたが得た &lt;b&gt;%0&lt;/b&gt; このレベルのポイントとレベルのロック解除 &lt;b&gt;%1&lt;/b&gt;!</translation>
     </message>
     <message>
         <location filename="../Game.qml" line="166"/>
         <source>&lt;br&gt;&lt;br&gt; Totally &lt;b&gt;%2&lt;/b&gt; steps.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;br&gt;&lt;br&gt; 完全に &lt;b&gt;%2&lt;/b&gt; ステップ.</translation>
     </message>
     <message>
         <location filename="../Game.qml" line="167"/>
         <source>&lt;br&gt; The minimum number of steps for this level : &lt;b&gt;%3&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;br&gt; このレベルの最小ステップ数 : &lt;b&gt;%3&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../Game.qml" line="185"/>
         <source>You got &lt;b&gt;%0&lt;/b&gt; points for this level!</source>
-        <translation type="unfinished"></translation>
+        <translation>このレベルで &lt;b&gt;%0&lt;/b&gt; ポイント獲得しました！</translation>
     </message>
     <message>
         <location filename="../Game.qml" line="186"/>
         <source>&lt;br&gt;&lt;br&gt; Totally &lt;b&gt;%1&lt;/b&gt; steps.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;br&gt;&lt;br&gt; 完全に &lt;b&gt;%1&lt;/b&gt; ステップ.</translation>
     </message>
     <message>
         <location filename="../Game.qml" line="187"/>
         <source>&lt;br&gt; The minimum number of steps for this level : &lt;b&gt;%2&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;br&gt; このレベルの最小ステップ数 : &lt;b&gt;%2&lt;/b&gt;</translation>
     </message>
 </context>
 <context>
@@ -240,103 +247,103 @@
     <message>
         <location filename="../hanoitowers.cpp" line="77"/>
         <source>Create</source>
-        <translation type="unfinished"></translation>
+        <translation>作る</translation>
     </message>
     <message>
         <location filename="../hanoitowers.cpp" line="168"/>
         <source>Connect error</source>
-        <translation type="unfinished">接続エラー</translation>
+        <translation>接続エラー</translation>
     </message>
     <message>
         <location filename="../hanoitowers.cpp" line="169"/>
         <source>Failed to connect to server please check network connection befor login</source>
-        <translation type="unfinished">サーバへの接続に失敗しました</translation>
+        <translation>サーバへの接続に失敗しました</translation>
     </message>
     <message>
         <location filename="../hanoitowers.cpp" line="185"/>
         <source>Update Profile error</source>
-        <translation type="unfinished"></translation>
+        <translation>プロファイルの更新エラー</translation>
     </message>
     <message>
         <location filename="../hanoitowers.cpp" line="186"/>
         <source>Failed to update yuo user data please check network connection befor update prifile</source>
-        <translation type="unfinished"></translation>
+        <translation>ユーザーデータの更新に失敗しましたプロファイルを更新する前にネットワーク接続を確認してください</translation>
     </message>
     <message>
         <location filename="../hanoitowers.cpp" line="191"/>
         <source>Update Profile</source>
-        <translation type="unfinished"></translation>
+        <translation>プロファイルの更新</translation>
     </message>
     <message>
         <location filename="../hanoitowers.cpp" line="192"/>
         <source>User data updated successful</source>
-        <translation type="unfinished"></translation>
+        <translation>ユーザーデータが正常に更新されました</translation>
     </message>
     <message>
         <location filename="../hanoitowers.cpp" line="239"/>
         <source>login error</source>
-        <translation type="unfinished">ログインエラー</translation>
+        <translation>ログインエラー</translation>
     </message>
     <message>
         <location filename="../hanoitowers.cpp" line="240"/>
         <source>Failed to login into online account, please check your password and username</source>
-        <translation type="unfinished">オンラインアカウントにログインできませんでした。パスワードとユーザー名を確認してください</translation>
+        <translation>オンラインアカウントにログインできませんでした。パスワードとユーザー名を確認してください</translation>
     </message>
     <message>
         <location filename="../hanoitowers.cpp" line="250"/>
         <source>Register online error</source>
-        <translation type="unfinished">登録オンラインエラー</translation>
+        <translation>登録オンラインエラー</translation>
     </message>
     <message>
         <location filename="../hanoitowers.cpp" line="251"/>
         <source>Failed to register this account, if this account was created by you, try to restore it.</source>
-        <translation type="unfinished">このアカウントが登録されなかった場合、このアカウントが作成された場合、それを元に戻してください。</translation>
+        <translation>このアカウントが登録されなかった場合、このアカウントが作成された場合、それを元に戻してください。</translation>
     </message>
     <message>
         <location filename="../hanoitowers.cpp" line="261"/>
         <location filename="../hanoitowers.cpp" line="283"/>
         <source>Server error</source>
-        <translation type="unfinished">サーバエラー</translation>
+        <translation>サーバエラー</translation>
     </message>
     <message>
         <location filename="../hanoitowers.cpp" line="268"/>
         <source>User with this id is not registered. If it you then use please the sigup form.</source>
-        <translation type="unfinished"></translation>
+        <translation>このIDのユーザーは登録されていません。 それを使用する場合は、サインアップフォームを使用してください。</translation>
     </message>
     <message>
         <location filename="../hanoitowers.cpp" line="276"/>
         <source>User with this id already registered. If it you then use please the login form.</source>
-        <translation type="unfinished"></translation>
+        <translation>このIDのユーザーはすでに登録されています。 それを使用する場合は、ログインフォームを使用してください。</translation>
     </message>
     <message>
         <location filename="../hanoitowers.cpp" line="424"/>
         <source>Create user error</source>
-        <translation type="unfinished">ユーザーエラーの作成</translation>
+        <translation>ユーザーエラーの作成</translation>
     </message>
     <message>
         <location filename="../hanoitowers.cpp" line="425"/>
         <source>Failed to create a new user, The name %0 alredy used.</source>
-        <translation type="unfinished">新しいユーザーの作成に失敗しました。名前 %0 はすでに使用されています。</translation>
+        <translation>新しいユーザーの作成に失敗しました。名前 %0 はすでに使用されています。</translation>
     </message>
     <message>
         <location filename="../hanoitowers.cpp" line="456"/>
         <source>Remove online error</source>
-        <translation type="unfinished">オンラインユーザーデータの削除中にエラーが発生しました</translation>
+        <translation>オンラインユーザーデータの削除中にエラーが発生しました</translation>
     </message>
     <message>
         <location filename="../hanoitowers.cpp" line="456"/>
         <source>current profile not online!</source>
-        <translation type="unfinished">現在のプロファイルはオフラインです！</translation>
+        <translation>現在のプロファイルはオフラインです！</translation>
     </message>
     <message>
         <location filename="../hanoitowers.cpp" line="462"/>
         <source>Remove Local user</source>
-        <translation type="unfinished"></translation>
+        <translation>ローカルユーザーを削除する</translation>
     </message>
     <message>
         <location filename="../hanoitowers.cpp" line="462"/>
         <source>Failed to remove the local user data</source>
-        <translation type="unfinished"></translation>
+        <translation>ローカルユーザーデータの削除に失敗しました</translation>
     </message>
 </context>
 <context>
@@ -364,7 +371,7 @@
     <message>
         <location filename="../Help.qml" line="46"/>
         <source>Your task is to transfer discs of different sizesfrom the left tower to third tower.You can only transfer the top drive of the tower.You can not transfer several disks at once and put larger disks on small disks.</source>
-        <translation type="unfinished" variants="yes">
+        <translation variants="yes">
             <lengthvariant>あなたの仕事は、異なるサイズのディスクを左側のタワーから3番目のタワーに移すことです。タワーの一番上のドライブのみを転送できます。一度に複数のディスクを転送して、小さなディスクに大きなディスクを配置することはできません。</lengthvariant>
             <lengthvariant>あなたの仕事は、異なるサイズのディスクを左側のタワーから3番目のタワーに移すことです。タワーの一番上のドライブのみを転送できます。一度に複数のディスクを転送して、小さなディスクに大きなディスクを配置することはできません。</lengthvariant>
             <lengthvariant>あなたの仕事は、異なるサイズのディスクを左側のタワーから3番目のタワーに移すことです。タワーの一番上のドライブのみを転送できます。一度に複数のディスクを転送して、小さなディスクに大きなディスクを配置することはできません。</lengthvariant>
@@ -513,7 +520,7 @@
     <message>
         <location filename="../menu/MainMenu.qml" line="74"/>
         <source>HanoiTowers World</source>
-        <translation type="unfinished"></translation>
+        <translation>ハノイタワーズワールド</translation>
     </message>
     <message>
         <location filename="../menu/MainMenu.qml" line="87"/>
@@ -588,7 +595,7 @@
     <message>
         <location filename="../menu/ToolBarPage.qml" line="119"/>
         <source>World Of Hanoi Towers</source>
-        <translation type="unfinished"></translation>
+        <translation>ハノイタワーズワールド</translation>
     </message>
 </context>
 <context>
@@ -621,7 +628,7 @@
     <message>
         <location filename="../menu/UserView.qml" line="141"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>削除する</translation>
     </message>
     <message>
         <source>Remove This Profile</source>
@@ -671,7 +678,7 @@
     <message>
         <location filename="../menu/UsersTable.qml" line="71"/>
         <source>Add user</source>
-        <translation type="unfinished"></translation>
+        <translation>ユーザーを追加する</translation>
     </message>
     <message>
         <source>Create the new user</source>
@@ -680,7 +687,7 @@
     <message>
         <location filename="../menu/UsersTable.qml" line="105"/>
         <source>Best users in the world</source>
-        <translation type="unfinished"></translation>
+        <translation>世界で最高の選手</translation>
     </message>
 </context>
 <context>

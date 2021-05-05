@@ -11,12 +11,12 @@
     <message>
         <location filename="../About.qml" line="29"/>
         <source>About</source>
-        <translation type="unfinished"></translation>
+        <translation>Об Авторах</translation>
     </message>
     <message>
         <location filename="../About.qml" line="32"/>
         <source>Credits</source>
-        <translation type="unfinished"></translation>
+        <translation>Спонсоры</translation>
     </message>
     <message>
         <location filename="../About.qml" line="62"/>
@@ -28,7 +28,14 @@
             * Contact: https://github.com/EndrII
             * Copyright (C) 2018-2019 Yankovich N. Andrei.
             * Copyright (C) 2019-2021 QuasarApp group.</source>
-        <translation type="unfinished"></translation>
+        <translation>Продукт QuasarApp
+             * Разработчики:
+             * Программист: Янкович Н. Андрей.
+             * Дизайнер: Черненков И. Олег.
+             * Эта игра распространяется под лицензией LGPLv3.
+             * Контакт: https://github.com/EndrII
+             * Copyright (C) 2018-2019 Янкович Н. Андрей.
+             * Авторские права (C) 2019-2021 QuasarApp group.</translation>
     </message>
     <message>
         <source>Product of QuasarApp
@@ -170,37 +177,37 @@
         <location filename="../Game.qml" line="162"/>
         <location filename="../Game.qml" line="182"/>
         <source>Congratulations! You have passed the level %0</source>
-        <translation type="unfinished"></translation>
+        <translation>Поздравляем! Вы прошли уровень %0</translation>
     </message>
     <message>
         <location filename="../Game.qml" line="165"/>
         <source>You got &lt;b&gt;%0&lt;/b&gt; points for this level and unlocked the level &lt;b&gt;%1&lt;/b&gt;!</source>
-        <translation type="unfinished"></translation>
+        <translation>Вы набрали &lt;b&gt;%0&lt;/b&gt; баллов за этот уровень и разблокировали уровень &lt;b&gt;%1&lt;/b&gt;!</translation>
     </message>
     <message>
         <location filename="../Game.qml" line="166"/>
         <source>&lt;br&gt;&lt;br&gt; Totally &lt;b&gt;%2&lt;/b&gt; steps.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;br&gt;&lt;br&gt; Всего &lt;b&gt;%2&lt;/b&gt; ходов.</translation>
     </message>
     <message>
         <location filename="../Game.qml" line="167"/>
         <source>&lt;br&gt; The minimum number of steps for this level : &lt;b&gt;%3&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;br&gt; Минимально количество ходов для уровня: &lt;b&gt;%3&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../Game.qml" line="185"/>
         <source>You got &lt;b&gt;%0&lt;/b&gt; points for this level!</source>
-        <translation type="unfinished"></translation>
+        <translation>Вы набрали &lt;b&gt;%0&lt;/b&gt; баллов за этот уровень!</translation>
     </message>
     <message>
         <location filename="../Game.qml" line="186"/>
         <source>&lt;br&gt;&lt;br&gt; Totally &lt;b&gt;%1&lt;/b&gt; steps.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;br&gt;&lt;br&gt; Всего &lt;b&gt;%1&lt;/b&gt; ходов.</translation>
     </message>
     <message>
         <location filename="../Game.qml" line="187"/>
         <source>&lt;br&gt; The minimum number of steps for this level : &lt;b&gt;%2&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;br&gt; Минимальное количиство ходов для уровня : &lt;b&gt;%2&lt;/b&gt;</translation>
     </message>
 </context>
 <context>
@@ -247,103 +254,103 @@
     <message>
         <location filename="../hanoitowers.cpp" line="77"/>
         <source>Create</source>
-        <translation type="unfinished"></translation>
+        <translation>Создать</translation>
     </message>
     <message>
         <location filename="../hanoitowers.cpp" line="168"/>
         <source>Connect error</source>
-        <translation type="unfinished">Ошибка подключения</translation>
+        <translation>Ошибка подключения</translation>
     </message>
     <message>
         <location filename="../hanoitowers.cpp" line="169"/>
         <source>Failed to connect to server please check network connection befor login</source>
-        <translation type="unfinished">Ошибка подключения к серверу, пожалуйста проверьте интернет соединение перед входом</translation>
+        <translation>Ошибка подключения к серверу, пожалуйста проверьте интернет соединение перед входом</translation>
     </message>
     <message>
         <location filename="../hanoitowers.cpp" line="185"/>
         <source>Update Profile error</source>
-        <translation type="unfinished"></translation>
+        <translation>Ошибка обновления профиля</translation>
     </message>
     <message>
         <location filename="../hanoitowers.cpp" line="186"/>
         <source>Failed to update yuo user data please check network connection befor update prifile</source>
-        <translation type="unfinished"></translation>
+        <translation>Ошибка обновления данных пользователя проверьте соединение перед обновлением</translation>
     </message>
     <message>
         <location filename="../hanoitowers.cpp" line="191"/>
         <source>Update Profile</source>
-        <translation type="unfinished"></translation>
+        <translation>Обновить профиль</translation>
     </message>
     <message>
         <location filename="../hanoitowers.cpp" line="192"/>
         <source>User data updated successful</source>
-        <translation type="unfinished"></translation>
+        <translation>Данные пользователя обновлены</translation>
     </message>
     <message>
         <location filename="../hanoitowers.cpp" line="239"/>
         <source>login error</source>
-        <translation type="unfinished">Ошибк входа</translation>
+        <translation>Ошибка входа</translation>
     </message>
     <message>
         <location filename="../hanoitowers.cpp" line="240"/>
         <source>Failed to login into online account, please check your password and username</source>
-        <translation type="unfinished">Ошибка входа в онлайн аккаунт, пожалуйста проверьте свой логин и пароль</translation>
+        <translation>Ошибка входа в онлайн аккаунт, пожалуйста проверте свой логин и пароль</translation>
     </message>
     <message>
         <location filename="../hanoitowers.cpp" line="250"/>
         <source>Register online error</source>
-        <translation type="unfinished">Ошибка регистрации</translation>
+        <translation>Ошибка регистрации</translation>
     </message>
     <message>
         <location filename="../hanoitowers.cpp" line="251"/>
         <source>Failed to register this account, if this account was created by you, try to restore it.</source>
-        <translation type="unfinished">Не удалось зарегистрировать аккаунт, если этот аккаунт был создан вами попробуйте восстановить его.</translation>
+        <translation>Не удалось зарегистрировать аккаунт, если этот аккаунт был создан вами попробуйте восстановить его.</translation>
     </message>
     <message>
         <location filename="../hanoitowers.cpp" line="261"/>
         <location filename="../hanoitowers.cpp" line="283"/>
         <source>Server error</source>
-        <translation type="unfinished">Ошибка сервера</translation>
+        <translation>Ошибка сервера</translation>
     </message>
     <message>
         <location filename="../hanoitowers.cpp" line="268"/>
         <source>User with this id is not registered. If it you then use please the sigup form.</source>
-        <translation type="unfinished"></translation>
+        <translation>Пользователь с этим id не зарегистрирован. Пожалуйста, заполните форму регистрации.</translation>
     </message>
     <message>
         <location filename="../hanoitowers.cpp" line="276"/>
         <source>User with this id already registered. If it you then use please the login form.</source>
-        <translation type="unfinished"></translation>
+        <translation>Пользователь с этим id уже зарегистрирован. Если это вы, пожалуйста используйте форму входа.</translation>
     </message>
     <message>
         <location filename="../hanoitowers.cpp" line="424"/>
         <source>Create user error</source>
-        <translation type="unfinished">Ошибка создания пользователя</translation>
+        <translation>Ошибка создания пользователя</translation>
     </message>
     <message>
         <location filename="../hanoitowers.cpp" line="425"/>
         <source>Failed to create a new user, The name %0 alredy used.</source>
-        <translation type="unfinished">Не удалось создать пользователя. Данное имя %0 уже используется</translation>
+        <translation>Не удалось создать пользователя. Данное имя %0 уже используется</translation>
     </message>
     <message>
         <location filename="../hanoitowers.cpp" line="456"/>
         <source>Remove online error</source>
-        <translation type="unfinished">Ошибка удаления данных онлайн-пользователя</translation>
+        <translation>Ошибка удаления онлайн аккаунта</translation>
     </message>
     <message>
         <location filename="../hanoitowers.cpp" line="456"/>
         <source>current profile not online!</source>
-        <translation type="unfinished">Текущий профиль не в сети!</translation>
+        <translation>Текущий профиль не в сети!</translation>
     </message>
     <message>
         <location filename="../hanoitowers.cpp" line="462"/>
         <source>Remove Local user</source>
-        <translation type="unfinished"></translation>
+        <translation>Удалить локального.пользователя</translation>
     </message>
     <message>
         <location filename="../hanoitowers.cpp" line="462"/>
         <source>Failed to remove the local user data</source>
-        <translation type="unfinished"></translation>
+        <translation>Ошибка удаления локального пользователя</translation>
     </message>
 </context>
 <context>
@@ -516,7 +523,7 @@
     <message>
         <location filename="../menu/MainMenu.qml" line="74"/>
         <source>HanoiTowers World</source>
-        <translation type="unfinished"></translation>
+        <translation>Мир Хайнойских башен</translation>
     </message>
     <message>
         <location filename="../menu/MainMenu.qml" line="87"/>
@@ -591,7 +598,7 @@
     <message>
         <location filename="../menu/ToolBarPage.qml" line="119"/>
         <source>World Of Hanoi Towers</source>
-        <translation type="unfinished"></translation>
+        <translation>Мир Ханойских башен</translation>
     </message>
 </context>
 <context>
@@ -624,7 +631,7 @@
     <message>
         <location filename="../menu/UserView.qml" line="141"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Удалить</translation>
     </message>
     <message>
         <source>Remove This Profile</source>
@@ -674,7 +681,7 @@
     <message>
         <location filename="../menu/UsersTable.qml" line="71"/>
         <source>Add user</source>
-        <translation type="unfinished"></translation>
+        <translation>Добавить пользователя</translation>
     </message>
     <message>
         <source>Create the new user</source>
@@ -683,7 +690,7 @@
     <message>
         <location filename="../menu/UsersTable.qml" line="105"/>
         <source>Best users in the world</source>
-        <translation type="unfinished"></translation>
+        <translation>Лучшие в мире игроки</translation>
     </message>
 </context>
 <context>
