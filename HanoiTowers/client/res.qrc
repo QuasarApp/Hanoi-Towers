@@ -1,5 +1,14 @@
 <RCC>
-    <qresource prefix="/textures"/>
+    <qresource prefix="/textures">
+        <file>res/ScreensHelp/Help8.jpg</file>
+        <file>res/ScreensHelp/Help7.jpg</file>
+        <file>res/ScreensHelp/Help6.jpg</file>
+        <file>res/ScreensHelp/Help5.jpg</file>
+        <file>res/ScreensHelp/Help4.jpg</file>
+        <file>res/ScreensHelp/Help3.jpg</file>
+        <file>res/ScreensHelp/Help2.jpg</file>
+        <file>res/ScreensHelp/Help1.jpg</file>
+    </qresource>
     <qresource prefix="/sql">
         <file>sql/database.sql</file>
     </qresource>

@@ -372,12 +372,51 @@
         <translation type="vanished">Ваше задание состоит в том, чтобы, перенести диски разных размеров с левой башни в любу другую свободную. Вы можете переносить только верхней диск  башни. Нельзя переносить сразу несколько дисков и ставить большее диски на маленькие.</translation>
     </message>
     <message>
-        <location filename="../Help.qml" line="46"/>
         <source>Your task is to transfer discs of different sizesfrom the left tower to third tower.You can only transfer the top drive of the tower.You can not transfer several disks at once and put larger disks on small disks.</source>
-        <translation>Ваше задание состоит в том, чтобы, перенести диски разных размеров с левой башни в третью башню. Вы можете переносить только верхней диск  башни. Нельзя переносить сразу несколько дисков и ставить большее диски на маленькие.</translation>
+        <translation type="vanished">Ваше задание состоит в том, чтобы, перенести диски разных размеров с левой башни в третью башню. Вы можете переносить только верхней диск  башни. Нельзя переносить сразу несколько дисков и ставить большее диски на маленькие.</translation>
     </message>
     <message>
-        <location filename="../Help.qml" line="59"/>
+        <location filename="../Help.qml" line="33"/>
+        <source>Tap to select the upper part of tower.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Help.qml" line="37"/>
+        <source>Tap to move the selected part to another column.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Help.qml" line="41"/>
+        <source>The playing field consists of 3 columns, your task is to move all parts of the tower from the first column to the third.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Help.qml" line="45"/>
+        <source>Remember you can&apos;t put bigger part on smaller.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Help.qml" line="49"/>
+        <source>You will move smaller objects on larger ones in such a way.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Help.qml" line="53"/>
+        <source>Try to make as few moves as possible. Good luck!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Help.qml" line="57"/>
+        <source>Tap here if you want to change tower high.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Help.qml" line="61"/>
+        <source>Tap here if you want to return to main menu.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Help.qml" line="83"/>
         <source>Do not show again</source>
         <translation>Не показывать снова</translation>
     </message>

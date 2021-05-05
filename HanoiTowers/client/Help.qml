@@ -22,38 +22,85 @@ Dialog {
 
     ColumnLayout {
 
-        spacing: 40
+        SwipeView {
+            id: view
 
-        Image {
-            id: example
+            currentIndex: 0
+            function next() {
+                view.currentIndex++
 
-            fillMode: Image.PreserveAspectFit
+                if (view.currentIndex === view.count) {
+                    helpDialog.accept()
+                }
 
-            Layout.preferredHeight:  helpDialog.height * 0.5
+
+            }
+
+            HelpPage {
+                imageSrc: "qrc:/textures/res/ScreensHelp/Help1.jpg";
+                text: qsTr("Tap to select the upper part of tower.")
+                onClick: {  view.next() }
+            }
+            HelpPage {
+                imageSrc: "qrc:/textures/res/ScreensHelp/Help2.jpg";
+                text: qsTr("Tap to move the selected part to another column.")
+                onClick: {  view.next() }
+
+            }
+            HelpPage {
+                imageSrc: "qrc:/textures/res/ScreensHelp/Help3.jpg";
+                text: qsTr("The playing field consists of 3 columns, your task is to move all parts of the tower from the first column to the third.")
+                onClick: {  view.next() }
+
+            }
+            HelpPage {
+                imageSrc: "qrc:/textures/res/ScreensHelp/Help4.jpg";
+                text: qsTr("Remember you can't put bigger part on smaller.")
+                onClick: {  view.next() }
+
+            }
+            HelpPage {
+                imageSrc: "qrc:/textures/res/ScreensHelp/Help5.jpg";
+                text: qsTr("You will move smaller objects on larger ones in such a way.")
+                onClick: {  view.next() }
+
+            }
+            HelpPage {
+                imageSrc: "qrc:/textures/res/ScreensHelp/Help6.jpg";
+                text: qsTr("Try to make as few moves as possible. Good luck!")
+                onClick: {  view.next() }
+
+            }
+            HelpPage {
+                imageSrc: "qrc:/textures/res/ScreensHelp/Help7.jpg";
+                text: qsTr("Tap here if you want to change tower high.")
+                onClick: {  view.next() }
+
+            }
+            HelpPage {
+                imageSrc: "qrc:/textures/res/ScreensHelp/Help8.jpg";
+                text: qsTr("Tap here if you want to return to main menu.")
+                onClick: {  view.next() }
+
+            }
+
             Layout.fillWidth: true;
+            Layout.fillHeight: true;
+            Layout.alignment: Qt.AlignHCenter
 
-            source: "/img/Help"
         }
 
-        Label {
-            id: textContainer
+        PageIndicator {
+            id: indicator
 
-            Layout.fillHeight: true;
-            Layout.fillWidth: true;
+            count: view.count
+            currentIndex: view.currentIndex
+            Layout.alignment: Qt.AlignHCenter
 
-            wrapMode:Text.Wrap ;
-
-            text: qsTr("Your task is to transfer discs of different sizes" +
- "from the left tower to third tower." +
- "You can only transfer the top drive of the tower." +
- "You can not transfer several disks at once and put larger disks on small disks.");
-
-            verticalAlignment: Text.AlignVCenter
-            horizontalAlignment: Text.AlignLeft
         }
 
         CheckBox {
-            id: indicator
+            id: check
 
             Layout.alignment: Qt.AlignBottom
             text: qsTr("Do not show again")
@@ -64,13 +111,15 @@ Dialog {
             }
 
             onCheckedChanged: {
-                backEnd.setShowHelp(!indicator.checked);
+                backEnd.setShowHelp(!check.checked);
             }
 
         }
-
         anchors.fill: parent
+
     }
+
+
 
     standardButtons: Dialog.Ok
 

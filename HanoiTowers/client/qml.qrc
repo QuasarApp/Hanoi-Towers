@@ -21,6 +21,7 @@
         <file>menu/World.qml</file>
         <file>menu/LocalUsersTable.qml</file>
         <file>Background.qml</file>
+        <file>HelpPage.qml</file>
     </qresource>
     <qresource prefix="/textures">
         <file>res/fogBack.png</file>
