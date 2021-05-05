@@ -11,12 +11,12 @@
     <message>
         <location filename="../About.qml" line="29"/>
         <source>About</source>
-        <translation type="unfinished">hakkında</translation>
+        <translation>hakkında</translation>
     </message>
     <message>
         <location filename="../About.qml" line="32"/>
         <source>Credits</source>
-        <translation type="unfinished"></translation>
+        <translation>Sponsorlar</translation>
     </message>
     <message>
         <location filename="../About.qml" line="62"/>
@@ -28,7 +28,14 @@
             * Contact: https://github.com/EndrII
             * Copyright (C) 2018-2019 Yankovich N. Andrei.
             * Copyright (C) 2019-2021 QuasarApp group.</source>
-        <translation type="unfinished"></translation>
+        <translation>QuasarApp ürünü
+             * Geliştiriciler:
+             * Programcı: Yankovich N. Andrei.
+             * Disigner: Chernenkov I. Oleg.
+             * Bu oyun LGPLv3 lisansı altında dağıtılmaktadır.
+             * İletişim: https://github.com/EndrII
+             * Telif Hakkı (C) 2018-2019 Yankovich N. Andrei.
+             * Telif Hakkı (C) 2019-2021 QuasarApp grubu.</translation>
     </message>
     <message>
         <source>Product of QuasarApp
@@ -171,37 +178,37 @@ Bu seviye için minimum adımlar: %2</translation>
         <location filename="../Game.qml" line="162"/>
         <location filename="../Game.qml" line="182"/>
         <source>Congratulations! You have passed the level %0</source>
-        <translation type="unfinished"></translation>
+        <translation>Tebrikler! %0 seviyesini geçtiniz</translation>
     </message>
     <message>
         <location filename="../Game.qml" line="165"/>
         <source>You got &lt;b&gt;%0&lt;/b&gt; points for this level and unlocked the level &lt;b&gt;%1&lt;/b&gt;!</source>
-        <translation type="unfinished"></translation>
+        <translation>Bu seviye için &lt;b&gt;%0&lt;/b&gt; puan aldınız ve &lt;b&gt;%1&lt;/b&gt; seviyesinin kilidini açtınız!</translation>
     </message>
     <message>
         <location filename="../Game.qml" line="166"/>
         <source>&lt;br&gt;&lt;br&gt; Totally &lt;b&gt;%2&lt;/b&gt; steps.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;br&gt;&lt;br&gt; Tamamen &lt;b&gt;%2&lt;/b&gt; adım.</translation>
     </message>
     <message>
         <location filename="../Game.qml" line="167"/>
         <source>&lt;br&gt; The minimum number of steps for this level : &lt;b&gt;%3&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;br&gt; Bu seviye için minimum adım sayısı : &lt;b&gt;%3&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../Game.qml" line="185"/>
         <source>You got &lt;b&gt;%0&lt;/b&gt; points for this level!</source>
-        <translation type="unfinished"></translation>
+        <translation>Bu seviye için &lt;b&gt;%0&lt;/b&gt; puan aldınız!</translation>
     </message>
     <message>
         <location filename="../Game.qml" line="186"/>
         <source>&lt;br&gt;&lt;br&gt; Totally &lt;b&gt;%1&lt;/b&gt; steps.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;br&gt;&lt;br&gt; Tamamen &lt;b&gt;%1&lt;/b&gt; adım.</translation>
     </message>
     <message>
         <location filename="../Game.qml" line="187"/>
         <source>&lt;br&gt; The minimum number of steps for this level : &lt;b&gt;%2&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;br&gt; Bu seviye için minimum adım sayısı : &lt;b&gt;%2&lt;/b&gt;</translation>
     </message>
 </context>
 <context>
@@ -248,103 +255,103 @@ Bu seviye için minimum adımlar: %2</translation>
     <message>
         <location filename="../hanoitowers.cpp" line="77"/>
         <source>Create</source>
-        <translation type="unfinished"></translation>
+        <translation>Oluşturmak</translation>
     </message>
     <message>
         <location filename="../hanoitowers.cpp" line="168"/>
         <source>Connect error</source>
-        <translation type="unfinished">Bağlantı hatası</translation>
+        <translation>Bağlantı hatası</translation>
     </message>
     <message>
         <location filename="../hanoitowers.cpp" line="169"/>
         <source>Failed to connect to server please check network connection befor login</source>
-        <translation type="unfinished">Sunucuya bağlanılamadı, lütfen oturum açmadan önce ağ bağlantısını kontrol edin</translation>
+        <translation>Sunucuya bağlanılamadı, lütfen oturum açmadan önce ağ bağlantısını kontrol edin</translation>
     </message>
     <message>
         <location filename="../hanoitowers.cpp" line="185"/>
         <source>Update Profile error</source>
-        <translation type="unfinished"></translation>
+        <translation>Profil Güncelleme hatası</translation>
     </message>
     <message>
         <location filename="../hanoitowers.cpp" line="186"/>
         <source>Failed to update yuo user data please check network connection befor update prifile</source>
-        <translation type="unfinished"></translation>
+        <translation>Kullanıcı verileriniz güncellenemedi, lütfen profili güncellemeden önce ağ bağlantısını kontrol edin</translation>
     </message>
     <message>
         <location filename="../hanoitowers.cpp" line="191"/>
         <source>Update Profile</source>
-        <translation type="unfinished"></translation>
+        <translation>Update Profile</translation>
     </message>
     <message>
         <location filename="../hanoitowers.cpp" line="192"/>
         <source>User data updated successful</source>
-        <translation type="unfinished"></translation>
+        <translation>Kullanıcı verileri başarıyla güncellendi</translation>
     </message>
     <message>
         <location filename="../hanoitowers.cpp" line="239"/>
         <source>login error</source>
-        <translation type="unfinished">sisteme giriş hatası</translation>
+        <translation>sisteme giriş hatası</translation>
     </message>
     <message>
         <location filename="../hanoitowers.cpp" line="240"/>
         <source>Failed to login into online account, please check your password and username</source>
-        <translation type="unfinished">Çevrimiçi hesaba giriş yapılamadı, lütfen şifrenizi ve kullanıcı adınızı kontrol edin</translation>
+        <translation>Çevrimiçi hesaba giriş yapılamadı, lütfen şifrenizi ve kullanıcı adınızı kontrol edin</translation>
     </message>
     <message>
         <location filename="../hanoitowers.cpp" line="250"/>
         <source>Register online error</source>
-        <translation type="unfinished">Çevrimiçi kayıt hatası</translation>
+        <translation>Çevrimiçi kayıt hatası</translation>
     </message>
     <message>
         <location filename="../hanoitowers.cpp" line="251"/>
         <source>Failed to register this account, if this account was created by you, try to restore it.</source>
-        <translation type="unfinished">Bu hesap kaydedilemedi, bu hesap sizin tarafınızdan oluşturulduysa, geri yüklemeyi deneyin.</translation>
+        <translation>Bu hesap kaydedilemedi, bu hesap sizin tarafınızdan oluşturulduysa, geri yüklemeyi deneyin.</translation>
     </message>
     <message>
         <location filename="../hanoitowers.cpp" line="261"/>
         <location filename="../hanoitowers.cpp" line="283"/>
         <source>Server error</source>
-        <translation type="unfinished">Server hatası</translation>
+        <translation>Server hatası</translation>
     </message>
     <message>
         <location filename="../hanoitowers.cpp" line="268"/>
         <source>User with this id is not registered. If it you then use please the sigup form.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bu kimliğe sahip kullanıcı kayıtlı değil. Daha sonra kullanırsanız, lütfen kayıt formunu kullanın.</translation>
     </message>
     <message>
         <location filename="../hanoitowers.cpp" line="276"/>
         <source>User with this id already registered. If it you then use please the login form.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bu kimliğe sahip kullanıcı zaten kayıtlı. Eğer öyleyse, lütfen giriş formunu kullanın.</translation>
     </message>
     <message>
         <location filename="../hanoitowers.cpp" line="424"/>
         <source>Create user error</source>
-        <translation type="unfinished">Kullanıcı hatası oluştur</translation>
+        <translation>Kullanıcı hatası oluştur</translation>
     </message>
     <message>
         <location filename="../hanoitowers.cpp" line="425"/>
         <source>Failed to create a new user, The name %0 alredy used.</source>
-        <translation type="unfinished">Yeni bir kullanıcı oluşturulamadı, %0 adı kullanıldı.</translation>
+        <translation>Yeni bir kullanıcı oluşturulamadı, %0 adı kullanıldı.</translation>
     </message>
     <message>
         <location filename="../hanoitowers.cpp" line="456"/>
         <source>Remove online error</source>
-        <translation type="unfinished">Çevrimiçi kullanıcı verilerini kaldırma hatası</translation>
+        <translation>Çevrimiçi kullanıcı verilerini kaldırma hatası</translation>
     </message>
     <message>
         <location filename="../hanoitowers.cpp" line="456"/>
         <source>current profile not online!</source>
-        <translation type="unfinished">Mevcut profil çevrimdışı!</translation>
+        <translation>Mevcut profil çevrimdışı!</translation>
     </message>
     <message>
         <location filename="../hanoitowers.cpp" line="462"/>
         <source>Remove Local user</source>
-        <translation type="unfinished"></translation>
+        <translation>Yerel kullanıcıyı kaldır</translation>
     </message>
     <message>
         <location filename="../hanoitowers.cpp" line="462"/>
         <source>Failed to remove the local user data</source>
-        <translation type="unfinished"></translation>
+        <translation>Yerel kullanıcı verileri kaldırılamadı</translation>
     </message>
 </context>
 <context>
@@ -517,7 +524,7 @@ Bu seviye için minimum adımlar: %2</translation>
     <message>
         <location filename="../menu/MainMenu.qml" line="74"/>
         <source>HanoiTowers World</source>
-        <translation type="unfinished"></translation>
+        <translation>HanoiTowers Dünyası</translation>
     </message>
     <message>
         <location filename="../menu/MainMenu.qml" line="87"/>
@@ -592,7 +599,7 @@ Bu seviye için minimum adımlar: %2</translation>
     <message>
         <location filename="../menu/ToolBarPage.qml" line="119"/>
         <source>World Of Hanoi Towers</source>
-        <translation type="unfinished"></translation>
+        <translation>Hanoi Kuleleri Dünyası</translation>
     </message>
 </context>
 <context>
@@ -625,7 +632,7 @@ Bu seviye için minimum adımlar: %2</translation>
     <message>
         <location filename="../menu/UserView.qml" line="141"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Kaldırmak</translation>
     </message>
     <message>
         <source>Remove This Profile</source>
@@ -675,7 +682,7 @@ Bu seviye için minimum adımlar: %2</translation>
     <message>
         <location filename="../menu/UsersTable.qml" line="71"/>
         <source>Add user</source>
-        <translation type="unfinished"></translation>
+        <translation>Kullanıcı Ekle</translation>
     </message>
     <message>
         <source>Create the new user</source>
@@ -684,7 +691,7 @@ Bu seviye için minimum adımlar: %2</translation>
     <message>
         <location filename="../menu/UsersTable.qml" line="105"/>
         <source>Best users in the world</source>
-        <translation type="unfinished"></translation>
+        <translation>Dünyanın en iyi oyuncuları</translation>
     </message>
 </context>
 <context>

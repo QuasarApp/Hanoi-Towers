@@ -11,12 +11,12 @@
     <message>
         <location filename="../About.qml" line="29"/>
         <source>About</source>
-        <translation type="unfinished">About</translation>
+        <translation>About</translation>
     </message>
     <message>
         <location filename="../About.qml" line="32"/>
         <source>Credits</source>
-        <translation type="unfinished"></translation>
+        <translation>Credits</translation>
     </message>
     <message>
         <location filename="../About.qml" line="62"/>
@@ -28,7 +28,14 @@
             * Contact: https://github.com/EndrII
             * Copyright (C) 2018-2019 Yankovich N. Andrei.
             * Copyright (C) 2019-2021 QuasarApp group.</source>
-        <translation type="unfinished"></translation>
+        <translation>Product of QuasarApp
+            * Developers:
+            * Programmer: Yankovich N. Andrei.
+            * Disigner: Chernenkov I. Oleg.
+            * This game is distributed under the LGPLv3 license.
+            * Contact: https://github.com/EndrII
+            * Copyright (C) 2018-2019 Yankovich N. Andrei.
+            * Copyright (C) 2019-2021 QuasarApp group.</translation>
     </message>
 </context>
 <context>
@@ -145,37 +152,37 @@
         <location filename="../Game.qml" line="162"/>
         <location filename="../Game.qml" line="182"/>
         <source>Congratulations! You have passed the level %0</source>
-        <translation type="unfinished"></translation>
+        <translation>Congratulations! You have passed the level %0</translation>
     </message>
     <message>
         <location filename="../Game.qml" line="165"/>
         <source>You got &lt;b&gt;%0&lt;/b&gt; points for this level and unlocked the level &lt;b&gt;%1&lt;/b&gt;!</source>
-        <translation type="unfinished"></translation>
+        <translation>You got &lt;b&gt;%0&lt;/b&gt; points for this level and unlocked the level &lt;b&gt;%1&lt;/b&gt;!</translation>
     </message>
     <message>
         <location filename="../Game.qml" line="166"/>
         <source>&lt;br&gt;&lt;br&gt; Totally &lt;b&gt;%2&lt;/b&gt; steps.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;br&gt;&lt;br&gt; Totally &lt;b&gt;%2&lt;/b&gt; steps.</translation>
     </message>
     <message>
         <location filename="../Game.qml" line="167"/>
         <source>&lt;br&gt; The minimum number of steps for this level : &lt;b&gt;%3&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;br&gt; The minimum number of steps for this level : &lt;b&gt;%3&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../Game.qml" line="185"/>
         <source>You got &lt;b&gt;%0&lt;/b&gt; points for this level!</source>
-        <translation type="unfinished"></translation>
+        <translation>You got &lt;b&gt;%0&lt;/b&gt; points for this level!</translation>
     </message>
     <message>
         <location filename="../Game.qml" line="186"/>
         <source>&lt;br&gt;&lt;br&gt; Totally &lt;b&gt;%1&lt;/b&gt; steps.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;br&gt;&lt;br&gt; Totally &lt;b&gt;%1&lt;/b&gt; steps.</translation>
     </message>
     <message>
         <location filename="../Game.qml" line="187"/>
         <source>&lt;br&gt; The minimum number of steps for this level : &lt;b&gt;%2&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;br&gt; The minimum number of steps for this level : &lt;b&gt;%2&lt;/b&gt;</translation>
     </message>
 </context>
 <context>
@@ -222,103 +229,103 @@
     <message>
         <location filename="../hanoitowers.cpp" line="77"/>
         <source>Create</source>
-        <translation type="unfinished"></translation>
+        <translation>Create</translation>
     </message>
     <message>
         <location filename="../hanoitowers.cpp" line="168"/>
         <source>Connect error</source>
-        <translation type="unfinished">Connection error</translation>
+        <translation>Connection error</translation>
     </message>
     <message>
         <location filename="../hanoitowers.cpp" line="169"/>
         <source>Failed to connect to server please check network connection befor login</source>
-        <translation type="unfinished">Failed to connect to server please check network connection befor login</translation>
+        <translation>Failed to connect to server please check network connection befor login</translation>
     </message>
     <message>
         <location filename="../hanoitowers.cpp" line="185"/>
         <source>Update Profile error</source>
-        <translation type="unfinished"></translation>
+        <translation>Update Profile error</translation>
     </message>
     <message>
         <location filename="../hanoitowers.cpp" line="186"/>
         <source>Failed to update yuo user data please check network connection befor update prifile</source>
-        <translation type="unfinished"></translation>
+        <translation>Failed to update you user data please check network connection before update profile</translation>
     </message>
     <message>
         <location filename="../hanoitowers.cpp" line="191"/>
         <source>Update Profile</source>
-        <translation type="unfinished"></translation>
+        <translation>Update Profile</translation>
     </message>
     <message>
         <location filename="../hanoitowers.cpp" line="192"/>
         <source>User data updated successful</source>
-        <translation type="unfinished"></translation>
+        <translation>User data updated successful</translation>
     </message>
     <message>
         <location filename="../hanoitowers.cpp" line="239"/>
         <source>login error</source>
-        <translation type="unfinished">Login error</translation>
+        <translation>Login error</translation>
     </message>
     <message>
         <location filename="../hanoitowers.cpp" line="240"/>
         <source>Failed to login into online account, please check your password and username</source>
-        <translation type="unfinished">Failed to login into online account, please check your password and username</translation>
+        <translation>Failed to login into online account, please check your password and username</translation>
     </message>
     <message>
         <location filename="../hanoitowers.cpp" line="250"/>
         <source>Register online error</source>
-        <translation type="unfinished"></translation>
+        <translation>Register online error</translation>
     </message>
     <message>
         <location filename="../hanoitowers.cpp" line="251"/>
         <source>Failed to register this account, if this account was created by you, try to restore it.</source>
-        <translation type="unfinished">Failed to register this account, if this account was created by you, try to restore it.</translation>
+        <translation>Failed to register this account, if this account was created by you, try to restore it.</translation>
     </message>
     <message>
         <location filename="../hanoitowers.cpp" line="261"/>
         <location filename="../hanoitowers.cpp" line="283"/>
         <source>Server error</source>
-        <translation type="unfinished">Server error</translation>
+        <translation>Server error</translation>
     </message>
     <message>
         <location filename="../hanoitowers.cpp" line="268"/>
         <source>User with this id is not registered. If it you then use please the sigup form.</source>
-        <translation type="unfinished"></translation>
+        <translation>User with this id is not registered. If it you then use please the sigup form.</translation>
     </message>
     <message>
         <location filename="../hanoitowers.cpp" line="276"/>
         <source>User with this id already registered. If it you then use please the login form.</source>
-        <translation type="unfinished"></translation>
+        <translation>User with this id already registered. If it you then use please the login form.</translation>
     </message>
     <message>
         <location filename="../hanoitowers.cpp" line="424"/>
         <source>Create user error</source>
-        <translation type="unfinished">User create error</translation>
+        <translation>User create error</translation>
     </message>
     <message>
         <location filename="../hanoitowers.cpp" line="425"/>
         <source>Failed to create a new user, The name %0 alredy used.</source>
-        <translation type="unfinished">Failed to create a new user, This name %0 alredy used.</translation>
+        <translation>Failed to create a new user, This name %0 alredy used.</translation>
     </message>
     <message>
         <location filename="../hanoitowers.cpp" line="456"/>
         <source>Remove online error</source>
-        <translation type="unfinished">Error remove online user data</translation>
+        <translation>Remove online error</translation>
     </message>
     <message>
         <location filename="../hanoitowers.cpp" line="456"/>
         <source>current profile not online!</source>
-        <translation type="unfinished">Current profile is offline!</translation>
+        <translation>Current profile is offline!</translation>
     </message>
     <message>
         <location filename="../hanoitowers.cpp" line="462"/>
         <source>Remove Local user</source>
-        <translation type="unfinished"></translation>
+        <translation>Remove Local user</translation>
     </message>
     <message>
         <location filename="../hanoitowers.cpp" line="462"/>
         <source>Failed to remove the local user data</source>
-        <translation type="unfinished"></translation>
+        <translation>Failed to remove the local user data</translation>
     </message>
 </context>
 <context>
@@ -471,7 +478,7 @@
     <message>
         <location filename="../menu/MainMenu.qml" line="74"/>
         <source>HanoiTowers World</source>
-        <translation type="unfinished"></translation>
+        <translation>HanoiTowers World</translation>
     </message>
     <message>
         <location filename="../menu/MainMenu.qml" line="87"/>
@@ -539,7 +546,7 @@
     <message>
         <location filename="../menu/ToolBarPage.qml" line="119"/>
         <source>World Of Hanoi Towers</source>
-        <translation type="unfinished"></translation>
+        <translation>World Of Hanoi Towers</translation>
     </message>
 </context>
 <context>
@@ -572,7 +579,7 @@
     <message>
         <location filename="../menu/UserView.qml" line="141"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Remove</translation>
     </message>
     <message>
         <source>Remove This Profile</source>
@@ -618,7 +625,7 @@
     <message>
         <location filename="../menu/UsersTable.qml" line="71"/>
         <source>Add user</source>
-        <translation type="unfinished"></translation>
+        <translation>Add user</translation>
     </message>
     <message>
         <source>Create the new user</source>
@@ -627,7 +634,7 @@
     <message>
         <location filename="../menu/UsersTable.qml" line="105"/>
         <source>Best users in the world</source>
-        <translation type="unfinished"></translation>
+        <translation>Best users in the world</translation>
     </message>
 </context>
 <context>
