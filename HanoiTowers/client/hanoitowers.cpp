@@ -44,6 +44,7 @@ HanoiTowers::HanoiTowers(QQmlApplicationEngine *engine):
     _createNewOfflineUser = new LoginView::LVMainModel("createUser", this);
 
     _recordsTable   = new RecordListModel(this);
+    _recordsTableProxy = new RecordsProxyModel(this);
     _world          = new RecordListModel(this);
     _worldProxy     = new RecordsProxyModel(this);
 
@@ -51,6 +52,11 @@ HanoiTowers::HanoiTowers(QQmlApplicationEngine *engine):
     _worldProxy->setDynamicSortFilter(true);
     _worldProxy->setSortRole(RecordListModel::RecordListModelRoles::Record);
     _worldProxy->sort(0, Qt::SortOrder::DescendingOrder);
+
+    _recordsTableProxy->setSourceModel(_recordsTable);
+    _recordsTableProxy->setDynamicSortFilter(true);
+    _recordsTableProxy->setSortRole(RecordListModel::RecordListModelRoles::Record);
+    _recordsTableProxy->sort(0, Qt::SortOrder::DescendingOrder);
 
     _imageProvider = new HanoiImageProvider(_client->getUsersCache());
     _dataConverter = new DataConverter;
@@ -386,7 +392,7 @@ QString HanoiTowers::profile() const {
 }
 
 QObject* HanoiTowers::profileList() {
-    return _recordsTable;
+    return _recordsTableProxy;
 }
 
 QObject *HanoiTowers::worldList() {
@@ -431,15 +437,22 @@ QObject *HanoiTowers::client() {
 
 void HanoiTowers::removeUser(const QString &userId) {
 
-    if (!_client->removeUser()) {
+    if (_client->isLogined() && !_client->removeUser()) {
         QmlNotificationService::NotificationService::getService()->setNotify(
                     tr("Remove online error"), tr("current profile not online!"), "",
                     QmlNotificationService::NotificationData::Warning);
     }
 
+    if (!_client->removeLocalUser(userId)) {
+        QmlNotificationService::NotificationService::getService()->setNotify(
+                    tr("Remove Local user"), tr("Failed to remove the local user data"), "",
+                    QmlNotificationService::NotificationData::Warning);
+        return;
+    }
+
     _recordsTable->removeSourceItem(userId);
 
-    auto userID = _recordsTable->data(QModelIndex(), RecordListModel::UserId).toString();
+    auto userID = _recordsTable->data(_recordsTable->index(0,0), RecordListModel::UserId).toString();
 
     if (userID.isEmpty()) {
         userID = DEFAULT_USER_ID;

@@ -256,6 +256,13 @@ bool HanoiClient::subscribeToWorld() {
     return subscribe(_world->subscribeId());
 }
 
+bool HanoiClient::removeLocalUser(const QString &userId) {
+    if (!db())
+        return false;
+
+    return db()->deleteObject(QSharedPointer<LocalUser>::create(userId));
+}
+
 bool HanoiClient::getUserData(const QString& userId) {
     if (userId.isEmpty())
         return false;

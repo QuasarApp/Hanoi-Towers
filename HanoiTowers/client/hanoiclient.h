@@ -57,6 +57,13 @@ public:
     bool subscribeToWorld();
 
     /**
+     * @brief removeLocalUser This method remove user localy only.
+     * @param userId user id to remove
+     * @return true if user remove successful
+     */
+    bool removeLocalUser(const QString & userId);
+
+    /**
      * @brief getUserData if the user with @a userId exists in cache then this method emit signal userDataChanged with user data
      * else send request to server.
      * This function find a object in next order:

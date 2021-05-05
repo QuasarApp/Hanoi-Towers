@@ -215,6 +215,8 @@ private:
     RecordListModel * _recordsTable = nullptr;
     RecordListModel * _world = nullptr;
     RecordsProxyModel * _worldProxy = nullptr;
+    RecordsProxyModel * _recordsTableProxy = nullptr;
+
 
     LocalUser _profile;
     LocalUser _bestUser;

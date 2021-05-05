@@ -16,6 +16,10 @@ LocalUser::LocalUser():
 
 }
 
+LocalUser::LocalUser(const QString &useId):LocalUser() {
+    setId(useId);
+}
+
 LocalUser::LocalUser(const QH::PKG::DBObject *other ):LocalUser() {
     copyFrom(other);
 }

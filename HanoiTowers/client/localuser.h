@@ -26,6 +26,7 @@ class LocalUser: public QObject, public QH::PKG::DBObject
 
 public:
     LocalUser();
+    LocalUser(const QString& useId);
     LocalUser(const QH::PKG::DBObject*);
 
     bool copyFrom(const QH::PKG::AbstractData *other) override;
