@@ -14,19 +14,6 @@ RowLayout {
 
     spacing: Screen.pixelDensity * 5
 
-//    Label {
-//        id: towerheight
-//        font.bold: true
-
-//        font.capitalization: Font.AllUppercase
-//        horizontalAlignment: Text.AlignHCenter
-
-//        styleColor: "#973c3c"
-//        verticalAlignment: Text.AlignVCenter
-//        text:
-
-//    }
-
     ToolButton {
         id: frame
         font.bold: true
@@ -36,7 +23,7 @@ RowLayout {
             tumblerWidget.visible = true;
         }
 
-//        Layout.preferredWidth: height * 1.8
+        font.capitalization: Font.AllUppercase
 
         SwitchLvl {
             id: tumblerWidget
