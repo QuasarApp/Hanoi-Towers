@@ -379,47 +379,47 @@
         <translation type="vanished">Ваше завдання  перенести диски різних розмірів з лівої вежі на третю вежу. Ви можете перенести лише верхній привід вежі. Ви не можете перенести кілька дисків одночасно і поставити більші диски на маленькі диски.</translation>
     </message>
     <message>
-        <location filename="../Help.qml" line="33"/>
-        <source>Tap to select the upper part of tower.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../Help.qml" line="37"/>
-        <source>Tap to move the selected part to another column.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../Help.qml" line="41"/>
+        <source>Tap to select the upper part of tower.</source>
+        <translation>Натисніть, щоб вибрати верхню частину вежі.</translation>
+    </message>
+    <message>
+        <location filename="../Help.qml" line="46"/>
+        <source>Tap to move the selected part to another column.</source>
+        <translation>Торкніться, щоб перемістити вибрану частину в інший стовпець.</translation>
+    </message>
+    <message>
+        <location filename="../Help.qml" line="52"/>
         <source>The playing field consists of 3 columns, your task is to move all parts of the tower from the first column to the third.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ігрове поле складається з 3 колон, ваше завдання - перемістити всі частини вежі з першої колони в третю.</translation>
     </message>
     <message>
-        <location filename="../Help.qml" line="45"/>
+        <location filename="../Help.qml" line="58"/>
         <source>Remember you can&apos;t put bigger part on smaller.</source>
-        <translation type="unfinished"></translation>
+        <translation>Пам&apos;ятайте, що більшу частину не можна покласти на меншу.</translation>
     </message>
     <message>
-        <location filename="../Help.qml" line="49"/>
+        <location filename="../Help.qml" line="64"/>
         <source>You will move smaller objects on larger ones in such a way.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ви перемістите менші предмети на більші таким чином.</translation>
     </message>
     <message>
-        <location filename="../Help.qml" line="53"/>
+        <location filename="../Help.qml" line="70"/>
         <source>Try to make as few moves as possible. Good luck!</source>
-        <translation type="unfinished"></translation>
+        <translation>Постарайтеся зробити якомога менше ходів. Удачі!</translation>
     </message>
     <message>
-        <location filename="../Help.qml" line="57"/>
+        <location filename="../Help.qml" line="76"/>
         <source>Tap here if you want to change tower high.</source>
-        <translation type="unfinished"></translation>
+        <translation>Натисніть тут, якщо ви хочете змінити висоту вежі.</translation>
     </message>
     <message>
-        <location filename="../Help.qml" line="61"/>
+        <location filename="../Help.qml" line="82"/>
         <source>Tap here if you want to return to main menu.</source>
-        <translation type="unfinished"></translation>
+        <translation>Натисніть тут, якщо ви хочете повернутися в головне меню.</translation>
     </message>
     <message>
-        <location filename="../Help.qml" line="83"/>
+        <location filename="../Help.qml" line="106"/>
         <source>Do not show again</source>
         <translation>Не показувати знову</translation>
     </message>
