@@ -37,6 +37,6 @@
         <file>languages/en.qm</file>
         <file>languages/ja.qm</file>
         <file>languages/tr.qm</file>
-        <file>languages/ua.qm</file>
+        <file>languages/uk.qm</file>
     </qresource>
 </RCC>
