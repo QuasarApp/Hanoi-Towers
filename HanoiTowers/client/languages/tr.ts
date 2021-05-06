@@ -377,47 +377,47 @@ Bu seviye için minimum adımlar: %2</translation>
         <translation type="vanished">Göreviniz, farklı boyutlardaki diskleri sol kuleden üçüncü kuleye aktarmaktır. Kulenin yalnızca en üst sürücüsünü aktarabilirsiniz, aynı anda birkaç diski aktaramaz ve küçük disklere daha büyük diskler koyamazsınız.</translation>
     </message>
     <message>
-        <location filename="../Help.qml" line="33"/>
-        <source>Tap to select the upper part of tower.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../Help.qml" line="37"/>
-        <source>Tap to move the selected part to another column.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../Help.qml" line="41"/>
+        <source>Tap to select the upper part of tower.</source>
+        <translation>Kulenin üst kısmını seçmek için dokunun.</translation>
+    </message>
+    <message>
+        <location filename="../Help.qml" line="46"/>
+        <source>Tap to move the selected part to another column.</source>
+        <translation>Seçili parçayı başka bir sütuna taşımak için dokunun.</translation>
+    </message>
+    <message>
+        <location filename="../Help.qml" line="52"/>
         <source>The playing field consists of 3 columns, your task is to move all parts of the tower from the first column to the third.</source>
-        <translation type="unfinished"></translation>
+        <translation>Oyun alanı 3 sütundan oluşuyor, göreviniz kulenin tüm bölümlerini ilk sütundan üçüncüye taşımak.</translation>
     </message>
     <message>
-        <location filename="../Help.qml" line="45"/>
+        <location filename="../Help.qml" line="58"/>
         <source>Remember you can&apos;t put bigger part on smaller.</source>
-        <translation type="unfinished"></translation>
+        <translation>Daha büyük kısmı küçüğe koyamayacağınızı unutmayın.</translation>
     </message>
     <message>
-        <location filename="../Help.qml" line="49"/>
+        <location filename="../Help.qml" line="64"/>
         <source>You will move smaller objects on larger ones in such a way.</source>
-        <translation type="unfinished"></translation>
+        <translation>Küçük nesneleri bu şekilde daha büyük nesnelerin üzerine taşıyacaksınız.</translation>
     </message>
     <message>
-        <location filename="../Help.qml" line="53"/>
+        <location filename="../Help.qml" line="70"/>
         <source>Try to make as few moves as possible. Good luck!</source>
-        <translation type="unfinished"></translation>
+        <translation>Mümkün olduğunca az hamle yapmaya çalışın. İyi şanslar!</translation>
     </message>
     <message>
-        <location filename="../Help.qml" line="57"/>
+        <location filename="../Help.qml" line="76"/>
         <source>Tap here if you want to change tower high.</source>
-        <translation type="unfinished"></translation>
+        <translation>Yüksek kuleyi değiştirmek istiyorsanız buraya dokunun.</translation>
     </message>
     <message>
-        <location filename="../Help.qml" line="61"/>
+        <location filename="../Help.qml" line="82"/>
         <source>Tap here if you want to return to main menu.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ana menüye dönmek istiyorsanız buraya dokunun.</translation>
     </message>
     <message>
-        <location filename="../Help.qml" line="83"/>
+        <location filename="../Help.qml" line="106"/>
         <source>Do not show again</source>
         <translation>Tekrar gösterme</translation>
     </message>

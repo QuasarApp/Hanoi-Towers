@@ -377,47 +377,47 @@
         </translation>
     </message>
     <message>
-        <location filename="../Help.qml" line="33"/>
-        <source>Tap to select the upper part of tower.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../Help.qml" line="37"/>
-        <source>Tap to move the selected part to another column.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../Help.qml" line="41"/>
+        <source>Tap to select the upper part of tower.</source>
+        <translation>タップしてタワーの上部を選択します。</translation>
+    </message>
+    <message>
+        <location filename="../Help.qml" line="46"/>
+        <source>Tap to move the selected part to another column.</source>
+        <translation>タップして、選択したパーツを別の列に移動します。</translation>
+    </message>
+    <message>
+        <location filename="../Help.qml" line="52"/>
         <source>The playing field consists of 3 columns, your task is to move all parts of the tower from the first column to the third.</source>
-        <translation type="unfinished"></translation>
+        <translation>競技場は3つの列で構成されています。タスクは、タワーのすべての部分を最初の列から3番目の列に移動することです。</translation>
     </message>
     <message>
-        <location filename="../Help.qml" line="45"/>
+        <location filename="../Help.qml" line="58"/>
         <source>Remember you can&apos;t put bigger part on smaller.</source>
-        <translation type="unfinished"></translation>
+        <translation>小さな部分に大きな部分を置くことはできないことを忘れないでください。</translation>
     </message>
     <message>
-        <location filename="../Help.qml" line="49"/>
+        <location filename="../Help.qml" line="64"/>
         <source>You will move smaller objects on larger ones in such a way.</source>
-        <translation type="unfinished"></translation>
+        <translation>このような方法で、小さなオブジェクトを大きなオブジェクトに移動します。</translation>
     </message>
     <message>
-        <location filename="../Help.qml" line="53"/>
+        <location filename="../Help.qml" line="70"/>
         <source>Try to make as few moves as possible. Good luck!</source>
-        <translation type="unfinished"></translation>
+        <translation>できるだけ少ない動きをするようにしてください。 がんばろう！</translation>
     </message>
     <message>
-        <location filename="../Help.qml" line="57"/>
+        <location filename="../Help.qml" line="76"/>
         <source>Tap here if you want to change tower high.</source>
-        <translation type="unfinished"></translation>
+        <translation>タワーの高さを変更したい場合は、ここをタップしてください。</translation>
     </message>
     <message>
-        <location filename="../Help.qml" line="61"/>
+        <location filename="../Help.qml" line="82"/>
         <source>Tap here if you want to return to main menu.</source>
-        <translation type="unfinished"></translation>
+        <translation>メインメニューに戻りたい場合はこちらをタップしてください。</translation>
     </message>
     <message>
-        <location filename="../Help.qml" line="83"/>
+        <location filename="../Help.qml" line="106"/>
         <source>Do not show again</source>
         <translation>二度と現れない</translation>
     </message>
