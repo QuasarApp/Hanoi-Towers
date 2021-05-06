@@ -14,28 +14,29 @@ RowLayout {
 
     spacing: Screen.pixelDensity * 5
 
-    Label {
-        id: towerheight
-        font.bold: true
+//    Label {
+//        id: towerheight
+//        font.bold: true
 
-        font.capitalization: Font.AllUppercase
-        horizontalAlignment: Text.AlignHCenter
+//        font.capitalization: Font.AllUppercase
+//        horizontalAlignment: Text.AlignHCenter
 
-        styleColor: "#973c3c"
-        verticalAlignment: Text.AlignVCenter
-        text: qsTr("Tower height: ")
+//        styleColor: "#973c3c"
+//        verticalAlignment: Text.AlignVCenter
+//        text:
 
-    }
+//    }
 
     ToolButton {
         id: frame
+        font.bold: true
 
-        text: tumblerWidget.spin.currentIndex + 1
+        text: qsTr("Tower height:    ") + (tumblerWidget.spin.currentIndex + 1)
         onClicked: {
             tumblerWidget.visible = true;
         }
 
-        Layout.preferredWidth: height * 1.8
+//        Layout.preferredWidth: height * 1.8
 
         SwitchLvl {
             id: tumblerWidget

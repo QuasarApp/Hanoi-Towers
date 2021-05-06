@@ -19,7 +19,7 @@ Dialog {
     x: (parent.width - width) / 2
     y: (parent.height - height) / 2
 
-
+    clip: true
     ColumnLayout {
 
         SwipeView {

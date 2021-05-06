@@ -71,7 +71,7 @@ Rectangle {
             tumbler.visible = false;
             start(spin.value);
         }
-        height: width * 0.6
+        height: width * 0.4
 
         anchors.right: parent.right
         anchors.left: parent.left
