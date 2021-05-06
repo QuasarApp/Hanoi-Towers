@@ -16,3 +16,6 @@
 [submodule "HanoiTowers/client/Credits"]
 	path = submodules/Credits
 	url = https://github.com/QuasarApp/Credits
+[submodule "submodules/QtAndroidTools"]
+	path = submodules/QtAndroidTools
+	url = https://github.com/QuasarApp/QtAndroidTools.git

@@ -97,7 +97,13 @@ if (HANOI_CLIENT)
     add_subdirectory(submodules/SimpleQmlNotify)
     add_subdirectory(submodules/ViewSolutions)
     add_subdirectory(submodules/Credits)
+
+    if (ANDROID)
+        add_subdirectory(submodules/QtAndroidTools)
+    endif()
+
     add_subdirectory(HanoiTowers/client)
+
 endif()
 
 if (HANOI_SERVER)

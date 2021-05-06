@@ -50,6 +50,8 @@ if (ANDROID)
                          QmlNotyfyService)
 
     addDeployAPK(${CURRENT_PROJECT} "${CMAKE_CURRENT_LIST_DIR}/android" "digitalface" "${SIGN_PATH}/DigitalFaceMobily.keystore" "${SIGN_STORE_PASSWORD}" "${TARGET_DIR}" "${HANOI_EXTRA_LIBS}")
+    target_link_libraries(${CURRENT_PROJECT} PRIVATE QtAndroidTools)
+
 else()
     # Desctop deploying
     addDeployFromCustomFile("Client" "${CMAKE_SOURCE_DIR}/Deploy/Client.json")
