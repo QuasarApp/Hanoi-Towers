@@ -222,7 +222,7 @@
     <message>
         <location filename="../menu/GameStateWidget.qml" line="34"/>
         <source>Tower height:    </source>
-        <translation type="unfinished"></translation>
+        <translation>Висота вежі:    </translation>
     </message>
     <message>
         <location filename="../menu/GameStateWidget.qml" line="63"/>

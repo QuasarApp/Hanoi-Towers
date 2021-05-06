@@ -220,7 +220,7 @@ Bu seviye için minimum adımlar: %2</translation>
     <message>
         <location filename="../menu/GameStateWidget.qml" line="34"/>
         <source>Tower height:    </source>
-        <translation type="unfinished"></translation>
+        <translation>Kule yüksekliği:    </translation>
     </message>
     <message>
         <location filename="../menu/GameStateWidget.qml" line="63"/>
