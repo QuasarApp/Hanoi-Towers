@@ -382,42 +382,42 @@
     <message>
         <location filename="../Help.qml" line="41"/>
         <source>Tap to select the upper part of tower.</source>
-        <translation type="unfinished"></translation>
+        <translation>Нажмите, чтобы выбрать верхнюю часть башни.</translation>
     </message>
     <message>
         <location filename="../Help.qml" line="46"/>
         <source>Tap to move the selected part to another column.</source>
-        <translation type="unfinished"></translation>
+        <translation>Нажмите, чтобы переместить выбранную часть в другой столбец.</translation>
     </message>
     <message>
         <location filename="../Help.qml" line="52"/>
         <source>The playing field consists of 3 columns, your task is to move all parts of the tower from the first column to the third.</source>
-        <translation type="unfinished"></translation>
+        <translation>Игровое поле состоит из 3-х столбцов, ваша задача - переместить все блоки башни из первого столбца в третий.</translation>
     </message>
     <message>
         <location filename="../Help.qml" line="58"/>
         <source>Remember you can&apos;t put bigger part on smaller.</source>
-        <translation type="unfinished"></translation>
+        <translation>Помните, что нельзя ставить больший блок на меньший.</translation>
     </message>
     <message>
         <location filename="../Help.qml" line="64"/>
         <source>You will move smaller objects on larger ones in such a way.</source>
-        <translation type="unfinished"></translation>
+        <translation>Вы можете перемещать только более мелкие блоки на более крупные.</translation>
     </message>
     <message>
         <location filename="../Help.qml" line="70"/>
         <source>Try to make as few moves as possible. Good luck!</source>
-        <translation type="unfinished"></translation>
+        <translation>Постарайтесь сделать как можно меньше ходов. Удачи!</translation>
     </message>
     <message>
         <location filename="../Help.qml" line="76"/>
         <source>Tap here if you want to change tower high.</source>
-        <translation type="unfinished"></translation>
+        <translation>Нажмите здесь, если хотите изменить количесто блоков в башне.</translation>
     </message>
     <message>
         <location filename="../Help.qml" line="82"/>
         <source>Tap here if you want to return to main menu.</source>
-        <translation type="unfinished"></translation>
+        <translation>Нажмите здесь, если хотите вернуться в главное меню.</translation>
     </message>
     <message>
         <location filename="../Help.qml" line="106"/>

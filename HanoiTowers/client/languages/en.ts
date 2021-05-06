@@ -349,42 +349,42 @@
     <message>
         <location filename="../Help.qml" line="41"/>
         <source>Tap to select the upper part of tower.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tap to select the upper part of tower.</translation>
     </message>
     <message>
         <location filename="../Help.qml" line="46"/>
         <source>Tap to move the selected part to another column.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tap to move the selected part to another column.</translation>
     </message>
     <message>
         <location filename="../Help.qml" line="52"/>
         <source>The playing field consists of 3 columns, your task is to move all parts of the tower from the first column to the third.</source>
-        <translation type="unfinished"></translation>
+        <translation>The playing field consists of 3 columns, your task is to move all parts of the tower from the first column to the third.</translation>
     </message>
     <message>
         <location filename="../Help.qml" line="58"/>
         <source>Remember you can&apos;t put bigger part on smaller.</source>
-        <translation type="unfinished"></translation>
+        <translation>Remember you can&apos;t put bigger part on smaller.</translation>
     </message>
     <message>
         <location filename="../Help.qml" line="64"/>
         <source>You will move smaller objects on larger ones in such a way.</source>
-        <translation type="unfinished"></translation>
+        <translation>You will move smaller objects on larger ones in such a way.</translation>
     </message>
     <message>
         <location filename="../Help.qml" line="70"/>
         <source>Try to make as few moves as possible. Good luck!</source>
-        <translation type="unfinished"></translation>
+        <translation>Try to make as few moves as possible. Good luck!</translation>
     </message>
     <message>
         <location filename="../Help.qml" line="76"/>
         <source>Tap here if you want to change tower high.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tap here if you want to change tower high.</translation>
     </message>
     <message>
         <location filename="../Help.qml" line="82"/>
         <source>Tap here if you want to return to main menu.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tap here if you want to return to main menu.</translation>
     </message>
     <message>
         <location filename="../Help.qml" line="106"/>
