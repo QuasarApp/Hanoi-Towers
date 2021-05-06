@@ -219,7 +219,7 @@
     <message>
         <location filename="../menu/GameStateWidget.qml" line="34"/>
         <source>Tower height:    </source>
-        <translation type="unfinished"></translation>
+        <translation>Высота башни:    </translation>
     </message>
     <message>
         <location filename="../menu/GameStateWidget.qml" line="63"/>

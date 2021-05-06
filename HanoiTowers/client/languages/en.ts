@@ -194,7 +194,7 @@
     <message>
         <location filename="../menu/GameStateWidget.qml" line="34"/>
         <source>Tower height:    </source>
-        <translation type="unfinished"></translation>
+        <translation>Tower height:    </translation>
     </message>
     <message>
         <location filename="../menu/GameStateWidget.qml" line="63"/>
