@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
     QLocale locale = QLocale::system();
 
     if(argc > 1) {
-        locale = QString::fromLatin1(argv[1]);
+        locale = QLocale(QString::fromLatin1(argv[1]));
     }
 
     if(!QuasarAppUtils::Locales::init(locale, {":/languages/languages/",
