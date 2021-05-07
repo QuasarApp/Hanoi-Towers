@@ -12,6 +12,7 @@
 #include <QQmlApplicationEngine>
 #include <QQmlComponent>
 #include <QQmlContext>
+#include "activityhandler.h"
 #include "hanoitowers.h"
 #include <QTranslator>
 #include <qmlnotifyservice.h>
@@ -50,6 +51,12 @@ int main(int argc, char *argv[])
     if (!QuasarAppCredits::init(&engine)) {
         return 2;
     }
+
+#ifdef Q_OS_ANDROID
+
+    ActivityHandler *activityHandler = new ActivityHandler(&app);
+    engine.rootContext()->setContextProperty(QLatin1String("activityHandler"), activityHandler);
+#endif
 
     root->setContextProperty("backEnd", &back);
     root->setContextProperty("OnlineStatusQml", QVariant::fromValue(OnlineStatusQml{}));
