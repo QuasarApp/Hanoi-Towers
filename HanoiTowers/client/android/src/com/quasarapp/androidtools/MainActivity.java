@@ -5,7 +5,7 @@
  * of this license document, but changing it is not allowed.
 */
 
-package com/quasarapp/androidtools;
+package com.quasarapp.androidtools;
 
 import org.qtproject.qt5.android.bindings.QtActivity;
 import android.view.View;
