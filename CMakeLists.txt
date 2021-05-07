@@ -98,10 +98,10 @@ if (HANOI_CLIENT)
     add_subdirectory(submodules/ViewSolutions)
     add_subdirectory(submodules/Credits)
 
-    if (ANDROID)
-        set(ANDROID_PACKAGE_SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/HanoiTowers/client/android)
-        add_subdirectory(submodules/QtAndroidTools/QtAndroidTools)
-    endif()
+#    if (ANDROID)
+#        set(ANDROID_PACKAGE_SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/HanoiTowers/client/android)
+#        add_subdirectory(submodules/QtAndroidTools/QtAndroidTools)
+#    endif()
 
     add_subdirectory(HanoiTowers/client)
 
