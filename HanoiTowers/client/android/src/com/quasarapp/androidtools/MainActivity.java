@@ -15,9 +15,9 @@ public class MainActivity extends QtActivity
 @Override
 public void onWindowFocusChanged(boolean hasFocus) {
     super.onWindowFocusChanged(hasFocus);
-//    if (hasFocus) {
-//        hideSystemUI();
-//    }
+    if (hasFocus) {
+        hideSystemUI();
+    }
 }
 
 private void hideSystemUI() {
