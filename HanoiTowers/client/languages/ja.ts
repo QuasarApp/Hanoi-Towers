@@ -210,12 +210,12 @@
         <translation type="vanished">塔の高さ: </translation>
     </message>
     <message>
-        <location filename="../menu/GameStateWidget.qml" line="34"/>
+        <location filename="../menu/GameStateWidget.qml" line="33"/>
         <source>Tower height:    </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../menu/GameStateWidget.qml" line="63"/>
+        <location filename="../menu/GameStateWidget.qml" line="62"/>
         <source>step </source>
         <translation>ステップ </translation>
     </message>
@@ -644,32 +644,32 @@
 <context>
     <name>UserView</name>
     <message>
-        <location filename="../menu/UserView.qml" line="44"/>
+        <location filename="../menu/UserView.qml" line="43"/>
         <source>Please choose a new Avatar</source>
         <translation>新しいアバターを選んでください</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="61"/>
+        <location filename="../menu/UserView.qml" line="60"/>
         <source>Id</source>
         <translation>Id</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="68"/>
+        <location filename="../menu/UserView.qml" line="67"/>
         <source>Name</source>
         <translation>名称</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="75"/>
+        <location filename="../menu/UserView.qml" line="74"/>
         <source>Record</source>
         <translation>レコード</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="82"/>
+        <location filename="../menu/UserView.qml" line="81"/>
         <source>Online profile</source>
         <translation>オンラインプロフィール</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="141"/>
+        <location filename="../menu/UserView.qml" line="140"/>
         <source>Remove</source>
         <translation>削除する</translation>
     </message>
@@ -678,12 +678,12 @@
         <translation type="vanished">このプロファイルを削除する</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="152"/>
+        <location filename="../menu/UserView.qml" line="151"/>
         <source>Restore</source>
         <translation>戻す</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="159"/>
+        <location filename="../menu/UserView.qml" line="158"/>
         <source>Accept</source>
         <translation>受け入れる</translation>
     </message>
@@ -696,12 +696,12 @@
         <translation type="vanished">ユーザーデータが変更されます。</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="195"/>
+        <location filename="../menu/UserView.qml" line="194"/>
         <source>Remove %0 user</source>
         <translation>%0ユーザーを削除</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="196"/>
+        <location filename="../menu/UserView.qml" line="195"/>
         <source>All saved data and records will be delete, Do you want continuee?</source>
         <translation>すべての保存されたデータとレコードが削除されます、あなたが継続したいですか？</translation>
     </message>

@@ -218,12 +218,12 @@ Bu seviye için minimum adımlar: %2</translation>
         <translation type="vanished">Kule yüksekliği: </translation>
     </message>
     <message>
-        <location filename="../menu/GameStateWidget.qml" line="34"/>
+        <location filename="../menu/GameStateWidget.qml" line="33"/>
         <source>Tower height:    </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../menu/GameStateWidget.qml" line="63"/>
+        <location filename="../menu/GameStateWidget.qml" line="62"/>
         <source>step </source>
         <translation>adım </translation>
     </message>
@@ -648,32 +648,32 @@ Bu seviye için minimum adımlar: %2</translation>
 <context>
     <name>UserView</name>
     <message>
-        <location filename="../menu/UserView.qml" line="44"/>
+        <location filename="../menu/UserView.qml" line="43"/>
         <source>Please choose a new Avatar</source>
         <translation>Lütfen yeni bir Avatar seçin</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="61"/>
+        <location filename="../menu/UserView.qml" line="60"/>
         <source>Id</source>
         <translation>Id</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="68"/>
+        <location filename="../menu/UserView.qml" line="67"/>
         <source>Name</source>
         <translation>İsim</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="75"/>
+        <location filename="../menu/UserView.qml" line="74"/>
         <source>Record</source>
         <translation>Kayıt</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="82"/>
+        <location filename="../menu/UserView.qml" line="81"/>
         <source>Online profile</source>
         <translation>Çevrimiçi profil</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="141"/>
+        <location filename="../menu/UserView.qml" line="140"/>
         <source>Remove</source>
         <translation>Kaldırmak</translation>
     </message>
@@ -682,12 +682,12 @@ Bu seviye için minimum adımlar: %2</translation>
         <translation type="vanished">Bu Profili Kaldır</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="152"/>
+        <location filename="../menu/UserView.qml" line="151"/>
         <source>Restore</source>
         <translation>Onarmak</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="159"/>
+        <location filename="../menu/UserView.qml" line="158"/>
         <source>Accept</source>
         <translation>Kabul etmek</translation>
     </message>
@@ -700,12 +700,12 @@ Bu seviye için minimum adımlar: %2</translation>
         <translation type="vanished">Kullanıcı verileri değiştirilecek.</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="195"/>
+        <location filename="../menu/UserView.qml" line="194"/>
         <source>Remove %0 user</source>
         <translation>%0 kullanıcıyı kaldır</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="196"/>
+        <location filename="../menu/UserView.qml" line="195"/>
         <source>All saved data and records will be delete, Do you want continuee?</source>
         <translation>Kaydedilen tüm veriler ve kayıtlar silinecek, devam etmek istiyor musunuz?</translation>
     </message>

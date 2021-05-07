@@ -217,12 +217,12 @@
         <translation type="vanished">Высота башни</translation>
     </message>
     <message>
-        <location filename="../menu/GameStateWidget.qml" line="34"/>
+        <location filename="../menu/GameStateWidget.qml" line="33"/>
         <source>Tower height:    </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../menu/GameStateWidget.qml" line="63"/>
+        <location filename="../menu/GameStateWidget.qml" line="62"/>
         <source>step </source>
         <translation>Шаг </translation>
     </message>
@@ -647,32 +647,32 @@
 <context>
     <name>UserView</name>
     <message>
-        <location filename="../menu/UserView.qml" line="44"/>
+        <location filename="../menu/UserView.qml" line="43"/>
         <source>Please choose a new Avatar</source>
         <translation>Пожалуйста выберете новый аватар</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="61"/>
+        <location filename="../menu/UserView.qml" line="60"/>
         <source>Id</source>
         <translation>Id</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="68"/>
+        <location filename="../menu/UserView.qml" line="67"/>
         <source>Name</source>
         <translation>Имя</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="75"/>
+        <location filename="../menu/UserView.qml" line="74"/>
         <source>Record</source>
         <translation>Рекорд</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="82"/>
+        <location filename="../menu/UserView.qml" line="81"/>
         <source>Online profile</source>
         <translation>Онлайн профиль</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="141"/>
+        <location filename="../menu/UserView.qml" line="140"/>
         <source>Remove</source>
         <translation>Удалить</translation>
     </message>
@@ -681,12 +681,12 @@
         <translation type="vanished">Удалить это профиль</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="152"/>
+        <location filename="../menu/UserView.qml" line="151"/>
         <source>Restore</source>
         <translation>Восстановить</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="159"/>
+        <location filename="../menu/UserView.qml" line="158"/>
         <source>Accept</source>
         <translation>Принять</translation>
     </message>
@@ -699,12 +699,12 @@
         <translation type="vanished">Данные пользователя изменены</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="195"/>
+        <location filename="../menu/UserView.qml" line="194"/>
         <source>Remove %0 user</source>
         <translation>Удалить %0 пользователя</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="196"/>
+        <location filename="../menu/UserView.qml" line="195"/>
         <source>All saved data and records will be delete, Do you want continuee?</source>
         <translation>Все сохраненные данные и записи будут удалены. Продолжить?</translation>
     </message>
