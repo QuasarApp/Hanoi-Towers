@@ -54,6 +54,9 @@ installer/packages/HanoiTowers/prime
 installer/packages/HanoiTowers/stage
 installer/packages/HanoiTowers/data/*
 HanoiTowers/client/android/src/com/falsinsoft/
+HanoiTowers/client/android/aidl/
+HanoiTowers/client/android/src/com/google/
+
 .snapcraft
 Distro 
 # QtCreator

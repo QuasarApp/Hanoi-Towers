@@ -220,6 +220,14 @@ QObject *HanoiTowers::selectedUser() {
     return &_selectedUser;
 }
 
+bool HanoiTowers::isAndroid() const{
+#ifdef Q_OS_ANDROID
+    return true;
+#else
+    return false;
+#endif
+}
+
 void HanoiTowers::handleChangeName(const QString &) {
     emit profileChanged();
 }

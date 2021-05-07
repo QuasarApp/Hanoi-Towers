@@ -266,68 +266,68 @@
         <translation>User data updated successful</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="239"/>
+        <location filename="../hanoitowers.cpp" line="247"/>
         <source>login error</source>
         <translation>Login error</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="240"/>
+        <location filename="../hanoitowers.cpp" line="248"/>
         <source>Failed to login into online account, please check your password and username</source>
         <translation>Failed to login into online account, please check your password and username</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="250"/>
+        <location filename="../hanoitowers.cpp" line="258"/>
         <source>Register online error</source>
         <translation>Register online error</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="251"/>
+        <location filename="../hanoitowers.cpp" line="259"/>
         <source>Failed to register this account, if this account was created by you, try to restore it.</source>
         <translation>Failed to register this account, if this account was created by you, try to restore it.</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="261"/>
-        <location filename="../hanoitowers.cpp" line="283"/>
+        <location filename="../hanoitowers.cpp" line="269"/>
+        <location filename="../hanoitowers.cpp" line="291"/>
         <source>Server error</source>
         <translation>Server error</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="268"/>
+        <location filename="../hanoitowers.cpp" line="276"/>
         <source>User with this id is not registered. If it you then use please the sigup form.</source>
         <translation>User with this id is not registered. If it you then use please the sigup form.</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="276"/>
+        <location filename="../hanoitowers.cpp" line="284"/>
         <source>User with this id already registered. If it you then use please the login form.</source>
         <translation>User with this id already registered. If it you then use please the login form.</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="424"/>
+        <location filename="../hanoitowers.cpp" line="432"/>
         <source>Create user error</source>
         <translation>User create error</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="425"/>
+        <location filename="../hanoitowers.cpp" line="433"/>
         <source>Failed to create a new user, The name %0 alredy used.</source>
         <translation>Failed to create a new user, This name %0 alredy used.</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="456"/>
+        <location filename="../hanoitowers.cpp" line="464"/>
         <source>Remove online error</source>
         <translation>Remove online error</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="456"/>
+        <location filename="../hanoitowers.cpp" line="464"/>
         <source>current profile not online!</source>
         <translation>Current profile is offline!</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="462"/>
+        <location filename="../hanoitowers.cpp" line="470"/>
         <source>Remove Local user</source>
         <translation>Remove Local user</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="462"/>
+        <location filename="../hanoitowers.cpp" line="470"/>
         <source>Failed to remove the local user data</source>
         <translation>Failed to remove the local user data</translation>
     </message>
@@ -595,32 +595,32 @@
 <context>
     <name>UserView</name>
     <message>
-        <location filename="../menu/UserView.qml" line="43"/>
+        <location filename="../menu/UserView.qml" line="44"/>
         <source>Please choose a new Avatar</source>
         <translation>Please choose a new Avatar</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="60"/>
+        <location filename="../menu/UserView.qml" line="61"/>
         <source>Id</source>
         <translation>Id</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="67"/>
+        <location filename="../menu/UserView.qml" line="68"/>
         <source>Name</source>
         <translation>Name</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="74"/>
+        <location filename="../menu/UserView.qml" line="75"/>
         <source>Record</source>
         <translation>Record</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="81"/>
+        <location filename="../menu/UserView.qml" line="82"/>
         <source>Online profile</source>
         <translation>Online profile</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="140"/>
+        <location filename="../menu/UserView.qml" line="141"/>
         <source>Remove</source>
         <translation>Remove</translation>
     </message>
@@ -629,12 +629,12 @@
         <translation type="vanished">Remove This Profile</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="151"/>
+        <location filename="../menu/UserView.qml" line="152"/>
         <source>Restore</source>
         <translation>Restore</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="158"/>
+        <location filename="../menu/UserView.qml" line="159"/>
         <source>Accept</source>
         <translation>Accept</translation>
     </message>
@@ -647,12 +647,12 @@
         <translation type="vanished">User data will be changed.</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="194"/>
+        <location filename="../menu/UserView.qml" line="195"/>
         <source>Remove %0 user</source>
         <translation>Remove %0 user</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="195"/>
+        <location filename="../menu/UserView.qml" line="196"/>
         <source>All saved data and records will be delete, Do you want continuee?</source>
         <translation>All saved data and records will be deleted, Do you want continue?</translation>
     </message>

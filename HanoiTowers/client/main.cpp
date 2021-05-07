@@ -17,6 +17,7 @@
 #include <QTranslator>
 #include <qmlnotifyservice.h>
 #include <credits.h>
+#include <QtAndroidTools.h>
 
 
 int main(int argc, char *argv[])
@@ -51,6 +52,9 @@ int main(int argc, char *argv[])
     if (!QuasarAppCredits::init(&engine)) {
         return 2;
     }
+
+    QtAndroidTools::initializeQmlTools();
+
 
 #ifdef Q_OS_ANDROID
     ActivityHandler *activityHandler = new ActivityHandler(&app);

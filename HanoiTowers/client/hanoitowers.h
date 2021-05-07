@@ -108,6 +108,8 @@ public:
     QObject *bestUser();
     QObject *selectedUser();
 
+    Q_INVOKABLE bool isAndroid() const;
+
 
 
 public slots:

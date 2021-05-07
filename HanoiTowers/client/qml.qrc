@@ -22,6 +22,7 @@
         <file>menu/LocalUsersTable.qml</file>
         <file>Background.qml</file>
         <file>HelpPage.qml</file>
+        <file>admod/AdMobInterstitialAndroid.qml</file>
     </qresource>
     <qresource prefix="/textures">
         <file>res/fogBack.png</file>

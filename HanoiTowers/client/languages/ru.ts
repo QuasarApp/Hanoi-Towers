@@ -291,68 +291,68 @@
         <translation>Данные пользователя обновлены</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="239"/>
+        <location filename="../hanoitowers.cpp" line="247"/>
         <source>login error</source>
         <translation>Ошибка входа</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="240"/>
+        <location filename="../hanoitowers.cpp" line="248"/>
         <source>Failed to login into online account, please check your password and username</source>
         <translation>Ошибка входа в онлайн аккаунт, пожалуйста проверте свой логин и пароль</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="250"/>
+        <location filename="../hanoitowers.cpp" line="258"/>
         <source>Register online error</source>
         <translation>Ошибка регистрации</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="251"/>
+        <location filename="../hanoitowers.cpp" line="259"/>
         <source>Failed to register this account, if this account was created by you, try to restore it.</source>
         <translation>Не удалось зарегистрировать аккаунт, если этот аккаунт был создан вами попробуйте восстановить его.</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="261"/>
-        <location filename="../hanoitowers.cpp" line="283"/>
+        <location filename="../hanoitowers.cpp" line="269"/>
+        <location filename="../hanoitowers.cpp" line="291"/>
         <source>Server error</source>
         <translation>Ошибка сервера</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="268"/>
+        <location filename="../hanoitowers.cpp" line="276"/>
         <source>User with this id is not registered. If it you then use please the sigup form.</source>
         <translation>Пользователь с этим id не зарегистрирован. Пожалуйста, заполните форму регистрации.</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="276"/>
+        <location filename="../hanoitowers.cpp" line="284"/>
         <source>User with this id already registered. If it you then use please the login form.</source>
         <translation>Пользователь с этим id уже зарегистрирован. Если это вы, пожалуйста используйте форму входа.</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="424"/>
+        <location filename="../hanoitowers.cpp" line="432"/>
         <source>Create user error</source>
         <translation>Ошибка создания пользователя</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="425"/>
+        <location filename="../hanoitowers.cpp" line="433"/>
         <source>Failed to create a new user, The name %0 alredy used.</source>
         <translation>Не удалось создать пользователя. Данное имя %0 уже используется</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="456"/>
+        <location filename="../hanoitowers.cpp" line="464"/>
         <source>Remove online error</source>
         <translation>Ошибка удаления онлайн аккаунта</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="456"/>
+        <location filename="../hanoitowers.cpp" line="464"/>
         <source>current profile not online!</source>
         <translation>Текущий профиль не в сети!</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="462"/>
+        <location filename="../hanoitowers.cpp" line="470"/>
         <source>Remove Local user</source>
         <translation>Удалить локального.пользователя</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="462"/>
+        <location filename="../hanoitowers.cpp" line="470"/>
         <source>Failed to remove the local user data</source>
         <translation>Ошибка удаления локального пользователя</translation>
     </message>
@@ -647,32 +647,32 @@
 <context>
     <name>UserView</name>
     <message>
-        <location filename="../menu/UserView.qml" line="43"/>
+        <location filename="../menu/UserView.qml" line="44"/>
         <source>Please choose a new Avatar</source>
         <translation>Пожалуйста выберете новый аватар</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="60"/>
+        <location filename="../menu/UserView.qml" line="61"/>
         <source>Id</source>
         <translation>Id</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="67"/>
+        <location filename="../menu/UserView.qml" line="68"/>
         <source>Name</source>
         <translation>Имя</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="74"/>
+        <location filename="../menu/UserView.qml" line="75"/>
         <source>Record</source>
         <translation>Рекорд</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="81"/>
+        <location filename="../menu/UserView.qml" line="82"/>
         <source>Online profile</source>
         <translation>Онлайн профиль</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="140"/>
+        <location filename="../menu/UserView.qml" line="141"/>
         <source>Remove</source>
         <translation>Удалить</translation>
     </message>
@@ -681,12 +681,12 @@
         <translation type="vanished">Удалить это профиль</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="151"/>
+        <location filename="../menu/UserView.qml" line="152"/>
         <source>Restore</source>
         <translation>Восстановить</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="158"/>
+        <location filename="../menu/UserView.qml" line="159"/>
         <source>Accept</source>
         <translation>Принять</translation>
     </message>
@@ -699,12 +699,12 @@
         <translation type="vanished">Данные пользователя изменены</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="194"/>
+        <location filename="../menu/UserView.qml" line="195"/>
         <source>Remove %0 user</source>
         <translation>Удалить %0 пользователя</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="195"/>
+        <location filename="../menu/UserView.qml" line="196"/>
         <source>All saved data and records will be delete, Do you want continuee?</source>
         <translation>Все сохраненные данные и записи будут удалены. Продолжить?</translation>
     </message>

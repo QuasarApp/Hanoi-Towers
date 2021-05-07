@@ -21,6 +21,22 @@ ApplicationWindow {
     height: 720
     title: qsTr("Hanoi Towers")
 
+    function createSpriteObjects(url, parent) {
+        if (!backEnd.isAndroid()) {
+            return null;
+        }
+        const component = Qt.createComponent(url);
+        return component.createObject(parent);
+    }
+
+    Component.onCompleted:  {
+
+        const obj = createSpriteObjects(":/admod/AdMobInterstitialAndroid.qml", this);
+        if (obj) {
+
+        }
+    }
+
     header: Menu.ToolBarPage {
         id: toolBar
         state: stackview.state
@@ -141,6 +157,7 @@ ApplicationWindow {
             }
         ]
     }
+
 
     NotificationServiceView {
         anchors.fill: parent;

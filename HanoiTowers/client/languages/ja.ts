@@ -284,68 +284,68 @@
         <translation>ユーザーデータが正常に更新されました</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="239"/>
+        <location filename="../hanoitowers.cpp" line="247"/>
         <source>login error</source>
         <translation>ログインエラー</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="240"/>
+        <location filename="../hanoitowers.cpp" line="248"/>
         <source>Failed to login into online account, please check your password and username</source>
         <translation>オンラインアカウントにログインできませんでした。パスワードとユーザー名を確認してください</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="250"/>
+        <location filename="../hanoitowers.cpp" line="258"/>
         <source>Register online error</source>
         <translation>登録オンラインエラー</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="251"/>
+        <location filename="../hanoitowers.cpp" line="259"/>
         <source>Failed to register this account, if this account was created by you, try to restore it.</source>
         <translation>このアカウントが登録されなかった場合、このアカウントが作成された場合、それを元に戻してください。</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="261"/>
-        <location filename="../hanoitowers.cpp" line="283"/>
+        <location filename="../hanoitowers.cpp" line="269"/>
+        <location filename="../hanoitowers.cpp" line="291"/>
         <source>Server error</source>
         <translation>サーバエラー</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="268"/>
+        <location filename="../hanoitowers.cpp" line="276"/>
         <source>User with this id is not registered. If it you then use please the sigup form.</source>
         <translation>このIDのユーザーは登録されていません。 それを使用する場合は、サインアップフォームを使用してください。</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="276"/>
+        <location filename="../hanoitowers.cpp" line="284"/>
         <source>User with this id already registered. If it you then use please the login form.</source>
         <translation>このIDのユーザーはすでに登録されています。 それを使用する場合は、ログインフォームを使用してください。</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="424"/>
+        <location filename="../hanoitowers.cpp" line="432"/>
         <source>Create user error</source>
         <translation>ユーザーエラーの作成</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="425"/>
+        <location filename="../hanoitowers.cpp" line="433"/>
         <source>Failed to create a new user, The name %0 alredy used.</source>
         <translation>新しいユーザーの作成に失敗しました。名前 %0 はすでに使用されています。</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="456"/>
+        <location filename="../hanoitowers.cpp" line="464"/>
         <source>Remove online error</source>
         <translation>オンラインユーザーデータの削除中にエラーが発生しました</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="456"/>
+        <location filename="../hanoitowers.cpp" line="464"/>
         <source>current profile not online!</source>
         <translation>現在のプロファイルはオフラインです！</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="462"/>
+        <location filename="../hanoitowers.cpp" line="470"/>
         <source>Remove Local user</source>
         <translation>ローカルユーザーを削除する</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="462"/>
+        <location filename="../hanoitowers.cpp" line="470"/>
         <source>Failed to remove the local user data</source>
         <translation>ローカルユーザーデータの削除に失敗しました</translation>
     </message>
@@ -644,32 +644,32 @@
 <context>
     <name>UserView</name>
     <message>
-        <location filename="../menu/UserView.qml" line="43"/>
+        <location filename="../menu/UserView.qml" line="44"/>
         <source>Please choose a new Avatar</source>
         <translation>新しいアバターを選んでください</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="60"/>
+        <location filename="../menu/UserView.qml" line="61"/>
         <source>Id</source>
         <translation>Id</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="67"/>
+        <location filename="../menu/UserView.qml" line="68"/>
         <source>Name</source>
         <translation>名称</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="74"/>
+        <location filename="../menu/UserView.qml" line="75"/>
         <source>Record</source>
         <translation>レコード</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="81"/>
+        <location filename="../menu/UserView.qml" line="82"/>
         <source>Online profile</source>
         <translation>オンラインプロフィール</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="140"/>
+        <location filename="../menu/UserView.qml" line="141"/>
         <source>Remove</source>
         <translation>削除する</translation>
     </message>
@@ -678,12 +678,12 @@
         <translation type="vanished">このプロファイルを削除する</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="151"/>
+        <location filename="../menu/UserView.qml" line="152"/>
         <source>Restore</source>
         <translation>戻す</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="158"/>
+        <location filename="../menu/UserView.qml" line="159"/>
         <source>Accept</source>
         <translation>受け入れる</translation>
     </message>
@@ -696,12 +696,12 @@
         <translation type="vanished">ユーザーデータが変更されます。</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="194"/>
+        <location filename="../menu/UserView.qml" line="195"/>
         <source>Remove %0 user</source>
         <translation>%0ユーザーを削除</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="195"/>
+        <location filename="../menu/UserView.qml" line="196"/>
         <source>All saved data and records will be delete, Do you want continuee?</source>
         <translation>すべての保存されたデータとレコードが削除されます、あなたが継続したいですか？</translation>
     </message>
