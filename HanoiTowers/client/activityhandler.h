@@ -8,9 +8,9 @@
 
 #ifndef ACTIVITYHANDLER_H
 #define ACTIVITYHANDLER_H
-
-#ifndef Q_OS_ANDROID
 #include <QObject>
+
+#ifdef Q_OS_ANDROID
 #include <QtAndroid>
 
 class ActivityHandler : public QObject

@@ -53,7 +53,7 @@ if (ANDROID)
     find_package(Qt${QT_VERSION_MAJOR} COMPONENTS AndroidExtras REQUIRED)
 
     addDeployAPK(${CURRENT_PROJECT} "${CMAKE_CURRENT_LIST_DIR}/android" "digitalface" "${SIGN_PATH}/DigitalFaceMobily.keystore" "${SIGN_STORE_PASSWORD}" "${TARGET_DIR}" "${HANOI_EXTRA_LIBS}")
-    target_link_libraries(${CURRENT_PROJECT} PRIVATE QtAndroidTools AndroidExtras)
+    target_link_libraries(${CURRENT_PROJECT} PRIVATE QtAndroidTools Qt${QT_VERSION_MAJOR}::AndroidExtras)
 
     file(GLOB java_files
        "android/src/com/quasarapp/androidtools/*.java"

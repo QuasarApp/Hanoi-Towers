@@ -5,14 +5,15 @@
  * of this license document, but changing it is not allowed.
 */
 
-#ifndef Q_OS_ANDROID
-
 #include "activityhandler.h"
+
+#ifdef Q_OS_ANDROID
 
 #include <QAndroidIntent>
 
 const int REQUEST_CODE = 123;
 const jint RESULT_OK = QAndroidJniObject::getStaticField<jint>("android/app/Activity", "RESULT_OK");
+
 ActivityHandler *ActivityHandler::m_instance = nullptr;
 
 ActivityHandler::ActivityHandler(QObject *parent) : QObject(parent) {
