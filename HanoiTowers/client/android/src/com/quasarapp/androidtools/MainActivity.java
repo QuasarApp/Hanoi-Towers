@@ -12,7 +12,6 @@ import android.view.View;
 
 public class MainActivity extends QtActivity
 {
-...
 @Override
 public void onWindowFocusChanged(boolean hasFocus) {
     super.onWindowFocusChanged(hasFocus);
