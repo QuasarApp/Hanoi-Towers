@@ -53,7 +53,6 @@ int main(int argc, char *argv[])
     }
 
 #ifdef Q_OS_ANDROID
-
     ActivityHandler *activityHandler = new ActivityHandler(&app);
     engine.rootContext()->setContextProperty(QLatin1String("activityHandler"), activityHandler);
 #endif
