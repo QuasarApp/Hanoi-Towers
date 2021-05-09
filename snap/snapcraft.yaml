@@ -10,7 +10,7 @@ description: |
 grade: stable # must be 'stable' to release into candidate/stable channels
 confinement: strict # use 'strict' once you have the right plugs and slots
 base: core20
-icon: installer/config/icon.png
+icon: installer/config/logo.png
 
 apps:
   hanoi-tower:
@@ -31,7 +31,7 @@ parts:
   
   qtlib:
     plugin: dump
-    source: Distro/packages/HanoiTowers/data
+    source: Distro/HanoiTowers.zip
       
   libsgl:
     plugin: nil
