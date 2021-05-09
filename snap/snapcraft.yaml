@@ -14,9 +14,9 @@ icon: installer/config/logo.png
 
 apps:
   hanoi-tower:
-    command: desktop-launch $SNAP/HanoiTowers.sh
+  command: desktop-launch HanoiTowers.sh
 
-    plugs: [desktop, unity7, home, opengl, x11, wayland, gsettings]
+  plugs: [desktop, unity7, home, opengl, x11, wayland, gsettings]
 
 
 parts:
@@ -27,7 +27,10 @@ parts:
       - libgssapi3-heimdal
       - libldap-2.4-2
     after: [libsgl, qtlib]
-    
+
+    override-stage: |
+      snapcraftctl stage
+      chmod +x -R "$SNAPCRAFT_STAGE"
   
   qtlib:
     plugin: dump
