@@ -67,13 +67,13 @@ else()
     # Desctop deploying
     addDeployFromCustomFile("Client" "${CMAKE_SOURCE_DIR}/Deploy/Client.json")
 
-#    if (UNIX)
-#        #addDeployQIF("Client" ${INSTALLER_DIR} ${TARGET_DIR} "${INSTALLER_DIR}/config/configLinux.xml")
-#        #addDeploySnap("Client" ${TARGET_DIR})
+    if (UNIX)
+        #addDeployQIF("Client" ${INSTALLER_DIR} ${TARGET_DIR} "${INSTALLER_DIR}/config/configLinux.xml")
+        addDeploySnap("Client" ${TARGET_DIR})
 
-#        #addReleaseSnap("Client")
+        #addReleaseSnap("Client")
 
-#    endif()
+    endif()
 endif()
 
 #addReleaseQif("Client" ${DATA_DIR} ${TARGET_DIR})

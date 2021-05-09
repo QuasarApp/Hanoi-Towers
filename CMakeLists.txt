@@ -66,7 +66,6 @@ SET(PRODUCT_VER_Re 0)
 
 file(MAKE_DIRECTORY ${TARGET_DIR})
 
-initAll()
 addDoc(${PROJECT_NAME} ${CMAKE_CURRENT_SOURCE_DIR}/doxygen.conf)
 
 find_package(QT NAMES Qt6 Qt5 COMPONENTS Core REQUIRED)
@@ -133,6 +132,4 @@ if (HANOI_SERVER)
     add_subdirectory(HanoiTowers/Server)
 endif()
 
-
-
-
+initAll()
