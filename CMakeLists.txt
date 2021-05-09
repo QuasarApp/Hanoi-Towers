@@ -11,13 +11,12 @@ project(HanoiTowers)
 set(BUILD_SHARED_LIBS ON)
 
 
-
 include(submodules/Heart/QuasarAppLib/CMake/QuasarApp.cmake)
 include(submodules/Heart/QuasarAppLib/CMake/Version.cmake)
+initAll()
 
 if (DEFINED TARGET_PLATFORM_TOOLCHAIN)
     if (${TARGET_PLATFORM_TOOLCHAIN} STREQUAL "wasm32")
-        initAll()
         return()
     endif()
 endif()
@@ -65,6 +64,7 @@ SET(PRODUCT_VER_Mn 6)
 SET(PRODUCT_VER_Re 0)
 
 file(MAKE_DIRECTORY ${TARGET_DIR})
+initAll()
 
 addDoc(${PROJECT_NAME} ${CMAKE_CURRENT_SOURCE_DIR}/doxygen.conf)
 
@@ -132,4 +132,3 @@ if (HANOI_SERVER)
     add_subdirectory(HanoiTowers/Server)
 endif()
 
-initAll()
