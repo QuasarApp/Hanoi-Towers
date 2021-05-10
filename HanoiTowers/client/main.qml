@@ -35,6 +35,7 @@ ApplicationWindow {
         const obj = createSpriteObjects(":/admod/AdMobInterstitialAndroid.qml", this);
         if (obj) {
             admodbanner = obj;
+            admodbanner.load()
             admodbanner.show();
         }
     }
@@ -66,8 +67,11 @@ ApplicationWindow {
         interactive: false
 
         onCurrentIndexChanged: {
-            if (admodbanner)
+            if (admodbanner) {
+                admodbanner.load()
                 admodbanner.show();
+
+            }
         }
 
         background: Item {}
