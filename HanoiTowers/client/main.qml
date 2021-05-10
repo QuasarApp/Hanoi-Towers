@@ -32,7 +32,7 @@ ApplicationWindow {
 
     Component.onCompleted:  {
 
-        const obj = createSpriteObjects(":/admod/AdMobInterstitialAndroid.qml", this);
+        const obj = createSpriteObjects("qrc:/admod/AdMobInterstitialAndroid.qml", this);
         if (obj) {
             admodbanner = obj;
             admodbanner.load()
