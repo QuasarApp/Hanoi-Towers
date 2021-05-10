@@ -20,6 +20,7 @@ ApplicationWindow {
     width: 1240
     height: 720
     title: qsTr("Hanoi Towers")
+    property var admodbanner: null
 
     function createSpriteObjects(url, parent) {
         if (!backEnd.isAndroid()) {
@@ -33,7 +34,8 @@ ApplicationWindow {
 
         const obj = createSpriteObjects(":/admod/AdMobInterstitialAndroid.qml", this);
         if (obj) {
-
+            admodbanner = obj;
+            admodbanner.show();
         }
     }
 
@@ -62,6 +64,11 @@ ApplicationWindow {
         state: "MainMenu"
         anchors.fill: parent
         interactive: false
+
+        onCurrentIndexChanged: {
+            if (admodbanner)
+                admodbanner.show();
+        }
 
         background: Item {}
 
