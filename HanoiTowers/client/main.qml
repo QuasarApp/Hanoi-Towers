@@ -67,6 +67,9 @@ ApplicationWindow {
         interactive: false
 
         onCurrentIndexChanged: {
+            if (currentIndex)
+                return;
+
             if (admodbanner) {
                 admodbanner.load()
                 admodbanner.show();
