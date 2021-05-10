@@ -27,6 +27,8 @@ endif()
 
 if(ONLINE_FUNCTIONS)
     add_definitions(-DONLINE_FUNCTIONS)
+else()
+#    set(HEART_SSL OFF)
 endif()
 
 if (NOT DEFINED HANOI_TESTS)
@@ -44,7 +46,7 @@ if (NOT DEFINED HANOI_SERVER)
         set(HANOI_SERVER OFF)
     endif()
 
-    if (ONLINE_FUNCTIONS)
+    if ( NOT ONLINE_FUNCTIONS)
         set(HANOI_SERVER OFF)
     endif()
 
