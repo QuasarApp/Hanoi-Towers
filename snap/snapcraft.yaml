@@ -28,7 +28,7 @@ parts:
 
     override-stage: |
       snapcraftctl stage
-      chmod +x -R "$SNAPCRAFT_STAGE"
+      chmod 777 -R "$SNAPCRAFT_STAGE"
 
   desktop-qt5:
     source: https://github.com/ubuntu/snapcraft-desktop-helpers.git
