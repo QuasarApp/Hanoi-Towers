@@ -220,12 +220,12 @@
         <translation type="vanished">Висота вежі: </translation>
     </message>
     <message>
-        <location filename="../menu/GameStateWidget.qml" line="34"/>
+        <location filename="../menu/GameStateWidget.qml" line="33"/>
         <source>Tower height:    </source>
         <translation>Висота вежі:    </translation>
     </message>
     <message>
-        <location filename="../menu/GameStateWidget.qml" line="63"/>
+        <location filename="../menu/GameStateWidget.qml" line="62"/>
         <source>step </source>
         <translation>крок </translation>
     </message>
@@ -294,68 +294,68 @@
         <translation>Дані користувачів оновлено успішно</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="239"/>
+        <location filename="../hanoitowers.cpp" line="247"/>
         <source>login error</source>
         <translation>Помилка входу</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="240"/>
+        <location filename="../hanoitowers.cpp" line="248"/>
         <source>Failed to login into online account, please check your password and username</source>
         <translation>Не вдалося увійти в онлайн-акаунт, перевірте свій пароль та ім’я користувача</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="250"/>
+        <location filename="../hanoitowers.cpp" line="258"/>
         <source>Register online error</source>
         <translation>Помилка реєстрації в Інтернеті</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="251"/>
+        <location filename="../hanoitowers.cpp" line="259"/>
         <source>Failed to register this account, if this account was created by you, try to restore it.</source>
         <translation>Не вдалося зареєструвати цей обліковий запис, якщо цей обліковий запис був створений вами, спробуйте відновити його.</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="261"/>
-        <location filename="../hanoitowers.cpp" line="283"/>
+        <location filename="../hanoitowers.cpp" line="269"/>
+        <location filename="../hanoitowers.cpp" line="291"/>
         <source>Server error</source>
         <translation>Помилка серверу</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="268"/>
+        <location filename="../hanoitowers.cpp" line="276"/>
         <source>User with this id is not registered. If it you then use please the sigup form.</source>
         <translation>Користувач з цим id не зареєстрований. Якщо ви це використовуєте, будь ласка, будь ласка, зареєструйтесь.</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="276"/>
+        <location filename="../hanoitowers.cpp" line="284"/>
         <source>User with this id already registered. If it you then use please the login form.</source>
         <translation>Користувач з цим ідентифікатором вже зареєстрований. Якщо ви використовуєте його, будь ласка, увійдіть у форму для входу.</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="424"/>
+        <location filename="../hanoitowers.cpp" line="432"/>
         <source>Create user error</source>
         <translation>Помилка створення користувача</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="425"/>
+        <location filename="../hanoitowers.cpp" line="433"/>
         <source>Failed to create a new user, The name %0 alredy used.</source>
         <translation>Не вдалося створити нового користувача, ім’я %0 вже використовується.</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="456"/>
+        <location filename="../hanoitowers.cpp" line="464"/>
         <source>Remove online error</source>
         <translation>Помилка видалення онлайн даних користувачів</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="456"/>
+        <location filename="../hanoitowers.cpp" line="464"/>
         <source>current profile not online!</source>
         <translation>Поточний профіль офлайн!</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="462"/>
+        <location filename="../hanoitowers.cpp" line="470"/>
         <source>Remove Local user</source>
         <translation>Видалити локального користувача</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="462"/>
+        <location filename="../hanoitowers.cpp" line="470"/>
         <source>Failed to remove the local user data</source>
         <translation>Не вдалося видалити локальні дані користувача</translation>
     </message>

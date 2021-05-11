@@ -9,15 +9,13 @@ description: |
 
 grade: stable # must be 'stable' to release into candidate/stable channels
 confinement: strict # use 'strict' once you have the right plugs and slots
-base: core18
-icon: installer/packages/HanoiTowers/data/icons/icon.png
+base: core20
+icon: installer/config/logo.png
 
 apps:
   hanoi-tower:
-    command: desktop-launch $SNAP/HanoiTowers.sh
-
+    command: bin/desktop-launch $SNAP/HanoiTowers.sh
     plugs: [desktop, unity7, home, opengl, x11, wayland, gsettings]
-
 
 parts:
   hanoi-tower:
@@ -26,13 +24,21 @@ parts:
       - libasn1-8-heimdal
       - libgssapi3-heimdal
       - libldap-2.4-2
-    after: [libsgl, qtlib]
-    
-  
+    after: [libsgl, qtlib, desktop-qt5]
+
+    override-stage: |
+      snapcraftctl stage
+      chmod +x -R "$SNAPCRAFT_STAGE"
+
+  desktop-qt5:
+    source: https://github.com/ubuntu/snapcraft-desktop-helpers.git
+    source-subdir: qt
+    plugin: make
+
   qtlib:
     plugin: dump
-    source: installer/packages/HanoiTowers/data
-      
+    source: Distro/HanoiTowers.zip
+
   libsgl:
     plugin: nil
     stage-packages:

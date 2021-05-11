@@ -14,8 +14,8 @@
 #include "hanoitowersprotockol_global.h"
 
 struct HANOITOWERSPROTOCOL_EXPORT UserPreview: public QH::StreamBase {
-    explicit UserPreview();
-    explicit UserPreview(const QString& id);
+    UserPreview();
+    UserPreview(const QString& id);
 
     QString id;
     QString userName;

@@ -192,12 +192,12 @@
         <translation type="vanished">Tower height: </translation>
     </message>
     <message>
-        <location filename="../menu/GameStateWidget.qml" line="34"/>
+        <location filename="../menu/GameStateWidget.qml" line="33"/>
         <source>Tower height:    </source>
         <translation>Tower height:    </translation>
     </message>
     <message>
-        <location filename="../menu/GameStateWidget.qml" line="63"/>
+        <location filename="../menu/GameStateWidget.qml" line="62"/>
         <source>step </source>
         <translation>step </translation>
     </message>
@@ -266,68 +266,68 @@
         <translation>User data updated successful</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="239"/>
+        <location filename="../hanoitowers.cpp" line="247"/>
         <source>login error</source>
         <translation>Login error</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="240"/>
+        <location filename="../hanoitowers.cpp" line="248"/>
         <source>Failed to login into online account, please check your password and username</source>
         <translation>Failed to login into online account, please check your password and username</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="250"/>
+        <location filename="../hanoitowers.cpp" line="258"/>
         <source>Register online error</source>
         <translation>Register online error</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="251"/>
+        <location filename="../hanoitowers.cpp" line="259"/>
         <source>Failed to register this account, if this account was created by you, try to restore it.</source>
         <translation>Failed to register this account, if this account was created by you, try to restore it.</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="261"/>
-        <location filename="../hanoitowers.cpp" line="283"/>
+        <location filename="../hanoitowers.cpp" line="269"/>
+        <location filename="../hanoitowers.cpp" line="291"/>
         <source>Server error</source>
         <translation>Server error</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="268"/>
+        <location filename="../hanoitowers.cpp" line="276"/>
         <source>User with this id is not registered. If it you then use please the sigup form.</source>
         <translation>User with this id is not registered. If it you then use please the sigup form.</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="276"/>
+        <location filename="../hanoitowers.cpp" line="284"/>
         <source>User with this id already registered. If it you then use please the login form.</source>
         <translation>User with this id already registered. If it you then use please the login form.</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="424"/>
+        <location filename="../hanoitowers.cpp" line="432"/>
         <source>Create user error</source>
         <translation>User create error</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="425"/>
+        <location filename="../hanoitowers.cpp" line="433"/>
         <source>Failed to create a new user, The name %0 alredy used.</source>
         <translation>Failed to create a new user, This name %0 alredy used.</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="456"/>
+        <location filename="../hanoitowers.cpp" line="464"/>
         <source>Remove online error</source>
         <translation>Remove online error</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="456"/>
+        <location filename="../hanoitowers.cpp" line="464"/>
         <source>current profile not online!</source>
         <translation>Current profile is offline!</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="462"/>
+        <location filename="../hanoitowers.cpp" line="470"/>
         <source>Remove Local user</source>
         <translation>Remove Local user</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="462"/>
+        <location filename="../hanoitowers.cpp" line="470"/>
         <source>Failed to remove the local user data</source>
         <translation>Failed to remove the local user data</translation>
     </message>

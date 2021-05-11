@@ -210,12 +210,12 @@
         <translation type="vanished">塔の高さ: </translation>
     </message>
     <message>
-        <location filename="../menu/GameStateWidget.qml" line="34"/>
+        <location filename="../menu/GameStateWidget.qml" line="33"/>
         <source>Tower height:    </source>
         <translation>タワーの高さ：    </translation>
     </message>
     <message>
-        <location filename="../menu/GameStateWidget.qml" line="63"/>
+        <location filename="../menu/GameStateWidget.qml" line="62"/>
         <source>step </source>
         <translation>ステップ </translation>
     </message>
@@ -284,68 +284,68 @@
         <translation>ユーザーデータが正常に更新されました</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="239"/>
+        <location filename="../hanoitowers.cpp" line="247"/>
         <source>login error</source>
         <translation>ログインエラー</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="240"/>
+        <location filename="../hanoitowers.cpp" line="248"/>
         <source>Failed to login into online account, please check your password and username</source>
         <translation>オンラインアカウントにログインできませんでした。パスワードとユーザー名を確認してください</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="250"/>
+        <location filename="../hanoitowers.cpp" line="258"/>
         <source>Register online error</source>
         <translation>登録オンラインエラー</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="251"/>
+        <location filename="../hanoitowers.cpp" line="259"/>
         <source>Failed to register this account, if this account was created by you, try to restore it.</source>
         <translation>このアカウントが登録されなかった場合、このアカウントが作成された場合、それを元に戻してください。</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="261"/>
-        <location filename="../hanoitowers.cpp" line="283"/>
+        <location filename="../hanoitowers.cpp" line="269"/>
+        <location filename="../hanoitowers.cpp" line="291"/>
         <source>Server error</source>
         <translation>サーバエラー</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="268"/>
+        <location filename="../hanoitowers.cpp" line="276"/>
         <source>User with this id is not registered. If it you then use please the sigup form.</source>
         <translation>このIDのユーザーは登録されていません。 それを使用する場合は、サインアップフォームを使用してください。</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="276"/>
+        <location filename="../hanoitowers.cpp" line="284"/>
         <source>User with this id already registered. If it you then use please the login form.</source>
         <translation>このIDのユーザーはすでに登録されています。 それを使用する場合は、ログインフォームを使用してください。</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="424"/>
+        <location filename="../hanoitowers.cpp" line="432"/>
         <source>Create user error</source>
         <translation>ユーザーエラーの作成</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="425"/>
+        <location filename="../hanoitowers.cpp" line="433"/>
         <source>Failed to create a new user, The name %0 alredy used.</source>
         <translation>新しいユーザーの作成に失敗しました。名前 %0 はすでに使用されています。</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="456"/>
+        <location filename="../hanoitowers.cpp" line="464"/>
         <source>Remove online error</source>
         <translation>オンラインユーザーデータの削除中にエラーが発生しました</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="456"/>
+        <location filename="../hanoitowers.cpp" line="464"/>
         <source>current profile not online!</source>
         <translation>現在のプロファイルはオフラインです！</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="462"/>
+        <location filename="../hanoitowers.cpp" line="470"/>
         <source>Remove Local user</source>
         <translation>ローカルユーザーを削除する</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="462"/>
+        <location filename="../hanoitowers.cpp" line="470"/>
         <source>Failed to remove the local user data</source>
         <translation>ローカルユーザーデータの削除に失敗しました</translation>
     </message>

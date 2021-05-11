@@ -20,6 +20,25 @@ ApplicationWindow {
     width: 1240
     height: 720
     title: qsTr("Hanoi Towers")
+    property var admodbanner: null
+
+    function createSpriteObjects(url, parent) {
+        if (!backEnd.isAndroid()) {
+            return null;
+        }
+        const component = Qt.createComponent(url);
+        return component.createObject(parent);
+    }
+
+    Component.onCompleted:  {
+
+        const obj = createSpriteObjects("qrc:/admod/AdMobInterstitialAndroid.qml", this);
+        if (obj) {
+            admodbanner = obj;
+            admodbanner.load()
+            admodbanner.show();
+        }
+    }
 
     header: Menu.ToolBarPage {
         id: toolBar
@@ -46,6 +65,17 @@ ApplicationWindow {
         state: "MainMenu"
         anchors.fill: parent
         interactive: false
+
+        onCurrentIndexChanged: {
+            if (currentIndex)
+                return;
+
+            if (admodbanner) {
+                admodbanner.load()
+                admodbanner.show();
+
+            }
+        }
 
         background: Item {}
 
@@ -141,6 +171,7 @@ ApplicationWindow {
             }
         ]
     }
+
 
     NotificationServiceView {
         anchors.fill: parent;

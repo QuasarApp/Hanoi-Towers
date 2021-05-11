@@ -12,11 +12,14 @@
 #include <QQmlApplicationEngine>
 #include <QQmlComponent>
 #include <QQmlContext>
+#include "activityhandler.h"
 #include "hanoitowers.h"
 #include <QTranslator>
 #include <qmlnotifyservice.h>
 #include <credits.h>
-
+#ifdef Q_OS_ANDROID
+#include <QtAndroidTools.h>
+#endif
 
 int main(int argc, char *argv[])
 {
@@ -29,7 +32,7 @@ int main(int argc, char *argv[])
     QLocale locale = QLocale::system();
 
     if(argc > 1) {
-        locale = QString::fromLatin1(argv[1]);
+        locale = QLocale(QString::fromLatin1(argv[1]));
     }
 
     if(!QuasarAppUtils::Locales::init(locale, {":/languages/languages/",
@@ -50,6 +53,13 @@ int main(int argc, char *argv[])
     if (!QuasarAppCredits::init(&engine)) {
         return 2;
     }
+
+#ifdef Q_OS_ANDROID
+    QtAndroidTools::initializeQmlTools();
+
+    ActivityHandler *activityHandler = new ActivityHandler(&app);
+    engine.rootContext()->setContextProperty(QLatin1String("activityHandler"), activityHandler);
+#endif
 
     root->setContextProperty("backEnd", &back);
     root->setContextProperty("OnlineStatusQml", QVariant::fromValue(OnlineStatusQml{}));

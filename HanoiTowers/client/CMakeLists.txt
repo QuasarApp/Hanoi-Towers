@@ -49,18 +49,31 @@ if (ANDROID)
                          Credits
                          QmlNotyfyService)
 
+    find_package(QT NAMES Qt6 Qt5 COMPONENTS AndroidExtras REQUIRED)
+    find_package(Qt${QT_VERSION_MAJOR} COMPONENTS AndroidExtras REQUIRED)
+
     addDeployAPK(${CURRENT_PROJECT} "${CMAKE_CURRENT_LIST_DIR}/android" "digitalface" "${SIGN_PATH}/DigitalFaceMobily.keystore" "${SIGN_STORE_PASSWORD}" "${TARGET_DIR}" "${HANOI_EXTRA_LIBS}")
+    target_link_libraries(${CURRENT_PROJECT} PRIVATE QtAndroidTools Qt${QT_VERSION_MAJOR}::AndroidExtras)
+
+    file(GLOB java_files
+       "android/src/com/quasarapp/androidtools/*.java"
+    )
+
+    add_custom_target(${name}Android
+        SOURCES ${java_files}
+    )
+
 else()
     # Desctop deploying
     addDeployFromCustomFile("Client" "${CMAKE_SOURCE_DIR}/Deploy/Client.json")
 
-#    if (UNIX)
-#        #addDeployQIF("Client" ${INSTALLER_DIR} ${TARGET_DIR} "${INSTALLER_DIR}/config/configLinux.xml")
-#        #addDeploySnap("Client" ${TARGET_DIR})
+    if (UNIX)
+        #addDeployQIF("Client" ${INSTALLER_DIR} ${TARGET_DIR} "${INSTALLER_DIR}/config/configLinux.xml")
+        addDeploySnap("Client" ${TARGET_DIR})
 
-#        #addReleaseSnap("Client")
+        #addReleaseSnap("Client")
 
-#    endif()
+    endif()
 endif()
 
 #addReleaseQif("Client" ${DATA_DIR} ${TARGET_DIR})

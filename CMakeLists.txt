@@ -11,13 +11,12 @@ project(HanoiTowers)
 set(BUILD_SHARED_LIBS ON)
 
 
-
 include(submodules/Heart/QuasarAppLib/CMake/QuasarApp.cmake)
 include(submodules/Heart/QuasarAppLib/CMake/Version.cmake)
+initAll()
 
 if (DEFINED TARGET_PLATFORM_TOOLCHAIN)
     if (${TARGET_PLATFORM_TOOLCHAIN} STREQUAL "wasm32")
-        initAll()
         return()
     endif()
 endif()
@@ -28,6 +27,8 @@ endif()
 
 if(ONLINE_FUNCTIONS)
     add_definitions(-DONLINE_FUNCTIONS)
+else()
+    set(HEART_SSL OFF)
 endif()
 
 if (NOT DEFINED HANOI_TESTS)
@@ -45,7 +46,7 @@ if (NOT DEFINED HANOI_SERVER)
         set(HANOI_SERVER OFF)
     endif()
 
-    if (ONLINE_FUNCTIONS)
+    if ( NOT ONLINE_FUNCTIONS)
         set(HANOI_SERVER OFF)
     endif()
 
@@ -65,8 +66,8 @@ SET(PRODUCT_VER_Mn 6)
 SET(PRODUCT_VER_Re 0)
 
 file(MAKE_DIRECTORY ${TARGET_DIR})
-
 initAll()
+
 addDoc(${PROJECT_NAME} ${CMAKE_CURRENT_SOURCE_DIR}/doxygen.conf)
 
 find_package(QT NAMES Qt6 Qt5 COMPONENTS Core REQUIRED)
@@ -97,14 +98,39 @@ if (HANOI_CLIENT)
     add_subdirectory(submodules/SimpleQmlNotify)
     add_subdirectory(submodules/ViewSolutions)
     add_subdirectory(submodules/Credits)
+
+    if (ANDROID)
+        set(ANDROID_PACKAGE_SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/HanoiTowers/client/android")
+        set(QTAT_APP_PERMISSIONS OFF)
+        set(QTAT_APK_EXPANSION_FILES OFF)
+        set(QTAT_APK_INFO OFF)
+        set(QTAT_SCREEN OFF)
+        set(QTAT_SYSTEM OFF)
+        set(QTAT_BATTERY_STATE OFF)
+        set(QTAT_SIGNAL_STRENGTH OFF)
+        set(QTAT_IMAGES OFF)
+        set(QTAT_NOTIFICATION OFF)
+        set(QTAT_ADMOB_BANNER OFF)
+        set(QTAT_ADMOB_INTERSTITIAL ON)
+        set(QTAT_ADMOB_REWARDED_VIDEO OFF)
+        set(QTAT_PLAY_STORE OFF)
+        set(QTAT_GOOGLE_ACCOUNT OFF)
+        set(QTAT_GOOGLE_DRIVE OFF)
+        set(QTAT_SHARING OFF)
+        set(QTAT_USER_MESSAGING_PLATFORM OFF)
+        set(QTAT_AUDIO OFF)
+
+        add_subdirectory(submodules/QtAndroidTools/QtAndroidTools)
+        include_directories(submodules/QtAndroidTools/QtAndroidTools)
+
+    endif()
+
     add_subdirectory(HanoiTowers/client)
+
 endif()
 
 if (HANOI_SERVER)
     add_subdirectory(submodules/Patronum)
     add_subdirectory(HanoiTowers/Server)
 endif()
-
-
-
 

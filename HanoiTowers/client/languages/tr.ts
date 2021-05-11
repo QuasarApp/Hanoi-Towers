@@ -218,12 +218,12 @@ Bu seviye için minimum adımlar: %2</translation>
         <translation type="vanished">Kule yüksekliği: </translation>
     </message>
     <message>
-        <location filename="../menu/GameStateWidget.qml" line="34"/>
+        <location filename="../menu/GameStateWidget.qml" line="33"/>
         <source>Tower height:    </source>
         <translation>Kule yüksekliği:    </translation>
     </message>
     <message>
-        <location filename="../menu/GameStateWidget.qml" line="63"/>
+        <location filename="../menu/GameStateWidget.qml" line="62"/>
         <source>step </source>
         <translation>adım </translation>
     </message>
@@ -292,68 +292,68 @@ Bu seviye için minimum adımlar: %2</translation>
         <translation>Kullanıcı verileri başarıyla güncellendi</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="239"/>
+        <location filename="../hanoitowers.cpp" line="247"/>
         <source>login error</source>
         <translation>sisteme giriş hatası</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="240"/>
+        <location filename="../hanoitowers.cpp" line="248"/>
         <source>Failed to login into online account, please check your password and username</source>
         <translation>Çevrimiçi hesaba giriş yapılamadı, lütfen şifrenizi ve kullanıcı adınızı kontrol edin</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="250"/>
+        <location filename="../hanoitowers.cpp" line="258"/>
         <source>Register online error</source>
         <translation>Çevrimiçi kayıt hatası</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="251"/>
+        <location filename="../hanoitowers.cpp" line="259"/>
         <source>Failed to register this account, if this account was created by you, try to restore it.</source>
         <translation>Bu hesap kaydedilemedi, bu hesap sizin tarafınızdan oluşturulduysa, geri yüklemeyi deneyin.</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="261"/>
-        <location filename="../hanoitowers.cpp" line="283"/>
+        <location filename="../hanoitowers.cpp" line="269"/>
+        <location filename="../hanoitowers.cpp" line="291"/>
         <source>Server error</source>
         <translation>Server hatası</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="268"/>
+        <location filename="../hanoitowers.cpp" line="276"/>
         <source>User with this id is not registered. If it you then use please the sigup form.</source>
         <translation>Bu kimliğe sahip kullanıcı kayıtlı değil. Daha sonra kullanırsanız, lütfen kayıt formunu kullanın.</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="276"/>
+        <location filename="../hanoitowers.cpp" line="284"/>
         <source>User with this id already registered. If it you then use please the login form.</source>
         <translation>Bu kimliğe sahip kullanıcı zaten kayıtlı. Eğer öyleyse, lütfen giriş formunu kullanın.</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="424"/>
+        <location filename="../hanoitowers.cpp" line="432"/>
         <source>Create user error</source>
         <translation>Kullanıcı hatası oluştur</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="425"/>
+        <location filename="../hanoitowers.cpp" line="433"/>
         <source>Failed to create a new user, The name %0 alredy used.</source>
         <translation>Yeni bir kullanıcı oluşturulamadı, %0 adı kullanıldı.</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="456"/>
+        <location filename="../hanoitowers.cpp" line="464"/>
         <source>Remove online error</source>
         <translation>Çevrimiçi kullanıcı verilerini kaldırma hatası</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="456"/>
+        <location filename="../hanoitowers.cpp" line="464"/>
         <source>current profile not online!</source>
         <translation>Mevcut profil çevrimdışı!</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="462"/>
+        <location filename="../hanoitowers.cpp" line="470"/>
         <source>Remove Local user</source>
         <translation>Yerel kullanıcıyı kaldır</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="462"/>
+        <location filename="../hanoitowers.cpp" line="470"/>
         <source>Failed to remove the local user data</source>
         <translation>Yerel kullanıcı verileri kaldırılamadı</translation>
     </message>

@@ -21,5 +21,6 @@
     "qif": "./../installer",
     "icon": "./../HanoiTowers/client/res/iconInstall.png",
     "deb": true,
+    "zip": true,
     "targetDir": "./../Distro"
 }
