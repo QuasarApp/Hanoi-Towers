@@ -110,6 +110,7 @@ public:
 
     Q_INVOKABLE bool isAndroid() const;
 
+    Q_INVOKABLE bool isAdMod() const;
 
 
 public slots:

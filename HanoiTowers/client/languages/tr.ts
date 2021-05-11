@@ -175,38 +175,38 @@ Bu seviye için minimum adımlar: %2</translation>
         <translation type="vanished">Bu seviye için minimum adımlar: %1</translation>
     </message>
     <message>
-        <location filename="../Game.qml" line="162"/>
-        <location filename="../Game.qml" line="182"/>
+        <location filename="../Game.qml" line="167"/>
+        <location filename="../Game.qml" line="187"/>
         <source>Congratulations! You have passed the level %0</source>
         <translation>Tebrikler! %0 seviyesini geçtiniz</translation>
     </message>
     <message>
-        <location filename="../Game.qml" line="165"/>
+        <location filename="../Game.qml" line="170"/>
         <source>You got &lt;b&gt;%0&lt;/b&gt; points for this level and unlocked the level &lt;b&gt;%1&lt;/b&gt;!</source>
         <translation>Bu seviye için &lt;b&gt;%0&lt;/b&gt; puan aldınız ve &lt;b&gt;%1&lt;/b&gt; seviyesinin kilidini açtınız!</translation>
     </message>
     <message>
-        <location filename="../Game.qml" line="166"/>
+        <location filename="../Game.qml" line="171"/>
         <source>&lt;br&gt;&lt;br&gt; Totally &lt;b&gt;%2&lt;/b&gt; steps.</source>
         <translation>&lt;br&gt;&lt;br&gt; Tamamen &lt;b&gt;%2&lt;/b&gt; adım.</translation>
     </message>
     <message>
-        <location filename="../Game.qml" line="167"/>
+        <location filename="../Game.qml" line="172"/>
         <source>&lt;br&gt; The minimum number of steps for this level : &lt;b&gt;%3&lt;/b&gt;</source>
         <translation>&lt;br&gt; Bu seviye için minimum adım sayısı : &lt;b&gt;%3&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../Game.qml" line="185"/>
+        <location filename="../Game.qml" line="190"/>
         <source>You got &lt;b&gt;%0&lt;/b&gt; points for this level!</source>
         <translation>Bu seviye için &lt;b&gt;%0&lt;/b&gt; puan aldınız!</translation>
     </message>
     <message>
-        <location filename="../Game.qml" line="186"/>
+        <location filename="../Game.qml" line="191"/>
         <source>&lt;br&gt;&lt;br&gt; Totally &lt;b&gt;%1&lt;/b&gt; steps.</source>
         <translation>&lt;br&gt;&lt;br&gt; Tamamen &lt;b&gt;%1&lt;/b&gt; adım.</translation>
     </message>
     <message>
-        <location filename="../Game.qml" line="187"/>
+        <location filename="../Game.qml" line="192"/>
         <source>&lt;br&gt; The minimum number of steps for this level : &lt;b&gt;%2&lt;/b&gt;</source>
         <translation>&lt;br&gt; Bu seviye için minimum adım sayısı : &lt;b&gt;%2&lt;/b&gt;</translation>
     </message>
@@ -218,12 +218,12 @@ Bu seviye için minimum adımlar: %2</translation>
         <translation type="vanished">Kule yüksekliği: </translation>
     </message>
     <message>
-        <location filename="../menu/GameStateWidget.qml" line="33"/>
+        <location filename="../menu/GameStateWidget.qml" line="20"/>
         <source>Tower height:    </source>
         <translation>Kule yüksekliği:    </translation>
     </message>
     <message>
-        <location filename="../menu/GameStateWidget.qml" line="62"/>
+        <location filename="../menu/GameStateWidget.qml" line="49"/>
         <source>step </source>
         <translation>adım </translation>
     </message>
@@ -292,68 +292,68 @@ Bu seviye için minimum adımlar: %2</translation>
         <translation>Kullanıcı verileri başarıyla güncellendi</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="247"/>
+        <location filename="../hanoitowers.cpp" line="255"/>
         <source>login error</source>
         <translation>sisteme giriş hatası</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="248"/>
+        <location filename="../hanoitowers.cpp" line="256"/>
         <source>Failed to login into online account, please check your password and username</source>
         <translation>Çevrimiçi hesaba giriş yapılamadı, lütfen şifrenizi ve kullanıcı adınızı kontrol edin</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="258"/>
+        <location filename="../hanoitowers.cpp" line="266"/>
         <source>Register online error</source>
         <translation>Çevrimiçi kayıt hatası</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="259"/>
+        <location filename="../hanoitowers.cpp" line="267"/>
         <source>Failed to register this account, if this account was created by you, try to restore it.</source>
         <translation>Bu hesap kaydedilemedi, bu hesap sizin tarafınızdan oluşturulduysa, geri yüklemeyi deneyin.</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="269"/>
-        <location filename="../hanoitowers.cpp" line="291"/>
+        <location filename="../hanoitowers.cpp" line="277"/>
+        <location filename="../hanoitowers.cpp" line="299"/>
         <source>Server error</source>
         <translation>Server hatası</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="276"/>
+        <location filename="../hanoitowers.cpp" line="284"/>
         <source>User with this id is not registered. If it you then use please the sigup form.</source>
         <translation>Bu kimliğe sahip kullanıcı kayıtlı değil. Daha sonra kullanırsanız, lütfen kayıt formunu kullanın.</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="284"/>
+        <location filename="../hanoitowers.cpp" line="292"/>
         <source>User with this id already registered. If it you then use please the login form.</source>
         <translation>Bu kimliğe sahip kullanıcı zaten kayıtlı. Eğer öyleyse, lütfen giriş formunu kullanın.</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="432"/>
+        <location filename="../hanoitowers.cpp" line="440"/>
         <source>Create user error</source>
         <translation>Kullanıcı hatası oluştur</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="433"/>
+        <location filename="../hanoitowers.cpp" line="441"/>
         <source>Failed to create a new user, The name %0 alredy used.</source>
         <translation>Yeni bir kullanıcı oluşturulamadı, %0 adı kullanıldı.</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="464"/>
+        <location filename="../hanoitowers.cpp" line="472"/>
         <source>Remove online error</source>
         <translation>Çevrimiçi kullanıcı verilerini kaldırma hatası</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="464"/>
+        <location filename="../hanoitowers.cpp" line="472"/>
         <source>current profile not online!</source>
         <translation>Mevcut profil çevrimdışı!</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="470"/>
+        <location filename="../hanoitowers.cpp" line="478"/>
         <source>Remove Local user</source>
         <translation>Yerel kullanıcıyı kaldır</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="470"/>
+        <location filename="../hanoitowers.cpp" line="478"/>
         <source>Failed to remove the local user data</source>
         <translation>Yerel kullanıcı verileri kaldırılamadı</translation>
     </message>

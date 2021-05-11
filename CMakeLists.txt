@@ -39,6 +39,18 @@ if (NOT DEFINED HANOI_TESTS)
     endif()
 endif()
 
+if (NOT DEFINED HANOI_ADMOD)
+    set(HANOI_ADMOD OFF)
+
+    if (ANDROID)
+        set(HANOI_ADMOD OFF)
+    endif()
+endif()
+
+if (HANOI_ADMOD)
+    add_definitions(-DHANOI_ADMOD)
+endif()
+
 if (NOT DEFINED HANOI_SERVER)
     set(HANOI_SERVER ON)
 

@@ -23,7 +23,7 @@ ApplicationWindow {
     property var admodbanner: null
 
     function createSpriteObjects(url, parent) {
-        if (!backEnd.isAndroid()) {
+        if (!(backEnd.isAndroid() && backEnd.isAdMod())) {
             return null;
         }
         const component = Qt.createComponent(url);
