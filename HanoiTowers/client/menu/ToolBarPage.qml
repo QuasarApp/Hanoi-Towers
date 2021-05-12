@@ -52,11 +52,15 @@ ToolBar {
             text: qsTr("Return to main menu");
             Layout.alignment: Qt.AlignRight
             visible: returnButton
-
+            font.capitalization: Font.AllUppercase
+            font.bold: true
             onClicked: {
                 returnToMenu()
             }
+            rightPadding: 20
+
         }
+        spacing: 15
 
         anchors.fill: parent
     }
