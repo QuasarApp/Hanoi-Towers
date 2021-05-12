@@ -14,7 +14,6 @@ Item {
     property var itemsMassArray: []
     property int number: 0
 
-    property var upPlate: null
     signal click(var obj)
 
     Rectangle {
@@ -36,8 +35,7 @@ Item {
         obj.x = (tover.width / 2) - (obj.width / 2)
         obj.y = 0 - obj.height;
 
-        upPlate = obj;
-        return upPlate
+        return obj
 
     }
 
@@ -70,6 +68,7 @@ Item {
     }
 
     function clear() {
+
         while (items.length) {
             items[items.length - 1].destroy()
             items.pop()

@@ -228,6 +228,14 @@ bool HanoiTowers::isAndroid() const{
 #endif
 }
 
+bool HanoiTowers::isAdMod() const {
+#ifdef HANOI_ADMOD
+    return true;
+#else
+    return false;
+#endif
+}
+
 void HanoiTowers::handleChangeName(const QString &) {
     emit profileChanged();
 }

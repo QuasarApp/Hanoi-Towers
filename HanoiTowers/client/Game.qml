@@ -40,11 +40,7 @@ Item {
         start(-1);
     }
 
-    function load () {
-
-        stateData.load();
-        stateWidget.tumbler.spin.maximumValue = stateData.getMaxValueOfLoadedSaves();
-
+    function clear() {
         tower1.clear()
         tower2.clear()
         tower3.clear()
@@ -53,6 +49,15 @@ Item {
             upPlate.destroy();
             upPlate = null;
         }
+    }
+
+    function load () {
+
+        stateData.load();
+        stateWidget.tumbler.spin.maximumValue = stateData.lvl;
+        stateWidget.tumbler.spin.value = stateData.getMaxValueOfLoadedSaves();
+
+        clear();
 
         stateWidget.step = stateData.getStep();
         stateWidget.tumbler.spin.value = all = stateData.getMaxValueOfLoadedSaves();
@@ -84,9 +89,9 @@ Item {
             stateWidget.tumbler.spin.value = all = value
         }
         stateWidget.step = 0
-        tower1.clear()
-        tower2.clear()
-        tower3.clear()
+
+        clear()
+
         while (value--) {
             var temp = Qt.createComponent("plate.qml")
             if (temp.status === Component.Ready) {

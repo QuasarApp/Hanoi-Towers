@@ -149,38 +149,38 @@
         <translation type="vanished">Minimum steps for this lvl: %1</translation>
     </message>
     <message>
-        <location filename="../Game.qml" line="162"/>
-        <location filename="../Game.qml" line="182"/>
+        <location filename="../Game.qml" line="167"/>
+        <location filename="../Game.qml" line="187"/>
         <source>Congratulations! You have passed the level %0</source>
         <translation>Congratulations! You have passed the level %0</translation>
     </message>
     <message>
-        <location filename="../Game.qml" line="165"/>
+        <location filename="../Game.qml" line="170"/>
         <source>You got &lt;b&gt;%0&lt;/b&gt; points for this level and unlocked the level &lt;b&gt;%1&lt;/b&gt;!</source>
         <translation>You got &lt;b&gt;%0&lt;/b&gt; points for this level and unlocked the level &lt;b&gt;%1&lt;/b&gt;!</translation>
     </message>
     <message>
-        <location filename="../Game.qml" line="166"/>
+        <location filename="../Game.qml" line="171"/>
         <source>&lt;br&gt;&lt;br&gt; Totally &lt;b&gt;%2&lt;/b&gt; steps.</source>
         <translation>&lt;br&gt;&lt;br&gt; Totally &lt;b&gt;%2&lt;/b&gt; steps.</translation>
     </message>
     <message>
-        <location filename="../Game.qml" line="167"/>
+        <location filename="../Game.qml" line="172"/>
         <source>&lt;br&gt; The minimum number of steps for this level : &lt;b&gt;%3&lt;/b&gt;</source>
         <translation>&lt;br&gt; The minimum number of steps for this level : &lt;b&gt;%3&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../Game.qml" line="185"/>
+        <location filename="../Game.qml" line="190"/>
         <source>You got &lt;b&gt;%0&lt;/b&gt; points for this level!</source>
         <translation>You got &lt;b&gt;%0&lt;/b&gt; points for this level!</translation>
     </message>
     <message>
-        <location filename="../Game.qml" line="186"/>
+        <location filename="../Game.qml" line="191"/>
         <source>&lt;br&gt;&lt;br&gt; Totally &lt;b&gt;%1&lt;/b&gt; steps.</source>
         <translation>&lt;br&gt;&lt;br&gt; Totally &lt;b&gt;%1&lt;/b&gt; steps.</translation>
     </message>
     <message>
-        <location filename="../Game.qml" line="187"/>
+        <location filename="../Game.qml" line="192"/>
         <source>&lt;br&gt; The minimum number of steps for this level : &lt;b&gt;%2&lt;/b&gt;</source>
         <translation>&lt;br&gt; The minimum number of steps for this level : &lt;b&gt;%2&lt;/b&gt;</translation>
     </message>
@@ -192,12 +192,12 @@
         <translation type="vanished">Tower height: </translation>
     </message>
     <message>
-        <location filename="../menu/GameStateWidget.qml" line="33"/>
+        <location filename="../menu/GameStateWidget.qml" line="20"/>
         <source>Tower height:    </source>
         <translation>Tower height:    </translation>
     </message>
     <message>
-        <location filename="../menu/GameStateWidget.qml" line="62"/>
+        <location filename="../menu/GameStateWidget.qml" line="49"/>
         <source>step </source>
         <translation>step </translation>
     </message>
@@ -266,68 +266,68 @@
         <translation>User data updated successful</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="247"/>
+        <location filename="../hanoitowers.cpp" line="255"/>
         <source>login error</source>
         <translation>Login error</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="248"/>
+        <location filename="../hanoitowers.cpp" line="256"/>
         <source>Failed to login into online account, please check your password and username</source>
         <translation>Failed to login into online account, please check your password and username</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="258"/>
+        <location filename="../hanoitowers.cpp" line="266"/>
         <source>Register online error</source>
         <translation>Register online error</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="259"/>
+        <location filename="../hanoitowers.cpp" line="267"/>
         <source>Failed to register this account, if this account was created by you, try to restore it.</source>
         <translation>Failed to register this account, if this account was created by you, try to restore it.</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="269"/>
-        <location filename="../hanoitowers.cpp" line="291"/>
+        <location filename="../hanoitowers.cpp" line="277"/>
+        <location filename="../hanoitowers.cpp" line="299"/>
         <source>Server error</source>
         <translation>Server error</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="276"/>
+        <location filename="../hanoitowers.cpp" line="284"/>
         <source>User with this id is not registered. If it you then use please the sigup form.</source>
         <translation>User with this id is not registered. If it you then use please the sigup form.</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="284"/>
+        <location filename="../hanoitowers.cpp" line="292"/>
         <source>User with this id already registered. If it you then use please the login form.</source>
         <translation>User with this id already registered. If it you then use please the login form.</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="432"/>
+        <location filename="../hanoitowers.cpp" line="440"/>
         <source>Create user error</source>
         <translation>User create error</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="433"/>
+        <location filename="../hanoitowers.cpp" line="441"/>
         <source>Failed to create a new user, The name %0 alredy used.</source>
         <translation>Failed to create a new user, This name %0 alredy used.</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="464"/>
+        <location filename="../hanoitowers.cpp" line="472"/>
         <source>Remove online error</source>
         <translation>Remove online error</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="464"/>
+        <location filename="../hanoitowers.cpp" line="472"/>
         <source>current profile not online!</source>
         <translation>Current profile is offline!</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="470"/>
+        <location filename="../hanoitowers.cpp" line="478"/>
         <source>Remove Local user</source>
         <translation>Remove Local user</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="470"/>
+        <location filename="../hanoitowers.cpp" line="478"/>
         <source>Failed to remove the local user data</source>
         <translation>Failed to remove the local user data</translation>
     </message>

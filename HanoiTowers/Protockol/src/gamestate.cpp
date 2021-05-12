@@ -87,7 +87,6 @@ bool GameState::load() {
     }
 
     return true;
-
 }
 
 bool operator == (const GameState& left, const GameState& right) {
