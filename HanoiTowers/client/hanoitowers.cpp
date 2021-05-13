@@ -117,8 +117,16 @@ HanoiTowers::HanoiTowers(QQmlApplicationEngine *engine):
 }
 
 void HanoiTowers::init() {
+    _settingsData.animation = _settings->getValue(ANIMATION_KEY, true).toBool();
+    _settingsData.randomColor = _settings->getValue(RANDOM_COLOR_KEY, false).toBool();
+    _settingsData.fog = _settings->getValue(FOG, true).toBool();
+    _settingsData.fogAnimation = _settings->getValue(FOG_ANIMATION, true).toBool();
+
+}
+
+void HanoiTowers::loadOldSaves() {
     QFile f(MAIN_SETINGS_FILE);
-    if(f.open(QIODevice::ReadOnly)){
+    if(f.open(QIODevice::ReadWrite)){
         QDataStream stream(&f);
 
         unsigned short lvl;
@@ -137,15 +145,7 @@ void HanoiTowers::init() {
 
         f.close();
         f.remove();
-
-    } else {
-        _settingsData.animation = _settings->getValue(ANIMATION_KEY, true).toBool();
-        _settingsData.randomColor = _settings->getValue(RANDOM_COLOR_KEY, false).toBool();
-        _settingsData.fog = _settings->getValue(FOG, true).toBool();
-        _settingsData.fogAnimation = _settings->getValue(FOG_ANIMATION, true).toBool();
-
     }
-
 }
 
 void HanoiTowers::onlineRequest(const QString &userId) {
@@ -306,6 +306,8 @@ void HanoiTowers::handleAcceptUserData(QSharedPointer<LocalUser> data) {
 
         _profile.copyFrom(data.data());
         _settings->setValue(CURRENT_PROFILE_KEY, _profile.getId());
+
+        loadOldSaves();
 
         emit profileChanged();
 
