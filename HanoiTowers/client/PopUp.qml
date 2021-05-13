@@ -16,6 +16,16 @@ Dialog {
     property alias text : textContainer.text
     property var action: function () {}
 
+    header: Label {
+        id: title
+        text: parent.title
+        font.capitalization: Font.AllUppercase
+        font.bold: true
+
+        horizontalAlignment: Qt.AlignHCenter
+        verticalAlignment: Qt.AlignTop
+    }
+
     Label {
         id: textContainer
 
