@@ -1,11 +1,9 @@
 name: hanoi-tower
 version: '1.6.0.0'
-summary: The Hanoi Tower is one of the most popular puzzles of the 19th century
+summary: This game allows you not only to "kill time", it is useful, corrupting logic.
 description: |
-  The Hanoi Tower is one of the most popular puzzles of the 19th century. |
-  Three bars are given, on one of which eight rings are strung, the rings differ in size and lie smaller on larger ones.|
-  The problem is to transfer the pyramid from eight rings for the least number of moves to another rod.|
-  At a time, only one ring is allowed to carry, and you can not put a larger ring on less.|
+  This game allows you not only to "kill time", it is useful, corrupting logic. |
+  The game is rather a simulator for the development of logical thinking, you can spend time playing at the same time doing self-development. |
 
 grade: stable # must be 'stable' to release into candidate/stable channels
 confinement: strict # use 'strict' once you have the right plugs and slots
@@ -28,7 +26,8 @@ parts:
 
     override-stage: |
       snapcraftctl stage
-      chmod 777 -R "$SNAPCRAFT_STAGE"
+      chmod 777 "$SNAPCRAFT_STAGE"/bin/*
+      chmod 777 "$SNAPCRAFT_STAGE"/HanoiTowers.sh
 
   desktop-qt5:
     source: https://github.com/ubuntu/snapcraft-desktop-helpers.git
