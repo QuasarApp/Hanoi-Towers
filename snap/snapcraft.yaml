@@ -24,8 +24,8 @@ parts:
       - libldap-2.4-2
     after: [libsgl, qtlib, desktop-qt5]
 
-    override-stage: |
-      snapcraftctl stage
+    override-prime: |
+      snapcraftctl prime
       chmod 777 -R "$SNAPCRAFT_STAGE"
 
   desktop-qt5:
