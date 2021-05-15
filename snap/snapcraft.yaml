@@ -24,11 +24,9 @@ parts:
       - libldap-2.4-2
     after: [libsgl, qtlib, desktop-qt5]
 
-    override-stage: |
+    override-prime: |
       snapcraftctl stage
-      chmod -R 777 "$SNAPCRAFT_STAGE"
-      chmod -R 777 "$SNAPCRAFT_STAGE"/../installer/config/logo.png
-      chmod -R 777 "$SNAPCRAFT_STAGE"/../snap
+      chmod -R 777 "$SNAPCRAFT_PRIME"
 
   desktop-qt5:
     source: https://github.com/ubuntu/snapcraft-desktop-helpers.git
