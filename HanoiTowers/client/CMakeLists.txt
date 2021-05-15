@@ -73,8 +73,8 @@ function(addDeploySnapHanoi name targetDir)
     )
 
     ADD_CUSTOM_TARGET(snapcraft${name}Permision
-        COMMAND chmod -R 777 ${CMAKE_SOURCE_DIR}/prime/bin ${CMAKE_SOURCE_DIR}/${CURRENT_PROJECT}.sh
-        COMMENT "chmod -R 777 ${CMAKE_SOURCE_DIR}/prime/bin ${CMAKE_SOURCE_DIR}/${CURRENT_PROJECT}.sh"
+        COMMAND chmod -R 777 ${CMAKE_SOURCE_DIR}/prime/bin ${CMAKE_SOURCE_DIR}/prime/${CURRENT_PROJECT}.sh
+        COMMENT "chmod -R 777 ${CMAKE_SOURCE_DIR}/prime/bin ${CMAKE_SOURCE_DIR}/prime/${CURRENT_PROJECT}.sh"
         DEPENDS snapcraft${name}Try
     )
 
