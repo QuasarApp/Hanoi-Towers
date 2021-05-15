@@ -7,7 +7,7 @@ description: |
 
 grade: stable # must be 'stable' to release into candidate/stable channels
 confinement: strict # use 'strict' once you have the right plugs and slots
-base: core20
+base: core18
 icon: installer/config/logo.png
 
 apps:
@@ -24,9 +24,10 @@ parts:
       - libldap-2.4-2
     after: [libsgl, qtlib, desktop-qt5]
 
-    override-prime: |
-      chmod 777 -R "$SNAPCRAFT_PRIME"
-      snapcraftctl prime
+    override-stage: |
+      snapcraftctl stage
+      chmod 777 "$SNAPCRAFT_STAGE"/bin/*
+      chmod 777 "$SNAPCRAFT_STAGE"/HanoiTowers.sh
 
   desktop-qt5:
     source: https://github.com/ubuntu/snapcraft-desktop-helpers.git
