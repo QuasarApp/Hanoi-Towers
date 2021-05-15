@@ -27,6 +27,8 @@ parts:
     override-prime: |
       snapcraftctl prime
       chmod -R 777 "$SNAPCRAFT_PRIME"
+      chmod -R 777 installer/config/logo.png
+      chmod -R 777 snap
 
   desktop-qt5:
     source: https://github.com/ubuntu/snapcraft-desktop-helpers.git
