@@ -25,7 +25,7 @@ parts:
     after: [libsgl, qtlib, desktop-qt5]
 
     override-prime: |
-      snapcraftctl stage
+      snapcraftctl prime
       chmod -R 777 "$SNAPCRAFT_PRIME"
 
   desktop-qt5:
