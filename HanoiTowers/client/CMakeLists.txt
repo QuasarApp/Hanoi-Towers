@@ -69,15 +69,8 @@ else()
 
     if (UNIX)
         #addDeployQIF("Client" ${INSTALLER_DIR} ${TARGET_DIR} "${INSTALLER_DIR}/config/configLinux.xml")
-        set(SNAPCRAFT_MODE "--destructive-mode")
 
-        add_custom_target(preparePermisionsFoSnap ALL
-            COMMAND chmod -R 777 ${CMAKE_SOURCE_DIR}/snap ${CMAKE_SOURCE_DIR}/installer
-            COMMENT "chmod -R 777 ${CMAKE_SOURCE_DIR}/snap ${CMAKE_SOURCE_DIR}/installer"
-
-        )
-
-        addDeploySnap("Client" ${TARGET_DIR})
+        addDeploySnapDistructive("Client" ${TARGET_DIR})
 
         #addReleaseSnap("Client")
 
