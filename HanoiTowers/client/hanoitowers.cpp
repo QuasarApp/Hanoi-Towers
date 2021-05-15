@@ -126,7 +126,7 @@ void HanoiTowers::init() {
 
 void HanoiTowers::loadOldSaves() {
     QFile f(MAIN_SETINGS_FILE);
-    if(f.open(QIODevice::ReadWrite)){
+    if(f.open(QIODevice::ReadOnly)){
         QDataStream stream(&f);
 
         unsigned short lvl;
@@ -145,6 +145,8 @@ void HanoiTowers::loadOldSaves() {
 
         f.close();
         f.remove();
+
+        updateProfile();
     }
 }
 
