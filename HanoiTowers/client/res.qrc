@@ -12,4 +12,7 @@
     <qresource prefix="/sql">
         <file>sql/database.sql</file>
     </qresource>
+    <qresource prefix="/sound">
+        <file alias="blockSound">res/TowerBlockSound_18.wav</file>
+    </qresource>
 </RCC>

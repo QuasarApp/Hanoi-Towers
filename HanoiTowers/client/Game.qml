@@ -10,7 +10,7 @@ import QtQuick 2.15
 import QtQuick.Controls 2.15
 import QtQuick.Dialogs 1.3
 import QtQuick.Layouts 1.15
-
+import QtMultimedia 5.15
 
 Item {
     visible: true
@@ -123,6 +123,8 @@ Item {
     }
 
     function trigered(obj) {
+
+        clickSound.play()
 
         stateWidget.tumbler.visible = false;
         let objectPlate = null;
@@ -247,4 +249,8 @@ Item {
         id: help
     }
 
+    SoundEffect {
+        id: clickSound
+        source: "qrc:/sound/blockSound"
+    }
 }
