@@ -59,8 +59,14 @@ Item {
 
         id: loginPopUp
         lognViewModel: userLogin // exampleLogin - this is inited model in main.cpp
-        width: 20 * fontPoints
-        height: 15 * fontPoints
+        height: 13 * fontMetrics.height
+        width:  15 * fontMetrics.height
+
+        FontMetrics {
+            id: fontMetrics
+            font.capitalization: Font.AllUppercase
+            font.bold: true
+        }
 
         Connections {
             target: backEnd;
