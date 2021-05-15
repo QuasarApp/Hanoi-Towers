@@ -59,14 +59,14 @@ Item {
 
         id: loginPopUp
         lognViewModel: userLogin // exampleLogin - this is inited model in main.cpp
-        height: 6 * fontMetrics.height
-        width:  5 * fontMetrics.height
-
-        TextField {
+        height: 12 * fontMetrics.height
+        width:  15 * fontMetrics.height
+        singleColumn: true
+        FontMetrics {
             id: fontMetrics
-            visible: false
+            font.capitalization: Font.AllUppercase
+            font.bold: true
         }
-
         Connections {
             target: backEnd;
             function onShowOnlinePage () {

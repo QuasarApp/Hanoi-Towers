@@ -167,38 +167,38 @@
         <translation type="vanished">このLVLの最小ステップ： %1</translation>
     </message>
     <message>
-        <location filename="../Game.qml" line="167"/>
-        <location filename="../Game.qml" line="187"/>
+        <location filename="../Game.qml" line="169"/>
+        <location filename="../Game.qml" line="189"/>
         <source>Congratulations! You have passed the level %0</source>
         <translation>おめでとう！ レベル %0 に合格しました</translation>
     </message>
     <message>
-        <location filename="../Game.qml" line="170"/>
+        <location filename="../Game.qml" line="172"/>
         <source>You got &lt;b&gt;%0&lt;/b&gt; points for this level and unlocked the level &lt;b&gt;%1&lt;/b&gt;!</source>
         <translation>あなたが得た &lt;b&gt;%0&lt;/b&gt; このレベルのポイントとレベルのロック解除 &lt;b&gt;%1&lt;/b&gt;!</translation>
     </message>
     <message>
-        <location filename="../Game.qml" line="171"/>
+        <location filename="../Game.qml" line="173"/>
         <source>&lt;br&gt;&lt;br&gt; Totally &lt;b&gt;%2&lt;/b&gt; steps.</source>
         <translation>&lt;br&gt;&lt;br&gt; 完全に &lt;b&gt;%2&lt;/b&gt; ステップ.</translation>
     </message>
     <message>
-        <location filename="../Game.qml" line="172"/>
+        <location filename="../Game.qml" line="174"/>
         <source>&lt;br&gt; The minimum number of steps for this level : &lt;b&gt;%3&lt;/b&gt;</source>
         <translation>&lt;br&gt; このレベルの最小ステップ数 : &lt;b&gt;%3&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../Game.qml" line="190"/>
+        <location filename="../Game.qml" line="192"/>
         <source>You got &lt;b&gt;%0&lt;/b&gt; points for this level!</source>
         <translation>このレベルで &lt;b&gt;%0&lt;/b&gt; ポイント獲得しました！</translation>
     </message>
     <message>
-        <location filename="../Game.qml" line="191"/>
+        <location filename="../Game.qml" line="193"/>
         <source>&lt;br&gt;&lt;br&gt; Totally &lt;b&gt;%1&lt;/b&gt; steps.</source>
         <translation>&lt;br&gt;&lt;br&gt; 完全に &lt;b&gt;%1&lt;/b&gt; ステップ.</translation>
     </message>
     <message>
-        <location filename="../Game.qml" line="192"/>
+        <location filename="../Game.qml" line="194"/>
         <source>&lt;br&gt; The minimum number of steps for this level : &lt;b&gt;%2&lt;/b&gt;</source>
         <translation>&lt;br&gt; このレベルの最小ステップ数 : &lt;b&gt;%2&lt;/b&gt;</translation>
     </message>

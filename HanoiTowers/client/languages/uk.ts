@@ -177,38 +177,38 @@
         <translation type="vanished">Мінімальні кроки для цього рівня: %1</translation>
     </message>
     <message>
-        <location filename="../Game.qml" line="167"/>
-        <location filename="../Game.qml" line="187"/>
+        <location filename="../Game.qml" line="169"/>
+        <location filename="../Game.qml" line="189"/>
         <source>Congratulations! You have passed the level %0</source>
         <translation>Вітаємо! Ви пройшли рівень %0</translation>
     </message>
     <message>
-        <location filename="../Game.qml" line="170"/>
+        <location filename="../Game.qml" line="172"/>
         <source>You got &lt;b&gt;%0&lt;/b&gt; points for this level and unlocked the level &lt;b&gt;%1&lt;/b&gt;!</source>
         <translation>Ви отримали &lt;b&gt;%0&lt;/b&gt; балів за цей рівень і розблокували рівень &lt;b&gt;%1&lt;/b&gt;!</translation>
     </message>
     <message>
-        <location filename="../Game.qml" line="171"/>
+        <location filename="../Game.qml" line="173"/>
         <source>&lt;br&gt;&lt;br&gt; Totally &lt;b&gt;%2&lt;/b&gt; steps.</source>
         <translation>&lt;br&gt;&lt;br&gt;Повністю&lt;b&gt;%2&lt;/b&gt; кроків.</translation>
     </message>
     <message>
-        <location filename="../Game.qml" line="172"/>
+        <location filename="../Game.qml" line="174"/>
         <source>&lt;br&gt; The minimum number of steps for this level : &lt;b&gt;%3&lt;/b&gt;</source>
         <translation>&lt;br&gt; Мінімальна кількість кроків для цього рівня: &lt;b&gt;%3&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../Game.qml" line="190"/>
+        <location filename="../Game.qml" line="192"/>
         <source>You got &lt;b&gt;%0&lt;/b&gt; points for this level!</source>
         <translation>Ви отримали &lt;b&gt;%0&lt;/b&gt; балів за цей рівень!</translation>
     </message>
     <message>
-        <location filename="../Game.qml" line="191"/>
+        <location filename="../Game.qml" line="193"/>
         <source>&lt;br&gt;&lt;br&gt; Totally &lt;b&gt;%1&lt;/b&gt; steps.</source>
         <translation>&lt;br&gt; &lt;br&gt; Повністю &lt;b&gt;%1&lt;/b&gt; кроків.</translation>
     </message>
     <message>
-        <location filename="../Game.qml" line="192"/>
+        <location filename="../Game.qml" line="194"/>
         <source>&lt;br&gt; The minimum number of steps for this level : &lt;b&gt;%2&lt;/b&gt;</source>
         <translation>&lt;br&gt; Мінімальна кількість кроків для цього рівня: &lt;b&gt;%2&lt;/b&gt;</translation>
     </message>
