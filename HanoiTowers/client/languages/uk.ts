@@ -177,38 +177,38 @@
         <translation type="vanished">Мінімальні кроки для цього рівня: %1</translation>
     </message>
     <message>
-        <location filename="../Game.qml" line="167"/>
-        <location filename="../Game.qml" line="187"/>
+        <location filename="../Game.qml" line="169"/>
+        <location filename="../Game.qml" line="189"/>
         <source>Congratulations! You have passed the level %0</source>
         <translation>Вітаємо! Ви пройшли рівень %0</translation>
     </message>
     <message>
-        <location filename="../Game.qml" line="170"/>
+        <location filename="../Game.qml" line="172"/>
         <source>You got &lt;b&gt;%0&lt;/b&gt; points for this level and unlocked the level &lt;b&gt;%1&lt;/b&gt;!</source>
         <translation>Ви отримали &lt;b&gt;%0&lt;/b&gt; балів за цей рівень і розблокували рівень &lt;b&gt;%1&lt;/b&gt;!</translation>
     </message>
     <message>
-        <location filename="../Game.qml" line="171"/>
+        <location filename="../Game.qml" line="173"/>
         <source>&lt;br&gt;&lt;br&gt; Totally &lt;b&gt;%2&lt;/b&gt; steps.</source>
         <translation>&lt;br&gt;&lt;br&gt;Повністю&lt;b&gt;%2&lt;/b&gt; кроків.</translation>
     </message>
     <message>
-        <location filename="../Game.qml" line="172"/>
+        <location filename="../Game.qml" line="174"/>
         <source>&lt;br&gt; The minimum number of steps for this level : &lt;b&gt;%3&lt;/b&gt;</source>
         <translation>&lt;br&gt; Мінімальна кількість кроків для цього рівня: &lt;b&gt;%3&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../Game.qml" line="190"/>
+        <location filename="../Game.qml" line="192"/>
         <source>You got &lt;b&gt;%0&lt;/b&gt; points for this level!</source>
         <translation>Ви отримали &lt;b&gt;%0&lt;/b&gt; балів за цей рівень!</translation>
     </message>
     <message>
-        <location filename="../Game.qml" line="191"/>
+        <location filename="../Game.qml" line="193"/>
         <source>&lt;br&gt;&lt;br&gt; Totally &lt;b&gt;%1&lt;/b&gt; steps.</source>
         <translation>&lt;br&gt; &lt;br&gt; Повністю &lt;b&gt;%1&lt;/b&gt; кроків.</translation>
     </message>
     <message>
-        <location filename="../Game.qml" line="192"/>
+        <location filename="../Game.qml" line="194"/>
         <source>&lt;br&gt; The minimum number of steps for this level : &lt;b&gt;%2&lt;/b&gt;</source>
         <translation>&lt;br&gt; Мінімальна кількість кроків для цього рівня: &lt;b&gt;%2&lt;/b&gt;</translation>
     </message>
@@ -330,32 +330,32 @@
         <translation>Користувач з цим ідентифікатором вже зареєстрований. Якщо ви використовуєте його, будь ласка, увійдіть у форму для входу.</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="440"/>
+        <location filename="../hanoitowers.cpp" line="442"/>
         <source>Create user error</source>
         <translation>Помилка створення користувача</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="441"/>
+        <location filename="../hanoitowers.cpp" line="443"/>
         <source>Failed to create a new user, The name %0 alredy used.</source>
         <translation>Не вдалося створити нового користувача, ім’я %0 вже використовується.</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="472"/>
+        <location filename="../hanoitowers.cpp" line="474"/>
         <source>Remove online error</source>
         <translation>Помилка видалення онлайн даних користувачів</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="472"/>
+        <location filename="../hanoitowers.cpp" line="474"/>
         <source>current profile not online!</source>
         <translation>Поточний профіль офлайн!</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="478"/>
+        <location filename="../hanoitowers.cpp" line="480"/>
         <source>Remove Local user</source>
         <translation>Видалити локального користувача</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="478"/>
+        <location filename="../hanoitowers.cpp" line="480"/>
         <source>Failed to remove the local user data</source>
         <translation>Не вдалося видалити локальні дані користувача</translation>
     </message>
@@ -622,27 +622,27 @@
         <translation>Головне меню</translation>
     </message>
     <message>
-        <location filename="../menu/ToolBarPage.qml" line="72"/>
+        <location filename="../menu/ToolBarPage.qml" line="76"/>
         <source>Welcom to Hanoi Towers </source>
         <translation>Ласкаво просимо до Ханойських веж</translation>
     </message>
     <message>
-        <location filename="../menu/ToolBarPage.qml" line="83"/>
+        <location filename="../menu/ToolBarPage.qml" line="87"/>
         <source>Profiles</source>
         <translation>Профілі</translation>
     </message>
     <message>
-        <location filename="../menu/ToolBarPage.qml" line="95"/>
+        <location filename="../menu/ToolBarPage.qml" line="99"/>
         <source>This are the main settings</source>
         <translation>Це основні налаштування</translation>
     </message>
     <message>
-        <location filename="../menu/ToolBarPage.qml" line="107"/>
+        <location filename="../menu/ToolBarPage.qml" line="111"/>
         <source>About Page</source>
         <translation>Довідка</translation>
     </message>
     <message>
-        <location filename="../menu/ToolBarPage.qml" line="119"/>
+        <location filename="../menu/ToolBarPage.qml" line="123"/>
         <source>World Of Hanoi Towers</source>
         <translation>Світ Ханойських веж</translation>
     </message>

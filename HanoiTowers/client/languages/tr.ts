@@ -175,38 +175,38 @@ Bu seviye için minimum adımlar: %2</translation>
         <translation type="vanished">Bu seviye için minimum adımlar: %1</translation>
     </message>
     <message>
-        <location filename="../Game.qml" line="167"/>
-        <location filename="../Game.qml" line="187"/>
+        <location filename="../Game.qml" line="169"/>
+        <location filename="../Game.qml" line="189"/>
         <source>Congratulations! You have passed the level %0</source>
         <translation>Tebrikler! %0 seviyesini geçtiniz</translation>
     </message>
     <message>
-        <location filename="../Game.qml" line="170"/>
+        <location filename="../Game.qml" line="172"/>
         <source>You got &lt;b&gt;%0&lt;/b&gt; points for this level and unlocked the level &lt;b&gt;%1&lt;/b&gt;!</source>
         <translation>Bu seviye için &lt;b&gt;%0&lt;/b&gt; puan aldınız ve &lt;b&gt;%1&lt;/b&gt; seviyesinin kilidini açtınız!</translation>
     </message>
     <message>
-        <location filename="../Game.qml" line="171"/>
+        <location filename="../Game.qml" line="173"/>
         <source>&lt;br&gt;&lt;br&gt; Totally &lt;b&gt;%2&lt;/b&gt; steps.</source>
         <translation>&lt;br&gt;&lt;br&gt; Tamamen &lt;b&gt;%2&lt;/b&gt; adım.</translation>
     </message>
     <message>
-        <location filename="../Game.qml" line="172"/>
+        <location filename="../Game.qml" line="174"/>
         <source>&lt;br&gt; The minimum number of steps for this level : &lt;b&gt;%3&lt;/b&gt;</source>
         <translation>&lt;br&gt; Bu seviye için minimum adım sayısı : &lt;b&gt;%3&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../Game.qml" line="190"/>
+        <location filename="../Game.qml" line="192"/>
         <source>You got &lt;b&gt;%0&lt;/b&gt; points for this level!</source>
         <translation>Bu seviye için &lt;b&gt;%0&lt;/b&gt; puan aldınız!</translation>
     </message>
     <message>
-        <location filename="../Game.qml" line="191"/>
+        <location filename="../Game.qml" line="193"/>
         <source>&lt;br&gt;&lt;br&gt; Totally &lt;b&gt;%1&lt;/b&gt; steps.</source>
         <translation>&lt;br&gt;&lt;br&gt; Tamamen &lt;b&gt;%1&lt;/b&gt; adım.</translation>
     </message>
     <message>
-        <location filename="../Game.qml" line="192"/>
+        <location filename="../Game.qml" line="194"/>
         <source>&lt;br&gt; The minimum number of steps for this level : &lt;b&gt;%2&lt;/b&gt;</source>
         <translation>&lt;br&gt; Bu seviye için minimum adım sayısı : &lt;b&gt;%2&lt;/b&gt;</translation>
     </message>
@@ -328,32 +328,32 @@ Bu seviye için minimum adımlar: %2</translation>
         <translation>Bu kimliğe sahip kullanıcı zaten kayıtlı. Eğer öyleyse, lütfen giriş formunu kullanın.</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="440"/>
+        <location filename="../hanoitowers.cpp" line="442"/>
         <source>Create user error</source>
         <translation>Kullanıcı hatası oluştur</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="441"/>
+        <location filename="../hanoitowers.cpp" line="443"/>
         <source>Failed to create a new user, The name %0 alredy used.</source>
         <translation>Yeni bir kullanıcı oluşturulamadı, %0 adı kullanıldı.</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="472"/>
+        <location filename="../hanoitowers.cpp" line="474"/>
         <source>Remove online error</source>
         <translation>Çevrimiçi kullanıcı verilerini kaldırma hatası</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="472"/>
+        <location filename="../hanoitowers.cpp" line="474"/>
         <source>current profile not online!</source>
         <translation>Mevcut profil çevrimdışı!</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="478"/>
+        <location filename="../hanoitowers.cpp" line="480"/>
         <source>Remove Local user</source>
         <translation>Yerel kullanıcıyı kaldır</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="478"/>
+        <location filename="../hanoitowers.cpp" line="480"/>
         <source>Failed to remove the local user data</source>
         <translation>Yerel kullanıcı verileri kaldırılamadı</translation>
     </message>
@@ -620,27 +620,27 @@ Bu seviye için minimum adımlar: %2</translation>
         <translation>Ana menüye dön</translation>
     </message>
     <message>
-        <location filename="../menu/ToolBarPage.qml" line="72"/>
+        <location filename="../menu/ToolBarPage.qml" line="76"/>
         <source>Welcom to Hanoi Towers </source>
         <translation>Hanoi Kuleleri&apos;ne hoş geldiniz </translation>
     </message>
     <message>
-        <location filename="../menu/ToolBarPage.qml" line="83"/>
+        <location filename="../menu/ToolBarPage.qml" line="87"/>
         <source>Profiles</source>
         <translation>Profiller</translation>
     </message>
     <message>
-        <location filename="../menu/ToolBarPage.qml" line="95"/>
+        <location filename="../menu/ToolBarPage.qml" line="99"/>
         <source>This are the main settings</source>
         <translation>Bu ana ayarlar</translation>
     </message>
     <message>
-        <location filename="../menu/ToolBarPage.qml" line="107"/>
+        <location filename="../menu/ToolBarPage.qml" line="111"/>
         <source>About Page</source>
         <translation>Sayfa Hakkında</translation>
     </message>
     <message>
-        <location filename="../menu/ToolBarPage.qml" line="119"/>
+        <location filename="../menu/ToolBarPage.qml" line="123"/>
         <source>World Of Hanoi Towers</source>
         <translation>Hanoi Kuleleri Dünyası</translation>
     </message>
