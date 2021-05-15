@@ -59,7 +59,9 @@ Item {
 
         id: loginPopUp
         lognViewModel: userLogin // exampleLogin - this is inited model in main.cpp
-        width: 7 * controlPtMaterial
+        width: 20 * fontPoints
+        height: 15 * fontPoints
+
         Connections {
             target: backEnd;
             function onShowOnlinePage () {
