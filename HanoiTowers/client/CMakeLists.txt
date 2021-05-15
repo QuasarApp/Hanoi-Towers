@@ -41,6 +41,72 @@ set(LANGS ${CMAKE_CURRENT_SOURCE_DIR}/languages/en.ts
 
 prepareQM(${CURRENT_PROJECT} ${CMAKE_CURRENT_SOURCE_DIR} "${LANGS}")
 
+function(addDeploySnapHanoi name targetDir)
+
+    if(TARGET snap${name})
+        message("the snap${name} target already created!")
+        return()
+
+    endif(TARGET snap${name})
+
+    find_program(SNAPCRAFT_EXE "snapcraft")
+
+    if(NOT EXISTS ${SNAPCRAFT_EXE})
+        message("please install the snapcraft before deploy this project! Use: sudo snap install snapcraft --classic")
+        return()
+    endif(NOT EXISTS ${SNAPCRAFT_EXE})
+
+    ADD_CUSTOM_TARGET(
+        snapClear${name}
+        COMMAND snapcraft clean ${SNAPCRAFT_MODE}
+        COMMENT "clear snap: snapcraft clean ${SNAPCRAFT_MODE}"
+        WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
+
+    )
+
+    ADD_CUSTOM_TARGET(
+        snapcraft${name}Try
+        COMMAND snapcraft ${SNAPCRAFT_MODE}
+        COMMENT "create snap: snapcraft ${SNAPCRAFT_MODE}"
+        WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
+        DEPENDS deploy${name} snapClear${name}
+    )
+
+    ADD_CUSTOM_TARGET(snapcraft${name}Permision
+        COMMAND chmod -R 777 ${CMAKE_SOURCE_DIR}/prime/bin ${CMAKE_SOURCE_DIR}/${CURRENT_PROJECT}.sh
+        COMMENT "chmod -R 777 ${CMAKE_SOURCE_DIR}/prime/bin ${CMAKE_SOURCE_DIR}/${CURRENT_PROJECT}.sh"
+        DEPENDS snapcraft${name}Try
+    )
+
+    ADD_CUSTOM_TARGET(
+        snapcraft${name}
+        COMMAND snapcraft ${SNAPCRAFT_MODE}
+        COMMENT "create snap: snapcraft ${SNAPCRAFT_MODE}"
+        WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
+        DEPENDS snapcraft${name}Permision
+    )
+
+    ADD_CUSTOM_TARGET(
+        snapcraftCopy${name}
+        COMMAND ${CMAKE_COMMAND} -E copy *.snap ${targetDir}
+        COMMENT "copy snap: ${CMAKE_COMMAND} -E copy *.snap ${targetDir}"
+        WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
+        DEPENDS snapcraft${name}
+
+    )
+
+    ADD_CUSTOM_TARGET(
+        snap${name}
+        COMMENT "deploy snap${name}"
+        DEPENDS snapcraftCopy${name}
+
+    )
+
+    add_dependencies(deploy snap${name})
+
+
+endfunction()
+
 if (ANDROID)
     set(HANOI_EXTRA_LIBS Heart
                          ${PROJECT_NAME}Protockol
@@ -70,7 +136,7 @@ else()
     if (UNIX)
         #addDeployQIF("Client" ${INSTALLER_DIR} ${TARGET_DIR} "${INSTALLER_DIR}/config/configLinux.xml")
 
-        addDeploySnapDistructive("Client" ${TARGET_DIR})
+        addDeploySnapHanoi("Client" ${TARGET_DIR})
 
         #addReleaseSnap("Client")
 
