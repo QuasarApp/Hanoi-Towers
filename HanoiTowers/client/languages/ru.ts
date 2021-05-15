@@ -327,32 +327,32 @@
         <translation>Пользователь с этим id уже зарегистрирован. Если это вы, пожалуйста используйте форму входа.</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="440"/>
+        <location filename="../hanoitowers.cpp" line="442"/>
         <source>Create user error</source>
         <translation>Ошибка создания пользователя</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="441"/>
+        <location filename="../hanoitowers.cpp" line="443"/>
         <source>Failed to create a new user, The name %0 alredy used.</source>
         <translation>Не удалось создать пользователя. Данное имя %0 уже используется</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="472"/>
+        <location filename="../hanoitowers.cpp" line="474"/>
         <source>Remove online error</source>
         <translation>Ошибка удаления онлайн аккаунта</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="472"/>
+        <location filename="../hanoitowers.cpp" line="474"/>
         <source>current profile not online!</source>
         <translation>Текущий профиль не в сети!</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="478"/>
+        <location filename="../hanoitowers.cpp" line="480"/>
         <source>Remove Local user</source>
         <translation>Удалить локального.пользователя</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="478"/>
+        <location filename="../hanoitowers.cpp" line="480"/>
         <source>Failed to remove the local user data</source>
         <translation>Ошибка удаления локального пользователя</translation>
     </message>
@@ -619,27 +619,27 @@
         <translation>Вернутся в главное меню</translation>
     </message>
     <message>
-        <location filename="../menu/ToolBarPage.qml" line="72"/>
+        <location filename="../menu/ToolBarPage.qml" line="76"/>
         <source>Welcom to Hanoi Towers </source>
         <translation>Добро пожаловать в Hanoi Towers </translation>
     </message>
     <message>
-        <location filename="../menu/ToolBarPage.qml" line="83"/>
+        <location filename="../menu/ToolBarPage.qml" line="87"/>
         <source>Profiles</source>
         <translation>Профили</translation>
     </message>
     <message>
-        <location filename="../menu/ToolBarPage.qml" line="95"/>
+        <location filename="../menu/ToolBarPage.qml" line="99"/>
         <source>This are the main settings</source>
         <translation>Основные настройки</translation>
     </message>
     <message>
-        <location filename="../menu/ToolBarPage.qml" line="107"/>
+        <location filename="../menu/ToolBarPage.qml" line="111"/>
         <source>About Page</source>
         <translation>Справка</translation>
     </message>
     <message>
-        <location filename="../menu/ToolBarPage.qml" line="119"/>
+        <location filename="../menu/ToolBarPage.qml" line="123"/>
         <source>World Of Hanoi Towers</source>
         <translation>Мир Ханойских башен</translation>
     </message>
