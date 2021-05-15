@@ -59,13 +59,12 @@ Item {
 
         id: loginPopUp
         lognViewModel: userLogin // exampleLogin - this is inited model in main.cpp
-        height: 13 * fontMetrics.height
-        width:  15 * fontMetrics.height
+        height: 6 * fontMetrics.height
+        width:  5 * fontMetrics.height
 
-        FontMetrics {
+        TextField {
             id: fontMetrics
-            font.capitalization: Font.AllUppercase
-            font.bold: true
+            visible: false
         }
 
         Connections {
