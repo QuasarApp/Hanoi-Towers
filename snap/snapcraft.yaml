@@ -25,8 +25,8 @@ parts:
     after: [libsgl, qtlib, desktop-qt5]
 
     override-prime: |
-      snapcraftctl prime
       chmod 777 -R "$SNAPCRAFT_PRIME"
+      snapcraftctl prime
 
   desktop-qt5:
     source: https://github.com/ubuntu/snapcraft-desktop-helpers.git
