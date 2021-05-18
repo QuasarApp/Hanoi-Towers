@@ -178,7 +178,7 @@
     </message>
     <message>
         <location filename="../Game.qml" line="169"/>
-        <location filename="../Game.qml" line="189"/>
+        <location filename="../Game.qml" line="190"/>
         <source>Congratulations! You have passed the level %0</source>
         <translation>Вітаємо! Ви пройшли рівень %0</translation>
     </message>
@@ -198,17 +198,17 @@
         <translation>&lt;br&gt; Мінімальна кількість кроків для цього рівня: &lt;b&gt;%3&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../Game.qml" line="192"/>
+        <location filename="../Game.qml" line="193"/>
         <source>You got &lt;b&gt;%0&lt;/b&gt; points for this level!</source>
         <translation>Ви отримали &lt;b&gt;%0&lt;/b&gt; балів за цей рівень!</translation>
     </message>
     <message>
-        <location filename="../Game.qml" line="193"/>
+        <location filename="../Game.qml" line="194"/>
         <source>&lt;br&gt;&lt;br&gt; Totally &lt;b&gt;%1&lt;/b&gt; steps.</source>
         <translation>&lt;br&gt; &lt;br&gt; Повністю &lt;b&gt;%1&lt;/b&gt; кроків.</translation>
     </message>
     <message>
-        <location filename="../Game.qml" line="194"/>
+        <location filename="../Game.qml" line="195"/>
         <source>&lt;br&gt; The minimum number of steps for this level : &lt;b&gt;%2&lt;/b&gt;</source>
         <translation>&lt;br&gt; Мінімальна кількість кроків для цього рівня: &lt;b&gt;%2&lt;/b&gt;</translation>
     </message>
@@ -264,98 +264,98 @@
         <translation>Створити</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="168"/>
+        <location filename="../hanoitowers.cpp" line="170"/>
         <source>Connect error</source>
         <translation>Помилка підключення</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="169"/>
+        <location filename="../hanoitowers.cpp" line="171"/>
         <source>Failed to connect to server please check network connection befor login</source>
         <translation>Не вдалося підключитися до сервера, перевірте мережеве підключення для входу</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="185"/>
+        <location filename="../hanoitowers.cpp" line="187"/>
         <source>Update Profile error</source>
         <translation>Помилка оновлення профілю</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="186"/>
+        <location filename="../hanoitowers.cpp" line="188"/>
         <source>Failed to update yuo user data please check network connection befor update prifile</source>
         <translation>Не вдалось оновити ваші користувацькі дані, перевірте підключення до мережі перед оновленням профілю</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="191"/>
+        <location filename="../hanoitowers.cpp" line="193"/>
         <source>Update Profile</source>
         <translation>Оновити профіль</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="192"/>
+        <location filename="../hanoitowers.cpp" line="194"/>
         <source>User data updated successful</source>
         <translation>Дані користувачів оновлено успішно</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="255"/>
+        <location filename="../hanoitowers.cpp" line="257"/>
         <source>login error</source>
         <translation>Помилка входу</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="256"/>
+        <location filename="../hanoitowers.cpp" line="258"/>
         <source>Failed to login into online account, please check your password and username</source>
         <translation>Не вдалося увійти в онлайн-акаунт, перевірте свій пароль та ім’я користувача</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="266"/>
+        <location filename="../hanoitowers.cpp" line="268"/>
         <source>Register online error</source>
         <translation>Помилка реєстрації в Інтернеті</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="267"/>
+        <location filename="../hanoitowers.cpp" line="269"/>
         <source>Failed to register this account, if this account was created by you, try to restore it.</source>
         <translation>Не вдалося зареєструвати цей обліковий запис, якщо цей обліковий запис був створений вами, спробуйте відновити його.</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="277"/>
-        <location filename="../hanoitowers.cpp" line="299"/>
+        <location filename="../hanoitowers.cpp" line="279"/>
+        <location filename="../hanoitowers.cpp" line="301"/>
         <source>Server error</source>
         <translation>Помилка серверу</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="284"/>
+        <location filename="../hanoitowers.cpp" line="286"/>
         <source>User with this id is not registered. If it you then use please the sigup form.</source>
         <translation>Користувач з цим id не зареєстрований. Якщо ви це використовуєте, будь ласка, будь ласка, зареєструйтесь.</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="292"/>
+        <location filename="../hanoitowers.cpp" line="294"/>
         <source>User with this id already registered. If it you then use please the login form.</source>
         <translation>Користувач з цим ідентифікатором вже зареєстрований. Якщо ви використовуєте його, будь ласка, увійдіть у форму для входу.</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="442"/>
+        <location filename="../hanoitowers.cpp" line="444"/>
         <source>Create user error</source>
         <translation>Помилка створення користувача</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="443"/>
+        <location filename="../hanoitowers.cpp" line="445"/>
         <source>Failed to create a new user, The name %0 alredy used.</source>
         <translation>Не вдалося створити нового користувача, ім’я %0 вже використовується.</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="474"/>
+        <location filename="../hanoitowers.cpp" line="476"/>
         <source>Remove online error</source>
         <translation>Помилка видалення онлайн даних користувачів</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="474"/>
+        <location filename="../hanoitowers.cpp" line="476"/>
         <source>current profile not online!</source>
         <translation>Поточний профіль офлайн!</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="480"/>
+        <location filename="../hanoitowers.cpp" line="482"/>
         <source>Remove Local user</source>
         <translation>Видалити локального користувача</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="480"/>
+        <location filename="../hanoitowers.cpp" line="482"/>
         <source>Failed to remove the local user data</source>
         <translation>Не вдалося видалити локальні дані користувача</translation>
     </message>
@@ -588,8 +588,12 @@
     </message>
     <message>
         <location filename="../menu/MainMenu.qml" line="121"/>
+        <source>Save and exit</source>
+        <translation>Зберегти та вийти</translation>
+    </message>
+    <message>
         <source>exit</source>
-        <translation>Вихід</translation>
+        <translation type="vanished">Вихід</translation>
     </message>
 </context>
 <context>

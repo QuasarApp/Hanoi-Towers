@@ -22,7 +22,7 @@ ApplicationWindow {
     title: qsTr("Hanoi Towers")
     property var admodbanner: null
 
-    function createSpriteObjects(url, parent) {
+    function createAdBobObjects(url, parent) {
         if (!(backEnd.isAndroid() && backEnd.isAdMod())) {
             return null;
         }
@@ -30,14 +30,18 @@ ApplicationWindow {
         return component.createObject(parent);
     }
 
-    Component.onCompleted:  {
+    function showAdMobBanner() {
+        if (admodbanner) {
+            admodbanner.load()
+        }
+    }
 
-        const obj = createSpriteObjects("qrc:/admod/AdMobInterstitialAndroid.qml", this);
+    Component.onCompleted:  {
+        const obj = createAdBobObjects("qrc:/admod/AdMobInterstitialAndroid.qml", this);
         if (obj) {
             admodbanner = obj;
-            admodbanner.load()
-            admodbanner.show();
         }
+
     }
 
     header: Menu.ToolBarPage {
@@ -65,17 +69,6 @@ ApplicationWindow {
         state: "MainMenu"
         anchors.fill: parent
         interactive: false
-
-        onCurrentIndexChanged: {
-            if (currentIndex)
-                return;
-
-            if (admodbanner) {
-                admodbanner.load()
-                admodbanner.show();
-
-            }
-        }
 
         background: Item {}
 

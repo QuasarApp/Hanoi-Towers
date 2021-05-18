@@ -144,7 +144,7 @@ void HanoiTowers::loadOldSaves() {
 
 
         f.close();
-        f.remove();
+        QFile::remove(MAIN_SETINGS_FILE);
 
         updateProfile();
     }
