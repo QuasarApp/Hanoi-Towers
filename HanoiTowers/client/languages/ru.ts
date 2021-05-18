@@ -175,7 +175,7 @@
     </message>
     <message>
         <location filename="../Game.qml" line="169"/>
-        <location filename="../Game.qml" line="189"/>
+        <location filename="../Game.qml" line="190"/>
         <source>Congratulations! You have passed the level %0</source>
         <translation>Поздравляем! Вы прошли уровень %0</translation>
     </message>
@@ -195,17 +195,17 @@
         <translation>&lt;br&gt; Минимально количество ходов для уровня: &lt;b&gt;%3&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../Game.qml" line="192"/>
+        <location filename="../Game.qml" line="193"/>
         <source>You got &lt;b&gt;%0&lt;/b&gt; points for this level!</source>
         <translation>Вы набрали &lt;b&gt;%0&lt;/b&gt; баллов за этот уровень!</translation>
     </message>
     <message>
-        <location filename="../Game.qml" line="193"/>
+        <location filename="../Game.qml" line="194"/>
         <source>&lt;br&gt;&lt;br&gt; Totally &lt;b&gt;%1&lt;/b&gt; steps.</source>
         <translation>&lt;br&gt;&lt;br&gt; Всего &lt;b&gt;%1&lt;/b&gt; ходов.</translation>
     </message>
     <message>
-        <location filename="../Game.qml" line="194"/>
+        <location filename="../Game.qml" line="195"/>
         <source>&lt;br&gt; The minimum number of steps for this level : &lt;b&gt;%2&lt;/b&gt;</source>
         <translation>&lt;br&gt; Минимальное количиство ходов для уровня : &lt;b&gt;%2&lt;/b&gt;</translation>
     </message>
@@ -261,98 +261,98 @@
         <translation>Создать</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="168"/>
+        <location filename="../hanoitowers.cpp" line="170"/>
         <source>Connect error</source>
         <translation>Ошибка подключения</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="169"/>
+        <location filename="../hanoitowers.cpp" line="171"/>
         <source>Failed to connect to server please check network connection befor login</source>
         <translation>Ошибка подключения к серверу, пожалуйста проверьте интернет соединение перед входом</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="185"/>
+        <location filename="../hanoitowers.cpp" line="187"/>
         <source>Update Profile error</source>
         <translation>Ошибка обновления профиля</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="186"/>
+        <location filename="../hanoitowers.cpp" line="188"/>
         <source>Failed to update yuo user data please check network connection befor update prifile</source>
         <translation>Ошибка обновления данных пользователя проверьте соединение перед обновлением</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="191"/>
+        <location filename="../hanoitowers.cpp" line="193"/>
         <source>Update Profile</source>
         <translation>Обновить профиль</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="192"/>
+        <location filename="../hanoitowers.cpp" line="194"/>
         <source>User data updated successful</source>
         <translation>Данные пользователя обновлены</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="255"/>
+        <location filename="../hanoitowers.cpp" line="257"/>
         <source>login error</source>
         <translation>Ошибка входа</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="256"/>
+        <location filename="../hanoitowers.cpp" line="258"/>
         <source>Failed to login into online account, please check your password and username</source>
         <translation>Ошибка входа в онлайн аккаунт, пожалуйста проверте свой логин и пароль</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="266"/>
+        <location filename="../hanoitowers.cpp" line="268"/>
         <source>Register online error</source>
         <translation>Ошибка регистрации</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="267"/>
+        <location filename="../hanoitowers.cpp" line="269"/>
         <source>Failed to register this account, if this account was created by you, try to restore it.</source>
         <translation>Не удалось зарегистрировать аккаунт, если этот аккаунт был создан вами попробуйте восстановить его.</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="277"/>
-        <location filename="../hanoitowers.cpp" line="299"/>
+        <location filename="../hanoitowers.cpp" line="279"/>
+        <location filename="../hanoitowers.cpp" line="301"/>
         <source>Server error</source>
         <translation>Ошибка сервера</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="284"/>
+        <location filename="../hanoitowers.cpp" line="286"/>
         <source>User with this id is not registered. If it you then use please the sigup form.</source>
         <translation>Пользователь с этим id не зарегистрирован. Пожалуйста, заполните форму регистрации.</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="292"/>
+        <location filename="../hanoitowers.cpp" line="294"/>
         <source>User with this id already registered. If it you then use please the login form.</source>
         <translation>Пользователь с этим id уже зарегистрирован. Если это вы, пожалуйста используйте форму входа.</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="442"/>
+        <location filename="../hanoitowers.cpp" line="444"/>
         <source>Create user error</source>
         <translation>Ошибка создания пользователя</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="443"/>
+        <location filename="../hanoitowers.cpp" line="445"/>
         <source>Failed to create a new user, The name %0 alredy used.</source>
         <translation>Не удалось создать пользователя. Данное имя %0 уже используется</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="474"/>
+        <location filename="../hanoitowers.cpp" line="476"/>
         <source>Remove online error</source>
         <translation>Ошибка удаления онлайн аккаунта</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="474"/>
+        <location filename="../hanoitowers.cpp" line="476"/>
         <source>current profile not online!</source>
         <translation>Текущий профиль не в сети!</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="480"/>
+        <location filename="../hanoitowers.cpp" line="482"/>
         <source>Remove Local user</source>
         <translation>Удалить локального.пользователя</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="480"/>
+        <location filename="../hanoitowers.cpp" line="482"/>
         <source>Failed to remove the local user data</source>
         <translation>Ошибка удаления локального пользователя</translation>
     </message>
@@ -586,7 +586,7 @@
     <message>
         <location filename="../menu/MainMenu.qml" line="121"/>
         <source>Save and exit</source>
-        <translation type="unfinished"></translation>
+        <translation>Сохранить и выйти</translation>
     </message>
     <message>
         <source>exit</source>
