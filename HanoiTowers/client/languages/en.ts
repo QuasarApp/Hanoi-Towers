@@ -540,8 +540,12 @@
     </message>
     <message>
         <location filename="../menu/MainMenu.qml" line="121"/>
+        <source>Save and exit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>exit</source>
-        <translation>Exit</translation>
+        <translation type="vanished">Exit</translation>
     </message>
 </context>
 <context>

@@ -582,8 +582,12 @@
     </message>
     <message>
         <location filename="../menu/MainMenu.qml" line="121"/>
+        <source>Save and exit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>exit</source>
-        <translation>出口</translation>
+        <translation type="vanished">出口</translation>
     </message>
 </context>
 <context>
