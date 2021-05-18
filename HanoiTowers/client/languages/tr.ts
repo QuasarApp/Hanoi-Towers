@@ -587,7 +587,7 @@ Bu seviye için minimum adımlar: %2</translation>
     <message>
         <location filename="../menu/MainMenu.qml" line="121"/>
         <source>Save and exit</source>
-        <translation type="unfinished"></translation>
+        <translation>Kaydet ve çık</translation>
     </message>
     <message>
         <source>exit</source>
