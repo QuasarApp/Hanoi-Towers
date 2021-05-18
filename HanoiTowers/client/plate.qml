@@ -46,7 +46,7 @@ Rectangle {
             id: mask;
             fillMode: Image.PreserveAspectCrop
             source: "/textures/res/fog.png"
-            sourceSize: Qt.size(parent.width, parent.height)
+//            sourceSize: Qt.size(parent.width, parent.height)
             visible: true
             opacity: 0.2
             anchors.fill: parent;
