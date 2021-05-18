@@ -8,3 +8,12 @@
 - Oyuncu kayıtları tablosuna girmenize izin veren çevrimiçi bir kayıt sistemi tanıtıldı
 - mevcut oyun oturumunun ilerlemesinin kaydedilmesi eklendi
 - mevcut oyun sonucunzun ilerlemesini buluta kaydetme yeteneği eklendi
+
+
+# **Hanoi Kuleleri** *v1.6.0.2*
+
+## Değişiklikler:
+- Ana menüde sabit performans.
+- Geçiş seviyeleri arasındaki performans düzeltildi.
+- 0 seviye hatası düzeltildi.
+- Çeviriler güncellemesi.
