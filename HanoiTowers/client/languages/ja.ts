@@ -320,32 +320,32 @@
         <translation>このIDのユーザーはすでに登録されています。 それを使用する場合は、ログインフォームを使用してください。</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="440"/>
+        <location filename="../hanoitowers.cpp" line="442"/>
         <source>Create user error</source>
         <translation>ユーザーエラーの作成</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="441"/>
+        <location filename="../hanoitowers.cpp" line="443"/>
         <source>Failed to create a new user, The name %0 alredy used.</source>
         <translation>新しいユーザーの作成に失敗しました。名前 %0 はすでに使用されています。</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="472"/>
+        <location filename="../hanoitowers.cpp" line="474"/>
         <source>Remove online error</source>
         <translation>オンラインユーザーデータの削除中にエラーが発生しました</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="472"/>
+        <location filename="../hanoitowers.cpp" line="474"/>
         <source>current profile not online!</source>
         <translation>現在のプロファイルはオフラインです！</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="478"/>
+        <location filename="../hanoitowers.cpp" line="480"/>
         <source>Remove Local user</source>
         <translation>ローカルユーザーを削除する</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="478"/>
+        <location filename="../hanoitowers.cpp" line="480"/>
         <source>Failed to remove the local user data</source>
         <translation>ローカルユーザーデータの削除に失敗しました</translation>
     </message>
@@ -582,8 +582,12 @@
     </message>
     <message>
         <location filename="../menu/MainMenu.qml" line="121"/>
+        <source>Save and exit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>exit</source>
-        <translation>出口</translation>
+        <translation type="vanished">出口</translation>
     </message>
 </context>
 <context>
@@ -616,27 +620,27 @@
         <translation>メインメニューへ戻る</translation>
     </message>
     <message>
-        <location filename="../menu/ToolBarPage.qml" line="72"/>
+        <location filename="../menu/ToolBarPage.qml" line="76"/>
         <source>Welcom to Hanoi Towers </source>
         <translation>ハノイタワー</translation>
     </message>
     <message>
-        <location filename="../menu/ToolBarPage.qml" line="83"/>
+        <location filename="../menu/ToolBarPage.qml" line="87"/>
         <source>Profiles</source>
         <translation>プロファイル</translation>
     </message>
     <message>
-        <location filename="../menu/ToolBarPage.qml" line="95"/>
+        <location filename="../menu/ToolBarPage.qml" line="99"/>
         <source>This are the main settings</source>
         <translation>これはメインの設定です</translation>
     </message>
     <message>
-        <location filename="../menu/ToolBarPage.qml" line="107"/>
+        <location filename="../menu/ToolBarPage.qml" line="111"/>
         <source>About Page</source>
         <translation>ページに関して</translation>
     </message>
     <message>
-        <location filename="../menu/ToolBarPage.qml" line="119"/>
+        <location filename="../menu/ToolBarPage.qml" line="123"/>
         <source>World Of Hanoi Towers</source>
         <translation>ハノイタワーズワールド</translation>
     </message>

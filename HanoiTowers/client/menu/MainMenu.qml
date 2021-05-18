@@ -118,7 +118,7 @@ Page {
                 Layout.alignment: Qt.AlignCenter
                 Layout.fillWidth: true
 
-                text: qsTr("exit");
+                text: qsTr("Save and exit");
                 onClicked: {
                     Qt.quit();
                 }

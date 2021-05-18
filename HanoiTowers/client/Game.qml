@@ -177,6 +177,7 @@ Item {
             popUp.open()
 
             const action = function () {
+                showAdMobBanner()
                 stateData.unlockNextLvl();
                 start(stateData.lvl)
             }
@@ -197,7 +198,9 @@ Item {
             popUp.open()
 
             const action = function () {
+                showAdMobBanner()
                 start(++stateWidget.tumbler.spin.value)
+
             }
 
             popUp.action = action;
