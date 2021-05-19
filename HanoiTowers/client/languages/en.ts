@@ -231,103 +231,103 @@
         <translation type="obsolete">Create new user</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="77"/>
+        <location filename="../hanoitowers.cpp" line="78"/>
         <source>Create</source>
         <translation>Create</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="170"/>
+        <location filename="../hanoitowers.cpp" line="172"/>
         <source>Connect error</source>
         <translation>Connection error</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="171"/>
+        <location filename="../hanoitowers.cpp" line="173"/>
         <source>Failed to connect to server please check network connection befor login</source>
         <translation>Failed to connect to server please check network connection befor login</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="187"/>
+        <location filename="../hanoitowers.cpp" line="189"/>
         <source>Update Profile error</source>
         <translation>Update Profile error</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="188"/>
+        <location filename="../hanoitowers.cpp" line="190"/>
         <source>Failed to update yuo user data please check network connection befor update prifile</source>
         <translation>Failed to update you user data please check network connection before update profile</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="193"/>
+        <location filename="../hanoitowers.cpp" line="195"/>
         <source>Update Profile</source>
         <translation>Update Profile</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="194"/>
+        <location filename="../hanoitowers.cpp" line="196"/>
         <source>User data updated successful</source>
         <translation>User data updated successful</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="257"/>
+        <location filename="../hanoitowers.cpp" line="259"/>
         <source>login error</source>
         <translation>Login error</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="258"/>
+        <location filename="../hanoitowers.cpp" line="260"/>
         <source>Failed to login into online account, please check your password and username</source>
         <translation>Failed to login into online account, please check your password and username</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="268"/>
+        <location filename="../hanoitowers.cpp" line="270"/>
         <source>Register online error</source>
         <translation>Register online error</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="269"/>
+        <location filename="../hanoitowers.cpp" line="271"/>
         <source>Failed to register this account, if this account was created by you, try to restore it.</source>
         <translation>Failed to register this account, if this account was created by you, try to restore it.</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="279"/>
-        <location filename="../hanoitowers.cpp" line="301"/>
+        <location filename="../hanoitowers.cpp" line="281"/>
+        <location filename="../hanoitowers.cpp" line="303"/>
         <source>Server error</source>
         <translation>Server error</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="286"/>
+        <location filename="../hanoitowers.cpp" line="288"/>
         <source>User with this id is not registered. If it you then use please the sigup form.</source>
         <translation>User with this id is not registered. If it you then use please the sigup form.</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="294"/>
+        <location filename="../hanoitowers.cpp" line="296"/>
         <source>User with this id already registered. If it you then use please the login form.</source>
         <translation>User with this id already registered. If it you then use please the login form.</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="444"/>
+        <location filename="../hanoitowers.cpp" line="446"/>
         <source>Create user error</source>
         <translation>User create error</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="445"/>
+        <location filename="../hanoitowers.cpp" line="447"/>
         <source>Failed to create a new user, The name %0 alredy used.</source>
         <translation>Failed to create a new user, This name %0 alredy used.</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="476"/>
+        <location filename="../hanoitowers.cpp" line="478"/>
         <source>Remove online error</source>
         <translation>Remove online error</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="476"/>
+        <location filename="../hanoitowers.cpp" line="478"/>
         <source>current profile not online!</source>
         <translation>Current profile is offline!</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="482"/>
+        <location filename="../hanoitowers.cpp" line="484"/>
         <source>Remove Local user</source>
         <translation>Remove Local user</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="482"/>
+        <location filename="../hanoitowers.cpp" line="484"/>
         <source>Failed to remove the local user data</source>
         <translation>Failed to remove the local user data</translation>
     </message>
@@ -553,6 +553,42 @@
     <message>
         <source>Message</source>
         <translation type="vanished">Message</translation>
+    </message>
+</context>
+<context>
+    <name>Premium</name>
+    <message>
+        <location filename="../menu/Premium.qml" line="21"/>
+        <source>Tired of ads?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../menu/Premium.qml" line="30"/>
+        <source>Especially for you, we have a premium version without ads. Nothing else will stop you from completing the levels!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../menu/Premium.qml" line="40"/>
+        <source>Get Premium Hanoi towers</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PremiumThanks</name>
+    <message>
+        <location filename="../menu/PremiumThanks.qml" line="21"/>
+        <source>Thanks for your support!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../menu/PremiumThanks.qml" line="30"/>
+        <source>You are now our premium user and we won&apos;t dare bother you with ads anymore.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../menu/PremiumThanks.qml" line="41"/>
+        <source>Do not show again </source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

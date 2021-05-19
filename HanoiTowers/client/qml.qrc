@@ -23,6 +23,9 @@
         <file>Background.qml</file>
         <file>HelpPage.qml</file>
         <file>admod/AdMobInterstitialAndroid.qml</file>
+        <file>menu/Premium.qml</file>
+        <file>menu/PremiumThanks.qml</file>
+        <file>menu/PremiumLoader.qml</file>
     </qresource>
     <qresource prefix="/textures">
         <file>res/fogBack.png</file>
@@ -30,8 +33,8 @@
         <file>res/green.png</file>
     </qresource>
     <qresource prefix="/img">
-        <file alias="Help">res/help.png</file>
         <file alias="DefaultAvatar">res/DefaultAvatar.png</file>
+        <file alias="premium">res/HanoiTowers_premium_logo.png</file>
     </qresource>
     <qresource prefix="/languages">
         <file>languages/ru.qm</file>
