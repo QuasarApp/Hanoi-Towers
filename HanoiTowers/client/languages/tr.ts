@@ -176,7 +176,7 @@ Bu seviye için minimum adımlar: %2</translation>
     </message>
     <message>
         <location filename="../Game.qml" line="169"/>
-        <location filename="../Game.qml" line="190"/>
+        <location filename="../Game.qml" line="189"/>
         <source>Congratulations! You have passed the level %0</source>
         <translation>Tebrikler! %0 seviyesini geçtiniz</translation>
     </message>
@@ -196,17 +196,17 @@ Bu seviye için minimum adımlar: %2</translation>
         <translation>&lt;br&gt; Bu seviye için minimum adım sayısı : &lt;b&gt;%3&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../Game.qml" line="193"/>
+        <location filename="../Game.qml" line="192"/>
         <source>You got &lt;b&gt;%0&lt;/b&gt; points for this level!</source>
         <translation>Bu seviye için &lt;b&gt;%0&lt;/b&gt; puan aldınız!</translation>
     </message>
     <message>
-        <location filename="../Game.qml" line="194"/>
+        <location filename="../Game.qml" line="193"/>
         <source>&lt;br&gt;&lt;br&gt; Totally &lt;b&gt;%1&lt;/b&gt; steps.</source>
         <translation>&lt;br&gt;&lt;br&gt; Tamamen &lt;b&gt;%1&lt;/b&gt; adım.</translation>
     </message>
     <message>
-        <location filename="../Game.qml" line="195"/>
+        <location filename="../Game.qml" line="194"/>
         <source>&lt;br&gt; The minimum number of steps for this level : &lt;b&gt;%2&lt;/b&gt;</source>
         <translation>&lt;br&gt; Bu seviye için minimum adım sayısı : &lt;b&gt;%2&lt;/b&gt;</translation>
     </message>
