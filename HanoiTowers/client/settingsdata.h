@@ -16,6 +16,7 @@ struct SettingsData
 
     bool fog = true;
     bool fogAnimation = true;
+    bool showCredits = true;
 };
 
 #endif // SETTINGSDATA_H
