@@ -4,22 +4,18 @@
 <context>
     <name>About</name>
     <message>
-        <location filename="../About.qml" line="17"/>
         <source>about</source>
         <translation>Про автора</translation>
     </message>
     <message>
-        <location filename="../About.qml" line="29"/>
         <source>About</source>
         <translation>Про автора</translation>
     </message>
     <message>
-        <location filename="../About.qml" line="32"/>
         <source>Credits</source>
         <translation>Спонсори</translation>
     </message>
     <message>
-        <location filename="../About.qml" line="62"/>
         <source>Product of QuasarApp
             * Developers:
             * Programmer: Yankovich N. Andrei.
@@ -123,27 +119,22 @@
         <translation type="vanished">Головне меню</translation>
     </message>
     <message>
-        <location filename="../menu/Config.qml" line="28"/>
         <source>Standart color</source>
         <translation>Стандартний колір</translation>
     </message>
     <message>
-        <location filename="../menu/Config.qml" line="34"/>
         <source>Random color</source>
         <translation>Випадковий колір</translation>
     </message>
     <message>
-        <location filename="../menu/Config.qml" line="45"/>
         <source>Animation</source>
         <translation>Анімація</translation>
     </message>
     <message>
-        <location filename="../menu/Config.qml" line="56"/>
         <source>Fog</source>
         <translation>Туман</translation>
     </message>
     <message>
-        <location filename="../menu/Config.qml" line="66"/>
         <source>Fog Animations</source>
         <translation>Анімація туману</translation>
     </message>
@@ -177,38 +168,30 @@
         <translation type="vanished">Мінімальні кроки для цього рівня: %1</translation>
     </message>
     <message>
-        <location filename="../Game.qml" line="169"/>
-        <location filename="../Game.qml" line="189"/>
         <source>Congratulations! You have passed the level %0</source>
         <translation>Вітаємо! Ви пройшли рівень %0</translation>
     </message>
     <message>
-        <location filename="../Game.qml" line="172"/>
         <source>You got &lt;b&gt;%0&lt;/b&gt; points for this level and unlocked the level &lt;b&gt;%1&lt;/b&gt;!</source>
         <translation>Ви отримали &lt;b&gt;%0&lt;/b&gt; балів за цей рівень і розблокували рівень &lt;b&gt;%1&lt;/b&gt;!</translation>
     </message>
     <message>
-        <location filename="../Game.qml" line="173"/>
         <source>&lt;br&gt;&lt;br&gt; Totally &lt;b&gt;%2&lt;/b&gt; steps.</source>
         <translation>&lt;br&gt;&lt;br&gt;Повністю&lt;b&gt;%2&lt;/b&gt; кроків.</translation>
     </message>
     <message>
-        <location filename="../Game.qml" line="174"/>
         <source>&lt;br&gt; The minimum number of steps for this level : &lt;b&gt;%3&lt;/b&gt;</source>
         <translation>&lt;br&gt; Мінімальна кількість кроків для цього рівня: &lt;b&gt;%3&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../Game.qml" line="192"/>
         <source>You got &lt;b&gt;%0&lt;/b&gt; points for this level!</source>
         <translation>Ви отримали &lt;b&gt;%0&lt;/b&gt; балів за цей рівень!</translation>
     </message>
     <message>
-        <location filename="../Game.qml" line="193"/>
         <source>&lt;br&gt;&lt;br&gt; Totally &lt;b&gt;%1&lt;/b&gt; steps.</source>
         <translation>&lt;br&gt; &lt;br&gt; Повністю &lt;b&gt;%1&lt;/b&gt; кроків.</translation>
     </message>
     <message>
-        <location filename="../Game.qml" line="194"/>
         <source>&lt;br&gt; The minimum number of steps for this level : &lt;b&gt;%2&lt;/b&gt;</source>
         <translation>&lt;br&gt; Мінімальна кількість кроків для цього рівня: &lt;b&gt;%2&lt;/b&gt;</translation>
     </message>
@@ -220,12 +203,10 @@
         <translation type="vanished">Висота вежі: </translation>
     </message>
     <message>
-        <location filename="../menu/GameStateWidget.qml" line="20"/>
         <source>Tower height:    </source>
         <translation>Висота вежі:    </translation>
     </message>
     <message>
-        <location filename="../menu/GameStateWidget.qml" line="49"/>
         <source>step </source>
         <translation>крок </translation>
     </message>
@@ -233,17 +214,14 @@
 <context>
     <name>HanoiClient</name>
     <message>
-        <location filename="../hanoiclient.cpp" line="205"/>
         <source>Local user has been updated</source>
         <translation>Локальний користувач був оновлений</translation>
     </message>
     <message>
-        <location filename="../hanoiclient.cpp" line="205"/>
         <source>local user accept nbew data from the server.</source>
         <translation>локальний користувач приймає нові дані з сервера.</translation>
     </message>
     <message>
-        <location filename="../hanoiclient.cpp" line="401"/>
         <source>Internal Error, server send invalid data, and this data can&apos;t be saved into local database.</source>
         <translation>Внутрішня помилка, сервер надсилає недійсні дані, і ці дані не можна зберегти в локальній базі даних.</translation>
     </message>
@@ -259,103 +237,82 @@
         <translation type="obsolete">Створити нового користувача</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="78"/>
         <source>Create</source>
         <translation>Створити</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="172"/>
         <source>Connect error</source>
         <translation>Помилка підключення</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="173"/>
         <source>Failed to connect to server please check network connection befor login</source>
         <translation>Не вдалося підключитися до сервера, перевірте мережеве підключення для входу</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="189"/>
         <source>Update Profile error</source>
         <translation>Помилка оновлення профілю</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="190"/>
         <source>Failed to update yuo user data please check network connection befor update prifile</source>
         <translation>Не вдалось оновити ваші користувацькі дані, перевірте підключення до мережі перед оновленням профілю</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="195"/>
         <source>Update Profile</source>
         <translation>Оновити профіль</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="196"/>
         <source>User data updated successful</source>
         <translation>Дані користувачів оновлено успішно</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="259"/>
         <source>login error</source>
         <translation>Помилка входу</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="260"/>
         <source>Failed to login into online account, please check your password and username</source>
         <translation>Не вдалося увійти в онлайн-акаунт, перевірте свій пароль та ім’я користувача</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="270"/>
         <source>Register online error</source>
         <translation>Помилка реєстрації в Інтернеті</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="271"/>
         <source>Failed to register this account, if this account was created by you, try to restore it.</source>
         <translation>Не вдалося зареєструвати цей обліковий запис, якщо цей обліковий запис був створений вами, спробуйте відновити його.</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="281"/>
-        <location filename="../hanoitowers.cpp" line="303"/>
         <source>Server error</source>
         <translation>Помилка серверу</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="288"/>
         <source>User with this id is not registered. If it you then use please the sigup form.</source>
         <translation>Користувач з цим id не зареєстрований. Якщо ви це використовуєте, будь ласка, будь ласка, зареєструйтесь.</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="296"/>
         <source>User with this id already registered. If it you then use please the login form.</source>
         <translation>Користувач з цим ідентифікатором вже зареєстрований. Якщо ви використовуєте його, будь ласка, увійдіть у форму для входу.</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="446"/>
         <source>Create user error</source>
         <translation>Помилка створення користувача</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="447"/>
         <source>Failed to create a new user, The name %0 alredy used.</source>
         <translation>Не вдалося створити нового користувача, ім’я %0 вже використовується.</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="478"/>
         <source>Remove online error</source>
         <translation>Помилка видалення онлайн даних користувачів</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="478"/>
         <source>current profile not online!</source>
         <translation>Поточний профіль офлайн!</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="484"/>
         <source>Remove Local user</source>
         <translation>Видалити локального користувача</translation>
     </message>
     <message>
-        <location filename="../hanoitowers.cpp" line="484"/>
         <source>Failed to remove the local user data</source>
         <translation>Не вдалося видалити локальні дані користувача</translation>
     </message>
@@ -363,7 +320,6 @@
 <context>
     <name>Header</name>
     <message>
-        <location filename="../menu/Header.qml" line="6"/>
         <source></source>
         <translation></translation>
     </message>
@@ -383,47 +339,38 @@
         <translation type="vanished">Ваше завдання  перенести диски різних розмірів з лівої вежі на третю вежу. Ви можете перенести лише верхній привід вежі. Ви не можете перенести кілька дисків одночасно і поставити більші диски на маленькі диски.</translation>
     </message>
     <message>
-        <location filename="../Help.qml" line="41"/>
         <source>Tap to select the upper part of tower.</source>
         <translation>Натисніть, щоб вибрати верхню частину вежі.</translation>
     </message>
     <message>
-        <location filename="../Help.qml" line="46"/>
         <source>Tap to move the selected part to another column.</source>
         <translation>Торкніться, щоб перемістити вибрану частину в інший стовпець.</translation>
     </message>
     <message>
-        <location filename="../Help.qml" line="52"/>
         <source>The playing field consists of 3 columns, your task is to move all parts of the tower from the first column to the third.</source>
         <translation>Ігрове поле складається з 3 колон, ваше завдання - перемістити всі частини вежі з першої колони в третю.</translation>
     </message>
     <message>
-        <location filename="../Help.qml" line="58"/>
         <source>Remember you can&apos;t put bigger part on smaller.</source>
         <translation>Пам&apos;ятайте, що більшу частину не можна покласти на меншу.</translation>
     </message>
     <message>
-        <location filename="../Help.qml" line="64"/>
         <source>You will move smaller objects on larger ones in such a way.</source>
         <translation>Ви перемістите менші предмети на більші таким чином.</translation>
     </message>
     <message>
-        <location filename="../Help.qml" line="70"/>
         <source>Try to make as few moves as possible. Good luck!</source>
         <translation>Постарайтеся зробити якомога менше ходів. Удачі!</translation>
     </message>
     <message>
-        <location filename="../Help.qml" line="76"/>
         <source>Tap here if you want to change tower high.</source>
         <translation>Натисніть тут, якщо ви хочете змінити висоту вежі.</translation>
     </message>
     <message>
-        <location filename="../Help.qml" line="82"/>
         <source>Tap here if you want to return to main menu.</source>
         <translation>Натисніть тут, якщо ви хочете повернутися в головне меню.</translation>
     </message>
     <message>
-        <location filename="../Help.qml" line="106"/>
         <source>Do not show again</source>
         <translation>Не показувати знову</translation>
     </message>
@@ -557,37 +504,30 @@
         <translation type="vanished">Ханої вежі</translation>
     </message>
     <message>
-        <location filename="../menu/MainMenu.qml" line="49"/>
         <source>continue</source>
         <translation>Продовжувати</translation>
     </message>
     <message>
-        <location filename="../menu/MainMenu.qml" line="63"/>
         <source>start</source>
         <translation>Почати</translation>
     </message>
     <message>
-        <location filename="../menu/MainMenu.qml" line="74"/>
         <source>HanoiTowers World</source>
         <translation>Світ Ханойських веж</translation>
     </message>
     <message>
-        <location filename="../menu/MainMenu.qml" line="87"/>
         <source>About</source>
         <translation>Про автора</translation>
     </message>
     <message>
-        <location filename="../menu/MainMenu.qml" line="98"/>
         <source>Config</source>
         <translation>Конфігурація</translation>
     </message>
     <message>
-        <location filename="../menu/MainMenu.qml" line="110"/>
         <source>Users</source>
         <translation>Користувачі</translation>
     </message>
     <message>
-        <location filename="../menu/MainMenu.qml" line="121"/>
         <source>Save and exit</source>
         <translation>Зберегти та вийти</translation>
     </message>
@@ -606,17 +546,14 @@
 <context>
     <name>Premium</name>
     <message>
-        <location filename="../menu/Premium.qml" line="21"/>
         <source>Tired of ads?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../menu/Premium.qml" line="30"/>
         <source>Especially for you, we have a premium version without ads. Nothing else will stop you from completing the levels!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../menu/Premium.qml" line="40"/>
         <source>Get Premium Hanoi towers</source>
         <translation type="unfinished"></translation>
     </message>
@@ -624,17 +561,14 @@
 <context>
     <name>PremiumThanks</name>
     <message>
-        <location filename="../menu/PremiumThanks.qml" line="21"/>
         <source>Thanks for your support!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../menu/PremiumThanks.qml" line="30"/>
         <source>You are now our premium user and we won&apos;t dare bother you with ads anymore.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../menu/PremiumThanks.qml" line="41"/>
         <source>Do not show again </source>
         <translation type="unfinished"></translation>
     </message>
@@ -642,7 +576,6 @@
 <context>
     <name>SwitchLvl</name>
     <message>
-        <location filename="../SwitchLvl.qml" line="69"/>
         <source>Start</source>
         <translation>Почати</translation>
     </message>
@@ -657,32 +590,26 @@
 <context>
     <name>ToolBarPage</name>
     <message>
-        <location filename="../menu/ToolBarPage.qml" line="52"/>
         <source>Return to main menu</source>
         <translation>Головне меню</translation>
     </message>
     <message>
-        <location filename="../menu/ToolBarPage.qml" line="76"/>
         <source>Welcom to Hanoi Towers </source>
         <translation>Ласкаво просимо до Ханойських веж</translation>
     </message>
     <message>
-        <location filename="../menu/ToolBarPage.qml" line="87"/>
         <source>Profiles</source>
         <translation>Профілі</translation>
     </message>
     <message>
-        <location filename="../menu/ToolBarPage.qml" line="99"/>
         <source>This are the main settings</source>
         <translation>Це основні налаштування</translation>
     </message>
     <message>
-        <location filename="../menu/ToolBarPage.qml" line="111"/>
         <source>About Page</source>
         <translation>Довідка</translation>
     </message>
     <message>
-        <location filename="../menu/ToolBarPage.qml" line="123"/>
         <source>World Of Hanoi Towers</source>
         <translation>Світ Ханойських веж</translation>
     </message>
@@ -690,32 +617,26 @@
 <context>
     <name>UserView</name>
     <message>
-        <location filename="../menu/UserView.qml" line="44"/>
         <source>Please choose a new Avatar</source>
         <translation>Виберіть новий Аватар</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="61"/>
         <source>Id</source>
         <translation>Id</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="68"/>
         <source>Name</source>
         <translation>Ім&apos;я</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="75"/>
         <source>Record</source>
         <translation>Рекорд</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="82"/>
         <source>Online profile</source>
         <translation>Онлайн-профіль</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="141"/>
         <source>Remove</source>
         <translation>Видалити</translation>
     </message>
@@ -724,12 +645,10 @@
         <translation type="vanished">Видалити цей профіль</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="152"/>
         <source>Restore</source>
         <translation>Відновлювати</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="159"/>
         <source>Accept</source>
         <translation>Прийміть</translation>
     </message>
@@ -742,12 +661,10 @@
         <translation type="vanished">Дані користувача буде змінено.</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="195"/>
         <source>Remove %0 user</source>
         <translation>Видалити користувача %0</translation>
     </message>
     <message>
-        <location filename="../menu/UserView.qml" line="196"/>
         <source>All saved data and records will be delete, Do you want continuee?</source>
         <translation>Усі збережені дані та записи будуть видалені. Продовжити?</translation>
     </message>
@@ -759,13 +676,10 @@
         <translation type="obsolete">Головне меню</translation>
     </message>
     <message>
-        <location filename="../menu/UsersTable.qml" line="37"/>
-        <location filename="../menu/UsersTable.qml" line="92"/>
         <source>Locale users list</source>
         <translation>Локальний список користувачів</translation>
     </message>
     <message>
-        <location filename="../menu/UsersTable.qml" line="71"/>
         <source>Add user</source>
         <translation>Додати користувача</translation>
     </message>
@@ -774,7 +688,6 @@
         <translation type="vanished">Створіть нового користувача</translation>
     </message>
     <message>
-        <location filename="../menu/UsersTable.qml" line="105"/>
         <source>Best users in the world</source>
         <translation>Найкращі гравці світу</translation>
     </message>
@@ -848,7 +761,6 @@ Minimum steps for this lvl: %1</source>
 <context>
     <name>main</name>
     <message>
-        <location filename="../main.qml" line="22"/>
         <source>Hanoi Towers</source>
         <translation>Ханої вежі</translation>
     </message>

@@ -6,7 +6,10 @@ Item {
 
     Component.onCompleted:  {
 
-        if (!(backEnd.isAndroid() && backEnd.isAdMod())) {
+        if (!backEnd.isAndroid())
+            return;
+
+        if (backEnd.isAdMod()) {
             const component = Qt.createComponent("qrc:/menu/Premium.qml");
             popup = component.createObject(this);
             popup.open();
