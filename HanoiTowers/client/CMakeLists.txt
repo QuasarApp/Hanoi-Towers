@@ -52,7 +52,7 @@ if (ANDROID)
     find_package(QT NAMES Qt6 Qt5 COMPONENTS AndroidExtras REQUIRED)
     find_package(Qt${QT_VERSION_MAJOR} COMPONENTS AndroidExtras REQUIRED)
 
-    addDeployAPK(${CURRENT_PROJECT} "${CMAKE_CURRENT_LIST_DIR}/android" "digitalface" "${SIGPATH}/HanoiTowersPremium.keystore" "${SIGPASS_HANOIPREMIUM}" "${TARGET_DIR}" "${HANOI_EXTRA_LIBS}")
+    addDeployAPK(${CURRENT_PROJECT} "${CMAKE_CURRENT_LIST_DIR}/android" "QuasarApp" "${SIGPATH}/HanoiTowersPremium.keystore" "${SIGPASS_HANOIPREMIUM}" "${TARGET_DIR}" "${HANOI_EXTRA_LIBS}")
     target_link_libraries(${CURRENT_PROJECT} PRIVATE QtAndroidTools Qt${QT_VERSION_MAJOR}::AndroidExtras)
 
     file(GLOB java_files
