@@ -169,4 +169,7 @@ ApplicationWindow {
     NotificationServiceView {
         anchors.fill: parent;
     }
+
+    Menu.PremiumLoader {
+    }
 }

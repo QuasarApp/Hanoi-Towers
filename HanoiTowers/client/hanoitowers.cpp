@@ -32,6 +32,7 @@
 #define CURRENT_PROFILE_KEY "currentProfile"
 #define FOG "fog"
 #define FOG_ANIMATION "fogAnimation"
+#define SHOW_CREDITS "showCredits"
 
 HanoiTowers::HanoiTowers(QQmlApplicationEngine *engine):
     QObject(),
@@ -121,6 +122,7 @@ void HanoiTowers::init() {
     _settingsData.randomColor = _settings->getValue(RANDOM_COLOR_KEY, false).toBool();
     _settingsData.fog = _settings->getValue(FOG, true).toBool();
     _settingsData.fogAnimation = _settings->getValue(FOG_ANIMATION, true).toBool();
+    _settingsData.showCredits = _settings->getValue(SHOW_CREDITS, true).toBool();
 
 }
 
@@ -590,4 +592,17 @@ void HanoiTowers::handleWorldChanged(QSharedPointer<WorldUpdate> delta) {
 
 void HanoiTowers::handleWorldInited(QHash<QString, UserPreview> initWorldList) {
     _world->setSource({initWorldList.begin(), initWorldList.end()});
+}
+
+bool HanoiTowers::showCredits() const {
+    return _settingsData.showCredits;
+}
+
+void HanoiTowers::setShowCredits(bool newShowCredits) {
+    if (_settingsData.showCredits != newShowCredits) {
+
+        _settings->setValue(SHOW_CREDITS, newShowCredits);
+        _settingsData.showCredits = newShowCredits;
+        emit showCreditsChanged();
+    }
 }
