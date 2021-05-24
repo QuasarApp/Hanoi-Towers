@@ -541,30 +541,30 @@
     <name>Premium</name>
     <message>
         <source>Tired of ads?</source>
-        <translation type="unfinished"></translation>
+        <translation>広告にうんざりしていませんか？</translation>
     </message>
     <message>
         <source>Especially for you, we have a premium version without ads. Nothing else will stop you from completing the levels!</source>
-        <translation type="unfinished"></translation>
+        <translation>特にあなたのために、私たちは広告のないプレミアムバージョンを持っています。レベルを完了するのを妨げるものは他にありません！</translation>
     </message>
     <message>
         <source>Get Premium Hanoi towers</source>
-        <translation type="unfinished"></translation>
+        <translation>プレミアムハノイの塔を手に入れよう</translation>
     </message>
 </context>
 <context>
     <name>PremiumThanks</name>
     <message>
         <source>Thanks for your support!</source>
-        <translation type="unfinished"></translation>
+        <translation>ご協力ありがとうございました！</translation>
     </message>
     <message>
         <source>You are now our premium user and we won&apos;t dare bother you with ads anymore.</source>
-        <translation type="unfinished"></translation>
+        <translation>あなたは今や私たちのプレミアムユーザーであり、私たちはもう広告であなたを煩わせることはありません。</translation>
     </message>
     <message>
         <source>Do not show again </source>
-        <translation type="unfinished"></translation>
+        <translation>再び表示しない</translation>
     </message>
 </context>
 <context>
