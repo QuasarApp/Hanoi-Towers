@@ -48,7 +48,7 @@ Dialog {
             Layout.alignment: Layout.Center
 
             onClicked: {
-                Qt.openUrlExternally("");
+                Qt.openUrlExternally("https://play.google.com/store/apps/details?id=df.mobily.premium_hanoi_towers");
             }
 
         }
