@@ -42,5 +42,10 @@
         <file>languages/ja.qm</file>
         <file>languages/tr.qm</file>
         <file>languages/uk.qm</file>
+        <file>languages/pl.qm</file>
+        <file>languages/zh.qm</file>
+        <file>languages/de.qm</file>
+        <file>languages/fr.qm</file>
+        <file>languages/es.qm</file>
     </qresource>
 </RCC>
