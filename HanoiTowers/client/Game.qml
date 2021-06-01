@@ -53,6 +53,9 @@ Item {
 
     function load () {
 
+        showAdMobBanner()
+
+
         stateData.load();
         stateWidget.tumbler.spin.maximumValue = stateData.lvl;
         stateWidget.tumbler.spin.value = stateData.getMaxValueOfLoadedSaves();

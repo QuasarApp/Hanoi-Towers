@@ -33,6 +33,7 @@
 #define FOG "fog"
 #define FOG_ANIMATION "fogAnimation"
 #define SHOW_CREDITS "showCredits"
+#define LAUNCH_COUNT "launchCount"
 
 HanoiTowers::HanoiTowers(QQmlApplicationEngine *engine):
     QObject(),
@@ -123,6 +124,9 @@ void HanoiTowers::init() {
     _settingsData.fog = _settings->getValue(FOG, true).toBool();
     _settingsData.fogAnimation = _settings->getValue(FOG_ANIMATION, true).toBool();
     _settingsData.showCredits = _settings->getValue(SHOW_CREDITS, true).toBool();
+    _settingsData._launchCount = _settings->getValue(LAUNCH_COUNT, 0).toUInt();
+
+    setLaunchCount(_settingsData._launchCount + 1);
 
 }
 
@@ -605,4 +609,18 @@ void HanoiTowers::setShowCredits(bool newShowCredits) {
         _settingsData.showCredits = newShowCredits;
         emit showCreditsChanged();
     }
+}
+
+unsigned int HanoiTowers::launchCount() const {
+    return _settingsData._launchCount;
+}
+
+void HanoiTowers::setLaunchCount(unsigned int newLaunchCount) {
+    if (_settingsData._launchCount == newLaunchCount)
+        return;
+
+    _settingsData._launchCount = newLaunchCount;
+    _settings->setValue(LAUNCH_COUNT, newLaunchCount);
+
+    emit launchCountChanged();
 }
