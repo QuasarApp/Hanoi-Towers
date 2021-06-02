@@ -36,19 +36,12 @@ ApplicationWindow {
         }
     }
 
-    function prepareAdMobBanner() {
-        if (admodbanner) {
-            admodbanner.load()
-        }
-    }
-
     Component.onCompleted:  {
         const obj = createAdBobObjects("qrc:/admod/AdMobInterstitialAndroid.qml", this);
         if (obj) {
             admodbanner = obj;
         }
 
-        prepareAdMobBanner()
     }
 
     header: Menu.ToolBarPage {
