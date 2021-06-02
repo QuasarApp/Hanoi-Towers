@@ -32,6 +32,13 @@ ApplicationWindow {
 
     function showAdMobBanner() {
         if (admodbanner) {
+            admodbanner.show()
+            admodbanner.load()
+        }
+    }
+
+    function prepareAdMobBanner() {
+        if (admodbanner) {
             admodbanner.load()
         }
     }
@@ -42,6 +49,7 @@ ApplicationWindow {
             admodbanner = obj;
         }
 
+        prepareAdMobBanner()
     }
 
     header: Menu.ToolBarPage {
