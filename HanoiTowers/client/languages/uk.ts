@@ -51,6 +51,17 @@
     </message>
 </context>
 <context>
+    <name>AdMobInterstitialAndroid</name>
+    <message>
+        <source>Load ads</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sorry, but we need to show you an ad. We want to eat too 😇</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>BackEnd</name>
     <message>
         <source>Create new user</source>
