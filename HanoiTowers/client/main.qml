@@ -33,7 +33,6 @@ ApplicationWindow {
     function showAdMobBanner() {
         if (admodbanner) {
             admodbanner.show()
-            admodbanner.load()
         }
     }
 

@@ -8,6 +8,18 @@ QtAndroidAdMobInterstitial {
 
     unitId: "ca-app-pub-5799112356811682/5211864198"
     nonPersonalizedAds: false
+
+    onClosed: {
+        load()
+    }
+
+    onClicked: {
+        load()
+    }
+
+    Component.onCompleted:  {
+        load()
+    }
 }
 
 
