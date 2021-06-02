@@ -20,6 +20,16 @@ QtAndroidAdMobInterstitial {
     Component.onCompleted:  {
         load()
     }
+
+    onLoadError: {
+        timer.start()
+    }
+
+    Timer {
+        id: timer
+        repeat: false
+        onTriggered: {
+            interstitial.load()
+        }
+    }
 }
-
-
