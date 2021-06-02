@@ -24,11 +24,12 @@ QtAndroidAdMobInterstitial {
 
     Dialog {
         id: loadDialog
-        x: (gameWindow.width - width) / 2
-        y: (gameWindow.height - height) / 2
+        x: (gameWindow.width / 2 - width / 2)
+        y: (gameWindow.height / 2 - height / 2)
 
-        width: gameWindow.width  * 0.9
-        height: gameWindow.height  * 0.9
+        width: gameWindow.width  * 0.5
+        height: gameWindow.height  * 0.5
+        modal : true
 
         header: Label {
             id: title
@@ -40,23 +41,23 @@ QtAndroidAdMobInterstitial {
             verticalAlignment: Qt.AlignTop
         }
 
-        contentItem: ColumnLayout {
+        ColumnLayout {
             BusyIndicator {
                 Layout.fillWidth: true
+
                 running: true
             }
 
             Label {
                 id: textContainer
                 Layout.fillWidth: true
-                Layout.fillHeight: true
 
-                anchors.fill: parent
                 text: qsTr("Sorry, but we need to show you an ad. We want to eat too 😇");
 
                 horizontalAlignment: Qt.AlignLeft
                 verticalAlignment: Qt.AlignTop
             }
+            anchors.fill: parent
         }
 
         closePolicy: Popup.NoAutoClose
