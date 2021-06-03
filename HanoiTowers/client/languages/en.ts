@@ -35,6 +35,13 @@
     </message>
 </context>
 <context>
+    <name>AdLoadScrean</name>
+    <message>
+        <source>Loading ...</source>
+        <translation>Loading ...</translation>
+    </message>
+</context>
+<context>
     <name>BackEnd</name>
     <message>
         <source>Create new user</source>
@@ -499,30 +506,30 @@
     <name>Premium</name>
     <message>
         <source>Tired of ads?</source>
-        <translation type="unfinished"></translation>
+        <translation>Tired of ads?</translation>
     </message>
     <message>
         <source>Especially for you, we have a premium version without ads. Nothing else will stop you from completing the levels!</source>
-        <translation type="unfinished"></translation>
+        <translation>Especially for you, we have a premium version without ads. Nothing else will stop you from completing the levels!</translation>
     </message>
     <message>
         <source>Get Premium Hanoi towers</source>
-        <translation type="unfinished"></translation>
+        <translation>Get Premium Hanoi towers</translation>
     </message>
 </context>
 <context>
     <name>PremiumThanks</name>
     <message>
         <source>Thanks for your support!</source>
-        <translation type="unfinished"></translation>
+        <translation>Thanks for your support!</translation>
     </message>
     <message>
         <source>You are now our premium user and we won&apos;t dare bother you with ads anymore.</source>
-        <translation type="unfinished"></translation>
+        <translation>You are now our premium user and we won&apos;t dare bother you with ads anymore.</translation>
     </message>
     <message>
         <source>Do not show again </source>
-        <translation type="unfinished"></translation>
+        <translation>Do not show again </translation>
     </message>
 </context>
 <context>

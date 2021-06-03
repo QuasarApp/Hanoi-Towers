@@ -32,14 +32,28 @@ ApplicationWindow {
 
     function showAdMobBanner() {
         if (admodbanner) {
-            admodbanner.load()
+            admodbanner.show()
         }
+    }
+
+    function hideLoad() {
+        loadAdScrean.visible = false
+    }
+
+    function hideerrLoad(errorID) {
+        loadAdScrean.visible = false
     }
 
     Component.onCompleted:  {
         const obj = createAdBobObjects("qrc:/admod/AdMobInterstitialAndroid.qml", this);
         if (obj) {
             admodbanner = obj;
+
+            loadAdScrean.visible = true;
+
+            admodbanner.loadError.connect(hideerrLoad)
+            admodbanner.loaded.connect(hideLoad)
+
         }
 
     }
@@ -171,5 +185,10 @@ ApplicationWindow {
     }
 
     Menu.PremiumLoader {
+    }
+
+    Menu.AdLoadScrean {
+        id: loadAdScrean
+        visible: false
     }
 }

@@ -49,6 +49,13 @@
     </message>
 </context>
 <context>
+    <name>AdLoadScrean</name>
+    <message>
+        <source>Loading ...</source>
+        <translation>Yükleniyor ...</translation>
+    </message>
+</context>
+<context>
     <name>BackEnd</name>
     <message>
         <source>Create new user</source>
@@ -545,30 +552,30 @@ Bu seviye için minimum adımlar: %2</translation>
     <name>Premium</name>
     <message>
         <source>Tired of ads?</source>
-        <translation type="unfinished"></translation>
+        <translation>Reklamlardan bıktınız mı?</translation>
     </message>
     <message>
         <source>Especially for you, we have a premium version without ads. Nothing else will stop you from completing the levels!</source>
-        <translation type="unfinished"></translation>
+        <translation>Özellikle sizin için reklamsız bir premium versiyonumuz var. Başka hiçbir şey sizi seviyeleri tamamlamadan alıkoyamaz!</translation>
     </message>
     <message>
         <source>Get Premium Hanoi towers</source>
-        <translation type="unfinished"></translation>
+        <translation>Premium Hanoi kulelerini edinin</translation>
     </message>
 </context>
 <context>
     <name>PremiumThanks</name>
     <message>
         <source>Thanks for your support!</source>
-        <translation type="unfinished"></translation>
+        <translation>Desteğin için teşekkürler!</translation>
     </message>
     <message>
         <source>You are now our premium user and we won&apos;t dare bother you with ads anymore.</source>
-        <translation type="unfinished"></translation>
+        <translation>Artık bizim premium kullanıcımızsınız ve artık sizi reklamlarla rahatsız etmeye cesaret edemeyeceğiz.</translation>
     </message>
     <message>
         <source>Do not show again </source>
-        <translation type="unfinished"></translation>
+        <translation>Tekrar gösterme</translation>
     </message>
 </context>
 <context>

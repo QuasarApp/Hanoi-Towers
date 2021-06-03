@@ -42,6 +42,7 @@ class HanoiTowers: public QObject
     Q_PROPERTY(bool fog READ fog WRITE setFog NOTIFY fogChanged)
     Q_PROPERTY(bool fogAnimation READ fogAnimation WRITE setFogAnimation NOTIFY fogAnimationChanged)
     Q_PROPERTY(bool showCredits READ showCredits WRITE setShowCredits NOTIFY showCreditsChanged)
+    Q_PROPERTY(unsigned int launchCount READ launchCount WRITE setLaunchCount NOTIFY launchCountChanged)
 
     Q_PROPERTY(GameState* gameState READ gameState WRITE setGameState NOTIFY profileChanged)
     Q_PROPERTY(QObject* client READ client)
@@ -116,6 +117,9 @@ public:
 
     bool showCredits() const;
     void setShowCredits(bool newShowCredits);
+
+    unsigned int launchCount() const;
+    void setLaunchCount(unsigned int newLaunchCount);
 
 public slots:
 
@@ -201,6 +205,8 @@ signals:
     void selectedUserChanged(QObject* selectedUser);
 
     void showCreditsChanged();
+
+    void launchCountChanged();
 
 private slots:
     void handleChangeName(const QString&);

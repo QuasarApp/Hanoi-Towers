@@ -49,6 +49,13 @@
     </message>
 </context>
 <context>
+    <name>AdLoadScrean</name>
+    <message>
+        <source>Loading ...</source>
+        <translation>Загрузка ...</translation>
+    </message>
+</context>
+<context>
     <name>BackEnd</name>
     <message>
         <source>Create new user</source>
@@ -544,30 +551,30 @@
     <name>Premium</name>
     <message>
         <source>Tired of ads?</source>
-        <translation type="unfinished"></translation>
+        <translation>Устали от рекламы?</translation>
     </message>
     <message>
         <source>Especially for you, we have a premium version without ads. Nothing else will stop you from completing the levels!</source>
-        <translation type="unfinished"></translation>
+        <translation>Специально для вас у нас есть премиум-версия без рекламы. Больше ничто не помешает пройти уровни!</translation>
     </message>
     <message>
         <source>Get Premium Hanoi towers</source>
-        <translation type="unfinished"></translation>
+        <translation>Получить премиум Ханойские башни</translation>
     </message>
 </context>
 <context>
     <name>PremiumThanks</name>
     <message>
         <source>Thanks for your support!</source>
-        <translation type="unfinished"></translation>
+        <translation>Спасибо за вашу поддержку!</translation>
     </message>
     <message>
         <source>You are now our premium user and we won&apos;t dare bother you with ads anymore.</source>
-        <translation type="unfinished"></translation>
+        <translation>Теперь вы наш премиум-пользователь, и мы больше не смеем беспокоить вас рекламой.</translation>
     </message>
     <message>
         <source>Do not show again </source>
-        <translation type="unfinished"></translation>
+        <translation>Не показывать снова</translation>
     </message>
 </context>
 <context>

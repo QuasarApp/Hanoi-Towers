@@ -53,6 +53,9 @@ Item {
 
     function load () {
 
+        showAdMobBanner()
+
+
         stateData.load();
         stateWidget.tumbler.spin.maximumValue = stateData.lvl;
         stateWidget.tumbler.spin.value = stateData.getMaxValueOfLoadedSaves();
@@ -181,6 +184,8 @@ Item {
             const action = function () {
                 stateData.unlockNextLvl();
                 start(stateData.lvl)
+                showAdMobBanner()
+
             }
 
             popUp.action = action;
@@ -200,12 +205,12 @@ Item {
 
             const action = function () {
                 start(++stateWidget.tumbler.spin.value)
+                showAdMobBanner()
 
             }
 
             popUp.action = action;
         }
-        showAdMobBanner()
 
     }
     
