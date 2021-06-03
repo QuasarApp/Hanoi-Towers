@@ -49,6 +49,13 @@
     </message>
 </context>
 <context>
+    <name>AdLoadScrean</name>
+    <message>
+        <source>Loading ...</source>
+        <translation>読み込み中 。。。</translation>
+    </message>
+</context>
+<context>
     <name>BackEnd</name>
     <message>
         <source>Create new user</source>

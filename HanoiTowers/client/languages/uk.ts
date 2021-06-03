@@ -51,6 +51,13 @@
     </message>
 </context>
 <context>
+    <name>AdLoadScrean</name>
+    <message>
+        <source>Loading ...</source>
+        <translation>Ладування ...</translation>
+    </message>
+</context>
+<context>
     <name>BackEnd</name>
     <message>
         <source>Create new user</source>
