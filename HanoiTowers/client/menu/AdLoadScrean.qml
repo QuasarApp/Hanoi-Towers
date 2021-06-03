@@ -44,10 +44,10 @@ Dialog {
     }
 
     ColumnLayout {
-        BusyIndicator {
+        ProgressBar {
             Layout.fillWidth: true
 
-            running: true
+            indeterminate: true
         }
 
         Label {
