@@ -16,3 +16,13 @@
 - Rendimiento fijo entre niveles de conmutación.
 - Corregido error de nivel 0.
 - Actualización de traducciones.
+
+# ** Torres de Hanói ** * v1.6.1 *
+
+## Cambios:
+- soporte agregado del idioma chino
+- Se agregó soporte para el idioma polaco
+- Se agregó soporte para el idioma alemán
+- soporte adicional en español
+- soporte adicional de idioma francés
+- arreglado algunos errores

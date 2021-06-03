@@ -16,3 +16,13 @@
 - Behobene Leistung zwischen Schaltstufen
 - Fehler bei Level 0 behoben.
 - Übersetzungen aktualisieren. 
+
+# **Hanoi-Türme** *v1.6.1*
+
+## Änderungen:
+- Chinesische Sprachunterstützung hinzugefügt
+- Polnische Sprachunterstützung hinzugefügt
+- Unterstützung für die deutsche Sprache hinzugefügt
+- Spanische Sprachunterstützung hinzugefügt
+- Französische Sprachunterstützung hinzugefügt
+- einige Fehler behoben
