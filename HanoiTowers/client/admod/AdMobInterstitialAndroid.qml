@@ -5,7 +5,6 @@ import QtQuick.Layouts 1.15
 
 QtAndroidAdMobInterstitial {
     id: interstitial
-
     unitId: "ca-app-pub-5799112356811682/5211864198"
     nonPersonalizedAds: false
 
@@ -18,7 +17,7 @@ QtAndroidAdMobInterstitial {
     }
 
     Component.onCompleted:  {
-        timer.start()
+        load()
     }
 
     onLoadError: {
