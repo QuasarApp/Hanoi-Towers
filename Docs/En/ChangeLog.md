@@ -16,3 +16,13 @@
 - Fixed performance between switching levels.
 - Fixed 0 level bug.
 - Translations update.
+
+#  **Hanoi Towers** *v1.6.1* 
+
+## Changes:
+- added Chinese language support
+- added Polish language support
+- added German language support
+- added Spanish language support
+- added French language support
+- fixed some bugs

@@ -16,3 +16,13 @@
 - Correction des performances entre les niveaux de commutation.
 - Correction d'un bug de niveau 0.
 - Mise à jour des traductions.
+
+# **Tours de Hanoï** *v1.6.1*
+
+## Changements:
+- ajout de la prise en charge de la langue chinoise
+- ajout de la prise en charge de la langue polonaise
+- ajout de la prise en charge de la langue allemande
+- ajout de la prise en charge de la langue espagnole
+- ajout de la prise en charge de la langue française
+- correction de quelques bugs

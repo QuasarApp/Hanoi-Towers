@@ -17,3 +17,13 @@
 - Geçiş seviyeleri arasındaki performans düzeltildi.
 - 0 seviye hatası düzeltildi.
 - Çeviriler güncellemesi.
+
+# **Hanoi Kuleleri** *v1.6.1*
+
+## Değişiklikler:
+- Çince dil desteği eklendi
+- Lehçe dil desteği eklendi
+- Almanca dil desteği eklendi
+- İspanyolca dil desteği eklendi
+- Fransızca dil desteği eklendi
+- bazı hatalar düzeltildi

@@ -16,3 +16,13 @@
 - Naprawiono wydajność między poziomami przełączania.
 - Naprawiono błąd poziomu 0.
 - Aktualizacja tłumaczeń.
+
+# **Wieże Hanoi** *v1.6.1*
+
+## Zmiany:
+- dodano obsługę języka chińskiego
+- dodano obsługę języka polskiego
+- dodano obsługę języka niemieckiego
+- dodano obsługę języka hiszpańskiego
+- dodano obsługę języka francuskiego
+- naprawiono kilka błędów

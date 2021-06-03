@@ -37,12 +37,8 @@
 <context>
     <name>AdLoadScrean</name>
     <message>
-        <source>Load ads</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Sorry, but we need to show you an ad. We want to eat too 😇</source>
-        <translation type="unfinished"></translation>
+        <source>Loading ...</source>
+        <translation>Le bourrage ...</translation>
     </message>
 </context>
 <context>
