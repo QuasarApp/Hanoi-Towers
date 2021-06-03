@@ -26,6 +26,7 @@
         <file>menu/Premium.qml</file>
         <file>menu/PremiumThanks.qml</file>
         <file>menu/PremiumLoader.qml</file>
+        <file>menu/AdLoadScrean.qml</file>
     </qresource>
     <qresource prefix="/textures">
         <file>res/fogBack.png</file>

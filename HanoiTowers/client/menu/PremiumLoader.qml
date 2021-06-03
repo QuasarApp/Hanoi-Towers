@@ -10,6 +10,11 @@ Item {
             return;
 
         if (backEnd.isAdMod()) {
+
+            if (backEnd.launchCount < 6 || backEnd.launchCount % 2 ) {
+                return;
+            }
+
             const component = Qt.createComponent("qrc:/menu/Premium.qml");
             popup = component.createObject(this);
             popup.open();
