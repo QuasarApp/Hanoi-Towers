@@ -5,15 +5,15 @@
     <name>About</name>
     <message>
         <source>about</source>
-        <translation>hakkında</translation>
+        <translation type="vanished">hakkında</translation>
     </message>
     <message>
         <source>About</source>
-        <translation>hakkında</translation>
+        <translation type="vanished">hakkında</translation>
     </message>
     <message>
         <source>Credits</source>
-        <translation>Sponsorlar</translation>
+        <translation type="vanished">Sponsorlar</translation>
     </message>
     <message>
         <source>Product of QuasarApp
@@ -24,7 +24,7 @@
             * Contact: https://github.com/EndrII
             * Copyright (C) 2018-2019 Yankovich N. Andrei.
             * Copyright (C) 2019-2021 QuasarApp group.</source>
-        <translation>QuasarApp ürünü
+        <translation type="vanished">QuasarApp ürünü
              * Geliştiriciler:
              * Programcı: Yankovich N. Andrei.
              * Disigner: Chernenkov I. Oleg.
@@ -46,6 +46,18 @@
 * Bu oyun LGPLv3 lisansı altında dağıtılmaktadır.
 * İletişim: https://github.com/EndrII
 * Telif Hakkı (C) 2018-2019 Yankovich N. Andrei.</translation>
+    </message>
+    <message>
+        <source>## QuasarApp Core team:</source>
+        <translation>## QuasarApp Core ekibi:</translation>
+    </message>
+    <message>
+        <source>(Programmer)</source>
+        <translation>(Programcı)</translation>
+    </message>
+    <message>
+        <source>(Designer)</source>
+        <translation>(Tasarımcı)</translation>
     </message>
 </context>
 <context>

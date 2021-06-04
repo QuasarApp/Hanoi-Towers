@@ -5,15 +5,15 @@
     <name>About</name>
     <message>
         <source>about</source>
-        <translation>Об Авторе</translation>
+        <translation type="vanished">Об Авторе</translation>
     </message>
     <message>
         <source>About</source>
-        <translation>Об Авторах</translation>
+        <translation type="vanished">Об Авторах</translation>
     </message>
     <message>
         <source>Credits</source>
-        <translation>Спонсоры</translation>
+        <translation type="vanished">Спонсоры</translation>
     </message>
     <message>
         <source>Product of QuasarApp
@@ -24,7 +24,7 @@
             * Contact: https://github.com/EndrII
             * Copyright (C) 2018-2019 Yankovich N. Andrei.
             * Copyright (C) 2019-2021 QuasarApp group.</source>
-        <translation>Продукт QuasarApp
+        <translation type="vanished">Продукт QuasarApp
              * Разработчики:
              * Программист: Янкович Н. Андрей.
              * Дизайнер: Черненков И. Олег.
@@ -46,6 +46,18 @@
 * Эта игра распостроняеться в соотвецтвии с лицензией LGPLv3.
 * Сайт игры: https://quasarapp.github.io/Hanoi-Towers/
 * Copyright (C) 2018-2019 Янкович А. Н.</translation>
+    </message>
+    <message>
+        <source>## QuasarApp Core team:</source>
+        <translation>## Команда QuasarApp Core:</translation>
+    </message>
+    <message>
+        <source>(Programmer)</source>
+        <translation>(Программист)</translation>
+    </message>
+    <message>
+        <source>(Designer)</source>
+        <translation>(Дизайнер)</translation>
     </message>
 </context>
 <context>
