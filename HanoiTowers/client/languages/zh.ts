@@ -5,15 +5,15 @@
     <name>About</name>
     <message>
         <source>about</source>
-        <translation>关于</translation>
+        <translation type="vanished">关于</translation>
     </message>
     <message>
         <source>About</source>
-        <translation>关于</translation>
+        <translation type="vanished">关于</translation>
     </message>
     <message>
         <source>Credits</source>
-        <translation>鸣谢</translation>
+        <translation type="vanished">鸣谢</translation>
     </message>
     <message>
         <source>Product of QuasarApp
@@ -24,7 +24,7 @@
             * Contact: https://github.com/EndrII
             * Copyright (C) 2018-2019 Yankovich N. Andrei.
             * Copyright (C) 2019-2021 QuasarApp group.</source>
-        <translation>QuasarApp 的产品
+        <translation type="vanished">QuasarApp 的产品
              * 开发者：
              * 程序员：Yankovich N. Andrei
              * 设计师：Chernenkov I. Oleg
@@ -32,6 +32,18 @@
              * 联系方式：https://github.com/EndrII
              * 版权所有 (C) 2018-2019 Yankovich N. Andrei 。
              * 版权所有 (C) 2019-2021 QuasarApp group 。</translation>
+    </message>
+    <message>
+        <source>## QuasarApp Core team:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>(Programmer)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>(Designer)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
