@@ -35,15 +35,15 @@
     </message>
     <message>
         <source>## QuasarApp Core team:</source>
-        <translation type="unfinished"></translation>
+        <translation>## QuasarApp Core team:</translation>
     </message>
     <message>
         <source>(Programmer)</source>
-        <translation type="unfinished"></translation>
+        <translation>(Programmer)</translation>
     </message>
     <message>
         <source>(Designer)</source>
-        <translation type="unfinished"></translation>
+        <translation>(Designer)</translation>
     </message>
 </context>
 <context>

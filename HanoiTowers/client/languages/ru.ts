@@ -49,15 +49,15 @@
     </message>
     <message>
         <source>## QuasarApp Core team:</source>
-        <translation type="unfinished"></translation>
+        <translation>## Команда QuasarApp Core:</translation>
     </message>
     <message>
         <source>(Programmer)</source>
-        <translation type="unfinished"></translation>
+        <translation>(Программист)</translation>
     </message>
     <message>
         <source>(Designer)</source>
-        <translation type="unfinished"></translation>
+        <translation>(Дизайнер)</translation>
     </message>
 </context>
 <context>
