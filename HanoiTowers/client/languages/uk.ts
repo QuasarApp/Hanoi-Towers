@@ -51,7 +51,7 @@
     </message>
     <message>
         <source>## QuasarApp Core team:</source>
-        <translation>## Основна команда QuasarApp:</translation>
+        <translation>## Команда QuasarApp Core:</translation>
     </message>
     <message>
         <source>(Programmer)</source>

@@ -49,7 +49,7 @@
     </message>
     <message>
         <source>## QuasarApp Core team:</source>
-        <translation>## QuasarApp コアチーム:</translation>
+        <translation>## QuasarApp Core チーム:</translation>
     </message>
     <message>
         <source>(Programmer)</source>

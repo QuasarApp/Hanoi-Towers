@@ -49,7 +49,7 @@
     </message>
     <message>
         <source>## QuasarApp Core team:</source>
-        <translation>## Основная команда QuasarApp:</translation>
+        <translation>## Команда QuasarApp Core:</translation>
     </message>
     <message>
         <source>(Programmer)</source>

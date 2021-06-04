@@ -35,7 +35,7 @@
     </message>
     <message>
         <source>## QuasarApp Core team:</source>
-        <translation>## Equipo principal de QuasarApp:</translation>
+        <translation>## Equipo de QuasarApp Core:</translation>
     </message>
     <message>
         <source>(Programmer)</source>
