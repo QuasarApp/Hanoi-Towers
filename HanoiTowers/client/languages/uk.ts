@@ -5,15 +5,15 @@
     <name>About</name>
     <message>
         <source>about</source>
-        <translation>Про автора</translation>
+        <translation type="vanished">Про автора</translation>
     </message>
     <message>
         <source>About</source>
-        <translation>Про автора</translation>
+        <translation type="vanished">Про автора</translation>
     </message>
     <message>
         <source>Credits</source>
-        <translation>Спонсори</translation>
+        <translation type="vanished">Спонсори</translation>
     </message>
     <message>
         <source>Product of QuasarApp
@@ -24,7 +24,7 @@
             * Contact: https://github.com/EndrII
             * Copyright (C) 2018-2019 Yankovich N. Andrei.
             * Copyright (C) 2019-2021 QuasarApp group.</source>
-        <translation>365 / 5000
+        <translation type="vanished">365 / 5000
 Результаты перевода
 Продукт QuasarApp
              * Розробники:
@@ -48,6 +48,18 @@
 * Ця гра поширюється під ліцензією LGPLv3.
 * Контакт: https://github.com/EndrII
 * Авторське право (C) 2018-2019 Янкович Н. Андрій.</translation>
+    </message>
+    <message>
+        <source>## QuasarApp Core team:</source>
+        <translation>## Команда QuasarApp Core:</translation>
+    </message>
+    <message>
+        <source>(Programmer)</source>
+        <translation>(Програміст)</translation>
+    </message>
+    <message>
+        <source>(Designer)</source>
+        <translation>(Дизайнер)</translation>
     </message>
 </context>
 <context>

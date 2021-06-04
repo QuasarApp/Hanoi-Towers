@@ -5,15 +5,15 @@
     <name>About</name>
     <message>
         <source>about</source>
-        <translation>About</translation>
+        <translation type="vanished">About</translation>
     </message>
     <message>
         <source>About</source>
-        <translation>About</translation>
+        <translation type="vanished">About</translation>
     </message>
     <message>
         <source>Credits</source>
-        <translation>Credits</translation>
+        <translation type="vanished">Credits</translation>
     </message>
     <message>
         <source>Product of QuasarApp
@@ -24,7 +24,7 @@
             * Contact: https://github.com/EndrII
             * Copyright (C) 2018-2019 Yankovich N. Andrei.
             * Copyright (C) 2019-2021 QuasarApp group.</source>
-        <translation>Product of QuasarApp
+        <translation type="vanished">Product of QuasarApp
             * Developers:
             * Programmer: Yankovich N. Andrei.
             * Disigner: Chernenkov I. Oleg.
@@ -32,6 +32,18 @@
             * Contact: https://github.com/EndrII
             * Copyright (C) 2018-2019 Yankovich N. Andrei.
             * Copyright (C) 2019-2021 QuasarApp group.</translation>
+    </message>
+    <message>
+        <source>## QuasarApp Core team:</source>
+        <translation>## QuasarApp Core team:</translation>
+    </message>
+    <message>
+        <source>(Programmer)</source>
+        <translation>(Programmer)</translation>
+    </message>
+    <message>
+        <source>(Designer)</source>
+        <translation>(Designer)</translation>
     </message>
 </context>
 <context>

@@ -5,15 +5,15 @@
     <name>About</name>
     <message>
         <source>about</source>
-        <translation>約</translation>
+        <translation type="vanished">約</translation>
     </message>
     <message>
         <source>About</source>
-        <translation>約</translation>
+        <translation type="vanished">約</translation>
     </message>
     <message>
         <source>Credits</source>
-        <translation>スポンサー</translation>
+        <translation type="vanished">スポンサー</translation>
     </message>
     <message>
         <source>Product of QuasarApp
@@ -24,7 +24,7 @@
             * Contact: https://github.com/EndrII
             * Copyright (C) 2018-2019 Yankovich N. Andrei.
             * Copyright (C) 2019-2021 QuasarApp group.</source>
-        <translation>QuasarAppの製品
+        <translation type="vanished">QuasarAppの製品
              *開発者：
              *プログラマー：Yankovich N. Andrei
              *デザイナー：チェルネンコフI.オレグ。
@@ -46,6 +46,18 @@
 *このゲームはLGPLv3ライセンスの下で配布されています。
 *お問い合わせ先：https://github.com/EndrII
 * Copyright（C）2018-2019 Yankovich N. Andrei。 {3 ?} {2018-2019 ?}</translation>
+    </message>
+    <message>
+        <source>## QuasarApp Core team:</source>
+        <translation>## QuasarApp Core チーム:</translation>
+    </message>
+    <message>
+        <source>(Programmer)</source>
+        <translation>（プログラマー）</translation>
+    </message>
+    <message>
+        <source>(Designer)</source>
+        <translation>（デザイナー）</translation>
     </message>
 </context>
 <context>
