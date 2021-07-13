@@ -317,6 +317,12 @@ void HanoiTowers::handleAcceptUserData(QSharedPointer<LocalUser> data) {
 
         loadOldSaves();
 
+        if (data->gameState()->lvl() < 15) {
+            data->gameState()->saveLvl(15);
+        }
+
+        updateProfile();
+
         emit profileChanged();
 
     }
