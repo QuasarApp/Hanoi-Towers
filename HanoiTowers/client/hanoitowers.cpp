@@ -320,8 +320,8 @@ void HanoiTowers::handleAcceptUserData(QSharedPointer<LocalUser> data) {
         #ifdef Q_OS_ANDROID
         #ifndef HANOI_ADMOD
 
-            if (data->gameState()->lvl() < 15) {
-                data->gameState()->unlockLvlTo(15);
+            if (_profile->gameState()->lvl() < 15) {
+                _profile->gameState()->unlockLvlTo(15);
             }
 
         #endif
