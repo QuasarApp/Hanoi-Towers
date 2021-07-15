@@ -6,6 +6,7 @@
 */
 
 #include "gamestate.h"
+#include "gamestate.h"
 
 int GameState::getMaxValueOfLoadedSaves() {
     return maxValueOfLoadedSave;
@@ -28,8 +29,9 @@ void GameState::unlockNextLvl() {
     _lvl = static_cast<short>(maxValueOfLoadedSave);
 }
 
-void GameState::unlockMultLvl(int toLevel) {
-    _lvl = static_cast<short>(toLevel);
+void GameState::unlockLvlTo(int toLevel) {
+    maxValueOfLoadedSave = toLevel;
+    _lvl = static_cast<short>(maxValueOfLoadedSave);
 }
 
 bool GameState::fSavedGame() const {
