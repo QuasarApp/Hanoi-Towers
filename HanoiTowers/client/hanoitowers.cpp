@@ -317,11 +317,19 @@ void HanoiTowers::handleAcceptUserData(QSharedPointer<LocalUser> data) {
 
         loadOldSaves();
 
-        if (data->gameState()->lvl() < 15) {
-            data->gameState()->saveLvl(15);
-        }
+        #ifdef Q_OS_ANDROID
+        #ifndef HANOI_ADMOD
 
-        updateProfile();
+            if (data->gameState()->lvl() < 15) {
+                data->gameState()->unlockMultLvl();
+            }
+
+            updateProfile();
+
+        #endif
+        #endif
+
+
 
         emit profileChanged();
 

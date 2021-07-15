@@ -28,6 +28,10 @@ void GameState::unlockNextLvl() {
     _lvl = static_cast<short>(maxValueOfLoadedSave);
 }
 
+void GameState::unlockMultLvl(int toLevel) {
+    _lvl = static_cast<short>(toLevel);
+}
+
 bool GameState::fSavedGame() const {
     for (const auto &tower: qAsConst(save) ) {
         if (tower.size()) {
