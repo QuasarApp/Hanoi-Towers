@@ -324,7 +324,6 @@ void HanoiTowers::handleAcceptUserData(QSharedPointer<LocalUser> data) {
                 data->gameState()->unlockMultLvl();
             }
 
-            updateProfile();
 
         #endif
         #endif
