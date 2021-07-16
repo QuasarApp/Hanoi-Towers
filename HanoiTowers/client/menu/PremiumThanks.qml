@@ -35,9 +35,19 @@ Dialog {
         }
 
         Label {
+            text: qsTr("If you want to unlock all levels and also get rid of annoying ads just for you, we have the premium version of the Towers of Hanoi!")
+            font.bold: false
+            font.capitalization: Font.AllUppercase
+            horizontalAlignment: Text.AlignHCenter
+            wrapMode: Text.WordWrap
+            Layout.fillWidth: true
+        }
+
+        Label {
             text: qsTr("You are now our premium user and we won't dare bother you with ads anymore.")
             font.bold: false
             font.capitalization: Font.AllUppercase
+            horizontalAlignment: Text.AlignHCenter
             wrapMode: Text.WordWrap
             Layout.fillWidth: true
         }
