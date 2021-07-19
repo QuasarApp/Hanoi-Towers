@@ -589,6 +589,10 @@ Bu seviye için minimum adımlar: %2</translation>
         <source>Do not show again </source>
         <translation>Tekrar gösterme</translation>
     </message>
+    <message>
+        <source>If you want to unlock all levels and also get rid of annoying ads just for you, we have the premium version of the Towers of Hanoi!</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SwitchLvl</name>
@@ -796,6 +800,22 @@ Bu lvl için minimum adımlar:%1</translation>
     <message>
         <source>Hanoi Towers</source>
         <translation>Hanoi Kuleleri</translation>
+    </message>
+    <message>
+        <source>Thanks for your support!</source>
+        <translation type="unfinished">Desteğin için teşekkürler!</translation>
+    </message>
+    <message>
+        <source>If you want to unlock all levels and also get rid of annoying ads just for you, we have the premium version of the Towers of Hanoi!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You are now our premium user and we won&apos;t dare bother you with ads anymore.</source>
+        <translation type="unfinished">Artık bizim premium kullanıcımızsınız ve artık sizi reklamlarla rahatsız etmeye cesaret edemeyeceğiz.</translation>
+    </message>
+    <message>
+        <source>Do not show again </source>
+        <translation type="unfinished">Tekrar gösterme</translation>
     </message>
 </context>
 </TS>

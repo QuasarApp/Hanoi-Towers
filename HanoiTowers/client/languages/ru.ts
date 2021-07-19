@@ -588,6 +588,10 @@
         <source>Do not show again </source>
         <translation>Не показывать снова</translation>
     </message>
+    <message>
+        <source>If you want to unlock all levels and also get rid of annoying ads just for you, we have the premium version of the Towers of Hanoi!</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SwitchLvl</name>
@@ -795,6 +799,22 @@ Minimum steps for this lvl: %1</source>
     <message>
         <source>Hanoi Towers</source>
         <translation>Ханойские Башни</translation>
+    </message>
+    <message>
+        <source>Thanks for your support!</source>
+        <translation type="unfinished">Спасибо за вашу поддержку!</translation>
+    </message>
+    <message>
+        <source>If you want to unlock all levels and also get rid of annoying ads just for you, we have the premium version of the Towers of Hanoi!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You are now our premium user and we won&apos;t dare bother you with ads anymore.</source>
+        <translation type="unfinished">Теперь вы наш премиум-пользователь, и мы больше не смеем беспокоить вас рекламой.</translation>
+    </message>
+    <message>
+        <source>Do not show again </source>
+        <translation type="unfinished">Не показывать снова</translation>
     </message>
 </context>
 </TS>

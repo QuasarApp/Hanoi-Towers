@@ -315,6 +315,10 @@
         <source>Do not show again </source>
         <translation>Nie pokazuj ponownie </translation>
     </message>
+    <message>
+        <source>If you want to unlock all levels and also get rid of annoying ads just for you, we have the premium version of the Towers of Hanoi!</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SwitchLvl</name>
@@ -413,6 +417,22 @@
     <message>
         <source>Hanoi Towers</source>
         <translation>Wieże Hanoi</translation>
+    </message>
+    <message>
+        <source>Thanks for your support!</source>
+        <translation type="unfinished">Dziękuję za wsparcie!</translation>
+    </message>
+    <message>
+        <source>If you want to unlock all levels and also get rid of annoying ads just for you, we have the premium version of the Towers of Hanoi!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You are now our premium user and we won&apos;t dare bother you with ads anymore.</source>
+        <translation type="unfinished">Jesteś teraz naszym użytkownikiem premium i nie odważymy się już więcej zawracać Ci głowy reklamami.</translation>
+    </message>
+    <message>
+        <source>Do not show again </source>
+        <translation type="unfinished">Nie pokazuj ponownie </translation>
     </message>
 </context>
 </TS>

@@ -3,6 +3,7 @@ import QtQuick.Controls 2.15
 import QtQuick.Layouts 1.3
 
 
+
 Dialog {
 
     width: parent.width * 0.6
@@ -13,13 +14,14 @@ Dialog {
 
 
     ColumnLayout {
-        spacing: 15
+        spacing: 5
         Image {
             id: name
             fillMode: Image.PreserveAspectFit
 
             Layout.fillHeight: true
             Layout.fillWidth: true
+
 
             source: "qrc:/img/premium"
 
@@ -34,22 +36,53 @@ Dialog {
 
         }
 
-        Label {
-            text: qsTr("If you want to unlock all levels and also get rid of annoying ads just for you, we have the premium version of the Towers of Hanoi!")
-            font.bold: false
-            font.capitalization: Font.AllUppercase
-            horizontalAlignment: Text.AlignHCenter
-            wrapMode: Text.WordWrap
-            Layout.fillWidth: true
+        RowLayout {
+            Image {
+                id: premUserImg
+                fillMode: Image.PreserveAspectFit
+
+                Layout.fillHeight: true
+                Layout.fillWidth: true
+
+                source: "qrc:/img/res/galochka.png"
+                sourceSize.width: 80
+                sourceSize.height: 80
+
+            }
+
+            Label {
+                text: qsTr("You are now our premium user and we won't dare bother you with ads anymore.")
+                font.bold: false
+                font.capitalization: Font.AllUppercase
+                horizontalAlignment: Text.AlignHCenter
+                wrapMode: Text.WordWrap
+                Layout.fillWidth: true
+            }
         }
 
-        Label {
-            text: qsTr("You are now our premium user and we won't dare bother you with ads anymore.")
-            font.bold: false
-            font.capitalization: Font.AllUppercase
-            horizontalAlignment: Text.AlignHCenter
-            wrapMode: Text.WordWrap
-            Layout.fillWidth: true
+        RowLayout {
+            Image {
+                id: unlockImg
+                fillMode: Image.PreserveAspectFit
+
+                Layout.fillHeight: true
+                Layout.fillWidth: true
+
+                source: "qrc:/img/res/unlock.png"
+                sourceSize.width: 80
+                sourceSize.height: 80
+
+            }
+
+
+            Label {
+                text: qsTr("Now levels from 1 to 15 are available to you. Enjoy your game!")
+                font.bold: false
+                font.capitalization: Font.AllUppercase
+                horizontalAlignment: Text.AlignHCenter
+                wrapMode: Text.WordWrap
+                Layout.fillWidth: true
+            }
         }
 
         CheckBox {
