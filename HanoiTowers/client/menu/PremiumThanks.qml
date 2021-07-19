@@ -37,12 +37,12 @@ Dialog {
         }
 
         RowLayout {
+            Layout.fillHeight: true
+            Layout.fillWidth: true
+
             Image {
                 id: premUserImg
                 fillMode: Image.PreserveAspectFit
-
-                Layout.fillHeight: true
-                Layout.fillWidth: true
 
                 source: "qrc:/img/res/galochka.png"
                 sourceSize.width: 80
@@ -61,12 +61,12 @@ Dialog {
         }
 
         RowLayout {
+            Layout.fillHeight: true
+            Layout.fillWidth: true
+
             Image {
                 id: unlockImg
                 fillMode: Image.PreserveAspectFit
-
-                Layout.fillHeight: true
-                Layout.fillWidth: true
 
                 source: "qrc:/img/res/unlock.png"
                 sourceSize.width: 80
