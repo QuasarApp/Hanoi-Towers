@@ -33,6 +33,7 @@ public:
     Q_INVOKABLE void setStep(int value);
 
     Q_INVOKABLE void unlockNextLvl();
+    Q_INVOKABLE void unlockLvlTo(int toLevel);
 
     friend bool operator == (const GameState& left, const GameState& right);
 
