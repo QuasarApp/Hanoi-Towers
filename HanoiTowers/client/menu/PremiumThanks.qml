@@ -31,7 +31,7 @@ Dialog {
             text: qsTr("Thanks for your support!")
             font.bold: true
             font.capitalization: Font.AllUppercase
-            horizontalAlignment: Text.AlignHCenter
+            horizontalAlignment: Text.AlignLeft
             Layout.fillWidth: true
 
         }
@@ -54,7 +54,7 @@ Dialog {
                 text: qsTr("You are now our premium user and we won't dare bother you with ads anymore.")
                 font.bold: false
                 font.capitalization: Font.AllUppercase
-                horizontalAlignment: Text.AlignHCenter
+                horizontalAlignment: Text.AlignLeft
                 wrapMode: Text.WordWrap
                 Layout.fillWidth: true
             }
@@ -79,7 +79,7 @@ Dialog {
                 text: qsTr("Now levels from 1 to 15 are available to you. Enjoy your game!")
                 font.bold: false
                 font.capitalization: Font.AllUppercase
-                horizontalAlignment: Text.AlignHCenter
+                horizontalAlignment: Text.AlignLeft
                 wrapMode: Text.WordWrap
                 Layout.fillWidth: true
             }
@@ -88,7 +88,7 @@ Dialog {
         CheckBox {
             id: doNotShowAgain
             text: qsTr("Do not show again ")
-            Layout.alignment: Layout.Center
+            Layout.alignment: Layout.Left
 
         }
         anchors.fill: parent
