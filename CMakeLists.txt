@@ -83,12 +83,12 @@ initAll()
 addDoc(${PROJECT_NAME} ${CMAKE_CURRENT_SOURCE_DIR}/doxygen.conf)
 
 find_package(QT NAMES Qt6 Qt5 COMPONENTS Core REQUIRED)
-find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Core REQUIRED)
 
 if(${QT_VERSION_MAJOR} GREATER 5)
     message("This project not support qt 6 please use the qt5 fir building.")
     return()
 endif()
+find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Core REQUIRED)
 
 # Add sub directories
 
