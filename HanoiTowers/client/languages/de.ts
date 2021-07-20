@@ -103,7 +103,7 @@
     </message>
     <message>
         <source>&lt;br&gt; The minimum number of steps for this level : &lt;b&gt;%2&lt;/b&gt;</source>
-        <translation>&lt;br&gt; Die Mindestanzahl von Schritten für diese Stufe: &lt;b&gt;% 2 &lt;/b&gt;</translation>
+        <translation>&lt;br&gt; Die Mindestanzahl von Schritten für diese Stufe: &lt;b&gt;%2&lt;/b&gt;</translation>
     </message>
 </context>
 <context>
@@ -312,7 +312,11 @@
     </message>
     <message>
         <source>Do not show again </source>
-        <translation>Nicht mehr anzeigen</translation>
+        <translation>Nicht mehr anzeigen </translation>
+    </message>
+    <message>
+        <source>Now levels from 1 to 15 are available to you. Enjoy your game!</source>
+        <translation>Jetzt stehen dir Level von 1 bis 15 zur Verfügung. Viel Spaß beim Spielen!</translation>
     </message>
 </context>
 <context>
@@ -330,7 +334,7 @@
     </message>
     <message>
         <source>Welcom to Hanoi Towers </source>
-        <translation>Willkommen in den Hanoi Towers</translation>
+        <translation>Willkommen in den Hanoi Towers </translation>
     </message>
     <message>
         <source>Profiles</source>
@@ -412,6 +416,18 @@
     <message>
         <source>Hanoi Towers</source>
         <translation>Hanoi-Türme</translation>
+    </message>
+    <message>
+        <source>Thanks for your support!</source>
+        <translation type="obsolete">Danke für deine Unterstützung!</translation>
+    </message>
+    <message>
+        <source>You are now our premium user and we won&apos;t dare bother you with ads anymore.</source>
+        <translation type="obsolete">Sie sind jetzt unser Premium-Nutzer und wir werden es nicht mehr wagen, Sie mit Werbung zu belästigen.</translation>
+    </message>
+    <message>
+        <source>Do not show again </source>
+        <translation type="obsolete">Nicht mehr anzeigen</translation>
     </message>
 </context>
 </TS>

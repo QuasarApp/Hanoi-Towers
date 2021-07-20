@@ -313,7 +313,11 @@
     </message>
     <message>
         <source>Do not show again </source>
-        <translation>No mostrar de nuevo</translation>
+        <translation>No mostrar de nuevo </translation>
+    </message>
+    <message>
+        <source>Now levels from 1 to 15 are available to you. Enjoy your game!</source>
+        <translation>Ahora los niveles del 1 al 15. ¡Disfruta tu juego!</translation>
     </message>
 </context>
 <context>
@@ -331,7 +335,7 @@
     </message>
     <message>
         <source>Welcom to Hanoi Towers </source>
-        <translation>Bienvenido a Hanoi Towers</translation>
+        <translation>Bienvenido a Hanoi Towers </translation>
     </message>
     <message>
         <source>Profiles</source>
@@ -413,6 +417,18 @@
     <message>
         <source>Hanoi Towers</source>
         <translation>Torres de Hanoi</translation>
+    </message>
+    <message>
+        <source>Thanks for your support!</source>
+        <translation type="obsolete">¡Gracias por su apoyo!</translation>
+    </message>
+    <message>
+        <source>You are now our premium user and we won&apos;t dare bother you with ads anymore.</source>
+        <translation type="obsolete">Ahora eres nuestro usuario premium y ya no nos atreveremos a molestarlo con anuncios.</translation>
+    </message>
+    <message>
+        <source>Do not show again </source>
+        <translation type="obsolete">No mostrar de nuevo</translation>
     </message>
 </context>
 </TS>
