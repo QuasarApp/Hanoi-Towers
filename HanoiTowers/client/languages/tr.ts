@@ -587,7 +587,7 @@ Bu seviye için minimum adımlar: %2</translation>
     </message>
     <message>
         <source>Do not show again </source>
-        <translation>Tekrar gösterme</translation>
+        <translation>Tekrar gösterme </translation>
     </message>
     <message>
         <source>Now levels from 1 to 15 are available to you. Enjoy your game!</source>

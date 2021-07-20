@@ -313,7 +313,7 @@
     </message>
     <message>
         <source>Do not show again </source>
-        <translation>No mostrar de nuevo</translation>
+        <translation>No mostrar de nuevo </translation>
     </message>
     <message>
         <source>Now levels from 1 to 15 are available to you. Enjoy your game!</source>
@@ -335,7 +335,7 @@
     </message>
     <message>
         <source>Welcom to Hanoi Towers </source>
-        <translation>Bienvenido a Hanoi Towers</translation>
+        <translation>Bienvenido a Hanoi Towers </translation>
     </message>
     <message>
         <source>Profiles</source>

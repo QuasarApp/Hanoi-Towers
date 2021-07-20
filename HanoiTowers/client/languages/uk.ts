@@ -589,7 +589,7 @@
     </message>
     <message>
         <source>Do not show again </source>
-        <translation>Не показувати знову</translation>
+        <translation>Не показувати знову </translation>
     </message>
     <message>
         <source>Now levels from 1 to 15 are available to you. Enjoy your game!</source>
@@ -618,7 +618,7 @@
     </message>
     <message>
         <source>Welcom to Hanoi Towers </source>
-        <translation>Ласкаво просимо до Ханойських веж</translation>
+        <translation>Ласкаво просимо до Ханойських веж </translation>
     </message>
     <message>
         <source>Profiles</source>

@@ -314,7 +314,7 @@
     </message>
     <message>
         <source>Failed to create a new user, The name %0 alredy used.</source>
-        <translation>Не удалось создать пользователя. Данное имя %0 уже используется</translation>
+        <translation>Не удалось создать пользователя. Данное имя %0 уже используется.</translation>
     </message>
     <message>
         <source>Remove online error</source>
@@ -586,7 +586,7 @@
     </message>
     <message>
         <source>Do not show again </source>
-        <translation>Не показывать снова</translation>
+        <translation>Не показывать снова </translation>
     </message>
     <message>
         <source>Now levels from 1 to 15 are available to you. Enjoy your game!</source>

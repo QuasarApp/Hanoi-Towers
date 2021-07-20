@@ -335,7 +335,7 @@
     </message>
     <message>
         <source>Welcom to Hanoi Towers </source>
-        <translation>Bienvenue aux tours de Hanoï</translation>
+        <translation>Bienvenue aux tours de Hanoï </translation>
     </message>
     <message>
         <source>Profiles</source>

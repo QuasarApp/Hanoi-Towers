@@ -64,7 +64,7 @@
     <name>AdLoadScrean</name>
     <message>
         <source>Loading ...</source>
-        <translation>読み込み中 。。。</translation>
+        <translation>読み込み中...</translation>
     </message>
 </context>
 <context>
@@ -583,7 +583,7 @@
     </message>
     <message>
         <source>Do not show again </source>
-        <translation>再び表示しない</translation>
+        <translation>再び表示しない </translation>
     </message>
     <message>
         <source>Now levels from 1 to 15 are available to you. Enjoy your game!</source>
@@ -612,7 +612,7 @@
     </message>
     <message>
         <source>Welcom to Hanoi Towers </source>
-        <translation>ハノイタワー</translation>
+        <translation>ハノイタワー </translation>
     </message>
     <message>
         <source>Profiles</source>

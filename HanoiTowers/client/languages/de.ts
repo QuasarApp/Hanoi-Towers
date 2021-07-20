@@ -103,7 +103,7 @@
     </message>
     <message>
         <source>&lt;br&gt; The minimum number of steps for this level : &lt;b&gt;%2&lt;/b&gt;</source>
-        <translation>&lt;br&gt; Die Mindestanzahl von Schritten für diese Stufe: &lt;b&gt;% 2 &lt;/b&gt;</translation>
+        <translation>&lt;br&gt; Die Mindestanzahl von Schritten für diese Stufe: &lt;b&gt;%2&lt;/b&gt;</translation>
     </message>
 </context>
 <context>
@@ -312,7 +312,7 @@
     </message>
     <message>
         <source>Do not show again </source>
-        <translation>Nicht mehr anzeigen</translation>
+        <translation>Nicht mehr anzeigen </translation>
     </message>
     <message>
         <source>Now levels from 1 to 15 are available to you. Enjoy your game!</source>
@@ -334,7 +334,7 @@
     </message>
     <message>
         <source>Welcom to Hanoi Towers </source>
-        <translation>Willkommen in den Hanoi Towers</translation>
+        <translation>Willkommen in den Hanoi Towers </translation>
     </message>
     <message>
         <source>Profiles</source>
