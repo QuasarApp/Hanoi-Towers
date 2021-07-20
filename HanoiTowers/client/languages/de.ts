@@ -315,8 +315,8 @@
         <translation>Nicht mehr anzeigen</translation>
     </message>
     <message>
-        <source>If you want to unlock all levels and also get rid of annoying ads just for you, we have the premium version of the Towers of Hanoi!</source>
-        <translation type="unfinished"></translation>
+        <source>Now levels from 1 to 15 are available to you. Enjoy your game!</source>
+        <translation>Jetzt stehen dir Level von 1 bis 15 zur Verfügung. Viel Spaß beim Spielen!</translation>
     </message>
 </context>
 <context>
@@ -419,19 +419,15 @@
     </message>
     <message>
         <source>Thanks for your support!</source>
-        <translation type="unfinished">Danke für deine Unterstützung!</translation>
-    </message>
-    <message>
-        <source>If you want to unlock all levels and also get rid of annoying ads just for you, we have the premium version of the Towers of Hanoi!</source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">Danke für deine Unterstützung!</translation>
     </message>
     <message>
         <source>You are now our premium user and we won&apos;t dare bother you with ads anymore.</source>
-        <translation type="unfinished">Sie sind jetzt unser Premium-Nutzer und wir werden es nicht mehr wagen, Sie mit Werbung zu belästigen.</translation>
+        <translation type="obsolete">Sie sind jetzt unser Premium-Nutzer und wir werden es nicht mehr wagen, Sie mit Werbung zu belästigen.</translation>
     </message>
     <message>
         <source>Do not show again </source>
-        <translation type="unfinished">Nicht mehr anzeigen</translation>
+        <translation type="obsolete">Nicht mehr anzeigen</translation>
     </message>
 </context>
 </TS>

@@ -590,8 +590,8 @@ Bu seviye için minimum adımlar: %2</translation>
         <translation>Tekrar gösterme</translation>
     </message>
     <message>
-        <source>If you want to unlock all levels and also get rid of annoying ads just for you, we have the premium version of the Towers of Hanoi!</source>
-        <translation type="unfinished"></translation>
+        <source>Now levels from 1 to 15 are available to you. Enjoy your game!</source>
+        <translation>Şimdi 1&apos;den 15&apos;e kadar olan seviyeler sizin için mevcut.Oyunun tadını çıkarın!</translation>
     </message>
 </context>
 <context>
@@ -803,19 +803,15 @@ Bu lvl için minimum adımlar:%1</translation>
     </message>
     <message>
         <source>Thanks for your support!</source>
-        <translation type="unfinished">Desteğin için teşekkürler!</translation>
-    </message>
-    <message>
-        <source>If you want to unlock all levels and also get rid of annoying ads just for you, we have the premium version of the Towers of Hanoi!</source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">Desteğin için teşekkürler!</translation>
     </message>
     <message>
         <source>You are now our premium user and we won&apos;t dare bother you with ads anymore.</source>
-        <translation type="unfinished">Artık bizim premium kullanıcımızsınız ve artık sizi reklamlarla rahatsız etmeye cesaret edemeyeceğiz.</translation>
+        <translation type="obsolete">Artık bizim premium kullanıcımızsınız ve artık sizi reklamlarla rahatsız etmeye cesaret edemeyeceğiz.</translation>
     </message>
     <message>
         <source>Do not show again </source>
-        <translation type="unfinished">Tekrar gösterme</translation>
+        <translation type="obsolete">Tekrar gösterme</translation>
     </message>
 </context>
 </TS>

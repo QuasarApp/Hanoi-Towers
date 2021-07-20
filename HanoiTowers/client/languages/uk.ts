@@ -592,8 +592,8 @@
         <translation>Не показувати знову</translation>
     </message>
     <message>
-        <source>If you want to unlock all levels and also get rid of annoying ads just for you, we have the premium version of the Towers of Hanoi!</source>
-        <translation type="unfinished"></translation>
+        <source>Now levels from 1 to 15 are available to you. Enjoy your game!</source>
+        <translation>Тепер вам доступні рівні з 1 по 15. Приємною гри!</translation>
     </message>
 </context>
 <context>
@@ -789,19 +789,15 @@ Minimum steps for this lvl: %1</source>
     </message>
     <message>
         <source>Thanks for your support!</source>
-        <translation type="unfinished">Дякую за твою підтримку!</translation>
-    </message>
-    <message>
-        <source>If you want to unlock all levels and also get rid of annoying ads just for you, we have the premium version of the Towers of Hanoi!</source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">Дякую за твою підтримку!</translation>
     </message>
     <message>
         <source>You are now our premium user and we won&apos;t dare bother you with ads anymore.</source>
-        <translation type="unfinished">Тепер ви наш преміум-користувач, і ми більше не будемо турбувати вас рекламою.</translation>
+        <translation type="obsolete">Тепер ви наш преміум-користувач, і ми більше не будемо турбувати вас рекламою.</translation>
     </message>
     <message>
         <source>Do not show again </source>
-        <translation type="unfinished">Не показувати знову</translation>
+        <translation type="obsolete">Не показувати знову</translation>
     </message>
 </context>
 </TS>
