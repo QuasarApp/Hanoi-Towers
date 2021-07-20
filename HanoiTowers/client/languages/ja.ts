@@ -64,7 +64,7 @@
     <name>AdLoadScrean</name>
     <message>
         <source>Loading ...</source>
-        <translation>読み込み中 。。。</translation>
+        <translation>読み込み中...</translation>
     </message>
 </context>
 <context>
@@ -583,7 +583,11 @@
     </message>
     <message>
         <source>Do not show again </source>
-        <translation>再び表示しない</translation>
+        <translation>再び表示しない </translation>
+    </message>
+    <message>
+        <source>Now levels from 1 to 15 are available to you. Enjoy your game!</source>
+        <translation>1から15までのレベルが利用可能になりました。ゲームをお楽しみください！</translation>
     </message>
 </context>
 <context>
@@ -608,7 +612,7 @@
     </message>
     <message>
         <source>Welcom to Hanoi Towers </source>
-        <translation>ハノイタワー</translation>
+        <translation>ハノイタワー </translation>
     </message>
     <message>
         <source>Profiles</source>
@@ -788,6 +792,18 @@ Minimum steps for this lvl: %1</source>
     <message>
         <source>Hanoi Towers</source>
         <translation>ハノイタワーズ</translation>
+    </message>
+    <message>
+        <source>Thanks for your support!</source>
+        <translation type="obsolete">ご協力ありがとうございました！</translation>
+    </message>
+    <message>
+        <source>You are now our premium user and we won&apos;t dare bother you with ads anymore.</source>
+        <translation type="obsolete">あなたは今や私たちのプレミアムユーザーであり、私たちはもう広告であなたを煩わせることはありません。</translation>
+    </message>
+    <message>
+        <source>Do not show again </source>
+        <translation type="obsolete">再び表示しない</translation>
     </message>
 </context>
 </TS>
