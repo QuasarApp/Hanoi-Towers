@@ -31,7 +31,7 @@ Dialog {
             text: qsTr("Thanks for your support!")
             font.bold: true
             font.capitalization: Font.AllUppercase
-            horizontalAlignment: Text.AlignLeft
+            horizontalAlignment: Text.AlignHCenter
             Layout.fillWidth: true
 
         }
