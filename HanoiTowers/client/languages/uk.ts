@@ -589,7 +589,11 @@
     </message>
     <message>
         <source>Do not show again </source>
-        <translation>Не показувати знову</translation>
+        <translation>Не показувати знову </translation>
+    </message>
+    <message>
+        <source>Now levels from 1 to 15 are available to you. Enjoy your game!</source>
+        <translation>Тепер вам доступні рівні з 1 по 15. Приємною гри!</translation>
     </message>
 </context>
 <context>
@@ -614,7 +618,7 @@
     </message>
     <message>
         <source>Welcom to Hanoi Towers </source>
-        <translation>Ласкаво просимо до Ханойських веж</translation>
+        <translation>Ласкаво просимо до Ханойських веж </translation>
     </message>
     <message>
         <source>Profiles</source>
@@ -782,6 +786,18 @@ Minimum steps for this lvl: %1</source>
     <message>
         <source>Hanoi Towers</source>
         <translation>Ханої вежі</translation>
+    </message>
+    <message>
+        <source>Thanks for your support!</source>
+        <translation type="obsolete">Дякую за твою підтримку!</translation>
+    </message>
+    <message>
+        <source>You are now our premium user and we won&apos;t dare bother you with ads anymore.</source>
+        <translation type="obsolete">Тепер ви наш преміум-користувач, і ми більше не будемо турбувати вас рекламою.</translation>
+    </message>
+    <message>
+        <source>Do not show again </source>
+        <translation type="obsolete">Не показувати знову</translation>
     </message>
 </context>
 </TS>

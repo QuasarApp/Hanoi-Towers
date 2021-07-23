@@ -315,6 +315,10 @@
         <source>Do not show again </source>
         <translation>Nie pokazuj ponownie </translation>
     </message>
+    <message>
+        <source>Now levels from 1 to 15 are available to you. Enjoy your game!</source>
+        <translation>Teraz dostępne są poziomy od 1 do 15. Baw się dobrze!</translation>
+    </message>
 </context>
 <context>
     <name>SwitchLvl</name>
@@ -331,7 +335,7 @@
     </message>
     <message>
         <source>Welcom to Hanoi Towers </source>
-        <translation>Witamy w Hanoi Towersi</translation>
+        <translation>Witamy w Hanoi Towersi </translation>
     </message>
     <message>
         <source>Profiles</source>
@@ -413,6 +417,18 @@
     <message>
         <source>Hanoi Towers</source>
         <translation>Wieże Hanoi</translation>
+    </message>
+    <message>
+        <source>Thanks for your support!</source>
+        <translation type="obsolete">Dziękuję za wsparcie!</translation>
+    </message>
+    <message>
+        <source>You are now our premium user and we won&apos;t dare bother you with ads anymore.</source>
+        <translation type="obsolete">Jesteś teraz naszym użytkownikiem premium i nie odważymy się już więcej zawracać Ci głowy reklamami.</translation>
+    </message>
+    <message>
+        <source>Do not show again </source>
+        <translation type="obsolete">Nie pokazuj ponownie </translation>
     </message>
 </context>
 </TS>

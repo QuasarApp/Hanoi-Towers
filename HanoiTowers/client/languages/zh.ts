@@ -315,6 +315,10 @@
         <source>Do not show again </source>
         <translation>不再显示 </translation>
     </message>
+    <message>
+        <source>Now levels from 1 to 15 are available to you. Enjoy your game!</source>
+        <translation>現在您可以選擇 1 到 15 級。享受您的遊戲吧！</translation>
+    </message>
 </context>
 <context>
     <name>SwitchLvl</name>
@@ -413,6 +417,18 @@
     <message>
         <source>Hanoi Towers</source>
         <translation>汉诺塔</translation>
+    </message>
+    <message>
+        <source>Thanks for your support!</source>
+        <translation type="obsolete">感谢您的支持！</translation>
+    </message>
+    <message>
+        <source>You are now our premium user and we won&apos;t dare bother you with ads anymore.</source>
+        <translation type="obsolete">您现在是我们的高级用户，不会再被广告打扰了。</translation>
+    </message>
+    <message>
+        <source>Do not show again </source>
+        <translation type="obsolete">不再显示 </translation>
     </message>
 </context>
 </TS>
