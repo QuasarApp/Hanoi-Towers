@@ -36,6 +36,8 @@
     <qresource prefix="/img">
         <file alias="DefaultAvatar">res/DefaultAvatar.png</file>
         <file alias="premium">res/HanoiTowers_premium_logo.png</file>
+		<file>res/unlock.png</file>
+		<file>res/galochka.png</file>
     </qresource>
     <qresource prefix="/languages">
         <file>languages/ru.qm</file>
