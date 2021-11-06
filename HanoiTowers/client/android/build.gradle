@@ -37,7 +37,7 @@ android {
 
     compileSdkVersion androidCompileSdkVersion.toInteger()
 
-    buildToolsVersion '31.0.0'
+    buildToolsVersion '28.0.3'
     ndkVersion '23.1.7779620'
 
     sourceSets {
