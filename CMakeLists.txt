@@ -40,10 +40,10 @@ if (NOT DEFINED HANOI_TESTS)
 endif()
 
 if (NOT DEFINED HANOI_ADMOD)
-    set(HANOI_ADMOD ON)
+    set(HANOI_ADMOD OFF)
 
     if (ANDROID)
-        set(HANOI_ADMOD ON)
+        set(HANOI_ADMOD OFF)
     endif()
 endif()
 
