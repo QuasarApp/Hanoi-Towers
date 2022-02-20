@@ -18,7 +18,9 @@
 #include <qmlnotifyservice.h>
 #include <credits.h>
 #ifdef Q_OS_ANDROID
+#ifdef HANOI_ADMOD
 #include <QtAndroidTools.h>
+#endif
 #endif
 
 int main(int argc, char *argv[])
@@ -55,8 +57,9 @@ int main(int argc, char *argv[])
     }
 
 #ifdef Q_OS_ANDROID
+#ifdef HANOI_ADMOD
     QtAndroidTools::initializeQmlTools();
-
+#endif
     ActivityHandler *activityHandler = new ActivityHandler(&app);
     engine.rootContext()->setContextProperty(QLatin1String("activityHandler"), activityHandler);
 #endif
