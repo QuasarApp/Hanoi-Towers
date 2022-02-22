@@ -4,50 +4,6 @@
 <context>
     <name>About</name>
     <message>
-        <source>about</source>
-        <translation type="vanished">hakkında</translation>
-    </message>
-    <message>
-        <source>About</source>
-        <translation type="vanished">hakkında</translation>
-    </message>
-    <message>
-        <source>Credits</source>
-        <translation type="vanished">Sponsorlar</translation>
-    </message>
-    <message>
-        <source>Product of QuasarApp
-            * Developers:
-            * Programmer: Yankovich N. Andrei.
-            * Disigner: Chernenkov I. Oleg.
-            * This game is distributed under the LGPLv3 license.
-            * Contact: https://github.com/EndrII
-            * Copyright (C) 2018-2019 Yankovich N. Andrei.
-            * Copyright (C) 2019-2021 QuasarApp group.</source>
-        <translation type="vanished">QuasarApp ürünü
-             * Geliştiriciler:
-             * Programcı: Yankovich N. Andrei.
-             * Disigner: Chernenkov I. Oleg.
-             * Bu oyun LGPLv3 lisansı altında dağıtılmaktadır.
-             * İletişim: https://github.com/EndrII
-             * Telif Hakkı (C) 2018-2019 Yankovich N. Andrei.
-             * Telif Hakkı (C) 2019-2021 QuasarApp grubu.</translation>
-    </message>
-    <message>
-        <source>Product of QuasarApp
-* Developers:
-* Programmer: Yankovich N. Andrei.
-* This game is distributed under the LGPLv3 license.
-* Contact: https://github.com/EndrII
-* Copyright (C) 2018-2019 Yankovich N. Andrei.</source>
-        <translation type="vanished">QuasarApp ürünü
-* Geliştiriciler:
-* Programcı: Yankovich N. Andrei.
-* Bu oyun LGPLv3 lisansı altında dağıtılmaktadır.
-* İletişim: https://github.com/EndrII
-* Telif Hakkı (C) 2018-2019 Yankovich N. Andrei.</translation>
-    </message>
-    <message>
         <source>## QuasarApp Core team:</source>
         <translation>## QuasarApp Core ekibi:</translation>
     </message>
@@ -68,73 +24,7 @@
     </message>
 </context>
 <context>
-    <name>BackEnd</name>
-    <message>
-        <source>Create new user</source>
-        <translation type="vanished">Yeni kullanıcı oluştur</translation>
-    </message>
-    <message>
-        <source>Connect error</source>
-        <translation type="vanished">Bağlantı hatası</translation>
-    </message>
-    <message>
-        <source>Failed to connect to server please check network connection befor login</source>
-        <translation type="vanished">Sunucuya bağlanılamadı, lütfen oturum açmadan önce ağ bağlantısını kontrol edin</translation>
-    </message>
-    <message>
-        <source>login error</source>
-        <translation type="vanished">sisteme giriş hatası</translation>
-    </message>
-    <message>
-        <source>Failed to login into online account, please check your password and username</source>
-        <translation type="vanished">Çevrimiçi hesaba giriş yapılamadı, lütfen şifrenizi ve kullanıcı adınızı kontrol edin</translation>
-    </message>
-    <message>
-        <source>Register online error</source>
-        <translation type="vanished">Çevrimiçi kayıt hatası</translation>
-    </message>
-    <message>
-        <source>Failed to register this account, if this account was created by you, try to restore it.</source>
-        <translation type="vanished">Bu hesap kaydedilemedi, bu hesap sizin tarafınızdan oluşturulduysa, geri yüklemeyi deneyin.</translation>
-    </message>
-    <message>
-        <source>Server error</source>
-        <translation type="vanished">Server hatası</translation>
-    </message>
-    <message>
-        <source>Create user error</source>
-        <translation type="vanished">Kullanıcı hatası oluştur</translation>
-    </message>
-    <message>
-        <source>Failed to create a new user, The name %0 alredy used.</source>
-        <translation type="vanished">Yeni bir kullanıcı oluşturulamadı, %0 adı kullanıldı.</translation>
-    </message>
-    <message>
-        <source>current profile not online!</source>
-        <translation type="vanished">Mevcut profil çevrimdışı!</translation>
-    </message>
-    <message>
-        <source>Remove online error</source>
-        <translation type="vanished">Çevrimiçi kullanıcı verilerini kaldırma hatası</translation>
-    </message>
-</context>
-<context>
-    <name>BaseButton</name>
-    <message>
-        <source>ok</source>
-        <translation type="vanished">ok</translation>
-    </message>
-</context>
-<context>
     <name>Config</name>
-    <message>
-        <source>Settings</source>
-        <translation type="vanished">ayarlar</translation>
-    </message>
-    <message>
-        <source>Return to main menu</source>
-        <translation type="vanished">Ana menüye dön</translation>
-    </message>
     <message>
         <source>Standart color</source>
         <translation>standart renk</translation>
@@ -158,32 +48,6 @@
 </context>
 <context>
     <name>Game</name>
-    <message>
-        <source>You have passed the level in %0 steps and unlocked level %1</source>
-        <translation type="vanished">Seviyeyi %0 adımda geçtiniz ve %1  seviyesinin kilidini açtınız</translation>
-    </message>
-    <message>
-        <source>
- Minimum steps for this lvl: %2</source>
-        <translation type="vanished">
-Bu seviye için minimum adımlar: %2</translation>
-    </message>
-    <message>
-        <source>
- you reward = %3</source>
-        <translation type="vanished">
- ödülünüz = %3</translation>
-    </message>
-    <message>
-        <source>You have passed the level in %0 steps.
-</source>
-        <translation type="vanished">Seviyey i%0 adımda geçtiniz.
-</translation>
-    </message>
-    <message>
-        <source>Minimum steps for this lvl: %1</source>
-        <translation type="vanished">Bu seviye için minimum adımlar: %1</translation>
-    </message>
     <message>
         <source>Congratulations! You have passed the level %0</source>
         <translation>Tebrikler! %0 seviyesini geçtiniz</translation>
@@ -216,10 +80,6 @@ Bu seviye için minimum adımlar: %2</translation>
 <context>
     <name>GameStateWidget</name>
     <message>
-        <source>Tower height: </source>
-        <translation type="vanished">Kule yüksekliği: </translation>
-    </message>
-    <message>
         <source>Tower height:    </source>
         <translation>Kule yüksekliği:    </translation>
     </message>
@@ -242,17 +102,9 @@ Bu seviye için minimum adımlar: %2</translation>
         <source>Internal Error, server send invalid data, and this data can&apos;t be saved into local database.</source>
         <translation>Dahili Hata, sunucu geçersiz veri gönderdi ve bu veriler yerel veritabanına kaydedilemez.</translation>
     </message>
-    <message>
-        <source>Online error</source>
-        <translation type="vanished">Çevrimiçi hata</translation>
-    </message>
 </context>
 <context>
     <name>HanoiTowers</name>
-    <message>
-        <source>Create new user</source>
-        <translation type="obsolete">Yeni kullanıcı oluştur</translation>
-    </message>
     <message>
         <source>Create</source>
         <translation>Oluşturmak</translation>
@@ -340,21 +192,9 @@ Bu seviye için minimum adımlar: %2</translation>
         <source></source>
         <translation></translation>
     </message>
-    <message>
-        <source>Main menu</source>
-        <translation type="vanished">Ana menü</translation>
-    </message>
 </context>
 <context>
     <name>Help</name>
-    <message>
-        <source>Your task is to transfer discs of different sizesfrom the left tower to any other free space.You can only transfer the top drive of the tower.You can not transfer several disks at once and put larger disks on small disks.</source>
-        <translation type="vanished">Göreviniz, sol kuleden farklı boyuttaki diskleri başka bir boş alana aktarmaktır. Kulenin sadece üst sürücüsünü aktarabilirsiniz. Birkaç diski aynı anda transfer edemez ve daha küçük disklere daha büyük diskler yerleştiremezsiniz.</translation>
-    </message>
-    <message>
-        <source>Your task is to transfer discs of different sizesfrom the left tower to third tower.You can only transfer the top drive of the tower.You can not transfer several disks at once and put larger disks on small disks.</source>
-        <translation type="vanished">Göreviniz, farklı boyutlardaki diskleri sol kuleden üçüncü kuleye aktarmaktır. Kulenin yalnızca en üst sürücüsünü aktarabilirsiniz, aynı anda birkaç diski aktaramaz ve küçük disklere daha büyük diskler koyamazsınız.</translation>
-    </message>
     <message>
         <source>Tap to select the upper part of tower.</source>
         <translation>Kulenin üst kısmını seçmek için dokunun.</translation>
@@ -391,135 +231,9 @@ Bu seviye için minimum adımlar: %2</translation>
         <source>Do not show again</source>
         <translation>Tekrar gösterme</translation>
     </message>
-    <message>
-        <source>Do not show again:</source>
-        <translation type="vanished">Tekrar gösterme:</translation>
-    </message>
-    <message>
-        <source>Ok</source>
-        <translation type="vanished">ok</translation>
-    </message>
-</context>
-<context>
-    <name>LoginView</name>
-    <message>
-        <source>Create a new account</source>
-        <translation type="vanished">Yeni bir hesap oluştur</translation>
-    </message>
-    <message>
-        <source>LogIn</source>
-        <translation type="vanished">Oturum aç</translation>
-    </message>
-    <message>
-        <source>Please fill this form to create an account</source>
-        <translation type="vanished">Lütfen bir hesap oluşturmak için bu formu doldurun</translation>
-    </message>
-    <message>
-        <source>Please fill this form to login in your account</source>
-        <translation type="vanished">Lütfen hesabınıza giriş yapmak için bu formu doldurun</translation>
-    </message>
-    <message>
-        <source>First Name</source>
-        <translation type="vanished">İsim</translation>
-    </message>
-    <message>
-        <source>Empy or incorrect name. Please enter yuor name.</source>
-        <translation type="vanished">Empy veya yanlış isim. Lütfen adınızı girin.</translation>
-    </message>
-    <message>
-        <source>Last Name</source>
-        <translation type="vanished">Soyad</translation>
-    </message>
-    <message>
-        <source>Select you country</source>
-        <translation type="vanished">Ülkenizi seçin</translation>
-    </message>
-    <message>
-        <source>EMail</source>
-        <translation type="vanished">EMail</translation>
-    </message>
-    <message>
-        <source>Empty or incorrect email address. Please enter yuor name.</source>
-        <translation type="vanished">E-posta adresi boş veya yanlış. Lütfen e-posta adresinizi girin.</translation>
-    </message>
-    <message>
-        <source>Nickname</source>
-        <translation type="vanished">Takma ad</translation>
-    </message>
-    <message>
-        <source>Empty or incorrect Nickname. Please enter yuor name.</source>
-        <translation type="vanished">Boş veya yanlış Takma ad. Lütfen takma adınızı girin.</translation>
-    </message>
-    <message>
-        <source>Pasword</source>
-        <translation type="vanished">Parola</translation>
-    </message>
-    <message>
-        <source>Confirm pasword</source>
-        <translation type="vanished">Şifreyi Onayla</translation>
-    </message>
-    <message>
-        <source>Forgot password</source>
-        <translation type="vanished">Parolanızı mı unuttunuz</translation>
-    </message>
-    <message>
-        <source>I accept the Terms of use</source>
-        <translation type="vanished">Kullanım şartlarını kabul ediyorum</translation>
-    </message>
-    <message>
-        <source>Show terms of use</source>
-        <translation type="vanished">Kullanım şartlarını göster</translation>
-    </message>
-    <message>
-        <source>SignUp</source>
-        <translation type="vanished">Kaydol</translation>
-    </message>
-    <message>
-        <source>Login In</source>
-        <translation type="vanished">Oturum aç</translation>
-    </message>
-    <message>
-        <source>Sign Up</source>
-        <translation type="vanished">Kaydol</translation>
-    </message>
-    <message>
-        <source>Password must match the 1st field and the password cannot be empty</source>
-        <translation type="vanished">Parola 1. alanla eşleşmelidir ve parola boş olamaz</translation>
-    </message>
-</context>
-<context>
-    <name>LoginView::LVMainModel</name>
-    <message>
-        <source>must be longer than 8 characters</source>
-        <translation type="vanished">8 karakterden uzun olmalıdır</translation>
-    </message>
-    <message>
-        <source>must contain numbers</source>
-        <translation type="vanished">sayıları içermelidir</translation>
-    </message>
-    <message>
-        <source>must contain small chars</source>
-        <translation type="vanished">küçük karakterler içermelidir</translation>
-    </message>
-    <message>
-        <source>must contain large chars</source>
-        <translation type="vanished">küçük karakterler içermelidir</translation>
-    </message>
-    <message>
-        <source>must contain extra chars (!@#$%^&amp;*)</source>
-        <translation type="vanished">ekstra karakterler içermelidir (!@#$%^&amp;*)</translation>
-    </message>
-    <message>
-        <source>Password requirements: </source>
-        <translation type="vanished">Parola gereksinimleri: </translation>
-    </message>
 </context>
 <context>
     <name>MainMenu</name>
-    <message>
-        <source>Hanoi Towers</source>
-        <translation type="vanished">Hanoi Kuleleri</translation>
-    </message>
     <message>
         <source>continue</source>
         <translation>devam et</translation>
@@ -547,17 +261,6 @@ Bu seviye için minimum adımlar: %2</translation>
     <message>
         <source>Save and exit</source>
         <translation>Kaydet ve çık</translation>
-    </message>
-    <message>
-        <source>exit</source>
-        <translation type="vanished">çıkış</translation>
-    </message>
-</context>
-<context>
-    <name>NotificationForm</name>
-    <message>
-        <source>Message</source>
-        <translation type="vanished">İleti</translation>
     </message>
 </context>
 <context>
@@ -599,13 +302,6 @@ Bu seviye için minimum adımlar: %2</translation>
     <message>
         <source>Start</source>
         <translation>başla</translation>
-    </message>
-</context>
-<context>
-    <name>ToolBar</name>
-    <message>
-        <source>Return to main menu</source>
-        <translation type="obsolete">Ana menüye dön</translation>
     </message>
 </context>
 <context>
@@ -662,24 +358,12 @@ Bu seviye için minimum adımlar: %2</translation>
         <translation>Kaldırmak</translation>
     </message>
     <message>
-        <source>Remove This Profile</source>
-        <translation type="vanished">Bu Profili Kaldır</translation>
-    </message>
-    <message>
         <source>Restore</source>
         <translation>Onarmak</translation>
     </message>
     <message>
         <source>Accept</source>
         <translation>Kabul etmek</translation>
-    </message>
-    <message>
-        <source>User is updated</source>
-        <translation type="vanished">Kullanıcı güncellendi</translation>
-    </message>
-    <message>
-        <source>User data will be changed.</source>
-        <translation type="vanished">Kullanıcı verileri değiştirilecek.</translation>
     </message>
     <message>
         <source>Remove %0 user</source>
@@ -693,10 +377,6 @@ Bu seviye için minimum adımlar: %2</translation>
 <context>
     <name>UsersTable</name>
     <message>
-        <source>Return to main menu</source>
-        <translation type="obsolete">Ana menüye dön</translation>
-    </message>
-    <message>
         <source>Locale users list</source>
         <translation>Yerel kullanıcı listesi</translation>
     </message>
@@ -705,94 +385,8 @@ Bu seviye için minimum adımlar: %2</translation>
         <translation>Kullanıcı Ekle</translation>
     </message>
     <message>
-        <source>Create the new user</source>
-        <translation type="vanished">Yeni kullanıcıyı oluşturun</translation>
-    </message>
-    <message>
         <source>Best users in the world</source>
         <translation>Dünyanın en iyi oyuncuları</translation>
-    </message>
-</context>
-<context>
-    <name>about</name>
-    <message>
-        <source>about</source>
-        <translation type="vanished">hakkında</translation>
-    </message>
-    <message>
-        <source>Product of QuasarApp
-* Developers:
-* Programmer: Yankovich N. Andrei.
-* This game is distributed under the LGPLv3 license.
-* Contact: https://github.com/EndrII
-* Copyright (C) 2018-2019 Yankovich N. Andrei.</source>
-        <translation type="vanished">QuasarApp ürünü
-* Geliştiriciler:
-* Programcı: Yankovich N. Andrei.
-* Bu oyun LGPLv3 lisansı altında dağıtılmaktadır.
-* İletişim: https://github.com/EndrII
-* Telif Hakkı (C) 2018-2019 Yankovich N. Andrei.</translation>
-    </message>
-    <message>
-        <source>Product of QuasarApp
-* Developers:
-* Programmer: Yankovich N. Andrei.
-* This game is distributed under the LGPLv3 license.
-* Contact: https://github.com/EndrII
-* Copyright (C) 2018 Yankovich N. Andrei.</source>
-        <translation type="vanished">QuasarApp ürünü
-* Geliştiriciler:
-* Programcı: Yankovich N. Andrei.
-* Bu oyun LGPLv3 lisansı altında dağıtılmaktadır.
-* İletişim: https://github.com/EndrII
-* Telif Hakkı (C) 2018 Yankovich N. Andrei.</translation>
-    </message>
-</context>
-<context>
-    <name>game</name>
-    <message>
-        <source>Start</source>
-        <translation type="vanished">başla</translation>
-    </message>
-    <message>
-        <source>Exit</source>
-        <translation type="vanished">çıkış</translation>
-    </message>
-    <message>
-        <source>About</source>
-        <translation type="vanished">hakkında</translation>
-    </message>
-    <message>
-        <source>lvl </source>
-        <translation type="vanished">seviye </translation>
-    </message>
-    <message>
-        <source>step </source>
-        <translation type="vanished">adım </translation>
-    </message>
-    <message>
-        <source>Tower height:</source>
-        <translation type="vanished">Kule yüksekliği:</translation>
-    </message>
-    <message>
-        <source>Return to main menu</source>
-        <translation type="vanished">Ana menüye dön</translation>
-    </message>
-    <message>
-        <source>You have passed the level in %0 steps and unlocked level %1
- Minimum steps for this lvl: %2</source>
-        <translation type="vanished">Seviyeyi %0 adımından geçirdiniz ve %1 kilidini açtınız
-  Bu lvl için minimum adımlar: %2</translation>
-    </message>
-    <message>
-        <source>You have passed the level in %0 steps.
-Minimum steps for this lvl: %1</source>
-        <translation type="vanished">Seviyeyi %0 adımından geçtiniz.
-Bu lvl için minimum adımlar:%1</translation>
-    </message>
-    <message>
-        <source>Ok</source>
-        <translation type="vanished">ok</translation>
     </message>
 </context>
 <context>
@@ -800,18 +394,6 @@ Bu lvl için minimum adımlar:%1</translation>
     <message>
         <source>Hanoi Towers</source>
         <translation>Hanoi Kuleleri</translation>
-    </message>
-    <message>
-        <source>Thanks for your support!</source>
-        <translation type="obsolete">Desteğin için teşekkürler!</translation>
-    </message>
-    <message>
-        <source>You are now our premium user and we won&apos;t dare bother you with ads anymore.</source>
-        <translation type="obsolete">Artık bizim premium kullanıcımızsınız ve artık sizi reklamlarla rahatsız etmeye cesaret edemeyeceğiz.</translation>
-    </message>
-    <message>
-        <source>Do not show again </source>
-        <translation type="obsolete">Tekrar gösterme</translation>
     </message>
 </context>
 </TS>

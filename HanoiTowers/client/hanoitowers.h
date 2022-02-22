@@ -114,7 +114,6 @@ public:
 
     Q_INVOKABLE bool isAdMod() const;
 
-
     bool showCredits() const;
     void setShowCredits(bool newShowCredits);
 
@@ -225,9 +224,8 @@ private slots:
 
 private:
     void init();
-    void loadOldSaves();
 
-    QuasarAppUtils::Settings *_settings = nullptr;
+    QuasarAppUtils::ISettings *_settings = nullptr;
 
     LoginView::LVMainModel *_loginModel = nullptr;
     LoginView::LVMainModel *_createNewOfflineUser = nullptr;

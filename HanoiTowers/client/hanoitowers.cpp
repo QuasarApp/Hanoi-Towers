@@ -22,6 +22,8 @@
 #include "dataconverter.h"
 #include "localuser.h"
 #include "recordsproxymodel.h"
+#include "qaglobalutils.h"
+#include "hanoidb.h"
 
 #define DEFAULT_USER_ID "DefaultUser"
 #define DEFAULT_USER_NAME "User"
@@ -39,9 +41,11 @@ HanoiTowers::HanoiTowers(QQmlApplicationEngine *engine):
     QObject(),
     _profile()
 {
-    _settings = QuasarAppUtils::Settings::instance();
+    _settings = QuasarAppUtils::Settings::init();
 
     _client = new HanoiClient();
+    _client->run("localhost", 0);
+
     _loginModel = new LoginView::LVMainModel("userLogin", this);
     _createNewOfflineUser = new LoginView::LVMainModel("createUser", this);
 
@@ -128,32 +132,6 @@ void HanoiTowers::init() {
 
     setLaunchCount(_settingsData._launchCount + 1);
 
-}
-
-void HanoiTowers::loadOldSaves() {
-    QFile f(MAIN_SETINGS_FILE);
-    if(f.open(QIODevice::ReadOnly)){
-        QDataStream stream(&f);
-
-        unsigned short lvl;
-        bool isFirstStart, _animation, _randomColor;
-        stream >> lvl;
-        stream >> isFirstStart;
-        stream >> _animation;
-        stream >> _randomColor;
-
-        setAnimation(_animation);
-        setRandomColor(_randomColor);
-        setShowHelp(isFirstStart);
-        if (lvl < 99)
-            gameState()->saveLvl(lvl);
-
-
-        f.close();
-        QFile::remove(MAIN_SETINGS_FILE);
-
-        updateProfile();
-    }
 }
 
 void HanoiTowers::onlineRequest(const QString &userId) {
@@ -314,18 +292,6 @@ void HanoiTowers::handleAcceptUserData(QSharedPointer<LocalUser> data) {
 
         _profile.copyFrom(data.data());
         _settings->setValue(CURRENT_PROFILE_KEY, _profile.getId());
-
-        loadOldSaves();
-
-        #ifdef Q_OS_ANDROID
-        #ifndef HANOI_ADMOD
-
-            if (_profile.gameState()->lvl() < 15) {
-                _profile.gameState()->unlockLvlTo(15);
-            }
-
-        #endif
-        #endif
 
         emit profileChanged();
 

@@ -4,36 +4,6 @@
 <context>
     <name>About</name>
     <message>
-        <source>about</source>
-        <translation type="vanished">关于</translation>
-    </message>
-    <message>
-        <source>About</source>
-        <translation type="vanished">关于</translation>
-    </message>
-    <message>
-        <source>Credits</source>
-        <translation type="vanished">鸣谢</translation>
-    </message>
-    <message>
-        <source>Product of QuasarApp
-            * Developers:
-            * Programmer: Yankovich N. Andrei.
-            * Disigner: Chernenkov I. Oleg.
-            * This game is distributed under the LGPLv3 license.
-            * Contact: https://github.com/EndrII
-            * Copyright (C) 2018-2019 Yankovich N. Andrei.
-            * Copyright (C) 2019-2021 QuasarApp group.</source>
-        <translation type="vanished">QuasarApp 的产品
-             * 开发者：
-             * 程序员：Yankovich N. Andrei
-             * 设计师：Chernenkov I. Oleg
-             * 本游戏在 LGPLv3 许可下发行。
-             * 联系方式：https://github.com/EndrII
-             * 版权所有 (C) 2018-2019 Yankovich N. Andrei 。
-             * 版权所有 (C) 2019-2021 QuasarApp group 。</translation>
-    </message>
-    <message>
         <source>## QuasarApp Core team:</source>
         <translation>## QuasarApp Core 团队：</translation>
     </message>
@@ -417,18 +387,6 @@
     <message>
         <source>Hanoi Towers</source>
         <translation>汉诺塔</translation>
-    </message>
-    <message>
-        <source>Thanks for your support!</source>
-        <translation type="obsolete">感谢您的支持！</translation>
-    </message>
-    <message>
-        <source>You are now our premium user and we won&apos;t dare bother you with ads anymore.</source>
-        <translation type="obsolete">您现在是我们的高级用户，不会再被广告打扰了。</translation>
-    </message>
-    <message>
-        <source>Do not show again </source>
-        <translation type="obsolete">不再显示 </translation>
     </message>
 </context>
 </TS>

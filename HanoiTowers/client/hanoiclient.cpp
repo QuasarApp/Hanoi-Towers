@@ -25,14 +25,11 @@
 #include <worldupdate.h>
 #include <fixworldrequest.h>
 #include <worldclient.h>
+#include "hanoidb.h"
 #include "hanoierrorcodes.h"
 #include "localrecordstable.h"
 
 HanoiClient::HanoiClient() {
-
-    initSqlDb("",
-              new QH::SqlDB(),
-              new QH::AsyncSqlDBWriter());
 
     qRegisterMetaType<QSharedPointer<LocalUser>>();
     qRegisterMetaType<QHash<QString,UserPreview>>();
@@ -68,7 +65,7 @@ QH::ParserResult HanoiClient::parsePackage(const QSharedPointer<QH::PKG::Abstrac
         return parentResult;
     }
 
-    if (H_16<UserData>() == pkg->cmd()) {        
+    if (UserData::command() == pkg->cmd()) {
         if (!workWithUserData(pkg.staticCast<UserData>())) {
             return QH::ParserResult::Error;
 
@@ -77,7 +74,7 @@ QH::ParserResult HanoiClient::parsePackage(const QSharedPointer<QH::PKG::Abstrac
 
     }
 
-    if (H_16<World>() == pkg->cmd()) {
+    if (World::command() == pkg->cmd()) {
         _world->copyFrom(pkg.data());
 
         emit worldInited(_world->getData());
@@ -85,7 +82,7 @@ QH::ParserResult HanoiClient::parsePackage(const QSharedPointer<QH::PKG::Abstrac
         return QH::ParserResult::Processed;
     }
 
-    if (H_16<WorldUpdate>() == pkg->cmd()) {
+    if (WorldUpdate::command() == pkg->cmd()) {
         if (!_world) {
             return QH::ParserResult::Error;
         }
@@ -109,12 +106,6 @@ QH::ParserResult HanoiClient::parsePackage(const QSharedPointer<QH::PKG::Abstrac
     }
 
     return QH::ParserResult::NotProcessed;
-}
-
-QStringList HanoiClient::SQLSources() const {
-    return {
-        ":/sql/sql/database.sql"
-    };
 }
 
 QPair<QString, unsigned short> HanoiClient::serverAddress() const {
@@ -187,6 +178,11 @@ void HanoiClient::updateLocalCache(const QSharedPointer<LocalUser>& localUser) {
     _usersCache[userId] = localUser;
     emit userDataChanged(localUser);
 
+}
+
+bool HanoiClient::initDatabase() {
+    setDb(new HanoiDB());
+    return true;
 }
 
 bool HanoiClient::workWithUserData(const QSharedPointer<UserData>& obj) {
@@ -287,6 +283,10 @@ bool HanoiClient::getUserData(const QString& userId) {
     }
 
     return restUserData(userId);
+}
+
+QH::ISqlDBCache *HanoiClient::db() const {
+    return static_cast<HanoiDB*>(DataBaseNode::db())->rawDb();
 }
 
 bool HanoiClient::addProfile(const LocalUser& user) {

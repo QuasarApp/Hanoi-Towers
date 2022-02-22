@@ -18,7 +18,7 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 file(GLOB SOURCE_CPP
-    "*.cpp" "*.qrc"
+    "*.cpp" "*.h" "*.qrc"
 )
 
 if (ANDROID)
@@ -47,6 +47,11 @@ set(LANGS ${CMAKE_CURRENT_SOURCE_DIR}/languages/en.ts
 prepareQM(${CURRENT_PROJECT} ${CMAKE_CURRENT_SOURCE_DIR} "${LANGS}")
 
 if (ANDROID)
+
+    set(ENV{ANDROID_API_VERSION} 31)
+    set(ANDROID_API_VERSION $ENV{ANDROID_API_VERSION})
+    set(OPENSSL_ROOT_PATH "$ENV{OPENSSL_ROOT_DIR}")
+
     set(HANOI_EXTRA_LIBS Heart
                          ${PROJECT_NAME}Protockol
                          QuasarApp
@@ -57,8 +62,28 @@ if (ANDROID)
     find_package(QT NAMES Qt6 Qt5 COMPONENTS AndroidExtras REQUIRED)
     find_package(Qt${QT_VERSION_MAJOR} COMPONENTS AndroidExtras REQUIRED)
 
-    addDeployAPK(${CURRENT_PROJECT} "${CMAKE_CURRENT_LIST_DIR}/android" "digitalface" "${SIGPATH}/DigitalFaceMobily.keystore" "${SIGPASS_HANOI}" "${TARGET_DIR}" "${HANOI_EXTRA_LIBS}")
-    target_link_libraries(${CURRENT_PROJECT} PRIVATE QtAndroidTools Qt${QT_VERSION_MAJOR}::AndroidExtras)
+    addDeploySignedAPK(
+        ${CURRENT_PROJECT}
+        "${CMAKE_CURRENT_LIST_DIR}/android"
+        "digitalface"
+        "${SIGPATH}/DigitalFaceMobily.keystore"
+        "${SIGPASS_HANOI}"
+        "${TARGET_DIR}"
+        "${HANOI_EXTRA_LIBS}")
+
+    target_link_libraries(${CURRENT_PROJECT} PRIVATE Qt${QT_VERSION_MAJOR}::AndroidExtras)
+
+    if (HANOI_ADMOD)
+        target_link_libraries(${CURRENT_PROJECT} PRIVATE QtAndroidTools)
+
+    endif()
+
+    set(manifest_file "${CMAKE_CURRENT_SOURCE_DIR}/android/AndroidManifest.xml")
+    configure_file("${manifest_file}.in" ${manifest_file} @ONLY)
+
+    set(gradle_file "${CMAKE_CURRENT_SOURCE_DIR}/android/build.gradle")
+    configure_file("${gradle_file}.in" ${gradle_file} @ONLY)
+
 
     file(GLOB java_files
        "android/src/com/quasarapp/androidtools/*.java"

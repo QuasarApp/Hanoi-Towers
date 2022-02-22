@@ -1,5 +1,10 @@
 <?xml version="1.0"?>
-<manifest package="df.mobily.hanoi_towers" xmlns:android="http://schemas.android.com/apk/res/android" android:versionName="1.6.1.2" android:versionCode="28" android:installLocation="auto">
+<manifest
+package="df.mobily.hanoi_towers"
+xmlns:android="http://schemas.android.com/apk/res/android"
+android:versionName="@HANOI_TOWERS_VERSION@"
+android:versionCode="@GIT_COMMIT_COUNT@"
+android:installLocation="auto">
     <!-- The following comment will be replaced upon deployment with default permissions based on the dependencies of the application.
          Remove the comment if you do not require these default permissions. -->
     <!-- %%INSERT_PERMISSIONS -->
@@ -8,11 +13,29 @@
          Remove the comment if you do not require these default features. -->
     <!-- %%INSERT_FEATURES -->
 
-    <supports-screens android:largeScreens="true" android:normalScreens="true" android:anyDensity="true" android:smallScreens="true"/>
-    <application android:hardwareAccelerated="true" android:name="org.qtproject.qt5.android.bindings.QtApplication" android:label="-- %%INSERT_APP_NAME%% --" android:extractNativeLibs="true" android:icon="@drawable/icon">
-        <!-- Sample AdMob app ID: ca-app-pub-5799112356811682~1226170116 -->
-        <meta-data android:name="com.google.android.gms.ads.APPLICATION_ID" android:value="ca-app-pub-5799112356811682~1226170116"/>
-        <activity android:configChanges="orientation|uiMode|screenLayout|screenSize|smallestScreenSize|layoutDirection|locale|fontScale|keyboard|keyboardHidden|navigation|mcc|mnc|density" android:name="com.quasarapp.androidtools.MainActivity" android:label="-- %%INSERT_APP_NAME%% --" android:screenOrientation="landscape" android:launchMode="singleTop">
+    <supports-screens
+    android:largeScreens="true"
+    android:normalScreens="true"
+    android:anyDensity="true"
+    android:smallScreens="true"/>
+    <application
+    android:hardwareAccelerated="true"
+    android:name="com.quasarapp.androidtools.MainApplication"
+    android:label="-- %%INSERT_APP_NAME%% --"
+    android:extractNativeLibs="true"
+    android:requestLegacyExternalStorage="true"
+    android:icon="@drawable/icon">
+    <!-- Sample AdMob app ID: ca-app-pub-5799112356811682~1226170116 -->
+    <meta-data android:name="com.google.android.gms.ads.APPLICATION_ID"
+    android:value="ca-app-pub-5799112356811682~1226170116"/>
+        <activity
+            android:configChanges="orientation|uiMode|screenLayout|screenSize|smallestScreenSize|layoutDirection|locale|fontScale|keyboard|keyboardHidden|navigation|mcc|mnc|density"
+            android:name="com.quasarapp.androidtools.MainActivity"
+            android:label="-- %%INSERT_APP_NAME%% --"
+            android:screenOrientation="landscape"
+            android:launchMode="singleTop"
+            android:exported="true">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
@@ -43,9 +66,9 @@
             <!--  Messages maps -->
             <!-- Splash screen -->
             <!-- Orientation-specific (portrait/landscape) data is checked first. If not available for current orientation,
-                 then android.app.splash_screen_drawable. For best results, use together with splash_screen_sticky and
-                 use hideSplashScreen() with a fade-out animation from Qt Android Extras to hide the splash screen when you
-                 are done populating your window with content. -->
+             then android.app.splash_screen_drawable. For best results, use together with splash_screen_sticky and
+             use hideSplashScreen() with a fade-out animation from Qt Android Extras to hide the splash screen when you
+             are done populating your window with content. -->
             <!-- meta-data android:name="android.app.splash_screen_drawable_portrait" android:resource="@drawable/logo_portrait" / -->
             <!-- meta-data android:name="android.app.splash_screen_drawable_landscape" android:resource="@drawable/logo_landscape" / -->
             <!-- meta-data android:name="android.app.splash_screen_drawable" android:resource="@drawable/logo"/ -->
@@ -53,9 +76,9 @@
             <!-- Splash screen -->
             <!-- Background running -->
             <!-- Warning: changing this value to true may cause unexpected crashes if the
-                          application still try to draw after
-                          "applicationStateChanged(Qt::ApplicationSuspended)"
-                          signal is sent! -->
+                      application still try to draw after
+                      "applicationStateChanged(Qt::ApplicationSuspended)"
+                      signal is sent! -->
             <meta-data android:name="android.app.background_running" android:value="false"/>
             <!-- Background running -->
             <!-- auto screen scale factor -->
@@ -63,11 +86,11 @@
             <!-- auto screen scale factor -->
             <!-- extract android style -->
             <!-- available android:values :
-                * default - In most cases this will be the same as "full", but it can also be something else if needed, e.g., for compatibility reasons
-                * full - useful QWidget & Quick Controls 1 apps
-                * minimal - useful for Quick Controls 2 apps, it is much faster than "full"
-                * none - useful for apps that don't use any of the above Qt modules
-                -->
+            * default - In most cases this will be the same as "full", but it can also be something else if needed, e.g., for compatibility reasons
+            * full - useful QWidget & Quick Controls 1 apps
+            * minimal - useful for Quick Controls 2 apps, it is much faster than "full"
+            * none - useful for apps that don't use any of the above Qt modules
+            -->
             <meta-data android:name="android.app.extract_android_style" android:value="default"/>
             <!-- extract android style -->
             <meta-data android:name="android.app.splash_screen_drawable" android:resource="@drawable/logo"/>
@@ -77,7 +100,6 @@
         <!-- For adding service(s) please check: https://wiki.qt.io/AndroidServices -->
     </application>
 
-<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 </manifest>
