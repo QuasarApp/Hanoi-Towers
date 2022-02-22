@@ -22,6 +22,8 @@
 #include "dataconverter.h"
 #include "localuser.h"
 #include "recordsproxymodel.h"
+#include "qaglobalutils.h"
+#include "hanoidb.h"
 
 #define DEFAULT_USER_ID "DefaultUser"
 #define DEFAULT_USER_NAME "User"
@@ -39,9 +41,11 @@ HanoiTowers::HanoiTowers(QQmlApplicationEngine *engine):
     QObject(),
     _profile()
 {
-    _settings = QuasarAppUtils::Settings::instance();
+    _settings = QuasarAppUtils::Settings::init();
 
     _client = new HanoiClient();
+    _client->run("localhost", 0);
+
     _loginModel = new LoginView::LVMainModel("userLogin", this);
     _createNewOfflineUser = new LoginView::LVMainModel("createUser", this);
 

@@ -6,6 +6,7 @@
 
 class HANOITOWERSPROTOCOL_EXPORT FixWorldRequest: public QH::PKG::AbstractData
 {
+    QH_PACKAGE_AUTO(FixWorldRequest)
 public:
     FixWorldRequest();
     bool isValid() const override;

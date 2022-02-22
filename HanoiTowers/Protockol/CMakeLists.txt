@@ -23,6 +23,9 @@ file(GLOB SOURCE_CPP
     "src/*.qrc"
     "src/private/*.cpp"
     "src/private/*.qrc"
+
+    "src/*.h"
+    "src/private/*.h"
 )
 
 add_library(${CURRENT_PROJECT} ${SOURCE_CPP})

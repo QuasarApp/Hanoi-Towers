@@ -4,36 +4,6 @@
 <context>
     <name>About</name>
     <message>
-        <source>about</source>
-        <translation type="vanished">acerca de</translation>
-    </message>
-    <message>
-        <source>About</source>
-        <translation type="vanished">Acerca de</translation>
-    </message>
-    <message>
-        <source>Credits</source>
-        <translation type="vanished">Créditos</translation>
-    </message>
-    <message>
-        <source>Product of QuasarApp
-            * Developers:
-            * Programmer: Yankovich N. Andrei.
-            * Disigner: Chernenkov I. Oleg.
-            * This game is distributed under the LGPLv3 license.
-            * Contact: https://github.com/EndrII
-            * Copyright (C) 2018-2019 Yankovich N. Andrei.
-            * Copyright (C) 2019-2021 QuasarApp group.</source>
-        <translation type="vanished">Producto de QuasarApp
-             * Desarrolladores:
-             * Programador: Yankovich N. Andrei.
-             * Disigner: Chernenkov I. Oleg.
-             * Este juego se distribuye bajo la licencia LGPLv3.
-             * Contacto: https://github.com/EndrII
-             * Copyright (C) 2018-2019 Yankovich N. Andrei.
-             * Copyright (C) 2019-2021 Grupo QuasarApp.</translation>
-    </message>
-    <message>
         <source>## QuasarApp Core team:</source>
         <translation>## Equipo de QuasarApp Core:</translation>
     </message>
@@ -417,18 +387,6 @@
     <message>
         <source>Hanoi Towers</source>
         <translation>Torres de Hanoi</translation>
-    </message>
-    <message>
-        <source>Thanks for your support!</source>
-        <translation type="obsolete">¡Gracias por su apoyo!</translation>
-    </message>
-    <message>
-        <source>You are now our premium user and we won&apos;t dare bother you with ads anymore.</source>
-        <translation type="obsolete">Ahora eres nuestro usuario premium y ya no nos atreveremos a molestarlo con anuncios.</translation>
-    </message>
-    <message>
-        <source>Do not show again </source>
-        <translation type="obsolete">No mostrar de nuevo</translation>
     </message>
 </context>
 </TS>

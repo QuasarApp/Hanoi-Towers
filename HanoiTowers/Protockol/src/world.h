@@ -19,6 +19,8 @@ class WorldUpdate;
 
 class HANOITOWERSPROTOCOL_EXPORT World: public QH::PKG::DBObjectSet, public QH::IToken
 {
+    QH_PACKAGE_AUTO(World)
+
 public:
     World(const QString& worldName = "World");
 

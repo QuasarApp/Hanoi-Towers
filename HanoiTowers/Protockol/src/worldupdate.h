@@ -21,6 +21,8 @@
 class HANOITOWERSPROTOCOL_EXPORT WorldUpdate: public QH::PKG::AbstractData, public QH::IToken,
         public QH::PKG::ISubscribableData
 {
+    QH_PACKAGE_AUTO(WorldUpdate)
+
 public:
     WorldUpdate(const QString& worldName = "World");
 

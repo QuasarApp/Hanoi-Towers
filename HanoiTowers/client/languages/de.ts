@@ -4,35 +4,6 @@
 <context>
     <name>About</name>
     <message>
-        <source>about</source>
-        <translation type="vanished">Über</translation>
-    </message>
-    <message>
-        <source>About</source>
-        <translation type="vanished">Über</translation>
-    </message>
-    <message>
-        <source>Credits</source>
-        <translation type="vanished">Credits</translation>
-    </message>
-    <message>
-        <source>Product of QuasarApp
-            * Developers:
-            * Programmer: Yankovich N. Andrei.
-            * Disigner: Chernenkov I. Oleg.
-            * This game is distributed under the LGPLv3 license.
-            * Contact: https://github.com/EndrII
-            * Copyright (C) 2018-2019 Yankovich N. Andrei.
-            * Copyright (C) 2019-2021 QuasarApp group.</source>
-        <translation type="vanished">* Entwickler:
-             * Programmierer: Yankovich N. Andrei.
-             * Gestalter: Chernenkov I. Oleg.
-             * Dieses Spiel wird unter der LGPLv3-Lizenz vertrieben.
-             * Kontakt: https://github.com/EndrII
-             * Copyright (C) 2018-2019 Yankovich N. Andrei.
-             * Copyright (C) 2019-2021 QuasarApp-Gruppe.</translation>
-    </message>
-    <message>
         <source>## QuasarApp Core team:</source>
         <translation>## QuasarApp Core team:</translation>
     </message>
@@ -416,18 +387,6 @@
     <message>
         <source>Hanoi Towers</source>
         <translation>Hanoi-Türme</translation>
-    </message>
-    <message>
-        <source>Thanks for your support!</source>
-        <translation type="obsolete">Danke für deine Unterstützung!</translation>
-    </message>
-    <message>
-        <source>You are now our premium user and we won&apos;t dare bother you with ads anymore.</source>
-        <translation type="obsolete">Sie sind jetzt unser Premium-Nutzer und wir werden es nicht mehr wagen, Sie mit Werbung zu belästigen.</translation>
-    </message>
-    <message>
-        <source>Do not show again </source>
-        <translation type="obsolete">Nicht mehr anzeigen</translation>
     </message>
 </context>
 </TS>

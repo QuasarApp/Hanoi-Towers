@@ -52,7 +52,7 @@ if (HANOI_ADMOD)
 endif()
 
 if (NOT DEFINED HANOI_SERVER)
-    set(HANOI_SERVER ON)
+    set(HANOI_SERVER OFF)
 
     if (ANDROID OR WIN32)
         set(HANOI_SERVER OFF)
@@ -103,6 +103,7 @@ else()
     set (PATRONUM_TESTS OFF)
 endif()
 
+set(HEART_SSL OFF)
 add_subdirectory(submodules/Heart)
 add_subdirectory(HanoiTowers/Protockol)
 

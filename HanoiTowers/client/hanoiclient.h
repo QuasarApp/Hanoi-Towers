@@ -76,6 +76,9 @@ public:
      */
     bool getUserData(const QString &userId);
 
+    QH::ISqlDBCache * db() const;
+
+
     /**
      * @brief getUsersCache return a pointer to the cache of users.
      * @return
@@ -84,8 +87,8 @@ public:
     getUsersCache() const;
 
 protected:
-    QStringList SQLSources() const override;
     QPair<QString, unsigned short> serverAddress() const override;
+    bool initDatabase() override;
 
 signals:
     void userDataChanged(QSharedPointer<LocalUser>);
@@ -114,6 +117,8 @@ private:
     QHash<QString, QSharedPointer<LocalUser>> _usersCache;
     QSharedPointer<WorldClient> _world;
     QString _bestUserId;
+
+
 
 };
 

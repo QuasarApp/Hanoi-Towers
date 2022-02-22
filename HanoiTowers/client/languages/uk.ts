@@ -4,52 +4,6 @@
 <context>
     <name>About</name>
     <message>
-        <source>about</source>
-        <translation type="vanished">Про автора</translation>
-    </message>
-    <message>
-        <source>About</source>
-        <translation type="vanished">Про автора</translation>
-    </message>
-    <message>
-        <source>Credits</source>
-        <translation type="vanished">Спонсори</translation>
-    </message>
-    <message>
-        <source>Product of QuasarApp
-            * Developers:
-            * Programmer: Yankovich N. Andrei.
-            * Disigner: Chernenkov I. Oleg.
-            * This game is distributed under the LGPLv3 license.
-            * Contact: https://github.com/EndrII
-            * Copyright (C) 2018-2019 Yankovich N. Andrei.
-            * Copyright (C) 2019-2021 QuasarApp group.</source>
-        <translation type="vanished">365 / 5000
-Результаты перевода
-Продукт QuasarApp
-             * Розробники:
-             * Програміст: Янкович Н. Андрій.
-             * Дизайнер: Черненков І. Олег.
-             * Ця гра поширюється за ліцензією LGPLv3.
-             * Контакт: https://github.com/EndrII
-             * Авторське право (C) 2018-2019 Янкович Н. Андрій.
-             * Авторське право (C) 2019-2021 група QuasarApp. </translation>
-    </message>
-    <message>
-        <source>Product of QuasarApp
-* Developers:
-* Programmer: Yankovich N. Andrei.
-* This game is distributed under the LGPLv3 license.
-* Contact: https://github.com/EndrII
-* Copyright (C) 2018-2019 Yankovich N. Andrei.</source>
-        <translation type="vanished">Продукт компанії QuasarApp
-* Розробники:
-* Програміст: Янкович Н. Андрій.
-* Ця гра поширюється під ліцензією LGPLv3.
-* Контакт: https://github.com/EndrII
-* Авторське право (C) 2018-2019 Янкович Н. Андрій.</translation>
-    </message>
-    <message>
         <source>## QuasarApp Core team:</source>
         <translation>## Команда QuasarApp Core:</translation>
     </message>
@@ -70,73 +24,7 @@
     </message>
 </context>
 <context>
-    <name>BackEnd</name>
-    <message>
-        <source>Create new user</source>
-        <translation type="vanished">Створити нового користувача</translation>
-    </message>
-    <message>
-        <source>Connect error</source>
-        <translation type="vanished">Помилка підключення</translation>
-    </message>
-    <message>
-        <source>Failed to connect to server please check network connection befor login</source>
-        <translation type="vanished">Не вдалося підключитися до сервера, перевірте мережеве підключення для входу</translation>
-    </message>
-    <message>
-        <source>login error</source>
-        <translation type="vanished">помилка входу</translation>
-    </message>
-    <message>
-        <source>Failed to login into online account, please check your password and username</source>
-        <translation type="vanished">Не вдалося увійти в онлайн-акаунт, перевірте свій пароль та ім’я користувача</translation>
-    </message>
-    <message>
-        <source>Register online error</source>
-        <translation type="vanished">помилка реєстрації в Інтернеті</translation>
-    </message>
-    <message>
-        <source>Failed to register this account, if this account was created by you, try to restore it.</source>
-        <translation type="vanished">Не вдалося зареєструвати цей обліковий запис, якщо цей обліковий запис був створений вами, спробуйте відновити його.</translation>
-    </message>
-    <message>
-        <source>Server error</source>
-        <translation type="vanished">Помилка серверу</translation>
-    </message>
-    <message>
-        <source>Create user error</source>
-        <translation type="vanished">Помилка створення користувача</translation>
-    </message>
-    <message>
-        <source>Failed to create a new user, The name %0 alredy used.</source>
-        <translation type="vanished">Не вдалося створити нового користувача, ім’я %0 вже використовується.</translation>
-    </message>
-    <message>
-        <source>current profile not online!</source>
-        <translation type="vanished">Поточний профіль офлайн!</translation>
-    </message>
-    <message>
-        <source>Remove online error</source>
-        <translation type="vanished">Помилка видалення онлайн даних користувачів</translation>
-    </message>
-</context>
-<context>
-    <name>BaseButton</name>
-    <message>
-        <source>ok</source>
-        <translation type="vanished">Ок</translation>
-    </message>
-</context>
-<context>
     <name>Config</name>
-    <message>
-        <source>Settings</source>
-        <translation type="vanished">Налаштування</translation>
-    </message>
-    <message>
-        <source>Return to main menu</source>
-        <translation type="vanished">Головне меню</translation>
-    </message>
     <message>
         <source>Standart color</source>
         <translation>Стандартний колір</translation>
@@ -160,32 +48,6 @@
 </context>
 <context>
     <name>Game</name>
-    <message>
-        <source>You have passed the level in %0 steps and unlocked level %1</source>
-        <translation type="vanished">Ви пройшли рівень за %0 кроків і розблокували рівень %1</translation>
-    </message>
-    <message>
-        <source>
- Minimum steps for this lvl: %2</source>
-        <translation type="vanished">
- Мінімальні кроки для цього рівня: %2</translation>
-    </message>
-    <message>
-        <source>
- you reward = %3</source>
-        <translation type="vanished">
- ваша винагорода = %3</translation>
-    </message>
-    <message>
-        <source>You have passed the level in %0 steps.
-</source>
-        <translation type="vanished">Ви пройшли рівень за кроки %0.
-</translation>
-    </message>
-    <message>
-        <source>Minimum steps for this lvl: %1</source>
-        <translation type="vanished">Мінімальні кроки для цього рівня: %1</translation>
-    </message>
     <message>
         <source>Congratulations! You have passed the level %0</source>
         <translation>Вітаємо! Ви пройшли рівень %0</translation>
@@ -218,10 +80,6 @@
 <context>
     <name>GameStateWidget</name>
     <message>
-        <source>Tower height: </source>
-        <translation type="vanished">Висота вежі: </translation>
-    </message>
-    <message>
         <source>Tower height:    </source>
         <translation>Висота вежі:    </translation>
     </message>
@@ -244,17 +102,9 @@
         <source>Internal Error, server send invalid data, and this data can&apos;t be saved into local database.</source>
         <translation>Внутрішня помилка, сервер надсилає недійсні дані, і ці дані не можна зберегти в локальній базі даних.</translation>
     </message>
-    <message>
-        <source>Online error</source>
-        <translation type="vanished">Помилка в мережі</translation>
-    </message>
 </context>
 <context>
     <name>HanoiTowers</name>
-    <message>
-        <source>Create new user</source>
-        <translation type="obsolete">Створити нового користувача</translation>
-    </message>
     <message>
         <source>Create</source>
         <translation>Створити</translation>
@@ -342,21 +192,9 @@
         <source></source>
         <translation></translation>
     </message>
-    <message>
-        <source>Main menu</source>
-        <translation type="vanished">Головне меню</translation>
-    </message>
 </context>
 <context>
     <name>Help</name>
-    <message>
-        <source>Your task is to transfer discs of different sizesfrom the left tower to any other free space.You can only transfer the top drive of the tower.You can not transfer several disks at once and put larger disks on small disks.</source>
-        <translation type="vanished">Ваше завдання полягає в тому, щоб перенести диски різних розмірів з лівої вежі на будь-яке інше вільне місце. Ви можете перенести тільки верхній привід башти. Ви не можете одночасно передати кілька дисків і розмістити на дисках великі диски.</translation>
-    </message>
-    <message>
-        <source>Your task is to transfer discs of different sizesfrom the left tower to third tower.You can only transfer the top drive of the tower.You can not transfer several disks at once and put larger disks on small disks.</source>
-        <translation type="vanished">Ваше завдання  перенести диски різних розмірів з лівої вежі на третю вежу. Ви можете перенести лише верхній привід вежі. Ви не можете перенести кілька дисків одночасно і поставити більші диски на маленькі диски.</translation>
-    </message>
     <message>
         <source>Tap to select the upper part of tower.</source>
         <translation>Натисніть, щоб вибрати верхню частину вежі.</translation>
@@ -393,135 +231,9 @@
         <source>Do not show again</source>
         <translation>Не показувати знову</translation>
     </message>
-    <message>
-        <source>Do not show again:</source>
-        <translation type="vanished">Не показувати знову:</translation>
-    </message>
-    <message>
-        <source>Ok</source>
-        <translation type="vanished">Ок</translation>
-    </message>
-</context>
-<context>
-    <name>LoginView</name>
-    <message>
-        <source>Create a new account</source>
-        <translation type="vanished">Створити новий акаунт</translation>
-    </message>
-    <message>
-        <source>LogIn</source>
-        <translation type="vanished">Увійти</translation>
-    </message>
-    <message>
-        <source>Please fill this form to create an account</source>
-        <translation type="vanished">Заповніть цю форму, щоб створити обліковий запис</translation>
-    </message>
-    <message>
-        <source>Please fill this form to login in your account</source>
-        <translation type="vanished">Заповніть цю форму, щоб увійти у свій обліковий запис</translation>
-    </message>
-    <message>
-        <source>First Name</source>
-        <translation type="vanished">Ім&apos;я</translation>
-    </message>
-    <message>
-        <source>Empy or incorrect name. Please enter yuor name.</source>
-        <translation type="vanished">Порожня форма або неправильне ім&apos;я. Введіть коректне ім&apos;я.</translation>
-    </message>
-    <message>
-        <source>Last Name</source>
-        <translation type="vanished">Прізвище</translation>
-    </message>
-    <message>
-        <source>Select you country</source>
-        <translation type="vanished">Виберіть країну</translation>
-    </message>
-    <message>
-        <source>EMail</source>
-        <translation type="vanished">EMail</translation>
-    </message>
-    <message>
-        <source>Empty or incorrect email address. Please enter yuor name.</source>
-        <translation type="vanished">Форма не заповнена або введений невірний email. Введіть вірний email.</translation>
-    </message>
-    <message>
-        <source>Nickname</source>
-        <translation type="vanished">Нікнейм</translation>
-    </message>
-    <message>
-        <source>Empty or incorrect Nickname. Please enter yuor name.</source>
-        <translation type="vanished">Порожня форма або неправильний нікнейм. Введіть коректний нікнейм.</translation>
-    </message>
-    <message>
-        <source>Pasword</source>
-        <translation type="vanished">Пароль</translation>
-    </message>
-    <message>
-        <source>Confirm pasword</source>
-        <translation type="vanished">Підтвердьте пароль</translation>
-    </message>
-    <message>
-        <source>Forgot password</source>
-        <translation type="vanished">Забули пароль</translation>
-    </message>
-    <message>
-        <source>I accept the Terms of use</source>
-        <translation type="vanished">Я приймаю Умови використання</translation>
-    </message>
-    <message>
-        <source>Show terms of use</source>
-        <translation type="vanished">Показати умови використання</translation>
-    </message>
-    <message>
-        <source>SignUp</source>
-        <translation type="vanished">Реєстрація</translation>
-    </message>
-    <message>
-        <source>Login In</source>
-        <translation type="vanished">Логін</translation>
-    </message>
-    <message>
-        <source>Sign Up</source>
-        <translation type="vanished">Реєстрація</translation>
-    </message>
-    <message>
-        <source>Password must match the 1st field and the password cannot be empty</source>
-        <translation type="vanished">Пароль повинен відповідати 1-му полю, і пароль не може бути порожнім</translation>
-    </message>
-</context>
-<context>
-    <name>LoginView::LVMainModel</name>
-    <message>
-        <source>must be longer than 8 characters</source>
-        <translation type="vanished">має містити більше 8 символів</translation>
-    </message>
-    <message>
-        <source>must contain numbers</source>
-        <translation type="vanished">повинні містити цифри</translation>
-    </message>
-    <message>
-        <source>must contain small chars</source>
-        <translation type="vanished">повинен містити невеликі символи</translation>
-    </message>
-    <message>
-        <source>must contain large chars</source>
-        <translation type="vanished">повинен містити великі символи</translation>
-    </message>
-    <message>
-        <source>must contain extra chars (!@#$%^&amp;*)</source>
-        <translation type="vanished">повинен містити додаткові символи (! @ # $% ^ &amp; *)</translation>
-    </message>
-    <message>
-        <source>Password requirements: </source>
-        <translation type="vanished">Вимоги до пароля:</translation>
-    </message>
 </context>
 <context>
     <name>MainMenu</name>
-    <message>
-        <source>Hanoi Towers</source>
-        <translation type="vanished">Ханої вежі</translation>
-    </message>
     <message>
         <source>continue</source>
         <translation>Продовжувати</translation>
@@ -549,17 +261,6 @@
     <message>
         <source>Save and exit</source>
         <translation>Зберегти та вийти</translation>
-    </message>
-    <message>
-        <source>exit</source>
-        <translation type="vanished">Вихід</translation>
-    </message>
-</context>
-<context>
-    <name>NotificationForm</name>
-    <message>
-        <source>Message</source>
-        <translation type="vanished">Повідомлення</translation>
     </message>
 </context>
 <context>
@@ -601,13 +302,6 @@
     <message>
         <source>Start</source>
         <translation>Почати</translation>
-    </message>
-</context>
-<context>
-    <name>ToolBar</name>
-    <message>
-        <source>Return to main menu</source>
-        <translation type="obsolete">Головне меню</translation>
     </message>
 </context>
 <context>
@@ -664,24 +358,12 @@
         <translation>Видалити</translation>
     </message>
     <message>
-        <source>Remove This Profile</source>
-        <translation type="vanished">Видалити цей профіль</translation>
-    </message>
-    <message>
         <source>Restore</source>
         <translation>Відновлювати</translation>
     </message>
     <message>
         <source>Accept</source>
         <translation>Прийміть</translation>
-    </message>
-    <message>
-        <source>User is updated</source>
-        <translation type="vanished">Користувач оновлений</translation>
-    </message>
-    <message>
-        <source>User data will be changed.</source>
-        <translation type="vanished">Дані користувача буде змінено.</translation>
     </message>
     <message>
         <source>Remove %0 user</source>
@@ -695,10 +377,6 @@
 <context>
     <name>UsersTable</name>
     <message>
-        <source>Return to main menu</source>
-        <translation type="obsolete">Головне меню</translation>
-    </message>
-    <message>
         <source>Locale users list</source>
         <translation>Локальний список користувачів</translation>
     </message>
@@ -707,78 +385,8 @@
         <translation>Додати користувача</translation>
     </message>
     <message>
-        <source>Create the new user</source>
-        <translation type="vanished">Створіть нового користувача</translation>
-    </message>
-    <message>
         <source>Best users in the world</source>
         <translation>Найкращі гравці світу</translation>
-    </message>
-</context>
-<context>
-    <name>about</name>
-    <message>
-        <source>about</source>
-        <translation type="vanished">Про автора</translation>
-    </message>
-    <message>
-        <source>Product of QuasarApp
-* Developers:
-* Programmer: Yankovich N. Andrei.
-* This game is distributed under the LGPLv3 license.
-* Contact: https://github.com/EndrII
-* Copyright (C) 2018-2019 Yankovich N. Andrei.</source>
-        <translation type="vanished">Продукт компанії QuasarApp
-* Розробники:
-* Програміст: Янкович Н. Андрій.
-* Ця гра поширюється під ліцензією LGPLv3.
-* Контакт: https://github.com/EndrII
-* Авторське право (C) 2018-2019 Янкович Н. Андрій.</translation>
-    </message>
-    <message>
-        <source>Product of QuasarApp
-* Developers:
-* Programmer: Yankovich N. Andrei.
-* This game is distributed under the LGPLv3 license.
-* Contact: https://github.com/EndrII
-* Copyright (C) 2018 Yankovich N. Andrei.</source>
-        <translation type="vanished">Продукт компанії QuasarApp
-* Розробники:
-* Програміст: Янкович Н. Андрій.
-* Ця гра поширюється під ліцензією LGPLv3.
-* Контакт: https://github.com/EndrII
-* Авторське право (C) 2018 Янкович Н. Андрій.</translation>
-    </message>
-</context>
-<context>
-    <name>game</name>
-    <message>
-        <source>lvl </source>
-        <translation type="vanished">рівень </translation>
-    </message>
-    <message>
-        <source>step </source>
-        <translation type="vanished">крок </translation>
-    </message>
-    <message>
-        <source>Tower height:</source>
-        <translation type="vanished">Висота башти:</translation>
-    </message>
-    <message>
-        <source>Return to main menu</source>
-        <translation type="vanished">Головне меню</translation>
-    </message>
-    <message>
-        <source>You have passed the level in %0 steps and unlocked level %1
- Minimum steps for this lvl: %2</source>
-        <translation type="vanished">Ви пройшли рівень в кроках %0 і розблокували рівень %1
-  Мінімальні кроки для цього рівня: %2</translation>
-    </message>
-    <message>
-        <source>You have passed the level in %0 steps.
-Minimum steps for this lvl: %1</source>
-        <translation type="vanished">Ви пройшли рівень у %0 кроках.
-Мінімальні кроки для цього рівня: %1</translation>
     </message>
 </context>
 <context>
@@ -786,18 +394,6 @@ Minimum steps for this lvl: %1</source>
     <message>
         <source>Hanoi Towers</source>
         <translation>Ханої вежі</translation>
-    </message>
-    <message>
-        <source>Thanks for your support!</source>
-        <translation type="obsolete">Дякую за твою підтримку!</translation>
-    </message>
-    <message>
-        <source>You are now our premium user and we won&apos;t dare bother you with ads anymore.</source>
-        <translation type="obsolete">Тепер ви наш преміум-користувач, і ми більше не будемо турбувати вас рекламою.</translation>
-    </message>
-    <message>
-        <source>Do not show again </source>
-        <translation type="obsolete">Не показувати знову</translation>
     </message>
 </context>
 </TS>

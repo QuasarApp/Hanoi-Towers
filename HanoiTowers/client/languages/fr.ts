@@ -4,36 +4,6 @@
 <context>
     <name>About</name>
     <message>
-        <source>about</source>
-        <translation type="vanished">à propos de</translation>
-    </message>
-    <message>
-        <source>About</source>
-        <translation type="vanished">À propos</translation>
-    </message>
-    <message>
-        <source>Credits</source>
-        <translation type="vanished">Crédits</translation>
-    </message>
-    <message>
-        <source>Product of QuasarApp
-            * Developers:
-            * Programmer: Yankovich N. Andrei.
-            * Disigner: Chernenkov I. Oleg.
-            * This game is distributed under the LGPLv3 license.
-            * Contact: https://github.com/EndrII
-            * Copyright (C) 2018-2019 Yankovich N. Andrei.
-            * Copyright (C) 2019-2021 QuasarApp group.</source>
-        <translation type="vanished">Produit de QuasarApp
-             * Développeurs&#xa0;:
-             * Programmeur : Yankovich N. Andrei.
-             * Disigner: Tchernenkov I. Oleg.
-             * Ce jeu est distribué sous licence LGPLv3.
-             * Contact : https://github.com/EndrII
-             * Copyright (C) 2018-2019 Yankovich N. Andrei.
-             * Copyright (C) 2019-2021 Groupe QuasarApp.</translation>
-    </message>
-    <message>
         <source>## QuasarApp Core team:</source>
         <translation>## Équipe de QuasarApp Core:</translation>
     </message>
@@ -417,18 +387,6 @@
     <message>
         <source>Hanoi Towers</source>
         <translation>Tours de Hanoi</translation>
-    </message>
-    <message>
-        <source>Thanks for your support!</source>
-        <translation type="obsolete">Merci pour votre aide!</translation>
-    </message>
-    <message>
-        <source>You are now our premium user and we won&apos;t dare bother you with ads anymore.</source>
-        <translation type="obsolete">Vous êtes maintenant notre utilisateur premium et nous n&apos;oserons plus vous déranger avec des publicités.</translation>
-    </message>
-    <message>
-        <source>Do not show again </source>
-        <translation type="obsolete">Ne pas montrer de nouveau </translation>
     </message>
 </context>
 </TS>
