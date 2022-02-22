@@ -62,7 +62,14 @@ if (ANDROID)
     find_package(QT NAMES Qt6 Qt5 COMPONENTS AndroidExtras REQUIRED)
     find_package(Qt${QT_VERSION_MAJOR} COMPONENTS AndroidExtras REQUIRED)
 
-    addDeployAPK(${CURRENT_PROJECT} "${CMAKE_CURRENT_LIST_DIR}/android" "digitalface" "${SIGPATH}/DigitalFaceMobily.keystore" "${SIGPASS_HANOI}" "${TARGET_DIR}" "${HANOI_EXTRA_LIBS}")
+    addDeploySignedAPK(
+        ${CURRENT_PROJECT}
+        "${CMAKE_CURRENT_LIST_DIR}/android"
+        "digitalface"
+        "${SIGPATH}/DigitalFaceMobily.keystore"
+        "${SIGPASS_HANOI}"
+        "${TARGET_DIR}"
+        "${HANOI_EXTRA_LIBS}")
 
     target_link_libraries(${CURRENT_PROJECT} PRIVATE Qt${QT_VERSION_MAJOR}::AndroidExtras)
 
