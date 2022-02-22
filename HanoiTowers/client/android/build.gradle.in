@@ -75,6 +75,6 @@ android {
         resConfig "en"
         multiDexEnabled true
         minSdkVersion = 21
-        targetSdkVersion = 31
+        targetSdkVersion = @ANDROID_API_VERSION@
     }
 }

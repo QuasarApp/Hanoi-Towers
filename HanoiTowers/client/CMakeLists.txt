@@ -78,6 +78,13 @@ if (ANDROID)
 
     endif()
 
+    set(manifest_file "${CMAKE_CURRENT_SOURCE_DIR}/android/AndroidManifest.xml")
+    configure_file("${manifest_file}.in" ${manifest_file} @ONLY)
+
+    set(gradle_file "${CMAKE_CURRENT_SOURCE_DIR}/android/build.gradle")
+    configure_file("${gradle_file}.in" ${gradle_file} @ONLY)
+
+
     file(GLOB java_files
        "android/src/com/quasarapp/androidtools/*.java"
     )
