@@ -9,22 +9,22 @@ Item {
         if (!backEnd.isAndroid())
             return;
 
-        if (backEnd.isAdMod()) {
+//        if (backEnd.isAdMod()) {
 
-            if (backEnd.launchCount < 6 || backEnd.launchCount % 2 ) {
-                return;
-            }
+//            if (backEnd.launchCount < 6 || backEnd.launchCount % 2 ) {
+//                return;
+//            }
 
-            const component = Qt.createComponent("qrc:/menu/Premium.qml");
-            popup = component.createObject(this);
-            popup.open();
+//            const component = Qt.createComponent("qrc:/menu/Premium.qml");
+//            popup = component.createObject(this);
+//            popup.open();
 
-        } else if (backEnd.showCredits) {
+//        } else if (backEnd.showCredits) {
 
-            const component = Qt.createComponent("qrc:/menu/PremiumThanks.qml");
-            popup = component.createObject(this);
-            popup.open();
-        }
+//            const component = Qt.createComponent("qrc:/menu/PremiumThanks.qml");
+//            popup = component.createObject(this);
+//            popup.open();
+//        }
     }
 
     anchors.fill: parent

@@ -47,6 +47,11 @@ set(LANGS ${CMAKE_CURRENT_SOURCE_DIR}/languages/en.ts
 prepareQM(${CURRENT_PROJECT} ${CMAKE_CURRENT_SOURCE_DIR} "${LANGS}")
 
 if (ANDROID)
+
+    set(ENV{ANDROID_API_VERSION} 31)
+    set(ANDROID_API_VERSION $ENV{ANDROID_API_VERSION})
+    set(OPENSSL_ROOT_PATH "$ENV{OPENSSL_ROOT_DIR}")
+
     set(HANOI_EXTRA_LIBS Heart
                          ${PROJECT_NAME}Protockol
                          QuasarApp
