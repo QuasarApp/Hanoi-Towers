@@ -36,7 +36,6 @@ android:installLocation="auto">
         android:launchMode="singleTop"
         android:exported="true"
 
-        android:theme="@style/splashScreenTheme">
         <intent-filter>
         <action android:name="android.intent.action.MAIN"/>
         <category android:name="android.intent.category.LAUNCHER"/>
