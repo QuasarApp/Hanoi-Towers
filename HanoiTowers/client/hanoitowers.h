@@ -224,7 +224,6 @@ private slots:
 
 private:
     void init();
-    void loadOldSaves();
 
     QuasarAppUtils::ISettings *_settings = nullptr;
 
