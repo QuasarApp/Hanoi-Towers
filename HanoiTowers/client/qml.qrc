@@ -27,6 +27,7 @@
         <file>menu/PremiumThanks.qml</file>
         <file>menu/PremiumLoader.qml</file>
         <file>menu/AdLoadScrean.qml</file>
+        <file>menu/CheatCard.qml</file>
     </qresource>
     <qresource prefix="/textures">
         <file>res/fogBack.png</file>
@@ -36,8 +37,9 @@
     <qresource prefix="/img">
         <file alias="DefaultAvatar">res/DefaultAvatar.png</file>
         <file alias="premium">res/HanoiTowers_premium_logo.png</file>
-		<file>res/unlock.png</file>
-		<file>res/galochka.png</file>
+        <file>res/unlock.png</file>
+        <file>res/galochka.png</file>
+        <file>res/CheatCard_Banner.jpg</file>
     </qresource>
     <qresource prefix="/languages">
         <file>languages/ru.qm</file>

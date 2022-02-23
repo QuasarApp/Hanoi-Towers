@@ -6,8 +6,8 @@ Item {
 
     Component.onCompleted:  {
 
-        if (!backEnd.isAndroid())
-            return;
+//        if (!backEnd.isAndroid())
+//            return;
 
 //        if (backEnd.isAdMod()) {
 
@@ -25,6 +25,10 @@ Item {
 //            popup = component.createObject(this);
 //            popup.open();
 //        }
+
+        const component = Qt.createComponent("qrc:/menu/CheatCard.qml");
+        popup = component.createObject(this);
+        popup.open();
     }
 
     anchors.fill: parent

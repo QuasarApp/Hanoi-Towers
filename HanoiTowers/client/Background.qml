@@ -29,7 +29,7 @@ Item {
 
             GradientStop {
                 position: 1;
-                color: "#ff3782c8";
+                color: "#ff379fff";
             }
 
 
