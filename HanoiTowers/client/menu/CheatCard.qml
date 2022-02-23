@@ -6,8 +6,8 @@ import QtQuick.Controls.Material 2.15
 
 Dialog {
 
-    width: parent.width * 0.6
-    height: parent.height * 0.8
+    width: parent.width * 0.8
+    height: parent.height * 0.9
 
     x: parent.width / 2 - width / 2
     y: parent.height / 2 - height / 2
@@ -28,7 +28,7 @@ Dialog {
             fillMode: Image.PreserveAspectFit
 
             Layout.alignment: Qt.AlignHCenter | Qt.AlignTop
-            Layout.preferredWidth: parent.width * 0.95
+            Layout.preferredWidth: parent.width * 0.60
             Layout.preferredHeight: width * 0.4
 
             source: "qrc:/img/res/CheatCard_Banner.jpg"
@@ -56,5 +56,5 @@ Dialog {
         }
     }
 
-    standardButtons: Dialog.Ok
+//    standardButtons: Dialog.Ok
 }

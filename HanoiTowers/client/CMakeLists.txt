@@ -47,6 +47,7 @@ set(LANGS ${CMAKE_CURRENT_SOURCE_DIR}/languages/en.ts
 prepareQM(${CURRENT_PROJECT} ${CMAKE_CURRENT_SOURCE_DIR} "${LANGS}")
 
 if (ANDROID)
+    set(ANDROID_PACKAGE_SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/android")
 
     set(ENV{ANDROID_API_VERSION} 31)
     set(ANDROID_API_VERSION $ENV{ANDROID_API_VERSION})
@@ -87,6 +88,12 @@ if (ANDROID)
 
     file(GLOB java_files
        "android/src/com/quasarapp/androidtools/*.java"
+       "android/*.xml"
+       "android/*.in"
+       "android/*.gradle"
+       "android/gradlew"
+       "android/gradle.*"
+
     )
 
     add_custom_target(${name}Android

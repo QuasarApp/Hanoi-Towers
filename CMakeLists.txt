@@ -10,6 +10,7 @@ project(HanoiTowers)
 
 set(BUILD_SHARED_LIBS ON)
 
+set(ANDROID_PACKAGE_SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/HanoiTowers/client/android")
 
 include(submodules/Heart/QuasarAppLib/CMake/QuasarApp.cmake)
 include(submodules/Heart/QuasarAppLib/CMake/Version.cmake)
@@ -104,7 +105,7 @@ else()
     set (PATRONUM_TESTS OFF)
 endif()
 
-set(HEART_SSL OFF)
+option(HEART_SSL "This option enable or disabled ssl functions of nodes" OFF)
 add_subdirectory(submodules/Heart)
 add_subdirectory(HanoiTowers/Protockol)
 
@@ -119,7 +120,6 @@ if (HANOI_CLIENT)
     add_subdirectory(submodules/Credits)
 
     if (ANDROID)
-        set(ANDROID_PACKAGE_SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/HanoiTowers/client/android")
         if (HANOI_ADMOD)
             set(QTAT_APP_PERMISSIONS OFF)
             set(QTAT_APK_EXPANSION_FILES OFF)
