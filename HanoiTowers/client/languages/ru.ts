@@ -24,6 +24,21 @@
     </message>
 </context>
 <context>
+    <name>CheatCard</name>
+    <message>
+        <source>Try our new application!</source>
+        <translation>Попробуйте наше новое приложение!</translation>
+    </message>
+    <message>
+        <source>Cheat Card is Free mobile application for create bonus cards for your business</source>
+        <translation>Cheat Card - Бесплатное мобильное приложение для создания бонусных карт для вашего бизнеса</translation>
+    </message>
+    <message>
+        <source>Get CheatCard</source>
+        <translation>Получить CheatCard</translation>
+    </message>
+</context>
+<context>
     <name>Config</name>
     <message>
         <source>Standart color</source>
