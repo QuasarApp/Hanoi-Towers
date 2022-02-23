@@ -20,7 +20,7 @@ android:installLocation="auto">
     android:smallScreens="true"/>
     <application
     android:hardwareAccelerated="true"
-    android:name="com.quasarapp.androidtools.MainApplication"
+    android:name="org.qtproject.qt5.android.bindings.QtApplication"
     android:label="-- %%INSERT_APP_NAME%% --"
     android:extractNativeLibs="true"
     android:requestLegacyExternalStorage="true"
